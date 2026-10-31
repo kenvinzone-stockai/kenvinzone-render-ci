@@ -70,7 +70,7 @@ def fetch_article(url):
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (KenvinZone bot)"})
     with urllib.request.urlopen(req, timeout=40) as r:
         html = r.read().decode("utf-8", "replace")
-    html = re.sub(r("(?is)<(script|style|noscript)[^>]*>.*?</\1>"), " ", html)
+    html = re.sub(r"(?is)<(script|style|noscript)[^>]*>.*?</\1>", " ", html)
     text = re.sub(r"(?s)<[^>]+>", " ", html)
     text = re.sub(r"&[a-z]+;", " ", text)
     text = re.sub(r"\s+", " ", text).strip()
