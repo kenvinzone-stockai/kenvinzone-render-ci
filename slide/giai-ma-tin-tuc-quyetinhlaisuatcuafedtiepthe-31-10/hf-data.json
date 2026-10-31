@@ -1,0 +1,192 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "31/10/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "Tin Nhanh Chứng Khoán",
+    "short": "ĐTCK",
+    "author": "Lạc Nhạn",
+    "headline": "Quyết định lãi suất của Fed tiếp thêm động lực cho phố Wall",
+    "date": "29/10/2026",
+    "url": "tinnhanhchungkhoan.vn/quyet-dinh-lai-suat-cua-fed-tiep-them-dong-luc-cho-pho-wall-post400322.html"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "Fed giữ lãi suất",
+      "Phố Wall xanh điểm"
+    ],
+    "sub": "Sóng chip bùng nổ cùng mùa báo cáo kết quả kinh doanh",
+    "chips": [
+      {
+        "icon": "↗",
+        "text": "S&P 500 +0,28%",
+        "tone": "up"
+      },
+      {
+        "icon": "◆",
+        "text": "84% vượt dự phóng",
+        "tone": "blue"
+      },
+      {
+        "icon": "↘",
+        "text": "Dầu thô tăng",
+        "tone": "gold"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Cục Dự trữ Liên bang Mỹ <mark>giữ nguyên lãi suất</mark> điều hành, kết hợp cùng mùa kết quả kinh doanh khởi sắc đã tiếp thêm trợ lực đưa cả ba chỉ số Phố Wall đồng loạt tăng điểm."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh chung",
+      "tươi sáng thế nào?"
+    ],
+    "stats": [
+      {
+        "value": 31.8,
+        "decimals": 1,
+        "unit": "%",
+        "label": "Tăng trưởng LN S&P 500",
+        "badge": "Q3/2026 ước tính",
+        "tone": "up",
+        "beat": 1
+      }
+    ],
+    "note": "84% trong số 200 công ty công bố đã vượt kỳ vọng lợi nhuận."
+  },
+  "s3": {
+    "title_lines": [
+      "Cổ phiếu công nghệ",
+      "bứt phá ra sao?"
+    ],
+    "lead": "Nhóm bán dẫn dẫn sóng",
+    "bars": [
+      {
+        "label": "SK Hynix",
+        "display": "+13,3%",
+        "value": 13.3,
+        "beat": 1
+      },
+      {
+        "label": "Micron",
+        "display": "+5,9%",
+        "value": 5.9,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 1.8,
+      "suffix": "%",
+      "text": "Chỉ số Bán dẫn Philadelphia tăng phiên thứ 4",
+      "beat": 2
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Động lực thị trường",
+      "đến từ những đâu?"
+    ],
+    "cards": [
+      {
+        "big": "Giữ nguyên",
+        "title": "Chính sách Fed",
+        "text": "Nền kinh tế Mỹ vẫn duy trì sức mạnh ổn định."
+      },
+      {
+        "big": "Gấp 7 lần",
+        "title": "Lợi nhuận SK Hynix",
+        "text": "Kích hoạt làn sóng tăng giá toàn ngành chip."
+      },
+      {
+        "big": "Rủi ro dầu",
+        "title": "Địa chính trị",
+        "text": "Căng thẳng Trung Đông đẩy giá dầu kìm hãm đà tăng."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Chi tiết phân hóa",
+      "trong phiên này?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "THẮNG THẾ",
+        "title": "Cổ phiếu bán dẫn",
+        "text": "Arm tăng 4%, AMD và Marvell đều tăng khoảng 3%."
+      },
+      {
+        "color": "yellow",
+        "tag": "LƯU Ý",
+        "title": "Chỉ số lạm phát PCE",
+        "text": "Thước đo ưa thích của Fed sắp công bố có thể đảo chiều kỳ vọng."
+      },
+      {
+        "color": "red",
+        "tag": "RỦI RO",
+        "title": "Xác suất nâng lãi suất",
+        "text": "Thị trường dự đoán 80% Fed tăng lãi suất tháng 12."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Tín hiệu đèn giao thông",
+      "tới chứng khoán Việt?"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh",
+        "text": "Tâm lý hưng phấn toàn cầu giúp nhóm công nghệ trong nước hưởng lợi.",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng",
+        "text": "Chờ đợi dữ liệu lạm phát thực tế từ báo cáo chi tiêu cá nhân Mỹ.",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ",
+        "text": "Giá dầu tăng và áp lực tỷ giá khiến dòng vốn ngoại thận trọng.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Tác động cụ thể",
+      "đến thị trường ra sao?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "S&P 500 lập đỉnh mới",
+        "text": "Tăng hơn 21 điểm lên mức 7.743 điểm.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Nasdaq tiếp đà tăng",
+        "text": "Tăng 72 điểm nhờ lực đẩy của nhóm công nghệ.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Áp lực chi phí",
+        "text": "Giá năng lượng nhích lên đe dọa biên lợi nhuận sản xuất.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Bình tĩnh đón nhận dữ liệu vĩ mô để đưa ra quyết định sáng suốt.",
+    "cta": "Theo dõi KenvinZone để cùng giải mã chuyển động thị trường"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}

@@ -1,0 +1,20 @@
+=== [1/3] Đọc bài: https://www.tinnhanhchungkhoan.vn/quyet-dinh-lai-suat-cua-fed-tiep-them-dong-luc-cho-pho-wall-post400322.html ===
+  lấy được 6731 ký tự
+  model khả dụng: ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest'] -> chọn gemini-flash-latest
+  dùng model: gemini-flash-latest
+=== [2/3] Gemini dựng deck (lượt 1) ===
+=== [3/3] Kiểm tra deck ===
+=== check_deck_cloud: giai-ma-tin-tuc-quyetinhlaisuatcuafedtiepthe-31-10 ===
+  CẢNH BÁO: script 758 từ (chuẩn 550–680; >~650 có thể quá 3 phút)
+  CẢNH BÁO: YouTube description chưa có link nguồn
+  LỖI: số câu/dòng [1, 3, 3, 3, 4, 4, 4, 3, 3] ≠ [1, 3, 3, 3, 4, 4, 3, 3, 3]
+KẾT QUẢ: CHƯA ĐẠT (1 lỗi)
+
+=== [2/3] Gemini dựng deck (lượt 2) ===
+=== [3/3] Kiểm tra deck ===
+=== check_deck_cloud: giai-ma-tin-tuc-quyetinhlaisuatcuafedtiepthe-31-10 ===
+  CẢNH BÁO: script 723 từ (chuẩn 550–680; >~650 có thể quá 3 phút)
+  CẢNH BÁO: YouTube description chưa có link nguồn
+KẾT QUẢ: ĐẠT
+
+PROJECT=giai-ma-tin-tuc-quyetinhlaisuatcuafedtiepthe-31-10
