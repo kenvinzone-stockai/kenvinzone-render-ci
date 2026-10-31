@@ -1,0 +1,11 @@
+=== [1/3] Đọc bài: https://www.tinnhanhchungkhoan.vn/quyet-dinh-lai-suat-cua-fed-tiep-them-dong-luc-cho-pho-wall-post400322.html ===
+Traceback (most recent call last):
+  File "/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/build_deck_from_url.py", line 221, in <module>
+    main()
+  File "/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/build_deck_from_url.py", line 184, in main
+    article = fetch_article(a.url)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/build_deck_from_url.py", line 73, in fetch_article
+    html = re.sub(r("(?is)<(script|style|noscript)[^>]*>.*?</\1>"), " ", html)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'HTTPResponse' object is not callable
