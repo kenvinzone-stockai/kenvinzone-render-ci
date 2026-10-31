@@ -1,4 +1,4 @@
 == getMe ==
 bot ok= True user= KenvinGit_bot
 == chat ids ==
-NO_MESSAGES - hay nhan mot tin cho bot roi chay lai
+chat_id=408310353 | name=KenvinHoang 🐾 | user=KenvinHoang
