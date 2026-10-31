@@ -99,6 +99,10 @@ def resolve_model(api_key):
         if "latest" in n: s += 5
         if "preview" in n or "exp" in n: s -= 3
         return s
+    for pref in ("gemini-flash-latest", "gemini-3.8-flash", "gemini-flash-lite-latest"):
+        if pref in names:
+            print(f"  model khả dụng: {names[:6]} -> chọn {pref}", flush=True)
+            return pref
     names.sort(key=score, reverse=True)
     if not names:
         raise RuntimeError("Khóa không truy cập được model generateContent nào.")
