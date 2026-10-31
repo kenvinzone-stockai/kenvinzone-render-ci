@@ -6,8 +6,6 @@ config/tts.json
 slide/**/output/
 **/output/hf/
 **/output/hf_*/
-*.mp4
-*.mp3
 upload-result.json
 
 # Python / Node
