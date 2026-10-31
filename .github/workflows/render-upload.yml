@@ -1,0 +1,92 @@
+name: render-upload
+
+# Render a HyperFrames deck frame-by-frame and (optionally) upload to YouTube.
+# Chạy hoàn toàn trên cloud GitHub Actions — KHÔNG cần PC văn phòng.
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        description: "Thư mục deck dưới slide/ (vd: giai-ma-tin-tuc-quangtramctck-27-10)"
+        required: true
+        type: string
+      privacy:
+        description: "Chế độ YouTube"
+        required: true
+        default: private
+        type: choice
+        options: [private, unlisted, public]
+      no_upload:
+        description: "Chỉ render, không upload"
+        required: false
+        default: false
+        type: boolean
+  # Dùng cho Telegram bot sau này: gửi event 'render-deck' với client_payload {project, privacy, no_upload}
+  repository_dispatch:
+    types: [render-deck]
+
+concurrency:
+  group: render-${{ github.event.inputs.project || github.event.client_payload.project }}
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Resolve inputs
+        id: cfg
+        run: |
+          if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
+            echo "project=${{ github.event.client_payload.project }}" >> "$GITHUB_OUTPUT"
+            echo "privacy=${{ github.event.client_payload.privacy || 'private' }}" >> "$GITHUB_OUTPUT"
+            echo "no_upload=${{ github.event.client_payload.no_upload || false }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "project=${{ github.event.inputs.project }}" >> "$GITHUB_OUTPUT"
+            echo "privacy=${{ github.event.inputs.privacy }}" >> "$GITHUB_OUTPUT"
+            echo "no_upload=${{ github.event.inputs.no_upload }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Setup Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install edge-tts elevenlabs playwright
+
+      - name: Install Chromium (headless) + system libs
+        run: python -m playwright install --with-deps chromium
+
+      - name: Build + render (+ upload)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SOCIAL_UPLOAD_JSON: ${{ secrets.SOCIAL_UPLOAD_JSON }}
+          YT_CHANNEL_ID: ${{ secrets.YT_CHANNEL_ID }}
+          HYPERFRAMES_NO_TELEMETRY: "1"
+        run: |
+          EXTRA=""
+          if [ "${{ steps.cfg.outputs.no_upload }}" = "true" ]; then EXTRA="--no-upload"; fi
+          python ci_build_video.py "slide/${{ steps.cfg.outputs.project }}" \
+            --privacy "${{ steps.cfg.outputs.privacy }}" $EXTRA
+
+      - name: Upload video artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: video-${{ steps.cfg.outputs.project }}
+          path: |
+            slide/${{ steps.cfg.outputs.project }}/output/final_video.mp4
+            slide/${{ steps.cfg.outputs.project }}/output/hf_render.log
+            upload-result.json
+          if-no-files-found: warn
+          retention-days: 14

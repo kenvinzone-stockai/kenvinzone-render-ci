@@ -1,0 +1,175 @@
+{
+  "date": "28/10/2026",
+  "title_html": "BÁO CÁO NHANH VĨ MÔ<br/>&amp; BIAS NGÀY",
+  "regime": "TRUNG LẬP",
+  "score": -6.77,
+  "history": [
+    [
+      "26/10",
+      -2.1
+    ],
+    [
+      "27/10",
+      -4.79
+    ],
+    [
+      "28/10",
+      -6.77
+    ]
+  ],
+  "trend_tag": "3 phiên liên tiếp xấu đi",
+  "forces": [
+    {
+      "key": "usd",
+      "label": "Áp lực USD",
+      "value": -7.06,
+      "color": "#ef4444"
+    },
+    {
+      "key": "flows",
+      "label": "Dòng tiền & xu hướng",
+      "value": -2.45,
+      "color": "#f87171"
+    },
+    {
+      "key": "gold_spec",
+      "label": "Yếu tố riêng của Vàng",
+      "value": -2.72,
+      "color": "#fb923c"
+    },
+    {
+      "key": "rates",
+      "label": "Lãi suất thực",
+      "value": 3.33,
+      "color": "#4ade80"
+    },
+    {
+      "key": "m2",
+      "label": "Thanh khoản M2",
+      "value": 2.32,
+      "color": "#38bdf8"
+    },
+    {
+      "key": "risk",
+      "label": "Khẩu vị rủi ro",
+      "value": 1.64,
+      "color": "#c084fc"
+    }
+  ],
+  "stress": "HY OAS +2.79σ · MOVE ~98",
+  "gamma": {
+    "axis": [
+      350,
+      380
+    ],
+    "net_gex_m": -19.8,
+    "call": {
+      "gld": 375,
+      "xau": 4157
+    },
+    "flip": {
+      "gld": 370.03,
+      "xau": 4102
+    },
+    "spot": {
+      "gld": 367.8,
+      "xau": 4077.7
+    },
+    "put": {
+      "gld": 355,
+      "xau": 3936
+    }
+  },
+  "scenarios": [
+    {
+      "key": "s_base",
+      "pct": 55,
+      "color": "#fbbf24",
+      "name": "Giằng co trong biên",
+      "desc": "Dao động giữa Put Wall <b>355</b> (≈<b>3,936</b>) và Call Wall <b>375</b> (≈<b>4,157</b>)"
+    },
+    {
+      "key": "s_down",
+      "pct": 25,
+      "color": "#f87171",
+      "name": "Phá vỡ giảm",
+      "desc": "USD &amp; lãi suất thực tăng lại, thủng <b>355</b> (≈<b>3,936</b>) → bán tháo"
+    },
+    {
+      "key": "s_up",
+      "pct": 20,
+      "color": "#4ade80",
+      "name": "Trú ẩn an toàn bứt phá",
+      "desc": "Căng thẳng tín dụng lan sang cổ phiếu, vượt Flip <b>370</b> (≈<b>4,102</b>)"
+    }
+  ],
+  "actions": [
+    {
+      "icon": "⇆",
+      "color": "#fbbf24",
+      "title": "Giữ trung tính trong biên",
+      "desc": "<b>355–375</b> GLD · ≈ <b>3,936–4,157</b> XAUUSD"
+    },
+    {
+      "icon": "▲",
+      "color": "#4ade80",
+      "title": "Điều kiện mua lại",
+      "desc": "Đóng cửa vững trên Gamma Flip <b>370.03</b> (≈ <b>4,102</b>)"
+    },
+    {
+      "icon": "▼",
+      "color": "#f87171",
+      "title": "Rủi ro cần tránh",
+      "desc": "Thủng Put Wall <b>355</b> (≈ <b>3,936</b>) → bán tháo do Gamma âm"
+    }
+  ],
+  "anchors": {
+    "score": "âm sáu phẩy",
+    "trend": "phiên thứ ba",
+    "neutral": "Trung Lập",
+    "usd": "âm bảy phẩy",
+    "flows": "âm hai phẩy bốn",
+    "gold_spec": "âm hai phẩy bảy",
+    "counterweight": "Đối trọng",
+    "rates": "dương ba phẩy",
+    "m2": "dương hai phẩy ba",
+    "risk": "dương một phẩy",
+    "stress": "căng thẳng tín dụng",
+    "gex": "Net GEX",
+    "gex_value": "âm mười chín",
+    "spot": "Giá GLD",
+    "spot_xau": "tương đương khoảng bốn nghìn không",
+    "flip": "mốc đảo chiều",
+    "put": "Put Wall",
+    "call": "Call Wall",
+    "vol": "Trong Gamma Âm",
+    "s_base": "năm mươi lăm phần",
+    "s_down": "hai mươi lăm phần",
+    "s_up": "hai mươi phần",
+    "act_neutral": "giữ trung tính",
+    "act_buy": "đóng cửa",
+    "aurora": "AURORA",
+    "follow": "Hãy follow"
+  },
+  "sfx_ticks": [
+    "usd",
+    "flows",
+    "gold_spec",
+    "rates",
+    "m2",
+    "risk",
+    "spot",
+    "flip",
+    "put",
+    "call",
+    "s_base",
+    "s_down",
+    "s_up"
+  ],
+  "sfx_impacts": [
+    "score",
+    "gex"
+  ],
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}

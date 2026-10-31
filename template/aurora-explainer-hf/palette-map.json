@@ -1,0 +1,21 @@
+{
+ "hex": {
+  "#3b82f6": "primary",
+  "#60a5fa": "primary_light",
+  "#93c5fd": "primary_light",
+  "#dbeafe": "primary_light",
+  "#1e3a8a": "primary_dark",
+  "#f5c451": "accent",
+  "#ffe08a": "accent_light",
+  "#fde68a": "accent_light",
+  "#38d5e7": "info",
+  "#1a1205": "on_accent"
+ },
+ "rgb": {
+  "59,130,246": "primary",
+  "96,165,250": "primary_light",
+  "37,99,235": "primary",
+  "245,196,81": "accent",
+  "56,213,231": "info"
+ }
+}

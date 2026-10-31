@@ -1,0 +1,100 @@
+{
+  "template": "vnindex-daily-hf",
+  "date": "27/10/2026",
+  "weekday": "Thứ Ba",
+  "handle": "@Kechuyen.Chungkhoan",
+  "score": 47,
+  "score_am": 64,
+  "status": "WATCHLIST — THEO DÕI",
+  "status_pct": "55%",
+
+  "cover": {
+    "eyebrow": "Chứng khoán hôm nay",
+    "title_lines": ["Thang máy lên", "rồi xuống lại"],
+    "sub_html": "Sáng lên <b>1772</b>, chiều quay về <b>1761</b>",
+    "chips": [
+      {"icon": "📈", "label": "VNI", "value": "1761"},
+      {"icon": "◎", "label": "Score", "value": "47"},
+      {"icon": "⚡", "label": "Điểm", "value": "64 → 47", "hot": true}
+    ],
+    "cta": "Mốc 1758,6 giữ được không?"
+  },
+
+  "compare": [
+    {"label": "Score", "am": "64", "pm": "47", "delta": "−17", "tone": "down"},
+    {"label": "Giá VNI", "am": "1772,41", "pm": "1761,12", "delta": "−11,29", "tone": "down"},
+    {"label": "Vol ratio", "am": "1,22", "pm": "0", "delta": "ghi bằng 0", "tone": "flat"}
+  ],
+  "range_pill": "BIÊN 1758,6 – 1766,98 · mất 1758,6 là vô hiệu",
+
+  "journey": {
+    "axis": [1752, 1786],
+    "path": [
+      {"label": "Tham chiếu", "price": 1767.73},
+      {"label": "11:01", "price": 1772.41},
+      {"label": "15:01", "price": 1761.12}
+    ],
+    "resistance": {"price": 1781.45, "label": "Cản · đỉnh hôm qua 1781,45"},
+    "zone": {"lo": 1756, "hi": 1762, "label": "Vùng KB 40% sáng: 1756–1762"},
+    "am_card": {"time": "11:01 · SÁNG", "meta": "Score 64 · Vol ×1,22", "text": "Gap lên đỉnh 20 phiên <b>1772,41</b>, sát cản 1781,45"},
+    "warn_card": "Báo cáo sáng: <b>40%</b> điều chỉnh về <b>1756–1762</b>",
+    "pm_card": {"time": "15:01 · CHIỀU", "meta": "Score 47 · Vol ghi bằng 0", "text": "Về <b>1761,12</b> — đúng vùng kịch bản sáng"},
+    "twist": "Đúng kịch bản sáng — nhưng volume = 0, chưa kiểm chứng lực bán"
+  },
+
+  "subscores": [
+    {"label": "Kỹ thuật", "am": 20, "pm": 16, "max": 30},
+    {"label": "Timing", "am": 10, "pm": 8, "max": 20},
+    {"label": "Dòng tiền", "am": 14, "pm": 6, "max": 20},
+    {"label": "Sector", "am": 9, "pm": 7, "max": 15},
+    {"label": "Rủi ro", "am": 11, "pm": 10, "max": 15}
+  ],
+  "subscore_note": "Dòng tiền sụt mạnh nhất vì volume chiều ghi bằng 0",
+
+  "timeframes": [
+    {"tf": "W1", "name": "Tuần", "trend": "bullish", "badge": "Bullish", "detail": "EMA Full Bullish · MACD bearish"},
+    {"tf": "3D", "name": "3 ngày", "trend": "bullish", "badge": "Bullish", "detail": "EMA Mixed · MACD bearish"},
+    {"tf": "D1", "name": "Ngày", "trend": "neutral", "badge": "Trung tính", "detail": "RSI <b>56,14 → 53,53</b> · sát EMA50 1762,36"},
+    {"tf": "M15", "name": "15 phút", "trend": "bearish", "badge": "Nén biên", "detail": "BB Squeeze · RSI vào vùng bearish"}
+  ],
+  "timeframe_note": "Thiếu volume nên chưa xác nhận được hướng đi",
+
+  "levels": {
+    "axis": [1742, 1785],
+    "price": 1761.12,
+    "price_label": "Giá chiều 1.761,12",
+    "items": [
+      {"price": 1781.45, "label": "Đỉnh hôm qua", "kind": "res"},
+      {"price": 1766.98, "label": "Swing high", "kind": "res"},
+      {"price": 1763.55, "label": "Close hôm qua", "kind": "res"},
+      {"price": 1762.36, "label": "EMA50 D1", "kind": "res"},
+      {"price": 1758.6, "label": "Low 20 bar", "kind": "sup", "key": true},
+      {"price": 1755.88, "label": "EMA200 D1", "kind": "sup"},
+      {"price": 1745.67, "label": "EMA20 D1", "kind": "sup"}
+    ],
+    "up": "Vượt 1766,98 → 1775–1781",
+    "down": "Mất 1758,6 → vô hiệu"
+  },
+
+  "scenarios": [
+    {"pct": 40, "tone": "flat", "name": "Giằng co đi ngang", "desc": "Dao động <b>1759–1767</b>, chưa có volume đột biến"},
+    {"pct": 35, "tone": "up", "name": "Bứt phá sau squeeze", "desc": "Vượt <b>1766,98</b> kèm volume → <b>1775–1781</b>"},
+    {"pct": 25, "tone": "down", "name": "Mất hỗ trợ (suy luận)", "desc": "Mất <b>1758,6</b> → hướng về EMA200 <b>1755,88</b>"}
+  ],
+
+  "actions": [
+    {"tone": "urgent", "title": "Chưa mở vị thế mới", "desc": "Chờ breakout khỏi squeeze M15 kèm volume"},
+    {"tone": "positive", "title": "Đang nắm giữ", "desc": "Có thể giữ, dừng lỗ quanh <b>1758–1759</b>"},
+    {"tone": "urgent", "title": "Margin", "desc": "Hạn chế tăng thêm, giảm nếu mất <b>1759</b>"}
+  ],
+
+  "outro": {
+    "up": "Vượt 1766,98 kèm volume mới mở đường 1775–1781",
+    "down": "Mất 1758,6 kèm volume bán — thesis vô hiệu",
+    "promise": "Hẹn anh em bản tin tổng hợp ngày mai",
+    "follow_handle": "@kenvinzone"
+  },
+
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}

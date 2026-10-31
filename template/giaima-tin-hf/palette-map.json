@@ -1,0 +1,15 @@
+{
+ "hex": {
+  "#3b82f6": "primary",
+  "#60a5fa": "primary_light",
+  "#93c5fd": "primary_light",
+  "#f5c451": "accent",
+  "#fde68a": "accent_light"
+ },
+ "rgb": {
+  "59,130,246": "primary",
+  "96,165,250": "primary_light",
+  "245,196,81": "accent",
+  "251,191,36": "accent"
+ }
+}

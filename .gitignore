@@ -1,0 +1,22 @@
+# Secrets — NEVER commit (reconstructed at runtime from GitHub Secrets)
+config/social-upload.json
+config/tts.json
+
+# Render outputs / work dirs
+slide/**/output/
+**/output/hf/
+**/output/hf_*/
+*.mp4
+*.mp3
+upload-result.json
+
+# Python / Node
+__pycache__/
+*.pyc
+node_modules/
+*.bak
+*.bak-*
+
+# OS
+.DS_Store
+Thumbs.db
