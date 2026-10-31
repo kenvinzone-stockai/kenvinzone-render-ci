@@ -1,0 +1,33 @@
+name: tg-chatid
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  getid:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get chat id
+        env:
+          TG: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: |
+          mkdir -p ci-logs
+          OUT=ci-logs/tg-chatid.txt
+          echo "== getMe ==" > "$OUT"
+          curl -s "https://api.telegram.org/bot$TG/getMe" | python3 -c "import sys,json;d=json.load(sys.stdin);print('bot ok=',d.get('ok'),'user=',d.get('result',{}).get('username'))" >> "$OUT" 2>&1 || echo "getMe fail" >> "$OUT"
+          echo "== chat ids ==" >> "$OUT"
+          curl -s "https://api.telegram.org/bot$TG/getUpdates" > /tmp/upd.json
+          python3 -c "import json; d=json.load(open('/tmp/upd.json')); rows=[(m.get('chat') or {}) for u in d.get('result',[]) for m in [u.get('message') or u.get('edited_message') or {}]]; rows=[c for c in rows if c.get('id')]; [print('chat_id=%s | name=%s | user=%s' % (c['id'], c.get('first_name') or c.get('title') or '', c.get('username') or '')) for c in rows] if rows else print('NO_MESSAGES - hay nhan mot tin cho bot roi chay lai')" >> "$OUT" 2>&1 || echo "getUpdates fail" >> "$OUT"
+          cat "$OUT"
+      - name: Commit
+        if: always()
+        run: |
+          git config user.name "ci-bot"
+          git config user.email "ci@kenvinzone.local"
+          git add ci-logs/tg-chatid.txt
+          git commit -m "tg chat id" || true
+          git push || true
