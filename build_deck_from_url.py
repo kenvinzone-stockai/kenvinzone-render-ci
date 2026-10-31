@@ -14,7 +14,7 @@ In ra PROJECT=<tên thư mục> ở dòng cuối để workflow lấy.
 Env: GEMINI_API_KEY (bắt buộc).
 """
 from __future__ import annotations
-import argparse, json, os, re, subprocess, sys, unicodedata, urllib.request, urllib.parse
+import argparse, json, os, re, subprocess, sys, unicodedata, urllib.request, urllib.parse, urllib.error
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -70,8 +70,7 @@ def fetch_article(url):
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (KenvinZone bot)"})
     with urllib.request.urlopen(req, timeout=40) as r:
         html = r.read().decode("utf-8", "replace")
-    # strip scripts/styles, tags -> text
-    html = re.sub(r"(?is)<(script|style|noscript)[^>]*>.*?</\1>", " ", html)
+    html = re.sub(r("(?is)<(script|style|noscript)[^>]*>.*?</\1>"), " ", html)
     text = re.sub(r"(?s)<[^>]+>", " ", html)
     text = re.sub(r"&[a-z]+;", " ", text)
     text = re.sub(r"\s+", " ", text).strip()
@@ -79,7 +78,6 @@ def fetch_article(url):
 
 
 def resolve_model(api_key):
-    """Hỏi danh sách model mà khóa truy cập được, chọn model flash sinh text tốt nhất."""
     if os.environ.get("KZ_BRAIN_MODEL"):
         return os.environ["KZ_BRAIN_MODEL"]
     u = "https://generativelanguage.googleapis.com/v1beta/models"
@@ -114,27 +112,30 @@ def gemini(system, user, api_key, model):
         "contents": [{"parts": [{"text": user}]}],
         "generationConfig": {"responseMimeType": "application/json", "temperature": 0.6, "maxOutputTokens": 8192},
     }
-    u = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+    u = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={urllib.parse.quote(api_key)}"
     req = urllib.request.Request(u, data=json.dumps(body).encode(), method="POST",
-                                 headers={"Content-Type": "application/json", "x-goog-api-key": api_key})
-    with urllib.request.urlopen(req, timeout=120) as r:
-        d = json.loads(r.read())
-    return d["candidates"][0]["content"]["parts"][0]["text"]
+                                 headers={"Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=120) as r:
+            d = json.loads(r.read())
+    except urllib.error.HTTPError as e:
+        detail = e.read().decode("utf-8", "replace")[:600]
+        raise RuntimeError(f"Gemini HTTP {e.code} model={model}: {detail}")
+    cand = (d.get("candidates") or [{}])[0]
+    parts = (cand.get("content") or {}).get("parts") or [{}]
+    return parts[0].get("text", "")
 
 
 def assemble(deck, proj, date_full, out_dir):
     out_dir.mkdir(parents=True, exist_ok=True)
-    # hf-data.json
     hf = {"template": "giaima-tin-hf", "date": date_full, "handle": "@kechuyen.chungkhoan"}
     for k in ["source", "hook", "s1", "s2", "s3", "s4", "s5", "s6", "s7", "outro"]:
         hf[k] = deck.get(k, {})
     hf["audio_offset"] = 1.0
     hf["outro_hold"] = 3.6
     (out_dir / "hf-data.json").write_text(json.dumps(hf, ensure_ascii=False, indent=2), encoding="utf-8")
-    # script-90s.txt
     lines = [str(x).strip() for x in deck.get("script_lines", [])]
     (out_dir / "script-90s.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    # upload-metadata.json
     y = deck.get("youtube", {})
     title = str(y.get("title", "")).strip()
     if not title.lstrip().startswith("[Giải mã]"):
@@ -151,17 +152,14 @@ def assemble(deck, proj, date_full, out_dir):
         "source": src,
     }
     (out_dir / "upload-metadata.json").write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
-    # preview-settings.json
     ps = {"scriptLines": lines, "slides": {"scriptLines": lines},
           "bgm": {"mode": "custom", "volume": 0.2, "custom": {"path": BGM_REL, "url": f"/slide/{proj}/{BGM_REL}"}},
           "subtitles": {"enabled": True}, "heroTitle": {"mode": "default"},
           "backgroundFx": "candlestick-diag", "visuals": {"backgroundFx": "candlestick-diag"}}
     (out_dir / "preview-settings.json").write_text(json.dumps(ps, ensure_ascii=False, indent=2), encoding="utf-8")
-    # source/source.md
     (out_dir / "source").mkdir(exist_ok=True)
     (out_dir / "source" / "source.md").write_text(
         f"# {src.get('headline','')}\n- Trang: {src.get('site','')}\n- Tác giả: {src.get('author','')}\n- Ngày: {src.get('date','')}\n- URL: {src.get('url','')}\n", encoding="utf-8")
-    # bgm: copy canonical neu co
     canon = REPO / "assets" / "bgm" / "20260624-151812_Write_You.mp3"
     dst = out_dir / BGM_REL
     if canon.exists():
@@ -172,9 +170,9 @@ def assemble(deck, proj, date_full, out_dir):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--url", required=True)
-    ap.add_argument("--date", help="DD/MM/YYYY (mặc định hôm nay giờ VN)")
-    ap.add_argument("--slug", help="chude ngắn không dấu (mặc định suy từ tiêu đề)")
-    ap.add_argument("--title", help="tiêu đề cover do người dùng ép (giữ nguyên văn)")
+    ap.add_argument("--date", help="DD/MM/YYYY")
+    ap.add_argument("--slug")
+    ap.add_argument("--title")
     a = ap.parse_args()
     key = os.environ.get("GEMINI_API_KEY", "").strip()
     if not key:
@@ -182,18 +180,15 @@ def main():
     now = today_vn()
     date_full = a.date or now.strftime("%d/%m/%Y")
     dd, mm = date_full.split("/")[0].zfill(2), date_full.split("/")[1].zfill(2)
-
     print(f"=== [1/3] Đọc bài: {a.url} ===", flush=True)
     article = fetch_article(a.url)
     print(f"  lấy được {len(article)} ký tự", flush=True)
     model = resolve_model(key)
     print(f"  dùng model: {model}", flush=True)
-
     user = f"LINK: {a.url}\n"
     if a.title:
         user += f"TIÊU ĐỀ COVER NGƯỜI DÙNG ÉP (giữ nguyên văn, chia 2 dòng hợp lý): {a.title}\n"
     user += f"NGÀY ĐĂNG/NGÀY LÀM: {date_full}\n\nNỘI DUNG BÀI (đã rút tag):\n{article}"
-
     proj = None
     last_err = ""
     for attempt in range(1, 4):
