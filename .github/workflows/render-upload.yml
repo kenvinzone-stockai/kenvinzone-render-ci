@@ -24,6 +24,9 @@ on:
   repository_dispatch:
     types: [render-deck]
 
+permissions:
+  contents: write
+
 concurrency:
   group: render-${{ github.event.inputs.project || github.event.client_payload.project }}
   cancel-in-progress: false
@@ -68,16 +71,29 @@ jobs:
         run: python -m playwright install --with-deps chromium
 
       - name: Build + render (+ upload)
+        id: build
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           SOCIAL_UPLOAD_JSON: ${{ secrets.SOCIAL_UPLOAD_JSON }}
           YT_CHANNEL_ID: ${{ secrets.YT_CHANNEL_ID }}
           HYPERFRAMES_NO_TELEMETRY: "1"
         run: |
+          set -o pipefail
           EXTRA=""
           if [ "${{ steps.cfg.outputs.no_upload }}" = "true" ]; then EXTRA="--no-upload"; fi
           python ci_build_video.py "slide/${{ steps.cfg.outputs.project }}" \
-            --privacy "${{ steps.cfg.outputs.privacy }}" $EXTRA
+            --privacy "${{ steps.cfg.outputs.privacy }}" $EXTRA 2>&1 | tee ci-run.log
+
+      - name: Commit run log to repo
+        if: always()
+        run: |
+          mkdir -p ci-logs
+          cp ci-run.log "ci-logs/run-${{ github.run_id }}.log" 2>/dev/null || echo "(no ci-run.log produced)" > "ci-logs/run-${{ github.run_id }}.log"
+          git config user.name "ci-bot"
+          git config user.email "ci@kenvinzone.local"
+          git add ci-logs/
+          git commit -m "ci log run ${{ github.run_id }}" || true
+          git push || true
 
       - name: Upload video artifact
         if: always()
