@@ -77,6 +77,7 @@ jobs:
         id: build
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TTS_CONFIG_JSON: ${{ secrets.TTS_CONFIG_JSON }}
           SOCIAL_UPLOAD_JSON: ${{ secrets.SOCIAL_UPLOAD_JSON }}
           YT_CHANNEL_ID: ${{ secrets.YT_CHANNEL_ID }}
           HYPERFRAMES_NO_TELEMETRY: "1"
