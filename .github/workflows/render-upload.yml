@@ -70,6 +70,9 @@ jobs:
       - name: Install Chromium (headless) + system libs
         run: python -m playwright install --with-deps chromium
 
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
       - name: Build + render (+ upload)
         id: build
         env:
