@@ -1,0 +1,51 @@
+name: build-deck
+
+# Test bộ não: 1 link bài -> deck (hf-data + script + metadata). KHÔNG render.
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "Link bài báo nguồn"
+        required: true
+        type: string
+      date:
+        description: "Ngày DD/MM/YYYY (để trống = hôm nay)"
+        required: false
+        type: string
+      title:
+        description: "Tiêu đề cover ép (giữ nguyên văn, tùy chọn)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build deck (brain)
+        id: brain
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          set -o pipefail
+          CMD=(python build_deck_from_url.py --url "${{ github.event.inputs.url }}")
+          if [ -n "${{ github.event.inputs.date }}" ]; then CMD+=(--date "${{ github.event.inputs.date }}"); fi
+          if [ -n "${{ github.event.inputs.title }}" ]; then CMD+=(--title "${{ github.event.inputs.title }}"); fi
+          "${CMD[@]}" 2>&1 | tee brain.log
+      - name: Commit result
+        if: always()
+        run: |
+          mkdir -p ci-logs
+          cp brain.log "ci-logs/brain-${{ github.run_id }}.log" 2>/dev/null || true
+          git config user.name "ci-bot"
+          git config user.email "ci@kenvinzone.local"
+          git add slide/ ci-logs/ 2>/dev/null || true
+          git commit -m "brain build deck ${{ github.run_id }}" || true
+          git push || true
