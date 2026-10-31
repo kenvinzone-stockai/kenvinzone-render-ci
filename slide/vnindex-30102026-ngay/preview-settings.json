@@ -1,0 +1,135 @@
+{
+  "subtitles": {
+    "enabled": true,
+    "color": "#92f93e",
+    "fontSize": 18,
+    "bottom": 60,
+    "maxLines": 1
+  },
+  "backgroundFx": "candlestick",
+  "bgm": {
+    "mode": "custom",
+    "preset": "ambient",
+    "volume": 0.2,
+    "custom": {
+      "name": "Write_You.mp3",
+      "path": "preview-assets/bgm/20260624-151812_Write_You.mp3",
+      "url": "/slide/vnindex-30102026-ngay/preview-assets/bgm/20260624-151812_Write_You.mp3"
+    }
+  },
+  "scriptLines": [
+    "Chiếc lò xo bị ép sát đáy từ sáng, chiều bật lên hơn bảy điểm rồi khựng trước ngưỡng 1747 — VNINDEX chốt 1742,31.",
+    "Thứ Sáu 30/10, điểm KenvinZone nhích từ 46 sáng lên 48 lúc chốt ngày, nhãn từ tránh vào mới lên theo dõi.",
+    "Sáng VNINDEX 1735, giảm hơn 2% từ đỉnh 1773, thanh khoản chỉ 0,78 lần trung bình, giá áp sát swing low 1729,2.",
+    "Ranh giới báo cáo sáng đặt ra là 1729,2: thủng kèm khối lượng là vô hiệu, giữ vững thì hồi về 1747 đến 1755.",
+    "Đến chiều mốc ấy còn nguyên: đáy phiên 1734,63 nằm trên 1729,2, giá hồi 1742,31 nhưng vẫn dưới EMA20 1747,78.",
+    "Kỹ thuật cộng hai, rủi ro cộng một, dòng tiền trừ một; timing và sector đứng yên, tổng cộng thêm hai điểm.",
+    "RSI ngày nhích từ 45,36 lên 47,06, MACD hist dương 5,59, giá còn dưới cả ba EMA; tuần và ba ngày còn nền tăng.",
+    "M15 chiều chỉ còn doji volume thấp, chưa phá đỉnh 20 nến 1742,9; swing low 1730,93 là mốc quan trọng nhất cần canh.",
+    "Phiên tới: 45% hồi thất bại, thủng 1730,93 về 1715 đến 1720; 35% đi ngang 1730 đến 1748; 20% lấy lại EMA20, suy luận.",
+    "Anh em chưa mở mới, ai dùng margin nên giảm tỷ trọng — hẹn anh em bản tin tổng hợp thứ Hai tuần sau!"
+  ],
+  "transitionSounds": [
+    "gong",
+    "rise",
+    "bass",
+    "chime",
+    "sweep",
+    "boom",
+    "chord",
+    "ascending",
+    "dramatic",
+    "rise"
+  ],
+  "revealSounds": [
+    "ping",
+    "pop",
+    "chime",
+    "click",
+    "bubble",
+    "sparkle",
+    "blip",
+    "tick",
+    "bell",
+    "ping"
+  ],
+  "slides": {
+    "deletedIds": [],
+    "scriptLines": [
+      "Chiếc lò xo bị ép sát đáy từ sáng, chiều bật lên hơn bảy điểm rồi khựng trước ngưỡng 1747 — VNINDEX chốt 1742,31.",
+      "Thứ Sáu 30/10, điểm KenvinZone nhích từ 46 sáng lên 48 lúc chốt ngày, nhãn từ tránh vào mới lên theo dõi.",
+      "Sáng VNINDEX 1735, giảm hơn 2% từ đỉnh 1773, thanh khoản chỉ 0,78 lần trung bình, giá áp sát swing low 1729,2.",
+      "Ranh giới báo cáo sáng đặt ra là 1729,2: thủng kèm khối lượng là vô hiệu, giữ vững thì hồi về 1747 đến 1755.",
+      "Đến chiều mốc ấy còn nguyên: đáy phiên 1734,63 nằm trên 1729,2, giá hồi 1742,31 nhưng vẫn dưới EMA20 1747,78.",
+      "Kỹ thuật cộng hai, rủi ro cộng một, dòng tiền trừ một; timing và sector đứng yên, tổng cộng thêm hai điểm.",
+      "RSI ngày nhích từ 45,36 lên 47,06, MACD hist dương 5,59, giá còn dưới cả ba EMA; tuần và ba ngày còn nền tăng.",
+      "M15 chiều chỉ còn doji volume thấp, chưa phá đỉnh 20 nến 1742,9; swing low 1730,93 là mốc quan trọng nhất cần canh.",
+      "Phiên tới: 45% hồi thất bại, thủng 1730,93 về 1715 đến 1720; 35% đi ngang 1730 đến 1748; 20% lấy lại EMA20, suy luận.",
+      "Anh em chưa mở mới, ai dùng margin nên giảm tỷ trọng — hẹn anh em bản tin tổng hợp thứ Hai tuần sau!"
+    ],
+    "transitionSounds": [
+      "gong",
+      "rise",
+      "bass",
+      "chime",
+      "sweep",
+      "boom",
+      "chord",
+      "ascending",
+      "dramatic",
+      "rise"
+    ],
+    "revealSounds": [
+      "ping",
+      "pop",
+      "chime",
+      "click",
+      "bubble",
+      "sparkle",
+      "blip",
+      "tick",
+      "bell",
+      "ping"
+    ]
+  },
+  "theme": {
+    "preset": "creator-pink-blue",
+    "variables": {
+      "--primary": "#ea4c89",
+      "--primary-light": "#ff9ac2",
+      "--primary-dark": "#8f1d50",
+      "--accent": "#4a90e2",
+      "--accent-light": "#9bd3ff",
+      "--info": "#50c878",
+      "--success": "#50c878",
+      "--bg-dark": "#07030d"
+    },
+    "customVariables": {
+      "--primary": "#f59e0b",
+      "--primary-light": "#fcd34d",
+      "--primary-dark": "#92400e",
+      "--accent": "#94a3b8",
+      "--accent-light": "#cbd5e1",
+      "--info": "#38bdf8",
+      "--success": "#22c55e",
+      "--bg-dark": "#020617"
+    }
+  },
+  "visuals": {
+    "colorMode": "dark",
+    "backgroundColor": "#07030d",
+    "gridEnabled": false,
+    "gridLight": "#4a90e2",
+    "iconGlow": "#ea4c89",
+    "iconBacklight": "#4a90e2",
+    "iconLight": "#50c878",
+    "backgroundFx": "candlestick-diag",
+    "customValues": {
+      "backgroundColor": "#020617",
+      "gridLight": "#94a3b8",
+      "iconGlow": "#f59e0b",
+      "iconBacklight": "#94a3b8",
+      "iconLight": "#f59e0b"
+    }
+  }
+}
