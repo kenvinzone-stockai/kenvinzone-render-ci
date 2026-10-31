@@ -1,0 +1,85 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "27/10/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "Báo Đầu tư Chứng khoán",
+    "short": "ĐTCK",
+    "author": "Phan Hằng",
+    "headline": "Quãng trầm của các công ty chứng khoán",
+    "date": "27/10/2026",
+    "url": "tinnhanhchungkhoan.vn/quang-tram-cua-cac-cong-ty-chung-khoan"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": ["Quãng Trầm", "Của Các Công Ty Chứng Khoán"],
+    "sub": "Lợi nhuận Q3 giảm mạnh nhưng phân hóa rõ rệt",
+    "chips": [
+      {"icon": "↘", "text": "LNTT -42%", "tone": "down"},
+      {"icon": "⑂", "text": "Phân hóa mạnh", "tone": "gold"},
+      {"icon": "◆", "text": "Margin là trụ cột", "tone": "blue"}
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Lợi nhuận quý III của ngành chứng khoán sụt giảm mạnh, nhưng bức tranh giữa các công ty <mark>phân hóa rất rõ rệt</mark>."
+  },
+  "s2": {
+    "title_lines": ["Bức tranh chung", "ảm đạm đến đâu?"],
+    "stats": [
+      {"value": 11000, "decimals": 0, "unit": "tỷ", "label": "LNTT 81 CTCK quý III", "badge": "-42% YoY", "tone": "gold", "beat": 1},
+      {"value": 23, "decimals": 0, "unit": "/81", "label": "Công ty báo lỗ", "tone": "down", "beat": 2},
+      {"value": -57.6, "decimals": 1, "unit": "%", "label": "Giá trị giao dịch bình quân (YoY)", "tone": "down", "beat": 2}
+    ],
+    "note": "58 công ty có lãi, 23 công ty lỗ; VN-Index cuối Q3 giảm 4,9%, thanh khoản teo tóp."
+  },
+  "s3": {
+    "title_lines": ["Sự phân hóa", "thể hiện ra sao?"],
+    "lead": "Kẻ thắng — người thua",
+    "bars": [
+      {"label": "TCBS", "display": "+6% · lãi ~2.152 tỷ", "value": 6, "beat": 1},
+      {"label": "VPBankS", "display": "-64%", "value": -64, "beat": 2},
+      {"label": "VIX", "display": "-92,9%", "value": -92.9, "beat": 2}
+    ],
+    "callout": {"value": 41, "suffix": "%", "text": "lợi nhuận ngành nằm ở top 3 TCBS · SSI · VPS", "beat": 1}
+  },
+  "s4": {
+    "title_lines": ["Dịch chuyển", "giữa các mảng?"],
+    "cards": [
+      {"big": "12.300 tỷ", "title": "Margin — trụ cột", "text": "Lãi cho vay +34% YoY, quý thứ 11 liên tiếp tăng"},
+      {"big": "≈ hòa vốn", "title": "Môi giới teo tóp", "text": "BSI: doanh thu môi giới chỉ đủ bù chi phí"},
+      {"big": "×9,8", "title": "IB là điểm sáng", "text": "HDS: doanh thu ngân hàng đầu tư 9T; tự doanh là biến số lớn nhất"}
+    ]
+  },
+  "s5": {
+    "title_lines": ["Ai thắng", "ai thua?"],
+    "lights": [
+      {"color": "green", "tag": "THẮNG THẾ", "title": "Nhóm NH mẹ & IB bứt phá", "text": "HDS, ABS tăng mạnh nhờ ngân hàng đầu tư & trái phiếu DN"},
+      {"color": "yellow", "tag": "LƯU Ý", "title": "Phụ thuộc thu nhập cho vay", "text": "Cơ cấu doanh thu kém đa dạng, dựa nhiều vào margin"},
+      {"color": "red", "tag": "KHÓ KHĂN", "title": "Phụ thuộc môi giới & tự doanh", "text": "Chịu thiệt hại nặng khi thanh khoản giảm (VIX, VPBankS)"}
+    ]
+  },
+  "s6": {
+    "title_lines": ["Vì sao", "phân hóa lớn vậy?"],
+    "chain": [
+      {"title": "Ngân hàng hóa ngành CK", "text": "Xu hướng chính của ngành", "beat": 1},
+      {"title": "Cho vay & IB", "text": "trở thành nguồn thu ổn định hơn", "beat": 1},
+      {"title": "CTCK có ngân hàng mẹ vươn lên", "text": "lợi thế nguồn vốn & mạng lưới khách hàng", "beat": 2}
+    ]
+  },
+  "s7": {
+    "title_lines": ["Nhìn cổ phiếu CTCK", "thế nào?"],
+    "items": [
+      {"icon": "check", "title": "Soi cơ cấu doanh thu", "text": "không chỉ nhìn con số lợi nhuận", "beat": 1},
+      {"icon": "check", "title": "Cho vay & IB bền hơn tự doanh", "text": "nguồn thu ổn định hơn qua chu kỳ", "beat": 1},
+      {"icon": "warn", "title": "Đừng phụ thuộc quá mức vào margin", "text": "luôn đặt quản trị rủi ro lên hàng đầu", "beat": 2}
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Quãng trầm phân hóa — ai bền cơ cấu, người đó trụ vững!",
+    "cta": "Theo dõi để giải mã tin tiếp theo"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}

@@ -1,0 +1,133 @@
+{
+  "subtitles": {
+    "enabled": true,
+    "color": "#ffffff",
+    "fontSize": 18,
+    "bottom": 60,
+    "maxLines": 1
+  },
+  "backgroundFx": "candlestick-diag",
+  "bgm": {
+    "mode": "custom",
+    "preset": "ambient",
+    "volume": 0.2,
+    "custom": {
+      "name": "Write_You.mp3",
+      "path": "preview-assets/bgm/20260624-151812_Write_You.mp3",
+      "url": "/slide/giai-ma-tin-tuc-quangtramctck-27-10/preview-assets/bgm/20260624-151812_Write_You.mp3"
+    }
+  },
+  "scriptLines": [
+    "Các công ty chứng khoán vừa trải qua một quãng trầm, khi lợi nhuận quý ba sụt giảm mạnh nhưng phân hóa rất rõ rệt!",
+    "Câu chuyện hôm nay được kể lại từ bài viết trên Báo Đầu tư Chứng khoán, tác giả Phan Hằng, đăng ngày hai mươi bảy tháng mười. Sau nửa đầu năm khá tốt, kết quả kinh doanh của ngành chứng khoán quý ba đã chững lại đáng kể. Điều thú vị là trong quãng trầm này, bức tranh lợi nhuận giữa các công ty lại phân hóa mạnh mẽ.",
+    "Vậy bức tranh chung ảm đạm đến đâu? Tổng lợi nhuận trước thuế của tám mươi mốt công ty chứng khoán chỉ đạt khoảng mười một nghìn tỷ đồng, giảm bốn mươi hai phần trăm so với cùng kỳ. Trong đó có tới hai mươi ba công ty báo lỗ, giữa bối cảnh giá trị giao dịch bình quân toàn thị trường giảm tới năm mươi bảy phẩy sáu phần trăm so với cùng kỳ.",
+    "Vậy sự phân hóa thể hiện ra sao? Ở nhóm dẫn đầu, TCBS vẫn lãi hơn hai nghìn một trăm tỷ đồng và còn tăng trưởng, cùng SSI và VPS chiếm khoảng bốn mươi mốt phần trăm lợi nhuận toàn ngành. Nhưng ở chiều ngược lại, VPBankS giảm tới sáu mươi tư phần trăm, còn VIX thậm chí lao dốc gần chín mươi ba phần trăm lợi nhuận.",
+    "Vậy đâu là sự dịch chuyển giữa các mảng kinh doanh? Thứ nhất, cho vay ký quỹ là trụ cột và gần như là mảng duy nhất còn tăng trưởng, với doanh thu lãi cho vay toàn ngành khoảng mười hai nghìn ba trăm tỷ đồng, tăng quý thứ mười một liên tiếp. Thứ hai, mảng môi giới ngày càng khó sinh lời, khi tại BSI, doanh thu môi giới gần như chỉ đủ bù chi phí. Và thứ ba, tự doanh là biến số lớn nhất, trong khi ngân hàng đầu tư lại là điểm sáng, điển hình là HDS với doanh thu mảng này gấp gần mười lần cùng kỳ.",
+    "Vậy ai thắng ai thua trong quãng trầm này? Đèn xanh là nhóm có ngân hàng mẹ và mảng ngân hàng đầu tư bứt phá, như HDS tăng gấp nhiều lần nhờ trái phiếu doanh nghiệp. Đèn vàng là nhiều công ty phụ thuộc đáng kể vào thu nhập từ cho vay, nên cơ cấu doanh thu kém đa dạng. Còn đèn đỏ là các công ty phụ thuộc môi giới và tự doanh, vốn chịu thiệt hại nặng khi thị trường trầm lắng.",
+    "Vậy vì sao lại có sự phân hóa lớn như vậy? Nguyên nhân chính là xu hướng ngân hàng hóa của ngành, khi cho vay và ngân hàng đầu tư trở thành nguồn thu ổn định hơn. Nhờ đó, các công ty có ngân hàng mẹ với lợi thế về nguồn vốn và mạng lưới khách hàng đang vươn lên mạnh mẽ hơn phần còn lại.",
+    "Vậy nhà đầu tư nên nhìn cổ phiếu ngành chứng khoán thế nào? Thay vì chỉ nhìn con số lợi nhuận, hãy soi vào cơ cấu doanh thu, bởi nguồn thu từ cho vay và ngân hàng đầu tư thường bền hơn tự doanh. Tuy nhiên, cũng cần cảnh giác với mức độ phụ thuộc quá lớn vào cho vay, và luôn đặt quản trị rủi ro lên hàng đầu.",
+    "Và đó là cái kết mở của câu chuyện giải mã tin tức hôm nay, được kể lại từ nguồn Báo Đầu tư Chứng khoán. Nếu bạn thấy hữu ích, hãy theo dõi KenvinZone để cùng nghe những câu chuyện thị trường tiếp theo. Xin nhắc lại, đây chỉ là góc nhìn tham khảo chứ không phải lời khuyên đầu tư, chúc bạn luôn vững vàng trên hành trình của mình!"
+  ],
+  "transitionSounds": [
+    "gong",
+    "rise",
+    "sweep",
+    "chime",
+    "boom",
+    "chord",
+    "bass",
+    "ascending",
+    "dramatic"
+  ],
+  "revealSounds": [
+    "ping",
+    "pop",
+    "chime",
+    "click",
+    "bubble",
+    "sparkle",
+    "blip",
+    "tick",
+    "bell"
+  ],
+  "theme": {
+    "preset": "dark-terminal",
+    "variables": {
+      "--primary": "#3b82f6",
+      "--primary-light": "#60a5fa",
+      "--primary-dark": "#1e3a8a",
+      "--accent": "#f5c451",
+      "--accent-light": "#ffe08a",
+      "--info": "#38bdf8",
+      "--success": "#22c55e",
+      "--bg-dark": "#020617"
+    },
+    "customVariables": {
+      "--primary": "#3b82f6",
+      "--primary-light": "#60a5fa",
+      "--primary-dark": "#1e3a8a",
+      "--accent": "#f5c451",
+      "--accent-light": "#ffe08a",
+      "--info": "#38bdf8",
+      "--success": "#22c55e",
+      "--bg-dark": "#020617"
+    }
+  },
+  "visuals": {
+    "colorMode": "dark",
+    "backgroundColor": "#020617",
+    "gridEnabled": false,
+    "gridLight": "#f5c451",
+    "iconGlow": "#3b82f6",
+    "iconBacklight": "#f5c451",
+    "iconLight": "#60a5fa",
+    "backgroundFx": "candlestick-diag",
+    "customValues": {
+      "backgroundColor": "#020617",
+      "gridLight": "#f5c451",
+      "iconGlow": "#3b82f6",
+      "iconBacklight": "#f5c451",
+      "iconLight": "#60a5fa"
+    }
+  },
+  "slides": {
+    "deletedIds": [],
+    "scriptLines": [
+      "Các công ty chứng khoán vừa trải qua một quãng trầm, khi lợi nhuận quý ba sụt giảm mạnh nhưng phân hóa rất rõ rệt!",
+      "Câu chuyện hôm nay được kể lại từ bài viết trên Báo Đầu tư Chứng khoán, tác giả Phan Hằng, đăng ngày hai mươi bảy tháng mười. Sau nửa đầu năm khá tốt, kết quả kinh doanh của ngành chứng khoán quý ba đã chững lại đáng kể. Điều thú vị là trong quãng trầm này, bức tranh lợi nhuận giữa các công ty lại phân hóa mạnh mẽ.",
+      "Vậy bức tranh chung ảm đạm đến đâu? Tổng lợi nhuận trước thuế của tám mươi mốt công ty chứng khoán chỉ đạt khoảng mười một nghìn tỷ đồng, giảm bốn mươi hai phần trăm so với cùng kỳ. Trong đó có tới hai mươi ba công ty báo lỗ, giữa bối cảnh giá trị giao dịch bình quân toàn thị trường giảm tới năm mươi bảy phẩy sáu phần trăm so với cùng kỳ.",
+      "Vậy sự phân hóa thể hiện ra sao? Ở nhóm dẫn đầu, TCBS vẫn lãi hơn hai nghìn một trăm tỷ đồng và còn tăng trưởng, cùng SSI và VPS chiếm khoảng bốn mươi mốt phần trăm lợi nhuận toàn ngành. Nhưng ở chiều ngược lại, VPBankS giảm tới sáu mươi tư phần trăm, còn VIX thậm chí lao dốc gần chín mươi ba phần trăm lợi nhuận.",
+      "Vậy đâu là sự dịch chuyển giữa các mảng kinh doanh? Thứ nhất, cho vay ký quỹ là trụ cột và gần như là mảng duy nhất còn tăng trưởng, với doanh thu lãi cho vay toàn ngành khoảng mười hai nghìn ba trăm tỷ đồng, tăng quý thứ mười một liên tiếp. Thứ hai, mảng môi giới ngày càng khó sinh lời, khi tại BSI, doanh thu môi giới gần như chỉ đủ bù chi phí. Và thứ ba, tự doanh là biến số lớn nhất, trong khi ngân hàng đầu tư lại là điểm sáng, điển hình là HDS với doanh thu mảng này gấp gần mười lần cùng kỳ.",
+      "Vậy ai thắng ai thua trong quãng trầm này? Đèn xanh là nhóm có ngân hàng mẹ và mảng ngân hàng đầu tư bứt phá, như HDS tăng gấp nhiều lần nhờ trái phiếu doanh nghiệp. Đèn vàng là nhiều công ty phụ thuộc đáng kể vào thu nhập từ cho vay, nên cơ cấu doanh thu kém đa dạng. Còn đèn đỏ là các công ty phụ thuộc môi giới và tự doanh, vốn chịu thiệt hại nặng khi thị trường trầm lắng.",
+      "Vậy vì sao lại có sự phân hóa lớn như vậy? Nguyên nhân chính là xu hướng ngân hàng hóa của ngành, khi cho vay và ngân hàng đầu tư trở thành nguồn thu ổn định hơn. Nhờ đó, các công ty có ngân hàng mẹ với lợi thế về nguồn vốn và mạng lưới khách hàng đang vươn lên mạnh mẽ hơn phần còn lại.",
+      "Vậy nhà đầu tư nên nhìn cổ phiếu ngành chứng khoán thế nào? Thay vì chỉ nhìn con số lợi nhuận, hãy soi vào cơ cấu doanh thu, bởi nguồn thu từ cho vay và ngân hàng đầu tư thường bền hơn tự doanh. Tuy nhiên, cũng cần cảnh giác với mức độ phụ thuộc quá lớn vào cho vay, và luôn đặt quản trị rủi ro lên hàng đầu.",
+      "Và đó là cái kết mở của câu chuyện giải mã tin tức hôm nay, được kể lại từ nguồn Báo Đầu tư Chứng khoán. Nếu bạn thấy hữu ích, hãy theo dõi KenvinZone để cùng nghe những câu chuyện thị trường tiếp theo. Xin nhắc lại, đây chỉ là góc nhìn tham khảo chứ không phải lời khuyên đầu tư, chúc bạn luôn vững vàng trên hành trình của mình!"
+    ],
+    "transitionSounds": [
+      "gong",
+      "rise",
+      "sweep",
+      "chime",
+      "boom",
+      "chord",
+      "bass",
+      "ascending",
+      "dramatic"
+    ],
+    "revealSounds": [
+      "ping",
+      "pop",
+      "chime",
+      "click",
+      "bubble",
+      "sparkle",
+      "blip",
+      "tick",
+      "bell"
+    ]
+  },
+  "heroTitle": {
+    "mode": "preset",
+    "color": "#c2410c"
+  }
+}
