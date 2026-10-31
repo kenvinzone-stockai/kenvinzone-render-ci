@@ -78,13 +78,43 @@ def fetch_article(url):
     return text[:12000]
 
 
-def gemini(system, user, api_key):
+def resolve_model(api_key):
+    """Hỏi danh sách model mà khóa truy cập được, chọn model flash sinh text tốt nhất."""
+    if os.environ.get("KZ_BRAIN_MODEL"):
+        return os.environ["KZ_BRAIN_MODEL"]
+    u = "https://generativelanguage.googleapis.com/v1beta/models"
+    req = urllib.request.Request(u, headers={"x-goog-api-key": api_key})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        data = json.loads(r.read())
+    names = []
+    for m in data.get("models", []):
+        if "generateContent" in m.get("supportedGenerationMethods", []):
+            n = m["name"].split("/")[-1]
+            if "tts" in n or "image" in n or "embedding" in n or "vision" in n:
+                continue
+            names.append(n)
+    def score(n):
+        s = 0
+        if "2.5" in n: s += 100
+        elif "2.0" in n: s += 50
+        if "flash" in n: s += 20
+        if "latest" in n: s += 5
+        if "preview" in n or "exp" in n: s -= 3
+        return s
+    names.sort(key=score, reverse=True)
+    if not names:
+        raise RuntimeError("Khóa không truy cập được model generateContent nào.")
+    print(f"  model khả dụng: {names[:6]}", flush=True)
+    return names[0]
+
+
+def gemini(system, user, api_key, model):
     body = {
         "systemInstruction": {"parts": [{"text": system}]},
         "contents": [{"parts": [{"text": user}]}],
         "generationConfig": {"responseMimeType": "application/json", "temperature": 0.6, "maxOutputTokens": 8192},
     }
-    u = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent"
+    u = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
     req = urllib.request.Request(u, data=json.dumps(body).encode(), method="POST",
                                  headers={"Content-Type": "application/json", "x-goog-api-key": api_key})
     with urllib.request.urlopen(req, timeout=120) as r:
@@ -156,6 +186,8 @@ def main():
     print(f"=== [1/3] Đọc bài: {a.url} ===", flush=True)
     article = fetch_article(a.url)
     print(f"  lấy được {len(article)} ký tự", flush=True)
+    model = resolve_model(key)
+    print(f"  dùng model: {model}", flush=True)
 
     user = f"LINK: {a.url}\n"
     if a.title:
@@ -167,7 +199,7 @@ def main():
     for attempt in range(1, 4):
         print(f"=== [2/3] Gemini dựng deck (lượt {attempt}) ===", flush=True)
         prompt = user if attempt == 1 else user + f"\n\nLƯU Ý: lần trước deck bị các lỗi sau, hãy SỬA đúng:\n{last_err}"
-        raw = gemini(SPEC, prompt, key)
+        raw = gemini(SPEC, prompt, key, model)
         try:
             deck = json.loads(raw)
         except Exception as e:
