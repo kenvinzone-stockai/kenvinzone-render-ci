@@ -77,7 +77,6 @@ jobs:
         id: build
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          TTS_CONFIG_JSON: ${{ secrets.TTS_CONFIG_JSON }}
           SOCIAL_UPLOAD_JSON: ${{ secrets.SOCIAL_UPLOAD_JSON }}
           YT_CHANNEL_ID: ${{ secrets.YT_CHANNEL_ID }}
           HYPERFRAMES_NO_TELEMETRY: "1"
@@ -98,6 +97,27 @@ jobs:
           git add ci-logs/
           git commit -m "ci log run ${{ github.run_id }}" || true
           git push || true
+
+      - name: Notify Telegram
+        if: always()
+        env:
+          TG: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PROJECT: ${{ steps.cfg.outputs.project }}
+          STATUS: ${{ steps.build.conclusion }}
+        run: |
+          if [ -z "$TG" ] || [ -z "$CHAT" ]; then echo "Telegram chua cau hinh, bo qua"; exit 0; fi
+          if [ -f upload-result.json ]; then
+            URL=$(python3 -c "import json;print(json.load(open('upload-result.json')).get('url',''))" 2>/dev/null)
+            MSG="✅ Xong video [$PROJECT]
+          $URL
+          (private — vào duyệt rồi chuyển public)"
+          elif [ "$STATUS" = "success" ]; then
+            MSG="✅ Render xong [$PROJECT] (chế độ không upload)"
+          else
+            MSG="❌ Lỗi khi làm video [$PROJECT]. Xem log trong repo (ci-logs/)."
+          fi
+          curl -s -X POST "https://api.telegram.org/bot$TG/sendMessage" --data-urlencode chat_id="$CHAT" --data-urlencode text="$MSG" -o /dev/null -w "notify %{http_code}\n" || true
 
       - name: Upload video artifact
         if: always()

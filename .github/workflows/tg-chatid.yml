@@ -23,6 +23,16 @@ jobs:
           curl -s "https://api.telegram.org/bot$TG/getUpdates" > /tmp/upd.json
           python3 -c "import json; d=json.load(open('/tmp/upd.json')); rows=[(m.get('chat') or {}) for u in d.get('result',[]) for m in [u.get('message') or u.get('edited_message') or {}]]; rows=[c for c in rows if c.get('id')]; [print('chat_id=%s | name=%s | user=%s' % (c['id'], c.get('first_name') or c.get('title') or '', c.get('username') or '')) for c in rows] if rows else print('NO_MESSAGES - hay nhan mot tin cho bot roi chay lai')" >> "$OUT" 2>&1 || echo "getUpdates fail" >> "$OUT"
           cat "$OUT"
+      - name: Send test
+        env:
+          TG: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ -n "$CHAT" ]; then
+            curl -s -X POST "https://api.telegram.org/bot$TG/sendMessage" --data-urlencode chat_id="$CHAT" --data-urlencode text="✅ KenvinZone bot đã kết nối thành công! Từ đây anh gửi link bài là hệ thống xử lý." -o /dev/null -w "send %{http_code}\n"
+          else
+            echo "chua co TELEGRAM_CHAT_ID"
+          fi
       - name: Commit
         if: always()
         run: |
