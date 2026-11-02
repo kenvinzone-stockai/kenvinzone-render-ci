@@ -452,3 +452,27 @@ def youtube_upload_video(payload: dict) -> dict:
         "privacyStatus": privacy_status,
         "message": "Uploaded to YouTube. Review in YouTube Studio before publishing.",
     }
+
+
+def youtube_set_privacy(video_id: str, privacy: str = "public") -> dict:
+    """Đổi privacyStatus của 1 video đã upload (videos.update part=status)."""
+    privacy = str(privacy or "public").strip()
+    if privacy not in {"private", "unlisted", "public"}:
+        raise ValueError("privacy must be private, unlisted, or public.")
+    config = read_social_config()
+    youtube = youtube_config(config)
+    if not youtube_is_configured(youtube):
+        raise ValueError(social_config_hint())
+    access_token = youtube_refresh_access_token(config, youtube)
+    body = json.dumps({"id": video_id, "status": {"privacyStatus": privacy, "selfDeclaredMadeForKids": False}}).encode("utf-8")
+    url = "https://www.googleapis.com/youtube/v3/videos?" + urlencode({"part": "status"})
+    req = Request(url, data=body, headers={"Authorization": f"Bearer {access_token}", "Content-Type": "application/json; charset=utf-8"}, method="PUT")
+    try:
+        with urlopen(req, timeout=60) as resp:
+            result = json.loads(resp.read().decode("utf-8"))
+    except HTTPError as exc:
+        detail = exc.read().decode("utf-8", "replace")
+        raise RuntimeError(f"YouTube set privacy failed: HTTP {exc.code}: {detail}") from exc
+    return {"ok": True, "video_id": video_id,
+            "privacyStatus": result.get("status", {}).get("privacyStatus", privacy),
+            "url": f"https://youtu.be/{video_id}"}
