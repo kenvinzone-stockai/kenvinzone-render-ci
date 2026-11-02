@@ -1,0 +1,192 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "02/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "Tin Nhanh Chứng Khoán",
+    "short": "TNCK",
+    "author": "",
+    "headline": "Quyết định lãi suất của Fed tiếp thêm động lực cho Phố Wall",
+    "date": "02/11/2026",
+    "url": "tinnhanhchungkhoan.vn/quyet-dinh-lai-suat-cua-fed-tiep-them-dong-luc-cho-pho-wall-post400322.html"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "Fed Bơm Động Lực",
+      "Phố Wall Khởi Sắc"
+    ],
+    "sub": "Lãi suất hạ nhiệt mở ra cơ hội gì cho chứng khoán Việt Nam?",
+    "chips": [
+      {
+        "icon": "↗",
+        "text": "S&P 500 khởi sắc",
+        "tone": "up"
+      },
+      {
+        "icon": "⑂",
+        "text": "Fed nới lỏng",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "VN-Index hưởng lợi",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Quyết định giữ lập trường mềm mỏng về lãi suất từ <mark>Fed</mark> đã nhanh chóng tiếp thêm nguồn sinh khí mới cho các chỉ số chủ chốt tại Phố Wall."
+  },
+  "s2": {
+    "title_lines": [
+      "Phố Wall phản ứng",
+      "tích cực ra sao?"
+    ],
+    "stats": [
+      {
+        "value": 500,
+        "decimals": 0,
+        "unit": "điểm",
+        "label": "Đà tăng lan tỏa khắp các chỉ số lớn",
+        "badge": "S&P 500 lập đỉnh",
+        "tone": "up",
+        "beat": 1
+      }
+    ],
+    "note": "Tâm lý nhà đầu tư toàn cầu được giải tỏa áp lực lãi suất neo cao."
+  },
+  "s3": {
+    "title_lines": [
+      "Động lực chính",
+      "đến từ đâu?"
+    ],
+    "lead": "Sự dẫn dắt của nhóm công nghệ",
+    "bars": [
+      {
+        "label": "Nasdaq",
+        "display": "+1,8%",
+        "value": 1.8,
+        "beat": 1
+      },
+      {
+        "label": "Dow Jones",
+        "display": "+0,9%",
+        "value": 0.9,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 80,
+      "suffix": "%",
+      "text": "Kỳ vọng Fed duy trì chu kỳ nới lỏng tiền tệ trong năm nay",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Tác động lan tỏa",
+      "tới thị trường?"
+    ],
+    "cards": [
+      {
+        "big": "Hạ nhiệt",
+        "title": "Lợi suất trái phiếu",
+        "text": "Lợi suất trái phiếu kho bạc Mỹ kỳ hạn mười năm giảm đáng kể."
+      },
+      {
+        "big": "Bớt căng",
+        "title": "Chỉ số DXY",
+        "text": "Đồng đô la Mỹ suy yếu giúp giải tỏa áp lực tỷ giá toàn cầu."
+      },
+      {
+        "big": "Quay lại",
+        "title": "Dòng vốn ngoại",
+        "text": "Kỳ vọng dòng vốn quốc tế sớm quay trở lại các thị trường mới nổi."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Cơ hội nào",
+      "cho nhóm ngành?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "THẮNG THẾ",
+        "title": "Nhóm công nghệ và xuất khẩu",
+        "text": "Được hưởng lợi trực tiếp từ chi phí vốn rẻ và tỷ giá bớt căng thẳng."
+      },
+      {
+        "color": "yellow",
+        "tag": "LƯU Ý",
+        "title": "Nhóm ngân hàng",
+        "text": "Biên lãi thuần có thể chịu áp lực co hẹp khi mặt bằng lãi suất giảm."
+      },
+      {
+        "color": "red",
+        "tag": "KHÓ KHĂN",
+        "title": "Doanh nghiệp đòn bẩy lớn",
+        "text": "Cần thêm thời gian để chi phí lãi vay thực tế hạ nhiệt theo thị trường."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Liên hệ gì tới",
+      "chứng khoán Việt?"
+    ],
+    "chain": [
+      {
+        "title": "Giảm áp lực tỷ giá",
+        "text": "Ngân hàng Nhà nước có thêm dư địa điều hành chính sách tiền tệ nới lỏng.",
+        "beat": 1
+      },
+      {
+        "title": "Khối ngoại hạ bán ròng",
+        "text": "Chênh lệch lãi suất thu hẹp hạn chế đà rút ròng của dòng vốn ngoại.",
+        "beat": 2
+      },
+      {
+        "title": "Tâm lý VN-Index khởi sắc",
+        "text": "Dòng tiền nội tự tin hơn vào triển vọng tăng trưởng kinh tế cuối năm.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư",
+      "nên hành động gì?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Ưu tiên doanh nghiệp hưởng lợi vốn rẻ",
+        "text": "Tập trung các mã có cơ bản vững chắc và tăng trưởng lợi nhuận tốt.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Tận dụng nhịp rung lắc cơ cấu",
+        "text": "Giải ngân từng phần vào các nhóm ngành dẫn dắt dòng tiền.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Tránh mua đuổi theo hưng phấn",
+        "text": "Cẩn trọng trước các biến động ngắn hạn từ dữ liệu lạm phát toàn cầu.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Lãi suất đảo chiều là cú hích lớn, nhưng chọn đúng cổ phiếu mới quyết định lợi nhuận.",
+    "cta": "Theo dõi KenvinZone để đón đầu các nhịp đập vĩ mô tiếp theo"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
