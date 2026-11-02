@@ -1,0 +1,52 @@
+name: tg-intake
+
+# Mỗi 30 phút: xem Telegram có link bài mới không; nếu có -> dựng deck (Gemini) -> render giọng clone -> upload -> báo link.
+# Kiểm tra nhẹ trước (không cài gì); chỉ cài + render khi thật sự có link, để tiết kiệm phút CI.
+on:
+  schedule:
+    - cron: "7,37 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tg-intake
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check Telegram (nhẹ)
+        id: check
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python tg_intake.py --check
+      - name: Setup Node
+        if: steps.check.outputs.has_job == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install deps
+        if: steps.check.outputs.has_job == 'true'
+        run: |
+          python -m pip install --upgrade pip
+          pip install edge-tts elevenlabs playwright
+          python -m playwright install --with-deps chromium
+          sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Process (build + render + upload + báo Telegram)
+        if: steps.check.outputs.has_job == 'true'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SOCIAL_UPLOAD_JSON: ${{ secrets.SOCIAL_UPLOAD_JSON }}
+          TTS_CONFIG_JSON: ${{ secrets.TTS_CONFIG_JSON }}
+          YT_CHANNEL_ID: ${{ secrets.YT_CHANNEL_ID }}
+          HYPERFRAMES_NO_TELEMETRY: "1"
+        run: python tg_intake.py
