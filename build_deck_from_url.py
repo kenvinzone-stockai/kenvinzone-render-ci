@@ -35,6 +35,7 @@ QUY TẮC BẤT BIẾN:
 8. Tin nước ngoài/vĩ mô (Fed, phố Wall...) thì cảnh s6 BẮT BUỘC liên hệ chứng khoán Việt Nam.
 9. Báo cáo của công ty chứng khoán: nêu rõ "đây là quan điểm của <đơn vị>", không biến "TVS chọn 5 cổ phiếu" thành "nên mua".
 10. Nếu người dùng đưa tiêu đề cover sẵn, GIỮ NGUYÊN VĂN (kể cả chữ "Cổ phiếu"), không rút gọn.
+11. TÊN RIÊNG / CHỈ SỐ / THUẬT NGỮ TIẾNG ANH — trong script_lines VÀ mọi chữ hiện trên slide (title, box, caption): LUÔN viết chuẩn quốc tế: Dow Jones, S&P 500, Nasdaq, Nasdaq 100, VN-Index, VN30, Fed, Phố Wall, KenvinZone. TUYỆT ĐỐI KHÔNG phiên âm tiếng Việt (CẤM "Đao Giôn", "Ét pi", "Nát-đác", "Vi-En In-đéc", "Kênh-zin-zone"). Gemini TTS đọc tiếng Anh TỐT nên cứ để nguyên tiếng Anh; phiên âm làm caption thiếu chuyên nghiệp. Số nằm TRONG tên chỉ số (S&P 500, Nasdaq 100, VN30) giữ nguyên chữ SỐ — quy tắc "viết số thành chữ" ở mục 3 CHỈ áp cho số liệu định lượng (phần trăm, điểm, tỷ đồng), KHÔNG áp cho tên riêng.
 
 ĐẦU RA: CHỈ một đối tượng JSON (không văn bản thừa) theo đúng schema sau. Mỗi cảnh một ý; số liệu khớp bài.
 {
@@ -54,6 +55,23 @@ QUY TẮC BẤT BIẾN:
 - "tone" của chip: up/down/gold/blue. "value" trong stats/bars là SỐ (âm cho giảm). "beat" = câu thứ mấy (đếm từ 0) trong dòng script tương ứng mà khối xuất hiện (câu hỏi dẫn là câu 0, nội dung thường beat 1 hoặc 2).
 - description PHẢI có link url nguồn và câu disclaimer 'không phải khuyến nghị đầu tư'. hashtag gồm: #ChuyenChungKhoan #KenvinZone #giaimachungkhoan #kechuyenchungkhoan #xuhuongchungkhoan + vài tag theo bài.
 """
+
+
+def normalize_names(s):
+    """Luoi an toan: doi phien am tieng Viet cua ten rieng/chi so ve dang chuan tieng Anh.
+    Caption nhin chuyen nghiep; Gemini TTS van doc tieng Anh tot."""
+    import re as _re
+    rules = [
+        (r"Đao[\s\-]?Giôn(?:xờ|s)?", "Dow Jones"),
+        (r"Nát[\s\-]?[Đđ]ác", "Nasdaq"),
+        (r"Vi[\s\-]?En[\s\-]?In[\s\-]?(?:đéc|đec|dex)", "VN-Index"),
+        (r"Kênh[\s\-]?zin[\s\-]?zone", "KenvinZone"),
+        (r"Ét[\s\-]?(?:xì[\s\-]?)?[Pp]i\s+năm\s+trăm", "S&P 500"),
+        (r"Ét[\s\-]?(?:xì[\s\-]?)?[Pp]i", "S&P"),
+    ]
+    for pat, rep in rules:
+        s = _re.sub(pat, rep, s, flags=_re.IGNORECASE)
+    return s
 
 
 def today_vn():
@@ -199,6 +217,7 @@ def main():
         print(f"=== [2/3] Gemini dựng deck (lượt {attempt}) ===", flush=True)
         prompt = user if attempt == 1 else user + f"\n\nLƯU Ý: lần trước deck bị các lỗi sau, hãy SỬA đúng:\n{last_err}"
         raw = gemini(SPEC, prompt, key, model)
+        raw = normalize_names(raw)
         try:
             deck = json.loads(raw)
         except Exception as e:
