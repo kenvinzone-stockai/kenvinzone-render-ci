@@ -1,0 +1,201 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "02/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "MoneyF",
+    "short": "MoneyF",
+    "author": "Hoang Bach",
+    "headline": "AI là “lưỡi hái” hay “thanh gươm” mới của FPT?",
+    "date": "28/10/2026",
+    "url": "moneyf.vn"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "AI: LƯỠI HÁI HAY",
+      "THANH GƯƠM FPT?"
+    ],
+    "sub": "Mô hình bán giờ công đối mặt cuộc cách mạng AI",
+    "chips": [
+      {
+        "icon": "◆",
+        "text": "Doanh thu AI +55%",
+        "tone": "up"
+      },
+      {
+        "icon": "⑂",
+        "text": "Giảm phát giờ công",
+        "tone": "gold"
+      },
+      {
+        "icon": "↘",
+        "text": "Sức ép gia công",
+        "tone": "down"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Trí tuệ nhân tạo đang khiến ngành công nghệ phải tính lại bài toán kiếm tiền khi <mark>mô hình bán giờ công co hẹp</mark>, buộc các doanh nghiệp như FPT phải nhanh chóng chuyển mình thành <mark>nhà cung cấp giải pháp giá trị cao</mark>."
+  },
+  "s2": {
+    "title_lines": [
+      "Thị trường toàn cầu",
+      "đang biến động ra sao?"
+    ],
+    "stats": [
+      {
+        "value": 1870,
+        "decimals": 0,
+        "unit": "tỷ USD",
+        "label": "Quy mô dịch vụ CNTT 2026",
+        "badge": "+9% YoY",
+        "tone": "blue",
+        "beat": 1
+      },
+      {
+        "value": 1260,
+        "decimals": 0,
+        "unit": "tỷ USD",
+        "label": "Chi tiêu dịch vụ gắn với AI 2030",
+        "badge": "Gấp 3 nhịp tăng chung",
+        "tone": "gold",
+        "beat": 2
+      }
+    ],
+    "note": "Theo dự báo từ Gartner, thị trường dịch vụ công nghệ vẫn mở rộng rất mạnh nhờ làn sóng trí tuệ nhân tạo."
+  },
+  "s3": {
+    "title_lines": [
+      "Làn sóng giảm phát",
+      "đe dọa nguồn thu cũ?"
+    ],
+    "lead": "Nguy cơ thu hẹp mô hình tính phí theo giờ công",
+    "bars": [
+      {
+        "label": "Giảm phát HCLTech",
+        "display": "-3%/năm",
+        "value": -3,
+        "beat": 1
+      },
+      {
+        "label": "Doanh thu TCS 2026",
+        "display": "-0,5%",
+        "value": -0.5,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 3.5,
+      "suffix": "%",
+      "text": "Mức giảm phát hàng năm dự báo bởi Kotak Equities",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "FPT chuẩn bị",
+      "vũ khí gì cho ván cờ?"
+    ],
+    "cards": [
+      {
+        "big": "30.000+",
+        "title": "Kỹ sư ứng dụng AI",
+        "text": "Gồm 5.000 chuyên gia AI và 3.000 kỹ sư dữ liệu thiện chiến."
+      },
+      {
+        "big": "2",
+        "title": "AI Factory vận hành",
+        "text": "Đặt tại Việt Nam và Nhật Bản trang bị GPU NVIDIA H100/H200 đã có lãi."
+      },
+      {
+        "big": "33.285 tỷ",
+        "title": "Doanh số ký 9 tháng",
+        "text": "Tăng trưởng 28,2% với 15 hợp đồng quy mô trên 10 triệu USD."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Thế kiềng ba chân",
+      "của chiến lược AI First?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "THẮNG THẾ",
+        "title": "Tối ưu chi phí",
+        "text": "Ứng dụng AI tự động hóa kiểm thử và lập trình, rút ngắn tiến độ bàn giao dự án."
+      },
+      {
+        "color": "yellow",
+        "tag": "LƯU Ý",
+        "title": "Dịch chuyển định giá",
+        "text": "Chuyển từ tính tiền theo giờ sang hợp đồng dựa trên kết quả đầu ra cho khách hàng."
+      },
+      {
+        "color": "red",
+        "tag": "KHÓ KHĂN",
+        "title": "Rủi ro thương mại hóa",
+        "text": "Áp lực duy trì biên lợi nhuận cao trước chi phí đầu tư hạ tầng GPU đắt đỏ."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Tín hiệu đèn giao thông",
+      "cho cổ phiếu FPT?"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh",
+        "text": "Doanh thu AI đạt 2.915 tỷ đồng, tăng 55% và biên lợi nhuận trước thuế tăng lên 22%.",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng",
+        "text": "Phải chứng minh giữ được giá trị thặng dư khi khách hàng yêu cầu chia sẻ phần tiết kiệm.",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ",
+        "text": "Sức ép giảm phát mảng gia công phần mềm truyền thống có thể đến nhanh hơn kỳ vọng.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư F0",
+      "cần theo dõi chỉ số nào?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Tốc độ ký mới dự án AI",
+        "text": "Theo dõi các hợp đồng giải pháp lớn trên 10 triệu USD từ khối Fortune 500.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Biên lợi nhuận trước thuế",
+        "text": "Đảm bảo hiệu suất sinh lời khối công nghệ không bị sụt giảm theo giờ công.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Tỷ trọng doanh thu dịch vụ mới",
+        "text": "Cần xem mảng AI có bứt phá kịp để bù đắp sự chững lại của gia công truyền thống.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "AI là lưỡi hái cắt giảm giờ công hay thanh gươm mở rộng biên lợi nhuận phụ thuộc hoàn toàn vào tốc độ chuyển đổi của doanh nghiệp.",
+    "cta": "Theo dõi KenvinZone để giải mã tin tiếp theo"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
