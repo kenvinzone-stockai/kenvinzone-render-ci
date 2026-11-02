@@ -31,7 +31,7 @@ QUY TẮC BẤT BIẾN:
 4. Dòng 2 nêu nguồn: "Câu chuyện hôm nay được kể lại từ bài viết trên <trang>, tác giả <tên>, đăng ngày <ngày>...". Nếu bài không có tác giả, bỏ phần tác giả.
 5. Dòng 9 = cái kết mở + mời theo dõi KenvinZone + disclaimer "đây chỉ là góc nhìn tham khảo chứ không phải lời khuyên đầu tư".
 6. TUYỆT ĐỐI KHÔNG dùng các từ: "thao túng" (thay bằng "giao dịch phối hợp"), "mua ngay", "bán ngay", "chắc chắn tăng/giảm", "cam kết lãi", "x2/x3 tài khoản", "làm giàu nhanh", "bí mật nội bộ", "all in", "lãi đảm bảo". Giọng: "góc nhìn tham khảo", "kịch bản", "cần theo dõi".
-7. Tổng độ dài script ~560–650 TỪ (dưới 3 phút Shorts). Mỗi mặt lợi phải kèm mặt rủi ro.
+7. Tổng độ dài script 500–620 TỪ, TUYỆT ĐỐI KHÔNG quá 650 từ — video BẮT BUỘC DƯỚI 3 phút (Shorts). Viết câu GỌN, súc tích, cắt ý lan man. Mỗi mặt lợi phải kèm mặt rủi ro.
 8. Tin nước ngoài/vĩ mô (Fed, phố Wall...) thì cảnh s6 BẮT BUỘC liên hệ chứng khoán Việt Nam.
 9. Báo cáo của công ty chứng khoán: nêu rõ "đây là quan điểm của <đơn vị>", không biến "TVS chọn 5 cổ phiếu" thành "nên mua".
 10. Nếu người dùng đưa tiêu đề cover sẵn, GIỮ NGUYÊN VĂN (kể cả chữ "Cổ phiếu"), không rút gọn.

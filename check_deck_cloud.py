@@ -36,8 +36,10 @@ def main(d):
             if counts != REVEAL:
                 bad(f"số câu/dòng {counts} ≠ {REVEAL}")
         words = len(re.findall(r"\w+", " ".join(lines)))
-        if not 480 <= words <= 720:
-            warn(f"script {words} từ (chuẩn 550–680; >~650 có thể quá 3 phút)")
+        if words > 670:
+            bad(f"script {words} từ — QUÁ DÀI, video sẽ vượt 3 phút Shorts; cắt gọn còn ≤ 620 từ (câu ngắn, bỏ ý lan man)")
+        elif words < 420:
+            warn(f"script {words} từ — hơi ngắn")
         low = (sc or "").lower()
         for w in FORBID:
             if re.search(r"(?<!\w)" + re.escape(w) + r"(?!\w)", low):
