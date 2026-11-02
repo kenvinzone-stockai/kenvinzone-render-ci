@@ -1,0 +1,41 @@
+[KenvinZone] VNINDEX 02/11/2026 11:01
+KenvinZone — Phân tích chiến lược VNINDEX · HoSE (Tự động)
+VNINDEX 02/11/2026 11:01
+
+⚡ Quan điểm nhanh
+VNINDEX trong xu hướng giảm ngắn hạn rõ rệt trên toàn bộ khung D1-H4-H1-M15, giá dưới toàn bộ EMA D1 (1745/1760/1755), RSI D1 43.21 cho thấy lực bán còn ưu thế dù chưa quá bán. Phiên sáng mở gap giảm so với prev close 1741.62, thanh khoản thấp (vol ratio 0.57). Không nên mua mới, ưu tiên quan sát vùng hỗ trợ 1724-1727.
+
+ĐIỂM: 48 / 100 — Watchlist — độ tin cậy 55%
+Kỹ thuật 14/30 — D1 bearish rõ, giá dưới toàn bộ EMA, H4-H1 Full Bearish, chỉ W1 còn bullish
+Timing 8/20 — Giá test hỗ trợ ngắn hạn nhưng thanh khoản thấp, chờ xác nhận breakout từ BB squeeze kèm volume
+Dòng tiền 9/20 — Vol ratio 0.57 thanh khoản yếu đầu phiên, dòng tiền chưa nhập cuộc
+Sector 7/15 — Thiếu dữ liệu sector, độ rộng thị trường nhiều khả năng suy yếu
+Rủi ro 10/15 — Rủi ro chủ yếu từ kỹ thuật và tâm lý điều chỉnh ngắn hạn
+
+Bối cảnh thị trường
+Mở cửa giảm nhẹ so tham chiếu, giá hiện tại 1728.33 thấp hơn prev close 1741.62 khoảng 13 điểm. W1 Full Bullish nhưng 3D/D1/H4/H1 đều bearish. Vol ratio 0.57 thanh khoản sáng yếu.
+
+Phân tích đa khung thời gian
+Weekly (W1): EMA align Full Bullish, trend tăng trung-dài hạn còn nguyên. MACD bias bearish, RSI Neutral — momentum tăng suy yếu.
+3 ngày (3D): RSI Bearish Zone, MACD bearish, trend tổng thể vẫn Bullish, EMA align Mixed — cảnh báo sớm.
+Daily (D1): trend Bearish, giá đóng cửa 1727.49 dưới EMA20 (1745.84), EMA50 (1760.11), EMA200 (1755.56). RSI D1 43.21 (chưa quá bán). MACD hist dương 3.43 nhưng đang thu hẹp.
+M15: Full Bearish Alignment, có Bullish Pin Bar tại hỗ trợ + BB Squeeze - Breakout Pending, nhưng volume thấp nên chưa tin cậy.
+
+Dòng tiền & Thanh khoản
+Vol ratio 0.57 thấp hơn trung bình, nhà đầu tư đứng ngoài quan sát, chưa có lực cầu bắt đáy rõ ràng.
+
+Sector Rotation
+Dẫn dắt: chưa rõ do thiếu dữ liệu. Tăng nóng: nhóm đã tăng nóng nên thận trọng chốt lời. Nên tránh: giải ngân mới vào mã đã vượt đỉnh ngắn hạn.
+
+Góc nhìn
+Quỹ/Tổ chức: thận trọng quan sát khi thanh khoản thấp, chưa gom hàng mạnh. Trader cá nhân: tránh FOMO, chờ xác nhận.
+
+Ma trận kịch bản (sáng)
+KB1 — Giảm tiếp test hỗ trợ 1724-1727; mất mốc thì về sâu hơn.
+KB2 — Giữ hỗ trợ kèm volume, hồi về EMA20 D1 1745.
+
+Kế hoạch hành động
+Vị thế mới: không giải ngân mới ở vùng này.
+Margin: thận trọng, giảm nếu dùng cao.
+
+Không phải khuyến nghị đầu tư chính thức.

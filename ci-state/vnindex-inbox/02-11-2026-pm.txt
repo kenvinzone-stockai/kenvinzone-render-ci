@@ -1,0 +1,53 @@
+[KenvinZone] VNINDEX 02/11/2026 15:01
+KenvinZone — Phân tích chiến lược VNINDEX · HoSE (Tự động)
+VNINDEX 02/11/2026 15:01
+
+⚡ Quan điểm nhanh
+VNINDEX giảm mạnh toàn khung, đóng cửa phiên dưới toàn bộ EMA D1 (1710 vs EMA20 1744/EMA50 1759/EMA200 1755), gãy cấu trúc tăng ngắn hạn. Phiên chiều có nhịp hồi kỹ thuật từ đáy 1695 lên 1710 nhưng thanh khoản rất thấp (vol ratio 0.28), chưa đủ tin cậy để xác nhận đảo chiều. Ưu tiên quan sát, tránh mua đuổi.
+
+ĐIỂM: 42 / 100 — Avoid New Entry — độ tin cậy 62%
+Kỹ thuật 12/30 — D1 gãy toàn bộ EMA, trend đảo chiều Bearish, W1/3D phân kỳ RSI-MACD dù trend nền còn Bullish
+Timing 8/20 — Giá ở vùng giữa, không phải đáy xác nhận cũng không phải breakout, entry không đẹp theo T+2
+Dòng tiền 6/20 — Vol ratio 0.28 cực thấp, nhịp hồi cuối phiên thiếu dòng tiền xác nhận, rủi ro bull trap cao
+Sector 7/15 — Thiếu dữ liệu nhóm dẫn dắt mới, nghi ngờ dòng tiền co cụm phòng thủ
+Rủi ro 9/15 — Rủi ro margin call nội tại hiện hữu do đà giảm nhanh
+
+Bối cảnh thị trường
+Chỉ số rơi gãy khỏi vùng tích lũy quanh 1740-1755, mất mốc tâm lý 1700 trong phiên trước khi hồi nhẹ cuối chiều. D1 trend chuyển Bearish, MACD D1 dương nhưng suy yếu (hist 2.36, giảm dần), RSI D1 39.38. Đa khung đồng thuận bearish từ 3D đến M15, chỉ W1 còn trend tăng nền tảng nhưng RSI/MACD W1 đã bearish. Tham chiếu (prev close) 1741.62, prev day high 1755.61 — biên độ giảm hơn 45 điểm trong 1-2 phiên.
+
+Vĩ mô & Catalyst
+- Áp lực chốt lời/margin call sau nhịp tăng nóng: giá rơi khỏi đỉnh gần 1755.61, giảm hơn 45 điểm.
+- Thanh khoản phiên chiều yếu bất thường: vol ratio 0.28, nhịp hồi từ 1695 lên 1710 thiếu dòng tiền xác nhận, dễ bull trap.
+
+Phân tích đa khung thời gian
+Weekly (W1): EMA align Full Bullish, trend Bullish dài hạn, nhưng RSI vào Bearish Zone và MACD bias Bearish — phân kỳ cảnh báo sớm. Mốc 1710 vẫn trong biên W1.
+3 ngày (3D): trend Bullish, EMA align Mixed, RSI Bearish Zone, MACD Bearish — cùng pha suy yếu.
+Daily (D1): trend Bearish, giá đóng cửa 1710 dưới toàn bộ EMA20 (1744), EMA50 (1759), EMA200 (1755). RSI 39.38 (momentum yếu, chưa quá bán <30). MACD hist dương 2.36 nhưng giảm dần, có thể cắt xuống âm 1-2 phiên tới.
+M15: Mixed/Range, EMA Full Bearish Alignment, momentum Neutral/Compressing. Có Bullish Pin Bar nhưng Low Volume nên kém tin cậy — chỉ là nhịp hồi kỹ thuật.
+
+Dòng tiền & Thanh khoản
+Vol ratio 0.28 — dòng tiền không chảy mạnh vào nhịp hồi cuối phiên, chỉ là cầu bắt đáy nhỏ lẻ/short-covering. Nhiều khả năng dòng tiền rút khỏi nhóm trụ và nhóm tăng nóng, chuyển phòng thủ.
+
+Sector Rotation
+Dẫn dắt: nhóm trụ (ngân hàng, chứng khoán) cần theo dõi lại sau điều chỉnh. Tăng nóng: rủi ro điều chỉnh sâu tiếp nếu thanh khoản không cải thiện. Nên tránh: penny/midcap thanh khoản thấp dễ bán tháo khi margin call lan rộng.
+
+Góc nhìn
+Quỹ/Tổ chức: giảm tỷ trọng hoặc đứng ngoài trước tín hiệu gãy EMA D1, chờ vùng hỗ trợ 1693-1700 trụ vững. Trader cá nhân: tránh bắt đáy sớm khi thanh khoản nhịp hồi quá yếu, cẩn trọng margin nếu giá thủng 1693.
+
+Ma trận kịch bản
+KB1 50% — Hồi kỹ thuật yếu rồi tiếp tục giảm. Kích hoạt: giá hồi về vùng 1715-1720 (EMA20 M5/kháng cự gần) nhưng thanh khoản không cải thiện. Mục tiêu: 1693-1680.
+KB2 35% — Tạo đáy ngắn hạn, dao động tích lũy. Kích hoạt: giữ vững trên 1693-1695 với thanh khoản tăng dần, MACD D1 cố giữ dương. Mục tiêu: 1727-1740.
+
+Chiến lược theo chân trời
+Hôm nay: phiên chiều hồi nhẹ nhưng thanh khoản yếu, không đáng tin, chỉ là nhịp hồi kỹ thuật.
+Trong tuần: theo dõi vùng hỗ trợ 1693-1700; mất mốc kèm volume lớn thì rủi ro giảm sâu; giữ được kèm thanh khoản cải thiện thì kỳ vọng tích lũy đi ngang trước khi test lại EMA50 D1.
+Trung hạn: phụ thuộc khả năng lấy lại EMA20/50 D1 (1744-1759); hiện nghiêng về điều chỉnh sâu hơn 1-2 tuần tới.
+
+Kế hoạch hành động
+Vị thế mới: không mở mua mới, chờ xác nhận đáy rõ với thanh khoản tăng.
+Đang nắm giữ: cân nhắc giảm tỷ trọng về mức an toàn, đặt stop-loss chặt dưới 1693.
+Margin: giảm ngay nếu đang dùng cao, ưu tiên bảo toàn vốn.
+Thesis mạnh lên khi: giá đóng cửa vượt lại EMA20 D1 (1744) kèm thanh khoản tăng mạnh, RSI D1 vượt 50.
+Thesis vô hiệu khi: giá thủng 1693 với khối lượng lớn.
+
+Không phải khuyến nghị đầu tư chính thức.
