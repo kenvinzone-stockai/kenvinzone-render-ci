@@ -1,0 +1,53 @@
+{
+  "subtitles": {
+    "enabled": true,
+    "color": "#92f93e",
+    "fontSize": 18,
+    "bottom": 60,
+    "maxLines": 1
+  },
+  "backgroundFx": "candlestick",
+  "bgm": {
+    "mode": "custom",
+    "preset": "ambient",
+    "volume": 0.2,
+    "custom": {
+      "name": "Write_You.mp3",
+      "path": "preview-assets/bgm/20260624-151812_Write_You.mp3",
+      "url": "/slide/vnindex-02112026-ngay/preview-assets/bgm/20260624-151812_Write_You.mp3"
+    }
+  },
+  "scriptLines": [
+    "VNINDEX khép lại phiên đầu tuần rơi về 1695 rồi hồi nhẹ lên 1710, mất hơn 31 điểm so với tham chiếu.",
+    "Thứ Hai ngày 02/11, điểm KenvinZone giảm từ 48 xuống 42, nhãn chuyển thành Tránh vào mới.",
+    "Buổi sáng, giá lùi về 1728,33 với thanh khoản yếu khi vol ratio chỉ đạt 0,57, kiểm định vùng 1724 đến 1727.",
+    "Báo cáo sáng cảnh báo nếu đánh mất vùng hỗ trợ này thì rủi ro giảm sâu sẽ lập tức kích hoạt.",
+    "Đến phiên chiều, chỉ số thủng mốc 1700 chạm đáy 1695, nhịp hồi cuối phiên lên 1710 vẫn cách xa EMA20 ở 1744.",
+    "Về 5 thành phần: Kỹ thuật trừ hai, Dòng tiền trừ ba, Rủi ro trừ một khiến tổng điểm giảm sáu điểm.",
+    "Khung ngày ghi nhận RSI giảm về 39,38, MACD hist co lại 2,36 dù nền nến tuần vẫn giữ sắc xanh.",
+    "Khung 15 phút có nến rút chân nhưng vol ratio chỉ 0,28 cực thấp, mốc swing low quan trọng nhất cần canh là 1693.",
+    "Kịch bản phiên tới: 50% hồi yếu rồi dò đáy 1680; 35% giữ 1693 tích lũy; 15% bật tăng lấy lại 1744.",
+    "Anh em chưa mở vị thế mới, hạ bớt tỷ trọng margin và hẹn gặp lại ở bản tin ngày mai."
+  ],
+  "slides": {
+    "deletedIds": [],
+    "scriptLines": [
+      "VNINDEX khép lại phiên đầu tuần rơi về 1695 rồi hồi nhẹ lên 1710, mất hơn 31 điểm so với tham chiếu.",
+      "Thứ Hai ngày 02/11, điểm KenvinZone giảm từ 48 xuống 42, nhãn chuyển thành Tránh vào mới.",
+      "Buổi sáng, giá lùi về 1728,33 với thanh khoản yếu khi vol ratio chỉ đạt 0,57, kiểm định vùng 1724 đến 1727.",
+      "Báo cáo sáng cảnh báo nếu đánh mất vùng hỗ trợ này thì rủi ro giảm sâu sẽ lập tức kích hoạt.",
+      "Đến phiên chiều, chỉ số thủng mốc 1700 chạm đáy 1695, nhịp hồi cuối phiên lên 1710 vẫn cách xa EMA20 ở 1744.",
+      "Về 5 thành phần: Kỹ thuật trừ hai, Dòng tiền trừ ba, Rủi ro trừ một khiến tổng điểm giảm sáu điểm.",
+      "Khung ngày ghi nhận RSI giảm về 39,38, MACD hist co lại 2,36 dù nền nến tuần vẫn giữ sắc xanh.",
+      "Khung 15 phút có nến rút chân nhưng vol ratio chỉ 0,28 cực thấp, mốc swing low quan trọng nhất cần canh là 1693.",
+      "Kịch bản phiên tới: 50% hồi yếu rồi dò đáy 1680; 35% giữ 1693 tích lũy; 15% bật tăng lấy lại 1744.",
+      "Anh em chưa mở vị thế mới, hạ bớt tỷ trọng margin và hẹn gặp lại ở bản tin ngày mai."
+    ]
+  },
+  "visuals": {
+    "colorMode": "dark",
+    "backgroundColor": "#07030d",
+    "gridEnabled": false,
+    "backgroundFx": "candlestick-diag"
+  }
+}
