@@ -67,6 +67,7 @@ def main():
         text = (m.get("text") or m.get("caption") or "").strip()
         urls = [x for x in URL_RE.findall(text) if "youtu" not in x and "youtube" not in x]
         if urls and chat:
+            # tiêu đề ép: phần text không phải URL (nếu có), dạng "title: ..." hoặc dòng riêng
             title = ""
             rest = URL_RE.sub("", text).strip(" \n-|:")
             mt = re.search(r"(?:ti[êe]u ?đ[eề]|title)\s*[:\-]\s*(.+)", text, re.I)
@@ -93,10 +94,11 @@ def main():
         return
 
     uid, chat, url, title = jobs[0]
-    write_offset(uid)
+    write_offset(uid)  # tiêu thụ tới job này; job sau để lần chạy kế
     git_commit(f"tg: nhan job update {uid}")
     send(chat, f"✅ Đã nhận link, đang dựng video (giọng clone + render + upload, ~15 phút):\n{url}")
 
+    # 1) build deck (Gemini)
     cmd = [sys.executable, str(REPO / "build_deck_from_url.py"), "--url", url]
     if title:
         cmd += ["--title", title]
@@ -109,6 +111,7 @@ def main():
     proj = mproj.group(1)
     git_commit(f"tg: deck {proj}")
 
+    # 2) render + upload (giọng clone)
     r2 = subprocess.run([sys.executable, str(REPO / "ci_build_video.py"), f"slide/{proj}", "--privacy", "private"],
                         cwd=str(REPO))
     res_path = REPO / "upload-result.json"
