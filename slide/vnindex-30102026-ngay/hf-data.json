@@ -18,7 +18,7 @@
       {
         "icon": "📈",
         "label": "VNI",
-        "value": "1742"
+        "value": "1742,31"
       },
       {
         "icon": "◎",
@@ -28,11 +28,11 @@
       {
         "icon": "⚡",
         "label": "EMA20",
-        "value": "−5,5",
+        "value": "−5,47",
         "hot": true
       }
     ],
-    "cta": "Hồi thật hay bẫy tăng giá?"
+    "cta": "Hồi phục thật hay bẫy tăng giá?"
   },
   "compare": [
     {
@@ -60,8 +60,8 @@
   "range_pill": "BIÊN 1730,93 – 1747,78 · thủng 1730,93 → về 1715–1720",
   "journey": {
     "axis": [
-      1722,
-      1758
+      1726,
+      1760
     ],
     "path": [
       {
@@ -70,7 +70,7 @@
       },
       {
         "label": "11:01",
-        "price": 1735
+        "price": 1735.0
       },
       {
         "label": "15:01",
@@ -89,13 +89,13 @@
     "am_card": {
       "time": "11:01 · SÁNG",
       "meta": "Score 46 · Vol ×0,78",
-      "text": "Giá <b>1735</b> sát swing low 1729,2, dưới cả EMA20/50/200"
+      "text": "Giá <b>1735</b> sát swing low 1729,2, gãy dưới toàn bộ EMA20/50/200"
     },
     "warn_card": "Báo cáo sáng: thủng <b>1729,2</b> kèm volume tăng mạnh thì vô hiệu",
     "pm_card": {
       "time": "15:01 · CHIỀU",
       "meta": "Score 48 · Vol ghi 0",
-      "text": "Chốt <b>1742,31</b> — low phiên 1734,63 trên mốc, chưa lấy lại EMA20"
+      "text": "Chốt <b>1742,31</b> — low phiên 1734,63 giữ vững mốc, chưa lấy lại EMA20"
     },
     "twist": "Mốc 1729,2 còn nguyên, giá hồi hơn 7 điểm nhưng vẫn dưới EMA20 1747,78"
   },
