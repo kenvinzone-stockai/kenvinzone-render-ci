@@ -1,0 +1,157 @@
+name: vnindex-build
+
+# Dựng video bản tin VNINDEX hằng ngày từ 2 email báo cáo (sáng + chiều).
+# - workflow_dispatch: đọc file đã commit ở ci-state/vnindex-inbox/<DD-MM-YYYY>-am.txt & -pm.txt (test/manual).
+# - repository_dispatch (type: vnindex-daily): nhận {date, am_text, pm_text} (base64) -> ghi file rồi dựng (tự động từ Apps Script).
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Ngày DD/MM/YYYY (vd 30/10/2026)"
+        required: true
+        type: string
+  repository_dispatch:
+    types: [vnindex-daily]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vnindex-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Resolve inputs + ghi inbox
+        id: cfg
+        env:
+          PAYLOAD_DATE: ${{ github.event.client_payload.date }}
+          PAYLOAD_AM: ${{ github.event.client_payload.am_text }}
+          PAYLOAD_PM: ${{ github.event.client_payload.pm_text }}
+        run: |
+          python - <<'PY'
+          import os, base64, re, pathlib
+          ev = os.environ.get("GITHUB_EVENT_NAME", "")
+          if "${{ github.event_name }}" == "repository_dispatch":
+              date = os.environ.get("PAYLOAD_DATE", "").strip()
+          else:
+              date = "${{ github.event.inputs.date }}".strip()
+          m = re.match(r"(\d{2})/(\d{2})/(\d{4})", date)
+          assert m, f"date không hợp lệ: {date}"
+          dd, mm, yyyy = m.group(1), m.group(2), m.group(3)
+          slug = f"{dd}-{mm}-{yyyy}"
+          inbox = pathlib.Path("ci-state/vnindex-inbox"); inbox.mkdir(parents=True, exist_ok=True)
+          am = inbox / f"{slug}-am.txt"; pm = inbox / f"{slug}-pm.txt"
+          # repository_dispatch: ghi từ payload (base64)
+          if "${{ github.event_name }}" == "repository_dispatch":
+              amb = os.environ.get("PAYLOAD_AM", ""); pmb = os.environ.get("PAYLOAD_PM", "")
+              if pmb:
+                  try: pm.write_bytes(base64.b64decode(pmb))
+                  except Exception: pm.write_text(pmb, encoding="utf-8")
+              if amb:
+                  try: am.write_bytes(base64.b64decode(amb))
+                  except Exception: am.write_text(amb, encoding="utf-8")
+          assert pm.exists(), f"Thiếu file chiều {pm}"
+          if not am.exists(): am.write_text("", encoding="utf-8")
+          out = os.environ["GITHUB_OUTPUT"]
+          with open(out, "a") as f:
+              f.write(f"date={date}\n"); f.write(f"am={am}\n"); f.write(f"pm={pm}\n")
+          print("date", date, "am", am, "pm", pm)
+          PY
+
+      - name: Setup Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install edge-tts elevenlabs playwright
+          python -m playwright install --with-deps chromium
+          sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Dựng deck VNINDEX (Gemini)
+        id: brain
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          set -o pipefail
+          python build_vnindex_deck.py --am-file "${{ steps.cfg.outputs.am }}" --pm-file "${{ steps.cfg.outputs.pm }}" --date "${{ steps.cfg.outputs.date }}" 2>&1 | tee brain.log
+          PROJ=$(grep -oP 'PROJECT=\K\S+' brain.log | tail -1)
+          echo "proj=$PROJ" >> "$GITHUB_OUTPUT"
+          test -n "$PROJ"
+
+      - name: Render giọng clone + upload Private
+        id: build
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TTS_CONFIG_JSON: ${{ secrets.TTS_CONFIG_JSON }}
+          SOCIAL_UPLOAD_JSON: ${{ secrets.SOCIAL_UPLOAD_JSON }}
+          YT_CHANNEL_ID: ${{ secrets.YT_CHANNEL_ID }}
+          HYPERFRAMES_NO_TELEMETRY: "1"
+        run: |
+          set -o pipefail
+          python ci_build_video.py "slide/${{ steps.brain.outputs.proj }}" --privacy private 2>&1 | tee -a ci-run.log
+
+      - name: Lưu last-upload + commit
+        if: always()
+        env:
+          YT_CHANNEL_ID: ${{ secrets.YT_CHANNEL_ID }}
+          CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PROJ: ${{ steps.brain.outputs.proj }}
+        run: |
+          mkdir -p ci-logs ci-state
+          cp brain.log "ci-logs/vnindex-brain-${{ github.run_id }}.log" 2>/dev/null || true
+          cp ci-run.log "ci-logs/vnindex-run-${{ github.run_id }}.log" 2>/dev/null || true
+          if [ -f upload-result.json ]; then
+            python - <<'PY'
+          import json, os
+          r = json.load(open("upload-result.json"))
+          json.dump({"video_id": r.get("video_id",""), "project": os.environ.get("PROJ",""),
+                     "channel_id": os.environ.get("YT_CHANNEL_ID","").strip(), "chat": os.environ.get("CHAT","")},
+                    open("ci-state/last-upload.json","w"), ensure_ascii=False)
+          PY
+          fi
+          git config user.name "ci-bot"; git config user.email "ci@kenvinzone.local"
+          git add -A && git commit -m "vnindex ${{ steps.brain.outputs.proj }} (run ${{ github.run_id }})" || true
+          git pull --rebase || true
+          git push || true
+
+      - name: Báo Telegram
+        if: always()
+        env:
+          TG: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PROJ: ${{ steps.brain.outputs.proj }}
+          STATUS: ${{ steps.build.conclusion }}
+        run: |
+          if [ -z "$TG" ] || [ -z "$CHAT" ]; then echo "Telegram chưa cấu hình"; exit 0; fi
+          if [ -f upload-result.json ]; then
+            URL=$(python3 -c "import json;print(json.load(open('upload-result.json')).get('url',''))" 2>/dev/null)
+            MSG="✅ Xong bản tin VNINDEX [$PROJ] — đang để PRIVATE:
+          $URL
+
+          Xem xong, nhắn \"duyệt\" để công khai."
+          else
+            MSG="❌ Lỗi khi dựng bản tin VNINDEX [$PROJ]. Xem log repo (ci-logs/)."
+          fi
+          curl -s -X POST "https://api.telegram.org/bot$TG/sendMessage" --data-urlencode chat_id="$CHAT" --data-urlencode text="$MSG" -o /dev/null -w "notify %{http_code}\n" || true
+
+      - name: Upload artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vnindex-${{ steps.brain.outputs.proj }}
+          path: |
+            slide/${{ steps.brain.outputs.proj }}/output/final_video.mp4
+            upload-result.json
+          if-no-files-found: warn
+          retention-days: 14

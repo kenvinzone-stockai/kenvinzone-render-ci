@@ -1,0 +1,53 @@
+[KenvinZone] VNINDEX 30/10/2026 11:01
+KenvinZone — Phân tích chiến lược VNINDEX · HoSE (Tự động)
+VNINDEX 30/10/2026 11:01
+
+⚡ Quan điểm nhanh
+VNINDEX đang trong nhịp điều chỉnh rõ ràng, giá phá dưới toàn bộ EMA quan trọng khung D1 (1735 vs EMA20 1747/EMA50 1761/EMA200 1756), xác nhận suy yếu cấu trúc ngắn hạn dù W1 vẫn giữ xu hướng tăng dài hạn. Không phải thời điểm giải ngân mới, ưu tiên quan sát vùng hỗ trợ 1729.
+
+ĐIỂM: 46 / 100 — Avoid New Entry — độ tin cậy 62%
+Kỹ thuật 12/30 — D1 bearish rõ, giá dưới toàn bộ EMA, chỉ W1 còn giữ bullish structure nhưng MACD W1 đã bearish
+Timing 8/20 — M15 oversold có pin bar nhưng chưa đủ xác nhận, D1 chưa chạm đáy cấu trúc rõ ràng, rủi ro vào sớm cao
+Dòng tiền 10/20 — Vol ratio 0.78 thấp, chưa có dòng tiền bắt đáy mạnh xác nhận
+Sector 7/15 — Thiếu dữ liệu độ rộng cụ thể, bối cảnh điều chỉnh toàn thị trường không ủng hộ sector rotation rõ ràng
+Rủi ro 9/15 — Rủi ro margin call gia tăng khi giá phá các mốc hỗ trợ ngắn hạn liên tiếp
+
+Bối cảnh thị trường
+Chỉ số giảm từ đỉnh gần 1773 (prev day high) về sát vùng swing low 1729.2, mất mốc tâm lý 1747 (prev day low) và đóng cửa dưới toàn bộ hệ EMA D1. Thanh khoản phiên sáng thấp (vol ratio 0.78). Cấu trúc đa khung lệch pha: W1 bullish nhưng 3D/D1/H4/H1 đều nghiêng bearish.
+
+Vĩ mô & Catalyst
+- Áp lực chốt lời sau nhịp tăng nóng: giá đã giảm hơn 2% từ đỉnh gần nhất (1773 xuống 1735).
+- Thanh khoản yếu phiên sáng: Vol ratio 0.78, dòng tiền thận trọng.
+
+Phân tích đa khung thời gian
+Weekly (W1): trend Bullish, EMA align Full Bullish. MACD bias Bearish là cảnh báo sớm.
+3 ngày (3D): EMA align Mixed, RSI vào Bearish Zone, MACD bias Bearish.
+Daily (D1): trend Bearish, giá đóng cửa dưới EMA20/50/200 (1735 vs 1747/1761/1756). RSI D1 45.36 (trung tính). MACD hist dương 5.19 nhưng đang thu hẹp.
+M15: Oversold, Bullish Pin Bar xuất hiện, momentum compressing. Tổng thể Mixed/Range, MACD bias Bearish, volume Normal.
+
+Dòng tiền & Thanh khoản
+Dòng tiền phiên sáng khá yếu, vol ratio dưới 1. Cần cải thiện quanh vùng 1729-1735.
+
+Sector Rotation
+Dẫn dắt: chưa xác định rõ. Tăng nóng: nhóm đã tăng nóng trước đó rủi ro điều chỉnh sâu. Nên tránh: cổ phiếu margin cao, beta lớn.
+
+Góc nhìn
+Quỹ/Tổ chức: thận trọng giải ngân, chờ xác nhận vùng hỗ trợ 1729. Trader cá nhân: tránh bắt đáy sớm khi D1 chưa xác nhận đảo chiều.
+
+Ma trận kịch bản
+KB1 35% — Hồi kỹ thuật ngắn hạn từ vùng oversold M15. Kích hoạt: giữ vững trên 1729.2 kèm volume tăng xác nhận Pin Bar M15. Mục tiêu: 1747-1755 (vùng EMA20/EMA200 D1).
+KB2 45% — Tiếp tục giảm phá vùng hỗ trợ 1729. Kích hoạt: mất mốc 1729.2 kèm thanh khoản gia tăng, MACD D1 chuyển âm. Mục tiêu: 1710-1700.
+
+Chiến lược theo chân trời
+Hôm nay: theo dõi phản ứng giá quanh vùng 1729-1735, tránh mua đuổi Pin Bar M15 khi chưa có volume.
+Trong tuần: chờ D1 test lại vùng hỗ trợ 1729.
+Trung hạn: W1 vẫn bullish nhưng theo dõi MACD W1 bearish divergence.
+
+Kế hoạch hành động
+Vị thế mới: không mở mới, chờ xác nhận giữ vững 1729 kèm thanh khoản cải thiện.
+Đang nắm giữ: giảm tỷ trọng mã yếu, giữ nhóm cơ bản tốt nếu chưa vi phạm cắt lỗ.
+Margin: giảm ngay, đặc biệt vị thế mua gần đỉnh 1758-1773.
+Thesis mạnh lên khi: giá đóng cửa trên lại EMA20 D1 (1747) kèm thanh khoản đột biến.
+Thesis vô hiệu khi: giá phá thủng 1729.2 kèm volume tăng mạnh.
+
+Không phải khuyến nghị đầu tư chính thức.

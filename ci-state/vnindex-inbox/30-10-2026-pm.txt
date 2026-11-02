@@ -1,0 +1,53 @@
+[KenvinZone] VNINDEX 30/10/2026 15:01
+KenvinZone — Phân tích chiến lược VNINDEX · HoSE (Tự động)
+VNINDEX 30/10/2026 15:01
+
+⚡ Quan điểm nhanh
+VNINDEX phục hồi kỹ thuật trong phiên nhưng vẫn giao dịch dưới toàn bộ hệ EMA D1 (1747-1761), xu hướng trung hạn D1/H4/H1 đồng thuận bearish. Giá hiện tại 1742.31 đã giảm hơn 13 điểm so với tham chiếu (1755.61), đóng cửa dưới prev day low (1747.34). Đây là nhịp hồi trong xu hướng giảm ngắn hạn, chưa đủ cơ sở xác nhận đảo chiều.
+
+ĐIỂM: 48 / 100 — Watchlist — độ tin cậy 55%
+Kỹ thuật 14/30 — D1 bearish, Below All EMAs là tín hiệu cấu trúc yếu rõ rệt dù W1/3D vẫn giữ bullish nền tảng
+Timing 8/20 — M15 range/doji volume thấp, chưa có trigger entry rõ ràng
+Dòng tiền 9/20 — Dữ liệu volume bất thường (0), nghiêng về thận trọng
+Sector 7/15 — Thiếu dữ liệu chi tiết ngành, giả định độ rộng thị trường yếu theo D1 bearish
+Rủi ro 10/15 — Chưa có catalyst chính sách tiêu cực nhưng rủi ro margin call tăng khi giá dưới EMA50/EMA200 D1
+
+Bối cảnh thị trường
+VNINDEX kiểm định lại vùng hỗ trợ sau khi giảm mạnh từ đỉnh gần, giá đóng cửa dưới toàn bộ EMA20/50/200 D1. Phiên chiều thanh khoản thấp (vol=0 theo dữ liệu, cần verify), biên độ dao động trong ngày khá rộng (1734.63-1742.9). Cấu trúc M15 range/mixed với doji.
+
+Vĩ mô & Catalyst
+- Áp lực điều chỉnh sau nhịp tăng nóng: giá giảm từ đỉnh prev day high 1773.56 xuống dưới EMA20/50/200 D1.
+- Phân kỳ tín hiệu giữa khung thời gian: W1/3D vẫn EMA align bullish trong khi D1/H4/H1 chuyển bearish.
+
+Phân tích đa khung thời gian
+Weekly (W1): trend Bullish, EMA full bullish alignment, RSI zone neutral. MACD bias bearish — cảnh báo sớm.
+3 ngày (3D): trend Bullish, EMA align Mixed, MACD bias bearish.
+Daily (D1): trend Bearish, giá đóng cửa 1741.62 dưới EMA20 (1747.78), EMA50 (1761.44), EMA200 (1755.84) — Below All EMAs. RSI D1 47.06 (neutral nghiêng yếu), MACD hist dương 5.59. Cần lấy lại EMA20 (1747.78) để xác nhận phục hồi.
+M15: Mixed/Range, EMA lộn xộn, momentum nén lại, RSI neutral. Doji vùng giá cao kèm volume thấp, chưa phá high 20 bar (1742.9).
+
+Dòng tiền & Thanh khoản
+Dòng tiền chiều có dấu hiệu đỡ giá nhưng thiếu xác nhận thanh khoản mạnh (vol ratio=0 là dữ liệu bất thường). Nhịp hồi 1734 lên 1742 nhiều khả năng là bắt đáy ngắn hạn/short-covering.
+
+Sector Rotation
+Dẫn dắt: chưa đủ dữ liệu, theo dõi trụ ngân hàng-chứng khoán giữ vùng hỗ trợ. Đang hút tiền: theo dõi dòng tiền sang midcap. Tăng nóng: nhóm đã tăng nóng dễ bull trap. Nên tránh: cổ phiếu dưới toàn bộ EMA D1.
+
+Góc nhìn
+Quỹ/Tổ chức: giữ thận trọng khi D1 mất cấu trúc tăng, quan sát EMA20 D1 (1747.78). Cơ cấu cuối tuần/cuối tháng có thể tăng biến động. Trader cá nhân: dễ bị cuốn vào nhịp hồi doji M15, rủi ro bull trap cao khi D1 vẫn bearish.
+
+Ma trận kịch bản
+KB1 45% — Hồi kỹ thuật thất bại, tiếp tục dò đáy. Kích hoạt: giá không giữ được vùng 1734.63 (low trong phiên), thủng swing low 1730.93. Mục tiêu: 1715-1720 vùng hỗ trợ sâu hơn.
+KB2 35% — Tích lũy đi ngang chờ xác nhận xu hướng. Kích hoạt: giá dao động trong biên 1730-1748, thanh khoản cải thiện dần. Mục tiêu: 1745-1750 kiểm định lại EMA20 D1.
+
+Chiến lược theo chân trời
+Hôm nay: phiên chiều giằng co quanh vùng 1734-1742, ưu tiên đứng ngoài quan sát.
+Trong tuần: theo dõi khả năng lấy lại EMA20 D1 (1747.78), nếu thất bại rủi ro test lại swing low 1730.93.
+Trung hạn: W1/3D vẫn giữ cấu trúc tăng, nếu D1 ổn định trên EMA20-50 trong 1-2 tuần có thể là nhịp điều chỉnh lành mạnh.
+
+Kế hoạch hành động
+Vị thế mới: không giải ngân mới, chờ 1-2 phiên để D1 lấy lại EMA20.
+Đang nắm giữ: có thể giữ với stop loss chặt dưới swing low 1730.93, không bình quân giá xuống.
+Margin: giảm tỷ trọng ngay, giá dưới toàn bộ EMA D1 tăng rủi ro call margin.
+Thesis mạnh lên khi: D1 đóng cửa vững trên 1747.78 (EMA20) kèm thanh khoản tăng đột biến.
+Thesis vô hiệu khi: giá thủng 1730.93 (swing low) với thanh khoản tăng.
+
+Không phải khuyến nghị đầu tư chính thức.
