@@ -1,0 +1,192 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "03/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "CafeF",
+    "short": "CafeF",
+    "author": "Minh Phương",
+    "headline": "Lợi nhuận ngành chứng khoán bốc hơi hơn 40% trong quý III",
+    "date": "02/11/2026",
+    "url": "https://cafef.vn/loi-nhuan-nganh-chung-khoan-boc-hoi-hon-40-trong-quy-iii-188261102133736448.chn"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "Lợi Nhuận Nhóm Chứng",
+      "Bốc Hơi Hơn 40%"
+    ],
+    "sub": "Đòn bẩy margin lập đỉnh lịch sử",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "LNST -42,9%",
+        "tone": "down"
+      },
+      {
+        "icon": "⑂",
+        "text": "Margin 448k tỷ",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "Môi giới -56%",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Lợi nhuận toàn ngành chứng khoán quý ba <mark>giảm gần 43%</mark>, trong khi quy mô dư nợ đòn bẩy lại <mark>lập đỉnh kỷ lục</mark> mới."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh chung",
+      "ảm đạm đến đâu?"
+    ],
+    "stats": [
+      {
+        "value": 8600,
+        "decimals": 0,
+        "unit": "tỷ",
+        "label": "LNST toàn ngành",
+        "badge": "-42,9% YoY",
+        "tone": "gold",
+        "beat": 1
+      }
+    ],
+    "note": "Biên lợi nhuận ròng tụt xuống 24%, chạm mức thấp nhất trong 7 quý gần đây."
+  },
+  "s3": {
+    "title_lines": [
+      "Hai động cơ chính",
+      "hạ nhiệt ra sao?"
+    ],
+    "lead": "Môi giới và tự doanh đồng loạt hụt hơi",
+    "bars": [
+      {
+        "label": "Môi giới",
+        "display": "-56%",
+        "value": -56,
+        "beat": 1
+      },
+      {
+        "label": "Tự doanh",
+        "display": "-49%",
+        "value": -49,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 14,
+      "suffix": "%",
+      "text": "Biên lãi gộp mảng môi giới bị bào mòn",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Trụ cột duy nhất",
+      "còn tăng trưởng?"
+    ],
+    "cards": [
+      {
+        "big": "448.000 tỷ",
+        "title": "Dư nợ margin",
+        "text": "Lập đỉnh lịch sử toàn thị trường"
+      },
+      {
+        "big": "23.400 tỷ",
+        "title": "Lãi gộp cho vay",
+        "text": "Chiếm 45% tổng lợi nhuận gộp ngành"
+      },
+      {
+        "big": "4,1%",
+        "title": "Chênh lệch lãi",
+        "text": "Biên lãi cho vay thu hẹp đáng kể"
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Áp lực đòn bẩy",
+      "tập trung vào đâu?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "DẪN ĐẦU",
+        "title": "TCBS áp đảo",
+        "text": "Dư nợ đạt 54.400 tỷ đồng, chiếm 12% thị phần toàn ngành."
+      },
+      {
+        "color": "yellow",
+        "tag": "TẬP TRUNG",
+        "title": "Top 5 nắm giữ 41%",
+        "text": "Gồm TCBS, VPBankS, SSI, HSC và VPS với vị thế vượt trội."
+      },
+      {
+        "color": "red",
+        "tag": "CẢNH BÁO",
+        "title": "Rủi ro thanh khoản",
+        "text": "Dư nợ bằng 30 phiên giao dịch, gấp hơn ba lần năm trước."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Tín hiệu đèn báo",
+      "nhà đầu tư cần rõ?"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh",
+        "text": "Nguồn thu từ cho vay ký quỹ vẫn mang lại dòng tiền đều đặn.",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng",
+        "text": "Biên lãi gộp mảng môi giới bị bào mòn mạnh vì cạnh tranh phí.",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ",
+        "text": "Đòn bẩy phình to trong khi thanh khoản thị trường suy giảm.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Tác động thế nào",
+      "tới thị trường chung?"
+    ],
+    "items": [
+      {
+        "icon": "warn",
+        "title": "Mất cân đối thanh khoản",
+        "text": "Sức mua tự nhiên chậm lại khiến lượng đòn bẩy trở nên nặng nề.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Áp lực bán kỹ thuật",
+        "text": "Nếu thị trường điều chỉnh sâu, rủi ro giải chấp diện rộng sẽ tăng.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Thanh lọc thị phần",
+        "text": "Các đơn vị vốn dày và quản trị rủi ro tốt sẽ giữ vững vị thế.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Hiểu rõ sức ép đòn bẩy để xây dựng kế hoạch quản trị rủi ro hiệu quả.",
+    "cta": "Theo dõi để giải mã tin tiếp theo"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
