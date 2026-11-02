@@ -55,26 +55,6 @@ def restore_social_config() -> None:
     print("  Đã tái tạo config/social-upload.json từ secret.")
 
 
-def restore_tts_config() -> None:
-    """Tái tạo config/tts.json từ secret TTS_CONFIG_JSON (giọng clone + style + api_key)."""
-    raw = os.environ.get("TTS_CONFIG_JSON", "").strip()
-    if not raw:
-        print("  [cảnh báo] Thiếu TTS_CONFIG_JSON — sẽ dùng giọng mặc định, KHÔNG phải giọng clone.")
-        return
-    try:
-        json.loads(raw)
-    except json.JSONDecodeError as exc:
-        sys.exit(f"TTS_CONFIG_JSON không phải JSON hợp lệ: {exc}")
-    cfg = REPO / "config" / "tts.json"
-    cfg.parent.mkdir(parents=True, exist_ok=True)
-    cfg.write_text(raw, encoding="utf-8")
-    try:
-        os.chmod(cfg, 0o600)
-    except OSError:
-        pass
-    print("  Đã tái tạo config/tts.json (giọng clone).")
-
-
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("slide_dir", help="vd: slide/giai-ma-tin-tuc-quangtramctck-27-10")
@@ -96,18 +76,16 @@ def main() -> None:
 
     print(f"=== DECK: {project} | template={tpl} | preset giọng={preset} ===", flush=True)
 
-    restore_tts_config()
     if not args.no_upload:
         restore_social_config()
 
-    # 1) TTS — giọng + style lấy từ config/tts.json (auto-clone). Chỉ ép style-preset nếu deck khai báo.
+    # 1) TTS
     print(f"=== [1/3] Tạo giọng đọc ({args.engine}) ===", flush=True)
-    tts_cmd = [sys.executable, str(REPO / "generate_tts.py"), str(slide),
-               "--engine", args.engine, "--gemini-mode", "full"]
-    style_preset = data.get("style_preset")
-    if style_preset:
-        tts_cmd += ["--style-preset", str(style_preset)]
-    tts = subprocess.run(tts_cmd, cwd=str(REPO))
+    tts = subprocess.run(
+        [sys.executable, str(REPO / "generate_tts.py"), str(slide),
+         "--engine", args.engine, "--gemini-mode", "full", "--style-preset", preset],
+        cwd=str(REPO),
+    )
     if tts.returncode != 0:
         sys.exit(f"TTS thất bại (exit {tts.returncode})")
 
