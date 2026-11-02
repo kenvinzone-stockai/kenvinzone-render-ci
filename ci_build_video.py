@@ -35,6 +35,23 @@ STYLE_PRESET = {
 }
 
 
+def load_pron():
+    """Từ điển phát âm cho TTS: {từ gốc: phiên âm}. Chỉ áp vào TEXT gửi cho giọng đọc, KHÔNG đổi chữ hiển thị."""
+    import json as _j
+    pf = REPO / "pronunciation.json"
+    try:
+        return _j.loads(pf.read_text(encoding="utf-8")) if pf.exists() else {}
+    except Exception:
+        return {}
+
+
+def apply_pron(text, pron):
+    import re as _re
+    for k, v in pron.items():
+        text = _re.sub(r"(?<![A-Za-z0-9])" + _re.escape(k) + r"(?![A-Za-z0-9])", v, text, flags=_re.IGNORECASE)
+    return text
+
+
 def restore_social_config() -> None:
     """Tái tạo config/social-upload.json từ secret SOCIAL_UPLOAD_JSON."""
     raw = os.environ.get("SOCIAL_UPLOAD_JSON", "").strip()
@@ -53,6 +70,26 @@ def restore_social_config() -> None:
     except OSError:
         pass
     print("  Đã tái tạo config/social-upload.json từ secret.")
+
+
+def restore_tts_config() -> None:
+    """Tái tạo config/tts.json từ secret TTS_CONFIG_JSON (giọng clone + style + api_key)."""
+    raw = os.environ.get("TTS_CONFIG_JSON", "").strip()
+    if not raw:
+        print("  [cảnh báo] Thiếu TTS_CONFIG_JSON — sẽ dùng giọng mặc định, KHÔNG phải giọng clone.")
+        return
+    try:
+        json.loads(raw)
+    except json.JSONDecodeError as exc:
+        sys.exit(f"TTS_CONFIG_JSON không phải JSON hợp lệ: {exc}")
+    cfg = REPO / "config" / "tts.json"
+    cfg.parent.mkdir(parents=True, exist_ok=True)
+    cfg.write_text(raw, encoding="utf-8")
+    try:
+        os.chmod(cfg, 0o600)
+    except OSError:
+        pass
+    print("  Đã tái tạo config/tts.json (giọng clone).")
 
 
 def main() -> None:
@@ -76,16 +113,45 @@ def main() -> None:
 
     print(f"=== DECK: {project} | template={tpl} | preset giọng={preset} ===", flush=True)
 
+    restore_tts_config()
     if not args.no_upload:
         restore_social_config()
 
-    # 1) TTS
+    # 1) TTS — giọng + style lấy từ config/tts.json (auto-clone). Chỉ ép style-preset nếu deck khai báo.
+    # Từ điển phát âm: ghi bản phiên âm vào script cho TTS đọc đúng, rồi KHÔI PHỤC bản gốc + sửa timing
+    # để phụ đề/chữ hiển thị vẫn là nguyên bản (vd "KenvinZone").
+    pron = load_pron()
+    script_path = slide / "script-90s.txt"
+    orig_script = script_path.read_text(encoding="utf-8") if script_path.exists() else ""
+    if pron and orig_script:
+        spoken = apply_pron(orig_script, pron)
+        if spoken != orig_script:
+            script_path.write_text(spoken, encoding="utf-8")
+            print("  [phát âm] đã áp từ điển phiên âm cho giọng đọc (chữ hiển thị giữ nguyên).", flush=True)
+
     print(f"=== [1/3] Tạo giọng đọc ({args.engine}) ===", flush=True)
-    tts = subprocess.run(
-        [sys.executable, str(REPO / "generate_tts.py"), str(slide),
-         "--engine", args.engine, "--gemini-mode", "full", "--style-preset", preset],
-        cwd=str(REPO),
-    )
+    tts_cmd = [sys.executable, str(REPO / "generate_tts.py"), str(slide),
+               "--engine", args.engine, "--gemini-mode", "full"]
+    style_preset = data.get("style_preset")
+    if style_preset:
+        tts_cmd += ["--style-preset", str(style_preset)]
+    tts = subprocess.run(tts_cmd, cwd=str(REPO))
+
+    # khôi phục script gốc + sửa text trong timing.json về nguyên bản (giọng giữ bản phiên âm đã đọc)
+    if pron and orig_script:
+        script_path.write_text(orig_script, encoding="utf-8")
+        tj = slide / "output" / "timing.json"
+        try:
+            if tj.exists():
+                items = json.loads(tj.read_text(encoding="utf-8"))
+                ol = [l.strip() for l in orig_script.split("\n") if l.strip()]
+                for i, item in enumerate(items):
+                    if i < len(ol):
+                        item["text"] = ol[i]
+                tj.write_text(json.dumps(items, ensure_ascii=False), encoding="utf-8")
+        except Exception as e:
+            print("  [phát âm] cảnh báo: không sửa được timing.json:", e, flush=True)
+
     if tts.returncode != 0:
         sys.exit(f"TTS thất bại (exit {tts.returncode})")
 
