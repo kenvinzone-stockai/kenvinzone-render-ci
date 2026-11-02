@@ -54,10 +54,10 @@ jobs:
           if "${{ github.event_name }}" == "repository_dispatch":
               amb = os.environ.get("PAYLOAD_AM", ""); pmb = os.environ.get("PAYLOAD_PM", "")
               if pmb:
-                  try: pm.write_bytes(base64.b64decode(pmb))
+                  try: pm.write_bytes(base64.b64decode(pmb, validate=True))
                   except Exception: pm.write_text(pmb, encoding="utf-8")
               if amb:
-                  try: am.write_bytes(base64.b64decode(amb))
+                  try: am.write_bytes(base64.b64decode(amb, validate=True))
                   except Exception: am.write_text(amb, encoding="utf-8")
           assert pm.exists(), f"Thiếu file chiều {pm}"
           if not am.exists(): am.write_text("", encoding="utf-8")
