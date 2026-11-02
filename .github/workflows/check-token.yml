@@ -1,0 +1,37 @@
+name: check-token
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test YouTube refresh token
+        env:
+          SOCIAL_UPLOAD_JSON: ${{ secrets.SOCIAL_UPLOAD_JSON }}
+          YT_CHANNEL_ID: ${{ secrets.YT_CHANNEL_ID }}
+        run: |
+          python - <<'PY'
+          import os, sys
+          sys.path.insert(0, ".")
+          from ci_build_video import restore_social_config
+          restore_social_config()
+          chan = os.environ.get("YT_CHANNEL_ID", "").strip()
+          if chan:
+              from social_upload.youtube import set_youtube_active_channel
+              set_youtube_active_channel(chan)
+          from social_upload.youtube import read_social_config, youtube_config, youtube_refresh_access_token
+          cfg = read_social_config(); yt = youtube_config(cfg)
+          try:
+              t = youtube_refresh_access_token(cfg, yt)
+              print("YOUTUBE_TOKEN_OK len=", len(t))
+          except Exception as e:
+              print("YOUTUBE_TOKEN_FAIL:", e)
+              sys.exit(1)
+          PY
