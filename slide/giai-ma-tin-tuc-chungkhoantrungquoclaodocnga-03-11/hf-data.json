@@ -1,0 +1,191 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "03/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "MoneyF",
+    "short": "MoneyF",
+    "author": "Văn Mạnh",
+    "headline": "Chứng khoán Trung Quốc lao dốc, ngân hàng trung ương lần thứ ba bơm tiền hỗ trợ",
+    "date": "03/11/2026",
+    "url": "https://moneyf.vn/chung-khoan-trung-quoc-lao-doc-ngan-hang-trung-uon-ulmdtg0c"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "PBOC BƠM 15 TỶ USD",
+      "CỨU THỊ TRƯỜNG"
+    ],
+    "sub": "Tháng giảm mạnh nhất gần 11 năm qua",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "CSI300 -8,5%",
+        "tone": "down"
+      },
+      {
+        "icon": "◆",
+        "text": "Bơm >100 tỷ NDT",
+        "tone": "blue"
+      },
+      {
+        "icon": "⑂",
+        "text": "Lần can thiệp thứ 3",
+        "tone": "gold"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Sau cú rơi sâu nhất gần mười một năm, <mark>Ngân hàng Nhân dân Trung Quốc</mark> phải kích hoạt gói hoán đổi thanh khoản <mark>hơn một trăm tỷ nhân dân tệ</mark> để giải cứu thị trường cổ phiếu."
+  },
+  "s2": {
+    "title_lines": [
+      "Thị trường lao dốc",
+      "nghiêm trọng ra sao?"
+    ],
+    "stats": [
+      {
+        "value": 8.5,
+        "decimals": 1,
+        "unit": "%",
+        "label": "Chỉ số CSI300 giảm tháng 10",
+        "badge": "Đáy gần 11 năm",
+        "tone": "gold",
+        "beat": 1
+      }
+    ],
+    "note": "Cổ phiếu công nghệ bị xả mạnh theo làn sóng chốt lời trí tuệ nhân tạo toàn cầu."
+  },
+  "s3": {
+    "title_lines": [
+      "Cơ chế bơm tiền",
+      "hoạt động thế nào?"
+    ],
+    "bars": [
+      {
+        "label": "2 đợt trước",
+        "display": "105 tỷ NDT",
+        "value": 105,
+        "beat": 1
+      },
+      {
+        "label": "Đợt này",
+        "display": ">100 tỷ NDT",
+        "value": 100,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 15.04,
+      "suffix": "tỷ USD",
+      "text": "Quy mô hỗ trợ qua hoán đổi tài sản",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Kinh tế gặp",
+      "những điểm nghẽn gì?"
+    ],
+    "cards": [
+      {
+        "big": "49,3 điểm",
+        "title": "PMI sản xuất thu hẹp",
+        "text": "Đơn hàng xuất khẩu mới giảm về 48,7 điểm"
+      },
+      {
+        "big": "-20,6%",
+        "title": "Đầu tư bất động sản",
+        "text": "Doanh thu bán nhà thương mại mới giảm 13,9%"
+      },
+      {
+        "big": "+1,1%",
+        "title": "Bán lẻ nội địa yếu",
+        "text": "Tăng trưởng tiêu dùng và sức mua còn rất chậm"
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Góc nhìn tác động",
+      "cho nhà đầu tư?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "ĐÈN XANH",
+        "title": "Hành động quyết liệt",
+        "text": "Nhà điều hành phát tín hiệu bảo vệ thanh khoản và nâng đỡ tâm lý"
+      },
+      {
+        "color": "yellow",
+        "tag": "ĐÈN VÀNG",
+        "title": "Tác động VN-Index",
+        "text": "Tâm lý khu vực hạ nhiệt nhưng dòng vốn ngoại vẫn rất thận trọng"
+      },
+      {
+        "color": "red",
+        "tag": "ĐÈN ĐỎ",
+        "title": "Nội tại chưa đảo chiều",
+        "text": "Bơm tiền khó bù đắp ngay đà suy yếu của địa ốc và sức mua"
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Dòng tiền phân hóa",
+      "tìm đến nơi đâu?"
+    ],
+    "chain": [
+      {
+        "title": "Tháo chạy nhóm tăng nóng",
+        "text": "Cổ phiếu công nghệ và AI chịu áp lực chốt lời quốc tế rất mạnh",
+        "beat": 1
+      },
+      {
+        "title": "Trú ẩn ngành thiết yếu",
+        "text": "Nhóm hàng tiêu dùng thiết yếu đi ngược dòng tăng xấp xỉ hai phần trăm",
+        "beat": 1
+      },
+      {
+        "title": "Chờ đợi sự xác nhận",
+        "text": "Thị trường chỉ phản ứng ngắn hạn nếu lợi nhuận doanh nghiệp chưa hồi",
+        "beat": 2
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư F0",
+      "cần hành động gì?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Không vội bắt đáy",
+        "text": "Chờ tín hiệu dòng tiền tạo đáy bền vững thay vì mua theo tin tức",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Quản trị danh mục",
+        "text": "Ưu tiên doanh nghiệp có dòng tiền kinh doanh thật và cổ tức đều",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Theo dõi vĩ mô lớn",
+        "text": "Quan sát độ thẩm thấu của gói hỗ trợ vào số liệu kinh tế thực tế",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Bơm tiền là liều thuốc giảm đau, sức khỏe doanh nghiệp mới là gốc rễ.",
+    "cta": "Theo dõi KenvinZone để cập nhật dòng chảy thị trường mỗi ngày."
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
