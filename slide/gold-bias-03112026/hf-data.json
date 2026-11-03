@@ -2,6 +2,8 @@
   "template": "gold-daily-bias-hf",
   "date": "03/11/2026",
   "title_html": "BÁO CÁO NHANH VĨ MÔ<br/>&amp; BIAS NGÀY",
+  "eyebrow": "⚡ DAILY FLASH BIAS · VÀNG",
+  "date_prefix": "PHIÊN NGÀY",
   "regime": "TRUNG LẬP",
   "score": 0.7,
   "history": [
@@ -87,21 +89,21 @@
       "pct": 60,
       "color": "#fbbf24",
       "name": "Giằng co trong biên",
-      "desc": "Dao động tích lũy giữa Put Wall <b>360</b> (≈<b>3.897</b>) và Call Wall <b>375</b> (≈<b>4.060</b>)"
+      "desc": "Dao động giữa Put Wall <b>360</b> (≈<b>3.897</b>) và Call Wall <b>375</b> (≈<b>4.060</b>)"
     },
     {
       "key": "s_down",
       "pct": 22,
       "color": "#f87171",
       "name": "Phá vỡ giảm",
-      "desc": "Áp lực USD và rút vốn mạnh, thủng Put Wall <b>360</b> (≈<b>3.897</b>) rơi vào vùng biến động mạnh"
+      "desc": "USD tăng áp lực, giá thủng <b>360</b> (≈<b>3.897</b>) mở rộng nhịp điều chỉnh"
     },
     {
       "key": "s_up",
       "pct": 18,
       "color": "#4ade80",
       "name": "Bứt phá trú ẩn",
-      "desc": "Vượt dứt khoát Call Wall <b>375</b> (≈<b>4.060</b>) mở rộng đà tăng"
+      "desc": "Vượt Call Wall <b>375</b> (≈<b>4.060</b>) khi nhu cầu phòng hộ gia tăng"
     }
   ],
   "actions": [
@@ -115,40 +117,40 @@
       "icon": "▲",
       "color": "#4ade80",
       "title": "Điều kiện mua lại",
-      "desc": "Tích lũy kiểm định vững chắc trên Gamma Flip <b>365</b> (≈ <b>3.951</b>)"
+      "desc": "Đóng cửa vững trên Gamma Flip <b>365</b> (≈ <b>3.951</b>)"
     },
     {
       "icon": "▼",
       "color": "#f87171",
       "title": "Rủi ro cần tránh",
-      "desc": "Thủng Put Wall <b>360</b> (≈ <b>3.897</b>) kích hoạt bán tháo gamma âm"
+      "desc": "Thủng Put Wall <b>360</b> (≈ <b>3.897</b>) kích hoạt rủi ro bán tháo"
     }
   ],
   "anchors": {
     "score": "không phẩy bảy",
-    "trend": "đi ngang",
+    "trend": "ba phiên liên tiếp",
     "neutral": "Trung Lập",
     "usd": "âm ba phẩy chín",
-    "flows": "dòng tiền rút",
+    "flows": "dòng tiền âm",
     "gold_spec": "yếu tố riêng",
     "counterweight": "Đối trọng",
-    "rates": "lãi suất thực",
+    "rates": "dương chín",
     "m2": "thanh khoản",
     "risk": "khẩu vị rủi ro",
-    "stress": "chưa căng",
+    "stress": "chưa căng thẳng",
     "gex": "Net GEX",
     "gex_value": "dương hai phẩy năm",
     "spot": "Spot GLD",
-    "spot_xau": "ba chín tám",
-    "flip": "Gamma Flip",
-    "put": "Put Wall",
-    "call": "Call Wall",
-    "vol": "kìm nén",
-    "s_base": "sáu mươi phần",
-    "s_down": "hai mươi hai phần",
-    "s_up": "mười tám phần",
-    "act_neutral": "giữ trung tính",
-    "act_buy": "Gamma Flip",
+    "spot_xau": "ba chín tám một",
+    "flip": "Gamma Flip ba sáu lăm",
+    "put": "Put Wall ba sáu mươi",
+    "call": "Call Wall ba bảy lăm",
+    "vol": "kìm nén biến động",
+    "s_base": "sáu mươi phần trăm",
+    "s_down": "hai mươi hai phần trăm",
+    "s_up": "mười tám phần trăm",
+    "act_neutral": "giữ vị thế trung tính",
+    "act_buy": "mua tích lũy",
     "aurora": "AURORA",
     "follow": "follow KenvinZone"
   },
@@ -173,5 +175,5 @@
   ],
   "audio_offset": 1.0,
   "outro_hold": 3.6,
-  "stress_note_html": "✅ Khẩu vị rủi ro (+1.77) và thanh khoản M2 (+1.67) đều <b>dương</b>, hệ thống tín dụng duy trì ổn định hỗ trợ tâm lý nắm giữ Vàng"
+  "stress_note_html": "✅ Khẩu vị rủi ro và M2 đều <b>dương</b>, hệ thống tín dụng duy trì ổn định hỗ trợ tâm lý nắm giữ Vàng"
 }
