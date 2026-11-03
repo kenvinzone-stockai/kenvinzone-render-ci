@@ -1,0 +1,5 @@
+  model khả dụng: ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest'] -> chọn gemini-flash-latest
+=== [1/2] Gemini viết tổng kết liên thị trường tuần 02/11/2026 | composite -0.9 | SPX -1.4 NAS -2.4 GOLD +1.0 | model=gemini-flash-latest ===
+  validate: script 301 từ — QUÁ DÀI; cắt còn ≤ 200 từ
+=== [2/2] Đã dựng intermarket-week-02112026 ===
+PROJECT=intermarket-week-02112026

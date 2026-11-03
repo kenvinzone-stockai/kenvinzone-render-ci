@@ -108,7 +108,7 @@
       "color": "#ef4444"
     }
   ],
-  "rotation_tag": "Dòng tiền dịch chuyển từ nhóm <b>tấn công</b> sang <b>phòng thủ</b>, thận trọng chờ tín hiệu định hướng từ USD.",
+  "rotation_tag": "Dòng tiền dịch chuyển từ <b>tấn công</b> sang <b>phòng thủ</b>, thận trọng chờ tín hiệu USD.",
   "scenarios": [
     {
       "pct": 50,
@@ -118,12 +118,12 @@
     {
       "pct": 30,
       "color": "#f87171",
-      "name": "Áp lực USD gia tăng"
+      "name": "Điều chỉnh kỹ thuật"
     },
     {
       "pct": 20,
       "color": "#4ade80",
-      "name": "Hồi phục bứt phá"
+      "name": "Hồi phục khi USD giảm"
     }
   ],
   "audio_offset": 1.0,
