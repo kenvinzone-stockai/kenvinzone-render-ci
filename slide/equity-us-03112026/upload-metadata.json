@@ -1,7 +1,7 @@
 {
   "youtube": {
-    "title": "S&P 500 & Nasdaq: Phân kỳ định lượng dưới vùng Gamma Flip",
-    "description": "📊 Bản tin Phân tích định lượng Chứng khoán Mỹ từ KenvinZone Analytics.\n\nTổng hợp dữ liệu phiên giao dịch:\n🔹 S&P 500 (SPX): Bias -2.9 (Trung lập) | Gamma SPY âm 432 triệu | Spot 755.72 dưới Gamma Flip 765.34.\n🔹 Nasdaq 100: Bias +0.9 (Trung lập) | QQQ Net GEX âm 217 triệu | Lực đẩy chính từ Fed (+8.03).\n\nCảnh báo vùng biến động mạnh khi cả SPY và QQQ đều nằm dưới ngưỡng Gamma Flip!\n\n⚠️ Lưu ý: Nội dung mang tính chất tham khảo số liệu định lượng, KHÔNG phải lời khuyên đầu tư.\n\n#sp500 #nasdaq #chungkhoanmy #gamma #kenvinzone",
+    "title": "S&P 500 & Nasdaq: Phân kỳ ngắn hạn, Gamma âm thử thách | Bản tin ngày",
+    "description": "📊 Bản tin định lượng S&P 500 & Nasdaq hôm nay:\n- S&P 500: Điểm Bias -2.9 (Trung lập), Net GEX SPY âm -432 triệu.\n- Nasdaq: Điểm Bias +0.9 (Trung lập), phân kỳ ngày/tuần, Net GEX QQQ âm -217 triệu.\n⚡ Lưu ý vùng Gamma Flip khi cả SPY và QQQ đều đang giao dịch ở vùng rủi ro biến động mở rộng.\n\n⚠️ Tuyên bố miễn trừ trách nhiệm: Nội dung chỉ nhằm mục đích tham khảo định lượng, KHÔNG phải lời khuyên đầu tư tài chính.\n\n#sp500 #nasdaq #chungkhoanmy #gamma #kenvinzone",
     "tags": [
       "sp500",
       "nasdaq",
@@ -9,13 +9,13 @@
       "nhận định thị trường",
       "kenvinzone",
       "aurora",
-      "gamma",
-      "net gex",
+      "gamma flip",
+      "gex",
       "spy",
       "qqq",
       "định lượng chứng khoán",
-      "call wall",
-      "put wall"
+      "phân tích kỹ thuật",
+      "đầu tư mỹ"
     ],
     "privacyStatus": "private",
     "categoryId": "25",

@@ -121,17 +121,17 @@
       }
     }
   ],
-  "divergence_tag": "S&P 500 <b>đồng pha âm</b> trong khi Nasdaq xuất hiện <b>phân kỳ ngắn hạn</b>",
+  "divergence_tag": "S&P 500 đồng pha giảm nhẹ, trong khi Nasdaq <b>phân kỳ tăng ngắn hạn</b>.",
   "scenarios": [
     {
-      "pct": 50,
+      "pct": 55,
       "color": "#fbbf24",
       "name": "Đi ngang giằng co"
     },
     {
-      "pct": 30,
+      "pct": 25,
       "color": "#f87171",
-      "name": "Áp lực điều chỉnh"
+      "name": "Rủi ro điều chỉnh"
     },
     {
       "pct": 20,

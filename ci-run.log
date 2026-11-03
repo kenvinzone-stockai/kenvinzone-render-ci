@@ -748,3 +748,88 @@ Traceback (most recent call last):
   File "/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/render_hyperframes.py", line 305, in render_hyperframes
     raise RuntimeError(f"HyperFrames render that bai (exit {code}): {reason.strip()[:300]} | Log day du: {log_file}")
 RuntimeError: HyperFrames render that bai (exit 1): ✗  Render failed | Log day du: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/hf_render.log
+=== DECK: equity-us-03112026 | template=equity-bias-hf | preset giọng=giai-ma-nganh ===
+  Đã tái tạo config/tts.json (giọng clone).
+  Đã tái tạo config/social-upload.json từ secret.
+  [phát âm] đã áp từ điển phiên âm cho giọng đọc (chữ hiển thị giữ nguyên).
+=== [1/3] Tạo giọng đọc (gemini) ===
+/opt/hostedtoolcache/Python/3.12.15/x64/bin/python: can't open file '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/split_voiceover.py': [Errno 2] No such file or directory
+ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+  configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, concat, from '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/concat_list.txt':
+  Duration: N/A, start: -0.046042, bitrate: 72 kb/s
+  Stream #0:0: Audio: mp3, 24000 Hz, mono, fltp, 72 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> mp3 (libmp3lame))
+Press [q] to stop, [?] for help
+Output #0, mp3, to '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/voiceover_concat.mp3':
+  Metadata:
+    TSSE            : Lavf60.16.100
+  Stream #0:0: Audio: mp3, 24000 Hz, mono, fltp
+    Metadata:
+      encoder         : Lavc60.31.102 libmp3lame
+size=       0kB time=N/A bitrate=N/A speed=N/A    [out#0/mp3 @ 0x55f5cf9a0b00] video:0kB audio:694kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.033359%
+size=     694kB time=00:01:19.36 bitrate=  71.6kbits/s speed= 173x    
+Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
+Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
+Sending full script to Gemini TTS: 7 slides, 923 chars
+Full Gemini TTS saved: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/gemini_full_voiceover.mp3
+
+=== Splitting full Gemini TTS voiceover ===
+⚠ Full Gemini split failed (Command '['/opt/hostedtoolcache/Python/3.12.15/x64/bin/python', '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/split_voiceover.py', '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026', '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/gemini_full_voiceover.mp3', '--output-dir', '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output']' returned non-zero exit status 2.). Falling back to per-slide Gemini TTS.
+Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
+Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
+=== Generating per-slide TTS ===
+Slide 1 TTS: 10.34s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/line_0.mp3
+Slide 2 TTS: 11.66s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/line_1.mp3
+Slide 3 TTS: 14.14s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/line_2.mp3
+Slide 4 TTS: 10.82s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/line_3.mp3
+Slide 5 TTS: 16.10s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/line_4.mp3
+  [!] Clone model gemini-3.8-flash-tts het quota (429), thu model tiep...
+Slide 6 TTS: 9.74s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/line_5.mp3
+Slide 7 TTS: 6.58s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/line_6.mp3
+
+=== Concatenating per-slide audio ===
+Concatenated voiceover: 79.01s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/voiceover_concat.mp3
+=== [2/3] Render HyperFrames (30fps đầy đủ) ===
+=== HyperFrames (equity-bias-hf): dung project tai /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/hf ===
+  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
+=== HyperFrames: dung composition tu hf-data.json ===
+TOTAL 83.99 scenes [('hook', 0.0, 11.344), ('spx', 11.344, 25.8), ('nas', 37.144, 26.928), ('cmp', 64.072, 9.744), ('cta', 73.816, 10.174), ('captions', 0, 83.99)]
+=== HyperFrames: render tung khung hinh (84.0s video) ===
+  Trinh duyet render: /home/runner/.cache/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-linux64/chrome-headless-shell
+  ◆  Rendering hf → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/final_video.hf.mp4
+     30fps · high · auto workers (4 cores detected)
+     GPU: browser GPU (auto-detect)
+  [?25l│
+  ◒  Checking browser...
+  [1G[J◇  Browser: env
+  [?25h
+    Lint: 2 error(s), 1 warning(s) — run with --lint-verbose for full output.
+    Continuing render despite lint issues. Use --strict to block errors.
+  HyperFrames render 5%
+  HyperFrames render 20%
+  HyperFrames render 30%
+  HyperFrames render 40%
+  HyperFrames render 50%
+  HyperFrames render 60%
+  HyperFrames render 70%
+  HyperFrames render 80%
+  HyperFrames render 90%
+  ◇  /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/final_video.hf.mp4
+     15.8 MB · 1m 24.0s video · rendered in 3m 34.8s
+     beginframe capture · software gpu · compile 1.6s · extract 0.0s · audio 7.8s · probe 0.3s · setup 2.2s · capture 3m 21.9s · encode (during capture) 3m 21.9s · assemble 1.1s
+Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/final_video.mp4
+  Video: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/final_video.mp4
+=== [3/3] Upload YouTube (privacy=private) ===
+{"ok": true, "platform": "youtube", "project": "equity-us-03112026", "video_id": "ruR6nkKRdKs", "url": "https://youtu.be/ruR6nkKRdKs", "studio_url": "https://studio.youtube.com/video/ruR6nkKRdKs/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
+  Xong: https://youtu.be/ruR6nkKRdKs
