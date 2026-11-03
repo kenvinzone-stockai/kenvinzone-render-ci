@@ -31,10 +31,11 @@ def slide_start(i):
     return round(SLIDES[i]["start"] + OFF, 3) if i > 0 else 0.0
 
 
-def tline(line, frac):
-    """Absolute video time at `frac` of its voiceover line."""
+def tline(line, frac, base=0.0):
+    """Video time at `frac` of its voiceover line. Pass base=scene_start to get a
+    time RELATIVE to that scene's composition timeline (each slide plays from its own start)."""
     s = float(SLIDES[line]["start"]); d = float(SLIDES[line]["duration"])
-    return round(s + max(0.0, min(1.0, frac)) * d + OFF, 3)
+    return round(s + max(0.0, min(1.0, frac)) * d + OFF - base, 3)
 
 
 # scene slots (start,end in absolute video time)
@@ -151,7 +152,7 @@ def scene_hook():
   {gauge(nas, 790)}
   <div class="hk-dv" id="hk-dv">{dv}</div>
 </div>"""
-    t_spx = tline(0, 0.35); t_nas = tline(0, 0.6); t_dv = tline(0, 0.86)
+    t_spx = tline(0, 0.35, st); t_nas = tline(0, 0.6, st); t_dv = tline(0, 0.86, st)
     js = f"""
 gsap.set('#hk-dv', {{opacity:0}});
 tl.fromTo('#hk-spx', {{scale:1.2, opacity:0}}, {{scale:1, opacity:1, duration:0.4, ease:'back.out(1.6)', immediateRender:false}}, {t_spx});
@@ -187,7 +188,7 @@ def scene_index(key, line_hdr, line_gamma):
             f'<div class="ix-bar" id="{cid}-bar{i}" style="left:{x:.0f}px;width:{w:.0f}px;background:{r["color"]};box-shadow:0 0 20px {r["color"]}55;transform-origin:{"right" if neg else "left"} center;"></div>'
             f'<div class="ix-lbl" style="{lbl}"><span class="ix-nm">{esc(r["label"])}</span> '
             f'<span class="ix-vl mono" id="{cid}-vl{i}" style="color:{r["color"]};">{r["value"]:+.2f}</span></div></div>')
-        t = tline(line_hdr, 0.28 + 0.52 * (i / max(1, len(rows) - 1)))
+        t = tline(line_hdr, 0.28 + 0.52 * (i / max(1, len(rows) - 1)), stsc)
         fjs.append(
             f"tl.fromTo('#{cid}-bar{i}', {{scaleX:0}}, {{scaleX:1, duration:0.6, ease:'expo.out', immediateRender:false}}, {t});"
             f"counter('#{cid}-vl{i}', 0, {r['value']}, {t}, 0.6, 2, '{'+' if r['value']>0 else ''}', '');")
@@ -196,11 +197,11 @@ def scene_index(key, line_hdr, line_gamma):
     gcol = "#ef4444" if neg else "#22c55e"
     gword = "ÂM · khuếch đại" if neg else "DƯƠNG · kìm nén"
     spot_above = g["spot"] >= g["flip"]
-    t_hdr = tline(line_hdr, 0.04)
-    t_gpanel = tline(line_gamma, 0.05)
-    t_gex = tline(line_gamma, 0.2)
-    t_lv = tline(line_gamma, 0.5)
-    t_em = tline(line_gamma, 0.8)
+    t_hdr = tline(line_hdr, 0.04, stsc)
+    t_gpanel = tline(line_gamma, 0.05, stsc)
+    t_gex = tline(line_gamma, 0.2, stsc)
+    t_lv = tline(line_gamma, 0.5, stsc)
+    t_em = tline(line_gamma, 0.8, stsc)
     pos = (sc + 100) / 200 * 100
     css = f"""
 .ix-hd{{position:absolute;left:60px;right:60px;top:250px;}}
@@ -275,7 +276,7 @@ def scene_cmp():
     cards = []; js = []
     for i, s in enumerate(D.get("scenarios", [])[:3]):
         y = 980 + i * 0  # scenarios laid horizontally
-        t = tline(5, 0.45 + i * 0.16)
+        t = tline(5, 0.45 + i * 0.16, st)
         cards.append(
             f'<div class="cs-card" id="cs-{i}" style="left:{60 + i*((W-120)//3)}px;width:{(W-120)//3 - 16}px;border-color:{s["color"]}99;">'
             f'<div class="cs-p mono" id="cs-p{i}" style="color:{s["color"]};">0%</div>'
@@ -311,8 +312,8 @@ def scene_cmp():
 </div>"""
     jj = f"""
 tl.fromTo('#cmp-ttl', {{opacity:0, y:-40, filter:'blur(10px)'}}, {{opacity:1, y:0, filter:'blur(0px)', duration:0.4, ease:'expo.out'}}, 0.05);
-tl.fromTo('#cmp-wrap', {{opacity:0, y:30}}, {{opacity:1, y:0, duration:0.45, ease:'expo.out'}}, {tline(5,0.08)-st if tline(5,0.08)>st else 0.2});
-tl.fromTo('#cs-dv', {{opacity:0, scale:0.9}}, {{opacity:1, scale:1, duration:0.4, ease:'back.out(1.5)', immediateRender:false}}, {tline(5,0.3)});
+tl.fromTo('#cmp-wrap', {{opacity:0, y:30}}, {{opacity:1, y:0, duration:0.45, ease:'expo.out'}}, {max(0.2, tline(5,0.08,st))});
+tl.fromTo('#cs-dv', {{opacity:0, scale:0.9}}, {{opacity:1, scale:1, duration:0.4, ease:'back.out(1.5)', immediateRender:false}}, {tline(5,0.3,st)});
 {''.join(js)}
 tl.to('#cmp-stage', {{opacity:0, filter:'blur(12px)', duration:0.3, ease:'power3.in'}}, {dur - 0.32});
 """
@@ -323,7 +324,7 @@ tl.to('#cmp-stage', {{opacity:0, filter:'blur(12px)', duration:0.3, ease:'power3
 def scene_cta():
     st, en = SCENES[4][1], SCENES[4][2]
     dur = round(en - st, 3)
-    t_f = tline(6, 0.25)
+    t_f = tline(6, 0.25, st)
     css = """
 .ct{position:absolute;left:0;right:0;top:470px;text-align:center;}
 .ct img{width:170px;height:170px;filter:drop-shadow(0 0 30px rgba(56,189,248,.6));}
