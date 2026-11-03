@@ -1,0 +1,44 @@
+{
+  "subtitles": {
+    "enabled": true,
+    "color": "#fde047",
+    "fontSize": 18,
+    "bottom": 60,
+    "maxLines": 1
+  },
+  "backgroundFx": "candlestick",
+  "bgm": {
+    "mode": "preset",
+    "preset": "ambient",
+    "volume": 0.18
+  },
+  "scriptLines": [
+    "Cả S&P 500, Nasdaq lẫn Gold đều khép lại tuần qua trong thế trung lập giằng co, mở ra câu hỏi lớn về hướng bứt phá tiếp theo của liên thị trường.",
+    "Điểm composite dừng ở mức âm không phẩy chín, phản ánh thế cân bằng khi S&P 500 đạt âm một phẩy tư, Nasdaq âm hai phẩy bốn còn Gold giữ mức dương một phẩy không.",
+    "Bức tranh vĩ mô ghi nhận lãi suất thực là lực đỡ lớn nhất với cộng năm phẩy chín mươi lăm điểm, đối trọng trực tiếp với lực cản từ đồng USD âm hai phẩy năm mươi lăm.",
+    "S&P 500 được độ rộng thị trường hỗ trợ tốt nhất, nhưng khẩu vị rủi ro suy yếu cùng Gamma âm khiến biên độ kỳ vọng dao động quanh mức sáu phẩy tám điểm.",
+    "Nasdaq tiếp tục chịu lực đè nặng nề từ tâm lý né tránh rủi ro của giới đầu tư dù nhận xung lực nâng đỡ từ lãi suất thực.",
+    "Gold diễn ra cuộc giằng co điển hình khi lực kéo từ lãi suất thực áp đảo áp lực ghìm giá của đồng USD, giữ vững cấu trúc Gamma dương an toàn.",
+    "Dòng tiền luân chuyển chậm rãi với năm mươi phần trăm kịch bản giằng co tích lũy, ba mươi phần trăm rủi ro điều chỉnh và hai mươi phần trăm khả năng hồi phục khi USD suy yếu.",
+    "Giai đoạn này ưu tiên kỷ luật bảo toàn vốn và giao dịch theo biên độ hẹp, mời bạn theo dõi KenvinZone cùng AURORA để nắm bắt tín hiệu định lượng mỗi tuần."
+  ],
+  "slides": {
+    "deletedIds": [],
+    "scriptLines": [
+      "Cả S&P 500, Nasdaq lẫn Gold đều khép lại tuần qua trong thế trung lập giằng co, mở ra câu hỏi lớn về hướng bứt phá tiếp theo của liên thị trường.",
+      "Điểm composite dừng ở mức âm không phẩy chín, phản ánh thế cân bằng khi S&P 500 đạt âm một phẩy tư, Nasdaq âm hai phẩy bốn còn Gold giữ mức dương một phẩy không.",
+      "Bức tranh vĩ mô ghi nhận lãi suất thực là lực đỡ lớn nhất với cộng năm phẩy chín mươi lăm điểm, đối trọng trực tiếp với lực cản từ đồng USD âm hai phẩy năm mươi lăm.",
+      "S&P 500 được độ rộng thị trường hỗ trợ tốt nhất, nhưng khẩu vị rủi ro suy yếu cùng Gamma âm khiến biên độ kỳ vọng dao động quanh mức sáu phẩy tám điểm.",
+      "Nasdaq tiếp tục chịu lực đè nặng nề từ tâm lý né tránh rủi ro của giới đầu tư dù nhận xung lực nâng đỡ từ lãi suất thực.",
+      "Gold diễn ra cuộc giằng co điển hình khi lực kéo từ lãi suất thực áp đảo áp lực ghìm giá của đồng USD, giữ vững cấu trúc Gamma dương an toàn.",
+      "Dòng tiền luân chuyển chậm rãi với năm mươi phần trăm kịch bản giằng co tích lũy, ba mươi phần trăm rủi ro điều chỉnh và hai mươi phần trăm khả năng hồi phục khi USD suy yếu.",
+      "Giai đoạn này ưu tiên kỷ luật bảo toàn vốn và giao dịch theo biên độ hẹp, mời bạn theo dõi KenvinZone cùng AURORA để nắm bắt tín hiệu định lượng mỗi tuần."
+    ]
+  },
+  "visuals": {
+    "colorMode": "dark",
+    "backgroundColor": "#060a13",
+    "gridEnabled": false,
+    "backgroundFx": "candlestick-diag"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "template": "intermarket-weekly-hf",
+  "date": "02/11/2026",
+  "eyebrow": "⚡ WEEKLY · LIÊN THỊ TRƯỜNG",
+  "title_html": "TỔNG KẾT ĐỊNH LƯỢNG<br/>LIÊN THỊ TRƯỜNG",
+  "date_prefix": "TUẦN · dữ liệu đến",
+  "composite": {
+    "score": -0.9,
+    "regime": "TRUNG LẬP"
+  },
+  "assets": [
+    {
+      "key": "spx",
+      "name": "S&P 500",
+      "ticker": "SPX",
+      "accent": "#38bdf8",
+      "score": -1.4,
+      "regime": "TRUNG LẬP",
+      "top": {
+        "label": "Độ rộng TT",
+        "value": 2.62
+      },
+      "support": {
+        "label": "Độ rộng TT",
+        "value": 2.62
+      },
+      "drag": {
+        "label": "Khẩu vị rủi ro",
+        "value": -2.24
+      },
+      "gamma_neg": true,
+      "expected_move": 6.8
+    },
+    {
+      "key": "nas",
+      "name": "Nasdaq 100",
+      "ticker": "NASDAQ",
+      "accent": "#a78bfa",
+      "score": -2.4,
+      "regime": "TRUNG LẬP",
+      "top": {
+        "label": "Lãi suất thực",
+        "value": 7.22
+      },
+      "support": {
+        "label": "Lãi suất thực",
+        "value": 7.22
+      },
+      "drag": {
+        "label": "Khẩu vị rủi ro",
+        "value": -2.87
+      },
+      "gamma_neg": true,
+      "expected_move": 10.3
+    },
+    {
+      "key": "gold",
+      "name": "Vàng",
+      "ticker": "XAUUSD",
+      "accent": "#fbbf24",
+      "score": 1.0,
+      "regime": "TRUNG LẬP",
+      "top": {
+        "label": "Lãi suất thực",
+        "value": 8.04
+      },
+      "support": {
+        "label": "Lãi suất thực",
+        "value": 8.04
+      },
+      "drag": {
+        "label": "Đồng USD",
+        "value": -3.8
+      },
+      "gamma_neg": false,
+      "expected_move": null
+    }
+  ],
+  "macro": [
+    {
+      "label": "Lãi suất thực",
+      "value": 5.95,
+      "color": "#4ade80"
+    },
+    {
+      "label": "Đồng USD",
+      "value": -2.55,
+      "color": "#ef4444"
+    },
+    {
+      "label": "Dòng tiền",
+      "value": -1.4,
+      "color": "#f87171"
+    },
+    {
+      "label": "Độ rộng TT",
+      "value": 1.4,
+      "color": "#38bdf8"
+    },
+    {
+      "label": "Quyền chọn",
+      "value": -1.22,
+      "color": "#fb923c"
+    },
+    {
+      "label": "Khẩu vị rủi ro",
+      "value": -1.18,
+      "color": "#ef4444"
+    }
+  ],
+  "rotation_tag": "Dòng tiền dịch chuyển thận trọng khỏi tài sản rủi ro cao <b>Nasdaq</b> sang trạng thái phòng thủ ở <b>Gold</b>.",
+  "scenarios": [
+    {
+      "pct": 50,
+      "color": "#fbbf24",
+      "name": "Giằng co tích lũy"
+    },
+    {
+      "pct": 30,
+      "color": "#f87171",
+      "name": "Khẩu vị rủi ro giảm"
+    },
+    {
+      "pct": 20,
+      "color": "#4ade80",
+      "name": "USD hạ nhiệt"
+    }
+  ],
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
