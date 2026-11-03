@@ -1,0 +1,42 @@
+=== DECK: giai-ma-tin-tuc-chungkhoantrungquoclaodocnga-03-11 | template=giaima-tin-hf | preset giọng=giai-ma-nganh ===
+  Đã tái tạo config/tts.json (giọng clone).
+  Đã tái tạo config/social-upload.json từ secret.
+  [phát âm] đã áp từ điển phiên âm cho giọng đọc (chữ hiển thị giữ nguyên).
+=== [1/3] Tạo giọng đọc (gemini) ===
+/opt/hostedtoolcache/Python/3.12.15/x64/bin/python: can't open file '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/split_voiceover.py': [Errno 2] No such file or directory
+❌ Gemini API HTTP 402: [{
+  "error": {
+    "code": 402,
+    "message": "Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. ",
+    "status": "RESOURCE_EXHAUSTED"
+  }
+}
+]
+Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
+Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
+Sending full script to Gemini TTS: 9 slides, 2645 chars
+Full Gemini TTS saved: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-tin-tuc-chungkhoantrungquoclaodocnga-03-11/output/gemini_full_voiceover.mp3
+
+=== Splitting full Gemini TTS voiceover ===
+⚠ Full Gemini split failed (Command '['/opt/hostedtoolcache/Python/3.12.15/x64/bin/python', '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/split_voiceover.py', '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-tin-tuc-chungkhoantrungquoclaodocnga-03-11', '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-tin-tuc-chungkhoantrungquoclaodocnga-03-11/output/gemini_full_voiceover.mp3', '--output-dir', '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-tin-tuc-chungkhoantrungquoclaodocnga-03-11/output']' returned non-zero exit status 2.). Falling back to per-slide Gemini TTS.
+Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
+Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
+=== Generating per-slide TTS ===
+Slide 1 TTS: 7.90s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-tin-tuc-chungkhoantrungquoclaodocnga-03-11/output/line_0.mp3
+  ⚠ Gemini TTS attempt 1 failed (RuntimeError: Gemini API HTTP 402: [{
+  "error": {
+    "code": 402,
+    "message": "Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. ",
+    "status": "RESOURCE_EXHAUSTED"
+  }
+}
+]), retrying in 5s...
+  ⚠ Gemini TTS attempt 2 failed (RuntimeError: Gemini API HTTP 402: [{
+  "error": {
+    "code": 402,
+    "message": "Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. ",
+    "status": "RESOURCE_EXHAUSTED"
+  }
+}
+]), retrying in 10s...
+TTS thất bại (exit 1)
