@@ -341,8 +341,11 @@ def s3():
 .s3-co{position:absolute;left:60px;right:60px;top:960px;display:flex;align-items:center;gap:26px;padding:22px 30px;border-radius:24px;border:2px solid rgba(245,196,81,.6);background:rgba(245,196,81,.1);}
 .s3-co .n{font-family:'JBM';font-weight:800;font-size:96px;color:#f5c451;line-height:1;} .s3-co .x{font-size:32px;font-weight:700;color:#fde68a;line-height:1.3;}
 """
+    _lead = str(s.get('lead', '')).strip()
+    _lead_html = (f'<span style="color:#4ade80;">▲ {esc(_lead.split("—")[0].strip())}</span>'
+                  + (f' <span style="color:#64748b;">—</span> <span style="color:#f87171;">{esc(_lead.split("—")[1].strip())} ▼</span>' if '—' in _lead else '')) if _lead else ''
     body = f"""<div id="g3">{qtitle(3, s['title_lines'], 's3-q')}
-<div class="s3-lead" id="s3-lead"><span style="color:#4ade80;">▲ {esc(s['lead'].split('—')[0].strip())}</span>{(' <span style="color:#64748b;">—</span> <span style="color:#f87171;">' + esc(s['lead'].split('—')[1].strip()) + ' ▼</span>') if '—' in s['lead'] else ''}</div>
+<div class="s3-lead" id="s3-lead">{_lead_html}</div>
 <div class="s3-axis" id="s3-axis"></div>{''.join(rows)}
 {f'<div class="s3-co" id="s3-co"><div class="n mono"><span id="s3-con">0</span>{esc(co.get("suffix", ""))}</div><div class="x">{esc(co["text"])}</div></div>' if co else ''}
 </div>"""
