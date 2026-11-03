@@ -1,0 +1,42 @@
+{
+  "subtitles": {
+    "enabled": true,
+    "color": "#7dd3fc",
+    "fontSize": 18,
+    "bottom": 60,
+    "maxLines": 1
+  },
+  "backgroundFx": "candlestick",
+  "bgm": {
+    "mode": "preset",
+    "preset": "ambient",
+    "volume": 0.18
+  },
+  "scriptLines": [
+    "Bản tin tuần ghi nhận S&P 500 đạt điểm Bias -1.4 và Nasdaq đạt -2.4, duy trì trạng thái trung lập nhưng bắt đầu xuất hiện phân kỳ cấu trúc.",
+    "Tại S&P 500, điểm Bias -1.4 chịu giằng co giữa lực cản từ khẩu vị rủi ro -2.24 với trợ lực từ độ rộng +2.62 và lãi suất Fed +2.60.",
+    "Cấu trúc Gamma của SPY ghi nhận Net GEX âm -248 triệu, thị giá 752.1 nằm dưới Gamma Flip 754.66, kẹp giữa Put Wall 736.0 và Call Wall 750.0 với biến động kỳ vọng 6.8 điểm.",
+    "Ở Nasdaq, điểm Bias -2.4 nhận hỗ trợ mạnh từ lãi suất Fed +7.22 nhưng bị ghì lại bởi khẩu vị rủi ro -2.87 cùng áp lực vị thế -2.54.",
+    "Trên QQQ, Net GEX âm -269 triệu giữ giá 681.09 dưới Flip 690.74, kẹp giữa Put Wall 635.0 và Call Wall 710.0 cùng biên độ mở rộng 10.8 điểm.",
+    "Tuần tới, trước phân kỳ ngày và tuần của Nasdaq, mô hình dự báo năm mươi phần trăm đi ngang, ba mươi phần trăm điều chỉnh và hai mươi phần trăm hồi phục.",
+    "Nhà đầu tư nên thận trọng quanh các mốc Gamma quan trọng và theo dõi KenvinZone cùng hệ thống AURORA để cập nhật dòng tiền định lượng."
+  ],
+  "slides": {
+    "deletedIds": [],
+    "scriptLines": [
+      "Bản tin tuần ghi nhận S&P 500 đạt điểm Bias -1.4 và Nasdaq đạt -2.4, duy trì trạng thái trung lập nhưng bắt đầu xuất hiện phân kỳ cấu trúc.",
+      "Tại S&P 500, điểm Bias -1.4 chịu giằng co giữa lực cản từ khẩu vị rủi ro -2.24 với trợ lực từ độ rộng +2.62 và lãi suất Fed +2.60.",
+      "Cấu trúc Gamma của SPY ghi nhận Net GEX âm -248 triệu, thị giá 752.1 nằm dưới Gamma Flip 754.66, kẹp giữa Put Wall 736.0 và Call Wall 750.0 với biến động kỳ vọng 6.8 điểm.",
+      "Ở Nasdaq, điểm Bias -2.4 nhận hỗ trợ mạnh từ lãi suất Fed +7.22 nhưng bị ghì lại bởi khẩu vị rủi ro -2.87 cùng áp lực vị thế -2.54.",
+      "Trên QQQ, Net GEX âm -269 triệu giữ giá 681.09 dưới Flip 690.74, kẹp giữa Put Wall 635.0 và Call Wall 710.0 cùng biên độ mở rộng 10.8 điểm.",
+      "Tuần tới, trước phân kỳ ngày và tuần của Nasdaq, mô hình dự báo năm mươi phần trăm đi ngang, ba mươi phần trăm điều chỉnh và hai mươi phần trăm hồi phục.",
+      "Nhà đầu tư nên thận trọng quanh các mốc Gamma quan trọng và theo dõi KenvinZone cùng hệ thống AURORA để cập nhật dòng tiền định lượng."
+    ]
+  },
+  "visuals": {
+    "colorMode": "dark",
+    "backgroundColor": "#060a13",
+    "gridEnabled": false,
+    "backgroundFx": "candlestick-diag"
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "template": "equity-bias-hf",
+  "date": "02/11/2026",
+  "eyebrow": "⚡ WEEKLY BIAS · CHỨNG KHOÁN MỸ",
+  "title_html": "BIAS ĐỊNH LƯỢNG<br/>CHỨNG KHOÁN MỸ · TUẦN",
+  "date_prefix": "TUẦN · dữ liệu đến",
+  "cadence_word": "tuần",
+  "indices": [
+    {
+      "key": "spx",
+      "name": "S&P 500",
+      "ticker": "SPX",
+      "score": -1.4,
+      "day_score": -2.9,
+      "week_score": -1.4,
+      "regime": "TRUNG LẬP",
+      "score_change": -5.5,
+      "forces": [
+        {
+          "label": "Độ rộng",
+          "value": 2.62,
+          "color": "#4ade80"
+        },
+        {
+          "label": "Lãi suất / Fed",
+          "value": 2.6,
+          "color": "#38bdf8"
+        },
+        {
+          "label": "Khẩu vị rủi ro",
+          "value": -2.24,
+          "color": "#ef4444"
+        },
+        {
+          "label": "Quyền chọn",
+          "value": -1.89,
+          "color": "#f87171"
+        },
+        {
+          "label": "Đồng USD",
+          "value": -1.84,
+          "color": "#fb923c"
+        },
+        {
+          "label": "Vị thế",
+          "value": -0.55,
+          "color": "#ef4444"
+        }
+      ],
+      "gamma": {
+        "underlying": "SPY",
+        "net_gex_m": -248.0,
+        "expected_move": 6.8,
+        "spot": 752.1,
+        "put": 736.0,
+        "flip": 754.66,
+        "call": 750.0
+      },
+      "divergence": {
+        "status": "ALIGNED",
+        "weeklyScore": -1.4,
+        "dailyScore": -2.9,
+        "rule": "DIVERGENCE when weekly and daily scores have opposite signs"
+      }
+    },
+    {
+      "key": "nas",
+      "name": "Nasdaq 100",
+      "ticker": "NASDAQ",
+      "score": -2.4,
+      "day_score": 0.9,
+      "week_score": -2.4,
+      "regime": "TRUNG LẬP",
+      "score_change": -6.9,
+      "forces": [
+        {
+          "label": "Lãi suất / Fed",
+          "value": 7.22,
+          "color": "#4ade80"
+        },
+        {
+          "label": "Khẩu vị rủi ro",
+          "value": -2.87,
+          "color": "#ef4444"
+        },
+        {
+          "label": "Vị thế",
+          "value": -2.54,
+          "color": "#f87171"
+        },
+        {
+          "label": "Độ rộng",
+          "value": 2.27,
+          "color": "#38bdf8"
+        },
+        {
+          "label": "Đồng USD",
+          "value": -2.02,
+          "color": "#fb923c"
+        },
+        {
+          "label": "Quyền chọn",
+          "value": -1.77,
+          "color": "#ef4444"
+        }
+      ],
+      "gamma": {
+        "underlying": "QQQ",
+        "net_gex_m": -269.0,
+        "expected_move": 10.8,
+        "spot": 681.09,
+        "put": 635.0,
+        "flip": 690.74,
+        "call": 710.0
+      },
+      "divergence": {
+        "status": "DIVERGENCE",
+        "weeklyScore": -2.4,
+        "dailyScore": 0.9,
+        "rule": "DIVERGENCE when weekly and daily scores have opposite signs"
+      }
+    }
+  ],
+  "divergence_tag": "S&P 500 <b>đồng pha thận trọng</b> trong khi Nasdaq xuất hiện <b>phân kỳ ngắn hạn</b> giữa ngày và tuần.",
+  "scenarios": [
+    {
+      "pct": 50,
+      "color": "#fbbf24",
+      "name": "Đi ngang giằng co"
+    },
+    {
+      "pct": 30,
+      "color": "#f87171",
+      "name": "Rủi ro điều chỉnh"
+    },
+    {
+      "pct": 20,
+      "color": "#4ade80",
+      "name": "Hồi phục kỹ thuật"
+    }
+  ],
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
