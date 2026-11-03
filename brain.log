@@ -1,4 +1,4 @@
   model khả dụng: ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest'] -> chọn gemini-flash-latest
-=== [1/2] Gemini viết kịch bản Vàng [weekly] 02/11/2026 | score=+1.00 TRUNG LẬP | gamma=DƯƠNG +2.5M | model=gemini-flash-latest ===
-=== [2/2] Đã dựng gold-week-02112026 ===
-PROJECT=gold-week-02112026
+=== [1/2] Gemini viết kịch bản CK Mỹ [daily] 03/11/2026 | SPX -2.9 TRUNG LẬP · NAS +0.9 TRUNG LẬP | model=gemini-flash-latest ===
+=== [2/2] Đã dựng equity-us-03112026 ===
+PROJECT=equity-us-03112026
