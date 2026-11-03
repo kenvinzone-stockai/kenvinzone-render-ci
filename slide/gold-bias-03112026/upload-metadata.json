@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "Vàng 03/11: Bias Trung Lập, Gamma Ghim Biên 360-375",
+    "description": "📊 BẢN TIN PHÂN TÍCH ĐỊNH LƯỢNG VÀNG (XAUUSD / GLD) - 03/11/2026\n\n1. ĐIỂM BIAS & CHẾ ĐỘ:\n• Điểm Bias: +0.70/100 (TRUNG LẬP)\n• Xu hướng: Đi ngang 3 phiên liên tiếp (+0.70 → +0.70 → +0.70)\n\n2. BÓC TÁCH 6 LỰC KÉO ĐỊNH LƯỢNG:\n• Lực cản đè giá: Áp lực USD (-3.89), Dòng tiền (-3.79), Yếu tố riêng Gold (-2.51)\n• Lực đỡ nâng giá: Lãi suất thực (+9.09), Thanh khoản M2 (+1.67), Khẩu vị rủi ro (+1.77)\n• Tín dụng & rủi ro: Ổn định, chưa xuất hiện dấu hiệu thắt chặt tín dụng ép dòng tiền tháo chạy khỏi Vàng.\n\n3. BẢN ĐỒ GAMMA OPTIONS:\n• Net GEX: +2.5M USD (Vùng Gamma Dương - Biến động bị kìm nén)\n• Spot GLD: 367.82 (XAUUSD ≈ 3.981.9) nằm TRÊN Gamma Flip\n• Gamma Flip: GLD 365.0 (≈ 3.951.0)\n• Put Wall: GLD 360.0 (≈ 3.897.0)\n• Call Wall: GLD 375.0 (≈ 4.060.0)\n\n4. BA KỊCH BẢN PHIÊN TỚI:\n• Kịch bản Base (60%): Giằng co tích lũy trong biên 360 - 375 (XAUUSD ≈ 3.897 - 4.060).\n• Kịch bản Down (22%): Thủng Put Wall 360 (≈ 3.897), rơi vào vùng Gamma âm biến động mạnh.\n• Kịch bản Up (18%): Đột phá vượt Call Wall 375 (≈ 4.060).\n\n5. CHIẾN LƯỢC HÀNH ĐỘNG:\n• Giữ vị thế trung tính trong biên 360 - 375 GLD (≈ 3.897 - 4.060 XAUUSD).\n• Canh vị thế khi giá giữ vững trên Gamma Flip 365 (≈ 3.951).\n• Phòng ngừa rủi ro nếu gãy mốc 360.\n\n⚠️ Tuyên bố miễn trừ: Video và dữ liệu phục vụ mục đích tham khảo định lượng, KHÔNG phải lời khuyên đầu tư tài chính.\n\n#vang #gold #xauusd #giavang #phantichdinhluong #kenvinzone",
+    "tags": [
+      "vàng",
+      "gold",
+      "xauusd",
+      "giá vàng",
+      "gld",
+      "market bias",
+      "phân tích định lượng",
+      "gamma",
+      "net gex",
+      "put wall",
+      "call wall",
+      "kenvinzone",
+      "aurora"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "gold-daily-bias",
+    "date": "03/11/2026"
+  }
+}
