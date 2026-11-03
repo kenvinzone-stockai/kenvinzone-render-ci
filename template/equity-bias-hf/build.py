@@ -140,7 +140,7 @@ def scene_hook():
 .hk-gb{{position:relative;margin:6px auto 0;width:420px;height:14px;border-radius:99px;background:linear-gradient(90deg,#ef4444,#f59e0b 50%,#22c55e);}}
 .hk-gmk{{position:absolute;top:-12px;width:9px;height:38px;margin-left:-4px;border-radius:5px;background:#fff;box-shadow:0 0 16px #fff;}}
 .hk-gs{{margin-top:12px;font-size:24px;color:#64748b;}}
-.hk-dv{{position:absolute;top:1120px;left:70px;right:70px;text-align:center;font-size:30px;font-weight:800;line-height:1.35;padding:20px 26px;border-radius:20px;border:2px solid rgba(251,191,36,.5);background:rgba(251,191,36,.10);color:#fde68a;}}
+.hk-dv{{position:absolute;top:1010px;left:70px;right:70px;text-align:center;font-size:30px;font-weight:800;line-height:1.35;padding:20px 26px;border-radius:20px;border:2px solid rgba(251,191,36,.5);background:rgba(251,191,36,.10);color:#fde68a;}}
 .hk-dv b{{color:#fff;}}
 """
     body = f"""
@@ -155,8 +155,10 @@ def scene_hook():
     t_spx = tline(0, 0.35, st); t_nas = tline(0, 0.6, st); t_dv = tline(0, 0.86, st)
     js = f"""
 gsap.set('#hk-dv', {{opacity:0}});
-tl.fromTo('#hk-spx', {{scale:1.2, opacity:0}}, {{scale:1, opacity:1, duration:0.4, ease:'back.out(1.6)', immediateRender:false}}, {t_spx});
-tl.fromTo('#hk-nas', {{scale:1.2, opacity:0}}, {{scale:1, opacity:1, duration:0.4, ease:'back.out(1.6)', immediateRender:false}}, {t_nas});
+tl.fromTo('#hk-spx', {{scale:1.25, opacity:0}}, {{scale:1, opacity:1, duration:0.45, ease:'back.out(1.7)', immediateRender:false}}, {t_spx});
+counter('#hk-spx', 0, {spx['score']}, {t_spx}, 0.55, 1, '{'+' if spx['score']>0 else ''}', '');
+tl.fromTo('#hk-nas', {{scale:1.25, opacity:0}}, {{scale:1, opacity:1, duration:0.45, ease:'back.out(1.7)', immediateRender:false}}, {t_nas});
+counter('#hk-nas', 0, {nas['score']}, {t_nas}, 0.55, 1, '{'+' if nas['score']>0 else ''}', '');
 tl.fromTo('#hk-dv', {{opacity:0, y:30, filter:'blur(8px)'}}, {{opacity:1, y:0, filter:'blur(0px)', duration:0.45, ease:'expo.out', immediateRender:false}}, {t_dv});
 tl.to('#hk-stage', {{opacity:0, filter:'blur(10px)', scale:0.96, duration:0.28, ease:'power3.in'}}, {dur - 0.3});
 """
@@ -175,7 +177,7 @@ def scene_index(key, line_hdr, line_gamma):
     # --- forces (6, tug of war) ---
     rows = ix["forces"]
     maxabs = max(abs(r["value"]) for r in rows) or 1.0
-    half = 360; cx = 540; top0 = 470; rh = 74
+    half = 360; cx = 540; top0 = 452; rh = 70
     frows = []; fjs = []
     for i, r in enumerate(rows):
         y = top0 + i * rh
@@ -256,7 +258,9 @@ gsap.set('#{cid}-gp, #{cid}-em', {{opacity:0}});
 tl.fromTo('#{cid}-hd, #{cid}-stage .ix-hd', {{opacity:0, y:-40}}, {{opacity:1, y:0, duration:0.4, ease:'expo.out'}}, {t_hdr});
 tl.fromTo('#{cid}-stage .ix-sc', {{opacity:0, x:40}}, {{opacity:1, x:0, duration:0.4, ease:'expo.out'}}, {t_hdr});
 counter('#{cid}-score', 0, {sc}, {t_hdr+0.1}, 0.7, 1, '{'+' if sc>0 else ''}', '');
+tl.fromTo('#{cid}-score', {{scale:1.3}}, {{scale:1, duration:0.5, ease:'back.out(2)', immediateRender:false}}, {t_hdr+0.1});
 tl.fromTo('#{cid}-stage .ix-scbar', {{scaleX:0}}, {{scaleX:1, duration:0.6, ease:'power2.out', transformOrigin:'left center'}}, {t_hdr});
+tl.fromTo('#{cid}-stage .ix-scmk', {{left:'50%'}}, {{left:'{pos:.1f}%', duration:0.6, ease:'power3.out', immediateRender:false}}, {t_hdr+0.1});
 tl.fromTo('#{cid}-axis', {{scaleY:0}}, {{scaleY:1, duration:0.6, ease:'power2.inOut', transformOrigin:'center top'}}, {t_hdr+0.2});
 {''.join(fjs)}
 tl.fromTo('#{cid}-gp', {{opacity:0, y:40, filter:'blur(8px)'}}, {{opacity:1, y:0, filter:'blur(0px)', duration:0.45, ease:'expo.out', immediateRender:false}}, {t_gpanel});
@@ -297,8 +301,8 @@ def scene_cmp():
 .cmp-r b{{font-family:'JBM';font-size:34px;}}
 .cs-dv{{position:absolute;left:60px;right:60px;top:800px;text-align:center;font-size:29px;font-weight:800;line-height:1.35;padding:18px 24px;border-radius:18px;border:2px solid rgba(167,139,250,.5);background:rgba(167,139,250,.12);color:#ddd6fe;}}
 .cs-dv b{{color:#fff;}}
-.cs-ttl{{position:absolute;left:60px;right:60px;top:1010px;text-align:center;font-size:28px;font-weight:800;color:#94a3b8;letter-spacing:2px;}}
-.cs-card{{position:absolute;top:1070px;height:150px;border:2px solid;border-radius:20px;background:rgba(15,23,42,.6);text-align:center;}}
+.cs-ttl{{position:absolute;left:60px;right:60px;top:925px;text-align:center;font-size:28px;font-weight:800;color:#94a3b8;letter-spacing:2px;}}
+.cs-card{{position:absolute;top:980px;height:150px;border:2px solid;border-radius:20px;background:rgba(15,23,42,.6);text-align:center;}}
 .cs-p{{font-size:60px;font-weight:800;margin-top:18px;}}
 .cs-n{{font-size:22px;font-weight:800;text-transform:uppercase;line-height:1.1;padding:0 8px;}}
 """
@@ -332,9 +336,9 @@ def scene_cta():
 .ct-s{font-size:31px;font-weight:700;color:#cbd5e1;margin-top:10px;}
 .ct-p{display:flex;gap:14px;justify-content:center;margin-top:26px;}
 .ct-p span{font-family:'JBM';font-weight:800;font-size:27px;color:#7dd3fc;border:2px solid rgba(56,189,248,.5);border-radius:12px;padding:8px 18px;background:rgba(56,189,248,.08);}
-.ct-aur{position:absolute;left:0;right:0;top:1040px;display:flex;align-items:center;justify-content:center;gap:16px;font-size:29px;font-weight:800;color:#c4b5fd;}
+.ct-aur{position:absolute;left:0;right:0;top:975px;display:flex;align-items:center;justify-content:center;gap:16px;font-size:29px;font-weight:800;color:#c4b5fd;}
 .ct-aur img{width:60px;height:60px;}
-.ct-d{position:absolute;left:70px;right:70px;top:1140px;text-align:center;font-size:26px;line-height:1.4;color:#bfdbfe;padding:14px 18px;border:1px solid rgba(56,189,248,.3);border-radius:14px;background:rgba(255,255,255,.03);}
+.ct-d{position:absolute;left:70px;right:70px;top:1070px;text-align:center;font-size:26px;line-height:1.4;color:#bfdbfe;padding:14px 18px;border:1px solid rgba(56,189,248,.3);border-radius:14px;background:rgba(255,255,255,.03);}
 .ct-d b{color:#fff;}
 """
     body = f"""
@@ -374,8 +378,8 @@ def captions():
         js.append(f"tl.to('#cg{gi} .cpill', {{opacity:0, duration:0.1, ease:'power2.in'}}, {e2 - 0.1});"
                   f"tl.set('#cg{gi}', {{opacity:0, visibility:'hidden'}}, {e2});")
     css = """
-.cg{position:absolute;left:0;right:0;top:1660px;text-align:center;opacity:0;visibility:hidden;}
-.cpill{display:inline-block;max-width:960px;padding:14px 26px;border-radius:22px;background:rgba(2,6,23,.72);border:1px solid rgba(255,255,255,.08);font-size:42px;font-weight:800;line-height:1.35;color:#cbd5e1;}
+.cg{position:absolute;left:0;right:0;top:1205px;text-align:center;opacity:0;visibility:hidden;}
+.cpill{display:inline-block;max-width:960px;padding:14px 26px;border-radius:22px;background:rgba(2,6,23,.78);border:1px solid rgba(255,255,255,.08);font-size:44px;font-weight:800;line-height:1.35;color:#cbd5e1;}
 .cw{display:inline-block;padding:0 6px;border-radius:10px;}
 """
     return "captions", TOTAL, scene_file("captions", TOTAL, css, "\n".join(groups), "\n".join(js))
@@ -395,9 +399,19 @@ def root(scene_meta):
     for cid, stt, dd in scene_meta[1:]:
         if cid != "captions":
             add("whoosh.mp3", stt - 0.25, 0.45)
-    # ticks on each force reveal + impact on each index score
-    for key in ("spx", "nas"):
-        add("impact.mp3", tline(1 if key == "spx" else 3, 0.1), 0.5)
+    # SFX dày như template Vàng: tiếng "tick" theo từng số chạy, "impact" ở điểm số & Net GEX.
+    add("impact.mp3", tline(0, 0.35), 0.5)                   # điểm S&P 500 ở hook
+    add("impact.mp3", tline(0, 0.6), 0.5)                    # điểm Nasdaq ở hook
+    nf = 6
+    for l_hdr, l_g in ((1, 2), (3, 4)):                       # khối S&P 500, khối Nasdaq
+        add("impact.mp3", tline(l_hdr, 0.1), 0.5)             # điểm Bias chỉ số
+        for i in range(nf):
+            add("tick.mp3", tline(l_hdr, 0.28 + 0.52 * (i / (nf - 1))), 0.3)   # 6 thanh lực
+        add("impact.mp3", tline(l_g, 0.2), 0.45)             # Net GEX
+        for fr in (0.3, 0.55, 0.78):
+            add("tick.mp3", tline(l_g, fr), 0.28)            # các mốc Put/Flip/Call
+    for i in range(3):
+        add("tick.mp3", tline(5, 0.45 + i * 0.16), 0.34)     # 3 kịch bản %
     return f"""<!doctype html>
 <html lang="vi">
 <head>
