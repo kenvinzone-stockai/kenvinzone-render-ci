@@ -66,6 +66,7 @@ def build_index(asset, frame):
     return {
         "key": meta["key"], "name": meta["name"], "ticker": meta["ticker"],
         "score": round(float(fr.get("score", 0.0)), 1),
+        "day_score": round(float((asset.get("daily") or {}).get("score", fr.get("score", 0.0))), 1),
         "week_score": round(float((asset.get("weekly") or {}).get("score", fr.get("score", 0.0))), 1),
         "regime": regime_vn(fr.get("regime")),
         "score_change": round(float(fr.get("scoreChange", 0.0)), 1),

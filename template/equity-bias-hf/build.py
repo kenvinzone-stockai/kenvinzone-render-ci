@@ -285,7 +285,7 @@ def scene_cmp():
     def col(ix):
         return (f'<div class="cmp-col" style="border-color:{COLOR[ix["key"]]}66;">'
                 f'<div class="cmp-h" style="color:{COLOR[ix["key"]]};">{esc(ix["name"])}</div>'
-                f'<div class="cmp-r"><span>Ngày</span><b style="color:{regime_col(ix["score"])};">{ix["score"]:+.1f}</b></div>'
+                f'<div class="cmp-r"><span>Ngày</span><b style="color:{regime_col(ix.get("day_score",ix["score"]))};">{ix.get("day_score",ix["score"]):+.1f}</b></div>'
                 f'<div class="cmp-r"><span>Tuần</span><b style="color:{regime_col(ix.get("week_score",ix["score"]))};">{ix.get("week_score",ix["score"]):+.1f}</b></div>'
                 f'<div class="cmp-r"><span>Gamma</span><b style="color:{"#f87171" if ix["gamma"]["net_gex_m"]<0 else "#4ade80"};">{"ÂM" if ix["gamma"]["net_gex_m"]<0 else "DƯƠNG"}</b></div></div>')
     css = f"""
