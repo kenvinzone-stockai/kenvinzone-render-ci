@@ -1,0 +1,192 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "03/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "MoneyF",
+    "short": "MoneyF",
+    "author": "Duy Khánh",
+    "headline": "Điều gì sẽ chứng minh AI đang trở thành động lực tăng trưởng mới của FPT?",
+    "date": "03/11/2026",
+    "url": "https://moneyf.vn/moneyf-opinion-dieu-gi-se-chung-minh-ai-dang-tro-t-5lp8ochu"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "FPT VÀ ĐỘNG LỰC",
+      "TĂNG TRƯỞNG MỚI"
+    ],
+    "sub": "Trí tuệ nhân tạo có thực sự hái ra tiền?",
+    "chips": [
+      {
+        "icon": "↗",
+        "text": "AI 9T: 2.915 tỷ",
+        "tone": "up"
+      },
+      {
+        "icon": "◆",
+        "text": "Tăng trưởng +55%",
+        "tone": "blue"
+      },
+      {
+        "icon": "⑂",
+        "text": "Tỷ trọng 10,2%",
+        "tone": "gold"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Mảng trí tuệ nhân tạo và dữ liệu của FPT ghi nhận <mark>bứt phá mạnh mẽ</mark>, vượt toàn bộ doanh thu năm trước chỉ sau chín tháng."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh chung",
+      "tăng tốc ra sao?"
+    ],
+    "stats": [
+      {
+        "value": 2915,
+        "decimals": 0,
+        "unit": "tỷ",
+        "label": "Doanh thu AI 9T/2026",
+        "badge": "+55% YoY",
+        "tone": "gold",
+        "beat": 1
+      }
+    ],
+    "note": "Doanh thu cả tập đoàn đạt hơn bốn mươi nghìn tỷ đồng trong chín tháng đầu năm."
+  },
+  "s3": {
+    "title_lines": [
+      "Sự phân hóa",
+      "thể hiện thế nào?"
+    ],
+    "lead": "Tỷ trọng AI trong doanh thu công nghệ ngoại",
+    "bars": [
+      {
+        "label": "Năm 2024",
+        "display": "6,0%",
+        "value": 6,
+        "beat": 1
+      },
+      {
+        "label": "9T 2026",
+        "display": "10,2%",
+        "value": 10.2,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 10.2,
+      "suffix": "%",
+      "text": "Tỷ trọng trong dịch vụ CNTT nước ngoài",
+      "beat": 2
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Năng suất lao động",
+      "chuyển dịch ra sao?"
+    ],
+    "cards": [
+      {
+        "big": "+14,8%",
+        "title": "Doanh thu công nghệ",
+        "text": "Tăng trưởng chín tháng đầu năm"
+      },
+      {
+        "big": "+6,0%",
+        "title": "Quy mô nhân sự",
+        "text": "Tăng chậm hơn doanh thu đáng kể"
+      },
+      {
+        "big": "-30%",
+        "title": "Thời gian xử lý",
+        "text": "Hiệu suất công việc kỹ thuật cải thiện"
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Các trụ cột",
+      "thương mại hóa?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "THẮNG THẾ",
+        "title": "Nhật Bản và châu Á",
+        "text": "AI Factory kín chỗ và hợp đồng trăm triệu USD"
+      },
+      {
+        "color": "yellow",
+        "tag": "LƯU Ý",
+        "title": "Thị trường Mỹ",
+        "text": "Triển khai nền tảng cho hãng ô tô lớn"
+      },
+      {
+        "color": "red",
+        "tag": "THÁCH THỨC",
+        "title": "Châu Âu",
+        "text": "Cạnh tranh gay gắt từ các tập đoàn toàn cầu"
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Tín hiệu đèn",
+      "cho mảng mới?"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh",
+        "text": "Hợp đồng ký mới nước ngoài tăng trưởng hơn hai mươi ba phần trăm",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng",
+        "text": "Đòi hỏi duy trì chi phí vốn lớn cho hạ tầng điện toán đám mây",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ",
+        "text": "Biên lợi nhuận thực tế của từng hợp đồng cần thêm thời gian kiểm chứng",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư F0",
+      "cần nhìn vào đâu?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Doanh số ký mới",
+        "text": "Theo dõi lượng hợp đồng trên mười triệu USD",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Năng suất mỗi nhân sự",
+        "text": "Đo lường hiệu quả ứng dụng công nghệ thực tế",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Định giá thị trường",
+        "text": "Không mua đuổi theo câu chuyện kỳ vọng đơn thuần",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "AI là công cụ nâng tầm hay chỉ là hào quang ngắn hạn?",
+    "cta": "Theo dõi để giải mã tin tiếp theo"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
