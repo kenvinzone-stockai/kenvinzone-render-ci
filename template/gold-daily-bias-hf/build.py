@@ -325,6 +325,16 @@ def scene_gamma():
     lv = {k: ymap(g[k]["gld"]) for k in ("call", "flip", "put")}
     lv["spot"] = ymap(g["spot"]["_pos"])
     neg_gamma = g["net_gex_m"] < 0
+    # Regime-aware accents (positive vs negative gamma) — defaults keep the old negative look.
+    GCOL = "#ef4444" if neg_gamma else "#22c55e"
+    GCOL_SOFT = "#fca5a5" if neg_gamma else "#86efac"
+    badge_bg = ("linear-gradient(135deg,rgba(239,68,68,.25),rgba(127,29,29,.35))" if neg_gamma
+                else "linear-gradient(135deg,rgba(34,197,94,.22),rgba(21,128,61,.34))")
+    badge_shadow = "rgba(239,68,68,.35)" if neg_gamma else "rgba(34,197,94,.32)"
+    vtag_txt = g.get("vol_note") or (
+        'Gamma âm → biến động bị <span style="color:#fff;">khuếch đại</span>'
+        if neg_gamma else
+        'Gamma dương → biến động được <span style="color:#fff;">kìm nén</span>')
     t_gex = at("gex", st)
     t_gexv = at("gex_value", st)
     t_spot = at("spot", st)
@@ -339,7 +349,8 @@ def scene_gamma():
     for i in range(n + 1):
         f = i / n
         x = 330 + f * 640
-        amp = 10 + 95 * f ** 1.4
+        # negative gamma: amplitude GROWS (amplified). positive gamma: amplitude SHRINKS (pinned to spot).
+        amp = (10 + 95 * f ** 1.4) if neg_gamma else (105 - 95 * f ** 1.1)
         y = lv["spot"] + math.sin(f * 21.0) * amp * (0.75 + 0.25 * math.sin(f * 47.0))
         pts.append(f"{x:.1f},{y:.1f}")
     vpath = "M" + " L".join(pts)
@@ -384,11 +395,11 @@ def scene_gamma():
 .gm-vtag{{position:absolute;left:70px;right:70px;top:1150px;text-align:center;font-size:32px;font-weight:900;color:#fca5a5;letter-spacing:1px;}}
 """
     zone_neg = f'<div class="gm-zone" id="gm-zneg" style="top:{lv["flip"]:.0f}px;height:{lv["put"]-lv["flip"]:.0f}px;background:linear-gradient(180deg,rgba(239,68,68,.22),rgba(239,68,68,.05));"><span style="position:absolute;left:24px;bottom:14px;font-size:28px;font-weight:900;letter-spacing:3px;color:#f87171;">VÙNG GAMMA ÂM</span></div>'
-    zone_pos = f'<div class="gm-zone" id="gm-zpos" style="top:{lv["call"]:.0f}px;height:{lv["flip"]-lv["call"]:.0f}px;background:linear-gradient(0deg,rgba(34,197,94,.16),rgba(34,197,94,.03));"></div>'
+    zone_pos = f'<div class="gm-zone" id="gm-zpos" style="top:{lv["call"]:.0f}px;height:{lv["flip"]-lv["call"]:.0f}px;background:linear-gradient(0deg,rgba(34,197,94,.16),rgba(34,197,94,.03));"><span style="position:absolute;left:24px;top:14px;font-size:28px;font-weight:900;letter-spacing:3px;color:#4ade80;">VÙNG GAMMA DƯƠNG</span></div>'
     body = f"""
 <div id="gm-stage">
   <div class="ttl" id="gm-ttl">Cấu trúc <span class="gold">Gamma</span></div>
-  <div class="gm-badge" id="gm-badge"><div class="k">{"GAMMA ÂM" if neg_gamma else "GAMMA DƯƠNG"}</div><div class="v"><small>NET GEX</small><span id="gm-gex">$0.0M</span></div></div>
+  <div class="gm-badge" id="gm-badge" style="border-color:{GCOL};background:{badge_bg};box-shadow:0 0 60px {badge_shadow};"><div class="k">{"GAMMA ÂM" if neg_gamma else "GAMMA DƯƠNG"}</div><div class="v" style="color:{GCOL_SOFT};"><small style="color:{GCOL_SOFT};">NET GEX</small><span id="gm-gex">$0.0M</span></div></div>
   <div class="gm-axis" id="gm-axis"></div>
   <svg class="gm-svg" viewBox="0 0 {W} {H}"><g id="gm-ticks">{ticks}</g>
     <path id="gm-vpath" d="{vpath}" fill="none" stroke="#fca5a5" stroke-width="5" stroke-linejoin="round" stroke-dasharray="4000" stroke-dashoffset="4000" opacity="0.95"/></svg>
@@ -398,7 +409,7 @@ def scene_gamma():
   {level('put', '#f87171', 'PUT WALL', False)}
   <div class="gm-spot" id="gm-spot"></div>
   <div class="gm-spot-lab" id="gm-spot-lab">GIÁ HIỆN TẠI<br/>{('<span class="p">GLD ' + format(g['spot']['gld'], 'g') + '</span><br/>') if g['spot'].get('gld') not in (None, '') else ''}<span class="x" id="gm-spotx">{'≈ ' if g['spot'].get('gld') not in (None, '') else ''}{g['spot']['xau']:,.1f} XAUUSD</span></div>
-  <div class="gm-vtag" id="gm-vtag">Gamma âm → biến động bị <span style="color:#fff;">khuếch đại</span></div>
+  <div class="gm-vtag" id="gm-vtag" style="color:{GCOL_SOFT};">{vtag_txt}</div>
 </div>"""
     gex = g["net_gex_m"]
     js = f"""
@@ -578,9 +589,17 @@ def root(scene_meta):
         add("tick.mp3", abs_at(key), 0.3)
     for key in D["sfx_impacts"]:
         add("impact.mp3", abs_at(key), 0.55)
-    # red glow window = gamma scene
+    # red glow window = gamma scene (only when gamma is NEGATIVE)
     g0, g1 = SCENES[2][1], SCENES[2][2]
     t_gex = abs_at("gex")
+    neg_gamma = D["gamma"]["net_gex_m"] < 0
+    redmix_js = (f"function redMix(t){{ const a = Math.min(1, Math.max(0, (t - R0) / 0.4)); const b = Math.min(1, Math.max(0, (t - R1) / 0.6)); return a * (1 - b); }}"
+                 if neg_gamma else "function redMix(t){ return 0; }")
+    flood_js = (f"""
+tl.fromTo('#glow-r', {{ opacity: 0 }}, {{ opacity: 1, duration: 0.4, ease: 'power2.inOut', immediateRender:false }}, {t_gex});
+tl.to('#glow-a', {{ opacity: 0.25, duration: 0.4, ease: 'power2.inOut' }}, {t_gex});
+tl.to('#glow-r', {{ opacity: 0, duration: 0.6, ease: 'power2.inOut' }}, {g1 - 0.3});
+tl.to('#glow-a', {{ opacity: 1, duration: 0.6, ease: 'power2.inOut' }}, {g1 - 0.3});""" if neg_gamma else "")
     return f"""<!doctype html>
 <html lang="vi">
 <head>
@@ -638,7 +657,7 @@ for (let i = 0; i < N; i++) {{
 }}
 // gold -> red while the gamma scene is negative, then back (same window as the glow flood)
 const R0 = {t_gex}, R1 = {g1 - 0.3};
-function redMix(t){{ const a = Math.min(1, Math.max(0, (t - R0) / 0.4)); const b = Math.min(1, Math.max(0, (t - R1) / 0.6)); return a * (1 - b); }}
+{redmix_js}
 function draw(t){{
   const m = redMix(t), r = Math.round(251 - 3 * m), g = Math.round(191 - 78 * m), bl = Math.round(36 + 77 * m), C = r + ',' + g + ',' + bl;
   ctx.clearRect(0, 0, w, h);
@@ -661,11 +680,8 @@ function draw(t){{
 const P = {{ t: 0 }}; draw(0);
 tl.fromTo(P, {{ t: 0 }}, {{ t: {TOTAL}, duration: {TOTAL}, ease: 'none', onUpdate(){{ draw(P.t); }} }}, 0);
 tl.fromTo('#progf', {{ scaleX: 0 }}, {{ scaleX: 1, duration: {TOTAL}, ease: 'none' }}, 0);
-// colour flood: amber world -> red when gamma turns negative -> amber again
-tl.fromTo('#glow-r', {{ opacity: 0 }}, {{ opacity: 1, duration: 0.4, ease: 'power2.inOut', immediateRender:false }}, {t_gex});
-tl.to('#glow-a', {{ opacity: 0.25, duration: 0.4, ease: 'power2.inOut' }}, {t_gex});
-tl.to('#glow-r', {{ opacity: 0, duration: 0.6, ease: 'power2.inOut' }}, {g1 - 0.3});
-tl.to('#glow-a', {{ opacity: 1, duration: 0.6, ease: 'power2.inOut' }}, {g1 - 0.3});
+// colour flood: amber world -> red when gamma turns negative -> amber again (negative gamma only)
+{flood_js}
 window.__timelines["main"] = tl;
 }})();
 </script>
