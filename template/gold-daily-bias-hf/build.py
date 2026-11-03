@@ -201,10 +201,10 @@ def scene_hook():
 """
     body = f"""
 <div class="hk-stage" id="hk-stage">
-  <div class="hk-eyebrow"><span>⚡ DAILY FLASH BIAS · VÀNG</span></div>
+  <div class="hk-eyebrow"><span>{esc(D.get('eyebrow') or '⚡ DAILY FLASH BIAS · VÀNG')}</span></div>
   <div class="hk-bars"><img src="assets/img/gold-bars-3d-3bars.png" alt=""/></div>
   <div class="hk-title"><div class="hk-plate"><h1 class="gold">{D['title_html']}</h1></div></div>
-  <div class="hk-date"><span>PHIÊN NGÀY {esc(D['date'])}</span></div>
+  <div class="hk-date"><span>{esc(D.get('date_prefix') or 'PHIÊN NGÀY')} {esc(D['date'])}</span></div>
   <div class="hk-score" id="hk-score">
     <div class="hk-lbl">COMPOSITE BIAS · <span id="hk-regime">{esc(D['regime'])}</span></div>
     <div class="hk-val"><span id="hk-num">{sc:+.2f}</span><small> / 100</small></div>

@@ -93,8 +93,8 @@ def build_gamma(g: dict) -> dict:
     }
 
 
-def roll_history(hist_path: Path, date_full: str, score: float, prev_score) -> list:
-    """Lịch sử 3 phiên gần nhất [[DD/MM, score], ...]. Tự tích luỹ theo ngày trong ci-state."""
+def roll_history(hist_path: Path, date_full: str, score: float, prev_score, step_days: int = 1) -> list:
+    """Lịch sử 3 mốc gần nhất [[DD/MM, score], ...]. Tự tích luỹ trong ci-state (step_days=7 cho khung tuần)."""
     dd_mm = "/".join(date_full.split("/")[:2])
     try:
         items = json.loads(hist_path.read_text(encoding="utf-8")) if hist_path.exists() else []
@@ -102,14 +102,14 @@ def roll_history(hist_path: Path, date_full: str, score: float, prev_score) -> l
         items = []
     if not isinstance(items, list):
         items = []
-    # seed điểm phiên trước ở lần chạy đầu (để đường xu hướng có độ dốc ngay)
+    # seed mốc trước ở lần chạy đầu (để đường xu hướng có độ dốc ngay)
     if not items and prev_score is not None:
         try:
-            y = (datetime.strptime(date_full, "%d/%m/%Y") - timedelta(days=1))
+            y = (datetime.strptime(date_full, "%d/%m/%Y") - timedelta(days=step_days))
             items.append({"full": y.strftime("%d/%m/%Y"), "d": y.strftime("%d/%m"), "score": round(float(prev_score), 2)})
         except Exception:
             pass
-    items = [it for it in items if it.get("full") != date_full]            # upsert hôm nay
+    items = [it for it in items if it.get("full") != date_full]            # upsert mốc hiện tại
     items.append({"full": date_full, "d": dd_mm, "score": round(float(score), 2)})
     items = items[-30:]
     try:
@@ -118,31 +118,31 @@ def roll_history(hist_path: Path, date_full: str, score: float, prev_score) -> l
     except Exception as e:
         print(f"  [history] cảnh báo: không ghi được {hist_path}: {e}", flush=True)
     disp = items[-3:]
-    # pad trái đủ 3 điểm (ngày đầu) bằng cách lùi ngày, giữ giá trị cũ nhất
+    # pad trái đủ 3 mốc (lần đầu) bằng cách lùi mốc, giữ giá trị cũ nhất
     while len(disp) < 3:
         first = disp[0]
         try:
-            pd = datetime.strptime(first["full"], "%d/%m/%Y") - timedelta(days=1)
+            pd = datetime.strptime(first["full"], "%d/%m/%Y") - timedelta(days=step_days)
             disp.insert(0, {"full": pd.strftime("%d/%m/%Y"), "d": pd.strftime("%d/%m"), "score": first["score"]})
         except Exception:
             disp.insert(0, dict(first))
     return [[it["d"], it["score"]] for it in disp]
 
 
-def trend_tag(history: list, score_change) -> str:
+def trend_tag(history: list, score_change, unit: str = "phiên") -> str:
     vals = [v for _, v in history]
     if len(set(vals)) == 1:
         return "Đi ngang quanh mốc hiện tại"
     d1 = vals[1] - vals[0]
     d2 = vals[2] - vals[1]
     if d1 > 0 and d2 > 0:
-        return "Cải thiện 3 phiên liên tiếp"
+        return f"Cải thiện 3 {unit} liên tiếp"
     if d1 < 0 and d2 < 0:
-        return "3 phiên liên tiếp xấu đi"
+        return f"3 {unit} liên tiếp xấu đi"
     if (score_change or 0) > 0:
-        return "Nhích lên so với phiên trước"
+        return f"Nhích lên so với {unit} trước"
     if (score_change or 0) < 0:
-        return "Giảm nhẹ so với phiên trước"
+        return f"Giảm nhẹ so với {unit} trước"
     return "Dao động, chưa có xu hướng rõ"
 
 
@@ -213,7 +213,7 @@ yt_description: mô tả dài nhiều emoji: ĐIỂM BIAS, 6 LỰC KÉO, CẤU T
 """ + SCHEMA_EXAMPLE
 
 
-def build_prompt(date_full, weekday_note, regime, score, score_change, forces, gamma, hist) -> str:
+def build_prompt(date_full, frame_note, regime, score, score_change, forces, gamma, hist) -> str:
     fl = "\n".join(f"  - {f['label']} ({f['key']}): {f['value']:+.2f} điểm" for f in forces)
     gld = gamma
     neg = gamma["net_gex_m"] < 0
@@ -227,7 +227,8 @@ def build_prompt(date_full, weekday_note, regime, score, score_change, forces, g
     )
     h_txt = " → ".join(f"{d}:{v:+.2f}" for d, v in hist)
     return (
-        f"NGÀY: {date_full}. {weekday_note}\n\n"
+        f"{frame_note}\n"
+        f"Mốc dữ liệu: {date_full}.\n\n"
         f"=== DỮ LIỆU BIAS VÀNG (đã tính sẵn — dùng đúng số) ===\n"
         f"ĐIỂM BIAS tổng: {score:+.2f} / 100 — chế độ: {regime} — thay đổi so phiên trước: {score_change:+.2f}\n"
         f"Lịch sử 3 phiên (điểm): {h_txt}\n\n"
@@ -270,7 +271,9 @@ def finalize(deck: dict, det: dict) -> dict:
     hf = {
         "template": "gold-daily-bias-hf",
         "date": det["date"],
-        "title_html": "BÁO CÁO NHANH VĨ MÔ<br/>&amp; BIAS NGÀY",
+        "title_html": det.get("title_html", "BÁO CÁO NHANH VĨ MÔ<br/>&amp; BIAS NGÀY"),
+        "eyebrow": det.get("eyebrow", "⚡ DAILY FLASH BIAS · VÀNG"),
+        "date_prefix": det.get("date_prefix", "PHIÊN NGÀY"),
         "regime": det["regime"],
         "score": det["score"],
         "history": det["history"],
@@ -299,7 +302,7 @@ def assemble(hf: dict, deck: dict, proj: str, date_full: str, out_dir: Path) -> 
     (out_dir / "script-90s.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
     dd, mm = date_full.split("/")[0], date_full.split("/")[1]
-    title = deck.get("cover_title") or f"Phân tích định lượng Vàng (Gold/XAUUSD) — Bias & cấu trúc Gamma ngày {dd}/{mm}"
+    title = deck.get("cover_title") or f"Phân tích định lượng Vàng (Gold/XAUUSD) — Bias & cấu trúc Gamma · {dd}/{mm}"
     meta = {
         "youtube": {"title": title[:98], "description": deck.get("yt_description", ""),
                     "tags": deck.get("yt_tags", []), "privacyStatus": "private",
@@ -323,8 +326,9 @@ def assemble(hf: dict, deck: dict, proj: str, date_full: str, out_dir: Path) -> 
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", required=True, help="đường dẫn latest.json (bias-web/data/latest.json)")
-    ap.add_argument("--date", help="DD/MM/YYYY (mặc định: daily.asOf hoặc hôm nay)")
-    ap.add_argument("--history", default=str(REPO / "ci-state" / "gold-history.json"))
+    ap.add_argument("--frame", default="daily", choices=["daily", "weekly"], help="khung dữ liệu: daily (ngày) hay weekly (tuần)")
+    ap.add_argument("--date", help="DD/MM/YYYY (mặc định: asOf của khung đã chọn hoặc hôm nay)")
+    ap.add_argument("--history", default=None, help="file lịch sử (mặc định tự chọn theo frame)")
     ap.add_argument("--asset", default="GOLD")
     a = ap.parse_args()
     key = os.environ.get("GEMINI_API_KEY", "").strip()
@@ -335,29 +339,46 @@ def main() -> None:
     asset = (blob.get("assets") or {}).get(a.asset)
     if not asset:
         sys.exit(f"Không thấy assets.{a.asset} trong {a.data}")
-    daily = asset.get("daily") or {}
+    weekly = a.frame == "weekly"
+    fr = asset.get(a.frame) or {}
     gamma_raw = asset.get("gamma") or {}
-    cats = daily.get("categories") or []
+    cats = fr.get("categories") or []
 
-    date_full = a.date or (daily.get("asOf") and _as_ddmmyyyy(daily["asOf"])) or datetime.now().strftime("%d/%m/%Y")
-    d = datetime.strptime(date_full, "%d/%m/%Y")
-    weekday_note = "Bản tin buổi sáng." if True else ""
-    score = round(float(daily.get("score", 0.0)), 2)
-    prev = daily.get("prevScore")
-    score_change = round(float(daily.get("scoreChange", 0.0)), 2)
-    regime = regime_vn(daily.get("regime"))
+    date_full = a.date or (fr.get("asOf") and _as_ddmmyyyy(fr["asOf"])) or datetime.now().strftime("%d/%m/%Y")
+    unit = "tuần" if weekly else "phiên"
+    if weekly:
+        frame_note = ("ĐÂY LÀ BẢN TIN BIAS VÀNG THEO TUẦN (khung tuần). Dòng 1 nói 'tuần này', dòng 5 nói 'tuần tới'; "
+                      "xu hướng tính theo TUẦN, không nói 'phiên'. Giọng tổng quan vĩ mô cho cả tuần.")
+        title_html = "BÁO CÁO NHANH VĨ MÔ<br/>&amp; BIAS TUẦN"
+        eyebrow = "⚡ WEEKLY BIAS · VÀNG"
+        date_prefix = "TUẦN · dữ liệu đến"
+        hist_path = Path(a.history) if a.history else REPO / "ci-state" / "gold-weekly-history.json"
+        step_days = 7
+    else:
+        frame_note = "ĐÂY LÀ BẢN TIN BIAS VÀNG THEO NGÀY. Dòng 1 nói 'hôm nay', dòng 5 nói 'phiên tới'."
+        title_html = "BÁO CÁO NHANH VĨ MÔ<br/>&amp; BIAS NGÀY"
+        eyebrow = "⚡ DAILY FLASH BIAS · VÀNG"
+        date_prefix = "PHIÊN NGÀY"
+        hist_path = Path(a.history) if a.history else REPO / "ci-state" / "gold-history.json"
+        step_days = 1
+
+    score = round(float(fr.get("score", 0.0)), 2)
+    prev = fr.get("prevScore")
+    score_change = round(float(fr.get("scoreChange", 0.0)), 2)
+    regime = regime_vn(fr.get("regime"))
     forces = build_forces(cats)
     gamma = build_gamma(gamma_raw)
-    history = roll_history(Path(a.history), date_full, score, prev)
+    history = roll_history(hist_path, date_full, score, prev, step_days)
     det = {"date": date_full, "regime": regime, "score": score, "history": history,
-           "trend_tag": trend_tag(history, score_change), "forces": forces, "gamma": gamma}
+           "trend_tag": trend_tag(history, score_change, unit), "forces": forces, "gamma": gamma,
+           "title_html": title_html, "eyebrow": eyebrow, "date_prefix": date_prefix}
 
     dd, mm, yyyy = date_full.split("/")
-    proj = f"gold-bias-{dd}{mm}{yyyy}"
+    proj = f"gold-week-{dd}{mm}{yyyy}" if weekly else f"gold-bias-{dd}{mm}{yyyy}"
 
     model = resolve_model(key)
-    print(f"=== [1/2] Gemini viết kịch bản Vàng {date_full} | score={score:+.2f} {regime} | gamma={'DƯƠNG' if gamma['net_gex_m']>=0 else 'ÂM'} {gamma['net_gex_m']:+.1f}M | model={model} ===", flush=True)
-    base = build_prompt(date_full, weekday_note, regime, score, score_change, forces, gamma, history)
+    print(f"=== [1/2] Gemini viết kịch bản Vàng [{a.frame}] {date_full} | score={score:+.2f} {regime} | gamma={'DƯƠNG' if gamma['net_gex_m']>=0 else 'ÂM'} {gamma['net_gex_m']:+.1f}M | model={model} ===", flush=True)
+    base = build_prompt(date_full, frame_note, regime, score, score_change, forces, gamma, history)
     last_err = ""
     for attempt in range(1, 4):
         prompt = base if attempt == 1 else base + f"\n\nLƯU Ý: lần trước lỗi:\n{last_err}\nSửa đúng schema + đủ số dòng."

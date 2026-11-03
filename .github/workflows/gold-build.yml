@@ -7,12 +7,18 @@ name: gold-build
 on:
   workflow_dispatch:
     inputs:
+      frame:
+        description: "Khung: daily (ngày) hay weekly (tuần)"
+        required: false
+        default: "daily"
+        type: choice
+        options: ["daily", "weekly"]
       date:
         description: "Ngày DD/MM/YYYY (bỏ trống = lấy theo báo cáo)"
         required: false
         type: string
   repository_dispatch:
-    types: [gold-daily]
+    types: [gold-daily, gold-weekly]
 
 permissions:
   contents: write
@@ -37,15 +43,22 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Xác định ngày
+      - name: Xác định ngày + khung
         id: cfg
         env:
           PAYLOAD_DATE: ${{ github.event.client_payload.date }}
           INPUT_DATE: ${{ github.event.inputs.date }}
+          ACTION: ${{ github.event.action }}
+          INPUT_FRAME: ${{ github.event.inputs.frame }}
         run: |
           D="${PAYLOAD_DATE:-$INPUT_DATE}"
+          # khung: repository_dispatch gold-weekly -> weekly; workflow_dispatch -> input; mặc định daily
+          if [ "$ACTION" = "gold-weekly" ]; then FRAME="weekly"
+          elif [ -n "$INPUT_FRAME" ]; then FRAME="$INPUT_FRAME"
+          else FRAME="daily"; fi
           echo "date=$D" >> "$GITHUB_OUTPUT"
-          echo "Ngày yêu cầu: '${D:-(auto theo báo cáo)}'"
+          echo "frame=$FRAME" >> "$GITHUB_OUTPUT"
+          echo "Khung: $FRAME | Ngày yêu cầu: '${D:-(auto theo báo cáo)}'"
 
       - name: Setup Node 22
         uses: actions/setup-node@v4
@@ -66,7 +79,7 @@ jobs:
           set -o pipefail
           DATE_ARG=""
           if [ -n "${{ steps.cfg.outputs.date }}" ]; then DATE_ARG="--date ${{ steps.cfg.outputs.date }}"; fi
-          python build_gold_deck.py --data bias-web/data/latest.json $DATE_ARG 2>&1 | tee brain.log
+          python build_gold_deck.py --data bias-web/data/latest.json --frame "${{ steps.cfg.outputs.frame }}" $DATE_ARG 2>&1 | tee brain.log
           PROJ=$(grep -oP 'PROJECT=\K\S+' brain.log | tail -1)
           echo "proj=$PROJ" >> "$GITHUB_OUTPUT"
           test -n "$PROJ"
