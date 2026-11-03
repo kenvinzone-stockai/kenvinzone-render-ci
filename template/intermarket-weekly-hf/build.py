@@ -111,7 +111,7 @@ def scene_hook():
         return (f'<div class="hk-m" style="left:{cx-165}px;width:330px;">'
                 f'<div class="hk-mn" style="color:{a["accent"]};">{esc(a["name"])}</div>'
                 f'<div class="hk-mv mono" id="hk-{a["key"]}" style="color:{regime_col(sc)};">{sc:+.1f}</div>'
-                f'<div class="hk-mb"><div class="hk-mmk" style="left:{pos:.1f}%;"></div></div></div>')
+                f'<div class="hk-mb"><div class="hk-mmk" id="hk-mk-{a["key"]}" style="left:{pos:.1f}%;"></div></div></div>')
     css = f"""
 .hk-eyebrow{{position:absolute;top:248px;left:0;right:0;display:flex;justify-content:center;}}
 .hk-eyebrow span{{background:linear-gradient(135deg,#38bdf8,#6366f1);color:#fff;font-weight:900;font-size:26px;letter-spacing:3px;padding:14px 32px;border-radius:99px;box-shadow:0 10px 40px rgba(99,102,241,.45);}}
@@ -146,18 +146,30 @@ def scene_hook():
   {mini(AMAP['nas'], 540)}
   {mini(AMAP['gold'], 850)}
 </div>"""
-    t_c = tline(0, 0.35, st)
-    t_m = tline(0, 0.72, st)
+    t_c = tline(0, 0.32, st)
+    t_m = tline(0, 0.58, st)
+    def P(a):
+        return (a["score"] + 100) / 200 * 100
+    mk = []
+    for k in ("spx", "nas", "gold"):
+        a = AMAP[k]; p = P(a); sgn = '+' if a["score"] > 0 else ''
+        tk = f"{t_m} + {('spx','nas','gold').index(k)}*0.3"
+        mk.append(
+            f"tl.fromTo('#hk-{k}', {{scale:1.2, opacity:0}}, {{scale:1, opacity:1, duration:0.4, ease:'back.out(1.6)', immediateRender:false}}, {tk});"
+            f"tl.set('#hk-mk-{k}', {{left:'50%'}}, {tk});"
+            f"tl.to('#hk-mk-{k}', {{left:'14%', duration:0.2, ease:'power1.inOut'}}, {tk});"
+            f"tl.to('#hk-mk-{k}', {{left:'86%', duration:0.26, ease:'power1.inOut'}}, ({tk})+0.2);"
+            f"tl.to('#hk-mk-{k}', {{left:'{p:.1f}%', duration:0.7, ease:'elastic.out(1,0.5)', immediateRender:false}}, ({tk})+0.46);"
+            f"counter('#hk-{k}', 0, {a['score']}, ({tk})+0.1, 0.95, 1, '{sgn}', '');")
     js = f"""
-counter('#hk-compv', 0, {cs}, {t_c}, 0.8, 1, '{'+' if cs>0 else ''}', '');
-tl.fromTo('#hk-comp .hk-cv', {{scale:1.3}}, {{scale:1, duration:0.5, ease:'back.out(2)', immediateRender:false}}, {t_c});
-tl.fromTo('#hk-comp .hk-cmk', {{left:'50%'}}, {{left:'{cpos:.1f}%', duration:0.6, ease:'power3.out', immediateRender:false}}, {t_c});
-["spx","nas","gold"].forEach((k,i)=>{{
-  tl.fromTo('#hk-'+k, {{scale:1.2, opacity:0}}, {{scale:1, opacity:1, duration:0.4, ease:'back.out(1.6)', immediateRender:false}}, {t_m} + i*0.18);
-}});
-counter('#hk-spx', 0, {AMAP['spx']['score']}, {t_m}, 0.5, 1, '{'+' if AMAP['spx']['score']>0 else ''}', '');
-counter('#hk-nas', 0, {AMAP['nas']['score']}, {t_m}+0.18, 0.5, 1, '{'+' if AMAP['nas']['score']>0 else ''}', '');
-counter('#hk-gold', 0, {AMAP['gold']['score']}, {t_m}+0.36, 0.5, 1, '{'+' if AMAP['gold']['score']>0 else ''}', '');
+counter('#hk-compv', 0, {cs}, {t_c}+0.2, 1.1, 1, '{'+' if cs>0 else ''}', '');
+tl.fromTo('#hk-comp .hk-cv', {{scale:1}}, {{scale:1.28, duration:0.18, ease:'power2.out', yoyo:true, repeat:1, immediateRender:false}}, {t_c}+1.1);
+tl.set('#hk-comp .hk-cmk', {{left:'50%'}}, {t_c});
+tl.to('#hk-comp .hk-cmk', {{left:'13%', duration:0.26, ease:'power1.inOut'}}, {t_c});
+tl.to('#hk-comp .hk-cmk', {{left:'87%', duration:0.34, ease:'power1.inOut'}}, {t_c}+0.26);
+tl.to('#hk-comp .hk-cmk', {{left:'{cpos:.1f}%', duration:0.9, ease:'elastic.out(1,0.45)', immediateRender:false}}, {t_c}+0.6);
+tl.fromTo('#hk-comp .hk-cmk', {{boxShadow:'0 0 12px #fff'}}, {{boxShadow:'0 0 36px #fff', duration:0.24, yoyo:true, repeat:1, immediateRender:false}}, {t_c}+1.3);
+{''.join(mk)}
 tl.to('#hk-stage', {{opacity:0, filter:'blur(10px)', scale:0.96, duration:0.28, ease:'power3.in'}}, {dur - 0.3});
 """
     return "hook", dur, scene_file("hook", dur, css, body, js)
@@ -237,12 +249,19 @@ def scene_assets():
             f'<div class="iv-foot"><span class="iv-sup">▲ {esc(a["support"]["label"])} <b>{a["support"]["value"]:+.2f}</b></span>'
             f'<span class="iv-drag">▼ {esc(a["drag"]["label"])} <b>{a["drag"]["value"]:+.2f}</b></span>'
             f'<span class="iv-g" style="color:{gcol};border-color:{gcol}66;">{gtxt}</span></div></div>')
+        sgn = '+' if sc > 0 else ''
         js.append(
             f"tl.fromTo('#iv-c{i}', {{opacity:0, y:46, filter:'blur(8px)'}}, {{opacity:1, y:0, filter:'blur(0px)', duration:0.5, ease:'expo.out', immediateRender:false}}, {t});"
             f"tl.fromTo('#iv-c{i}', {{borderColor:'{acc}55'}}, {{borderColor:'{acc}', duration:0.3, yoyo:true, repeat:1, immediateRender:false}}, {t});"
-            f"counter('#iv-s{i}', 0, {sc}, {t+0.1}, 0.6, 1, '{'+' if sc>0 else ''}', '');"
-            f"tl.fromTo('#iv-s{i}', {{scale:1.3}}, {{scale:1, duration:0.45, ease:'back.out(2)', immediateRender:false}}, {t+0.1});"
-            f"tl.fromTo('#iv-m{i}', {{left:'50%'}}, {{left:'{pos:.1f}%', duration:0.55, ease:'power3.out', immediateRender:false}}, {t+0.1});")
+            # KIM quét: tâm -> trái -> phải -> nảy đàn hồi về đúng điểm score
+            f"tl.set('#iv-m{i}', {{left:'50%'}}, {t+0.12});"
+            f"tl.to('#iv-m{i}', {{left:'11%', duration:0.24, ease:'power1.inOut'}}, {t+0.12});"
+            f"tl.to('#iv-m{i}', {{left:'89%', duration:0.32, ease:'power1.inOut'}}, {t+0.36});"
+            f"tl.to('#iv-m{i}', {{left:'{pos:.1f}%', duration:0.85, ease:'elastic.out(1,0.45)', immediateRender:false}}, {t+0.68});"
+            # SỐ lăn trong lúc kim quét rồi chốt + nảy
+            f"counter('#iv-s{i}', 0, {sc}, {t+0.18}, 1.15, 1, '{sgn}', '');"
+            f"tl.fromTo('#iv-s{i}', {{scale:1}}, {{scale:1.3, duration:0.18, ease:'power2.out', yoyo:true, repeat:1, immediateRender:false}}, {t+1.35});"
+            f"tl.fromTo('#iv-m{i}', {{boxShadow:'0 0 10px #fff'}}, {{boxShadow:'0 0 34px #fff', duration:0.22, yoyo:true, repeat:1, immediateRender:false}}, {t+1.5});")
     css = """
 .iv-ttl{position:absolute;left:60px;top:250px;font-size:34px;font-weight:900;letter-spacing:1px;}
 .iv-ttl span{color:#7dd3fc;}
@@ -414,15 +433,19 @@ def root(scene_meta):
     for cid, stt, dd in scene_meta[1:]:
         if cid != "captions":
             add("whoosh.mp3", stt - 0.25, 0.45)
-    # SFX dày: impact ở composite + 3 điểm tài sản; tick ở từng lực vĩ mô + từng kịch bản.
-    add("impact.mp3", tline(0, 0.35), 0.55)                    # composite
+    # SFX dày: tick lúc kim quét + impact lúc SỐ CHỐT (nảy); tick ở từng lực vĩ mô + từng kịch bản.
+    add("tick.mp3", tline(0, 0.32) + 0.12, 0.28)               # composite: kim quét
+    add("impact.mp3", tline(0, 0.32) + 1.3, 0.55)              # composite: chốt số
     for i in range(3):
-        add("impact.mp3", tline(0, 0.72) + i * 0.18, 0.4)      # 3 điểm tài sản
+        base = tline(0, 0.58) + i * 0.3
+        add("tick.mp3", base + 0.12, 0.26)                     # 3 tài sản: kim quét
+        add("impact.mp3", base + 1.35, 0.4)                    # 3 tài sản: chốt số
     nmac = len(D["macro"])
     for i in range(nmac):
         add("tick.mp3", tline(1, 0.3 + 0.52 * (i / max(1, nmac - 1))), 0.3)
     for ln in (2, 3, 4):
-        add("impact.mp3", tline(ln, 0.02), 0.45)               # điểm từng tài sản (khi dòng bật lên)
+        add("tick.mp3", tline(ln, 0.0) + 0.12, 0.26)           # kim quét
+        add("impact.mp3", tline(ln, 0.0) + 1.35, 0.45)         # điểm chốt (nảy)
     for i in range(3):
         add("tick.mp3", tline(6, 0.3 + i * 0.2), 0.34)         # 3 kịch bản
     return f"""<!doctype html>
