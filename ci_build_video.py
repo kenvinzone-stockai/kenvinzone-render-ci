@@ -32,6 +32,7 @@ STYLE_PRESET = {
     "vnindex-daily-hf": "ban-tin-vnindex",
     "gold-daily-bias-hf": "giai-ma-nganh",
     "equity-bias-hf": "giai-ma-nganh",
+    "intermarket-weekly-hf": "ban-tin-vnindex",
     "aurora-explainer-hf": "giai-ma-nganh",
 }
 
