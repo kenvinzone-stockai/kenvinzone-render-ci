@@ -10,10 +10,10 @@
   "cover": {
     "eyebrow": "Chứng khoán hôm nay",
     "title_lines": [
-      "Thủng mốc 1700",
-      "hồi yếu lên 1710"
+      "Gãy mốc 1724",
+      "lui về 1710"
     ],
-    "sub_html": "Giảm hơn <b>31</b> điểm, cách EMA20 D1 tới <b>34</b> điểm",
+    "sub_html": "Thủng hỗ trợ sáng, chốt phiên <b>1710</b>, cách EMA20 <b>34</b> điểm",
     "chips": [
       {
         "icon": "📉",
@@ -32,7 +32,7 @@
         "hot": true
       }
     ],
-    "cta": "Bắt đáy hay bẫy tăng giá?"
+    "cta": "Hồi phục kỹ thuật hay bẫy tăng giá?"
   },
   "compare": [
     {
@@ -57,11 +57,11 @@
       "tone": "down"
     }
   ],
-  "range_pill": "BIÊN 1693 – 1744 · thủng 1693 rủi ro giảm sâu",
+  "range_pill": "BIÊN 1693 – 1744 · thủng 1693 → về 1680",
   "journey": {
     "axis": [
-      1680,
-      1755
+      1690,
+      1750
     ],
     "path": [
       {
@@ -83,21 +83,21 @@
     },
     "zone": {
       "lo": 1693,
-      "hi": 1695,
-      "label": "Đáy phiên 1695 · Hỗ trợ 1693"
+      "hi": 1724.89,
+      "label": "Đáy 1695 · Hỗ trợ sáng 1724,89"
     },
     "am_card": {
       "time": "11:01 · SÁNG",
       "meta": "Score 48 · Vol ×0,57",
-      "text": "Giá <b>1728,33</b> dưới toàn bộ EMA, rà soát vùng hỗ trợ 1724–1727"
+      "text": "Giá <b>1728,33</b> giằng co sát mốc 1724,89, dưới cả ba đường EMA"
     },
-    "warn_card": "Báo cáo sáng: thủng vùng hỗ trợ <b>1724–1727</b> sẽ kích hoạt nhịp giảm sâu",
+    "warn_card": "Báo cáo sáng: thủng <b>1724,89</b> kèm volume sẽ kích hoạt rơi về 1715–1720",
     "pm_card": {
       "time": "15:01 · CHIỀU",
       "meta": "Score 42 · Vol ×0,28",
-      "text": "Chốt <b>1710</b> — nhúng về đáy 1695 rồi hồi kỹ thuật thiếu dòng tiền"
+      "text": "Chốt <b>1710</b> — thủng 1724, chạm đáy 1695 rồi hồi yếu thiếu thanh khoản"
     },
-    "twist": "Mất mốc 1724–1727, chỉ số rơi về 1695 trước khi hồi nhẹ lên 1710 với thanh khoản cạn kiệt"
+    "twist": "Mốc 1724,89 bị xuyên thủng, chỉ số rơi về 1695 trước khi hồi nhẹ lên 1710"
   },
   "subscores": [
     {
@@ -138,14 +138,14 @@
       "name": "Tuần",
       "trend": "bullish",
       "badge": "Bullish",
-      "detail": "EMA Full Bullish · MACD & RSI phân kỳ suy yếu"
+      "detail": "EMA Full Bullish · MACD bias bearish"
     },
     {
       "tf": "3D",
       "name": "3 ngày",
       "trend": "bullish",
-      "badge": "Suy yếu",
-      "detail": "Trend tổng thể Bullish · RSI Bearish Zone & MACD bearish"
+      "badge": "Bullish",
+      "detail": "EMA Mixed · RSI Bearish · MACD bearish"
     },
     {
       "tf": "D1",
@@ -159,17 +159,17 @@
       "name": "15 phút",
       "trend": "neutral",
       "badge": "Pin Bar",
-      "detail": "Có Bullish Pin Bar nhưng vol ratio 0,28 quá thấp"
+      "detail": "Range · Bullish Pin Bar volume cực thấp"
     }
   ],
-  "timeframe_note": "Nhịp rút chân M15 thiếu dòng tiền xác nhận, rủi ro bẫy tăng giá cao",
+  "timeframe_note": "Khối lượng chiều cực thấp (vol ratio 0,28), nhịp hồi cuối phiên tiềm ẩn bẫy tăng giá",
   "levels": {
     "axis": [
       1680,
       1765
     ],
     "price": 1710,
-    "price_label": "Giá chốt 1.710,00",
+    "price_label": "Giá chốt 1.710",
     "items": [
       {
         "price": 1759,
@@ -187,13 +187,13 @@
         "kind": "res"
       },
       {
-        "price": 1720,
-        "label": "Kháng cự gần",
+        "price": 1724.89,
+        "label": "Low nến sáng",
         "kind": "res"
       },
       {
         "price": 1695,
-        "label": "Đáy phiên",
+        "label": "Low phiên",
         "kind": "sup"
       },
       {
@@ -203,49 +203,49 @@
         "key": true
       }
     ],
-    "up": "Đóng D1 vượt lại 1744 kèm thanh khoản bùng nổ",
-    "down": "Thủng 1693 kèm khối lượng lớn → rủi ro rơi về 1680"
+    "up": "Đóng D1 vượt lại 1744 kèm thanh khoản mạnh",
+    "down": "Thủng 1693 kèm khối lượng lớn → về 1680"
   },
   "scenarios": [
     {
       "pct": 50,
       "tone": "down",
       "name": "Hồi kỹ thuật yếu rồi tiếp tục giảm",
-      "desc": "Hồi về <b>1715–1720</b> thiếu vol rồi giảm về <b>1693–1680</b>"
+      "desc": "Hồi lên <b>1715–1720</b> thiếu vol rồi lui về <b>1693–1680</b>"
     },
     {
       "pct": 35,
       "tone": "flat",
       "name": "Tạo đáy ngắn hạn, tích lũy",
-      "desc": "Giữ vững <b>1693–1695</b> với volume tăng dần, hướng về <b>1727–1740</b>"
+      "desc": "Giữ vững <b>1693–1695</b>, thanh khoản tăng dần hướng lên <b>1727–1740</b>"
     },
     {
       "pct": 15,
       "tone": "up",
       "name": "Lấy lại EMA20 D1 (suy luận)",
-      "desc": "Đóng trên <b>1744</b> kèm thanh khoản tăng đột biến"
+      "desc": "Đột phá vượt <b>1744</b> kèm thanh khoản bùng nổ"
     }
   ],
   "actions": [
     {
       "tone": "urgent",
-      "title": "Không mở mua mới",
-      "desc": "Chờ tín hiệu tạo đáy rõ ràng kèm thanh khoản xác nhận"
-    },
-    {
-      "tone": "positive",
-      "title": "Đang nắm giữ",
-      "desc": "Cân nhắc giảm tỷ trọng về mức an toàn, đặt stop-loss chặt dưới <b>1693</b>"
+      "title": "Chưa mở vị thế mới",
+      "desc": "Đứng ngoài quan sát, chờ xác nhận đáy rõ ràng kèm thanh khoản"
     },
     {
       "tone": "urgent",
-      "title": "Margin",
-      "desc": "Giảm ngay nếu đang dùng cao, ưu tiên tuyệt đối việc bảo toàn vốn"
+      "title": "Đang nắm giữ",
+      "desc": "Hạ tỷ trọng về mức an toàn, đặt dừng lỗ chặt dưới <b>1693</b>"
+    },
+    {
+      "tone": "urgent",
+      "title": "Giảm margin ngay",
+      "desc": "Ưu tiên bảo toàn vốn, hạ đòn bẩy tránh rủi ro call margin"
     }
   ],
   "outro": {
-    "up": "D1 đóng vững trên 1744 kèm thanh khoản bùng nổ và RSI vượt 50",
-    "down": "Thủng 1693 kèm khối lượng lớn — thesis vô hiệu",
+    "up": "D1 đóng vững trên 1744 kèm thanh khoản lớn",
+    "down": "Thủng 1693 với khối lượng lớn — thesis vô hiệu",
     "promise": "Hẹn anh em bản tin ngày mai",
     "follow_handle": "@kenvinzone"
   },
