@@ -108,22 +108,22 @@
       "color": "#ef4444"
     }
   ],
-  "rotation_tag": "Dòng tiền dịch chuyển thận trọng khỏi tài sản rủi ro cao <b>Nasdaq</b> sang trạng thái phòng thủ ở <b>Gold</b>.",
+  "rotation_tag": "Dòng tiền dịch chuyển từ nhóm <b>tấn công</b> sang <b>phòng thủ</b>, thận trọng chờ tín hiệu định hướng từ USD.",
   "scenarios": [
     {
       "pct": 50,
       "color": "#fbbf24",
-      "name": "Giằng co tích lũy"
+      "name": "Giằng co biên hẹp"
     },
     {
       "pct": 30,
       "color": "#f87171",
-      "name": "Khẩu vị rủi ro giảm"
+      "name": "Áp lực USD gia tăng"
     },
     {
       "pct": 20,
       "color": "#4ade80",
-      "name": "USD hạ nhiệt"
+      "name": "Hồi phục bứt phá"
     }
   ],
   "audio_offset": 1.0,

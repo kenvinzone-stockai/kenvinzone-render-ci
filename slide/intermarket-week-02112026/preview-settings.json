@@ -13,26 +13,26 @@
     "volume": 0.18
   },
   "scriptLines": [
-    "Cả S&P 500, Nasdaq lẫn Gold đều khép lại tuần qua trong thế trung lập giằng co, mở ra câu hỏi lớn về hướng bứt phá tiếp theo của liên thị trường.",
-    "Điểm composite dừng ở mức âm không phẩy chín, phản ánh thế cân bằng khi S&P 500 đạt âm một phẩy tư, Nasdaq âm hai phẩy bốn còn Gold giữ mức dương một phẩy không.",
-    "Bức tranh vĩ mô ghi nhận lãi suất thực là lực đỡ lớn nhất với cộng năm phẩy chín mươi lăm điểm, đối trọng trực tiếp với lực cản từ đồng USD âm hai phẩy năm mươi lăm.",
-    "S&P 500 được độ rộng thị trường hỗ trợ tốt nhất, nhưng khẩu vị rủi ro suy yếu cùng Gamma âm khiến biên độ kỳ vọng dao động quanh mức sáu phẩy tám điểm.",
-    "Nasdaq tiếp tục chịu lực đè nặng nề từ tâm lý né tránh rủi ro của giới đầu tư dù nhận xung lực nâng đỡ từ lãi suất thực.",
-    "Gold diễn ra cuộc giằng co điển hình khi lực kéo từ lãi suất thực áp đảo áp lực ghìm giá của đồng USD, giữ vững cấu trúc Gamma dương an toàn.",
-    "Dòng tiền luân chuyển chậm rãi với năm mươi phần trăm kịch bản giằng co tích lũy, ba mươi phần trăm rủi ro điều chỉnh và hai mươi phần trăm khả năng hồi phục khi USD suy yếu.",
-    "Giai đoạn này ưu tiên kỷ luật bảo toàn vốn và giao dịch theo biên độ hẹp, mời bạn theo dõi KenvinZone cùng AURORA để nắm bắt tín hiệu định lượng mỗi tuần."
+    "Cả ba tài sản S&P 500, Nasdaq và Vàng đều khép tuần trong vùng trung lập với điểm composite âm 0.9, báo hiệu trạng thái cân bằng mong manh trên toàn thị trường.",
+    "Về vĩ mô, lãi suất thực là bệ đỡ lớn nhất với cộng 5.95 điểm, trong khi sức mạnh đồng USD âm 2.55 điểm đóng vai trò lực cản chính.",
+    "S&P 500 ghi nhận điểm tuần âm 1.4, được độ rộng thị trường hỗ trợ cộng 2.62 nhưng bị khẩu vị rủi ro suy giảm đè nặng âm 2.24 điểm.",
+    "Nasdaq đạt điểm tuần âm 2.4, hưởng lợi từ lãi suất thực cộng 7.22 nhưng chịu áp lực bán lớn khi khẩu vị rủi ro giảm âm 2.87 điểm.",
+    "Vàng đạt điểm tuần dương 1.0 nhờ trợ lực mạnh mẽ từ lãi suất thực cộng 8.04, giằng co quyết liệt trước lực ghì của USD âm 3.80 điểm.",
+    "Dòng vốn đang có dấu hiệu xoay trục từ nhóm tấn công sang thế phòng thủ để chờ đợi tín hiệu dứt khoát từ tỷ giá USD.",
+    "Xác suất tuần tới nghiêng năm mươi phần trăm đi ngang giằng co, ba mươi phần trăm thoái lui do áp lực vĩ mô, và hai mươi phần trăm tăng tốc vượt cản.",
+    "Giai đoạn này nên ưu tiên bảo toàn vốn, giao dịch trong biên độ và hãy theo dõi KenvinZone cùng AURORA để nắm bắt nhịp đập liên thị trường."
   ],
   "slides": {
     "deletedIds": [],
     "scriptLines": [
-      "Cả S&P 500, Nasdaq lẫn Gold đều khép lại tuần qua trong thế trung lập giằng co, mở ra câu hỏi lớn về hướng bứt phá tiếp theo của liên thị trường.",
-      "Điểm composite dừng ở mức âm không phẩy chín, phản ánh thế cân bằng khi S&P 500 đạt âm một phẩy tư, Nasdaq âm hai phẩy bốn còn Gold giữ mức dương một phẩy không.",
-      "Bức tranh vĩ mô ghi nhận lãi suất thực là lực đỡ lớn nhất với cộng năm phẩy chín mươi lăm điểm, đối trọng trực tiếp với lực cản từ đồng USD âm hai phẩy năm mươi lăm.",
-      "S&P 500 được độ rộng thị trường hỗ trợ tốt nhất, nhưng khẩu vị rủi ro suy yếu cùng Gamma âm khiến biên độ kỳ vọng dao động quanh mức sáu phẩy tám điểm.",
-      "Nasdaq tiếp tục chịu lực đè nặng nề từ tâm lý né tránh rủi ro của giới đầu tư dù nhận xung lực nâng đỡ từ lãi suất thực.",
-      "Gold diễn ra cuộc giằng co điển hình khi lực kéo từ lãi suất thực áp đảo áp lực ghìm giá của đồng USD, giữ vững cấu trúc Gamma dương an toàn.",
-      "Dòng tiền luân chuyển chậm rãi với năm mươi phần trăm kịch bản giằng co tích lũy, ba mươi phần trăm rủi ro điều chỉnh và hai mươi phần trăm khả năng hồi phục khi USD suy yếu.",
-      "Giai đoạn này ưu tiên kỷ luật bảo toàn vốn và giao dịch theo biên độ hẹp, mời bạn theo dõi KenvinZone cùng AURORA để nắm bắt tín hiệu định lượng mỗi tuần."
+      "Cả ba tài sản S&P 500, Nasdaq và Vàng đều khép tuần trong vùng trung lập với điểm composite âm 0.9, báo hiệu trạng thái cân bằng mong manh trên toàn thị trường.",
+      "Về vĩ mô, lãi suất thực là bệ đỡ lớn nhất với cộng 5.95 điểm, trong khi sức mạnh đồng USD âm 2.55 điểm đóng vai trò lực cản chính.",
+      "S&P 500 ghi nhận điểm tuần âm 1.4, được độ rộng thị trường hỗ trợ cộng 2.62 nhưng bị khẩu vị rủi ro suy giảm đè nặng âm 2.24 điểm.",
+      "Nasdaq đạt điểm tuần âm 2.4, hưởng lợi từ lãi suất thực cộng 7.22 nhưng chịu áp lực bán lớn khi khẩu vị rủi ro giảm âm 2.87 điểm.",
+      "Vàng đạt điểm tuần dương 1.0 nhờ trợ lực mạnh mẽ từ lãi suất thực cộng 8.04, giằng co quyết liệt trước lực ghì của USD âm 3.80 điểm.",
+      "Dòng vốn đang có dấu hiệu xoay trục từ nhóm tấn công sang thế phòng thủ để chờ đợi tín hiệu dứt khoát từ tỷ giá USD.",
+      "Xác suất tuần tới nghiêng năm mươi phần trăm đi ngang giằng co, ba mươi phần trăm thoái lui do áp lực vĩ mô, và hai mươi phần trăm tăng tốc vượt cản.",
+      "Giai đoạn này nên ưu tiên bảo toàn vốn, giao dịch trong biên độ và hãy theo dõi KenvinZone cùng AURORA để nắm bắt nhịp đập liên thị trường."
     ]
   },
   "visuals": {
