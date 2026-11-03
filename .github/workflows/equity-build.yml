@@ -1,0 +1,149 @@
+name: equity-build
+
+# Dựng video "Phân tích định lượng Chứng khoán Mỹ" (S&P 500 + Nasdaq gộp 1 video) từ bias-web/data/latest.json.
+# - repository_dispatch (equity-daily / equity-weekly): Apps Script bắn mỗi sáng (ngày) + sáng Thứ Hai (tuần).
+# - workflow_dispatch: chạy tay, chọn khung daily/weekly.
+on:
+  workflow_dispatch:
+    inputs:
+      frame:
+        description: "Khung: daily (ngày) hay weekly (tuần)"
+        required: false
+        default: "daily"
+        type: choice
+        options: ["daily", "weekly"]
+      date:
+        description: "Ngày DD/MM/YYYY (bỏ trống = lấy theo báo cáo)"
+        required: false
+        type: string
+  repository_dispatch:
+    types: [equity-daily, equity-weekly]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: equity-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout hệ thống render
+        uses: actions/checkout@v4
+      - name: Lấy báo cáo Bias (repo public bias-web)
+        uses: actions/checkout@v4
+        with:
+          repository: kenvinzone-stockai/kenvinzone-bias-web
+          path: bias-web
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Xác định ngày + khung
+        id: cfg
+        env:
+          PAYLOAD_DATE: ${{ github.event.client_payload.date }}
+          INPUT_DATE: ${{ github.event.inputs.date }}
+          ACTION: ${{ github.event.action }}
+          INPUT_FRAME: ${{ github.event.inputs.frame }}
+        run: |
+          D="${PAYLOAD_DATE:-$INPUT_DATE}"
+          if [ "$ACTION" = "equity-weekly" ]; then FRAME="weekly"
+          elif [ -n "$INPUT_FRAME" ]; then FRAME="$INPUT_FRAME"
+          else FRAME="daily"; fi
+          echo "date=$D" >> "$GITHUB_OUTPUT"
+          echo "frame=$FRAME" >> "$GITHUB_OUTPUT"
+          echo "Khung: $FRAME | Ngày: '${D:-(auto)}'"
+
+      - name: Setup Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install edge-tts elevenlabs playwright
+          python -m playwright install --with-deps chromium
+          sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Dựng deck CK Mỹ (Gemini)
+        id: brain
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          set -o pipefail
+          DATE_ARG=""
+          if [ -n "${{ steps.cfg.outputs.date }}" ]; then DATE_ARG="--date ${{ steps.cfg.outputs.date }}"; fi
+          python build_equity_deck.py --data bias-web/data/latest.json --frame "${{ steps.cfg.outputs.frame }}" $DATE_ARG 2>&1 | tee brain.log
+          PROJ=$(grep -oP 'PROJECT=\K\S+' brain.log | tail -1)
+          echo "proj=$PROJ" >> "$GITHUB_OUTPUT"
+          test -n "$PROJ"
+
+      - name: Render giọng clone + upload Private
+        id: build
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TTS_CONFIG_JSON: ${{ secrets.TTS_CONFIG_JSON }}
+          SOCIAL_UPLOAD_JSON: ${{ secrets.SOCIAL_UPLOAD_JSON }}
+          YT_CHANNEL_ID: ${{ secrets.EQUITY_YT_CHANNEL_ID || secrets.YT_CHANNEL_ID }}
+          HYPERFRAMES_NO_TELEMETRY: "1"
+        run: |
+          set -o pipefail
+          python ci_build_video.py "slide/${{ steps.brain.outputs.proj }}" --privacy private 2>&1 | tee -a ci-run.log
+
+      - name: Lưu last-upload + commit
+        if: always()
+        env:
+          YT_CHANNEL_ID: ${{ secrets.EQUITY_YT_CHANNEL_ID || secrets.YT_CHANNEL_ID }}
+          CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PROJ: ${{ steps.brain.outputs.proj }}
+        run: |
+          mkdir -p ci-logs ci-state
+          cp brain.log "ci-logs/equity-brain-${{ github.run_id }}.log" 2>/dev/null || true
+          cp ci-run.log "ci-logs/equity-run-${{ github.run_id }}.log" 2>/dev/null || true
+          if [ -f upload-result.json ]; then
+            python - <<'PY'
+          import json, os
+          r = json.load(open("upload-result.json"))
+          json.dump({"video_id": r.get("video_id",""), "project": os.environ.get("PROJ",""),
+                     "channel_id": os.environ.get("YT_CHANNEL_ID","").strip(), "chat": os.environ.get("CHAT","")},
+                    open("ci-state/last-upload.json","w"), ensure_ascii=False)
+          PY
+          fi
+          git config user.name "ci-bot"; git config user.email "ci@kenvinzone.local"
+          git add -A && git commit -m "equity ${{ steps.brain.outputs.proj }} (run ${{ github.run_id }})" || true
+          git pull --rebase || true
+          git push || true
+
+      - name: Báo Telegram
+        if: always()
+        env:
+          TG: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PROJ: ${{ steps.brain.outputs.proj }}
+        run: |
+          if [ -z "$TG" ] || [ -z "$CHAT" ]; then echo "Telegram chưa cấu hình"; exit 0; fi
+          if [ -f upload-result.json ]; then
+            URL=$(python3 -c "import json;print(json.load(open('upload-result.json')).get('url',''))" 2>/dev/null)
+            MSG="📊 Xong video CHỨNG KHOÁN MỸ (S&P 500 + Nasdaq) [$PROJ] — đang để PRIVATE:
+          $URL
+
+          Xem xong, nhắn \"duyệt\" để công khai."
+          else
+            MSG="❌ Lỗi khi dựng video CK Mỹ [$PROJ]. Xem log repo (ci-logs/)."
+          fi
+          curl -s -X POST "https://api.telegram.org/bot$TG/sendMessage" --data-urlencode chat_id="$CHAT" --data-urlencode text="$MSG" -o /dev/null -w "notify %{http_code}\n" || true
+
+      - name: Upload artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: equity-${{ steps.brain.outputs.proj }}
+          path: |
+            slide/${{ steps.brain.outputs.proj }}/output/final_video.mp4
+            upload-result.json
+          if-no-files-found: warn
+          retention-days: 14
