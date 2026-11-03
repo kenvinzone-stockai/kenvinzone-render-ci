@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "BIAS VÀNG TUẦN 02/11: TRUNG LẬP · BIẾN ĐỘNG BỊ KÌM NÉN",
+    "description": "📊 BẢN TIN ĐỊNH LƯỢNG BIAS VÀNG TUẦN 02/11/2026 - KENVINZONE ANALYTICS\n\n1. ĐIỂM BIAS & VĨ MÔ TUẦN:\n- Bias tổng: +1.00/100 (TRUNG LẬP), giảm -1.90 điểm sau chuỗi 2 tuần giữ ở mức +2.90.\n- Trạng thái chung: Đà tăng tạm thời chững lại, thị trường chuyển sang trạng thái tích lũy.\n\n2. BÓC TÁCH 6 LỰC KÉO VĨ MÔ:\n- Áp lực USD: -3.80 điểm (Gây sức ép lớn)\n- Dòng tiền & Xu hướng: -3.44 điểm (Dòng tiền suy yếu)\n- Yếu tố riêng Vàng: -2.01 điểm (Lực cản ngắn hạn)\n- Lãi suất thực: +8.04 điểm (Lực đỡ chủ đạo duy trì mức cao)\n- Thanh khoản M2: +1.44 điểm (Thanh khoản dồi dào)\n- Khẩu vị rủi ro: +1.58 điểm (Khẩu vị ổn định, chưa có căng thẳng tín dụng)\n\n3. CẤU TRÚC GAMMA (GLD & XAUUSD):\n- Net GEX: +2.5 triệu USD (Vùng Gamma Dương -> Biến động kìm nén, giá có xu hướng bị ghim trong biên)\n- Spot GLD: 367.82 (XAUUSD ≈ 3981.9) - Nằm trên Gamma Flip\n- Gamma Flip: 365.0 (XAUUSD ≈ 3951.0)\n- Put Wall (Hỗ trợ gamma): 360.0 (XAUUSD ≈ 3897.0)\n- Call Wall (Kháng cự gamma): 375.0 (XAUUSD ≈ 4060.0)\n\n4. 3 KỊCH BẢN TUẦN TỚI:\n- Base (60%): Giằng co trong biên 360 – 375 GLD (≈ 3.897 – 4.060 XAUUSD).\n- Down (23%): Thủng Put Wall 360 (≈ 3.897 XAUUSD) nếu USD bật tăng mạnh.\n- Up (17%): Bứt phá vượt Call Wall 375 (≈ 4.060 XAUUSD) khi dòng tiền quay lại.\n\n5. KẾ HOẠCH HÀNH ĐỘNG:\n- Duy trì vị thế trung tính trong biên độ 360 - 375 GLD.\n- Điều kiện kích hoạt vị thế mua: Tích lũy vững trên Gamma Flip 365.\n- Quản trị rủi ro: Đóng nến tuần gãy Put Wall 360.\n\n⚠️ Tuyên bố miễn trừ trách nhiệm: Bản tin phục vụ mục đích cung cấp góc nhìn định lượng thị trường, KHÔNG phải lời khuyên đầu tư tài chính.\n\n#vang #gold #xauusd #giavang #phantichdinhluong #kenvinzone #aurora #macro #gld",
+    "tags": [
+      "vàng",
+      "gold",
+      "xauusd",
+      "giá vàng",
+      "phân tích định lượng",
+      "kenvinzone",
+      "aurora",
+      "bias vàng",
+      "gld",
+      "dự báo giá vàng",
+      "vĩ mô",
+      "gamma vàng",
+      "nhận định vàng tuần"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "gold-daily-bias",
+    "date": "02/11/2026"
+  }
+}
