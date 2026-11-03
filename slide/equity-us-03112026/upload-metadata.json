@@ -1,22 +1,21 @@
 {
   "youtube": {
-    "title": "S&P 500 & Nasdaq: Phân kỳ định lượng và cảnh báo vùng Gamma âm",
-    "description": "📊 Bản tin Phân tích định lượng Chứng khoán Mỹ hàng ngày từ KenvinZone Analytics.\n\nTổng hợp tín hiệu định lượng cho phiên tới:\n- S&P 500: Bias -2.9 (Trung lập), tuần -1.4. Net GEX SPY âm -248M, thị giá 752.1 nằm dưới Gamma Flip 754.66.\n- Nasdaq 100: Bias +0.9 (Trung lập), tuần -2.4. Net GEX QQQ âm -269M, thị giá 681.09 nằm dưới Gamma Flip 690.74.\n- Phân kỳ: S&P 500 giữ trạng thái đồng pha âm, trong khi Nasdaq xuất hiện tín hiệu phân kỳ tuần âm - ngày dương.\n\n⚠️ Lưu ý: Nội dung chỉ mang tính chất tham khảo số liệu định lượng, KHÔNG phải lời khuyên đầu tư.\n\n#sp500 #nasdaq #chungkhoanmy #gamma #kenvinzone",
+    "title": "S&P 500 & Nasdaq: Phân kỳ định lượng dưới vùng Gamma Flip",
+    "description": "📊 Bản tin Phân tích định lượng Chứng khoán Mỹ từ KenvinZone Analytics.\n\nTổng hợp dữ liệu phiên giao dịch:\n🔹 S&P 500 (SPX): Bias -2.9 (Trung lập) | Gamma SPY âm 432 triệu | Spot 755.72 dưới Gamma Flip 765.34.\n🔹 Nasdaq 100: Bias +0.9 (Trung lập) | QQQ Net GEX âm 217 triệu | Lực đẩy chính từ Fed (+8.03).\n\nCảnh báo vùng biến động mạnh khi cả SPY và QQQ đều nằm dưới ngưỡng Gamma Flip!\n\n⚠️ Lưu ý: Nội dung mang tính chất tham khảo số liệu định lượng, KHÔNG phải lời khuyên đầu tư.\n\n#sp500 #nasdaq #chungkhoanmy #gamma #kenvinzone",
     "tags": [
       "sp500",
       "nasdaq",
       "chứng khoán mỹ",
-      "đầu tư chứng khoán",
-      "phân tích định lượng",
+      "nhận định thị trường",
+      "kenvinzone",
+      "aurora",
       "gamma",
       "net gex",
       "spy",
       "qqq",
-      "kenvinzone",
-      "aurora",
-      "bản tin tài chính",
-      "fed",
-      "options trading"
+      "định lượng chứng khoán",
+      "call wall",
+      "put wall"
     ],
     "privacyStatus": "private",
     "categoryId": "25",

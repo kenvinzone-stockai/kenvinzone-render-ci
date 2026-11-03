@@ -638,3 +638,113 @@ Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-ren
 === [3/3] Upload YouTube (privacy=private) ===
 {"ok": true, "platform": "youtube", "project": "equity-us-week-02112026", "video_id": "70SQVtD_Nho", "url": "https://youtu.be/70SQVtD_Nho", "studio_url": "https://studio.youtube.com/video/70SQVtD_Nho/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
   Xong: https://youtu.be/70SQVtD_Nho
+=== DECK: equity-us-03112026 | template=equity-bias-hf | preset giọng=giai-ma-nganh ===
+  Đã tái tạo config/tts.json (giọng clone).
+  Đã tái tạo config/social-upload.json từ secret.
+  [phát âm] đã áp từ điển phiên âm cho giọng đọc (chữ hiển thị giữ nguyên).
+=== [1/3] Tạo giọng đọc (gemini) ===
+/opt/hostedtoolcache/Python/3.12.15/x64/bin/python: can't open file '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/split_voiceover.py': [Errno 2] No such file or directory
+ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+  configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, concat, from '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/concat_list.txt':
+  Duration: N/A, start: -0.046042, bitrate: 72 kb/s
+  Stream #0:0: Audio: mp3, 24000 Hz, mono, fltp, 72 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> mp3 (libmp3lame))
+Press [q] to stop, [?] for help
+Output #0, mp3, to '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/voiceover_concat.mp3':
+  Metadata:
+    TSSE            : Lavf60.16.100
+  Stream #0:0: Audio: mp3, 24000 Hz, mono, fltp
+    Metadata:
+      encoder         : Lavc60.31.102 libmp3lame
+size=       0kB time=N/A bitrate=N/A speed=N/A    [out#0/mp3 @ 0x564599878b00] video:0kB audio:656kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.035288%
+size=     656kB time=00:01:13.65 bitrate=  73.0kbits/s speed= 185x    
+Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
+Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
+Sending full script to Gemini TTS: 7 slides, 935 chars
+Full Gemini TTS saved: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/gemini_full_voiceover.mp3
+
+=== Splitting full Gemini TTS voiceover ===
+⚠ Full Gemini split failed (Command '['/opt/hostedtoolcache/Python/3.12.15/x64/bin/python', '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/split_voiceover.py', '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026', '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/gemini_full_voiceover.mp3', '--output-dir', '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output']' returned non-zero exit status 2.). Falling back to per-slide Gemini TTS.
+Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
+Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
+=== Generating per-slide TTS ===
+Slide 1 TTS: 9.38s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/line_0.mp3
+Slide 2 TTS: 8.42s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/line_1.mp3
+Slide 3 TTS: 17.09s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/line_2.mp3
+Slide 4 TTS: 8.93s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/line_3.mp3
+Slide 5 TTS: 15.65s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/line_4.mp3
+Slide 6 TTS: 7.46s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/line_5.mp3
+Slide 7 TTS: 6.74s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/line_6.mp3
+
+=== Concatenating per-slide audio ===
+Concatenated voiceover: 73.34s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/voiceover_concat.mp3
+=== [2/3] Render HyperFrames (30fps đầy đủ) ===
+=== HyperFrames (equity-bias-hf): dung project tai /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/hf ===
+  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
+=== HyperFrames: dung composition tu hf-data.json ===
+TOTAL 78.28 scenes [('hook', 0.0, 10.384), ('spx', 10.384, 25.512), ('nas', 35.896, 24.576), ('cmp', 60.472, 7.464), ('cta', 67.936, 10.344), ('captions', 0, 78.28)]
+=== HyperFrames: render tung khung hinh (78.3s video) ===
+  Trinh duyet render: /home/runner/.cache/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-linux64/chrome-headless-shell
+  ◆  Rendering hf → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/final_video.hf.mp4
+     30fps · high · auto workers (4 cores detected)
+     GPU: browser GPU (auto-detect)
+  [?25l│
+  ◒  Checking browser...
+  [1G[J◇  Browser: env
+  [?25h
+    Lint: 0 error(s), 1 warning(s) — run with --lint-verbose for full output.
+    Continuing render despite lint issues. Use --strict to block errors.
+  HyperFrames render 5%
+  HyperFrames render 20%
+  HyperFrames render 30%
+  HyperFrames render 40%
+  ✗  Render failed
+     render_cancelled
+     Try --docker for containerized rendering
+  Render cancelled: render_cancelled_parent_exited
+  ---- HyperFrames bao loi (25 dong cuoi) ----
+  | [INFO] [Render:trace] {"renderJobId":"cfb9cc7d-9a4a-4bbf-b1a4-38994409aefa","phase":"capture_calibration","status":"end","elapsedMs":8972,"durationMs":1306,"stagePhase":"calibrating","forceScreenshot":false,"totalFrames":2349,"framesCompleted":0,"captureMode":"beginframe","captureOperation":"beginFrame"}
+  | [INFO] [Render:trace] {"renderJobId":"cfb9cc7d-9a4a-4bbf-b1a4-38994409aefa","phase":"capture_calibration","status":"checkpoint","elapsedMs":8973,"message":"resolved","forceScreenshot":false,"multiplier":1,"p95Ms":84}
+  | [INFO] [Render:trace] {"renderJobId":"cfb9cc7d-9a4a-4bbf-b1a4-38994409aefa","phase":"worker_resolution","status":"checkpoint","elapsedMs":8974,"message":"resolved","workerCount":1}
+  | [INFO] streaming-encode gate {"renderJobId":"cfb9cc7d-9a4a-4bbf-b1a4-38994409aefa","enabled":true,"reason":"single_worker","configFlag":true,"durationCapEnabled":false,"outputFormat":"mp4","workerCount":1,"durationSeconds":78.28,"maxDurationSeconds":240}
+  | [INFO] [Render:trace] {"renderJobId":"cfb9cc7d-9a4a-4bbf-b1a4-38994409aefa","phase":"capture_strategy","status":"checkpoint","elapsedMs":8975,"message":"resolved","workerCount":1,"forceScreenshot":false,"captureBeyondViewport":null,"useStreamingEncode":true,"useLayeredComposite":false,"usePageSideCompositing":false,"hasHdrContent":false,"hasShaderTransitions":false,"isPngSequence":false}
+  | [INFO] [Render:trace] {"renderJobId":"cfb9cc7d-9a4a-4bbf-b1a4-38994409aefa","phase":"capture_streaming","status":"start","elapsedMs":8976,"stagePhase":"capturing","workerCount":1,"forceScreenshot":false,"totalFrames":2349,"framesCompleted":0,"captureMode":"beginframe","captureOperation":"beginFrame"}
+  | [BrowserManager] Browser launched (HeadlessChrome/156.0.8078.4, beginframe, gl=--use-gl=angle --use-angle=swiftshader, headlessShell=true, platform=linux)
+  | [initSession:beginframe] warmup loop started (0ms)
+  | [initSession:beginframe] page.goto start (0ms)
+  | [initSession:beginframe] page.goto complete (223ms)
+  | [initSession:beginframe] GSAP proxy flush complete (234ms)
+  | [HyperFrames] render runtime fps {"canonicalFps":30,"source":"render-options","rawFpsSource":"render-options","rawFps":30}
+  | [initSession:beginframe] pollHfReady complete (434ms)
+  | [initSession:beginframe] pollSubCompositionTimelines complete (ready) (436ms)
+  | [initSession:beginframe] applyVideoMetadataHints complete (436ms)
+  | [initSession:beginframe] media + fonts + tailwind ready (438ms)
+  | [initSession:beginframe] static-frame dedup: disabled (capture mode beginframe, not screenshot) (467ms)
+  | [INFO] [Render:trace] {"renderJobId":"cfb9cc7d-9a4a-4bbf-b1a4-38994409aefa","phase":"capture_streaming","status":"checkpoint","elapsedMs":38976,"message":"stage still running","stagePhase":"capturing","workerCount":1,"forceScreenshot":false,"totalFrames":2349,"framesCompleted":417,"captureMode":"beginframe","captureOperation":"beginFrame","heartbeatIndex":1,"stageElapsedMs":30000}
+  | [INFO] [Render:trace] {"renderJobId":"cfb9cc7d-9a4a-4bbf-b1a4-38994409aefa","phase":"capture_streaming","status":"checkpoint","elapsedMs":68977,"message":"stage still running","stagePhase":"capturing","workerCount":1,"forceScreenshot":false,"totalFrames":2349,"framesCompleted":861,"captureMode":"beginframe","captureOperation":"beginFrame","heartbeatIndex":2,"stageElapsedMs":60001}
+  | [INFO] [Render:trace] {"renderJobId":"cfb9cc7d-9a4a-4bbf-b1a4-38994409aefa","phase":"capture_streaming","status":"error","elapsedMs":80986,"durationMs":72010,"message":"render_cancelled","stagePhase":"capturing","workerCount":1,"forceScreenshot":false,"totalFrames":2349,"framesCompleted":1016,"captureMode":"beginframe","captureOperation":"beginFrame"}
+  |   ████████████░░░░░░░░░░░░░  49%  Render cancelled
+  | ✗  Render failed
+  |    render_cancelled
+  |    Try --docker for containerized rendering
+  | Render cancelled: render_cancelled_parent_exited
+Traceback (most recent call last):
+  File "/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/ci_build_video.py", line 183, in <module>
+    main()
+  File "/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/ci_build_video.py", line 163, in main
+    final = render_hyperframes(slide)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/render_hyperframes.py", line 305, in render_hyperframes
+    raise RuntimeError(f"HyperFrames render that bai (exit {code}): {reason.strip()[:300]} | Log day du: {log_file}")
+RuntimeError: HyperFrames render that bai (exit 1): ✗  Render failed | Log day du: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-03112026/output/hf_render.log

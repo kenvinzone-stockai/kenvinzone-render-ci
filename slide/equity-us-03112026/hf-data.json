@@ -11,6 +11,7 @@
       "name": "S&P 500",
       "ticker": "SPX",
       "score": -2.9,
+      "day_score": -2.9,
       "week_score": -1.4,
       "regime": "TRUNG LẬP",
       "score_change": 0.0,
@@ -48,12 +49,12 @@
       ],
       "gamma": {
         "underlying": "SPY",
-        "net_gex_m": -248.0,
+        "net_gex_m": -432.0,
         "expected_move": 6.8,
-        "spot": 752.1,
-        "put": 736.0,
-        "flip": 754.66,
-        "call": 750.0
+        "spot": 755.72,
+        "put": 775.0,
+        "flip": 765.34,
+        "call": 774.0
       },
       "divergence": {
         "status": "ALIGNED",
@@ -67,6 +68,7 @@
       "name": "Nasdaq 100",
       "ticker": "NASDAQ",
       "score": 0.9,
+      "day_score": 0.9,
       "week_score": -2.4,
       "regime": "TRUNG LẬP",
       "score_change": 0.0,
@@ -104,12 +106,12 @@
       ],
       "gamma": {
         "underlying": "QQQ",
-        "net_gex_m": -269.0,
-        "expected_move": 10.8,
-        "spot": 681.09,
-        "put": 635.0,
-        "flip": 690.74,
-        "call": 710.0
+        "net_gex_m": -217.0,
+        "expected_move": 10.3,
+        "spot": 690.49,
+        "put": 695.0,
+        "flip": 707.52,
+        "call": 725.0
       },
       "divergence": {
         "status": "DIVERGENCE",
@@ -119,7 +121,7 @@
       }
     }
   ],
-  "divergence_tag": "S&P 500 <b>đồng pha giảm</b> trong khi Nasdaq <b>phân kỳ tuần âm - ngày dương</b>",
+  "divergence_tag": "S&P 500 <b>đồng pha âm</b> trong khi Nasdaq xuất hiện <b>phân kỳ ngắn hạn</b>",
   "scenarios": [
     {
       "pct": 50,
