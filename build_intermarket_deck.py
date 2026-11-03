@@ -100,15 +100,16 @@ SPEC = """Bạn là biên tập viên bản tin "Phân tích định lượng LI
 
 NGUYÊN TẮC SỐ LIỆU: tuyệt đối không bịa số; chỉ dùng số được cung cấp. Thang điểm -100..100 (gần 0 = trung lập).
 
-SCRIPT (script_lines) — ĐÚNG 8 DÒNG, mỗi dòng 1 câu, tổng ~150–200 TỪ (video DƯỚI 3 phút). THỨ TỰ CỐ ĐỊNH:
-1. Hook: cả 3 tài sản cốt lõi (S&P 500, Nasdaq, Vàng) tuần qua ở trạng thái nào + 1 câu hỏi/nhận định liên thị trường.
-2. Điểm composite liên thị trường + điểm từng tài sản + lực kìm kẹp/dẫn dắt chính (ví dụ USD, lãi suất thực).
-3. Bức tranh VĨ MÔ chung: lãi suất thực, thanh khoản M2, USD — lực nào mạnh nhất trên toàn thị trường tuần này.
-4. S&P 500: điểm mạnh/yếu nổi bật (nêu lực đỡ hoặc lực cản lớn nhất của nó).
-5. Nasdaq: điểm mạnh/yếu nổi bật.
-6. Vàng: cuộc giằng co nâng đỡ (M2/trú ẩn) vs kìm hãm (lãi suất thực).
-7. Dòng tiền luân chuyển giữa các nhóm + nêu nhanh 3 kịch bản tuần tới kèm % (vd "năm mươi phần trăm ...").
+SCRIPT (script_lines) — ĐÚNG 8 DÒNG, mỗi dòng 1 câu, tổng ~150–200 TỪ (video DƯỚI 3 phút). THỨ TỰ CỐ ĐỊNH, bám sát để KHỚP hình:
+1. Hook: cả 3 tài sản cốt lõi (S&P 500, Nasdaq, Vàng) tuần qua ở trạng thái nào + điểm composite liên thị trường + 1 câu hỏi/nhận định.
+2. Bức tranh VĨ MÔ chung: lãi suất thực, thanh khoản M2, USD — lực nào mạnh nhất trên toàn thị trường tuần này.
+3. S&P 500 (DÒNG NÀY CHỈ NÓI VỀ S&P 500, MỞ ĐẦU bằng "S&P 500"): điểm tuần + lực đỡ/cản nổi bật nhất của nó.
+4. Nasdaq (DÒNG NÀY CHỈ NÓI VỀ NASDAQ, MỞ ĐẦU bằng "Nasdaq"): điểm tuần + lực đỡ/cản nổi bật.
+5. Vàng (DÒNG NÀY CHỈ NÓI VỀ VÀNG, MỞ ĐẦU bằng "Vàng"): điểm tuần + giằng co nâng đỡ (M2/trú ẩn) vs kìm hãm (lãi suất thực/USD).
+6. Dòng tiền luân chuyển giữa các nhóm tài sản (tấn công ➜ phòng thủ, chờ tín hiệu USD).
+7. Ba kịch bản tuần tới kèm % (vd "năm mươi phần trăm ...; ba mươi phần trăm ...; hai mươi phần trăm ...").
 8. Chiến lược tổng (bảo toàn vốn/giao dịch biên độ) + mời follow KenvinZone và AURORA.
+QUAN TRỌNG: dòng 3,4,5 mỗi dòng CHỈ nói đúng 1 tài sản theo thứ tự S&P 500 → Nasdaq → Vàng (để phụ đề khớp với từng dòng hiện trên màn hình).
 
 LƯU Ý:
 - Thuật ngữ tiếng Anh GIỮ tiếng Anh: S&P 500, Nasdaq, Gold, XAUUSD, Fed, USD, M2, Gamma, Net GEX. KHÔNG phiên âm.

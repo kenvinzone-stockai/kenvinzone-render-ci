@@ -35,9 +35,11 @@ def tline(line, frac, base=0.0):
 
 
 S = [slide_start(i) for i in range(NLINES)]
-SCENES = [("hook", S[0], S[1]), ("macro", S[1], S[2]), ("spx", S[2], S[3]), ("nas", S[3], S[4]),
-          ("gold", S[4], S[5]), ("rot", S[5], S[6]), ("scen", S[6], S[7]), ("cta", S[7], TOTAL)]
-SC_LINE = {"hook": 0, "macro": 1, "spx": 2, "nas": 3, "gold": 4, "rot": 5, "scen": 6, "cta": 7}
+# 3 tài sản (S&P 500 dòng 2, Nasdaq dòng 3, Vàng dòng 4) GỘP 1 màn "assets" — mỗi dòng bật khi caption đọc tới.
+SCENES = [("hook", S[0], S[1]), ("macro", S[1], S[2]), ("assets", S[2], S[5]),
+          ("rot", S[5], S[6]), ("scen", S[6], S[7]), ("cta", S[7], TOTAL)]
+SCENE_ST = {c: s for c, s, e in SCENES}
+SCENE_EN = {c: e for c, s, e in SCENES}
 
 FONT_CSS = """
 @font-face{font-family:'BVP';font-weight:500;src:url('assets/fonts/be-vietnam-pro-vietnamese-500-normal.woff2') format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;}
@@ -212,67 +214,68 @@ tl.to('#mc-stage', {{opacity:0, y:-100, filter:'blur(12px)', duration:0.3, ease:
     return "macro", dur, scene_file("macro", dur, css, body, js)
 
 
-# ===================================================== ASSET MINI (spx / nas / gold)
-def scene_asset(key):
-    a = AMAP[key]; cid = key
-    st = next(s for c, s, e in SCENES if c == cid)
-    en = next(e for c, s, e in SCENES if c == cid)
+# ===================================================== SCENE ASSETS (3 tài sản 1 màn, bật theo caption)
+def scene_assets():
+    st, en = SCENE_ST["assets"], SCENE_EN["assets"]
     dur = round(en - st, 3)
-    acc = a["accent"]; sc = a["score"]; pos = (sc + 100) / 200 * 100
-    line = SC_LINE[cid]
-    gneg = a["gamma_neg"]; gcol = "#f87171" if gneg else "#4ade80"
-    gtxt = "GAMMA ÂM" if gneg else "GAMMA DƯƠNG"
-    em = a.get("expected_move")
-    t_hd = tline(line, 0.06, st)
-    t_sup = tline(line, 0.4, st)
-    t_drag = tline(line, 0.58, st)
-    t_g = tline(line, 0.8, st)
-    css = f"""
-.as-hd{{position:absolute;left:60px;right:60px;top:300px;}}
-.as-tk{{display:inline-block;font-size:30px;font-weight:900;letter-spacing:2px;color:#fff;background:{acc};padding:8px 20px;border-radius:12px;}}
-.as-nm{{display:inline-block;margin-left:14px;font-size:44px;font-weight:900;color:{acc};vertical-align:middle;}}
-.as-sc{{position:absolute;right:60px;top:300px;text-align:right;}}
-.as-sc .v{{font-family:'JBM';font-weight:800;font-size:80px;line-height:1;color:{regime_col(sc)};}}
-.as-sc .r{{font-size:25px;font-weight:800;letter-spacing:2px;color:#94a3b8;}}
-.as-bar{{position:absolute;left:60px;right:60px;top:470px;height:14px;border-radius:99px;background:linear-gradient(90deg,#ef4444,#f59e0b 50%,#22c55e);}}
-.as-mk{{position:absolute;top:-11px;left:{pos:.1f}%;width:9px;height:36px;margin-left:-4px;border-radius:5px;background:#fff;box-shadow:0 0 14px #fff;}}
-.as-chip{{position:absolute;left:60px;right:60px;border-radius:20px;padding:26px 30px;font-size:34px;font-weight:800;display:flex;justify-content:space-between;align-items:center;}}
-.as-chip .mono{{font-size:42px;}}
-.as-sup{{top:580px;border:2px solid rgba(74,222,128,.5);background:rgba(74,222,128,.10);color:#bbf7d0;}}
-.as-drag{{top:700px;border:2px solid rgba(248,113,113,.5);background:rgba(248,113,113,.10);color:#fecaca;}}
-.as-g{{position:absolute;left:60px;right:60px;top:840px;border-radius:20px;border:2px solid {gcol}88;background:linear-gradient(135deg,{gcol}18,rgba(15,23,42,.6));padding:26px 30px;display:flex;justify-content:space-between;align-items:center;}}
-.as-g .k{{font-size:34px;font-weight:900;color:{gcol};letter-spacing:1px;}}
-.as-g .e{{font-family:'JBM';font-weight:800;font-size:30px;color:#fde68a;}}
+    ytop = 330; ch = 218; gap = 30
+    cards = []; js = [f"gsap.set('#iv-stage .iv-card', {{opacity:0}});"]
+    for i, a in enumerate(ASSETS):          # [spx, nas, gold]
+        y = ytop + i * (ch + gap)
+        sc = a["score"]; pos = (sc + 100) / 200 * 100; acc = a["accent"]
+        gneg = a["gamma_neg"]; gcol = "#f87171" if gneg else "#4ade80"
+        gtxt = "Gamma ÂM" if gneg else "Gamma DƯƠNG"
+        line = 2 + i                         # dòng S&P 500 / Nasdaq / Vàng
+        t = tline(line, 0.0, st)             # bật đúng lúc caption đọc tới dòng đó
+        cards.append(
+            f'<div class="iv-card" id="iv-c{i}" style="top:{y}px;border-color:{acc}55;">'
+            f'<div class="iv-hd"><span class="iv-tk" style="background:{acc};">{esc(a["ticker"])}</span>'
+            f'<span class="iv-nm" style="color:{acc};">{esc(a["name"])}</span>'
+            f'<span class="iv-right"><span class="iv-sc mono" id="iv-s{i}" style="color:{regime_col(sc)};">{sc:+.1f}</span>'
+            f'<span class="iv-rg">{esc(a["regime"])}</span></span></div>'
+            f'<div class="iv-bar"><div class="iv-mk" id="iv-m{i}" style="left:{pos:.1f}%;"></div></div>'
+            f'<div class="iv-foot"><span class="iv-sup">▲ {esc(a["support"]["label"])} <b>{a["support"]["value"]:+.2f}</b></span>'
+            f'<span class="iv-drag">▼ {esc(a["drag"]["label"])} <b>{a["drag"]["value"]:+.2f}</b></span>'
+            f'<span class="iv-g" style="color:{gcol};border-color:{gcol}66;">{gtxt}</span></div></div>')
+        js.append(
+            f"tl.fromTo('#iv-c{i}', {{opacity:0, y:46, filter:'blur(8px)'}}, {{opacity:1, y:0, filter:'blur(0px)', duration:0.5, ease:'expo.out', immediateRender:false}}, {t});"
+            f"tl.fromTo('#iv-c{i}', {{borderColor:'{acc}55'}}, {{borderColor:'{acc}', duration:0.3, yoyo:true, repeat:1, immediateRender:false}}, {t});"
+            f"counter('#iv-s{i}', 0, {sc}, {t+0.1}, 0.6, 1, '{'+' if sc>0 else ''}', '');"
+            f"tl.fromTo('#iv-s{i}', {{scale:1.3}}, {{scale:1, duration:0.45, ease:'back.out(2)', immediateRender:false}}, {t+0.1});"
+            f"tl.fromTo('#iv-m{i}', {{left:'50%'}}, {{left:'{pos:.1f}%', duration:0.55, ease:'power3.out', immediateRender:false}}, {t+0.1});")
+    css = """
+.iv-ttl{position:absolute;left:60px;top:250px;font-size:34px;font-weight:900;letter-spacing:1px;}
+.iv-ttl span{color:#7dd3fc;}
+.iv-card{position:absolute;left:60px;right:60px;height:218px;border:2px solid;border-radius:24px;background:rgba(15,23,42,.5);padding:22px 30px;}
+.iv-hd{display:flex;align-items:center;}
+.iv-tk{font-size:23px;font-weight:900;color:#fff;padding:6px 14px;border-radius:9px;letter-spacing:1px;}
+.iv-nm{margin-left:12px;font-size:38px;font-weight:900;}
+.iv-right{margin-left:auto;display:flex;align-items:baseline;gap:10px;}
+.iv-sc{font-family:'JBM';font-weight:800;font-size:58px;line-height:1;}
+.iv-rg{font-size:22px;font-weight:800;letter-spacing:1px;color:#94a3b8;}
+.iv-bar{position:relative;margin:18px 0 0;height:12px;border-radius:99px;background:linear-gradient(90deg,#ef4444,#f59e0b 50%,#22c55e);}
+.iv-mk{position:absolute;top:-10px;width:8px;height:32px;margin-left:-4px;border-radius:5px;background:#fff;box-shadow:0 0 12px #fff;}
+.iv-foot{display:flex;align-items:center;gap:18px;margin-top:26px;font-size:25px;font-weight:700;white-space:nowrap;}
+.iv-sup{color:#bbf7d0;}.iv-sup b{font-family:'JBM';color:#4ade80;}
+.iv-drag{color:#fecaca;}.iv-drag b{font-family:'JBM';color:#f87171;}
+.iv-g{margin-left:auto;font-weight:900;font-size:22px;border:2px solid;border-radius:10px;padding:7px 13px;}
 """
-    em_html = f'<span class="e">biến động ± {em}</span>' if em else '<span class="e" style="color:#94a3b8;">XAUUSD</span>'
     body = f"""
-<div id="{cid}-stage">
-  <div class="as-hd"><span class="as-tk">{esc(a['ticker'])}</span><span class="as-nm">{esc(a['name'])}</span></div>
-  <div class="as-sc"><div class="v" id="{cid}-score">{sc:+.1f}</div><div class="r">{esc(a['regime'])}</div></div>
-  <div class="as-bar"><div class="as-mk" id="{cid}-mk"></div></div>
-  <div class="as-chip as-sup" id="{cid}-sup"><span>▲ Đỡ nhiều nhất · {esc(a['support']['label'])}</span><span class="mono">{a['support']['value']:+.2f}</span></div>
-  <div class="as-chip as-drag" id="{cid}-drag"><span>▼ Cản nhiều nhất · {esc(a['drag']['label'])}</span><span class="mono">{a['drag']['value']:+.2f}</span></div>
-  <div class="as-g" id="{cid}-g"><span class="k">{gtxt}</span>{em_html}</div>
+<div id="iv-stage">
+  <div class="iv-ttl"><span>Soi</span> từng tài sản</div>
+  {''.join(cards)}
 </div>"""
-    js = f"""
-gsap.set('#{cid}-sup, #{cid}-drag, #{cid}-g', {{opacity:0}});
-tl.fromTo('#{cid}-stage .as-hd', {{opacity:0, y:-40}}, {{opacity:1, y:0, duration:0.4, ease:'expo.out'}}, {t_hd});
-tl.fromTo('#{cid}-stage .as-sc', {{opacity:0, x:40}}, {{opacity:1, x:0, duration:0.4, ease:'expo.out'}}, {t_hd});
-counter('#{cid}-score', 0, {sc}, {t_hd+0.1}, 0.7, 1, '{'+' if sc>0 else ''}', '');
-tl.fromTo('#{cid}-score', {{scale:1.3}}, {{scale:1, duration:0.5, ease:'back.out(2)', immediateRender:false}}, {t_hd+0.1});
-tl.fromTo('#{cid}-stage .as-bar', {{scaleX:0}}, {{scaleX:1, duration:0.6, ease:'power2.out', transformOrigin:'left center'}}, {t_hd});
-tl.fromTo('#{cid}-mk', {{left:'50%'}}, {{left:'{pos:.1f}%', duration:0.6, ease:'power3.out', immediateRender:false}}, {t_hd+0.1});
-tl.fromTo('#{cid}-sup', {{opacity:0, x:-50}}, {{opacity:1, x:0, duration:0.4, ease:'expo.out', immediateRender:false}}, {t_sup});
-tl.fromTo('#{cid}-drag', {{opacity:0, x:50}}, {{opacity:1, x:0, duration:0.4, ease:'expo.out', immediateRender:false}}, {t_drag});
-tl.fromTo('#{cid}-g', {{opacity:0, y:30, filter:'blur(8px)'}}, {{opacity:1, y:0, filter:'blur(0px)', duration:0.4, ease:'expo.out', immediateRender:false}}, {t_g});
-tl.to('#{cid}-stage', {{opacity:0, y:-90, filter:'blur(12px)', duration:0.3, ease:'power3.in'}}, {dur - 0.32});
+    jj = f"""
+tl.fromTo('#iv-ttl', {{opacity:0, x:-30}}, {{opacity:1, x:0, duration:0.35, ease:'power3.out'}}, 0.05);
+{''.join(js)}
+tl.to('#iv-stage', {{opacity:0, y:-80, filter:'blur(12px)', duration:0.3, ease:'power3.in'}}, {dur - 0.3});
 """
-    return cid, dur, scene_file(cid, dur, css, body, js)
+    return "assets", dur, scene_file("assets", dur, css, body, jj)
 
 
 # ===================================================== SCENE 5 ROTATION
 def scene_rot():
-    st, en = SCENES[5][1], SCENES[5][2]
+    st, en = SCENE_ST["rot"], SCENE_EN["rot"]
     dur = round(en - st, 3)
     tag = D.get("rotation_tag") or "Dòng tiền luân chuyển giữa các nhóm tài sản."
     css = """
@@ -304,7 +307,7 @@ tl.to('#rt-stage', {{opacity:0, filter:'blur(12px)', duration:0.3, ease:'power3.
 
 # ===================================================== SCENE 6 SCENARIOS
 def scene_scen():
-    st, en = SCENES[6][1], SCENES[6][2]
+    st, en = SCENE_ST["scen"], SCENE_EN["scen"]
     dur = round(en - st, 3)
     cards = []; js = []
     for i, s in enumerate(D.get("scenarios", [])[:3]):
@@ -338,7 +341,7 @@ tl.to('#sc-stage', {{opacity:0, x:-150, filter:'blur(12px)', duration:0.3, ease:
 
 # ===================================================== SCENE 7 CTA
 def scene_cta():
-    st, en = SCENES[7][1], SCENES[7][2]
+    st, en = SCENE_ST["cta"], SCENE_EN["cta"]
     dur = round(en - st, 3)
     t_f = tline(7, 0.25, st)
     css = """
@@ -401,7 +404,7 @@ def captions():
 def root(scene_meta):
     hosts = "\n".join(
         f'<div id="{cid}" data-composition-id="{cid}" data-composition-src="compositions/{cid}.html" data-start="{stt}" data-duration="{dd}" '
-        f'data-track-index="{i+2}" data-track-kind="graphics" data-width="{W}" data-height="{H}" style="z-index:{10+i};"></div>'
+        f'data-track-index="{i+2}" data-track-kind="{"captions" if cid=="captions" else "graphics"}" data-width="{W}" data-height="{H}" style="z-index:{50 if cid=="captions" else 10+i};"></div>'
         for i, (cid, stt, dd) in enumerate(scene_meta))
     sfx = []; k = 0
     def add(file, t, vol):
@@ -418,8 +421,8 @@ def root(scene_meta):
     nmac = len(D["macro"])
     for i in range(nmac):
         add("tick.mp3", tline(1, 0.3 + 0.52 * (i / max(1, nmac - 1))), 0.3)
-    for key, ln in (("spx", 2), ("nas", 3), ("gold", 4)):
-        add("impact.mp3", tline(ln, 0.16), 0.45)               # điểm từng tài sản
+    for ln in (2, 3, 4):
+        add("impact.mp3", tline(ln, 0.02), 0.45)               # điểm từng tài sản (khi dòng bật lên)
     for i in range(3):
         add("tick.mp3", tline(6, 0.3 + i * 0.2), 0.34)         # 3 kịch bản
     return f"""<!doctype html>
@@ -498,9 +501,7 @@ def main():
     comps = ROOT / "compositions"
     comps.mkdir(exist_ok=True)
     meta = []
-    builders = [scene_hook, scene_macro,
-                lambda: scene_asset("spx"), lambda: scene_asset("nas"), lambda: scene_asset("gold"),
-                scene_rot, scene_scen, scene_cta]
+    builders = [scene_hook, scene_macro, scene_assets, scene_rot, scene_scen, scene_cta]
     for fn in builders:
         cid, dur, txt = fn()
         stt = next(s for c, s, e in SCENES if c == cid)
@@ -510,9 +511,7 @@ def main():
         cid, dur, txt = captions()
         (comps / "captions.html").write_text(txt, encoding="utf-8")
         meta.append(("captions", 0, dur))
-    html_root = root(meta).replace('data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:17;"',
-                                   'data-track-kind="captions" data-width="1080" data-height="1920" style="z-index:50;"')
-    (ROOT / "index.html").write_text(html_root, encoding="utf-8")
+    (ROOT / "index.html").write_text(root(meta), encoding="utf-8")
     print("TOTAL", TOTAL, "scenes", meta)
 
 
