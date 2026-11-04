@@ -1,0 +1,40 @@
+{
+  "subtitles": {
+    "enabled": true,
+    "color": "#fde047",
+    "fontSize": 18,
+    "bottom": 60,
+    "maxLines": 1
+  },
+  "backgroundFx": "candlestick",
+  "bgm": {
+    "mode": "preset",
+    "preset": "ambient",
+    "volume": 0.18
+  },
+  "scriptLines": [
+    "Điểm Bias Vàng hôm nay đạt dương ba phẩy bảy, giữ chế độ TRUNG LẬP sau hai phiên đi ngang quanh không phẩy bảy.",
+    "Sức ép kéo xuống đến từ dòng tiền âm ba phẩy một, áp lực USD âm hai phẩy tám và yếu tố riêng âm hai phẩy một.",
+    "Đối trọng nâng đỡ là lãi suất thực dương chín phẩy một, cộng hưởng thanh khoản M2 và khẩu vị rủi ro dương giúp tín dụng ổn định.",
+    "Net GEX dương hai phẩy năm triệu USD và giá GLD 367.82 quanh 3.981 XAUUSD trên Gamma Flip 365 đang kìm nén biên độ giữa Put Wall 360 và Call Wall 375.",
+    "Phiên tới có sáu mươi phần trăm kịch bản giằng co trong biên, hai mươi hai phần trăm phá vỡ giảm và mười tám phần trăm bứt phá.",
+    "Hãy giữ trung tính trong biên 360 đến 375 GLD, đóng cửa trên Flip 365 mới mua lại và follow KenvinZone cùng hệ thống AURORA."
+  ],
+  "slides": {
+    "deletedIds": [],
+    "scriptLines": [
+      "Điểm Bias Vàng hôm nay đạt dương ba phẩy bảy, giữ chế độ TRUNG LẬP sau hai phiên đi ngang quanh không phẩy bảy.",
+      "Sức ép kéo xuống đến từ dòng tiền âm ba phẩy một, áp lực USD âm hai phẩy tám và yếu tố riêng âm hai phẩy một.",
+      "Đối trọng nâng đỡ là lãi suất thực dương chín phẩy một, cộng hưởng thanh khoản M2 và khẩu vị rủi ro dương giúp tín dụng ổn định.",
+      "Net GEX dương hai phẩy năm triệu USD và giá GLD 367.82 quanh 3.981 XAUUSD trên Gamma Flip 365 đang kìm nén biên độ giữa Put Wall 360 và Call Wall 375.",
+      "Phiên tới có sáu mươi phần trăm kịch bản giằng co trong biên, hai mươi hai phần trăm phá vỡ giảm và mười tám phần trăm bứt phá.",
+      "Hãy giữ trung tính trong biên 360 đến 375 GLD, đóng cửa trên Flip 365 mới mua lại và follow KenvinZone cùng hệ thống AURORA."
+    ]
+  },
+  "visuals": {
+    "colorMode": "dark",
+    "backgroundColor": "#060a13",
+    "gridEnabled": false,
+    "backgroundFx": "candlestick-diag"
+  }
+}
