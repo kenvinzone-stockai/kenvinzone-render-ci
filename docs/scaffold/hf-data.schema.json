@@ -1,0 +1,45 @@
+{
+  "_comment": "KHUNG MẪU — 'hợp đồng dữ liệu' hf-data.json. Brain sinh ra file này; template đọc nó để render. Sửa các khối s1..s7 cho đúng nội dung của bạn; GIỮ nguyên các khóa khung (template, date, hook, source, outro).",
+  "template": "<loai>-hf",
+  "date": "DD/MM/YYYY",
+  "handle": "@<handle>",
+  "audio_offset": 1.0,
+  "outro_hold": 3.6,
+
+  "source": {
+    "site": "Tên báo/nguồn",
+    "short": "Viết tắt",
+    "author": "Tác giả hoặc ''",
+    "headline": "Tiêu đề gốc",
+    "date": "DD/MM/YYYY",
+    "url": "https://..."
+  },
+
+  "hook": {
+    "eyebrow": "Nhãn nhỏ phía trên (vd Chuyện Chứng Khoán)",
+    "title_lines": ["Dòng tiêu đề 1 (<=20 ký tự)", "Dòng tiêu đề 2 (<=20 ký tự)"],
+    "sub": "Một câu phụ ngắn",
+    "chips": [
+      { "icon": "↘", "text": "vd LNTT -42%", "tone": "down" },
+      { "icon": "⑂", "text": "...", "tone": "gold" },
+      { "icon": "◆", "text": "...", "tone": "blue" }
+    ]
+  },
+
+  "s1": { "_note": "Cảnh 'tin hôm nay' — tùy template", "title": "", "summary_html": "dùng <mark>...</mark> để nhấn" },
+  "s2": { "_note": "Cảnh số liệu/thống kê", "stats": [{ "value": 0, "unit": "", "label": "", "badge": "", "beat": 1 }], "note": "" },
+  "s3": { "_note": "Cảnh phân hóa/so sánh (bars)", "bars": [{ "label": "", "display": "", "value": 0, "beat": 1 }] },
+  "s4": { "_note": "Cảnh dịch chuyển (cards)", "cards": [{ "big": "", "title": "", "text": "" }] },
+  "s5": {
+    "_note": "Cảnh đèn tín hiệu — BẮT BUỘC đúng 3 đèn green/yellow/red",
+    "lights": [
+      { "color": "green", "tag": "THẮNG THẾ", "title": "", "text": "" },
+      { "color": "yellow", "tag": "LƯU Ý", "title": "", "text": "" },
+      { "color": "red", "tag": "KHÓ KHĂN", "title": "", "text": "" }
+    ]
+  },
+  "s6": { "_note": "Cảnh nguyên nhân (chain). Tin nước ngoài PHẢI liên hệ CK Việt Nam", "chain": [{ "title": "", "text": "", "beat": 1 }] },
+  "s7": { "_note": "Cảnh 'nên làm gì' (items)", "items": [{ "icon": "check", "title": "", "text": "", "beat": 1 }] },
+
+  "outro": { "tag": "", "closing": "Một câu kết đọng", "cta": "Theo dõi để xem bản tin tiếp theo" }
+}

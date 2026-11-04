@@ -1,0 +1,66 @@
+/**
+ * KHUNG MẪU — GOOGLE APPS SCRIPT TRIGGER (hẹn giờ cho pipeline video).
+ *
+ * Vì sao Apps Script mà không dùng cron GitHub? → cron GitHub hay trễ/bỏ nhịp.
+ * Apps Script bắn repository_dispatch đúng giờ ICT + chống trùng theo ngày + bỏ cuối tuần.
+ *
+ * CÀI:
+ *  1) script.google.com → New project → dán file này.
+ *  2) Sửa GH_OWNER/GH_REPO và GH_TOKEN (PAT 'repo' scope) trong Script Properties
+ *     (Project Settings → Script properties → thêm key GH_TOKEN).
+ *  3) Mỗi hàm trigger<...> = 1 loại nội dung. Đặt Time-driven trigger cho từng hàm
+ *     (Triggers → Add trigger → chọn hàm → Time-driven → Day timer → 8–9h sáng).
+ *  4) Chạy testOnce() một lần để cấp quyền + kiểm 204.
+ */
+
+const GH_OWNER = 'kenvinzone-stockai';
+const GH_REPO  = 'kenvinzone-render-ci';
+function ghToken_() { return PropertiesService.getScriptProperties().getProperty('GH_TOKEN'); }
+
+/** Bắn repository_dispatch tới GitHub Actions. */
+function githubDispatch_(eventType, payload) {
+  const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/dispatches`;
+  const res = UrlFetchApp.fetch(url, {
+    method: 'post', contentType: 'application/json',
+    headers: { Authorization: 'token ' + ghToken_(), Accept: 'application/vnd.github+json' },
+    payload: JSON.stringify({ event_type: eventType, client_payload: payload || {} }),
+    muteHttpExceptions: true,
+  });
+  Logger.log(eventType + ' -> HTTP ' + res.getResponseCode()); // 204 = OK
+  return res.getResponseCode();
+}
+
+/** Cuối tuần ICT (T7/CN) — tin NGÀY thì bỏ (thị trường đóng). */
+function isWeekendICT_() {
+  const u = Utilities.formatDate(new Date(), 'Asia/Ho_Chi_Minh', 'u'); // 1=T2 ... 6=T7, 7=CN
+  return u === '6' || u === '7';
+}
+
+/** Chống trùng: mỗi loại chỉ bắn 1 lần/ngày. */
+function alreadySentToday_(key) {
+  const today = Utilities.formatDate(new Date(), 'Asia/Ho_Chi_Minh', 'yyyy-MM-dd');
+  const p = PropertiesService.getScriptProperties();
+  if (p.getProperty(key) === today) return true;
+  p.setProperty(key, today);
+  return false;
+}
+
+// ============ MỘT HÀM = MỘT LOẠI NỘI DUNG ============
+
+// >>> VÍ DỤ 1: tin NGÀY (bỏ cuối tuần). Đặt trigger ~8h30 sáng các ngày.
+function trigger<Loai>Daily() {
+  if (isWeekendICT_()) { Logger.log('Cuối tuần — bỏ'); return; }
+  if (alreadySentToday_('<LOAI>_DAILY_SENT')) { Logger.log('Đã bắn hôm nay'); return; }
+  githubDispatch_('<loai>-daily', {});   // khớp repository_dispatch types trong workflow
+}
+
+// >>> VÍ DỤ 2: bản TUẦN (vd sáng Thứ Hai hoặc Chủ Nhật). Đặt trigger đúng thứ.
+function trigger<Loai>Weekly() {
+  if (alreadySentToday_('<LOAI>_WEEKLY_SENT')) return;
+  githubDispatch_('<loai>-weekly', {});
+}
+
+// >>> Chạy thử tất cả một lượt để cấp quyền + xem 204.
+function testOnce() {
+  trigger<Loai>Daily();
+}
