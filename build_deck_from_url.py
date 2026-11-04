@@ -14,7 +14,7 @@ In ra PROJECT=<tên thư mục> ở dòng cuối để workflow lấy.
 Env: GEMINI_API_KEY (bắt buộc).
 """
 from __future__ import annotations
-import argparse, json, os, re, subprocess, sys, unicodedata, urllib.request, urllib.parse, urllib.error
+import argparse, json, os, re, socket, subprocess, sys, time, unicodedata, urllib.request, urllib.parse, urllib.error
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -128,24 +128,32 @@ def resolve_model(api_key):
     return names[0]
 
 
-def gemini(system, user, api_key, model):
+def gemini(system, user, api_key, model, tries=4):
     body = {
         "systemInstruction": {"parts": [{"text": system}]},
         "contents": [{"parts": [{"text": user}]}],
         "generationConfig": {"responseMimeType": "application/json", "temperature": 0.6, "maxOutputTokens": 8192},
     }
     u = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={urllib.parse.quote(api_key)}"
-    req = urllib.request.Request(u, data=json.dumps(body).encode(), method="POST",
-                                 headers={"Content-Type": "application/json"})
-    try:
-        with urllib.request.urlopen(req, timeout=120) as r:
-            d = json.loads(r.read())
-    except urllib.error.HTTPError as e:
-        detail = e.read().decode("utf-8", "replace")[:600]
-        raise RuntimeError(f"Gemini HTTP {e.code} model={model}: {detail}")
-    cand = (d.get("candidates") or [{}])[0]
-    parts = (cand.get("content") or {}).get("parts") or [{}]
-    return parts[0].get("text", "")
+    data = json.dumps(body).encode()
+    last = ""
+    for k in range(1, tries + 1):
+        req = urllib.request.Request(u, data=data, method="POST", headers={"Content-Type": "application/json"})
+        try:
+            with urllib.request.urlopen(req, timeout=180) as r:
+                d = json.loads(r.read())
+            cand = (d.get("candidates") or [{}])[0]
+            parts = (cand.get("content") or {}).get("parts") or [{}]
+            return parts[0].get("text", "")
+        except urllib.error.HTTPError as e:
+            detail = e.read().decode("utf-8", "replace")[:600]
+            if e.code in (429, 500, 502, 503, 504) and k < tries:
+                w = min(30, 5 * k); print(f"  Gemini HTTP {e.code} — thử lại sau {w}s (lượt {k}/{tries})", flush=True); last = f"HTTP {e.code}: {detail}"; time.sleep(w); continue
+            raise RuntimeError(f"Gemini HTTP {e.code} model={model}: {detail}")
+        except (urllib.error.URLError, TimeoutError, socket.timeout) as e:
+            if k < tries:
+                w = min(30, 5 * k); print(f"  Gemini timeout/mạng ({e}) — thử lại sau {w}s (lượt {k}/{tries})", flush=True); last = str(e); time.sleep(w); continue
+            raise RuntimeError(f"Gemini timeout/mạng sau {tries} lượt: {last or e}")
 
 
 def assemble(deck, proj, date_full, out_dir):
