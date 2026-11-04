@@ -1,0 +1,25 @@
+=== [1/3] Đọc bài: https://cafef.vn/nong-ngan-hang-nha-nuoc-muon-bom-thanh-khoan-dai-han-cho-he-thong-ngan-hang-188261104132128425.chn ===
+  lấy được 5313 ký tự
+  model khả dụng: ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest'] -> chọn gemini-flash-latest
+  dùng model: gemini-flash-latest
+=== [2/3] Gemini dựng deck (lượt 1) ===
+=== [3/3] Kiểm tra deck ===
+=== check_deck_cloud: giai-ma-tin-tuc-nongnganhangnhanuocmuonbomth-04-11 ===
+  LỖI: script 788 từ — QUÁ DÀI, video sẽ vượt 3 phút Shorts; cắt gọn còn ≤ 620 từ (câu ngắn, bỏ ý lan man)
+  LỖI: s5.lights cần đúng green/yellow/red, thấy ['green', 'yellow', 'blue']
+KẾT QUẢ: CHƯA ĐẠT (2 lỗi)
+
+=== [2/3] Gemini dựng deck (lượt 2) ===
+=== [3/3] Kiểm tra deck ===
+=== check_deck_cloud: giai-ma-tin-tuc-nongnganhangnhanuocmuonbomth-04-11 ===
+  LỖI: script 718 từ — QUÁ DÀI, video sẽ vượt 3 phút Shorts; cắt gọn còn ≤ 620 từ (câu ngắn, bỏ ý lan man)
+KẾT QUẢ: CHƯA ĐẠT (1 lỗi)
+
+=== [2/3] Gemini dựng deck (lượt 3) ===
+=== [3/3] Kiểm tra deck ===
+=== check_deck_cloud: giai-ma-tin-tuc-nongnganhangnhanuocmuonbomth-04-11 ===
+  LỖI: script 719 từ — QUÁ DÀI, video sẽ vượt 3 phút Shorts; cắt gọn còn ≤ 620 từ (câu ngắn, bỏ ý lan man)
+KẾT QUẢ: CHƯA ĐẠT (1 lỗi)
+
+Không dựng được deck đạt sau 3 lượt. Lỗi cuối:
+  LỖI: script 719 từ — QUÁ DÀI, video sẽ vượt 3 phút Shorts; cắt gọn còn ≤ 620 từ (câu ngắn, bỏ ý lan man)

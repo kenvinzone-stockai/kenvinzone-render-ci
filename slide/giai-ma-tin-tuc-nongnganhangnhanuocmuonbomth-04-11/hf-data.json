@@ -1,0 +1,201 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "04/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "CafeF",
+    "short": "CafeF",
+    "author": "Quang Hưng",
+    "headline": "Nóng: Ngân hàng Nhà nước muốn bơm thanh khoản dài hạn cho hệ thống ngân hàng",
+    "date": "04/11/2026",
+    "url": "https://cafef.vn/nong-ngan-hang-nha-nuoc-muon-bom-thanh-khoan-dai-han-cho-he-thong-ngan-hang-188261104132128425.chn"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "Bơm 48.800 tỷ",
+      "Cứu thanh khoản?"
+    ],
+    "sub": "NHNN mở gói hoán đổi ngoại tệ kỷ lục 182 ngày",
+    "chips": [
+      {
+        "icon": "↗",
+        "text": "Bơm ~48.800 tỷ VND",
+        "tone": "up"
+      },
+      {
+        "icon": "◆",
+        "text": "Quy mô 2 tỷ USD",
+        "tone": "blue"
+      },
+      {
+        "icon": "⑂",
+        "text": "Kỳ hạn x26 lần",
+        "tone": "gold"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "NHNN dự kiến cung ứng gần <mark>48.800 tỷ đồng</mark> qua hoán đổi USD/VND kỳ hạn 182 ngày quy mô <mark>2 tỷ USD</mark> để hỗ trợ nguồn vốn dài hạn cho hệ thống ngân hàng."
+  },
+  "s2": {
+    "title_lines": [
+      "Gói can thiệp",
+      "quy mô ra sao?"
+    ],
+    "stats": [
+      {
+        "value": 48800,
+        "decimals": 0,
+        "unit": "tỷ VND",
+        "label": "Bơm thanh khoản tối đa",
+        "badge": "2 tỷ USD",
+        "tone": "up",
+        "beat": 1
+      },
+      {
+        "value": 182,
+        "decimals": 0,
+        "unit": "ngày",
+        "label": "Kỳ hạn hoán đổi",
+        "badge": "Gấp 26 lần đợt trước",
+        "tone": "gold",
+        "beat": 2
+      }
+    ],
+    "note": "Tỷ giá mua giao ngay 24.399 đồng/USD và bán kỳ hạn 24.704 đồng/USD."
+  },
+  "s3": {
+    "title_lines": [
+      "Kỳ hạn hoán đổi",
+      "thay đổi thế nào?"
+    ],
+    "lead": "Bước nhảy vọt về thời hạn hỗ trợ vốn",
+    "bars": [
+      {
+        "label": "Tháng 09/2026",
+        "display": "7 ngày",
+        "value": 7,
+        "beat": 1
+      },
+      {
+        "label": "Tháng 11/2026",
+        "display": "182 ngày",
+        "value": 182,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 26,
+      "suffix": "lần",
+      "text": "Kỳ hạn bơm vốn tăng vọt so với đợt gần nhất",
+      "beat": 2
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Mục tiêu chính",
+      "của nhà điều hành?"
+    ],
+    "cards": [
+      {
+        "big": "Ổn định",
+        "title": "Nguồn vốn VND",
+        "text": "Chủ động cân đối thanh khoản nửa năm thay vì xoay xở ngắn hạn."
+      },
+      {
+        "big": "Hạ nhiệt",
+        "title": "Chi phí vốn",
+        "text": "Tạo điều kiện để ngân hàng thương mại giảm thêm lãi suất cho vay."
+      },
+      {
+        "big": "Mùa vụ",
+        "title": "Đón sóng cuối năm",
+        "text": "Đáp ứng nhu cầu tín dụng và thanh toán tăng vọt dịp giáp Tết."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Đối tượng nào",
+      "được hưởng lợi?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "ĐỦ ĐIỀU KIỆN",
+        "title": "Nợ ngoại tệ dài hạn",
+        "text": "Có nợ vay nước ngoài hoặc trái phiếu quốc tế kỳ hạn trên 12 tháng."
+      },
+      {
+        "color": "yellow",
+        "tag": "LỢI THẾ LỚN",
+        "title": "Ngân hàng lớn",
+        "text": "Sở hữu lượng USD dồi dào để hoán đổi lấy dòng tiền đồng giá rẻ."
+      },
+      {
+        "color": "red",
+        "tag": "HẠN CHẾ",
+        "title": "Nhà băng nhỏ",
+        "text": "Thiếu nguồn USD sẵn có sẽ khó tiếp cận trực tiếp gói hỗ trợ này."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Tín hiệu vĩ mô",
+      "đang nói lên điều gì?"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh: Thanh khoản dồi dào",
+        "text": "Hệ sinh thái tiền tệ được tiếp sức, hỗ trợ phục hồi tăng trưởng kinh tế.",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng: Áp lực đáo hạn",
+        "text": "Lượng VND sẽ bị thu hồi sau 6 tháng đòi hỏi quản trị vòng quay vốn chặt chẽ.",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ: Biến số tỷ giá",
+        "text": "Chênh lệch lãi suất và chỉ số DXY quốc tế vẫn là áp lực cần theo dõi sát.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Gợi ý hành động",
+      "cho nhà đầu tư?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Chọn cổ phiếu ngân hàng khỏe",
+        "text": "Ưu tiên nhóm đầu ngành có thanh khoản tốt và chi phí vốn thấp.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Theo dõi tiến độ giải ngân",
+        "text": "Quan sát mức độ thẩm thấu thực tế của dòng tiền vào nền kinh tế.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Tránh mua đuổi theo tin",
+        "text": "Duy trì tỷ trọng an toàn, sẵn sàng ứng phó biến động tỷ giá ngắn hạn.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Thanh khoản là bệ đỡ, nhưng kỷ luật mới giữ được lợi nhuận bền vững.",
+    "cta": "Theo dõi KenvinZone để đón nhận góc nhìn vĩ mô mới nhất"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
