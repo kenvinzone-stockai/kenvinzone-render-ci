@@ -1,0 +1,201 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "04/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "CafeF",
+    "short": "CafeF",
+    "author": "Hà Linh",
+    "headline": "Giật mình giá trị khối ngoại bán ròng từ khi chứng khoán Việt Nam được nâng hạng",
+    "date": "04/11/2026",
+    "url": "https://cafef.vn/giat-minh-gia-tri-khoi-ngoai-ban-rong-tu-khi-chung-khoan-viet-nam-duoc-nang-hang-188261103230005.chn"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "Khối ngoại xả ròng",
+      "Kỷ lục sau nâng hạng"
+    ],
+    "sub": "Gần 30.000 tỷ đồng rút ròng chỉ sau một tháng rưỡi",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "Bán ròng ~30.000 tỷ",
+        "tone": "down"
+      },
+      {
+        "icon": "⑂",
+        "text": "VN-Index mất 116 điểm",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "P/E về quanh 12 lần",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Sau khi FTSE Russell chính thức nâng hạng, khối ngoại đã bán ròng <mark>gần 30.000 tỷ đồng</mark> chỉ trong 32 phiên. Con số này chiếm tới <mark>một phần tư</mark> tổng lượng xả ròng từ đầu năm."
+  },
+  "s2": {
+    "title_lines": [
+      "Quy mô xả hàng",
+      "lớn đến mức nào?"
+    ],
+    "stats": [
+      {
+        "value": 30000,
+        "decimals": 0,
+        "unit": "tỷ",
+        "label": "Bán ròng sau 32 phiên",
+        "badge": "1/4 cả năm",
+        "tone": "down",
+        "beat": 1
+      },
+      {
+        "value": 121000,
+        "decimals": 0,
+        "unit": "tỷ",
+        "label": "Lũy kế xả từ đầu năm",
+        "badge": "Sát kỷ lục",
+        "tone": "gold",
+        "beat": 2
+      }
+    ],
+    "note": "Khối ngoại chỉ có đúng ba phiên không bán ròng kể từ ngày 21 tháng 9."
+  },
+  "s3": {
+    "title_lines": [
+      "Tác động thị trường",
+      "thể hiện ra sao?"
+    ],
+    "lead": "Chỉ số giảm sâu — Thanh khoản cạn kiệt",
+    "bars": [
+      {
+        "label": "VN-Index từ nâng hạng",
+        "display": "-6%",
+        "value": -6,
+        "beat": 1
+      },
+      {
+        "label": "Khớp lệnh HoSE",
+        "display": "-67%",
+        "value": -67,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 13000,
+      "suffix": " tỷ",
+      "text": "Thanh khoản khớp lệnh bình quân mỗi phiên",
+      "beat": 2
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Ba áp lực lớn",
+      "đè nặng thị trường?"
+    ],
+    "cards": [
+      {
+        "big": "Lãi suất",
+        "title": "Dòng tiền nội yếu",
+        "text": "Lãi suất neo cao khiến dòng tiền trong nước thiếu dồi dào để hấp thụ lực bán."
+      },
+      {
+        "big": "230 điểm",
+        "title": "Khoảng cách đỉnh",
+        "text": "VN-Index đã rơi sâu từ đỉnh tháng 5 và đang trôi về vùng hỗ trợ ba tháng."
+      },
+      {
+        "big": "4 năm",
+        "title": "Chu kỳ hút vốn",
+        "text": "Lần hút ròng mạnh gần nhất là từ cuối năm 2022 qua các dòng tiền P-Notes."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Bức tranh thị trường",
+      "đang có tín hiệu gì?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "ĐÈN XANH",
+        "title": "Định giá rẻ & Vĩ mô",
+        "text": "P/E thị trường quanh 12 lần cùng kỳ vọng tăng trưởng GDP thúc đẩy doanh nghiệp."
+      },
+      {
+        "color": "yellow",
+        "tag": "ĐÈN VÀNG",
+        "title": "Dòng vốn đảo chiều",
+        "text": "Vốn thụ động giải ngân kéo dài đến 2027 và cần thời gian để vốn chủ động quay lại."
+      },
+      {
+        "color": "red",
+        "tag": "ĐÈN ĐỎ",
+        "title": "Áp lực rút vốn",
+        "text": "Đà bán ròng kỷ lục chưa dừng lại kết hợp thanh khoản chỉ bằng một phần ba năm ngoái."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Vì sao nâng hạng",
+      "khối ngoại lại xả?"
+    ],
+    "chain": [
+      {
+        "title": "Hiện thực hóa kỳ vọng",
+        "text": "Tin nâng hạng chính thức ra mắt là thời điểm các quỹ cơ cấu lại danh mục ngắn hạn.",
+        "beat": 1
+      },
+      {
+        "title": "Độ trễ dòng vốn mới",
+        "text": "Dòng vốn ngoại thụ động theo chuẩn mới giải ngân theo lộ trình dài chứ không vào ồ ạt.",
+        "beat": 1
+      },
+      {
+        "title": "Cơ hội cho dòng tiền dài hạn",
+        "text": "Định giá P/E về vùng thấp lịch sử đang mở ra kịch bản tích lũy cho nhà đầu tư kiên nhẫn.",
+        "beat": 2
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư F0",
+      "nên ứng xử thế nào?"
+    ],
+    "items": [
+      {
+        "icon": "warn",
+        "title": "Không bắt đáy vội vã",
+        "text": "Tránh dùng đòn bẩy cao khi dòng tiền nội chưa có dấu hiệu cải thiện thanh khoản.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Theo dõi nhóm đầu ngành",
+        "text": "Ưu tiên doanh nghiệp có kết quả kinh doanh quý 3 tốt và hưởng lợi từ đầu tư công.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Lập kế hoạch giải ngân từng phần",
+        "text": "Chia nhỏ vốn tích lũy cổ phiếu cơ bản ở vùng định giá P/E quanh mười hai lần.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Kể Chuyện Chứng Khoán",
+    "closing": "Nâng hạng là cuộc chơi dài hạn, kiên nhẫn mới gặt hái thành quả.",
+    "cta": "Đăng ký kênh KenvinZone để cùng giải mã nhịp đập thị trường!"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
