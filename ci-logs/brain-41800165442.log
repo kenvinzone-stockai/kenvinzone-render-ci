@@ -1,0 +1,10 @@
+=== [1/3] Đọc bài: https://cafef.vn/nong-ngan-hang-nha-nuoc-muon-bom-thanh-khoan-dai-han-cho-he-thong-ngan-hang-188261104132128425.chn ===
+  lấy được 5313 ký tự
+  model khả dụng: ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest'] -> chọn gemini-flash-latest
+  dùng model: gemini-flash-latest
+=== [2/3] Gemini dựng deck (lượt 1) ===
+=== [3/3] Kiểm tra deck ===
+=== check_deck_cloud: giai-ma-tin-tuc-nongnganhangnhanuocmuonbomth-04-11 ===
+KẾT QUẢ: ĐẠT
+
+PROJECT=giai-ma-tin-tuc-nongnganhangnhanuocmuonbomth-04-11

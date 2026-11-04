@@ -8,205 +8,193 @@
     "author": "Quang Hưng",
     "headline": "Nóng: Ngân hàng Nhà nước muốn bơm thanh khoản dài hạn cho hệ thống ngân hàng",
     "date": "04/11/2026",
-    "url": "https://cafef.vn/nong-ngan-hang-nha-nuoc-muon-bom-thanh-khoan-dai-han-cho-he-thong-ngan-hang-188261104132128425.chn"
+    "url": "cafef.vn/188261104132128425.chn"
   },
   "hook": {
     "eyebrow": "Chuyện Chứng Khoán",
     "title_lines": [
-      "NHNN BƠM 48.800 TỶ",
-      "KỲ HẠN DÀI NỬA NĂM"
+      "Bơm 48.800 tỷ",
+      "Tiếp sức hệ thống?"
     ],
-    "sub": "Động thái hỗ trợ thanh khoản lớn trước mùa cao điểm vốn",
+    "sub": "NHNN hoán đổi ngoại tệ kỳ hạn dài kỷ lục 182 ngày",
     "chips": [
       {
         "icon": "↗",
-        "text": "Bơm ~48.800 tỷ VND",
+        "text": "Tối đa 2 tỷ USD",
         "tone": "up"
       },
       {
-        "icon": "◆",
+        "icon": "⑂",
         "text": "Kỳ hạn 182 ngày",
         "tone": "gold"
       },
       {
-        "icon": "⑂",
-        "text": "Tối đa 2 tỷ USD",
+        "icon": "◆",
+        "text": "~48.800 tỷ VND",
         "tone": "blue"
       }
     ]
   },
   "s1": {
     "title": "Tin hôm nay ta giải mã",
-    "summary_html": "Ngân hàng Nhà nước thông báo phương án hoán đổi ngoại tệ USD/VND kỳ hạn <mark>182 ngày</mark>, quy mô tối đa <mark>2 tỷ USD</mark> để hỗ trợ nguồn vốn tiền đồng dài hạn cho hệ thống."
+    "summary_html": "NHNN dự kiến bơm gần <mark>48.800 tỷ đồng</mark> cho các ngân hàng qua hợp đồng hoán đổi <mark>2 tỷ USD</mark> với kỳ hạn dài <mark>182 ngày</mark>."
   },
   "s2": {
     "title_lines": [
-      "Quy mô bơm vốn",
-      "khủng cỡ nào?"
+      "Quy mô tiền bơm",
+      "lớn cỡ nào?"
     ],
     "stats": [
       {
         "value": 48800,
         "decimals": 0,
-        "unit": "tỷ VND",
-        "label": "Thanh khoản tối đa dự kiến bơm",
+        "unit": "tỷ",
+        "label": "Thanh khoản VND tối đa",
         "badge": "2 tỷ USD",
-        "tone": "up",
-        "beat": 2
+        "tone": "blue",
+        "beat": 1
       },
       {
         "value": 182,
         "decimals": 0,
         "unit": "ngày",
-        "label": "Kỳ hạn hoán đổi tiền đồng",
-        "badge": "Gấp 26 lần đợt trước",
+        "label": "Kỳ hạn hoán đổi",
+        "badge": "6 tháng",
         "tone": "gold",
-        "beat": 1
+        "beat": 2
       }
     ],
-    "note": "Kỳ hạn tăng vọt từ 7 ngày hồi tháng 9 lên 182 ngày, tương đương nửa năm."
+    "note": "Tỷ giá mua ngay 24.399 VND/USD, bán kỳ hạn 24.704 VND/USD"
   },
   "s3": {
     "title_lines": [
-      "So sánh kỳ hạn",
-      "các đợt can thiệp"
+      "Kỳ hạn giãn",
+      "gấp 26 lần?"
     ],
-    "lead": "Sự chuyển dịch rõ rệt từ ngắn hạn sang trung dài hạn",
+    "lead": "Chuyển từ can thiệp ngắn hạn sang hỗ trợ trung hạn",
     "bars": [
       {
-        "label": "Tháng 09/2026",
+        "label": "Tháng 9/2026",
         "display": "7 ngày",
         "value": 7,
-        "beat": 1
-      },
-      {
-        "label": "Tháng 06/2026",
-        "display": "14 ngày",
-        "value": 14,
-        "beat": 1
-      },
-      {
-        "label": "Tháng 02/2026",
-        "display": "21 ngày",
-        "value": 21,
         "beat": 1
       },
       {
         "label": "Tháng 11/2026",
         "display": "182 ngày",
         "value": 182,
-        "beat": 1
+        "beat": 2
       }
     ],
     "callout": {
       "value": 26,
-      "suffix": "lần",
-      "text": "Kỳ hạn hoán đổi dài hơn",
-      "beat": 1
+      "suffix": " lần",
+      "text": "Thời gian hỗ trợ kéo dài so với đợt gần nhất",
+      "beat": 2
     }
   },
   "s4": {
     "title_lines": [
-      "Điều kiện tham gia",
-      "và mức tỷ giá?"
+      "Ba tác động",
+      "then chốt?"
     ],
     "cards": [
       {
-        "big": "24.399",
-        "title": "Tỷ giá mua ngay",
-        "text": "Mức giá NHNN mua USD nhận tiền đồng vào ngày 09/11"
+        "big": "Cận Tết",
+        "title": "Cân đối vốn",
+        "text": "Giải tỏa áp lực thanh khoản mùa vụ cuối năm"
       },
       {
-        "big": "24.704",
-        "title": "Tỷ giá bán kỳ hạn",
-        "text": "Mức giá ngân hàng mua lại USD sau 182 ngày (chênh 305 đồng)"
+        "big": "Lãi suất",
+        "title": "Tạo dư địa giảm",
+        "text": "Hạ chi phí vốn giúp mở rộng room tín dụng"
       },
       {
-        "big": "≥ 12 tháng",
-        "title": "Điều kiện vay nợ",
-        "text": "Ngân hàng phải có nợ vay quốc tế hoặc trái phiếu còn hạn trên 1 năm"
+        "big": "VN-Index",
+        "title": "Bệ đỡ tâm lý",
+        "text": "Dòng tiền hệ thống thông suốt tạo đà cho chứng khoán"
       }
     ]
   },
   "s5": {
     "title_lines": [
-      "Tác động cụ thể",
-      "đến hệ thống?"
+      "Tín hiệu đèn",
+      "cho thị trường?"
     ],
     "lights": [
       {
         "color": "green",
-        "tag": "CHỦ ĐỘNG VỐN",
-        "title": "Giảm áp lực cuối năm",
-        "text": "Không còn nỗi lo đáo hạn liên tục trong mùa cao điểm nhu cầu tiền mặt."
+        "tag": "ĐÈN XANH",
+        "title": "Thanh khoản hạ nhiệt",
+        "text": "Nhóm ngân hàng và doanh nghiệp dùng đòn bẩy hưởng lợi"
       },
       {
         "color": "yellow",
-        "tag": "DƯ ĐỊA LÃI SUẤT",
-        "title": "Hạ chi phí vốn",
-        "text": "Thanh khoản dồi dào mở đường thực hiện định hướng giảm thêm lãi suất."
+        "tag": "ĐÈN VÀNG",
+        "title": "Điều kiện khắt khe",
+        "text": "Chỉ dành cho TCTD có nợ quốc tế dài hạn trên 12 tháng"
       },
       {
         "color": "red",
-        "tag": "CÓ CHỌN LỌC",
-        "title": "Phân hóa tham gia",
-        "text": "Chỉ các nhà băng có nợ ngoại tệ dài hạn mới đủ tiêu chuẩn tiếp cận."
+        "tag": "ĐÈN ĐỎ",
+        "title": "Áp lực đáo hạn",
+        "text": "Cần theo dõi sát diễn biến tỷ giá sau 6 tháng tới"
       }
     ]
   },
   "s6": {
     "title_lines": [
-      "Tín hiệu đèn báo",
-      "cho thị trường?"
+      "Tác động đến",
+      "chứng khoán?"
     ],
     "chain": [
       {
-        "title": "Đèn xanh",
-        "text": "Thanh khoản hệ thống được khơi thông, tạo tâm lý tích cực cho VN-Index.",
+        "title": "Giảm căng thẳng tiền",
+        "text": "Hạn chế rủi ro bán tháo và giải chấp cổ phiếu",
         "beat": 1
       },
       {
-        "title": "Đèn vàng",
-        "text": "Chi phí hoán đổi chịu mức chênh 305 đồng/USD, cần cân đối biên lãi.",
-        "beat": 2
+        "title": "Tâm lý tích cực",
+        "text": "Kích thích dòng tiền thông minh tự tin tham gia sàn",
+        "beat": 1
       },
       {
-        "title": "Đèn đỏ",
-        "text": "Cần kiểm soát cung tiền cẩn trọng nếu áp lực tỷ giá thế giới đảo chiều.",
-        "beat": 3
+        "title": "Thẩm thấu từ từ",
+        "text": "Hiệu quả phản ánh dần qua kết quả kinh doanh quý một",
+        "beat": 2
       }
     ]
   },
   "s7": {
     "title_lines": [
-      "Góc nhìn đầu tư",
-      "hành động ra sao?"
+      "Nhà đầu tư",
+      "nên làm gì?"
     ],
     "items": [
       {
         "icon": "check",
-        "title": "Cổ phiếu ngân hàng",
-        "text": "Hưởng lợi từ thanh khoản dồi dào và ổn định room tín dụng cuối năm.",
+        "title": "Chọn lọc ngân hàng",
+        "text": "Ưu tiên cổ phiếu có nền tảng vốn mạnh và rủi ro nợ thấp",
         "beat": 1
       },
       {
         "icon": "check",
-        "title": "Nhóm vay nợ lớn",
-        "text": "Môi trường lãi suất ổn định giúp giảm gánh nặng chi phí tài chính.",
-        "beat": 1
+        "title": "Gom nhịp rung lắc",
+        "text": "Kiên nhẫn giải ngân từng phần ở vùng giá hợp lý",
+        "beat": 2
       },
       {
         "icon": "warn",
-        "title": "Tránh mua hưng phấn",
-        "text": "Canh nhịp điều chỉnh để giải ngân thay vì đua giá ở các phiên tăng mạnh.",
+        "title": "Tránh mua đuổi",
+        "text": "Không hưng phấn giải ngân toàn bộ trong các phiên tăng gấp",
         "beat": 2
       }
     ]
   },
   "outro": {
     "tag": "Giải Mã Chứng Khoán",
-    "closing": "Chính sách tiền tệ linh hoạt đang hỗ trợ tối đa cho thanh khoản và tăng trưởng.",
-    "cta": "Theo dõi KenvinZone để đón đầu các nhịp đập dòng tiền vĩ mô"
+    "closing": "Thanh khoản dồi dào là bệ đỡ quan trọng cho thị trường dịp cuối năm.",
+    "cta": "Theo dõi để giải mã tin tiếp theo"
   },
   "audio_offset": 1.0,
   "outro_hold": 3.6
