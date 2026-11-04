@@ -1,0 +1,53 @@
+{
+  "subtitles": {
+    "enabled": true,
+    "color": "#92f93e",
+    "fontSize": 18,
+    "bottom": 60,
+    "maxLines": 1
+  },
+  "backgroundFx": "candlestick",
+  "bgm": {
+    "mode": "custom",
+    "preset": "ambient",
+    "volume": 0.2,
+    "custom": {
+      "name": "Write_You.mp3",
+      "path": "preview-assets/bgm/20260624-151812_Write_You.mp3",
+      "url": "/slide/vnindex-04112026-ngay/preview-assets/bgm/20260624-151812_Write_You.mp3"
+    }
+  },
+  "scriptLines": [
+    "VNINDEX chốt ngày tại 1733,03, bật tăng gần hai mươi bảy điểm từ sáng nhưng vẫn khựng lại trước cản EMA20.",
+    "Thứ tư ngày 04/11, điểm KenvinZone hạ nhẹ từ 46 xuống 45, giữ nguyên nhãn Theo dõi mức 55%.",
+    "Phiên sáng, chỉ số giằng co quanh 1706,36 dưới toàn bộ EMA, thanh khoản ảm đạm với vol ratio chỉ 0,59.",
+    "Ranh giới sáng nay là swing low 1692,36, yêu cầu giữ vững mốc này để mở ra nhịp hồi kỹ thuật.",
+    "Buổi chiều, mốc 1692 trụ vững giúp giá vọt lên 1733,03, song thanh khoản lại hụt mạnh với vol ratio vỏn vẹn 0,13.",
+    "Đánh giá thành phần, rủi ro cộng hai, dòng tiền trừ ba, kỹ thuật đi ngang khiến tổng điểm giảm một.",
+    "RSI ngày nhích lên 47,20, MACD hist đạt 0,06 nhưng giá vẫn dưới EMA20 tại 1739,33 trên nền D1 giảm.",
+    "Khung 15 phút bật tăng với nến xanh nhưng vol thấp, mốc hỗ trợ ngắn quan trọng cần canh là 1719 đến 1720.",
+    "Phiên tới, 45% dính bẫy tăng giá lùi về 1712; 35% hồi tiếp lên 1739 đến 1745; 20% vượt dứt khoát EMA20.",
+    "Khuyến nghị chưa vội mở mua mới, hạ bớt margin và hẹn anh em ở bản tin ngày mai."
+  ],
+  "slides": {
+    "deletedIds": [],
+    "scriptLines": [
+      "VNINDEX chốt ngày tại 1733,03, bật tăng gần hai mươi bảy điểm từ sáng nhưng vẫn khựng lại trước cản EMA20.",
+      "Thứ tư ngày 04/11, điểm KenvinZone hạ nhẹ từ 46 xuống 45, giữ nguyên nhãn Theo dõi mức 55%.",
+      "Phiên sáng, chỉ số giằng co quanh 1706,36 dưới toàn bộ EMA, thanh khoản ảm đạm với vol ratio chỉ 0,59.",
+      "Ranh giới sáng nay là swing low 1692,36, yêu cầu giữ vững mốc này để mở ra nhịp hồi kỹ thuật.",
+      "Buổi chiều, mốc 1692 trụ vững giúp giá vọt lên 1733,03, song thanh khoản lại hụt mạnh với vol ratio vỏn vẹn 0,13.",
+      "Đánh giá thành phần, rủi ro cộng hai, dòng tiền trừ ba, kỹ thuật đi ngang khiến tổng điểm giảm một.",
+      "RSI ngày nhích lên 47,20, MACD hist đạt 0,06 nhưng giá vẫn dưới EMA20 tại 1739,33 trên nền D1 giảm.",
+      "Khung 15 phút bật tăng với nến xanh nhưng vol thấp, mốc hỗ trợ ngắn quan trọng cần canh là 1719 đến 1720.",
+      "Phiên tới, 45% dính bẫy tăng giá lùi về 1712; 35% hồi tiếp lên 1739 đến 1745; 20% vượt dứt khoát EMA20.",
+      "Khuyến nghị chưa vội mở mua mới, hạ bớt margin và hẹn anh em ở bản tin ngày mai."
+    ]
+  },
+  "visuals": {
+    "colorMode": "dark",
+    "backgroundColor": "#07030d",
+    "gridEnabled": false,
+    "backgroundFx": "candlestick-diag"
+  }
+}

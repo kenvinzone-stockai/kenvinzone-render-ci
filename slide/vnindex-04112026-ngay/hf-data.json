@@ -1,0 +1,265 @@
+{
+  "template": "vnindex-daily-hf",
+  "date": "04/11/2026",
+  "weekday": "Thứ Tư",
+  "handle": "@Kechuyen.Chungkhoan",
+  "score": 45,
+  "score_am": 46,
+  "status": "WATCHLIST — THEO DÕI",
+  "status_pct": "55%",
+  "cover": {
+    "eyebrow": "Chứng khoán hôm nay",
+    "title_lines": [
+      "Vọt lên 1733",
+      "thanh khoản cạn"
+    ],
+    "sub_html": "Hồi gần <b>27</b> điểm từ sáng, nhưng vol ratio chỉ <b>0,13</b>",
+    "chips": [
+      {
+        "icon": "📈",
+        "label": "VNI",
+        "value": "1733,03"
+      },
+      {
+        "icon": "◎",
+        "label": "Score",
+        "value": "45"
+      },
+      {
+        "icon": "⚡",
+        "label": "EMA20",
+        "value": "−6,3",
+        "hot": true
+      }
+    ],
+    "cta": "Hồi kỹ thuật hay bẫy tăng giá?"
+  },
+  "compare": [
+    {
+      "label": "Score",
+      "am": "46",
+      "pm": "45",
+      "delta": "−1",
+      "tone": "down"
+    },
+    {
+      "label": "Giá VNI",
+      "am": "1706,36",
+      "pm": "1733,03",
+      "delta": "+26,67",
+      "tone": "up"
+    },
+    {
+      "label": "Vol ratio",
+      "am": "0,59",
+      "pm": "0,13",
+      "delta": "−0,46",
+      "tone": "down"
+    }
+  ],
+  "range_pill": "BIÊN 1712 – 1739,33 · mất 1719–1712 → nhịp hồi thất bại",
+  "journey": {
+    "axis": [
+      1690,
+      1745
+    ],
+    "path": [
+      {
+        "label": "Tham chiếu",
+        "price": 1699.62
+      },
+      {
+        "label": "11:01",
+        "price": 1706.36
+      },
+      {
+        "label": "15:01",
+        "price": 1733.03
+      }
+    ],
+    "resistance": {
+      "price": 1739.33,
+      "label": "Cản · EMA20 D1 1739,33"
+    },
+    "zone": {
+      "lo": 1712.0,
+      "hi": 1719.0,
+      "label": "Vùng đệm 1712–1719"
+    },
+    "am_card": {
+      "time": "11:01 · SÁNG",
+      "meta": "Score 46 · Vol ×0,59",
+      "text": "Giá <b>1706,36</b> giằng co thấp, dưới toàn bộ các đường EMA D1"
+    },
+    "warn_card": "Báo cáo sáng: giữ vững <b>1692,36</b> để mở ra nhịp hồi phục kỹ thuật",
+    "pm_card": {
+      "time": "15:01 · CHIỀU",
+      "meta": "Score 45 · Vol ×0,13",
+      "text": "Chốt <b>1733,03</b> — bật tăng gần cản 1739 nhưng thanh khoản cạn kiệt"
+    },
+    "twist": "Mốc 1692 trụ vững giúp giá tăng gần 27 điểm, nhưng thanh khoản chiều tụt về mức báo động 0,13"
+  },
+  "subscores": [
+    {
+      "label": "Kỹ thuật",
+      "am": 14,
+      "pm": 14,
+      "max": 30
+    },
+    {
+      "label": "Timing",
+      "am": 8,
+      "pm": 8,
+      "max": 20
+    },
+    {
+      "label": "Dòng tiền",
+      "am": 9,
+      "pm": 6,
+      "max": 20
+    },
+    {
+      "label": "Sector",
+      "am": 7,
+      "pm": 7,
+      "max": 15
+    },
+    {
+      "label": "Rủi ro",
+      "am": 8,
+      "pm": 10,
+      "max": 15
+    }
+  ],
+  "subscore_note": "Rủi ro +2, Dòng tiền −3, Kỹ thuật và Timing giữ nguyên → tổng −1",
+  "timeframes": [
+    {
+      "tf": "W1",
+      "name": "Tuần",
+      "trend": "bullish",
+      "badge": "Bullish",
+      "detail": "EMA Full Bullish · MACD bearish cảnh báo suy yếu"
+    },
+    {
+      "tf": "3D",
+      "name": "3 ngày",
+      "trend": "bearish",
+      "badge": "Bearish",
+      "detail": "EMA Mixed · RSI vào vùng bearish"
+    },
+    {
+      "tf": "D1",
+      "name": "Ngày",
+      "trend": "bearish",
+      "badge": "Bearish",
+      "detail": "RSI <b>39,53 → 47,20</b> · MACD hist −1,61 → 0,06"
+    },
+    {
+      "tf": "M15",
+      "name": "15 phút",
+      "trend": "bullish",
+      "badge": "Low Vol",
+      "detail": "Dải BB mở rộng tăng · vol cực mỏng 0,13"
+    }
+  ],
+  "timeframe_note": "Khung M15 bật tăng nhưng vol ratio chỉ 0,13 cảnh báo rủi ro bẫy tăng giá",
+  "levels": {
+    "axis": [
+      1690,
+      1760
+    ],
+    "price": 1733.03,
+    "price_label": "Giá chốt 1.733,03",
+    "items": [
+      {
+        "price": 1756.16,
+        "label": "EMA50 D1",
+        "kind": "res"
+      },
+      {
+        "price": 1754.62,
+        "label": "EMA200 D1",
+        "kind": "res"
+      },
+      {
+        "price": 1739.33,
+        "label": "EMA20 D1",
+        "kind": "res",
+        "key": true
+      },
+      {
+        "price": 1733.4,
+        "label": "High phiên",
+        "kind": "res"
+      },
+      {
+        "price": 1729.0,
+        "label": "EMA20 M5",
+        "kind": "sup"
+      },
+      {
+        "price": 1719.0,
+        "label": "Ngưỡng chặn lãi",
+        "kind": "sup",
+        "key": true
+      },
+      {
+        "price": 1712.17,
+        "label": "Swing high cũ",
+        "kind": "sup"
+      },
+      {
+        "price": 1692.36,
+        "label": "Swing low D1",
+        "kind": "sup"
+      }
+    ],
+    "up": "Đóng D1 vượt 1739,33 kèm thanh khoản đột biến",
+    "down": "Thủng 1719–1712 → nhịp hồi vô hiệu, lui về 1703"
+  },
+  "scenarios": [
+    {
+      "pct": 45,
+      "tone": "down",
+      "name": "Bull trap, quay đầu giảm",
+      "desc": "Không vượt <b>1738–1739</b>, vol tiếp tục yếu → về <b>1712–1703</b>"
+    },
+    {
+      "pct": 35,
+      "tone": "flat",
+      "name": "Hồi kỹ thuật tiếp diễn",
+      "desc": "Giữ trên <b>1729</b>, thanh khoản cải thiện → kiểm định <b>1739–1745</b>"
+    },
+    {
+      "pct": 20,
+      "tone": "up",
+      "name": "Vượt EMA20 D1 (suy luận)",
+      "desc": "Chinh phục vững chắc <b>1739,33</b> kèm khối lượng bùng nổ"
+    }
+  ],
+  "actions": [
+    {
+      "tone": "urgent",
+      "title": "Chưa mở vị thế mới",
+      "desc": "Thanh khoản quá thấp, tránh mua đuổi khi giá chạm cản EMA20 <b>1739,33</b>"
+    },
+    {
+      "tone": "positive",
+      "title": "Đang nắm giữ",
+      "desc": "Giữ nguyên danh mục, đặt ngưỡng dừng lỗ và chặn lãi quanh <b>1719–1720</b>"
+    },
+    {
+      "tone": "urgent",
+      "title": "Hạ tỷ trọng margin",
+      "desc": "Chủ động hạ đòn bẩy khi chỉ số chưa xác nhận dòng tiền lớn quay lại"
+    }
+  ],
+  "outro": {
+    "up": "D1 vượt vững 1739,33 kèm thanh khoản bùng nổ",
+    "down": "Thủng 1719–1712 kèm lực bán dội lại — kịch bản hồi vô hiệu",
+    "promise": "Hẹn anh em bản tin ngày mai",
+    "follow_handle": "@kenvinzone"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
