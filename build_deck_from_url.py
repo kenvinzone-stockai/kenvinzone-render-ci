@@ -31,7 +31,7 @@ QUY TẮC BẤT BIẾN:
 4. Dòng 2 nêu nguồn: "Câu chuyện hôm nay được kể lại từ bài viết trên <trang>, tác giả <tên>, đăng ngày <ngày>...". Nếu bài không có tác giả, bỏ phần tác giả.
 5. Dòng 9 = cái kết mở + mời theo dõi KenvinZone + disclaimer "đây chỉ là góc nhìn tham khảo chứ không phải lời khuyên đầu tư".
 6. TUYỆT ĐỐI KHÔNG dùng các từ: "thao túng" (thay bằng "giao dịch phối hợp"), "mua ngay", "bán ngay", "chắc chắn tăng/giảm", "cam kết lãi", "x2/x3 tài khoản", "làm giàu nhanh", "bí mật nội bộ", "all in", "lãi đảm bảo". Giọng: "góc nhìn tham khảo", "kịch bản", "cần theo dõi".
-7. Tổng độ dài script 500–620 TỪ, TUYỆT ĐỐI KHÔNG quá 650 từ — video BẮT BUỘC DƯỚI 3 phút (Shorts). Viết câu GỌN, súc tích, cắt ý lan man. Mỗi mặt lợi phải kèm mặt rủi ro.
+7. ĐỘ DÀI LÀ RÀNG BUỘC SỐ 1: tổng script chỉ 480–560 TỪ, TUYỆT ĐỐI KHÔNG quá 640 từ — video BẮT BUỘC DƯỚI 3 phút (Shorts). Với tin dày thông tin (vĩ mô, chính sách), CẮT BỚT chi tiết để đạt độ dài thay vì gói hết. Viết câu NGẮN, súc tích; thà bỏ bớt ý phụ còn hơn vượt độ dài. Mỗi mặt lợi kèm mặt rủi ro nhưng diễn đạt gọn.
 8. Tin nước ngoài/vĩ mô (Fed, phố Wall...) thì cảnh s6 BẮT BUỘC liên hệ chứng khoán Việt Nam.
 9. Báo cáo của công ty chứng khoán: nêu rõ "đây là quan điểm của <đơn vị>", không biến "TVS chọn 5 cổ phiếu" thành "nên mua".
 10. Nếu người dùng đưa tiêu đề cover sẵn, GIỮ NGUYÊN VĂN (kể cả chữ "Cổ phiếu"), không rút gọn.
@@ -215,7 +215,14 @@ def main():
     last_err = ""
     for attempt in range(1, 4):
         print(f"=== [2/3] Gemini dựng deck (lượt {attempt}) ===", flush=True)
-        prompt = user if attempt == 1 else user + f"\n\nLƯU Ý: lần trước deck bị các lỗi sau, hãy SỬA đúng:\n{last_err}"
+        push = ""
+        if attempt > 1 and "QUÁ DÀI" in last_err:
+            tgt = {2: 540, 3: 500}.get(attempt, 520)
+            push = (f"\n\n⚠️ ƯU TIÊN SỐ 1 LÀ ĐỘ DÀI: script lần trước VẪN QUÁ DÀI nên BỊ LOẠI. "
+                    f"Viết LẠI NGẮN HƠN HẲN — tổng CHỈ khoảng {tgt} từ (TUYỆT ĐỐI không quá 620). "
+                    f"Cách cắt: mỗi dòng giữ câu cốt lõi, bỏ mệnh đề phụ/giải thích dài, bỏ ví dụ thừa, gộp số liệu rời. "
+                    f"BẮT BUỘC giữ đúng số câu mỗi dòng [1,3,3,3,4,4,3,3,3], giữ số liệu và nguồn. Thà ít chi tiết còn hơn vượt 3 phút.")
+        prompt = user if attempt == 1 else user + f"\n\nLƯU Ý: lần trước deck bị các lỗi sau, hãy SỬA đúng:\n{last_err}" + push
         raw = gemini(SPEC, prompt, key, model)
         raw = normalize_names(raw)
         try:
