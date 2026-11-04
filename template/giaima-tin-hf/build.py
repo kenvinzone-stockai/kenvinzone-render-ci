@@ -186,8 +186,9 @@ def s0():
     cid, dur = mk("s0", 0)
     h = D["hook"]; src = D["source"]
     lines = h["title_lines"]
-    fa = int(max(44, min(120, 900 / (max(1, len(lines[0])) * 0.72))))
-    fb = int(max(44, min(104, 900 / (max(1, len(lines[1]) if len(lines) > 1 else 1) * 0.72))))
+    # Giữ công thức gốc (tiêu đề ngắn vẫn to tới 120px) nhưng NÂNG SÀN tối thiểu để tiêu đề dài không bị bé xíu.
+    fa = int(max(58, min(120, 900 / (max(1, len(lines[0])) * 0.72))))
+    fb = int(max(54, min(104, 900 / (max(1, len(lines[1]) if len(lines) > 1 else 1) * 0.72))))
     tb = 495 + int(fa * 1.34) + (int(fb * 1.30) if len(lines) > 1 else 0) + 44
     chips = "".join(f'<div class="h0-chip" id="h0-c{i}" style="border-color:{TONE.get(c.get("tone","gold"))}99;color:{TONE.get(c.get("tone","gold"))};"><span>{esc(c["icon"])}</span> {esc(c["text"])}</div>' for i, c in enumerate(h["chips"]))
     css = f"""
@@ -197,8 +198,8 @@ def s0():
 .h0-plate{{position:absolute;top:495px;left:40px;right:40px;text-align:center;}}
 .h0-plate div{{display:inline-block;padding:22px 30px;border-radius:26px;border:2px solid rgba(96,165,250,.45);background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(59,130,246,.08));box-shadow:0 18px 50px rgba(0,0,0,.45),0 0 40px rgba(59,130,246,.2);}}
 .h0-plate h1{{font-weight:900;line-height:1.18;text-transform:uppercase;letter-spacing:-0.5px;}}
-.h0-plate .a{{display:block;padding-top:.16em;font-size:{fa}px;{gcss(1)}}}
-.h0-plate .b{{display:block;padding-top:.12em;font-size:{fb}px;{gcss(0)}}}
+.h0-plate .a{{display:block;padding-top:.16em;font-size:{fa}px;white-space:nowrap;{gcss(1)}}}
+.h0-plate .b{{display:block;padding-top:.12em;font-size:{fb}px;white-space:nowrap;{gcss(0)}}}
 .h0-flow{{position:absolute;top:{tb + 30}px;left:40px;right:40px;display:flex;flex-direction:column;align-items:center;gap:26px;}}
 .h0-sub{{text-align:center;font-size:38px;font-weight:800;color:{GOLD};text-transform:uppercase;line-height:1.25;padding:0 20px;}}
 .h0-chips{{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}}
