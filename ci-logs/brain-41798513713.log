@@ -1,0 +1,56 @@
+=== [1/3] Đọc bài: https://cafef.vn/nong-ngan-hang-nha-nuoc-muon-bom-thanh-khoan-dai-han-cho-he-thong-ngan-hang-188261104132128425.chn ===
+  lấy được 5313 ký tự
+  model khả dụng: ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest'] -> chọn gemini-flash-latest
+  dùng model: gemini-flash-latest
+=== [2/3] Gemini dựng deck (lượt 1) ===
+=== [3/3] Kiểm tra deck ===
+=== check_deck_cloud: giai-ma-tin-tuc-nongnganhangnhanuocmuonbomth-04-11 ===
+  LỖI: script 736 từ — QUÁ DÀI, video sẽ vượt 3 phút Shorts; cắt gọn còn ≤ 620 từ (câu ngắn, bỏ ý lan man)
+KẾT QUẢ: CHƯA ĐẠT (1 lỗi)
+
+=== [2/3] Gemini dựng deck (lượt 2) ===
+Traceback (most recent call last):
+  File "/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/build_deck_from_url.py", line 251, in <module>
+    main()
+  File "/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/build_deck_from_url.py", line 226, in main
+    raw = gemini(SPEC, prompt, key, model)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/build_deck_from_url.py", line 141, in gemini
+    with urllib.request.urlopen(req, timeout=120) as r:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/urllib/request.py", line 1405, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/urllib/request.py", line 1361, in do_open
+    r = h.getresponse()
+        ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/http/client.py", line 1478, in getresponse
+    response.begin()
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/http/client.py", line 343, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/http/client.py", line 304, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/ssl.py", line 1264, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/ssl.py", line 1116, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
