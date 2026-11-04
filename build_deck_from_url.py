@@ -132,7 +132,7 @@ def gemini(system, user, api_key, model, tries=4):
     body = {
         "systemInstruction": {"parts": [{"text": system}]},
         "contents": [{"parts": [{"text": user}]}],
-        "generationConfig": {"responseMimeType": "application/json", "temperature": 0.6, "maxOutputTokens": 8192},
+        "generationConfig": {"responseMimeType": "application/json", "temperature": 0.6, "maxOutputTokens": 16384},
     }
     u = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={urllib.parse.quote(api_key)}"
     data = json.dumps(body).encode()
