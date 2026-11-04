@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "S&P 500 & Nasdaq Trung Lập: Phân Kỳ Ngày Và Cấu Trúc Gamma Âm",
+    "description": "📊 Bản tin Phân tích định lượng Chứng khoán Mỹ hàng ngày từ KenvinZone Analytics.\n\n🎯 Tổng hợp dữ liệu định lượng phiên hôm nay:\n- S&P 500: Bias -2.5 (Trung lập) | SPY Net GEX âm -1595M, kẹp giữa Put Wall 740.0 và Call Wall 773.0.\n- Nasdaq 100: Bias +2.4 (Trung lập) | QQQ Net GEX âm -344M, kiểm định Put Wall 685.0.\n- Trạng thái: Nasdaq ghi nhận phân kỳ ngày/tuần trong khi S&P 500 duy trì đồng pha.\n\n⚠️ Tuyên bố miễn trừ trách nhiệm: Nội dung video dựa trên mô hình định lượng và KHÔNG phải lời khuyên đầu tư tài chính.\n\n#sp500 #nasdaq #chungkhoanmy #gamma #kenvinzone",
+    "tags": [
+      "sp500",
+      "nasdaq",
+      "chứng khoán mỹ",
+      "kenvinzone",
+      "aurora",
+      "phân tích định lượng",
+      "gamma",
+      "spy",
+      "qqq",
+      "net gex",
+      "put wall",
+      "call wall",
+      "tài chính mỹ"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "equity-bias",
+    "date": "04/11/2026"
+  }
+}
