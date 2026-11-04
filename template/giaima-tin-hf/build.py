@@ -200,7 +200,7 @@ def s0():
 .h0-plate h1{{font-weight:900;line-height:1.18;text-transform:uppercase;letter-spacing:-0.5px;}}
 .h0-plate .a{{display:block;padding-top:.16em;font-size:{fa}px;white-space:nowrap;{gcss(1)}}}
 .h0-plate .b{{display:block;padding-top:.12em;font-size:{fb}px;white-space:nowrap;{gcss(0)}}}
-.h0-flow{{position:absolute;top:{tb + 30}px;left:40px;right:40px;display:flex;flex-direction:column;align-items:center;gap:26px;}}
+.h0-flow{{position:absolute;top:{tb + 72}px;left:40px;right:40px;display:flex;flex-direction:column;align-items:center;gap:26px;}}
 .h0-sub{{text-align:center;font-size:38px;font-weight:800;color:{GOLD};text-transform:uppercase;line-height:1.25;padding:0 20px;}}
 .h0-chips{{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}}
 .h0-chip{{font-weight:800;font-size:30px;padding:12px 22px;border-radius:99px;border:2px solid;background:rgba(15,23,42,.6);}}
