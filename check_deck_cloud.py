@@ -36,7 +36,7 @@ def main(d):
             if counts != REVEAL:
                 bad(f"số câu/dòng {counts} ≠ {REVEAL}")
         words = len(re.findall(r"\w+", " ".join(lines)))
-        if words > 740:
+        if words > 720:
             bad(f"script {words} từ — QUÁ DÀI, video sẽ vượt 3 phút Shorts; cắt gọn còn ≤ 620 từ (câu ngắn, bỏ ý lan man)")
         elif words > 680:
             warn(f"script {words} từ — hơi dài (sát mốc 3 phút), nên gọn thêm nếu được")
