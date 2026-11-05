@@ -221,7 +221,7 @@ def render_hyperframes(slide_dir: Path, output_dir: Path | None = None, voiceove
     data = json.loads(data_file.read_text(encoding="utf-8"))
     bgm_cfg = (settings or {}).get("bgm") or {}
     if "bgm_volume" not in data and bgm_cfg.get("volume") is not None:
-        data["bgm_volume"] = round(float(bgm_cfg["volume"]) * 0.8, 3)
+        data["bgm_volume"] = round(float(bgm_cfg["volume"]) * 0.84, 3)  # van chung: +5% so voi mac dinh (0.8 -> 0.84)
     if (settings or {}).get("subtitles", {}).get("enabled") is False:
         data["captions"] = False
     if "hero_color" not in data:
