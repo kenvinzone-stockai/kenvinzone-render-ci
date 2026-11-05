@@ -1,0 +1,29 @@
+{
+  "youtube": {
+    "title": "S&P 500 & Nasdaq | Bias Trung Lập: Cấu Trúc Gamma & Kịch Bản Phiên Tới",
+    "description": "📊 BẢN TIN PHÂN TÍCH ĐỊNH LƯỢNG CHỨNG KHOÁN MỸ | KENVINZONE ANALYTICS\n\nThị trường chứng khoán Mỹ ghi nhận trạng thái đồng pha trung lập trên cả S&P 500 và Nasdaq ở khung ngày lẫn khung tuần:\n\n🔹 S&P 500 (SPX):\n- Điểm Bias Ngày: -2.5 (Trung lập) | Tuần: -1.4\n- Lực chi phối: Khẩu vị rủi ro (-3.72) giằng co với Lãi suất / Fed (+2.66) và Độ rộng (+2.24)\n- SPY Gamma: Net GEX dương +367 triệu | Spot 766.81 trên Gamma Flip 760.17 | Put Wall 735.0 - Call Wall 780.0 | Biên động kỳ vọng: ±5.2\n\n🔹 Nasdaq 100 (QQQ):\n- Điểm Bias Ngày: +0.0 (Trung lập) | Tuần: -2.4\n- Lực chi phối: Lãi suất / Fed (+7.69) đối trọng Khẩu vị rủi ro (-4.02)\n- QQQ Gamma: Net GEX dương +3 triệu | Spot 691.95 sát Gamma Flip 691.83 | Put Wall 670.0 - Call Wall 720.0 | Biên động kỳ vọng: ±8.3\n\n🎯 Kịch bản phiên tới:\n- 55% Đi ngang giằng co tích lũy\n- 25% Hồi phục kiểm định vùng Call Wall\n- 20% Thoái lui kiểm tra hỗ trợ Gamma Flip\n\n⚠️ Lưu ý: Nội dung chỉ nhằm mục đích cung cấp thông tin phân tích định lượng, KHÔNG phải lời khuyên đầu tư tài chính.\n\n#sp500 #nasdaq #chungkhoanmy #gamma #kenvinzone",
+    "tags": [
+      "sp500",
+      "nasdaq",
+      "chứng khoán mỹ",
+      "kenvinzone",
+      "aurora",
+      "phân tích định lượng",
+      "spy",
+      "qqq",
+      "gamma",
+      "net gex",
+      "put wall",
+      "call wall",
+      "fed",
+      "đầu tư chứng khoán"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "equity-bias",
+    "date": "05/11/2026"
+  }
+}

@@ -1,0 +1,7 @@
+S&P 500 ghi nhận điểm Bias âm 2.5 và Nasdaq đạt 0.0, cả hai chỉ số đều ở trạng thái trung lập và hoàn toàn đồng pha.
+Với S&P 500, áp lực từ khẩu vị rủi ro âm 3.72 điểm được cân bằng bởi kỳ vọng Fed dương 2.66 và độ rộng dương 2.24.
+Cấu trúc Gamma của SPY có Net GEX dương 367 triệu, giá 766.81 trên Flip 760.17, kẹp giữa Put Wall 735.0 và Call Wall 780.0 kèm biến động kỳ vọng 5.2 điểm.
+Đối với Nasdaq, bệ đỡ lãi suất Fed dương 7.69 điểm bù đắp hoàn toàn cho sức ép từ khẩu vị rủi ro âm 4.02 điểm.
+QQQ duy trì Net GEX dương 3 triệu khi giá 691.95 nằm ngay sát Flip 691.83, dao động giữa Put Wall 670.0 và Call Wall 720.0 với biên độ 8.3 điểm.
+Sự đồng pha tuần và ngày mở ra phiên tới với năm mươi lăm phần trăm đi ngang giằng co, hai mươi lăm phần trăm kiểm định cản và hai mươi phần trăm thoái lui.
+Hãy kiên nhẫn quan sát phản ứng tại các mốc Gamma quan trọng và theo dõi KenvinZone cùng AURORA để nắm bắt phân tích định lượng chuẩn xác.
