@@ -1,0 +1,201 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "05/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "Nhịp sống thị trường (CafeF dẫn lại)",
+    "short": "MarketTimes",
+    "author": "Hà Linh",
+    "headline": "Một thế lực tung 123.000 tỷ “đỡ” thị trường chứng khoán Việt Nam từ đầu năm",
+    "date": "05/11/2026",
+    "url": "https://m.cafef.vn/mot-the-luc-tung-123000-ty-do-thi-truong-chung-khoan-viet-nam-tu-dau-nam-18826110423391433.chn"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "123.000 tỷ đồng",
+      "giải cứu thị trường"
+    ],
+    "sub": "Dòng tiền nội gánh trọn áp lực xả hàng từ khối ngoại",
+    "chips": [
+      {
+        "icon": "↗",
+        "text": "Mua ròng 123.000 tỷ",
+        "tone": "up"
+      },
+      {
+        "icon": "↘",
+        "text": "Room ngoại còn 11%",
+        "tone": "down"
+      },
+      {
+        "icon": "◆",
+        "text": "Margin 440.000 tỷ",
+        "tone": "gold"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Giữa lúc khối ngoại liên tục bán ròng, <mark>dòng tiền nhà đầu tư trong nước</mark> đã gom ròng hơn 123 nghìn tỷ đồng trên sàn HoSE để giữ nhịp cho VN-Index."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh chung",
+      "khủng đến mức nào?"
+    ],
+    "stats": [
+      {
+        "value": 123000,
+        "decimals": 0,
+        "unit": "tỷ",
+        "label": "NĐT nội mua ròng HoSE",
+        "badge": "Kỷ lục lịch sử",
+        "tone": "gold",
+        "beat": 1
+      },
+      {
+        "value": 11,
+        "decimals": 0,
+        "unit": "%",
+        "label": "Tỷ lệ sở hữu của khối ngoại",
+        "badge": "Đáy lịch sử",
+        "tone": "down",
+        "beat": 2
+      }
+    ],
+    "note": "Số liệu thống kê ghi nhận từ đầu năm đến ngày 4/11/2026, chưa tính các thương vụ IPO và phát hành riêng lẻ."
+  },
+  "s3": {
+    "title_lines": [
+      "Tương quan thế lực",
+      "nghiêng về ai?"
+    ],
+    "lead": "Khối nội làm chủ cuộc chơi",
+    "bars": [
+      {
+        "label": "Nội mua ròng",
+        "display": ">123.000 tỷ",
+        "value": 123,
+        "beat": 1
+      },
+      {
+        "label": "Ngoại sở hữu",
+        "display": "~11%",
+        "value": 11,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 10,
+      "suffix": "tháng",
+      "text": "bằng cả năm 2025 cộng lại",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Nguồn tiền",
+      "đến từ đâu?"
+    ],
+    "cards": [
+      {
+        "big": "2 tỷ USD",
+        "title": "Bơm thanh khoản",
+        "text": "Giao dịch hoán đổi USD/VND kỳ hạn 182 ngày hỗ trợ hạ nhiệt lãi suất"
+      },
+      {
+        "big": "440.000 tỷ",
+        "title": "Dư nợ Margin",
+        "text": "Đòn bẩy tài chính chạm đỉnh lịch sử vào cuối quý 3"
+      },
+      {
+        "big": "Nới tín dụng",
+        "title": "Hạ chi phí vốn",
+        "text": "Định hướng giảm trần lãi suất tiếp tục thúc đẩy dòng tiền nhàn rỗi"
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Động lực nào",
+      "tiếp sức thị trường?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "CHÍNH SÁCH",
+        "title": "Bơm ngoại tệ",
+        "text": "Gói hoán đổi 2 tỷ USD giúp hệ thống ngân hàng dồi dào thanh khoản"
+      },
+      {
+        "color": "yellow",
+        "tag": "ĐÒN BẨY",
+        "title": "Margin lập đỉnh",
+        "text": "Dư nợ 440 nghìn tỷ sẵn sàng bùng nổ mạnh hơn nếu lãi suất hạ"
+      },
+      {
+        "color": "red",
+        "tag": "SỨC ÉP",
+        "title": "Khối ngoại xả",
+        "text": "Áp lực rút vốn quốc tế vẫn là biến số khó lường trong ngắn hạn"
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Tín hiệu 3 màu",
+      "cho nhà đầu tư?"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh",
+        "text": "Dòng tiền cá nhân và tổ chức nội giữ nhịp quá vững, thanh khoản dồi dào",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng",
+        "text": "Dư nợ đòn bẩy sát đỉnh lịch sử đòi hỏi quản trị rủi ro chặt chẽ",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ",
+        "text": "Áp lực bán ròng từ dòng vốn ngoại ngắn hạn chưa xác nhận điểm dừng",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Chiến lược nào",
+      "hợp lý lúc này?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Thuận theo dòng tiền",
+        "text": "Ưu tiên các nhóm ngành được dòng tiền nội định giá hấp dẫn và đón đầu vĩ mô",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Kiểm soát Margin",
+        "text": "Không lạm dụng đòn bẩy khi thị trường rung lắc ở vùng cản kỹ thuật",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Dõi theo vĩ mô",
+        "text": "Quan sát kỹ lộ trình đảo chiều của dòng vốn ngoại khi câu chuyện nâng hạng tới gần",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Nội lực giữ vững sân nhà, chờ ngày đón sóng vốn ngoại.",
+    "cta": "Theo dõi KenvinZone để cập nhật dòng tiền thị trường mỗi ngày"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
