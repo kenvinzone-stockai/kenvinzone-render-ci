@@ -10,7 +10,7 @@ Scenes follow the 10 fixed script lines of the VNINDEX master template:
 Every beat is timed from the start/length of its voiceover line, so the
 picture follows the narration without any per-day timing work.
 """
-import json, sys, math, html
+import json, re, sys, math, html
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -147,6 +147,11 @@ def scene_cover():
         f'<div class="cv-chip{" hot" if ch.get("hot") else ""}" id="cv-chip{i}"><span class="i">{esc(ch["icon"])}</span>{esc(ch["label"])} <b>{esc(ch["value"])}</b></div>'
         for i, ch in enumerate(c["chips"]))
     title = "<br/>".join(esc(x) for x in c["title_lines"])
+    # Tu co co chu cho VUA 1 hang (chong xuong hang lam de dong duoi).
+    _maxlen = max((len(str(x)) for x in c["title_lines"]), default=1)
+    _fa = int(max(60, min(92, 912 / (max(1, _maxlen) * 0.72))))
+    _subtxt = re.sub(r"<[^>]+>", "", str(c.get("sub_html", "")))
+    _subfs = int(max(30, min(40, 980 / (max(1, len(_subtxt)) * 0.52))))
     css = ACC_CSS + f"""
 .cv-eb{{position:absolute;top:250px;left:0;right:0;text-align:center;}}
 .cv-eb span{{display:inline-block;background:linear-gradient(135deg,{TH['l']},{TH['c']});color:#0b0f19;font-weight:900;font-size:30px;letter-spacing:4px;text-transform:uppercase;padding:14px 36px;border-radius:99px;box-shadow:0 10px 40px rgba({TH['glow']},.45);}}
@@ -154,8 +159,8 @@ def scene_cover():
 .cv-logo img{{width:130px;height:130px;filter:drop-shadow(0 0 30px rgba({TH['glow']},.6));}}
 .cv-plate{{position:absolute;top:500px;left:50px;right:50px;text-align:center;}}
 .cv-plate div{{display:inline-block;padding:24px 34px;border-radius:26px;border:2px solid rgba({TH['glow']},.45);background:linear-gradient(160deg,rgba(255,255,255,.09),rgba({TH['glow']},.06));box-shadow:0 18px 50px rgba(0,0,0,.45),0 0 40px rgba({TH['glow']},.18);}}
-.cv-plate h1{{font-size:92px;font-weight:900;line-height:1.16;letter-spacing:-1px;text-transform:uppercase;padding-top:.14em;}}
-.cv-sub{{position:absolute;top:790px;left:60px;right:60px;text-align:center;font-size:40px;font-weight:700;color:#e2e8f0;}}
+.cv-plate h1{{font-size:{_fa}px;font-weight:900;line-height:1.16;letter-spacing:-1px;text-transform:uppercase;padding-top:.14em;white-space:nowrap;}}
+.cv-sub{{position:absolute;top:790px;left:60px;right:60px;text-align:center;font-size:{_subfs}px;font-weight:700;color:#e2e8f0;white-space:nowrap;}}
 .cv-sub b{{font-family:'JBM';color:{TH['l']};}}
 .cv-chips{{position:absolute;top:870px;left:40px;right:40px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}}
 .cv-chip{{font-family:'JBM';font-weight:800;font-size:32px;color:#e2e8f0;padding:12px 24px;border-radius:99px;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.14);}}
