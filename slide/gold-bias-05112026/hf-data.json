@@ -1,0 +1,179 @@
+{
+  "template": "gold-daily-bias-hf",
+  "date": "05/11/2026",
+  "title_html": "BÁO CÁO NHANH VĨ MÔ<br/>&amp; BIAS NGÀY",
+  "eyebrow": "⚡ DAILY FLASH BIAS · VÀNG",
+  "date_prefix": "PHIÊN NGÀY",
+  "regime": "TRUNG LẬP",
+  "score": 2.1,
+  "history": [
+    [
+      "03/11",
+      0.7
+    ],
+    [
+      "04/11",
+      3.7
+    ],
+    [
+      "05/11",
+      2.1
+    ]
+  ],
+  "trend_tag": "Giảm nhẹ so với phiên trước",
+  "forces": [
+    {
+      "key": "usd",
+      "label": "Áp lực USD",
+      "value": -2.82,
+      "color": "#ef4444"
+    },
+    {
+      "key": "flows",
+      "label": "Dòng tiền & xu hướng",
+      "value": -3.13,
+      "color": "#f87171"
+    },
+    {
+      "key": "gold_spec",
+      "label": "Yếu tố riêng của Vàng",
+      "value": -2.19,
+      "color": "#fb923c"
+    },
+    {
+      "key": "rates",
+      "label": "Lãi suất thực",
+      "value": 8.17,
+      "color": "#4ade80"
+    },
+    {
+      "key": "m2",
+      "label": "Thanh khoản M2",
+      "value": 1.69,
+      "color": "#38bdf8"
+    },
+    {
+      "key": "risk",
+      "label": "Khẩu vị rủi ro",
+      "value": 2.64,
+      "color": "#c084fc"
+    }
+  ],
+  "stress": "Khẩu vị rủi ro ổn định · tín dụng an toàn",
+  "gamma": {
+    "axis": [
+      355,
+      380
+    ],
+    "net_gex_m": 2.5,
+    "call": {
+      "gld": 375.0,
+      "xau": 4060.0
+    },
+    "flip": {
+      "gld": 365.0,
+      "xau": 3951.0
+    },
+    "spot": {
+      "gld": 367.82,
+      "xau": 3981.9
+    },
+    "put": {
+      "gld": 360.0,
+      "xau": 3897.0
+    }
+  },
+  "scenarios": [
+    {
+      "key": "s_base",
+      "pct": 62,
+      "color": "#fbbf24",
+      "name": "Giằng co trong biên",
+      "desc": "Dao động tích lũy giữa Put Wall <b>360</b> (≈<b>3.897</b>) và Call Wall <b>375</b> (≈<b>4.060</b>)"
+    },
+    {
+      "key": "s_down",
+      "pct": 20,
+      "color": "#f87171",
+      "name": "Phá vỡ giảm",
+      "desc": "USD và dòng tiền tiếp tục ép giá thủng Gamma Flip <b>365</b> và Put Wall <b>360</b> (≈<b>3.897</b>)"
+    },
+    {
+      "key": "s_up",
+      "pct": 18,
+      "color": "#4ade80",
+      "name": "Bứt phá phục hồi",
+      "desc": "Lãi suất thực kéo giá kiểm định Call Wall <b>375</b> (≈<b>4.060</b>)"
+    }
+  ],
+  "actions": [
+    {
+      "icon": "⇆",
+      "color": "#fbbf24",
+      "title": "Giữ trung tính trong biên",
+      "desc": "Giao dịch thận trọng vùng <b>360–375</b> GLD · ≈ <b>3.897–4.060</b> XAUUSD"
+    },
+    {
+      "icon": "▲",
+      "color": "#4ade80",
+      "title": "Điều kiện mua lại",
+      "desc": "Tích lũy khi giữ vững trên Gamma Flip <b>365</b> (≈ <b>3.951</b>)"
+    },
+    {
+      "icon": "▼",
+      "color": "#f87171",
+      "title": "Rủi ro cần tránh",
+      "desc": "Thủng sâu Put Wall <b>360</b> (≈ <b>3.897</b>) kích hoạt đà bán tháo"
+    }
+  ],
+  "anchors": {
+    "score": "dương hai phẩy một",
+    "trend": "đi ngang",
+    "neutral": "Trung Lập",
+    "usd": "âm hai phẩy tám",
+    "flows": "âm ba phẩy một",
+    "gold_spec": "kỹ thuật riêng",
+    "counterweight": "Đối trọng",
+    "rates": "dương tám phẩy hai",
+    "m2": "M2",
+    "risk": "khẩu vị rủi ro",
+    "stress": "ổn định",
+    "gex": "Net GEX",
+    "gex_value": "dương hai phẩy năm",
+    "spot": "GLD",
+    "spot_xau": "367.82",
+    "flip": "Gamma Flip",
+    "put": "Put Wall",
+    "call": "Call Wall",
+    "vol": "kìm nén",
+    "s_base": "sáu mươi hai phần",
+    "s_down": "hai mươi phần",
+    "s_up": "mười tám phần",
+    "act_neutral": "giữ trung tính",
+    "act_buy": "mốc Flip",
+    "aurora": "AURORA",
+    "follow": "hãy follow"
+  },
+  "sfx_ticks": [
+    "usd",
+    "flows",
+    "gold_spec",
+    "rates",
+    "m2",
+    "risk",
+    "spot",
+    "flip",
+    "put",
+    "call",
+    "s_base",
+    "s_down",
+    "s_up"
+  ],
+  "sfx_impacts": [
+    "score",
+    "gex"
+  ],
+  "audio_offset": 1.0,
+  "outro_hold": 3.6,
+  "stress_note_html": "✅ Khẩu vị rủi ro (+2.64) và thanh khoản M2 (+1.69) đều <b>dương</b>, hệ thống tín dụng duy trì ổn định hỗ trợ tâm lý giữ Vàng"
+}
