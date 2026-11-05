@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "Nhìn lại chỉ số kỹ thuật, dòng tiền và kịch bản hướng đi chỉ số chứng khoán VNINDEX ngày 05/11",
+    "description": "📊 BẢN TIN NHỊP ĐẬP THỊ TRƯỜNG VNINDEX NGÀY 05/11/2026\nKênh Kể Chuyện Chứng Khoán - KenvinZone Analytics\n\n🎯 TỔNG QUAN ĐIỂM SỐ:\n- Điểm tổng: 50/100 (Sáng: 49/100) ➔ Tăng nhẹ +1 điểm\n- Trạng thái: WATCHLIST — THEO DÕI (Độ tin cậy 55%)\n- Giá đóng cửa: 1740,58 điểm (tăng so với tham chiếu 1733,02)\n\n📍 HÀNH TRÌNH CẢ NGÀY:\n- Sáng: Mở cửa 1742,31, test cản 1743,66 rồi bị ép về 1741,27 với thanh khoản cạn kiệt (vol ratio 0,56).\n- Chiều: Đóng cửa quanh 1740,58, chỉ vừa nhích trên EMA20 D1 (1739,47) nhưng còn cách xa cụm kháng cự EMA50/200 (1754–1756).\n\n⚖️ 5 THÀNH PHẦN ĐIỂM SỐ:\n- Kỹ thuật: 15 ➔ 16/30 (+1)\n- Timing: 8 ➔ 9/20 (+1)\n- Dòng tiền: 9 ➔ 8/20 (−1)\n- Sector: 7/15 (giữ nguyên)\n- Rủi ro: 10/15 (giữ nguyên)\n\n🔍 PHÂN TÍCH ĐA KHUNG THỜI GIAN:\n- W1: Xu hướng Bullish, EMA Full Bullish, MACD bias bearish cảnh báo đà tăng chậm lại.\n- 3D: Bullish trend, EMA align chuyển Mixed, MACD bearish.\n- D1: Bearish trend, RSI 49,23 trung tính, MACD hist dương nhẹ 0,93, giá kẹt dưới EMA50 (1755,56) và EMA200 (1754,48).\n- M15: Bollinger Bands co hẹp (Squeeze), hình thành Pin Bar nhưng thanh khoản cạn kiệt.\n\n🧱 VÙNG GIÁ CHỐT NGÀY:\n- Kháng cự then chốt: 1743,17 (swing high) | 1754,48 (EMA200 D1) | 1755,56 (EMA50 D1)\n- Hỗ trợ quan trọng: 1739,47 (EMA20 D1) | 1736,26 (swing low then chốt) | 1728,8\n\n🎲 KỊCH BẢN PHIÊN TỚI:\n- KB1 (45%): Test cản thất bại, mất EMA20 (1739,47) ➔ lui về 1692–1720.\n- KB2 (30%): Breakout thành công qua vùng 1755–1756 kèm thanh khoản bùng nổ ➔ hướng tới 1770–1780.\n- KB3 (25% - suy luận): Giằng co sideway trong biên hẹp 1736–1745 quanh EMA20 để gom lực.\n\n🛡️ KẾ HOẠCH HÀNH ĐỘNG:\n- Vị thế mới: Chưa mở mua mới khi chưa vượt dứt khoát 1755–1756 có volume xác nhận.\n- Nắm giữ: Tiếp tục quan sát, đặt stop loss nghiêm ngặt dưới 1736.\n- Margin: Tuyệt đối không gia tăng margin, quản trị rủi ro chặt chẽ.\n\n⚠️ Tuyên bố miễn trừ trách nhiệm: Video và nội dung phân tích mang tính chất tham khảo dựa trên dữ liệu kỹ thuật tự động từ KenvinZone, không phải lời khuyên hay khuyến nghị đầu tư tài chính chính thức. Nhà đầu tư tự chịu trách nhiệm với quyết định giao dịch của mình.\n\nĐừng quên Bấm Like & Đăng ký kênh để không bỏ lỡ bản tin ngày mai nhé!\n#giaimachungkhoan #kechuyenchungkhoan #xuhuongchungkhoan #vnindex #chungkhoan #phantichkythuat",
+    "tags": [
+      "vnindex",
+      "chứng khoán",
+      "chứng khoán hôm nay",
+      "nhận định thị trường",
+      "kenvinzone",
+      "phân tích kỹ thuật",
+      "cổ phiếu",
+      "đầu tư chứng khoán",
+      "tin tức chứng khoán",
+      "vn-index",
+      "xu hướng thị trường",
+      "kể chuyện chứng khoán",
+      "bản tin tài chính"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "vnindex-daily",
+    "date": "05/11/2026"
+  }
+}
