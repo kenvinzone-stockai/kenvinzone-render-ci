@@ -1,0 +1,198 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "05/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "MoneyF",
+    "short": "MoneyF",
+    "author": "Vương Anh",
+    "headline": "Chứng khoán Mỹ tăng mạnh sau bầu cử giữa nhiệm kỳ, giá dầu cũng tác động tích cực",
+    "date": "05/11/2026",
+    "url": "https://moneyf.vn/chung-khoan-my-tang-manh-sau-bau-cu-giua-nhiem-ky-x5hmp9l7"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "Bầu Cử Giữa Kỳ Xong",
+      "Phố Wall Tăng Vọt"
+    ],
+    "sub": "Dow Jones tăng hơn 1.500 điểm sau phiên đảo chiều lịch sử",
+    "chips": [
+      {
+        "icon": "↗",
+        "text": "Dow Jones +3%",
+        "tone": "up"
+      },
+      {
+        "icon": "↘",
+        "text": "Dầu Brent -8,7%",
+        "tone": "down"
+      },
+      {
+        "icon": "◆",
+        "text": "Đảng Dân chủ giữ 2 viện",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Thị trường chứng khoán Mỹ ghi nhận phiên <mark>tăng điểm lan tỏa kỷ lục</mark> khi Dow Jones tăng tới 1.569 điểm sau kết quả bầu cử giữa nhiệm kỳ và cú giảm mạnh của giá dầu thô."
+  },
+  "s2": {
+    "title_lines": [
+      "Phiên bùng nổ",
+      "ấn tượng ra sao?"
+    ],
+    "stats": [
+      {
+        "value": 1569.4,
+        "decimals": 1,
+        "unit": "điểm",
+        "label": "Mức tăng Dow Jones",
+        "badge": "+3% trong phiên",
+        "tone": "up",
+        "beat": 1
+      }
+    ],
+    "note": "Cả ba chỉ số Dow Jones, S&P 500 và Nasdaq đều bật tăng mạnh mẽ nhờ dòng tiền giải tỏa tâm lý."
+  },
+  "s3": {
+    "title_lines": [
+      "Nguyên nhân nào",
+      "đảo chiều tâm lý?"
+    ],
+    "lead": "Sự cân bằng chính trị tại Washington",
+    "bars": [
+      {
+        "label": "S&P 500",
+        "display": "+1,6%",
+        "value": 1.6,
+        "beat": 1
+      },
+      {
+        "label": "Nasdaq",
+        "display": "+1,4%",
+        "value": 1.4,
+        "beat": 1
+      },
+      {
+        "label": "Russell 2000",
+        "display": "+1,6%",
+        "value": 1.6,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 2,
+      "suffix": "viện",
+      "text": "Đảng Dân chủ kiểm soát Thượng viện và Hạ viện giúp chính sách khó đột ngột thay đổi",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Hàng hóa & vĩ mô",
+      "phản ứng thế nào?"
+    ],
+    "cards": [
+      {
+        "big": "-8,7%",
+        "title": "Dầu Brent lao dốc",
+        "text": "Rơi xuống mốc 94,62 USD/thùng, chạm đáy hai tháng qua."
+      },
+      {
+        "big": "Hạ nhiệt",
+        "title": "Lợi suất trái phiếu",
+        "text": "Lợi suất kỳ hạn 10 năm của Mỹ giảm giúp bớt áp lực lạm phát."
+      },
+      {
+        "big": ">4.000",
+        "title": "Vàng tăng 3,5%",
+        "text": "Vượt lại mốc 4.000 USD/oz khi USD suy yếu nhẹ."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Nhóm ngành nào",
+      "thắng - thua rõ rệt?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "THẮNG THẾ",
+        "title": "Bán lẻ & Tiêu dùng",
+        "text": "9/11 nhóm ngành thuộc S&P 500 tăng điểm khi chi phí năng lượng hạ nhiệt."
+      },
+      {
+        "color": "yellow",
+        "tag": "THẬN TRỌNG",
+        "title": "Công nghệ & AI",
+        "text": "Lo ngại Quốc hội mới tăng cường giám sát dữ liệu và công nghệ lớn."
+      },
+      {
+        "color": "red",
+        "tag": "SỤT GIẢM",
+        "title": "Dầu khí & Trump Media",
+        "text": "Trump Media giảm 24,5%, nhóm dầu khí suy yếu theo giá nhiên liệu."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Tác động ra sao",
+      "tới chứng khoán Việt?"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh: Áp lực lạm phát giảm",
+        "text": "Giá dầu thế giới rơi sâu và USD hạ nhiệt giúp giảm áp lực tỷ giá tại Việt Nam.",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng: VN-Index thử thách cản",
+        "text": "Dòng tiền cần kiểm định lại lực cầu tại các mốc cản lớn trước khi hình thành sóng mới.",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ: Nhóm dầu khí rung lắc",
+        "text": "Cổ phiếu năng lượng trong nước có thể gặp sức ép bán ngắn hạn theo giá dầu thế giới.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư F0",
+      "nên ứng xử thế nào?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Tránh mua đuổi hưng phấn",
+        "text": "Không FOMO theo các phiên tăng sốc của Phố Wall khi thị trường chưa tích lũy đủ.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Ưu tiên nhóm hưởng lợi đầu vào",
+        "text": "Tập trung doanh nghiệp sản xuất, tiêu dùng được hưởng lợi khi chi phí vận tải, năng lượng hạ.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Theo dõi kết quả kinh doanh",
+        "text": "Nội tại lợi nhuận doanh nghiệp mới là bệ đỡ thực sự cho danh mục dài hạn.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Bầu cử Mỹ khép lại, thị trường tìm thấy sự cân bằng chính sách mới.",
+    "cta": "Theo dõi KenvinZone để cập nhật góc nhìn thị trường mỗi ngày"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
