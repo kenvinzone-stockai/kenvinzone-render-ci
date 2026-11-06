@@ -1,0 +1,179 @@
+{
+  "template": "gold-daily-bias-hf",
+  "date": "06/11/2026",
+  "title_html": "BÁO CÁO NHANH VĨ MÔ<br/>&amp; BIAS NGÀY",
+  "eyebrow": "⚡ DAILY FLASH BIAS · VÀNG",
+  "date_prefix": "PHIÊN NGÀY",
+  "regime": "TĂNG GIÁ",
+  "score": 10.7,
+  "history": [
+    [
+      "04/11",
+      3.7
+    ],
+    [
+      "05/11",
+      2.1
+    ],
+    [
+      "06/11",
+      10.7
+    ]
+  ],
+  "trend_tag": "Nhích lên so với phiên trước",
+  "forces": [
+    {
+      "key": "usd",
+      "label": "Áp lực USD",
+      "value": 0.2,
+      "color": "#4ade80"
+    },
+    {
+      "key": "flows",
+      "label": "Dòng tiền & xu hướng",
+      "value": -1.28,
+      "color": "#ef4444"
+    },
+    {
+      "key": "gold_spec",
+      "label": "Yếu tố riêng của Vàng",
+      "value": -1.07,
+      "color": "#f87171"
+    },
+    {
+      "key": "rates",
+      "label": "Lãi suất thực",
+      "value": 8.35,
+      "color": "#38bdf8"
+    },
+    {
+      "key": "m2",
+      "label": "Thanh khoản M2",
+      "value": 2.24,
+      "color": "#c084fc"
+    },
+    {
+      "key": "risk",
+      "label": "Khẩu vị rủi ro",
+      "value": 2.89,
+      "color": "#4ade80"
+    }
+  ],
+  "stress": "Khẩu vị rủi ro ổn định · tín dụng chưa căng",
+  "gamma": {
+    "axis": [
+      355,
+      380
+    ],
+    "net_gex_m": 2.5,
+    "call": {
+      "gld": 375.0,
+      "xau": 4060.0
+    },
+    "flip": {
+      "gld": 365.0,
+      "xau": 3951.0
+    },
+    "spot": {
+      "gld": 367.82,
+      "xau": 3981.9
+    },
+    "put": {
+      "gld": 360.0,
+      "xau": 3897.0
+    }
+  },
+  "scenarios": [
+    {
+      "key": "s_base",
+      "pct": 62,
+      "color": "#fbbf24",
+      "name": "Giằng co trong biên",
+      "desc": "Dao động giữa Put Wall <b>360</b> (≈<b>3.897</b>) và Call Wall <b>375</b> (≈<b>4.060</b>)"
+    },
+    {
+      "key": "s_down",
+      "pct": 18,
+      "color": "#f87171",
+      "name": "Điều chỉnh kỹ thuật",
+      "desc": "Áp lực chốt lời gia tăng, thủng Gamma Flip <b>365</b> (≈<b>3.951</b>) lui về <b>360</b> (≈<b>3.897</b>)"
+    },
+    {
+      "key": "s_up",
+      "pct": 20,
+      "color": "#4ade80",
+      "name": "Bứt phá đà tăng",
+      "desc": "Lực mua tiếp diễn kéo giá vượt Call Wall <b>375</b> (≈<b>4.060</b>)"
+    }
+  ],
+  "actions": [
+    {
+      "icon": "⇆",
+      "color": "#fbbf24",
+      "title": "Giữ trung tính trong biên",
+      "desc": "<b>360–375</b> GLD · ≈ <b>3.897–4.060</b> XAUUSD"
+    },
+    {
+      "icon": "▲",
+      "color": "#4ade80",
+      "title": "Điều kiện mua lại",
+      "desc": "Tích lũy vững trên Gamma Flip <b>365</b> (≈ <b>3.951</b>)"
+    },
+    {
+      "icon": "▼",
+      "color": "#f87171",
+      "title": "Rủi ro cần tránh",
+      "desc": "Thủng Put Wall <b>360</b> (≈ <b>3.897</b>) kích hoạt bán mạnh"
+    }
+  ],
+  "anchors": {
+    "score": "mười phẩy bảy",
+    "trend": "bật tăng",
+    "neutral": "Tăng Giá",
+    "usd": "áp lực USD",
+    "flows": "dòng tiền âm",
+    "gold_spec": "yếu tố riêng",
+    "counterweight": "lãi suất thực",
+    "rates": "dương tám phẩy",
+    "m2": "thanh khoản M2",
+    "risk": "khẩu vị rủi ro",
+    "stress": "chưa căng thẳng",
+    "gex": "Net GEX",
+    "gex_value": "dương hai phẩy năm",
+    "spot": "GLD 367.82",
+    "spot_xau": "3.981",
+    "flip": "Gamma Flip 365",
+    "put": "Put Wall 360",
+    "call": "Call Wall 375",
+    "vol": "kìm nén",
+    "s_base": "sáu mươi hai phần trăm",
+    "s_down": "mười tám phần trăm",
+    "s_up": "hai mươi phần trăm",
+    "act_neutral": "giữ trung tính",
+    "act_buy": "duy trì trên",
+    "aurora": "AURORA",
+    "follow": "theo dõi KenvinZone"
+  },
+  "sfx_ticks": [
+    "usd",
+    "flows",
+    "gold_spec",
+    "rates",
+    "m2",
+    "risk",
+    "spot",
+    "flip",
+    "put",
+    "call",
+    "s_base",
+    "s_down",
+    "s_up"
+  ],
+  "sfx_impacts": [
+    "score",
+    "gex"
+  ],
+  "audio_offset": 1.0,
+  "outro_hold": 3.6,
+  "stress_note_html": "✅ Khẩu vị rủi ro và thanh khoản M2 đều <b>dương</b>, dòng tiền vĩ mô vẫn hỗ trợ tốt cho Vàng"
+}
