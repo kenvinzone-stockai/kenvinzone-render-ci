@@ -1,0 +1,207 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "06/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "Đầu tư Chứng khoán",
+    "short": "ĐTCK",
+    "author": "N.T",
+    "headline": "Khối ngoại trở lại mua ròng hơn 435 tỷ đồng trong phiên 6/11",
+    "date": "06/11/2026",
+    "url": "tinnhanhchungkhoan.vn/khoi-ngoai-tro-lai-mua-rong-hon-435-ty-dong-trong-phien-611-post400959.html"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "Khối Ngoại Đảo Chiều",
+      "Mua Ròng 435 Tỷ"
+    ],
+    "sub": "Chấm dứt chuỗi 10 phiên bán ròng miệt mài",
+    "chips": [
+      {
+        "icon": "↗",
+        "text": "+435,4 tỷ toàn thị trường",
+        "tone": "up"
+      },
+      {
+        "icon": "⑂",
+        "text": "KDH dẫn đầu mua ròng",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "FPT bị xả mạnh",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Sau chuỗi <mark>10 phiên bán ròng liên tiếp</mark>, dòng tiền ngoại bất ngờ quay trở lại <mark>mua ròng hơn 435 tỷ đồng</mark> trên toàn thị trường."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh chung",
+      "đảo chiều ra sao?"
+    ],
+    "stats": [
+      {
+        "value": 435.4,
+        "decimals": 1,
+        "unit": "tỷ",
+        "label": "Tổng giá trị mua ròng toàn sàn",
+        "badge": "Đảo chiều",
+        "tone": "gold",
+        "beat": 1
+      },
+      {
+        "value": 39.75,
+        "decimals": 2,
+        "unit": "tr.cp",
+        "label": "Khối lượng mua ròng toàn thị trường",
+        "badge": "Gấp 4 lần",
+        "tone": "blue",
+        "beat": 2
+      }
+    ],
+    "note": "Chấm dứt chuỗi xả hàng liên tiếp kéo dài 10 phiên trước đó."
+  },
+  "s3": {
+    "title_lines": [
+      "Dòng tiền phân bổ",
+      "trên các sàn?"
+    ],
+    "lead": "Sự áp đảo của sàn HOSE",
+    "bars": [
+      {
+        "label": "HOSE",
+        "display": "+393,6 tỷ",
+        "value": 393.6,
+        "beat": 1
+      },
+      {
+        "label": "HNX",
+        "display": "+46,1 tỷ",
+        "value": 46.1,
+        "beat": 2
+      },
+      {
+        "label": "UPCoM",
+        "display": "-4,3 tỷ",
+        "value": -4.3,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 393.6,
+      "suffix": "tỷ",
+      "text": "HOSE hút phần lớn dòng vốn mua ròng",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Cổ phiếu nào",
+      "được gom mạnh?"
+    ],
+    "cards": [
+      {
+        "big": "+171 tỷ",
+        "title": "KDH dẫn đầu",
+        "text": "Khối ngoại gom ròng tới 11,95 triệu cổ phiếu bất động sản."
+      },
+      {
+        "big": "+21,3 tỷ",
+        "title": "SHS hút ròng HNX",
+        "text": "Khối lượng mua ròng đạt 1,64 triệu đơn vị trên sàn Hà Nội."
+      },
+      {
+        "big": "+12,5 tỷ",
+        "title": "CEO & MBS",
+        "text": "Mỗi mã được khối ngoại rót ròng trên 12 tỷ đồng."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Phân hóa chiều bán",
+      "ra sao?"
+    ],
+    "lights": [
+      {
+        "color": "red",
+        "tag": "BÁN MẠNH NHẤT",
+        "title": "FPT bị xả 151 tỷ",
+        "text": "Khối ngoại bán ròng gần 3 triệu cổ phiếu FPT."
+      },
+      {
+        "color": "yellow",
+        "tag": "HẠ TỶ TRỌNG",
+        "title": "PVS & VEA",
+        "text": "PVS bị bán ròng 10 tỷ trên HNX, VEA bị bán 5,28 tỷ trên UPCoM."
+      },
+      {
+        "color": "green",
+        "tag": "TÁI CƠ CẤU",
+        "title": "Dòng tiền chọn lọc",
+        "text": "Khối ngoại cơ cấu danh mục gắt gao chứ không mua lan tỏa toàn thị trường."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Nhìn nhận tín hiệu",
+      "như thế nào?"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh",
+        "text": "Áp lực rút vốn ròng rã 10 phiên tạm hạ nhiệt, giải tỏa tâm lý thị trường.",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng",
+        "text": "Một phiên gom ròng đơn lẻ chưa khẳng định được xu hướng tăng dài hạn.",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ",
+        "text": "Sự phân hóa mạnh khiến rủi ro điều chỉnh cục bộ ở mã bị bán vẫn cao.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư F0",
+      "nên làm gì?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Tránh mua đuổi vội vã",
+        "text": "Không nên đua lệnh theo các mã vừa được khối ngoại gom đột biến.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Theo dõi tính liên tục",
+        "text": "Quan sát kỹ liệu dòng tiền ngoại có duy trì mua ròng ở các phiên kế tiếp.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Kỷ luật danh mục",
+        "text": "Kiểm soát chặt tỷ trọng tiền mặt để chủ động trước các nhịp rung lắc.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Một phiên quay xe liệu có đủ tạo nên bước ngoặt bền vững?",
+    "cta": "Theo dõi KenvinZone để giải mã tin tức tiếp theo"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
