@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "S&P 500 & Nasdaq Bias Trung Lập | Cảnh Báo Gamma Âm Phiên Tới",
+    "description": "📊 Phân tích định lượng Chứng khoán Mỹ hàng ngày cùng KenvinZone Analytics!\n\nCả S&P 500 và Nasdaq 100 tiếp tục duy trì trạng thái trung lập trong phiên hôm nay với điểm số Bias lần lượt là -5.5 và -3.5. Đáng chú ý, cấu trúc Gamma trên cả hai quỹ ETF chỉ số lớn là SPY và QQQ đều nằm trong vùng Net GEX âm và giao dịch dưới mốc Gamma Flip, tiềm ẩn nguy cơ rung lắc mạnh trong phiên tới.\n\n📌 Tóm tắt số liệu định lượng:\n- S&P 500: Bias ngày -5.5, Bias tuần -3.3 (Đồng pha). SPY Net GEX: -1884M, Spot 733.0 < Flip 747.37.\n- Nasdaq 100: Bias ngày -3.5, Bias tuần -7.1 (Đồng pha). QQQ Net GEX: -861M, Spot 647.05 < Flip 704.49.\n\n⚠️ Tuyên bố miễn trừ trách nhiệm: Nội dung chỉ mang tính chất tham khảo số liệu định lượng, KHÔNG phải lời khuyên đầu tư.\n\n#sp500 #nasdaq #chungkhoanmy #gamma #kenvinzone #aurora #spy #qqq",
+    "tags": [
+      "sp500",
+      "nasdaq",
+      "chứng khoán mỹ",
+      "nhận định thị trường",
+      "kenvinzone",
+      "aurora",
+      "gamma flip",
+      "net gex",
+      "spy",
+      "qqq",
+      "phân tích định lượng",
+      "chỉ số spx",
+      "đầu tư chứng khoán"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "equity-bias",
+    "date": "06/11/2026"
+  }
+}
