@@ -1,0 +1,222 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "06/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "MoneyF",
+    "short": "MoneyF",
+    "author": "Nguyễn Huyền",
+    "headline": "Làn sóng bán tháo cổ phiếu AI quay trở lại, chứng khoán Mỹ chìm trong sắc đỏ",
+    "date": "06/11/2026",
+    "url": "moneyf.vn/lan-song-ban-thao-co-phieu-ai-quay-tro-lai-chung-k-8wga42gj"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "Bão Bán Tháo AI",
+      "Phố Wall Đỏ Lửa"
+    ],
+    "sub": "Nhóm công nghệ lao dốc kỷ lục, S&P 500 và Nasdaq bốc hơi mạnh",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "Nasdaq -5,5%",
+        "tone": "down"
+      },
+      {
+        "icon": "↘",
+        "text": "AMD -17,3%",
+        "tone": "down"
+      },
+      {
+        "icon": "◆",
+        "text": "Áp lực lãi suất",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Thị trường chứng khoán Mỹ vừa trải qua phiên giảm sâu diện rộng khi <mark>làn sóng bán tháo cổ phiếu AI</mark> và bán dẫn kéo tụt các chỉ số chính."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh chung",
+      "lao dốc tới đâu?"
+    ],
+    "stats": [
+      {
+        "value": -4.4,
+        "decimals": 1,
+        "unit": "%",
+        "label": "S&P 500 giảm sâu nhất kể từ 4/2025",
+        "badge": "Mất 334,89 điểm",
+        "tone": "down",
+        "beat": 1
+      },
+      {
+        "value": -5.5,
+        "decimals": 1,
+        "unit": "%",
+        "label": "Nasdaq Composite sụt giảm",
+        "badge": "Mất 1.421 điểm",
+        "tone": "down",
+        "beat": 1
+      },
+      {
+        "value": -1833,
+        "decimals": 0,
+        "unit": "điểm",
+        "label": "Dow Jones bốc hơi nhanh chóng",
+        "badge": "-3,4%",
+        "tone": "down",
+        "beat": 2
+      }
+    ],
+    "note": "Nhóm vốn hóa nhỏ Russell 2000 cũng chịu chung số phận khi mất 4,4%."
+  },
+  "s3": {
+    "title_lines": [
+      "Những cổ phiếu",
+      "bị bán mạnh nhất?"
+    ],
+    "lead": "Tâm điểm đợt điều chỉnh",
+    "bars": [
+      {
+        "label": "AMD",
+        "display": "-17,3%",
+        "value": -17.3,
+        "beat": 1
+      },
+      {
+        "label": "CoreWeave",
+        "display": "-9,8%",
+        "value": -9.8,
+        "beat": 2
+      },
+      {
+        "label": "Tesla",
+        "display": "-9,5%",
+        "value": -9.5,
+        "beat": 2
+      },
+      {
+        "label": "Nvidia",
+        "display": "-9,3%",
+        "value": -9.3,
+        "beat": 1
+      }
+    ],
+    "callout": {
+      "value": 9.3,
+      "suffix": "%",
+      "text": "Mức giảm của Nvidia gây áp lực cực lớn lên S&P 500",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Nguyên nhân nào",
+      "kích hoạt bán tháo?"
+    ],
+    "cards": [
+      {
+        "big": "Pháp lý",
+        "title": "Bầu cử giữa kỳ",
+        "text": "Rào cản về điện năng và môi trường đe dọa tiến độ trung tâm dữ liệu AI."
+      },
+      {
+        "big": "Cầu chậm",
+        "title": "Dự báo Qualcomm",
+        "text": "Triển vọng chip smartphone quý 4 gây lo ngại đà tăng trưởng hạ nhiệt."
+      },
+      {
+        "big": "Lãi suất",
+        "title": "Tín hiệu từ Fed",
+        "text": "Quan chức Fed cảnh báo chưa loại trừ khả năng tiếp tục nâng lãi suất."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Tín hiệu nào",
+      "tới chứng khoán Việt?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "ĐIỂM TỰA",
+        "title": "Xu hướng năm",
+        "text": "Tính từ đầu năm các chỉ số Mỹ vẫn tăng từ 4,6% đến 10% nên rủi ro chủ yếu mang tính kỹ thuật."
+      },
+      {
+        "color": "yellow",
+        "tag": "TÂM LÝ F0",
+        "title": "Tác động VN-Index",
+        "text": "Dòng vốn ngoại có xu hướng thận trọng hơn, gây tâm lý dè dặt ngắn hạn trên thị trường."
+      },
+      {
+        "color": "red",
+        "tag": "SỨC ÉP VĨ MÔ",
+        "title": "Lãi suất & Tỷ giá",
+        "text": "Khả năng Fed duy trì lãi suất cao kết hợp giá dầu biến động dễ tạo áp lực tỷ giá trong nước."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Bản chất đợt",
+      "điều chỉnh lần này?"
+    ],
+    "chain": [
+      {
+        "title": "Định giá căng thẳng",
+        "text": "Cổ phiếu AI tăng quá nóng dẫn tới nhu cầu chốt lời khi có tin bất lợi.",
+        "beat": 1
+      },
+      {
+        "title": "Nghi ngờ hiệu quả",
+        "text": "Thị trường đòi hỏi doanh thu thực tế tương xứng với vốn đầu tư khổng lồ.",
+        "beat": 1
+      },
+      {
+        "title": "Thử thách vĩ mô",
+        "text": "Chờ đợi báo cáo việc làm tháng 10 và thông điệp tiếp theo của Fed.",
+        "beat": 2
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Hành động cho",
+      "nhà đầu tư F0?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Rà soát danh mục",
+        "text": "Hạn chế nắm giữ cổ phiếu công nghệ đã tăng quá mức so với định giá cơ bản.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Dự phòng sức mua",
+        "text": "Duy trì tỷ lệ tiền mặt an toàn để sẵn sàng đón nhận cơ hội khi thị trường chiết khấu.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Tránh bán tháo hoảng loạn",
+        "text": "Kiên nhẫn theo dõi các tín hiệu vĩ mô và dòng tiền thay vì hành động cảm tính.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Điều chỉnh là bước sàng lọc tự nhiên sau mỗi chu kỳ tăng nóng.",
+    "cta": "Theo dõi KenvinZone để cập nhật xu hướng dòng tiền"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
