@@ -1,0 +1,207 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "07/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "Tin nhanh chứng khoán",
+    "short": "TNCK",
+    "author": "",
+    "headline": "Giới đầu tư phản ứng tích cực sau cuộc bầu cử tại Mỹ",
+    "date": "07/11/2026",
+    "url": "tinnhanhchungkhoan.vn/post400745.html"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "Phố Wall bùng nổ",
+      "sau bầu cử Mỹ"
+    ],
+    "sub": "Thị trường toàn cầu phản ứng ra sao?",
+    "chips": [
+      {
+        "icon": "↗",
+        "text": "Dow Jones +1.500đ",
+        "tone": "up"
+      },
+      {
+        "icon": "◆",
+        "text": "USD vọt đỉnh",
+        "tone": "gold"
+      },
+      {
+        "icon": "⑂",
+        "text": "Tác động VN-Index",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Thị trường tài chính Mỹ vừa có <mark>phiên tăng điểm lịch sử</mark> ngay sau khi kết quả bầu cử tổng thống ngã ngũ, kéo theo làn sóng phản ứng mạnh trên toàn cầu."
+  },
+  "s2": {
+    "title_lines": [
+      "Cơn địa chấn",
+      "trên Phố Wall"
+    ],
+    "stats": [
+      {
+        "value": 1500,
+        "decimals": 0,
+        "unit": "điểm",
+        "label": "Dow Jones lập kỷ lục",
+        "badge": "+3,57%",
+        "tone": "up",
+        "beat": 1
+      },
+      {
+        "value": 4.43,
+        "decimals": 2,
+        "unit": "%",
+        "label": "Lợi suất trái phiếu 10 năm",
+        "badge": "Tăng vọt",
+        "tone": "gold",
+        "beat": 2
+      }
+    ],
+    "note": "Các chỉ số chính đồng loạt thiết lập đỉnh cao lịch sử mới."
+  },
+  "s3": {
+    "title_lines": [
+      "Dòng tiền",
+      "chảy về đâu?"
+    ],
+    "lead": "Kỳ vọng chính sách mới",
+    "bars": [
+      {
+        "label": "Dow Jones",
+        "display": "+3,57%",
+        "value": 3.57,
+        "beat": 1
+      },
+      {
+        "label": "S&P 500",
+        "display": "+2,53%",
+        "value": 2.53,
+        "beat": 1
+      },
+      {
+        "label": "Nasdaq",
+        "display": "+2,95%",
+        "value": 2.95,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 5.4,
+      "suffix": "%",
+      "text": "Russell 2000 vốn hóa nhỏ vọt tăng mạnh nhất",
+      "beat": 2
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Động lực nào",
+      "thúc đẩy đà tăng?"
+    ],
+    "cards": [
+      {
+        "big": "Giảm thuế",
+        "title": "Thuế doanh nghiệp",
+        "text": "Kỳ vọng hạ thuế giúp tăng lợi nhuận ròng công ty."
+      },
+      {
+        "big": "Bãi bỏ",
+        "title": "Nới lỏng quy định",
+        "text": "Nhóm ngân hàng và năng lượng truyền thống hưởng lợi."
+      },
+      {
+        "big": "Đồng USD",
+        "title": "Tăng giá mạnh",
+        "text": "Chỉ số Dollar Index vọt đỉnh hai năm."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Ba tác động",
+      "lớn nhất là gì?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "TÂM LÝ",
+        "title": "Phố Wall hưng phấn",
+        "text": "Dòng tiền lớn chấp nhận rủi ro quay trở lại."
+      },
+      {
+        "color": "yellow",
+        "tag": "LÃI SUẤT",
+        "title": "Fed thận trọng",
+        "text": "Lạm phát tiềm ẩn có thể làm chậm nhịp hạ lãi suất."
+      },
+      {
+        "color": "red",
+        "tag": "TỶ GIÁ",
+        "title": "Áp lực mới nổi",
+        "text": "USD mạnh gây áp lực rút vốn tại thị trường cận biên."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Hệ thống cảnh báo",
+      "đèn tín hiệu"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh",
+        "text": "Sóng tăng trưởng cổ phiếu chu kỳ tại Mỹ kích hoạt hưng phấn toàn cầu.",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng",
+        "text": "Lợi suất trái phiếu tăng gây sức ép định giá lên nhóm công nghệ.",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ",
+        "text": "Tỷ giá trong nước chịu áp lực, khối ngoại tiếp tục bán ròng.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Chứng khoán Việt",
+      "chịu ảnh hưởng gì?"
+    ],
+    "items": [
+      {
+        "icon": "warn",
+        "title": "Tỷ giá USD/VND",
+        "text": "Đồng bạc xanh leo thang buộc Ngân hàng Nhà nước duy trì thận trọng.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Dòng vốn ngoại",
+        "text": "Khối ngoại có thể duy trì đà rút ròng về thị trường Mỹ.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Cơ hội ngành",
+        "text": "Nhóm xuất khẩu và khu công nghiệp đón làn sóng dịch chuyển.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Bầu cử Mỹ định hình dòng tiền toàn cầu, nhưng nội lực doanh nghiệp mới quyết định dài hạn.",
+    "cta": "Theo dõi KenvinZone để đón xem bản tin tiếp theo"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
