@@ -1,0 +1,131 @@
+{
+  "template": "intermarket-weekly-hf",
+  "date": "06/11/2026",
+  "eyebrow": "⚡ WEEKLY · LIÊN THỊ TRƯỜNG",
+  "title_html": "TỔNG KẾT ĐỊNH LƯỢNG<br/>LIÊN THỊ TRƯỜNG",
+  "date_prefix": "TUẦN · dữ liệu đến",
+  "composite": {
+    "score": -0.6,
+    "regime": "TRUNG LẬP"
+  },
+  "assets": [
+    {
+      "key": "spx",
+      "name": "S&P 500",
+      "ticker": "SPX",
+      "accent": "#38bdf8",
+      "score": -3.3,
+      "regime": "GIẢM",
+      "top": {
+        "label": "Khẩu vị rủi ro",
+        "value": -4.27
+      },
+      "support": {
+        "label": "Lãi suất thực",
+        "value": 2.47
+      },
+      "drag": {
+        "label": "Khẩu vị rủi ro",
+        "value": -4.27
+      },
+      "gamma_neg": true,
+      "expected_move": 9.5
+    },
+    {
+      "key": "nas",
+      "name": "Nasdaq 100",
+      "ticker": "NASDAQ",
+      "accent": "#a78bfa",
+      "score": -7.1,
+      "regime": "GIẢM",
+      "top": {
+        "label": "Lãi suất thực",
+        "value": 6.49
+      },
+      "support": {
+        "label": "Lãi suất thực",
+        "value": 6.49
+      },
+      "drag": {
+        "label": "Vị thế",
+        "value": -4.42
+      },
+      "gamma_neg": true,
+      "expected_move": 10.1
+    },
+    {
+      "key": "gold",
+      "name": "Vàng",
+      "ticker": "XAUUSD",
+      "accent": "#fbbf24",
+      "score": 8.7,
+      "regime": "TĂNG",
+      "top": {
+        "label": "Lãi suất thực",
+        "value": 6.73
+      },
+      "support": {
+        "label": "Lãi suất thực",
+        "value": 6.73
+      },
+      "drag": {
+        "label": "Dòng tiền",
+        "value": -1.64
+      },
+      "gamma_neg": false,
+      "expected_move": null
+    }
+  ],
+  "macro": [
+    {
+      "label": "Lãi suất thực",
+      "value": 5.23,
+      "color": "#4ade80"
+    },
+    {
+      "label": "Khẩu vị rủi ro",
+      "value": -1.95,
+      "color": "#ef4444"
+    },
+    {
+      "label": "Dòng tiền",
+      "value": -1.74,
+      "color": "#f87171"
+    },
+    {
+      "label": "Vị thế",
+      "value": -1.17,
+      "color": "#fb923c"
+    },
+    {
+      "label": "Quyền chọn",
+      "value": -1.16,
+      "color": "#ef4444"
+    },
+    {
+      "label": "Đồng USD",
+      "value": -0.92,
+      "color": "#f87171"
+    }
+  ],
+  "rotation_tag": "Dòng tiền dịch chuyển từ <b>cổ phiếu tăng trưởng</b> sang tài sản <b>trú ẩn và Vàng</b>.",
+  "scenarios": [
+    {
+      "pct": 50,
+      "color": "#fbbf24",
+      "name": "Giằng co tích lũy"
+    },
+    {
+      "pct": 30,
+      "color": "#f87171",
+      "name": "Áp lực hạ vị thế"
+    },
+    {
+      "pct": 20,
+      "color": "#4ade80",
+      "name": "Hồi phục kỹ thuật"
+    }
+  ],
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
