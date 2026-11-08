@@ -1,0 +1,192 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "08/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "CafeF",
+    "short": "CafeF",
+    "author": "Dương Ngọc",
+    "headline": "Agriseco gọi tên 4 nhóm ngành có thể hưởng lợi trong hai tháng cuối năm",
+    "date": "08/11/2026",
+    "url": "cafef.vn/188261106212353584.chn"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "4 NHÓM NGÀNH",
+      "HƯỞNG LỢI CUỐI NĂM"
+    ],
+    "sub": "Agriseco dự báo cơ hội phân hóa quý 4",
+    "chips": [
+      {
+        "icon": "↗",
+        "text": "IIP tăng 2 chữ số",
+        "tone": "up"
+      },
+      {
+        "icon": "⑂",
+        "text": "FDI & Đầu tư công",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "Phân hóa quý 4",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Agriseco Research dự báo kinh tế tiếp tục duy trì đà tăng, gọi tên <mark>4 nhóm ngành hưởng lợi</mark> trong hai tháng cuối năm nhưng nhấn mạnh sự phân hóa."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh vĩ mô",
+      "đang hỗ trợ gì?"
+    ],
+    "stats": [
+      {
+        "value": 10,
+        "decimals": 0,
+        "unit": "tháng",
+        "label": "Đà tăng tích cực",
+        "badge": "Vĩ mô mở rộng",
+        "tone": "up",
+        "beat": 1
+      }
+    ],
+    "note": "Động lực từ sản xuất, FDI, đầu tư công và xuất nhập khẩu lập kỷ lục."
+  },
+  "s3": {
+    "title_lines": [
+      "Sản xuất & Hạ tầng",
+      "hưởng lợi ra sao?"
+    ],
+    "lead": "Trụ cột tăng trưởng kinh tế",
+    "bars": [
+      {
+        "label": "Sản xuất - Logistics",
+        "display": "Tăng mạnh",
+        "value": 85,
+        "beat": 1
+      },
+      {
+        "label": "Đầu tư công & VLXD",
+        "display": "Tăng tốc",
+        "value": 75,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 2,
+      "suffix": " chữ số",
+      "text": "Kỳ vọng tăng trưởng kinh tế",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Khu công nghiệp",
+      "& Tiêu dùng dịch vụ"
+    ],
+    "cards": [
+      {
+        "big": "FDI",
+        "title": "BĐS Khu công nghiệp",
+        "text": "Vốn FDI đăng ký và giải ngân mở rộng vào chế biến chế tạo."
+      },
+      {
+        "big": "Bán lẻ",
+        "title": "Tiêu dùng & Dịch vụ",
+        "text": "Du lịch hồi phục và mùa vụ tiêu dùng cao điểm cuối năm."
+      },
+      {
+        "big": "Ưu tiên",
+        "title": "Doanh nghiệp dẫn đầu",
+        "text": "Chọn doanh nghiệp giữ vững biên lợi nhuận và thị phần."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Đèn tín hiệu",
+      "cơ hội và rủi ro"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "ĐÈN XANH",
+        "title": "Động lực nội tại",
+        "text": "Sản xuất công nghiệp, xuất khẩu và vốn FDI duy trì đà mở rộng."
+      },
+      {
+        "color": "yellow",
+        "tag": "ĐÈN VÀNG",
+        "title": "Áp lực chi phí",
+        "text": "Lạm phát và giá nguyên vật liệu có thể bào mòn biên lợi nhuận."
+      },
+      {
+        "color": "red",
+        "tag": "ĐÈN ĐỎ",
+        "title": "Bất định toàn cầu",
+        "text": "Lãi suất quốc tế neo cao và rủi ro cạnh tranh thương mại."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Góc nhìn đầu tư",
+      "chọn lọc cổ phiếu"
+    ],
+    "chain": [
+      {
+        "title": "Sàng lọc kỹ lưỡng",
+        "text": "Không phải mọi cổ phiếu trong ngành đều tăng trưởng.",
+        "beat": 1
+      },
+      {
+        "title": "Lợi thế cạnh tranh",
+        "text": "Ưu tiên backlog lớn hoặc quỹ đất sạch sẵn sàng khai thác.",
+        "beat": 1
+      },
+      {
+        "title": "Sức khỏe tài chính",
+        "text": "Doanh nghiệp cần dòng tiền ổn định trước biến số vĩ mô.",
+        "beat": 2
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư",
+      "nên hành động gì?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Theo dõi điểm mua",
+        "text": "Tránh mua đuổi khi cổ phiếu đã bật tăng mạnh khỏi nền giá.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Chờ nhịp rung lắc",
+        "text": "Tận dụng các nhịp điều chỉnh để có mức giá vốn an toàn.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Quản trị rủi ro",
+        "text": "Phân bổ tỷ trọng cẩn trọng theo biến động của thị trường.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Chọn đúng nhóm ngành và kiên nhẫn chờ điểm vào hợp lý.",
+    "cta": "Theo dõi để giải mã tin tiếp theo"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
