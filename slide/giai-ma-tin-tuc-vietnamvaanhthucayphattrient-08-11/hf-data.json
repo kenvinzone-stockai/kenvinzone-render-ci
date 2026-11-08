@@ -1,0 +1,191 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "08/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "Thời báo Ngân hàng",
+    "short": "TBNH",
+    "author": "Thanh Tuyết",
+    "headline": "Việt Nam và Anh thúc đẩy phát triển thị trường giao dịch hàng hóa phái sinh",
+    "date": "08/11/2026",
+    "url": "https://m.cafef.vn/viet-nam-va-anh-thuc-day-phat-trien-thi-truong-giao-dich-hang-hoa-phai-sinh-188261108082358537.chn"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "Bắt tay nước Anh",
+      "Mở phái sinh hàng hóa"
+    ],
+    "sub": "Đòn bẩy mới cho trung tâm tài chính quốc tế",
+    "chips": [
+      {
+        "icon": "◆",
+        "text": "130 đại diện",
+        "tone": "blue"
+      },
+      {
+        "icon": "↗",
+        "text": "5 mặt hàng chủ lực",
+        "tone": "gold"
+      },
+      {
+        "icon": "⑂",
+        "text": "Phái sinh hàng hóa",
+        "tone": "up"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Việt Nam và Vương quốc Anh tăng cường hợp tác xây dựng <mark>thị trường hàng hóa phái sinh</mark> chuẩn quốc tế, tạo đòn bẩy cho <mark>Trung tâm tài chính</mark> tương lai."
+  },
+  "s2": {
+    "title_lines": [
+      "Quy mô hợp tác",
+      "ấn tượng ra sao?"
+    ],
+    "stats": [
+      {
+        "value": 130,
+        "decimals": 0,
+        "unit": "đại diện",
+        "label": "Cơ quan quản lý tham dự hội thảo",
+        "badge": "Growth Gateway",
+        "tone": "blue",
+        "beat": 1
+      }
+    ],
+    "note": "Sự kiện phối hợp cùng Tập đoàn tư vấn Boston Consulting Group BCG."
+  },
+  "s3": {
+    "title_lines": [
+      "Thế mạnh xuất khẩu",
+      "gồm những gì?"
+    ],
+    "bars": [
+      {
+        "label": "Cà phê & Gạo",
+        "display": "Top đầu",
+        "value": 90,
+        "beat": 1
+      },
+      {
+        "label": "Cao su & Hồ tiêu",
+        "display": "Chủ lực",
+        "value": 80,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 5,
+      "suffix": " nông sản",
+      "text": "Nhóm nông sản hạt điều, cà phê, gạo, cao su, hồ tiêu có tiềm năng làm giá tham chiếu toàn cầu.",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Trụ cột triển khai",
+      "tập trung vào đâu?"
+    ],
+    "cards": [
+      {
+        "big": "Pháp lý",
+        "title": "Khuôn khổ chuẩn hóa",
+        "text": "Hoàn thiện hành lang pháp lý minh bạch và an toàn"
+      },
+      {
+        "big": "Sản phẩm",
+        "title": "Hàng hóa thế mạnh",
+        "text": "Niêm yết hợp đồng phái sinh dựa trên nông sản Việt"
+      },
+      {
+        "big": "Hạ tầng",
+        "title": "Logistics & Dữ liệu",
+        "text": "Kết nối kho bãi, kiểm định và hệ thống thanh toán"
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Ba nhiệm vụ",
+      "trọng tâm là gì?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "QUẢN TRỊ",
+        "title": "Phòng vệ giá",
+        "text": "Bảo vệ doanh nghiệp xuất khẩu trước biến động thị trường thế giới"
+      },
+      {
+        "color": "yellow",
+        "tag": "SẢN PHẨM",
+        "title": "Gắn hàng thế mạnh",
+        "text": "Từng bước hình thành giá tham chiếu quốc tế cho nông sản"
+      },
+      {
+        "color": "red",
+        "tag": "VẬN HÀNH",
+        "title": "Hạ tầng đồng bộ",
+        "text": "Đòi hỏi chuẩn kiểm định chất lượng và thanh toán chuẩn xác"
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Đánh giá cơ hội",
+      "và rủi ro thế nào?"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh",
+        "text": "Thêm công cụ phòng ngừa rủi ro giá cho doanh nghiệp và mở rộng dòng vốn ngoại.",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng",
+        "text": "Cần hoàn thiện ngay năng lực giám sát và hạ tầng kho bãi vật chất đạt chuẩn.",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ",
+        "text": "Sản phẩm đòn bẩy tài chính cao dễ gây thua lỗ nặng nếu thiếu kiến thức bài bản.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Tác động chứng khoán",
+      "thể hiện ở đâu?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Nhóm logistics & Cảng biển",
+        "text": "Hưởng lợi nhờ nhu cầu kho bãi lưu trữ và luân chuyển hàng hóa chuẩn hóa.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Doanh nghiệp nông sản",
+        "text": "Chủ động chốt giá bán tương lai, giảm thiểu rủi ro biến động giá nguyên liệu.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Dịch vụ tài chính",
+        "text": "Mở rộng nguồn thu phí giao dịch cho các định chế và ngân hàng thanh toán.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Hàng hóa phái sinh là mảnh ghép chiến lược nâng tầm vị thế tài chính Việt Nam.",
+    "cta": "Theo dõi để giải mã tin tiếp theo"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
