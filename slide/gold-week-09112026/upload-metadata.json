@@ -1,0 +1,29 @@
+{
+  "youtube": {
+    "title": "Bias Vàng Tuần 09/11/2026: Trung Lập Kìm Nén Biên Độ",
+    "description": "📊 Bản tin Định lượng Bias Vàng Tuần (09/11/2026) từ KenvinZone Analytics.\n\n🎯 ĐIỂM BIAS TỔNG THỂ:\n• Điểm Bias: +5.90 / 100 (Chế độ: TRUNG LẬP)\n• Diễn biến 3 tuần: 26/10 (+2.90) ➔ 02/11 (+1.00) ➔ 09/11 (+5.90)\n\n⚖️ 6 LỰC KÉO ĐỊNH LƯỢNG:\n• Lực cản:\n  - Áp lực USD: -4.34 điểm\n  - Dòng tiền & Xu hướng: -1.96 điểm\n  - Yếu tố riêng của Vàng: -0.78 điểm\n• Lực đỡ:\n  - Lãi suất thực: +7.69 điểm\n  - Khẩu vị rủi ro: +2.61 điểm\n  - Thanh khoản M2: +1.98 điểm\n👉 Đánh giá thanh khoản & rủi ro: Khẩu vị rủi ro và M2 đều dương, hệ thống tín dụng ổn định, không có rủi ro thanh lý bắt buộc ép lên Vàng.\n\n🛡️ CẤU TRÚC GAMMA (GLD & XAUUSD):\n• Net GEX: +2.5M USD (Gamma Dương ➔ Biến động co cụm, giá bị ghim)\n• Giá hiện tại: GLD 367.82 (≈ XAUUSD 3981.9)\n• Gamma Flip: GLD 365.0 (≈ XAUUSD 3951.0)\n• Put Wall: GLD 360.0 (≈ XAUUSD 3897.0)\n• Call Wall: GLD 375.0 (≈ XAUUSD 4060.0)\n\n🎲 3 KỊCH BẢN TUẦN TỚI:\n1️⃣ 60% Giằng co trong biên: Kẹt giữa Put Wall 360 (≈3.897) và Call Wall 375 (≈4.060).\n2️⃣ 22% Phá vỡ giảm: USD mạnh lên, thủng 360 (≈3.897) để kiểm tra các ngưỡng sâu hơn.\n3️⃣ 18% Bứt phá tăng tốc: Vượt dứt khoát 375 (≈4.060) khi xuất hiện lực cầu trú ẩn mới.\n\n🧭 KẾ HOẠCH HÀNH ĐỘNG:\n• Giữ trung tính trong biên 360–375 GLD (≈ 3.897–4.060 XAUUSD).\n• Điều kiện mua: Nến tuần đóng vững vàng trên Gamma Flip 365 (≈ 3.951).\n• Quản trị rủi ro: Thận trọng hạ vị thế nếu giá rơi thủng Put Wall 360 (≈ 3.897).\n\n⚠️ Tuyên bố miễn trừ trách nhiệm: Bản tin phục vụ mục đích cung cấp thông tin định lượng khách quan từ mô hình AURORA, KHÔNG phải là lời khuyên đầu tư tài chính.\n\n#vang #gold #xauusd #giavang #phantichdinhluong #kenvinzone #aurora #vimo",
+    "tags": [
+      "vàng",
+      "gold",
+      "xauusd",
+      "giá vàng",
+      "phân tích vàng",
+      "nhận định vàng",
+      "dự báo giá vàng",
+      "định lượng vàng",
+      "gamma vàng",
+      "bias vàng",
+      "kenvinzone",
+      "chuyện chứng khoán",
+      "vĩ mô",
+      "đầu tư vàng"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "gold-daily-bias",
+    "date": "09/11/2026"
+  }
+}
