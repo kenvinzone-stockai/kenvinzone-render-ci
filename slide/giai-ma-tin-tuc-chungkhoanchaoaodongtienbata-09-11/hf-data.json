@@ -1,0 +1,213 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "09/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "CafeF / Tiền Phong",
+    "short": "CafeF",
+    "author": "Việt Linh",
+    "headline": "Chứng khoán chao đảo, dòng tiền bắt đáy dè dặt",
+    "date": "09/11/2026",
+    "url": "https://m.cafef.vn/chung-khoan-chao-dao-dong-tien-bat-day-de-dat-188261109171923616.chn"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "VN-Index Chao Đảo",
+      "Tiền Bắt Đáy Dè Dặt"
+    ],
+    "sub": "Áp lực trụ lớn và khối ngoại bán ròng hơn 832 tỷ đồng",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "VN-Index -11,04đ",
+        "tone": "down"
+      },
+      {
+        "icon": "⑂",
+        "text": "Khối lượng -36%",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "Bán ròng 832 tỷ",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Thị trường chao đảo khi <mark>VN-Index lùi sát 1.700 điểm</mark>, thanh khoản hụt hơi và <mark>khối ngoại xả ròng hơn 832 tỷ đồng</mark>."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh chung",
+      "áp lực đến đâu?"
+    ],
+    "stats": [
+      {
+        "value": 11.04,
+        "decimals": 2,
+        "unit": "điểm",
+        "label": "Mức giảm VN-Index",
+        "badge": "-0,64%",
+        "tone": "down",
+        "beat": 1
+      },
+      {
+        "value": 13800,
+        "decimals": 0,
+        "unit": "tỷ",
+        "label": "Giá trị khớp HoSE",
+        "badge": "KL -36%",
+        "tone": "gold",
+        "beat": 2
+      }
+    ],
+    "note": "Chỉ số có lúc chạm đáy 1.701,9 điểm trước khi hồi phục nhẹ"
+  },
+  "s3": {
+    "title_lines": [
+      "Sự phân hóa",
+      "thể hiện ra sao?"
+    ],
+    "lead": "Trụ lớn ghì điểm — điểm sáng le lói",
+    "bars": [
+      {
+        "label": "VND",
+        "display": "-3,34%",
+        "value": -3.34,
+        "beat": 1
+      },
+      {
+        "label": "VHM",
+        "display": "-2,74%",
+        "value": -2.74,
+        "beat": 1
+      },
+      {
+        "label": "NVL",
+        "display": "+1,94%",
+        "value": 1.94,
+        "beat": 2
+      },
+      {
+        "label": "VPB",
+        "display": "+0,91%",
+        "value": 0.91,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 832,
+      "suffix": "tỷ",
+      "text": "Khối ngoại bán ròng mạnh trên toàn sàn",
+      "beat": 2
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Dòng tiền ngoại",
+      "rút khỏi đâu?"
+    ],
+    "cards": [
+      {
+        "big": "130 tỷ",
+        "title": "HPG bị xả mạnh nhất",
+        "text": "Áp lực bán dồn dập vào cổ phiếu quốc dân."
+      },
+      {
+        "big": "90 tỷ",
+        "title": "VIC ghì chỉ số",
+        "text": "Cùng VHM gây sức ép giảm sâu trong phiên sáng."
+      },
+      {
+        "big": "Mua ròng nhẹ",
+        "title": "Nhóm ngân hàng",
+        "text": "VPB, MBB, TCB được gom nhưng không đủ cân lực bán."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Ba tín hiệu",
+      "cần nhìn rõ?"
+    ],
+    "lights": [
+      {
+        "color": "red",
+        "tag": "SỨC ÉP TRỤ",
+        "title": "Cổ phiếu lớn chi phối",
+        "text": "Đà giảm từ họ Vingroup và thép kéo lùi tâm lý thị trường."
+      },
+      {
+        "color": "yellow",
+        "tag": "THANH KHOẢN",
+        "title": "Lực cầu thăm dò",
+        "text": "Khối lượng giảm 36% cho thấy phe mua chưa vội nhập cuộc."
+      },
+      {
+        "color": "green",
+        "tag": "MỐC HỖ TRỢ",
+        "title": "Vùng 1.700 điểm giữ vững",
+        "text": "Lực cầu xuất hiện kéo chỉ số bật lên trên 1.714 điểm."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Bức tranh rủi ro",
+      "và cơ hội?"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh",
+        "text": "Vùng 1.700 điểm phản ứng tốt với lực bắt đáy cuối phiên.",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng",
+        "text": "Thanh khoản teo tóp phản ánh dòng tiền lớn đứng ngoài quan sát.",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ",
+        "text": "Khối ngoại đảo chiều bán ròng tạo rào cản cho nhịp phục hồi.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư",
+      "nên làm gì?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Không hoảng loạn",
+        "text": "Tránh bán tháo tại các vùng hỗ trợ tâm lý quan trọng.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Quan sát thanh khoản",
+        "text": "Chờ xác nhận dòng tiền lan tỏa trước khi gia tăng tỷ trọng.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Tránh dùng đòn bẩy",
+        "text": "Hạn chế mua đuổi khi xu hướng ngắn hạn chưa rõ ràng.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Kiên nhẫn chờ dòng tiền lớn nhập cuộc.",
+    "cta": "Theo dõi KenvinZone để cập nhật nhịp đập thị trường"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
