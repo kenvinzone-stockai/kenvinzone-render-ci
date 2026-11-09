@@ -1,0 +1,40 @@
+{
+  "subtitles": {
+    "enabled": true,
+    "color": "#fde047",
+    "fontSize": 18,
+    "bottom": 60,
+    "maxLines": 1
+  },
+  "backgroundFx": "candlestick",
+  "bgm": {
+    "mode": "preset",
+    "preset": "ambient",
+    "volume": 0.18
+  },
+  "scriptLines": [
+    "Hôm nay điểm Bias Vàng đạt dương sáu phẩy một, duy trì trạng thái Trung Lập khi đà tăng nhẹ hạ nhiệt so với phiên trước.",
+    "Sức ép giảm điểm hiện đến từ áp lực USD âm ba phẩy ba chín, dòng tiền âm hai phẩy mười bảy và yếu tố riêng âm một phẩy hai mươi sáu.",
+    "Lực đỡ chính thuộc về lãi suất thực dương tám phẩy sáu, cộng hưởng thanh khoản M2 và khẩu vị rủi ro dương giúp tín dụng ổn định.",
+    "Với Net GEX dương hai phẩy năm triệu USD và GLD ở 367.82 trên Gamma Flip 365, biên độ giữa Put Wall 360 và Call Wall 375 tiếp tục kìm nén biến động.",
+    "Phiên tới xác suất sáu mươi phần trăm tiếp tục giằng co, hai mươi hai phần trăm rủi ro thủng biên dưới và mười tám phần trăm bứt phá.",
+    "Nhà đầu tư nên giữ trung tính trong biên độ, chỉ gia tăng vị thế khi duy trì trên 365; hãy follow KenvinZone và AURORA để cập nhật định lượng mỗi ngày."
+  ],
+  "slides": {
+    "deletedIds": [],
+    "scriptLines": [
+      "Hôm nay điểm Bias Vàng đạt dương sáu phẩy một, duy trì trạng thái Trung Lập khi đà tăng nhẹ hạ nhiệt so với phiên trước.",
+      "Sức ép giảm điểm hiện đến từ áp lực USD âm ba phẩy ba chín, dòng tiền âm hai phẩy mười bảy và yếu tố riêng âm một phẩy hai mươi sáu.",
+      "Lực đỡ chính thuộc về lãi suất thực dương tám phẩy sáu, cộng hưởng thanh khoản M2 và khẩu vị rủi ro dương giúp tín dụng ổn định.",
+      "Với Net GEX dương hai phẩy năm triệu USD và GLD ở 367.82 trên Gamma Flip 365, biên độ giữa Put Wall 360 và Call Wall 375 tiếp tục kìm nén biến động.",
+      "Phiên tới xác suất sáu mươi phần trăm tiếp tục giằng co, hai mươi hai phần trăm rủi ro thủng biên dưới và mười tám phần trăm bứt phá.",
+      "Nhà đầu tư nên giữ trung tính trong biên độ, chỉ gia tăng vị thế khi duy trì trên 365; hãy follow KenvinZone và AURORA để cập nhật định lượng mỗi ngày."
+    ]
+  },
+  "visuals": {
+    "colorMode": "dark",
+    "backgroundColor": "#060a13",
+    "gridEnabled": false,
+    "backgroundFx": "candlestick-diag"
+  }
+}

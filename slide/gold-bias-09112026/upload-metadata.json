@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "Vàng 09/11: Bias Trung Lập +6.1 · Kịch Bản Giằng Co Trong Biên",
+    "description": "📊 Phân tích định lượng VÀNG (XAUUSD / GLD) ngày 09/11/2026 từ KenvinZone Analytics:\n\n1. ĐIỂM BIAS TỔNG THỂ\n• Điểm Bias: +6.10/100 (Chế độ TRUNG LẬP, giảm -4.60 điểm so phiên trước).\n• Chuỗi 3 phiên: 05/11 (+2.10) → 06/11 (+10.70) → 09/11 (+6.10).\n\n2. BÓC TÁCH 6 LỰC KÉO ĐỊNH LƯỢNG\n• Áp lực USD: -3.39 điểm (Cản trở đà tăng)\n• Dòng tiền & xu hướng: -2.17 điểm\n• Yếu tố riêng của Vàng: -1.26 điểm\n• Lãi suất thực: +8.60 điểm (Trụ đỡ vững chắc nhất)\n• Thanh khoản M2: +2.23 điểm\n• Khẩu vị rủi ro: +2.89 điểm (Chưa có dấu hiệu căng thẳng tín dụng)\n\n3. CẤU TRÚC GAMMA (OPTIONS STRUCTURE)\n• Net GEX: +2.5M USD (Gamma dương kìm nén biên độ dao động)\n• Giá GLD: 367.82 (XAUUSD ≈ 3981.9) nằm trên Gamma Flip\n• Gamma Flip: 365.0 (≈ 3951.0)\n• Put Wall: 360.0 (≈ 3897.0)\n• Call Wall: 375.0 (≈ 4060.0)\n\n4. BA KỊCH BẢN PHIÊN TỚI\n• Kịch bản 1 (60%): Giằng co tích lũy trong biên 360 - 375 GLD (≈ 3.897 - 4.060 XAUUSD).\n• Kịch bản 2 (22%): Áp lực USD đè nặng, xuyên thủng Put Wall 360 (≈ 3.897).\n• Kịch bản 3 (18%): Dòng tiền mua ròng đưa giá kiểm tra Call Wall 375 (≈ 4.060).\n\n5. CHIẾN LƯỢC HÀNH ĐỘNG\n• Giữ tỷ trọng trung lập trong hộp 360 - 375 GLD.\n• Điều kiện mua thêm: Duy trì vững phía trên mốc Flip 365 GLD.\n• Rủi ro cắt giảm: Vi phạm thủng Put Wall 360 GLD.\n\n⚠️ Tuyên bố miễn trừ trách nhiệm: Nội dung chỉ nhằm mục đích cung cấp thông tin định lượng tham khảo, KHÔNG phải lời khuyên đầu tư tài chính.\n\n#vang #gold #xauusd #giavang #phantichdinhluong #kenvinzone",
+    "tags": [
+      "vàng",
+      "gold",
+      "xauusd",
+      "giá vàng",
+      "nhận định giá vàng",
+      "phân tích định lượng",
+      "kenvinzone",
+      "aurora",
+      "bias vàng",
+      "dự báo giá vàng",
+      "gld",
+      "options gamma",
+      "kinh tế vĩ mô"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "gold-daily-bias",
+    "date": "09/11/2026"
+  }
+}
