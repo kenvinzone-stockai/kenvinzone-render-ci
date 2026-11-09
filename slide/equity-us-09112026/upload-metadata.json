@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "S&P 500 & Nasdaq: Đồng pha trung lập | Phân tích định lượng ngày",
+    "description": "📊 Bản tin Phân tích Định lượng Chứng khoán Mỹ từ KenvinZone Analytics.\n\nTổng hợp dữ liệu phiên giao dịch hôm nay:\n🔹 S&P 500 (SPX): Bias ngày -5.0 | Tuần -3.4 (Trung lập). Lực cản chính từ Khẩu vị rủi ro (-4.98) dù có sự hỗ trợ của Lãi suất / Fed (+3.72). Gamma SPY âm 567 triệu, giá 735.29 dưới Flip 748.27 (Put Wall 725.0 - Call Wall 770.0).\n🔹 Nasdaq 100: Bias ngày -0.2 | Tuần -4.9 (Trung lập). Động lực lớn từ Lãi suất / Fed (+8.57) hấp thụ rủi ro (-4.36). Gamma QQQ dương 26 triệu, giá 656.1 trên Flip 653.61 (Put Wall 630.0 - Call Wall 700.0).\n\n⚖️ Xác suất phiên tới: 55% Giằng co biên hẹp | 25% Rủi ro điều chỉnh | 20% Hồi phục kỹ thuật.\n\n⚠️ LƯU Ý: Nội dung video mang tính chất tham khảo số liệu định lượng, KHÔNG phải lời khuyên đầu tư.\n\n#sp500 #nasdaq #chungkhoanmy #gamma #kenvinzone",
+    "tags": [
+      "sp500",
+      "nasdaq",
+      "chứng khoán mỹ",
+      "đầu tư chứng khoán",
+      "kenvinzone",
+      "aurora",
+      "gamma",
+      "net gex",
+      "spy",
+      "qqq",
+      "phân tích định lượng",
+      "tài chính mỹ",
+      "nhận định thị trường"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "equity-bias",
+    "date": "09/11/2026"
+  }
+}
