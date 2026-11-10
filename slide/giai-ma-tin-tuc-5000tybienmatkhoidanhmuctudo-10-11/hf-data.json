@@ -1,0 +1,200 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "10/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "CafeF",
+    "short": "CafeF",
+    "author": "Hàn Giang",
+    "headline": "5.000 tỷ biến mất khỏi danh mục tự doanh CTCK sau một quý, điều gì đang diễn ra?",
+    "date": "10/11/2026",
+    "url": "https://m.cafef.vn/5000-ty-bien-mat-khoi-danh-muc-tu-doanh-ctck-sau-mot-quy-dieu-gi-dang-dien-ra-188261109225759707.chn"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "5.000 TỶ TỰ DOANH",
+      "BIẾN MẤT VÌ ĐÂU?"
+    ],
+    "sub": "Trái phiếu chiếm 66% đà sụt giảm tự doanh",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "Tự doanh -5.130 tỷ",
+        "tone": "down"
+      },
+      {
+        "icon": "⑂",
+        "text": "Trái phiếu -66%",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "TCBS vs SSI",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Quy mô tự doanh của 42 công ty chứng khoán <mark>giảm hơn 5.130 tỷ đồng</mark> trong quý 3, trong đó <mark>trái phiếu chiếm gần 66%</mark> mức thu hẹp."
+  },
+  "s2": {
+    "title_lines": [
+      "Quy mô tự doanh",
+      "thu hẹp ra sao?"
+    ],
+    "stats": [
+      {
+        "value": 5130,
+        "decimals": 0,
+        "unit": "tỷ",
+        "label": "Giảm quy mô tự doanh toàn ngành",
+        "badge": "-1,43% QoQ",
+        "tone": "down",
+        "beat": 1
+      },
+      {
+        "value": 3382,
+        "decimals": 0,
+        "unit": "tỷ",
+        "label": "Mức giảm riêng mảng trái phiếu",
+        "badge": "Chiếm 66%",
+        "tone": "gold",
+        "beat": 2
+      }
+    ],
+    "note": "Tổng danh mục tự doanh 42 CTCK còn 353.688 tỷ đồng tại cuối quý 3/2026."
+  },
+  "s3": {
+    "title_lines": [
+      "Thị trường TPDN",
+      "hạ nhiệt thế nào?"
+    ],
+    "bars": [
+      {
+        "label": "TPDN toàn thị trường",
+        "display": "-30,9%",
+        "value": -30.9,
+        "beat": 1
+      },
+      {
+        "label": "Nhóm Bất động sản",
+        "display": "-55,7%",
+        "value": -55.7,
+        "beat": 1
+      }
+    ],
+    "callout": {
+      "value": 8.9,
+      "suffix": "%/năm",
+      "text": "Lãi suất phát hành trái phiếu ngân hàng neo cao nhất 3 năm",
+      "beat": 2
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Dịch chuyển",
+      "giữa các mảng?"
+    ],
+    "cards": [
+      {
+        "big": "-3.596 tỷ",
+        "title": "Tài sản FVTPL",
+        "text": "Thu hẹp mạnh ở các khoản đầu tư ngắn hạn ghi nhận lãi lỗ"
+      },
+      {
+        "big": "-2.200 tỷ",
+        "title": "Tài sản AFS",
+        "text": "Nhóm tài sản sẵn sàng để bán giảm đáng kể tỷ trọng"
+      },
+      {
+        "big": "+260 tỷ",
+        "title": "Cổ phiếu đi ngang",
+        "text": "Quy mô đạt 69.402 tỷ, chỉ chiếm 19,6% tổng tự doanh"
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Phân hóa lớn",
+      "ở những đâu?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "TĂNG TỰ DOANH",
+        "title": "SSI & VPS",
+        "text": "SSI tăng 4.818 tỷ trái phiếu lên á quân; VPS mở rộng thêm gần 3.881 tỷ."
+      },
+      {
+        "color": "yellow",
+        "tag": "CHUYỂN DỊCH",
+        "title": "TCBS ĐỔI HƯỚNG",
+        "text": "Giảm 6.923 tỷ trái phiếu nắm giữ để đẩy mạnh dịch vụ phân phối thứ cấp."
+      },
+      {
+        "color": "red",
+        "tag": "CHÊNH LỆCH LỚN",
+        "title": "DANH MỤC CỔ PHIẾU",
+        "text": "Vietcap lãi IDP (+1.668 tỷ) nhưng lỗ KDH (-402 tỷ); SHS lỗ TCD (-188 tỷ)."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Tín hiệu đèn",
+      "cho nhà đầu tư?"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh: Quản trị rủi ro",
+        "text": "Chủ động co cụm danh mục giúp các CTCK kiểm soát chi phí vốn an toàn.",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng: Chiến lược rẽ nhánh",
+        "text": "Một bên chuyển sang thu phí dịch vụ phân phối, bên kia gom tài sản tích trữ.",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ: Áp lực lãi suất",
+        "text": "Lãi suất phát hành neo cao tiếp tục đe dọa định giá tài sản cố định dài hạn.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư F0",
+      "nên làm gì?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Bóc tách từng công ty",
+        "text": "Tránh nhìn số bình quân ngành vì biến động tập trung ở vài CTCK lớn.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Theo dõi thị trường TPDN",
+        "text": "Sức khỏe kênh trái phiếu phản ánh trực tiếp nguồn thu của các công ty chứng khoán.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Cẩn trọng định giá",
+        "text": "Kiểm tra kỹ chênh lệch giá vốn và giá trị hợp lý trong danh mục AFS/FVTPL.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Tự doanh co cụm: Cảnh giác rủi ro hay cơ hội tái cơ cấu?",
+    "cta": "Theo dõi KenvinZone để đón xem phân tích tiếp theo"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
