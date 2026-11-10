@@ -1,0 +1,40 @@
+{
+  "subtitles": {
+    "enabled": true,
+    "color": "#fde047",
+    "fontSize": 18,
+    "bottom": 60,
+    "maxLines": 1
+  },
+  "backgroundFx": "candlestick",
+  "bgm": {
+    "mode": "preset",
+    "preset": "ambient",
+    "volume": 0.18
+  },
+  "scriptLines": [
+    "Điểm Bias Vàng hôm nay đạt dương sáu phẩy một trên một trăm, duy trì trạng thái Trung Lập và đi ngang phiên thứ hai liên tiếp.",
+    "Áp lực đè nặng đến từ USD âm ba phẩy ba chín, dòng tiền âm hai phẩy mười bảy cùng yếu tố riêng của Vàng âm một phẩy hai mươi sáu điểm.",
+    "Đối trọng lại là lực đỡ rất mạnh từ lãi suất thực dương tám phẩy sáu, thanh khoản M2 dương hai phẩy hai ba và khẩu vị rủi ro dương hai phẩy tám chín điểm cho thấy tín dụng vẫn ổn định.",
+    "Cấu trúc Gamma ghi nhận Net GEX dương hai phẩy năm triệu USD, giá GLD 367.82 tương đương XAUUSD 3981.9 đang nằm trên Gamma Flip 365, kẹp giữa Put Wall 360 và Call Wall 375 khiến biên độ dao động bị kìm nén.",
+    "Cho phiên tới, sáu mươi hai phần trăm kịch bản giằng co tích lũy, hai mươi mốt phần trăm rủi ro giảm thủng 360 và mười bảy phần trăm bứt phá qua 375.",
+    "Chiến lược khuyến nghị giữ trung tính trong biên 360 đến 375, canh mua khi giữ vững mốc 365, quản trị rủi ro nếu mất 360; hãy follow KenvinZone để cập nhật cùng AURORA."
+  ],
+  "slides": {
+    "deletedIds": [],
+    "scriptLines": [
+      "Điểm Bias Vàng hôm nay đạt dương sáu phẩy một trên một trăm, duy trì trạng thái Trung Lập và đi ngang phiên thứ hai liên tiếp.",
+      "Áp lực đè nặng đến từ USD âm ba phẩy ba chín, dòng tiền âm hai phẩy mười bảy cùng yếu tố riêng của Vàng âm một phẩy hai mươi sáu điểm.",
+      "Đối trọng lại là lực đỡ rất mạnh từ lãi suất thực dương tám phẩy sáu, thanh khoản M2 dương hai phẩy hai ba và khẩu vị rủi ro dương hai phẩy tám chín điểm cho thấy tín dụng vẫn ổn định.",
+      "Cấu trúc Gamma ghi nhận Net GEX dương hai phẩy năm triệu USD, giá GLD 367.82 tương đương XAUUSD 3981.9 đang nằm trên Gamma Flip 365, kẹp giữa Put Wall 360 và Call Wall 375 khiến biên độ dao động bị kìm nén.",
+      "Cho phiên tới, sáu mươi hai phần trăm kịch bản giằng co tích lũy, hai mươi mốt phần trăm rủi ro giảm thủng 360 và mười bảy phần trăm bứt phá qua 375.",
+      "Chiến lược khuyến nghị giữ trung tính trong biên 360 đến 375, canh mua khi giữ vững mốc 365, quản trị rủi ro nếu mất 360; hãy follow KenvinZone để cập nhật cùng AURORA."
+    ]
+  },
+  "visuals": {
+    "colorMode": "dark",
+    "backgroundColor": "#060a13",
+    "gridEnabled": false,
+    "backgroundFx": "candlestick-diag"
+  }
+}
