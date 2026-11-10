@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "S&P 500 & Nasdaq: Đồng Pha Trung Lập, Gamma Nén Chặt Biên Độ",
+    "description": "📊 Bản tin Phân tích định lượng Chứng khoán Mỹ từ KenvinZone Analytics.\n\n🎯 TỔNG QUAN PHIÊN DỮ LIỆU:\n- S&P 500 (SPX): Bias ngày -5.0 (Trung lập), tuần -3.4. Lực cản chính từ Khẩu vị rủi ro (-4.98) trong khi Lãi suất/Fed hỗ trợ (+3.72). Gamma SPY dương +781 triệu, Spot 752.69 nằm trên Flip 736.4, dao động trong biên hẹp Put Wall 734.0 - Call Wall 740.0 (biến động kỳ vọng ±6.1).\n- Nasdaq (QQQ): Bias ngày -0.2 (Trung lập), tuần -4.9. Lực đẩy mạnh từ Lãi suất/Fed (+8.57) cân bằng Khẩu vị rủi ro (-4.36). Gamma QQQ dương +210 triệu, Spot 679.35 trên Flip 664.75, kẹp giữa Put Wall 640.0 - Call Wall 710.0 (biến động kỳ vọng ±8.5).\n\n🎲 KỊCH BẢN PHIÊN TỚI:\n- 60% Đi ngang tích lũy\n- 25% Rung lắc điều chỉnh\n- 15% Bứt phá cản trên\n\n⚠️ Tuyên bố miễn trừ trách nhiệm: Nội dung chỉ nhằm mục đích cung cấp thông tin và phân tích định lượng, KHÔNG phải lời khuyên đầu tư tài chính.\n\n#sp500 #nasdaq #chungkhoanmy #gamma #kenvinzone",
+    "tags": [
+      "sp500",
+      "nasdaq",
+      "chứng khoán mỹ",
+      "nhận định thị trường",
+      "kenvinzone",
+      "aurora",
+      "quyền chọn",
+      "gamma spy",
+      "gamma qqq",
+      "net gex",
+      "phân tích định lượng",
+      "đầu tư mỹ",
+      "cổ phiếu mỹ"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "equity-bias",
+    "date": "10/11/2026"
+  }
+}
