@@ -214,7 +214,7 @@ def s_hook():
     parts = [grid(COORD), render_candlesticks(cands, COORD)]
     if ar:
         parts.append(arrow(ar["start"], ar["end"], ar.get("label", ""), DOWN, "arr0"))
-    body = (f'<div class="eb"><span>◆ {esc(D.get("handle","@kenvinzone"))} · AURORA EXPLAINER</span></div>'
+    body = (f'<div class="eb"><span>AURORA EXPLAINER</span></div>'
             f'<div class="htitle" id="h0t">{esc(h.get("title",""))}</div>'
             f'<div class="panel"></div>{svg_layer("".join(parts), "g0")}{telemetry("s0")}')
     js = [f"tl.fromTo('#h0t',{{opacity:0,y:-24,filter:'blur(10px)'}},{{opacity:1,y:0,filter:'blur(0px)',duration:0.5,ease:'expo.out'}},0.1);",
@@ -469,23 +469,43 @@ def s_outro():
 
 
 # ============================ CAPTIONS ============================
+def _caption_chunks(words, max_w=8):
+    """Cắt câu thành cụm NGẮN 1 dòng: ngắt ở dấu câu khi đã >=4 từ, trần max_w từ."""
+    chunks, cur = [], []
+    for w in words:
+        cur.append(w)
+        brk = len(cur) >= 4 and w["text"].rstrip().endswith((",", ";", ":", "—", "–"))
+        if brk or len(cur) >= max_w:
+            chunks.append(cur); cur = []
+    if cur:
+        if chunks and len(cur) <= 2:
+            chunks[-1].extend(cur)   # mẩu 1-2 từ cuối gộp vào cụm trước
+        else:
+            chunks.append(cur)
+    return chunks
+
+
 def captions():
-    groups, js = [], []
-    for gi, c in enumerate(SUBS["captions"]):
-        s = round(c["start"] + OFF, 3); e = round(c["end"] + OFF, 3)
-        nxt = SUBS["captions"][gi + 1]["start"] + OFF if gi + 1 < len(SUBS["captions"]) else e + 0.6
-        e2 = round(min(max(e + 0.25, e), nxt - 0.02), 3)
-        ws = "".join(f'<span class="cw" id="cw{gi}_{wi}">{esc(w["text"])}</span> ' for wi, w in enumerate(c["words"]))
+    groups, js, gi = [], [], 0
+    flat = [ch for c in SUBS["captions"] for ch in _caption_chunks(c["words"])]
+    for gi, ch in enumerate(flat):
+        s = round(ch[0]["start"] + OFF, 3)
+        e = round(max(ch[-1].get("end", ch[-1]["start"] + 0.3), ch[-1]["start"] + 0.1) + OFF, 3)
+        nxt = flat[gi + 1][0]["start"] + OFF if gi + 1 < len(flat) else e + 0.6
+        e2 = round(min(e + 0.3, nxt - 0.02), 3)
+        ws = "".join(f'<span class="cw" id="cw{gi}_{wi}">{esc(w["text"])}</span> ' for wi, w in enumerate(ch))
         groups.append(f'<div class="cg" id="cg{gi}"><div class="cpill">{ws}</div></div>')
         js.append(f"tl.set('#cg{gi}',{{opacity:1,visibility:'visible'}},{s});"
                   f"tl.fromTo('#cg{gi} .cpill',{{y:18,opacity:0}},{{y:0,opacity:1,duration:0.14,ease:'power3.out',immediateRender:false}},{s});")
-        for wi, w in enumerate(c["words"]):
+        for wi, w in enumerate(ch):
             ws_ = round(w["start"] + OFF, 3)
-            js.append(f"tl.fromTo('#cw{gi}_{wi}',{{color:'#9aa3b2'}},{{color:'#ffffff',duration:0.06,immediateRender:false}},{ws_});")
+            we_ = round(max(w.get("end", w["start"] + 0.2), w["start"] + 0.1) + OFF, 3)
+            js.append(f"tl.fromTo('#cw{gi}_{wi}',{{color:'#8e99ab'}},{{color:'#fbbf24',duration:0.05,immediateRender:false}},{ws_});"
+                      f"tl.to('#cw{gi}_{wi}',{{color:'#ffffff',duration:0.1}},{we_});")
         js.append(f"tl.to('#cg{gi} .cpill',{{opacity:0,duration:0.1}},{e2-0.1});tl.set('#cg{gi}',{{opacity:0,visibility:'hidden'}},{e2});")
     css = """
 .cg{position:absolute;left:0;right:0;top:1500px;text-align:center;opacity:0;visibility:hidden;}
-.cpill{display:inline-block;max-width:960px;padding:14px 26px;border-radius:22px;background:rgba(2,6,23,.78);border:1px solid rgba(255,255,255,.08);font-size:42px;font-weight:800;color:#cbd5e1;}
+.cpill{display:inline-block;white-space:nowrap;max-width:1000px;padding:12px 30px;border-radius:99px;background:rgba(15,23,42,.94);border:1.5px solid rgba(255,255,255,.18);box-shadow:0 12px 35px rgba(0,0,0,.65),0 0 20px rgba(56,213,231,.15);font-size:36px;font-weight:800;line-height:1.35;color:#8e99ab;}
 .cw{display:inline-block;padding:0 4px;}
 """
     return "captions", TOTAL, scene_file("captions", TOTAL, css, "\n".join(groups), "\n".join(js))
@@ -514,7 +534,7 @@ html,body{{width:{W}px;height:{H}px;overflow:hidden;background:#0e111a;}}
 </style></head><body>
 <div id="root" data-composition-id="main" data-start="0" data-duration="{TOTAL}" data-width="{W}" data-height="{H}">
   <div class="bg"></div>
-  <div class="brand" id="brand"><span class="n">{esc(D.get('handle','@kenvinzone'))} · HỌC VIỆN TRADING</span><span class="d">{esc(D.get('date',''))}</span></div>
+  <div class="brand" id="brand"><span class="n">{esc(D.get('handle','@kenvinzone'))} · THƯ VIỆN TRADING</span></div>
   <div class="prog" id="prog"><div id="progf"></div></div>
 {hosts}
   <audio id="vo" class="clip" src="assets/audio/voiceover.mp3" data-start="{OFF}" data-volume="1" data-track-index="30"></audio>
