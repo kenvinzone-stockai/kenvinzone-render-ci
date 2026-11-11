@@ -1,0 +1,179 @@
+{
+  "template": "gold-daily-bias-hf",
+  "date": "11/11/2026",
+  "title_html": "BÁO CÁO NHANH VĨ MÔ<br/>&amp; BIAS NGÀY",
+  "eyebrow": "⚡ DAILY FLASH BIAS · VÀNG",
+  "date_prefix": "PHIÊN NGÀY",
+  "regime": "TRUNG LẬP",
+  "score": 0.6,
+  "history": [
+    [
+      "09/11",
+      6.1
+    ],
+    [
+      "10/11",
+      6.1
+    ],
+    [
+      "11/11",
+      0.6
+    ]
+  ],
+  "trend_tag": "Giảm nhẹ so với phiên trước",
+  "forces": [
+    {
+      "key": "usd",
+      "label": "Áp lực USD",
+      "value": -5.58,
+      "color": "#ef4444"
+    },
+    {
+      "key": "flows",
+      "label": "Dòng tiền & xu hướng",
+      "value": -2.51,
+      "color": "#f87171"
+    },
+    {
+      "key": "gold_spec",
+      "label": "Yếu tố riêng của Vàng",
+      "value": -1.58,
+      "color": "#fb923c"
+    },
+    {
+      "key": "rates",
+      "label": "Lãi suất thực",
+      "value": 8.6,
+      "color": "#4ade80"
+    },
+    {
+      "key": "m2",
+      "label": "Thanh khoản M2",
+      "value": 2.23,
+      "color": "#38bdf8"
+    },
+    {
+      "key": "risk",
+      "label": "Khẩu vị rủi ro",
+      "value": 1.84,
+      "color": "#c084fc"
+    }
+  ],
+  "stress": "Khẩu vị rủi ro ổn định · tín dụng chưa căng",
+  "gamma": {
+    "axis": [
+      355,
+      380
+    ],
+    "net_gex_m": 2.5,
+    "call": {
+      "gld": 375.0,
+      "xau": 4060.0
+    },
+    "flip": {
+      "gld": 365.0,
+      "xau": 3951.0
+    },
+    "spot": {
+      "gld": 367.82,
+      "xau": 3981.9
+    },
+    "put": {
+      "gld": 360.0,
+      "xau": 3897.0
+    }
+  },
+  "scenarios": [
+    {
+      "key": "s_base",
+      "pct": 62,
+      "color": "#fbbf24",
+      "name": "Giằng co trong biên",
+      "desc": "Dao động kìm nén giữa Put Wall <b>360</b> (≈<b>3.897</b>) và Call Wall <b>375</b> (≈<b>4.060</b>)"
+    },
+    {
+      "key": "s_down",
+      "pct": 21,
+      "color": "#f87171",
+      "name": "Thủng Flip thoái lui",
+      "desc": "USD tiếp tục ép giá, thủng Gamma Flip <b>365</b> (≈<b>3.951</b>) lui về Put Wall <b>360</b> (≈<b>3.897</b>)"
+    },
+    {
+      "key": "s_up",
+      "pct": 17,
+      "color": "#4ade80",
+      "name": "Kiểm định Call Wall",
+      "desc": "Lực đỡ lãi suất thực phát huy, giá vượt <b>370</b> hướng lên Call Wall <b>375</b> (≈<b>4.060</b>)"
+    }
+  ],
+  "actions": [
+    {
+      "icon": "⇆",
+      "color": "#fbbf24",
+      "title": "Giữ trung tính trong biên",
+      "desc": "<b>360–375</b> GLD · ≈ <b>3.897–4.060</b> XAUUSD"
+    },
+    {
+      "icon": "▲",
+      "color": "#4ade80",
+      "title": "Điều kiện mua lại",
+      "desc": "Giữ vững trên Gamma Flip <b>365</b> (≈ <b>3.951</b>)"
+    },
+    {
+      "icon": "▼",
+      "color": "#f87171",
+      "title": "Rủi ro cần tránh",
+      "desc": "Thủng Put Wall <b>360</b> (≈ <b>3.897</b>) → áp lực bán mở rộng"
+    }
+  ],
+  "anchors": {
+    "score": "không phẩy sáu",
+    "trend": "hạ nhiệt",
+    "neutral": "Trung Lập",
+    "usd": "âm năm phẩy năm tám",
+    "flows": "âm hai phẩy năm một",
+    "gold_spec": "yếu tố riêng",
+    "counterweight": "Đối trọng",
+    "rates": "dương tám phẩy sáu",
+    "m2": "thanh khoản",
+    "risk": "khẩu vị rủi ro",
+    "stress": "chưa căng thẳng",
+    "gex": "Net GEX",
+    "gex_value": "dương hai phẩy năm",
+    "spot": "Giá GLD",
+    "spot_xau": "ba chín tám một",
+    "flip": "Gamma Flip",
+    "put": "Put Wall",
+    "call": "Call Wall",
+    "vol": "kìm nén",
+    "s_base": "sáu mươi hai phần",
+    "s_down": "hai mươi mốt phần",
+    "s_up": "mười bảy phần",
+    "act_neutral": "giữ trung tính",
+    "act_buy": "giữ vững",
+    "aurora": "AURORA",
+    "follow": "Hãy follow"
+  },
+  "sfx_ticks": [
+    "usd",
+    "flows",
+    "gold_spec",
+    "rates",
+    "m2",
+    "risk",
+    "spot",
+    "flip",
+    "put",
+    "call",
+    "s_base",
+    "s_down",
+    "s_up"
+  ],
+  "sfx_impacts": [
+    "score",
+    "gex"
+  ],
+  "audio_offset": 1.0,
+  "outro_hold": 3.6,
+  "stress_note_html": "✅ Khẩu vị rủi ro và thanh khoản M2 còn <b>dương</b> (+1.84 và +2.23), chưa có dấu hiệu căng thẳng tín dụng ép dòng tiền rời Vàng."
+}

@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "Bias Vàng 11/11: Trung Lập +0.6, Net GEX Dương Kìm Nén Biên Độ",
+    "description": "📊 BẢN TIN PHÂN TÍCH ĐỊNH LƯỢNG VÀNG HẰNG NGÀY — KENVINZONE ANALYTICS\nCập nhật dữ liệu bias định lượng và cấu trúc Gamma cho Vàng (GLD & XAUUSD) ngày 11/11/2026.\n\n🎯 1. ĐIỂM BIAS TỔNG THỂ\n• Điểm Bias: +0.60 / 100 (Chế độ: TRUNG LẬP)\n• Thay đổi: Giảm -5.40 điểm so với phiên trước\n• Xu hướng 3 phiên: +6.10 → +6.10 → +0.60\n\n⚖️ 2. BẢN ĐỒ 6 LỰC KÉO ĐỊNH LƯỢNG\n• Áp lực USD: -5.58 điểm (Đè nặng)\n• Dòng tiền & Xu hướng: -2.51 điểm (Áp lực bán)\n• Yếu tố riêng của Vàng: -1.58 điểm\n• Lãi suất thực: +8.60 điểm (Trụ đỡ vững chắc)\n• Thanh khoản M2: +2.23 điểm (Hỗ trợ thanh khoản)\n• Khẩu vị rủi ro: +1.84 điểm (Tín dụng ổn định, chưa có stress ép dòng tiền)\n\n⚡ 3. CẤU TRÚC GAMMA & BIÊN ĐỘ QUAN SÁT\n• Net GEX: +2.5 triệu USD (Dương → Biến động thị trường bị kìm nén/ghim biên)\n• Spot hiện tại: GLD 367.82 · XAUUSD ≈ 3.981.9 (Nằm trên Gamma Flip → Vùng Gamma Dương)\n• Gamma Flip: GLD 365.0 · XAUUSD ≈ 3.951.0\n• Put Wall: GLD 360.0 · XAUUSD ≈ 3.897.0\n• Call Wall: GLD 375.0 · XAUUSD ≈ 4.060.0\n\n🔮 4. BA KỊCH BẢN PHIÊN TỚI\n1️⃣ Kịch bản cơ sở (62%): Giằng co trong biên 360–375 GLD (≈ 3.897–4.060 XAUUSD).\n2️⃣ Kịch bản giảm (21%): Thủng Gamma Flip 365 (≈ 3.951) thoái lui về Put Wall 360 (≈ 3.897).\n3️⃣ Kịch bản tăng (17%): Lực đỡ lãi suất bứt phá hướng lên Call Wall 375 (≈ 4.060).\n\n📌 5. KẾ HOẠCH HÀNH ĐỘNG\n• Giữ trung tính: Giao dịch tôn trọng khung 360–375 GLD (≈ 3.897–4.060 XAUUSD).\n• Điều kiện mua: Nến ngày giữ vững trên Gamma Flip 365 (≈ 3.951).\n• Rủi ro cần tránh: Thủng Put Wall 360 (≈ 3.897) kích hoạt đà bán tháo.\n\n⚠️ Tuyên bố miễn trừ trách nhiệm: Video và số liệu cung cấp nhằm mục đích thông tin định lượng, KHÔNG phải lời khuyên đầu tư tài chính. Giao dịch luôn tiềm ẩn rủi ro.\n\n#vang #gold #xauusd #giavang #phantichdinhluong #kenvinzone #aurora #nhandinhvang",
+    "tags": [
+      "vàng",
+      "gold",
+      "xauusd",
+      "giá vàng",
+      "nhận định vàng",
+      "phân tích định lượng",
+      "kenvinzone",
+      "market bias",
+      "gamma",
+      "gld",
+      "dự báo giá vàng",
+      "đầu tư vàng",
+      "chuyện chứng khoán"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "gold-daily-bias",
+    "date": "11/11/2026"
+  }
+}
