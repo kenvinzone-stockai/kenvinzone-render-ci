@@ -26,8 +26,8 @@ Output #0, mp3, to '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/
   Stream #0:0: Audio: mp3, 24000 Hz, mono, fltp
     Metadata:
       encoder         : Lavc62.11.100 libmp3lame
-[out#0/mp3 @ 0x58b8fc19c580] video:0KiB audio:761KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.030299%
-size=     761KiB time=00:01:28.40 bitrate=  70.5kbits/s speed= 484x elapsed=0:00:00.18    
+[out#0/mp3 @ 0x558487c75080] video:0KiB audio:748KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.030794%
+size=     749KiB time=00:01:28.64 bitrate=  69.2kbits/s speed= 283x elapsed=0:00:00.31    
 Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
 Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
 Sending full script to Gemini TTS: 9 slides, 1444 chars
@@ -38,24 +38,24 @@ Full Gemini TTS saved: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-
 Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
 Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
 === Generating per-slide TTS ===
-Slide 1 TTS: 6.08s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_0.mp3
-Slide 2 TTS: 8.64s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_1.mp3
-Slide 3 TTS: 10.28s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_2.mp3
-Slide 4 TTS: 10.28s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_3.mp3
-Slide 5 TTS: 13.44s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_4.mp3
-Slide 6 TTS: 11.16s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_5.mp3
-Slide 7 TTS: 7.60s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_6.mp3
-Slide 8 TTS: 11.24s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_7.mp3
-Slide 9 TTS: 9.64s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_8.mp3
+Slide 1 TTS: 5.64s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_0.mp3
+Slide 2 TTS: 9.24s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_1.mp3
+Slide 3 TTS: 11.12s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_2.mp3
+Slide 4 TTS: 10.36s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_3.mp3
+Slide 5 TTS: 13.32s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_4.mp3
+Slide 6 TTS: 11.28s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_5.mp3
+Slide 7 TTS: 7.16s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_6.mp3
+Slide 8 TTS: 10.92s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_7.mp3
+Slide 9 TTS: 9.56s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_8.mp3
 
 === Concatenating per-slide audio ===
-Concatenated voiceover: 88.36s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/voiceover_concat.mp3
+Concatenated voiceover: 88.60s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/voiceover_concat.mp3
 === [2/3] Render HyperFrames (30fps đầy đủ) ===
 === HyperFrames (aurora-trading-explainer-hf): dung project tai /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/hf ===
   [captions] Khong co word timing tu whisper -> chia deu theo so tu.
 === HyperFrames: dung composition tu hf-data.json ===
-TOTAL 92.66 scenes ['s0', 's1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 'captions']
-=== HyperFrames: render tung khung hinh (92.7s video) ===
+TOTAL 92.9 scenes ['s0', 's1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 'captions']
+=== HyperFrames: render tung khung hinh (92.9s video) ===
   Trinh duyet render: /home/runner/.cache/ms-playwright/chromium_headless_shell-1254/chrome-headless-shell-linux64/chrome-headless-shell
   ◆  Rendering hf → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/final_video.hf.mp4
      30fps · high · auto workers (4 cores detected)
@@ -76,10 +76,10 @@ TOTAL 92.66 scenes ['s0', 's1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 'capti
   HyperFrames render 80%
   HyperFrames render 90%
   ◇  /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/final_video.hf.mp4
-     9.5 MB · 1m 32.7s video · rendered in 1m 47.4s
-     beginframe capture · software gpu · compile 1.3s · extract 0.0s · audio 2.4s · probe 0.2s · setup 2.0s · capture 1m 41.1s · encode (during capture) 1m 41.1s · assemble 0.4s
+     10.4 MB · 1m 32.9s video · rendered in 2m 3.8s
+     beginframe capture · software gpu · compile 2.0s · extract 0.0s · audio 3.4s · probe 0.2s · setup 1.3s · capture 1m 56.4s · encode (during capture) 1m 56.4s · assemble 0.6s
 Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/final_video.mp4
   Video: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/final_video.mp4
 === [3/3] Upload YouTube (privacy=private) ===
-{"ok": true, "platform": "youtube", "project": "giai-ma-trading-sideway-bottom-b-shape-11-11", "video_id": "8WUrFjN_hts", "url": "https://youtu.be/8WUrFjN_hts", "studio_url": "https://studio.youtube.com/video/8WUrFjN_hts/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
-  Xong: https://youtu.be/8WUrFjN_hts
+{"ok": true, "platform": "youtube", "project": "giai-ma-trading-sideway-bottom-b-shape-11-11", "video_id": "i5XSVyv60O0", "url": "https://youtu.be/i5XSVyv60O0", "studio_url": "https://studio.youtube.com/video/i5XSVyv60O0/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
+  Xong: https://youtu.be/i5XSVyv60O0
