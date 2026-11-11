@@ -15,8 +15,8 @@ ffmpeg version 8.0.1-3ubuntu2 Copyright (c) 2000-2025 the FFmpeg developers
   libswscale      9.  1.100 /  9.  1.100
   libswresample   6.  1.100 /  6.  1.100
 Input #0, concat, from '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/concat_list.txt':
-  Duration: N/A, start: -0.046042, bitrate: 69 kb/s
-  Stream #0:0: Audio: mp3 (mp3float), 24000 Hz, mono, fltp, 69 kb/s, start -0.046042
+  Duration: N/A, start: -0.046042, bitrate: 70 kb/s
+  Stream #0:0: Audio: mp3 (mp3float), 24000 Hz, mono, fltp, 70 kb/s, start -0.046042
 Stream mapping:
   Stream #0:0 -> #0:0 (mp3 (mp3float) -> mp3 (libmp3lame))
 Press [q] to stop, [?] for help
@@ -26,8 +26,8 @@ Output #0, mp3, to '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/
   Stream #0:0: Audio: mp3, 24000 Hz, mono, fltp
     Metadata:
       encoder         : Lavc62.11.100 libmp3lame
-[out#0/mp3 @ 0x646cab79ea80] video:0KiB audio:753KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.030590%
-size=     754KiB time=00:01:28.12 bitrate=  70.1kbits/s speed= 273x elapsed=0:00:00.32    
+[out#0/mp3 @ 0x58b8fc19c580] video:0KiB audio:761KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.030299%
+size=     761KiB time=00:01:28.40 bitrate=  70.5kbits/s speed= 484x elapsed=0:00:00.18    
 Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
 Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
 Sending full script to Gemini TTS: 9 slides, 1444 chars
@@ -38,24 +38,24 @@ Full Gemini TTS saved: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-
 Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
 Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
 === Generating per-slide TTS ===
-Slide 1 TTS: 5.64s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_0.mp3
-Slide 2 TTS: 9.08s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_1.mp3
-Slide 3 TTS: 10.04s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_2.mp3
-Slide 4 TTS: 10.20s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_3.mp3
-Slide 5 TTS: 13.52s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_4.mp3
-Slide 6 TTS: 11.20s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_5.mp3
-Slide 7 TTS: 7.40s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_6.mp3
-Slide 8 TTS: 10.72s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_7.mp3
-Slide 9 TTS: 10.28s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_8.mp3
+Slide 1 TTS: 6.08s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_0.mp3
+Slide 2 TTS: 8.64s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_1.mp3
+Slide 3 TTS: 10.28s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_2.mp3
+Slide 4 TTS: 10.28s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_3.mp3
+Slide 5 TTS: 13.44s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_4.mp3
+Slide 6 TTS: 11.16s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_5.mp3
+Slide 7 TTS: 7.60s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_6.mp3
+Slide 8 TTS: 11.24s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_7.mp3
+Slide 9 TTS: 9.64s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/line_8.mp3
 
 === Concatenating per-slide audio ===
-Concatenated voiceover: 88.08s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/voiceover_concat.mp3
+Concatenated voiceover: 88.36s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/voiceover_concat.mp3
 === [2/3] Render HyperFrames (30fps đầy đủ) ===
 === HyperFrames (aurora-trading-explainer-hf): dung project tai /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/hf ===
   [captions] Khong co word timing tu whisper -> chia deu theo so tu.
 === HyperFrames: dung composition tu hf-data.json ===
-TOTAL 92.38 scenes ['s0', 's1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 'captions']
-=== HyperFrames: render tung khung hinh (92.4s video) ===
+TOTAL 92.66 scenes ['s0', 's1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 'captions']
+=== HyperFrames: render tung khung hinh (92.7s video) ===
   Trinh duyet render: /home/runner/.cache/ms-playwright/chromium_headless_shell-1254/chrome-headless-shell-linux64/chrome-headless-shell
   ◆  Rendering hf → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/final_video.hf.mp4
      30fps · high · auto workers (4 cores detected)
@@ -76,96 +76,10 @@ TOTAL 92.38 scenes ['s0', 's1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 'capti
   HyperFrames render 80%
   HyperFrames render 90%
   ◇  /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/final_video.hf.mp4
-     8.7 MB · 1m 32.4s video · rendered in 2m 34.3s
-     beginframe capture · software gpu · compile 1.5s · extract 0.0s · audio 4.0s · probe 0.2s · setup 1.6s · capture 2m 26.4s · encode (during capture) 2m 26.4s · assemble 0.7s
+     9.5 MB · 1m 32.7s video · rendered in 1m 47.4s
+     beginframe capture · software gpu · compile 1.3s · extract 0.0s · audio 2.4s · probe 0.2s · setup 2.0s · capture 1m 41.1s · encode (during capture) 1m 41.1s · assemble 0.4s
 Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/final_video.mp4
   Video: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-11-11/output/final_video.mp4
 === [3/3] Upload YouTube (privacy=private) ===
-{"ok": true, "platform": "youtube", "project": "giai-ma-trading-sideway-bottom-b-shape-11-11", "video_id": "oMVdd7WljOU", "url": "https://youtu.be/oMVdd7WljOU", "studio_url": "https://studio.youtube.com/video/oMVdd7WljOU/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
-  Xong: https://youtu.be/oMVdd7WljOU
-=== DECK: vnindex-11112026-ngay | template=vnindex-daily-hf | preset giọng=ban-tin-vnindex ===
-  Đã tái tạo config/tts.json (giọng clone).
-  Đã tái tạo config/social-upload.json từ secret.
-  [phát âm] đã áp từ điển phiên âm cho giọng đọc (chữ hiển thị giữ nguyên).
-=== [1/3] Tạo giọng đọc (gemini) ===
-/opt/hostedtoolcache/Python/3.12.16/x64/bin/python: can't open file '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/split_voiceover.py': [Errno 2] No such file or directory
-ffmpeg version 8.0.1-3ubuntu2 Copyright (c) 2000-2025 the FFmpeg developers
-  built with gcc 15 (Ubuntu 15.2.0-13ubuntu3)
-  configuration: --prefix=/usr --extra-version=3ubuntu2 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-pocketsphinx --disable-libcaca --disable-libmfx --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libdvdnav --enable-libdvdread --enable-libjack --enable-libjxl --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-librsvg --enable-shared
-  libavutil      60.  8.100 / 60.  8.100
-  libavcodec     62. 11.100 / 62. 11.100
-  libavformat    62.  3.100 / 62.  3.100
-  libavdevice    62.  1.100 / 62.  1.100
-  libavfilter    11.  4.100 / 11.  4.100
-  libswscale      9.  1.100 /  9.  1.100
-  libswresample   6.  1.100 /  6.  1.100
-Input #0, concat, from '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-11112026-ngay/output/concat_list.txt':
-  Duration: N/A, start: -0.046042, bitrate: 77 kb/s
-  Stream #0:0: Audio: mp3 (mp3float), 24000 Hz, mono, fltp, 77 kb/s, start -0.046042
-Stream mapping:
-  Stream #0:0 -> #0:0 (mp3 (mp3float) -> mp3 (libmp3lame))
-Press [q] to stop, [?] for help
-Output #0, mp3, to '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-11112026-ngay/output/voiceover_concat.mp3':
-  Metadata:
-    TSSE            : Lavf62.3.100
-  Stream #0:0: Audio: mp3, 24000 Hz, mono, fltp
-    Metadata:
-      encoder         : Lavc62.11.100 libmp3lame
-[out#0/mp3 @ 0x57d0d3a0afc0] video:0KiB audio:893KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.025806%
-size=     893KiB time=00:01:39.72 bitrate=  73.4kbits/s speed= 346x elapsed=0:00:00.28    
-Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
-Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
-Sending full script to Gemini TTS: 10 slides, 1794 chars
-Full Gemini TTS saved: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-11112026-ngay/output/gemini_full_voiceover.mp3
-
-=== Splitting full Gemini TTS voiceover ===
-⚠ Full Gemini split failed (Command '['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/split_voiceover.py', '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-11112026-ngay', '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-11112026-ngay/output/gemini_full_voiceover.mp3', '--output-dir', '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-11112026-ngay/output']' returned non-zero exit status 2.). Falling back to per-slide Gemini TTS.
-Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
-Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
-=== Generating per-slide TTS ===
-Slide 1 TTS: 10.76s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-11112026-ngay/output/line_0.mp3
-Slide 2 TTS: 9.12s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-11112026-ngay/output/line_1.mp3
-Slide 3 TTS: 11.48s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-11112026-ngay/output/line_2.mp3
-Slide 4 TTS: 9.52s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-11112026-ngay/output/line_3.mp3
-Slide 5 TTS: 10.12s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-11112026-ngay/output/line_4.mp3
-Slide 6 TTS: 9.52s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-11112026-ngay/output/line_5.mp3
-Slide 7 TTS: 11.20s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-11112026-ngay/output/line_6.mp3
-Slide 8 TTS: 8.64s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-11112026-ngay/output/line_7.mp3
-Slide 9 TTS: 13.56s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-11112026-ngay/output/line_8.mp3
-Slide 10 TTS: 5.76s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-11112026-ngay/output/line_9.mp3
-
-=== Concatenating per-slide audio ===
-Concatenated voiceover: 99.68s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-11112026-ngay/output/voiceover_concat.mp3
-=== [2/3] Render HyperFrames (30fps đầy đủ) ===
-=== HyperFrames (vnindex-daily-hf): dung project tai /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-11112026-ngay/output/hf ===
-  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
-=== HyperFrames: dung composition tu hf-data.json ===
-TOTAL 104.28 scenes [('cover', 0.0, 11.76), ('score', 11.76, 9.12), ('journey', 20.88, 31.12), ('subs', 52.0, 9.52), ('tf', 61.52, 11.2), ('levels', 72.72, 8.64), ('scen', 81.36, 13.56), ('end', 94.92, 9.36), ('captions', 0, 104.28)]
-=== HyperFrames: render tung khung hinh (104.3s video) ===
-  Trinh duyet render: /home/runner/.cache/ms-playwright/chromium_headless_shell-1254/chrome-headless-shell-linux64/chrome-headless-shell
-  ◆  Rendering hf → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-11112026-ngay/output/final_video.hf.mp4
-     30fps · high · auto workers (4 cores detected)
-     GPU: browser GPU (auto-detect)
-  [?25l│
-  ◒  Checking browser...
-  [1G[J◇  Browser: env
-  [?25h
-    Lint: 0 error(s), 1 warning(s) — run with --lint-verbose for full output.
-    Continuing render despite lint issues. Use --strict to block errors.
-  HyperFrames render 5%
-  HyperFrames render 20%
-  HyperFrames render 30%
-  HyperFrames render 40%
-  HyperFrames render 50%
-  HyperFrames render 60%
-  HyperFrames render 70%
-  HyperFrames render 80%
-  HyperFrames render 90%
-  ◇  /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-11112026-ngay/output/final_video.hf.mp4
-     23.2 MB · 1m 44.3s video · rendered in 3m 24.6s
-     beginframe capture · software gpu · compile 1.9s · extract 0.0s · audio 4.1s · probe 0.3s · setup 2.1s · capture 3m 15.7s · encode (during capture) 3m 15.7s · assemble 0.6s
-Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-11112026-ngay/output/final_video.mp4
-  Video: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-11112026-ngay/output/final_video.mp4
-=== [3/3] Upload YouTube (privacy=private) ===
-{"ok": true, "platform": "youtube", "project": "vnindex-11112026-ngay", "video_id": "TgQ-H9gr6yA", "url": "https://youtu.be/TgQ-H9gr6yA", "studio_url": "https://studio.youtube.com/video/TgQ-H9gr6yA/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
-  Xong: https://youtu.be/TgQ-H9gr6yA
+{"ok": true, "platform": "youtube", "project": "giai-ma-trading-sideway-bottom-b-shape-11-11", "video_id": "8WUrFjN_hts", "url": "https://youtu.be/8WUrFjN_hts", "studio_url": "https://studio.youtube.com/video/8WUrFjN_hts/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
+  Xong: https://youtu.be/8WUrFjN_hts
