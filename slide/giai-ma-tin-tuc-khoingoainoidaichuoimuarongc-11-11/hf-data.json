@@ -1,0 +1,213 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "11/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "MoneyF",
+    "short": "MoneyF",
+    "author": "Long Giang",
+    "headline": "Khối ngoại nối dài chuỗi mua ròng, cổ phiếu đầu ngành bất động sản hút mạnh tiền",
+    "date": "11/11/2026",
+    "url": "https://moneyf.vn/khoi-ngoai-noi-dai-chuoi-mua-rong-co-phieu-dau-nga-duqc1zqn"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "Khối ngoại gom ròng",
+      "Sóng ngầm phân hóa"
+    ],
+    "sub": "Dòng tiền ngoại chọn lọc vào bất động sản",
+    "chips": [
+      {
+        "icon": "↗",
+        "text": "Mua ròng 2 phiên",
+        "tone": "up"
+      },
+      {
+        "icon": "◆",
+        "text": "VIC +139 tỷ",
+        "tone": "blue"
+      },
+      {
+        "icon": "↘",
+        "text": "FPT -48 tỷ",
+        "tone": "down"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "VN-Index tăng hơn 4 điểm lên <mark>1.746 điểm</mark> trong khi khối ngoại tiếp tục <mark>mua ròng phiên thứ 2</mark> với tâm điểm gom mạnh nhóm bất động sản."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh chung",
+      "mua ròng phiên thứ 2"
+    ],
+    "stats": [
+      {
+        "value": 53,
+        "decimals": 0,
+        "unit": "tỷ",
+        "label": "Mua ròng toàn sàn",
+        "badge": "Phiên 2 liên tiếp",
+        "tone": "gold",
+        "beat": 1
+      },
+      {
+        "value": 75,
+        "decimals": 0,
+        "unit": "tỷ",
+        "label": "Mua ròng HoSE",
+        "badge": "+75 tỷ",
+        "tone": "up",
+        "beat": 2
+      }
+    ],
+    "note": "Quy mô mua ròng thu hẹp so với phiên trước, HNX và UPCoM vẫn bị rút ròng nhẹ."
+  },
+  "s3": {
+    "title_lines": [
+      "Sự phân hóa",
+      "thể hiện ra sao?"
+    ],
+    "lead": "Dồn tiền vào trụ — Rút bớt nhóm chốt lời",
+    "bars": [
+      {
+        "label": "VIC",
+        "display": "+139 tỷ",
+        "value": 139,
+        "beat": 1
+      },
+      {
+        "label": "POW",
+        "display": "+78 tỷ",
+        "value": 78,
+        "beat": 1
+      },
+      {
+        "label": "FPT",
+        "display": "-48 tỷ",
+        "value": -48,
+        "beat": 2
+      },
+      {
+        "label": "NVL",
+        "display": "-39 tỷ",
+        "value": -39,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 264,
+      "suffix": " tỷ",
+      "text": "Tổng gom ròng top 3 VIC, POW, VHM",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Dịch chuyển",
+      "giữa các mảng?"
+    ],
+    "cards": [
+      {
+        "big": "Bất động sản",
+        "title": "Trụ đỡ tâm lý",
+        "text": "VIC và VHM hút ròng áp đảo, giữ nhịp chỉ số."
+      },
+      {
+        "big": "Năng lượng",
+        "title": "Hút vốn phòng thủ",
+        "text": "POW tiếp tục được giải ngân mạnh phiên thứ 2."
+      },
+      {
+        "big": "Công nghệ & Bank",
+        "title": "Áp lực cơ cấu",
+        "text": "FPT, NVL và ACB chịu lực bán ròng ngắn hạn."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Tín hiệu gì",
+      "cho thị trường?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "ĐÈN XANH",
+        "title": "Khối ngoại giữ nhịp",
+        "text": "Duy trì mua ròng 2 phiên hỗ trợ đà hồi phục VN-Index."
+      },
+      {
+        "color": "yellow",
+        "tag": "ĐÈN VÀNG",
+        "title": "Thanh khoản thấp",
+        "text": "HoSE gần 14.000 tỷ đồng, tâm lý thận trọng giằng co."
+      },
+      {
+        "color": "red",
+        "tag": "ĐÈN ĐỎ",
+        "title": "Độ lan tỏa hẹp",
+        "text": "Dòng vốn tập trung cục bộ, chưa lan rộng toàn sàn."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Vì sao",
+      "dòng tiền cô đọng?"
+    ],
+    "chain": [
+      {
+        "title": "Định giá hấp dẫn",
+        "text": "Ưu tiên cổ phiếu đã chiết khấu sâu sau các nhịp rung lắc.",
+        "beat": 1
+      },
+      {
+        "title": "Câu chuyện riêng",
+        "text": "Tập trung doanh nghiệp đầu ngành có động lực hồi phục.",
+        "beat": 1
+      },
+      {
+        "title": "Thanh khoản dè dặt",
+        "text": "Tiền chưa đủ mạnh nên khối ngoại buộc phải cô đọng.",
+        "beat": 2
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư",
+      "nên làm gì?"
+    ],
+    "items": [
+      {
+        "icon": "warn",
+        "title": "Tránh mua đuổi",
+        "text": "Không FOMO theo các phiên gom ròng khi thanh khoản còn thấp.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Theo dõi dòng tiền",
+        "text": "Quan sát sự luân chuyển giữa các nhóm ngành trên bảng điện.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Quản trị danh mục",
+        "text": "Ưu tiên doanh nghiệp nền tảng tốt và giữ tỷ trọng an toàn.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Khối ngoại nối dài chuỗi mua ròng nhưng sự phân hóa mới là tâm điểm",
+    "cta": "Theo dõi KenvinZone để giải mã thị trường mỗi ngày"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
