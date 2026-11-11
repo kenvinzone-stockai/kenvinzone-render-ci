@@ -145,7 +145,7 @@ BASE_CSS = """
 .mono{font-family:'JBM',monospace;}
 .layer{position:absolute;inset:0;width:100%;height:100%;z-index:5;}
 .panel{position:absolute;left:36px;right:36px;top:252px;height:842px;background:#131722;border:1px solid rgba(255,255,255,.08);border-radius:28px;box-shadow:0 30px 80px rgba(0,0,0,.5);z-index:1;}
-.crumb{position:absolute;top:300px;left:0;right:0;text-align:center;font-size:26px;font-weight:800;letter-spacing:4px;color:#8b93a7;text-transform:uppercase;z-index:8;}
+.crumb{position:absolute;top:296px;left:0;right:0;text-align:center;font-size:31px;font-weight:900;letter-spacing:6px;color:#aab3c5;text-transform:uppercase;z-index:8;}
 .eb{position:absolute;top:238px;left:0;right:0;text-align:center;z-index:8;}
 .eb span{display:inline-block;background:linear-gradient(135deg,#8b5cf6,#22d3ee);color:#0a0616;font-weight:900;font-size:26px;letter-spacing:4px;padding:11px 26px;border-radius:12px;}
 .tele{position:absolute;left:40px;right:40px;top:1380px;display:flex;gap:20px;z-index:8;}
@@ -206,27 +206,75 @@ def wipe_js(sel, t, dur=0.5):
             f"{{opacity:1,scaleX:1,duration:{dur},ease:'power2.out',immediateRender:false}},{t});")
 
 
+def stamp_js(sel, t):
+    """Kinetic stamp: lao từ ngoài vào như con dấu (chuẩn V2 cua ANTI)."""
+    return (f"tl.fromTo('{sel}',{{opacity:0,scale:3.1,transformOrigin:'center'}},"
+            f"{{opacity:1,scale:1,duration:0.24,ease:'back.out(2.6)',immediateRender:false}},{t});")
+
+
+def sig_ring(c, color, idn):
+    """Vòng tròn nét đứt khoanh cây nến tín hiệu (học video gốc)."""
+    x = float(c["x"]) + float(c.get("width", 16)) / 2
+    y = (price_to_y(c["h"], COORD) + price_to_y(c["l"], COORD)) / 2
+    r = max(40.0, abs(price_to_y(c["h"], COORD) - price_to_y(c["l"], COORD)) / 2 + 20)
+    return (f'<circle class="sigring" id="{idn}" cx="{x:.0f}" cy="{y:.0f}" r="{r:.0f}" fill="none"'
+            f' stroke="{color}" stroke-width="3.4" stroke-dasharray="9 7" opacity="0.95"/>')
+
+
 # ============================ SCENES ============================
 def s_hook():
     cid, dur = mk(0); s = sc("s0"); h = D.get("header", {})
     cands = s.get("candles", [])
-    ar = s.get("arrow_drop")
-    parts = [grid(COORD), render_candlesticks(cands, COORD)]
-    if ar:
-        parts.append(arrow(ar["start"], ar["end"], ar.get("label", ""), DOWN, "arr0"))
+    cover = D.get("cover", {}) or s.get("cover", {})
+    # tách tiêu đề 2 dòng theo dấu chấm giữa (• hoặc ·)
+    tparts = [x.strip() for x in re.split(r"[•·]", str(h.get("title", ""))) if x.strip()] or [str(h.get("title", ""))]
+    la = tparts[0]; lb = tparts[1] if len(tparts) > 1 else ""
+    fa = int(max(56, min(104, 880 / (max(1, len(la)) * 0.70))))
+    fb = int(max(50, min(92, 880 / (max(1, len(lb)) * 0.70)))) if lb else 0
+    points = cover.get("points") or [sc(k).get("stage", "") for k in ("s2", "s3", "s7")]
+    points = [pt for pt in points if pt][:3]
+    chips = "".join(f'<div class="c0-chip" id="c0chip{i}"><span class="n">{i+1}</span>{esc(pt)}</div>'
+                    for i, pt in enumerate(points))
+    # chart hook thu gọn dưới chips: trải nến đều theo X, trục giá cục bộ
+    chart_svg = ""
+    if cands:
+        lo = min(c["l"] for c in cands) - 4; hi = max(c["h"] for c in cands) + 4
+        c0 = {"price_min": lo, "price_max": hi, "chart_top_y": 925, "chart_height_px": 240,
+              "chart_left_x": 120, "chart_width_px": 840}
+        laid = [dict(c, x=170 + k * (760 / max(1, len(cands) - 1)), width=16, id=f"cv{k}")
+                for k, c in enumerate(cands)]
+        a1 = (laid[0]["x"] + 40, price_to_y(laid[0]["h"], c0) + 10)
+        a2 = (laid[-1]["x"] - 10, price_to_y(laid[-1]["l"], c0) - 6)
+        chart_svg = svg_layer(grid(c0) + f'<g id="g0c">{render_candlesticks(laid, c0)}</g>'
+                              + arrow(a1, a2, s.get("arrow_drop", {}).get("label", ""), DOWN, "arr0"), "g0")
+    css0 = f"""
+.c0-plate{{position:absolute;top:356px;left:40px;right:40px;text-align:center;z-index:8;}}
+.c0-plate>div{{display:inline-block;padding:24px 34px;border-radius:26px;border:2px solid rgba(139,92,246,.5);background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(139,92,246,.08));box-shadow:0 18px 50px rgba(0,0,0,.45),0 0 40px rgba(34,211,238,.18);}}
+.c0-plate h1{{font-weight:900;line-height:1.16;letter-spacing:-0.5px;margin:0;}}
+.c0-plate .a{{display:block;padding-top:.16em;font-size:{fa}px;white-space:nowrap;background:linear-gradient(100deg,#22d3ee,#8b5cf6);-webkit-background-clip:text;background-clip:text;color:transparent;}}
+.c0-plate .b{{display:block;padding-top:.14em;font-size:{fb}px;white-space:nowrap;background:linear-gradient(100deg,#fde68a,{POC});-webkit-background-clip:text;background-clip:text;color:transparent;}}
+.c0-sub{{position:absolute;top:634px;left:0;right:0;text-align:center;font-size:33px;font-weight:900;letter-spacing:3px;color:{POC};text-transform:uppercase;z-index:8;}}
+.c0-chips{{position:absolute;top:694px;left:60px;right:60px;display:flex;flex-direction:column;align-items:center;gap:12px;z-index:8;}}
+.c0-chip{{display:flex;align-items:center;gap:14px;font-weight:800;font-size:29px;color:#e2e8f0;padding:10px 24px;border-radius:99px;border:2px solid rgba(139,92,246,.45);background:rgba(15,23,42,.72);}}
+.c0-chip .n{{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8b5cf6,#22d3ee);color:#0a0616;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px;flex-shrink:0;}}
+"""
     body = (f'<div class="eb"><span>AURORA EXPLAINER</span></div>'
-            f'<div class="htitle" id="h0t">{esc(h.get("title",""))}</div>'
-            f'<div class="panel"></div>{svg_layer("".join(parts), "g0")}{telemetry("s0")}')
-    js = [f"tl.fromTo('#h0t',{{opacity:0,y:-24,filter:'blur(10px)'}},{{opacity:1,y:0,filter:'blur(0px)',duration:0.5,ease:'expo.out'}},0.1);",
-          "gsap.set('#g0 .candle-item,#g0 .arrow',{opacity:0});"]
-    for c in cands:
-        js.append(f"tl.fromTo('#g0 #{c.get('id')}',{{opacity:0,scaleY:0,transformOrigin:'center bottom'}},"
+            f'<div class="c0-plate" id="c0t"><div><h1><span class="a">{esc(la)}</span>'
+            + (f'<span class="b">{esc(lb)}</span>' if lb else "") + '</h1></div></div>'
+            f'<div class="c0-sub" id="c0s">{esc(cover.get("sub", "HÔM NAY BẠN SẼ HIỂU"))}</div>'
+            f'<div class="c0-chips" id="c0c">{chips}</div>'
+            f'<div class="panel" style="top:892px;height:300px;border-radius:24px;"></div>{chart_svg}{telemetry("s0")}')
+    js = ["tl.fromTo('#c0t',{opacity:0,scale:1.12,filter:'blur(12px)'},{opacity:1,scale:1,filter:'blur(0px)',duration:0.55,ease:'expo.out'},0.15);",
+          "gsap.set('#c0s,.c0-chip,#g0 .candle-item,#g0 .arrow',{opacity:0});",
+          "tl.fromTo('#c0s',{opacity:0,y:16},{opacity:1,y:0,duration:0.4,ease:'expo.out'},0.7);",
+          "QA('.c0-chip').forEach((c,i)=>{tl.fromTo(c,{opacity:0,x:-50},{opacity:1,x:0,duration:0.4,ease:'expo.out',immediateRender:false},0.9+i*0.18);});"]
+    for k, c in enumerate(cands):
+        js.append(f"tl.fromTo('#g0 #cv{k}',{{opacity:0,scaleY:0,transformOrigin:'center bottom'}},"
                   f"{{opacity:1,scaleY:1,duration:0.3,ease:'power2.out',immediateRender:false}},{sb(c,dur)});")
-    if ar:
+    if cands:
         js.append(wipe_js("#g0 #arr0", sb({"spawn_beat": 0.86}, dur)))
-    js.append(f"tl.fromTo('#s0-tele',{{opacity:0,y:20}},{{opacity:1,y:0,duration:0.4}},0.4);{ex('.panel,#g0',dur)}")
-    return cid, dur, scene_file(cid, dur, "", body, "".join(js))
-
+    js.append(f"tl.fromTo('#s0-tele',{{opacity:0,y:20}},{{opacity:1,y:0,duration:0.4}},0.4);{ex('.panel,#g0,#c0t,#c0s,#c0c',dur)}")
+    return cid, dur, scene_file(cid, dur, css0, body, "".join(js))
 
 def s_trap():
     cid, dur = mk(1); s = sc("s1")
@@ -301,8 +349,8 @@ def s_two():
             f'{telemetry("s2")}')
     js = ("gsap.set('#mA .candle-item,#mB .candle-item',{opacity:0});"
           "tl.fromTo('.pane2',{opacity:0,y:30},{opacity:1,y:0,duration:0.5,stagger:0.25,ease:'expo.out'},0.2);"
-          + draw_candles_js('#mA', lt(cid, B(2, 1)), step=0.08)
-          + draw_candles_js('#mB', lt(cid, B(2, 1, 0.4)), step=0.08)
+          + draw_candles_js('#mA', 0.55, step=0.07)
+          + draw_candles_js('#mB', 0.95, step=0.07)
           + f"tl.fromTo('.bigq',{{opacity:0}},{{opacity:1,duration:0.5}},{lt(cid,B(2,2))});"
           + f"tl.fromTo('#s2-tele',{{opacity:0}},{{opacity:1,duration:0.4}},0.2);{ex('#root>*',dur)}")
     return cid, dur, scene_file(cid, dur, "", body, js)
@@ -367,22 +415,43 @@ def s_shark():
         parts.append(render_icon_avatar(av.get("type", "bank_vault"), av["x"], av["y"],
                                         label=av.get("label"), scale=1.25).replace(
             'class="avatar-icon"', 'class="avatar-icon" id="g5av"', 1))
+    # badge "sửa nhận thức sai": tách "A ✘  B ✔" -> A pop, gạch ngang A, rồi B đóng dấu
+    btxt = str(bd.get("text", ""))
+    m = re.match(r"^(.*?)[✘xX]\s*(.*?)[✔vV]?\s*$", btxt) if ("✘" in btxt and "✔" in btxt) else None
+    if m:
+        bad_html = (f'<span class="bd-bad" id="g5bad">{esc(m.group(1).strip())}'
+                    f'<i class="strike" id="g5strike"></i></span>'
+                    f'<span class="bd-good" id="g5good">{esc(m.group(2).strip())} ✔</span>')
+    else:
+        bad_html = f'<span id="g5bad">{esc(btxt)}</span>'
+    css5 = """
+.badge .bd-bad{position:relative;display:inline-block;color:#8e99ab;margin-right:26px;}
+.badge .bd-bad .strike{position:absolute;left:-4%;top:52%;width:108%;height:5px;background:#f43f5e;border-radius:3px;transform:scaleX(0);transform-origin:left center;}
+.badge .bd-good{display:inline-block;color:#f59e0b;}
+"""
     body = (f'{crumb(cid)}<div class="panel"></div>{svg_layer("".join(parts), "g5")}'
-            f'<div class="badge" id="g5bd" style="color:{bd.get("color", POC)};"><span>{esc(bd.get("text",""))}</span></div>'
+            f'<div class="badge" id="g5bd" style="color:{bd.get("color", POC)};"><span>{bad_html}</span></div>'
             f'{telemetry("s5")}')
     js = ("gsap.set('#g5bar,#g5av,#g5bd',{opacity:0});"
           + wipe_js('#g5bar', lt(cid, B(5, 1)))
           + pop_js('#g5av', lt(cid, B(5, 2)))
-          + pop_js('#g5bd', lt(cid, B(5, 3)), 0.85)
-          + f"tl.fromTo('#s5-tele',{{opacity:0}},{{opacity:1,duration:0.4}},0.2);{ex('.panel,#g5,#g5bd',dur)}")
-    return cid, dur, scene_file(cid, dur, "", body, js)
+          + f"tl.set('#g5bd',{{opacity:1}},{lt(cid,B(5,3))});"
+          + pop_js('#g5bad', lt(cid, B(5, 3)), 0.8))
+    if m:
+        js += (f"gsap.set('#g5good',{{opacity:0}});"
+               f"tl.to('#g5strike',{{scaleX:1,duration:0.3,ease:'power3.in',immediateRender:false}},{lt(cid,B(5,3,0.7))});"
+               + stamp_js('#g5good', lt(cid, B(5, 3, 1.05))))
+    js += f"tl.fromTo('#s5-tele',{{opacity:0}},{{opacity:1,duration:0.4}},0.2);{ex('.panel,#g5,#g5bd',dur)}"
+    return cid, dur, scene_file(cid, dur, css5, body, js)
 
 
 def s_howto():
     cid, dur = mk(6); s = sc("s6")
     rb = s.get("rule_badge_1", {}); sl = s.get("support_line", {})
     box = sc("s1").get("sideway_box", {})
-    parts = [grid(COORD), backdrop_candles(dim=0.5)]
+    vp6 = sc("s3").get("volume_profile", {})
+    parts = [grid(COORD), backdrop_candles(dim=0.5),
+             f'<g opacity="0.5">{render_volume_profile(vp6.get("bins", []), COORD, vp6.get("poc_price", 0), x_start=CX0, max_w=215)}</g>']
     if box:
         parts.append(render_price_box(box["top_price"], box["bottom_price"], box["start_x"], box["end_x"], COORD, style="dashed", label=box.get("label", "")))
     if sl:
@@ -403,15 +472,19 @@ def s_entry():
     bo, rt = s.get("breakout_down"), s.get("retest_candle")
     ep, slx = s.get("sell_entry_pill", {}), s.get("stop_loss_line", {})
     items = s.get("checklist_rules", [])
-    parts = [grid(COORD), backdrop_candles(dim=0.4)]
+    vp7 = sc("s3").get("volume_profile", {})
+    parts = [grid(COORD), backdrop_candles(dim=0.4),
+             f'<g opacity="0.42">{render_volume_profile(vp7.get("bins", []), COORD, vp7.get("poc_price", 0), x_start=CX0, max_w=215)}</g>']
     if box:
         parts.append(f'<g opacity="0.7">{render_price_box(box["top_price"], box["bottom_price"], box["start_x"], box["end_x"], COORD, style="dashed")}</g>')
     evs = []
     if bo:
-        evs.append((f'<g id="g7bo">{render_candlesticks([dict(bo, width=bo.get("width", 20), id="c7bo")], COORD, highlight_idx=0)}'
+        evs.append((f'<g id="g7bo">{render_candlesticks([dict(bo, width=bo.get("width", 20), id="c7bo")], COORD)}'
+                    f'{sig_ring(bo, DOWN, "r7bo")}'
                     f'{candle_tag(bo, bo.get("label", ""), DOWN, "t7bo", below=True)}</g>', 1))
     if rt:
-        evs.append((f'<g id="g7rt">{render_candlesticks([dict(rt, width=rt.get("width", 20), id="c7rt")], COORD, highlight_idx=0)}'
+        evs.append((f'<g id="g7rt">{render_candlesticks([dict(rt, width=rt.get("width", 20), id="c7rt")], COORD)}'
+                    f'{sig_ring(rt, POC, "r7rt")}'
                     f'{candle_tag(rt, rt.get("label", ""), POC, "t7rt")}</g>', 2))
     if ep:
         ey = price_to_y(ep.get("price", 100), COORD)
@@ -421,14 +494,54 @@ def s_entry():
                     f'{pill(CX1 - 120, ey, ep.get("label", "BÁN"), ep.get("color", DOWN), "p7ep", fs=22)}</g>', 2))
     if slx:
         evs.append((f'<g id="g7sl">{render_level_line(slx["price"], COORD, label=slx.get("label",""), color=slx.get("color", DOWN))}</g>', 2))
+    alt = s.get("alt_branch")
+    if alt:
+        ax = float(alt.get("from_x", (box.get("start_x", CX0) + box.get("end_x", CX1)) / 2))
+        ay = price_to_y(box.get("top_price", COORD["price_max"] - 20), COORD)
+        tx = float(alt.get("to_x", min(ax + 300, CX1 - 60)))
+        ty = ay - float(alt.get("rise_px", 300))
+        labs = alt.get("labels", ["TẠO ĐÁY THẬT", "PHÁ LÊN ĐỈNH VÙNG", "ĐỨNG NGOÀI"])
+        # stack nhãn NGAY DƯỚI đầu mũi tên, đi xuống — không tràn lên vùng tiêu đề
+        lab_svg = "".join(pill(tx - 30, ty + 52 + 48 * k, t, UP if k == len(labs) - 1 else "#e2e8f0",
+                               f"altlab{k}", fs=18) for k, t in enumerate(labs))
+        cross = (f'<g id="altcross"><path d="M{CX1-158} {price_to_y(ep.get("price",100),COORD)-22} '
+                 f'L{CX1-82} {price_to_y(ep.get("price",100),COORD)+22} '
+                 f'M{CX1-82} {price_to_y(ep.get("price",100),COORD)-22} '
+                 f'L{CX1-158} {price_to_y(ep.get("price",100),COORD)+22}" '
+                 f'stroke="{UP}" stroke-width="7" stroke-linecap="round"/></g>') if ep else ""
+        parts.append(
+            f'<g id="g7alt">'
+            f'<path id="altpath" d="M{ax:.0f} {ay+60:.0f} Q {ax+40:.0f} {ty+40:.0f} {tx:.0f} {ty:.0f}"'
+            f' fill="none" stroke="{UP}" stroke-width="6" stroke-linecap="round"/>'
+            f'<polygon points="{tx:.0f},{ty-14:.0f} {tx-26:.0f},{ty+16:.0f} {tx+8:.0f},{ty+18:.0f}" fill="{UP}"/>'
+            f'<g id="altlabs">{lab_svg}</g>{cross}</g>')
     parts += [e for e, _ in evs]
     rows = "".join(f'<div class="chk{" warn" if i==0 else ""}" id="chk{i}"><div class="n">{i+1}</div><div>{esc(re.sub(chr(10), " ", it))}</div></div>'
                    for i, it in enumerate(items))
     body = (f'{crumb(cid)}<div class="panel" style="height:800px;"></div>{svg_layer("".join(parts), "g7")}'
             f'<div class="checklist" style="top:1090px;">{rows}</div>{telemetry("s7")}')
-    js = ["gsap.set('#g7bo,#g7rt,#g7ep,#g7sl,.chk',{opacity:0});"]
-    for (frag, beat), gid in zip(evs, ["#g7bo", "#g7rt", "#g7ep", "#g7sl"]):
-        js.append(pop_js(gid, lt(cid, B(7, beat)), 0.85))
+    js = ["gsap.set('#g7bo,#g7rt,#g7ep,#g7sl,.chk,#g7alt',{opacity:0});"]
+    gids = [g for g, used in [("#g7bo", bo), ("#g7rt", rt), ("#g7ep", ep), ("#g7sl", slx)] if used]
+    for (frag, beat), gid in zip(evs, gids):
+        if gid == "#g7ep":
+            js.append(f"tl.set('#g7ep',{{opacity:1}},{lt(cid,B(7,beat))});" + stamp_js("#p7ep", lt(cid, B(7, beat))) +
+                      f"tl.fromTo('#g7ep line',{{opacity:0}},{{opacity:1,duration:0.3,immediateRender:false}},{lt(cid,B(7,beat))});")
+        else:
+            js.append(pop_js(gid, lt(cid, B(7, beat)), 0.85))
+    js.append("QA('.sigring').forEach(r=>{tl.fromTo(r,{scale:1.7,opacity:0,transformOrigin:'center'},"
+              "{scale:1,opacity:1,duration:0.4,ease:'back.out(2)',immediateRender:false},"
+              + str(lt(cid, B(7, 1, 0.35))) + ");});")
+    if alt:
+        t_alt = lt(cid, B(7, 2, 1.1))
+        js.append(f"tl.set('#g7alt',{{opacity:1}},{t_alt});"
+                  f"gsap.set('#altlabs .spill,#altcross,#g7alt polygon',{{opacity:0}});"
+                  f"const AP=Q('#altpath');const AL=AP.getTotalLength();AP.style.strokeDasharray=AL;"
+                  f"tl.fromTo(AP,{{strokeDashoffset:AL}},{{strokeDashoffset:0,duration:0.6,ease:'power2.out',immediateRender:false}},{t_alt});"
+                  f"tl.fromTo('#g7alt polygon',{{opacity:0}},{{opacity:1,duration:0.15,immediateRender:false}},{t_alt}+0.55);"
+                  f"QA('#altlabs .spill').forEach((x,k)=>{{tl.fromTo(x,{{opacity:0,y:14}},{{opacity:1,y:0,duration:0.3,ease:'expo.out',immediateRender:false}},{t_alt}+0.55+k*0.22);}});")
+        if ep:
+            js.append(f"tl.fromTo('#altcross',{{opacity:0,scale:2.4,transformOrigin:'center'}},"
+                      f"{{opacity:1,scale:1,duration:0.22,ease:'back.out(2.4)',immediateRender:false}},{t_alt}+1.15);")
     for i in range(len(items)):
         js.append(f"tl.fromTo('#chk{i}',{{opacity:0,x:-60}},{{opacity:1,x:0,duration:0.45,ease:'expo.out',immediateRender:false}},{lt(cid,B(7,min(i,2),0.15*i))});")
     js.append(f"tl.fromTo('#s7-tele',{{opacity:0}},{{opacity:1,duration:0.4}},0.2);{ex('.panel,#g7,.checklist',dur)}")
@@ -439,34 +552,49 @@ def s_outro():
     cid, dur = mk(8); s = sc("s8")
     lad = s.get("ladder_model", {}); cta = s.get("cta", {})
     steps = lad.get("steps", [])
-    parts = [grid(COORD)]
-    n = max(1, len(steps))
-    seg_w = int((CX1 - CX0 - 80) / n)
-    for i, stp in enumerate(steps):
-        y = price_to_y(stp["price"], COORD)
-        x_a = CX0 + 40 + i * seg_w
-        parts.append(f'<g class="lad" id="lad{i}">'
-                     f'<line x1="{x_a}" y1="{y:.0f}" x2="{x_a+seg_w-36}" y2="{y:.0f}" stroke="{DOWN}" stroke-width="7" stroke-linecap="round"/>'
-                     f'{pill(x_a + (seg_w-36)/2, y + 40, stp.get("label", ""), DOWN, f"ladp{i}", fs=18)}</g>')
-        if i < n - 1:
-            y2 = price_to_y(steps[i + 1]["price"], COORD)
-            parts.append(f'<g class="ladarr" id="ladarr{i}">{arrow((x_a+seg_w-30, y+8), (x_a+seg_w+4, y2-8), "", "#8b93a7", f"laa{i}")}</g>')
+    # trục giá CỤC BỘ cho bậc thang nằm gọn trong panel 500..960
+    parts = []
+    if steps:
+        plo = min(x["price"] for x in steps) - 14; phi = max(x["price"] for x in steps) + 14
+        c8 = {"price_min": plo, "price_max": phi, "chart_top_y": 545, "chart_height_px": 330,
+              "chart_left_x": CX0, "chart_width_px": COORD["chart_width_px"]}
+        n = max(1, len(steps)); seg_w = int((CX1 - CX0 - 80) / n)
+        for i, stp in enumerate(steps):
+            y = price_to_y(stp["price"], c8); x_a = CX0 + 40 + i * seg_w
+            parts.append(f'<g class="lad" id="lad{i}">'
+                         f'<line x1="{x_a}" y1="{y:.0f}" x2="{x_a+seg_w-36}" y2="{y:.0f}" stroke="{DOWN}" stroke-width="7" stroke-linecap="round"/>'
+                         f'{pill(x_a + (seg_w-36)/2, y + 40, stp.get("label", ""), DOWN, f"ladp{i}", fs=18)}</g>')
+            if i < n - 1:
+                y2 = price_to_y(steps[i + 1]["price"], c8)
+                parts.append(f'<g class="ladarr" id="ladarr{i}">{arrow((x_a+seg_w-30, y+8), (x_a+seg_w+4, y2-8), "", "#8b93a7", f"laa{i}")}</g>')
+    css8 = f"""
+.o8-h{{position:absolute;top:1005px;left:0;right:0;text-align:center;font-family:'JBM';font-weight:800;font-size:62px;background:linear-gradient(135deg,#22d3ee,#8b5cf6 55%,{POC});-webkit-background-clip:text;background-clip:text;color:transparent;z-index:8;}}
+.o8-cta{{position:absolute;top:1092px;left:50px;right:50px;text-align:center;font-size:30px;font-weight:800;color:#e2e8f0;line-height:1.35;z-index:8;}}
+.o8-pl{{position:absolute;top:1186px;left:0;right:0;display:flex;gap:14px;justify-content:center;z-index:8;}}
+.o8-pl span{{font-family:'JBM';font-weight:800;font-size:27px;color:#93c5fd;border:2px solid rgba(96,165,250,.5);border-radius:12px;padding:7px 18px;}}
+.o8-d{{position:absolute;left:70px;right:70px;top:1268px;text-align:center;font-size:26px;line-height:1.4;color:#fed7aa;padding:12px 18px;border:1px solid rgba(245,158,11,.3);border-radius:14px;background:rgba(255,255,255,.03);z-index:8;}}
+.o8-d b{{color:#fff;}}
+"""
+    tg = cta.get("telegram", "")
     body = (f'<div class="eb" style="top:260px;"><span>GHI NHỚ</span></div>'
             f'<div class="htitle" style="top:350px;">“{esc(lad.get("title","NGỪNG GIẢM ≠ HẾT GIẢM"))}”</div>'
-            f'<div class="panel" style="top:500px;height:640px;"></div>{svg_layer("".join(parts), "g8")}'
-            f'<div style="position:absolute;top:1200px;left:0;right:0;text-align:center;font-size:50px;font-weight:900;z-index:8;" class="mono">{esc(D.get("handle","@kenvinzone"))}</div>'
-            f'<div style="position:absolute;top:1280px;left:60px;right:60px;text-align:center;font-size:31px;color:#9aa3b2;z-index:8;">{esc(cta.get("text",""))} → <span class="mono" style="color:#22d3ee;">{esc(cta.get("telegram",""))}</span></div>'
-            f'<div style="position:absolute;top:1688px;left:90px;right:90px;text-align:center;font-size:22px;color:#8b93a7;line-height:1.5;z-index:8;">Nội dung mang tính giáo dục · KHÔNG phải khuyến nghị đầu tư.</div>'
-            f'{telemetry("s8")}')
+            f'<div class="panel" style="top:500px;height:460px;"></div>{svg_layer("".join(parts), "g8")}'
+            f'<div class="o8-h" id="o8h">{esc(D.get("handle","@kenvinzone"))}</div>'
+            f'<div class="o8-cta" id="o8c">{esc(cta.get("text",""))}' + (f' → <span class="mono" style="color:#22d3ee;">{esc(tg)}</span>' if tg else "") + '</div>'
+            f'<div class="o8-pl" id="o8p"><span>TikTok</span><span>Reels</span><span>Shorts</span></div>'
+            f'<div class="o8-d" id="o8d">Nội dung mang tính <b>giáo dục</b>, chỉ để tham khảo — <b>KHÔNG phải khuyến nghị đầu tư</b>.</div>')
     js = ["tl.fromTo('.htitle',{opacity:0,scale:1.1,filter:'blur(10px)'},{opacity:1,scale:1,filter:'blur(0px)',duration:0.5,ease:'expo.out'},0.2);",
-          "gsap.set('#g8 .lad,#g8 .ladarr',{opacity:0});"]
+          "gsap.set('#g8 .lad,#g8 .ladarr,#o8h,#o8c,#o8p,#o8d',{opacity:0});"]
     for i in range(len(steps)):
         js.append(wipe_js(f"#lad{i}", lt(cid, B(8, 0, 0.5 + i * 0.5))))
         if i < len(steps) - 1:
             js.append(pop_js(f"#ladarr{i}", lt(cid, B(8, 0, 0.85 + i * 0.5)), 0.7))
-    js.append(f"tl.fromTo('#s8-tele',{{opacity:0}},{{opacity:1,duration:0.4}},0.3);")
-    return cid, dur, scene_file(cid, dur, "", body, "".join(js))
-
+    js.append(f"tl.fromTo('#o8h',{{opacity:0,y:18}},{{opacity:1,y:0,duration:0.45,ease:'expo.out',immediateRender:false}},{lt(cid,B(8,1))});")
+    js.append(f"tl.fromTo('#o8c',{{opacity:0}},{{opacity:1,duration:0.4,immediateRender:false}},{lt(cid,B(8,1,0.3))});")
+    js.append(f"QA('#o8p span').forEach((x,k)=>{{tl.fromTo(x,{{opacity:0,y:14}},{{opacity:1,y:0,duration:0.3,ease:'back.out(2)',immediateRender:false}},{lt(cid,B(8,1,0.55))}+k*0.12);}});"
+              f"tl.set('#o8p',{{opacity:1}},{lt(cid,B(8,1,0.5))});")
+    js.append(f"tl.fromTo('#o8d',{{opacity:0}},{{opacity:1,duration:0.4,immediateRender:false}},{lt(cid,B(8,2))});")
+    return cid, dur, scene_file(cid, dur, css8, body, "".join(js))
 
 # ============================ CAPTIONS ============================
 def _caption_chunks(words, max_w=8):
@@ -512,7 +640,16 @@ def captions():
 
 
 # ============================ ROOT ============================
+CHAPTER_COLORS = ["#f59e0b", "#f43f5e", "#22d3ee", "#8b5cf6", "#8b5cf6",
+                  "#8b5cf6", "#eab308", "#10b981", "#38bdf8"]
+
+
 def root(scene_meta):
+    segs = "".join(f'<span class="seg"><i id="sg{i}" style="background:{CHAPTER_COLORS[i % 9]};"></i></span>'
+                   for i in range(9))
+    seg_js = "".join(
+        f"tl.fromTo('#sg{i}',{{scaleX:0}},{{scaleX:1,duration:{max(round(e - st, 3), 0.1)},ease:'none',immediateRender:false}},{st});"
+        for i, (cid, st, e) in enumerate((c, st_, st_ + d) for c, st_, d in scene_meta if c != "captions"))
     hosts = "\n".join(
         f'<div id="{cid}" data-composition-id="{cid}" data-composition-src="compositions/{cid}.html" data-start="{st}" data-duration="{dur}" '
         f'data-track-index="{i+2}" data-track-kind="{"captions" if cid=="captions" else "graphics"}" data-width="{W}" data-height="{H}" style="z-index:{50 if cid=="captions" else 10+i};"></div>'
@@ -529,22 +666,25 @@ html,body{{width:{W}px;height:{H}px;overflow:hidden;background:#0e111a;}}
 .brand{{position:absolute;left:60px;right:60px;top:170px;height:44px;display:flex;align-items:center;gap:14px;z-index:60;}}
 .brand .n{{font-size:28px;font-weight:800;letter-spacing:1px;color:rgba(255,255,255,.75);}}
 .brand .d{{margin-left:auto;font-family:'JBM';font-weight:700;font-size:28px;color:#8b5cf6;}}
-.prog{{position:absolute;left:60px;right:60px;top:226px;height:5px;border-radius:3px;background:rgba(255,255,255,.08);z-index:60;overflow:hidden;}}
-#progf{{height:100%;width:100%;background:linear-gradient(90deg,#8b5cf6,#22d3ee);transform-origin:left center;}}
+.prog{{position:absolute;left:60px;right:60px;top:226px;height:7px;display:flex;gap:6px;z-index:60;}}
+.prog .seg{{flex:1;height:100%;border-radius:4px;background:rgba(255,255,255,.08);overflow:hidden;}}
+.prog .seg i{{display:block;height:100%;width:100%;transform:scaleX(0);transform-origin:left center;}}
+.rootdisc{{position:absolute;left:60px;right:60px;top:1760px;text-align:center;font-size:21px;color:#6e7891;z-index:60;}}
 </style></head><body>
 <div id="root" data-composition-id="main" data-start="0" data-duration="{TOTAL}" data-width="{W}" data-height="{H}">
   <div class="bg"></div>
   <div class="brand" id="brand"><span class="n">{esc(D.get('handle','@kenvinzone'))} · THƯ VIỆN TRADING</span></div>
-  <div class="prog" id="prog"><div id="progf"></div></div>
+  <div class="prog" id="prog">{segs}</div>
+  <div class="rootdisc">Dữ liệu minh hoạ — không phải giá thực · Nội dung giáo dục, không phải khuyến nghị đầu tư</div>
 {hosts}
   <audio id="vo" class="clip" src="assets/audio/voiceover.mp3" data-start="{OFF}" data-volume="1" data-track-index="30"></audio>
   <audio id="bgm" class="clip" src="assets/audio/bgm_loop.mp3" data-start="0" data-volume="{bgm_vol}" data-fade-out="2" data-track-index="31"></audio>
 </div>
 <script>(function(){{
 const tl=gsap.timeline({{paused:true}});
-tl.fromTo('#progf',{{scaleX:0}},{{scaleX:1,duration:{TOTAL},ease:'none'}},0);
+{seg_js}
 gsap.set('#brand,#prog',{{opacity:0}});
-tl.fromTo('#brand,#prog',{{opacity:0}},{{opacity:1,duration:0.4,immediateRender:false}},{START['s1']});
+tl.fromTo('#brand,#prog',{{opacity:0}},{{opacity:1,duration:0.4,immediateRender:false}},0.5);
 window.__timelines["main"]=tl;
 }})();</script></body></html>"""
 
