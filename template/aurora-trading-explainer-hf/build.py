@@ -102,10 +102,10 @@ def pill(x, y, text, color, idn="pil", fs=20):
             f' font-weight="900" text-anchor="middle" font-family="Arial">{esc(text)}</text></g>')
 
 
-def candle_tag(c, text, color, idn):
-    """Nhãn chú thích neo trên đỉnh một cây nến (dạng s7)."""
+def candle_tag(c, text, color, idn, below=False):
+    """Nhãn chú thích neo trên đỉnh (hoặc dưới chân, below=True) một cây nến (dạng s7)."""
     x = float(c["x"]) + float(c.get("width", 16)) / 2
-    y = price_to_y(c["h"], COORD) - 34
+    y = (price_to_y(c["l"], COORD) + 42) if below else (price_to_y(c["h"], COORD) - 34)
     return pill(x, y, text, color, idn, fs=17)
 
 
@@ -409,12 +409,16 @@ def s_entry():
     evs = []
     if bo:
         evs.append((f'<g id="g7bo">{render_candlesticks([dict(bo, width=bo.get("width", 20), id="c7bo")], COORD, highlight_idx=0)}'
-                    f'{candle_tag(bo, bo.get("label", ""), DOWN, "t7bo")}</g>', 1))
+                    f'{candle_tag(bo, bo.get("label", ""), DOWN, "t7bo", below=True)}</g>', 1))
     if rt:
         evs.append((f'<g id="g7rt">{render_candlesticks([dict(rt, width=rt.get("width", 20), id="c7rt")], COORD, highlight_idx=0)}'
                     f'{candle_tag(rt, rt.get("label", ""), POC, "t7rt")}</g>', 2))
     if ep:
-        evs.append((f'<g id="g7ep">{pill(ep.get("x", 720), price_to_y(ep.get("price", 100), COORD), ep.get("label", "BÁN"), ep.get("color", DOWN), "p7ep", fs=22)}</g>', 2))
+        ey = price_to_y(ep.get("price", 100), COORD)
+        ex0 = float(ep.get("x", 720))
+        evs.append((f'<g id="g7ep"><line x1="{ex0:.0f}" y1="{ey:.0f}" x2="{CX1-10}" y2="{ey:.0f}"'
+                    f' stroke="{ep.get("color", DOWN)}" stroke-width="2.6" stroke-dasharray="8 5"/>'
+                    f'{pill(CX1 - 120, ey, ep.get("label", "BÁN"), ep.get("color", DOWN), "p7ep", fs=22)}</g>', 2))
     if slx:
         evs.append((f'<g id="g7sl">{render_level_line(slx["price"], COORD, label=slx.get("label",""), color=slx.get("color", DOWN))}</g>', 2))
     parts += [e for e, _ in evs]
@@ -452,7 +456,7 @@ def s_outro():
             f'<div class="panel" style="top:500px;height:640px;"></div>{svg_layer("".join(parts), "g8")}'
             f'<div style="position:absolute;top:1200px;left:0;right:0;text-align:center;font-size:50px;font-weight:900;z-index:8;" class="mono">{esc(D.get("handle","@kenvinzone"))}</div>'
             f'<div style="position:absolute;top:1280px;left:60px;right:60px;text-align:center;font-size:31px;color:#9aa3b2;z-index:8;">{esc(cta.get("text",""))} → <span class="mono" style="color:#22d3ee;">{esc(cta.get("telegram",""))}</span></div>'
-            f'<div style="position:absolute;top:1560px;left:90px;right:90px;text-align:center;font-size:22px;color:#8b93a7;line-height:1.5;z-index:8;">Nội dung mang tính giáo dục · KHÔNG phải khuyến nghị đầu tư.</div>'
+            f'<div style="position:absolute;top:1688px;left:90px;right:90px;text-align:center;font-size:22px;color:#8b93a7;line-height:1.5;z-index:8;">Nội dung mang tính giáo dục · KHÔNG phải khuyến nghị đầu tư.</div>'
             f'{telemetry("s8")}')
     js = ["tl.fromTo('.htitle',{opacity:0,scale:1.1,filter:'blur(10px)'},{opacity:1,scale:1,filter:'blur(0px)',duration:0.5,ease:'expo.out'},0.2);",
           "gsap.set('#g8 .lad,#g8 .ladarr',{opacity:0});"]
