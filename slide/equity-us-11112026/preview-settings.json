@@ -1,0 +1,42 @@
+{
+  "subtitles": {
+    "enabled": true,
+    "color": "#7dd3fc",
+    "fontSize": 18,
+    "bottom": 60,
+    "maxLines": 1
+  },
+  "backgroundFx": "candlestick",
+  "bgm": {
+    "mode": "preset",
+    "preset": "ambient",
+    "volume": 0.18
+  },
+  "scriptLines": [
+    "Điểm Bias của S&P 500 đạt -2.5 và Nasdaq đạt -0.6, phản ánh trạng thái đồng pha trung lập khi cả hai khung ngày và tuần đều nghiêng nhẹ về thế giằng co.",
+    "S&P 500 ghi nhận Bias -2.5 với trợ lực từ Lãi suất Fed +3.72, nhưng chịu áp lực đối ứng từ Khẩu vị rủi ro -3.45 và Đồng USD -2.70.",
+    "Cấu trúc Gamma của SPY có Net GEX âm -238 triệu, giá Spot 749.92 nằm dưới Gamma Flip 752.44, kẹp giữa Put Wall 720.0 với Call Wall 770.0 cùng biên độ kỳ vọng ±5.0.",
+    "Với Nasdaq, Bias dừng ở -0.6 nhờ lực nâng vượt trội từ Fed +8.57 cân bằng lại áp lực bán từ Khẩu vị rủi ro -3.67 và USD -2.97.",
+    "Trên QQQ, Net GEX cũng ghi nhận mức âm -167 triệu, giá Spot 674.76 dao động dưới Flip 679.32, kẹp giữa Put Wall 675.0 và Call Wall 700.0 với biên độ ±7.9.",
+    "Cả hai chỉ số đồng pha trung lập từ tuần sang ngày, dự báo phiên tới có năm mươi lăm phần trăm giằng co, hai mươi lăm phần trăm điều chỉnh và hai mươi phần trăm hồi phục.",
+    "Nhà đầu tư nên kiên nhẫn quan sát phản ứng quanh các mốc Flip, và đừng quên theo dõi KenvinZone cùng mô hình AURORA để cập nhật định lượng mỗi ngày."
+  ],
+  "slides": {
+    "deletedIds": [],
+    "scriptLines": [
+      "Điểm Bias của S&P 500 đạt -2.5 và Nasdaq đạt -0.6, phản ánh trạng thái đồng pha trung lập khi cả hai khung ngày và tuần đều nghiêng nhẹ về thế giằng co.",
+      "S&P 500 ghi nhận Bias -2.5 với trợ lực từ Lãi suất Fed +3.72, nhưng chịu áp lực đối ứng từ Khẩu vị rủi ro -3.45 và Đồng USD -2.70.",
+      "Cấu trúc Gamma của SPY có Net GEX âm -238 triệu, giá Spot 749.92 nằm dưới Gamma Flip 752.44, kẹp giữa Put Wall 720.0 với Call Wall 770.0 cùng biên độ kỳ vọng ±5.0.",
+      "Với Nasdaq, Bias dừng ở -0.6 nhờ lực nâng vượt trội từ Fed +8.57 cân bằng lại áp lực bán từ Khẩu vị rủi ro -3.67 và USD -2.97.",
+      "Trên QQQ, Net GEX cũng ghi nhận mức âm -167 triệu, giá Spot 674.76 dao động dưới Flip 679.32, kẹp giữa Put Wall 675.0 và Call Wall 700.0 với biên độ ±7.9.",
+      "Cả hai chỉ số đồng pha trung lập từ tuần sang ngày, dự báo phiên tới có năm mươi lăm phần trăm giằng co, hai mươi lăm phần trăm điều chỉnh và hai mươi phần trăm hồi phục.",
+      "Nhà đầu tư nên kiên nhẫn quan sát phản ứng quanh các mốc Flip, và đừng quên theo dõi KenvinZone cùng mô hình AURORA để cập nhật định lượng mỗi ngày."
+    ]
+  },
+  "visuals": {
+    "colorMode": "dark",
+    "backgroundColor": "#060a13",
+    "gridEnabled": false,
+    "backgroundFx": "candlestick-diag"
+  }
+}
