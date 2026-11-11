@@ -1,2 +1,4 @@
-  Đã đóng gói slide/giai-ma-trading-sideway-bottom-b-shape-11-11: script 9 dòng / 325 từ, 9 cảnh scenes, VP 8 bins (POC @ 115.0).
-PROJECT=giai-ma-trading-sideway-bottom-b-shape-11-11
+  model khả dụng: ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest'] -> chọn gemini-flash-latest
+=== [1/2] Gemini dựng deck VNINDEX 11/11/2026 (Thứ Tư) | model=gemini-flash-latest ===
+=== [2/2] Đã dựng vnindex-11112026-ngay ===
+PROJECT=vnindex-11112026-ngay
