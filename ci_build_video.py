@@ -34,6 +34,7 @@ STYLE_PRESET = {
     "equity-bias-hf": "giai-ma-nganh",
     "intermarket-weekly-hf": "ban-tin-vnindex",
     "aurora-explainer-hf": "giai-ma-nganh",
+    "aurora-trading-explainer-hf": "giai-ma-nganh",  # dong Explainer Trading moi
 }
 
 

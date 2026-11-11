@@ -1,0 +1,473 @@
+{
+ "template": "aurora-trading-explainer-hf",
+ "date": "11/11/2026",
+ "handle": "@kenvinzone",
+ "topic_id": "sideway-bottom-b-shape",
+ "audio_offset": 0.8,
+ "outro_hold": 3.5,
+ "header": {
+  "title": "SIDEWAY Ở ĐÁY • HÌNH CHỮ b",
+  "breadcrumb": "MỞ ĐẦU"
+ },
+ "coordinate_system": {
+  "price_min": 70.0,
+  "price_max": 200.0,
+  "chart_height_px": 750,
+  "chart_top_y": 280,
+  "chart_left_x": 100,
+  "chart_width_px": 880
+ },
+ "scenes": {
+  "s0": {
+   "stage": "MỞ ĐẦU",
+   "telemetry": {
+    "left": "SAU CÚ GIẢM",
+    "right": "PHE NẮM QUYỀN: ?"
+   },
+   "candles": [
+    {
+     "id": "c0_1",
+     "o": 190.0,
+     "h": 192.0,
+     "l": 165.0,
+     "c": 168.0,
+     "x": 160,
+     "width": 18,
+     "spawn_beat": 0.2
+    },
+    {
+     "id": "c0_2",
+     "o": 168.0,
+     "h": 170.0,
+     "l": 142.0,
+     "c": 145.0,
+     "x": 190,
+     "width": 18,
+     "spawn_beat": 0.5
+    },
+    {
+     "id": "c0_3",
+     "o": 145.0,
+     "h": 146.0,
+     "l": 118.0,
+     "c": 120.0,
+     "x": 220,
+     "width": 18,
+     "spawn_beat": 0.8
+    }
+   ],
+   "arrow_drop": {
+    "start": [
+     240,
+     320
+    ],
+    "end": [
+     380,
+     520
+    ],
+    "label": "CÚ GIẢM MẠNH"
+   }
+  },
+  "s1": {
+   "stage": "BẪY BẮT ĐÁY",
+   "telemetry": {
+    "left": "BẮT ĐÁY?",
+    "right": "MẮC KẸT"
+   },
+   "sideway_box": {
+    "top_price": 125.0,
+    "bottom_price": 105.0,
+    "start_x": 260,
+    "end_x": 580,
+    "label": "SIDEWAY"
+   },
+   "sideway_candles": [
+    {
+     "id": "c1_1",
+     "o": 118.0,
+     "h": 124.0,
+     "l": 108.0,
+     "c": 112.0,
+     "x": 280,
+     "width": 16
+    },
+    {
+     "id": "c1_2",
+     "o": 112.0,
+     "h": 122.0,
+     "l": 109.0,
+     "c": 120.0,
+     "x": 310,
+     "width": 16
+    },
+    {
+     "id": "c1_3",
+     "o": 120.0,
+     "h": 125.0,
+     "l": 110.0,
+     "c": 114.0,
+     "x": 340,
+     "width": 16
+    },
+    {
+     "id": "c1_4",
+     "o": 114.0,
+     "h": 121.0,
+     "l": 108.0,
+     "c": 119.0,
+     "x": 370,
+     "width": 16
+    },
+    {
+     "id": "c1_5",
+     "o": 119.0,
+     "h": 123.0,
+     "l": 106.0,
+     "c": 110.0,
+     "x": 400,
+     "width": 16
+    }
+   ],
+   "buyers": [
+    {
+     "type": "buyer_green",
+     "x": 310,
+     "y": 952,
+     "label": "MUA",
+     "spawn_beat": 0.3
+    },
+    {
+     "type": "buyer_green",
+     "x": 350,
+     "y": 952,
+     "label": "MUA",
+     "spawn_beat": 0.4
+    },
+    {
+     "type": "buyer_green",
+     "x": 390,
+     "y": 952,
+     "label": "MUA",
+     "spawn_beat": 0.5
+    }
+   ],
+   "breakout_candle": {
+    "id": "c1_break",
+    "o": 110.0,
+    "h": 111.0,
+    "l": 88.0,
+    "c": 90.0,
+    "x": 440,
+    "width": 18,
+    "spawn_beat": 0.75
+   },
+   "trapped_buyers": [
+    {
+     "type": "trapped_red",
+     "x": 310,
+     "y": 952,
+     "label": "KẸT X",
+     "spawn_beat": 0.85
+    },
+    {
+     "type": "trapped_red",
+     "x": 350,
+     "y": 952,
+     "label": "KẸT X",
+     "spawn_beat": 0.85
+    },
+    {
+     "type": "trapped_red",
+     "x": 390,
+     "y": 952,
+     "label": "KẸT X",
+     "spawn_beat": 0.85
+    }
+   ]
+  },
+  "s2": {
+   "stage": "HAI LOẠI SIDEWAY",
+   "telemetry": {
+    "left": "HAI LOẠI",
+    "right": "GIỐNG HỆT"
+   },
+   "layout": "split_comparison",
+   "chart_top": {
+    "label": "LOẠI 1: ĐÁY THẬT",
+    "badge_status": "ĐẢO CHIỀU ↗",
+    "candles": [
+     {
+      "o": 160,
+      "h": 162,
+      "l": 130,
+      "c": 132,
+      "x": 140
+     },
+     {
+      "o": 132,
+      "h": 134,
+      "l": 110,
+      "c": 112,
+      "x": 170
+     },
+     {
+      "o": 112,
+      "h": 118,
+      "l": 105,
+      "c": 115,
+      "x": 200
+     },
+     {
+      "o": 115,
+      "h": 140,
+      "l": 114,
+      "c": 138,
+      "x": 230
+     }
+    ]
+   },
+   "chart_bottom": {
+    "label": "LOẠI 2: NGHỈ LẤY HƠI",
+    "badge_status": "GIẢM TIẾP ↘",
+    "candles": [
+     {
+      "o": 160,
+      "h": 162,
+      "l": 130,
+      "c": 132,
+      "x": 140
+     },
+     {
+      "o": 132,
+      "h": 134,
+      "l": 110,
+      "c": 112,
+      "x": 170
+     },
+     {
+      "o": 112,
+      "h": 118,
+      "l": 105,
+      "c": 108,
+      "x": 200
+     },
+     {
+      "o": 108,
+      "h": 110,
+      "l": 82,
+      "c": 85,
+      "x": 230
+     }
+    ]
+   }
+  },
+  "s3": {
+   "stage": "VOLUME PROFILE",
+   "telemetry": {
+    "left": "HÌNH CHỮ b",
+    "right": "CẨN THẬN"
+   },
+   "volume_profile": {
+    "poc_price": 115.0,
+    "bins": [
+     {
+      "price": 185.0,
+      "volume": 12
+     },
+     {
+      "price": 165.0,
+      "volume": 16
+     },
+     {
+      "price": 145.0,
+      "volume": 18
+     },
+     {
+      "price": 130.0,
+      "volume": 25
+     },
+     {
+      "price": 120.0,
+      "volume": 85
+     },
+     {
+      "price": 115.0,
+      "volume": 120
+     },
+     {
+      "price": 110.0,
+      "volume": 90
+     },
+     {
+      "price": 95.0,
+      "volume": 15
+     }
+    ]
+   },
+   "callout_b_shape": {
+    "label": "HÌNH CHỮ b",
+    "warning": "CẨN THẬN ⚠"
+   }
+  },
+  "s4": {
+   "stage": "BÓC TÁCH KHỐI LƯỢNG",
+   "telemetry": {
+    "left": "VOLUME LỚN",
+    "right": "PHE BÁN CÒN"
+   },
+   "thin_area_bracket": {
+    "top_price": 190.0,
+    "bottom_price": 135.0,
+    "label": "THÂN MẢNH = CÚ RƠI (Ít giao dịch)"
+   },
+   "fat_area_bracket": {
+    "top_price": 125.0,
+    "bottom_price": 105.0,
+    "label": "BỤNG PHÌNH = VÙNG SIDEWAY (Khối lượng lớn)"
+   }
+  },
+  "s5": {
+   "stage": "BẢN CHẤT CÁ MẬP",
+   "telemetry": {
+    "left": "TRẠM DỪNG",
+    "right": "PHE BÁN"
+   },
+   "seller_barrier": {
+    "price": 125.0,
+    "label": "NGƯỜI BÁN CHẶN"
+   },
+   "bank_seller_avatar": {
+    "type": "bank_vault",
+    "x": 680,
+    "y": 420,
+    "label": "PHE BÁN CHƯA RỜI ĐI"
+   },
+   "badge_conclusion": {
+    "text": "TẠO ĐÁY ✘  TRẠM DỪNG ✔",
+    "color": "#f59e0b"
+   }
+  },
+  "s6": {
+   "stage": "GIAO DỊCH THẾ NÀO?",
+   "telemetry": {
+    "left": "CHỜ TÍN HIỆU",
+    "right": "ĐỨNG NGOÀI"
+   },
+   "rule_badge_1": {
+    "text": "❶ ĐỪNG BẮT ĐÁY TRONG VÙNG SIDEWAY",
+    "status": "warning"
+   },
+   "support_line": {
+    "price": 105.0,
+    "label": "ĐÁY VÙNG",
+    "color": "#eab308"
+   }
+  },
+  "s7": {
+   "stage": "ĐIỂM VÀO LỆNH (ENTRY)",
+   "telemetry": {
+    "left": "ĐIỂM VÀO",
+    "right": "HÀNH ĐỘNG: BÁN"
+   },
+   "breakout_down": {
+    "o": 106.0,
+    "h": 107.0,
+    "l": 86.0,
+    "c": 88.0,
+    "x": 620,
+    "label": "ĐÓNG CỬA HẲN BÊN DƯỚI"
+   },
+   "retest_candle": {
+    "o": 88.0,
+    "h": 104.0,
+    "l": 86.0,
+    "c": 87.0,
+    "x": 660,
+    "label": "HỒI LÊN BỊ TỪ CHỐI"
+   },
+   "sell_entry_pill": {
+    "price": 100.0,
+    "x": 720,
+    "label": "BÁN (ENTRY)",
+    "color": "#ef4444"
+   },
+   "stop_loss_line": {
+    "price": 126.0,
+    "label": "SL TRÊN ĐỈNH",
+    "color": "#ef4444"
+   },
+   "checklist_rules": [
+    "❶ Đừng bắt đáy trong vùng sideway",
+    "❷ Thủng đáy - hồi lên bị từ chối = BÁN",
+    "❸ SL trên đỉnh vùng · Phá lên = Đứng ngoài"
+   ]
+  },
+  "s8": {
+   "stage": "GHI NHỚ & CTA",
+   "telemetry": {
+    "left": "GHI NHỚ",
+    "right": "KENVINZONE"
+   },
+   "ladder_model": {
+    "title": "NGỪNG GIẢM ≠ HẾT GIẢM",
+    "steps": [
+     {
+      "price": 170,
+      "label": "GOM BÁN 1"
+     },
+     {
+      "price": 135,
+      "label": "GOM BÁN 2"
+     },
+     {
+      "price": 100,
+      "label": "GOM BÁN 3"
+     }
+    ]
+   },
+   "cta": {
+    "text": "Mình cập nhật thị trường mỗi ngày trong nhóm",
+    "telegram": "@kenvinzone"
+   }
+  }
+ },
+ "script": [
+  "Giá giảm mạnh rồi đi ngang ở đáy — là đáy thật để bắt, hay chỉ nghỉ lấy hơi để giảm tiếp?",
+  "Sau cú giảm mạnh, giá bắt đầu đi ngang. Nhiều người lao vào bắt đáy vì thấy giá đã ngừng rơi. Nhưng chỉ vài phiên sau, giá thủng đáy và họ mắc kẹt.",
+  "Thực ra có hai loại đi ngang ở đáy. Loại một là đáy thật, nơi tiền lớn âm thầm gom hàng. Loại hai chỉ là trạm dừng chân, để phe bán nghỉ lấy hơi rồi đạp tiếp.",
+  "Muốn phân biệt, hãy bật Volume Profile lên. Vùng phình to nhất gọi là POC, nơi khối lượng dày đặc. Và khi vùng phình nằm sát đáy tạo hình chữ b, hãy cẩn thận.",
+  "Bóc tách hình chữ b sẽ thấy hai phần rõ rệt. Phần thân mảnh phía trên là cú rơi, giá đi nhanh nên ít giao dịch. Phần bụng phình phía dưới là vùng đi ngang, khối lượng cực lớn. Toàn bộ lực mua bán đang dồn hết vào đáy.",
+  "Vậy bản chất là gì? Khối lượng lớn mà giá không lên nổi, nghĩa là có người bán chặn ở trên. Phe bán chưa hề rời đi, họ chỉ đang xả dần. Nên đây không phải tạo đáy, mà là trạm dừng.",
+  "Vậy giao dịch thế nào? Quy tắc đầu tiên: đừng bắt đáy khi giá còn trong vùng đi ngang. Hãy kiên nhẫn chờ tín hiệu ở đáy vùng.",
+  "Điểm vào lệnh rõ nhất là khi giá đóng cửa hẳn bên dưới vùng. Nếu giá hồi lên mà bị từ chối, đó là điểm bán, cắt lỗ đặt trên đỉnh vùng. Còn nếu giá phá lên trên, tốt nhất đứng ngoài.",
+  "Ghi nhớ: giá ngừng giảm không có nghĩa là hết giảm. Nếu thấy hữu ích, hãy theo dõi KenvinZone để học tiếp các mô hình giá. Đây là góc nhìn tham khảo, không phải lời khuyên đầu tư!"
+ ],
+ "upload": {
+  "youtube": {
+   "title": "[Giải Mã Trading] Sideway ở đáy: Đáy thật hay bẫy giảm tiếp? Nhìn Volume Profile hình chữ b là biết | KenvinZone",
+   "description": "🔎 Giải Mã Trading: Giá giảm mạnh rồi đi ngang ở đáy — nên bắt đáy hay đứng ngoài?\n\n📊 Trong video:\n• Bẫy bắt đáy: vì sao người mua sớm thường mắc kẹt\n• Hai loại sideway ở đáy: đáy thật vs trạm nghỉ lấy hơi\n• Volume Profile hình chữ b: thân mảnh = cú rơi, bụng phình = vùng gom\n• POC sát đáy sau cú giảm = phe bán chưa rời đi\n• Quy tắc hành động: điểm bán, cắt lỗ, khi nào đứng ngoài\n\nNội dung mang tính giáo dục, KHÔNG phải khuyến nghị đầu tư.\n\n#trading #volumeprofile #hocvientrading #KenvinZone #giaimatrading #priceaction",
+   "tags": [
+    "trading",
+    "volume profile",
+    "POC",
+    "sideway",
+    "bat day",
+    "price action",
+    "hoc trading",
+    "KenvinZone",
+    "giai ma trading",
+    "smart money"
+   ],
+   "privacyStatus": "public",
+   "categoryId": "27",
+   "madeForKids": false
+  },
+  "facebook_reels": {
+   "caption": "Sideway ở đáy: đáy thật hay bẫy giảm tiếp? Nhìn Volume Profile hình chữ b là biết 🔎 Thân mảnh = cú rơi, bụng phình sát đáy = phe bán chưa rời đi. #trading #volumeprofile #KenvinZone #giaimatrading",
+   "videoState": "DRAFT"
+  },
+  "tiktok": {
+   "title": "Sideway ở đáy: đáy thật hay bẫy giảm tiếp? Volume Profile chữ b 🔎 #trading #volumeprofile #giaimatrading"
+  }
+ }
+}

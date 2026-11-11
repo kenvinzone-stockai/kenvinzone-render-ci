@@ -1,0 +1,152 @@
+{
+  "template": "aurora-trading-explainer-hf",
+  "date": "11/11/2026",
+  "handle": "@kenvinzone",
+  "topic_id": "sideway-bottom-b-shape",
+  "audio_offset": 0.8,
+  "outro_hold": 3.5,
+  "header": {
+    "title": "SIDEWAY Ở ĐÁY • HÌNH CHỮ b",
+    "breadcrumb": "MỞ ĐẦU"
+  },
+  "coordinate_system": {
+    "price_min": 70.0,
+    "price_max": 200.0,
+    "chart_height_px": 750,
+    "chart_top_y": 280,
+    "chart_left_x": 100,
+    "chart_width_px": 880
+  },
+  "scenes": {
+    "s0": {
+      "stage": "MỞ ĐẦU",
+      "telemetry": { "left": "SAU CÚ GIẢM", "right": "PHE NẮM QUYỀN: ?" },
+      "candles": [
+        { "id": "c0_1", "o": 190.0, "h": 192.0, "l": 165.0, "c": 168.0, "x": 160, "width": 18, "spawn_beat": 0.2 },
+        { "id": "c0_2", "o": 168.0, "h": 170.0, "l": 142.0, "c": 145.0, "x": 190, "width": 18, "spawn_beat": 0.5 },
+        { "id": "c0_3", "o": 145.0, "h": 146.0, "l": 118.0, "c": 120.0, "x": 220, "width": 18, "spawn_beat": 0.8 }
+      ],
+      "arrow_drop": { "start": [240, 320], "end": [380, 520], "label": "CÚ GIẢM MẠNH" }
+    },
+    "s1": {
+      "stage": "BẪY BẮT ĐÁY",
+      "telemetry": { "left": "BẮT ĐÁY?", "right": "MẮC KẸT" },
+      "sideway_box": {
+        "top_price": 125.0,
+        "bottom_price": 105.0,
+        "start_x": 260,
+        "end_x": 580,
+        "label": "SIDEWAY"
+      },
+      "sideway_candles": [
+        { "id": "c1_1", "o": 118.0, "h": 124.0, "l": 108.0, "c": 112.0, "x": 280, "width": 16 },
+        { "id": "c1_2", "o": 112.0, "h": 122.0, "l": 109.0, "c": 120.0, "x": 310, "width": 16 },
+        { "id": "c1_3", "o": 120.0, "h": 125.0, "l": 110.0, "c": 114.0, "x": 340, "width": 16 },
+        { "id": "c1_4", "o": 114.0, "h": 121.0, "l": 108.0, "c": 119.0, "x": 370, "width": 16 },
+        { "id": "c1_5", "o": 119.0, "h": 123.0, "l": 106.0, "c": 110.0, "x": 400, "width": 16 }
+      ],
+      "buyers": [
+        { "type": "buyer_green", "x": 310, "y": 720, "label": "MUA", "spawn_beat": 0.3 },
+        { "type": "buyer_green", "x": 350, "y": 720, "label": "MUA", "spawn_beat": 0.4 },
+        { "type": "buyer_green", "x": 390, "y": 720, "label": "MUA", "spawn_beat": 0.5 }
+      ],
+      "breakout_candle": { "id": "c1_break", "o": 110.0, "h": 111.0, "l": 88.0, "c": 90.0, "x": 440, "width": 18, "spawn_beat": 0.75 },
+      "trapped_buyers": [
+        { "type": "trapped_red", "x": 310, "y": 720, "label": "KẸT X", "spawn_beat": 0.85 },
+        { "type": "trapped_red", "x": 350, "y": 720, "label": "KẸT X", "spawn_beat": 0.85 },
+        { "type": "trapped_red", "x": 390, "y": 720, "label": "KẸT X", "spawn_beat": 0.85 }
+      ]
+    },
+    "s2": {
+      "stage": "HAI LOẠI SIDEWAY",
+      "telemetry": { "left": "HAI LOẠI", "right": "GIỐNG HỆT" },
+      "layout": "split_comparison",
+      "chart_top": {
+        "label": "LOẠI 1: ĐÁY THẬT",
+        "badge_status": "ĐẢO CHIỀU ↗",
+        "candles": [
+          { "o": 160, "h": 162, "l": 130, "c": 132, "x": 140 },
+          { "o": 132, "h": 134, "l": 110, "c": 112, "x": 170 },
+          { "o": 112, "h": 118, "l": 105, "c": 115, "x": 200 },
+          { "o": 115, "h": 140, "l": 114, "c": 138, "x": 230 }
+        ]
+      },
+      "chart_bottom": {
+        "label": "LOẠI 2: NGHỈ LẤY HƠI",
+        "badge_status": "GIẢM TIẾP ↘",
+        "candles": [
+          { "o": 160, "h": 162, "l": 130, "c": 132, "x": 140 },
+          { "o": 132, "h": 134, "l": 110, "c": 112, "x": 170 },
+          { "o": 112, "h": 118, "l": 105, "c": 108, "x": 200 },
+          { "o": 108, "h": 110, "l": 82, "c": 85, "x": 230 }
+        ]
+      }
+    },
+    "s3": {
+      "stage": "VOLUME PROFILE",
+      "telemetry": { "left": "HÌNH CHỮ b", "right": "CẨN THẬN" },
+      "volume_profile": {
+        "poc_price": 115.0,
+        "bins": [
+          { "price": 185.0, "volume": 12 },
+          { "price": 165.0, "volume": 16 },
+          { "price": 145.0, "volume": 18 },
+          { "price": 130.0, "volume": 25 },
+          { "price": 120.0, "volume": 85 },
+          { "price": 115.0, "volume": 120 },
+          { "price": 110.0, "volume": 90 },
+          { "price": 95.0, "volume": 15 }
+        ]
+      },
+      "callout_b_shape": { "label": "HÌNH CHỮ b", "warning": "CẨN THẬN ⚠" }
+    },
+    "s4": {
+      "stage": "BÓC TÁCH KHỐI LƯỢNG",
+      "telemetry": { "left": "VOLUME LỚN", "right": "PHE BÁN CÒN" },
+      "thin_area_bracket": { "top_price": 190.0, "bottom_price": 135.0, "label": "THÂN MẢNH = CÚ RƠI (Ít giao dịch)" },
+      "fat_area_bracket": { "top_price": 125.0, "bottom_price": 105.0, "label": "BỤNG PHÌNH = VÙNG SIDEWAY (Khối lượng lớn)" }
+    },
+    "s5": {
+      "stage": "BẢN CHẤT CÁ MẬP",
+      "telemetry": { "left": "TRẠM DỪNG", "right": "PHE BÁN" },
+      "seller_barrier": { "price": 125.0, "label": "NGƯỜI BÁN CHẶN" },
+      "bank_seller_avatar": { "type": "bank_vault", "x": 680, "y": 420, "label": "PHE BÁN CHƯA RỜI ĐI" },
+      "badge_conclusion": { "text": "TẠO ĐÁY ✘  TRẠM DỪNG ✔", "color": "#f59e0b" }
+    },
+    "s6": {
+      "stage": "GIAO DỊCH THẾ NÀO?",
+      "telemetry": { "left": "CHỜ TÍN HIỆU", "right": "ĐỨNG NGOÀI" },
+      "rule_badge_1": { "text": "❶ ĐỪNG BẮT ĐÁY TRONG VÙNG SIDEWAY", "status": "warning" },
+      "support_line": { "price": 105.0, "label": "ĐÁY VÙNG", "color": "#eab308" }
+    },
+    "s7": {
+      "stage": "ĐIỂM VÀO LỆNH (ENTRY)",
+      "telemetry": { "left": "ĐIỂM VÀO", "right": "HÀNH ĐỘNG: BÁN" },
+      "breakout_down": { "o": 106.0, "h": 107.0, "l": 86.0, "c": 88.0, "x": 620, "label": "ĐÓNG CỬA HẲN BÊN DƯỚI" },
+      "retest_candle": { "o": 88.0, "h": 104.0, "l": 86.0, "c": 87.0, "x": 660, "label": "HỒI LÊN BỊ TỪ CHỐI" },
+      "sell_entry_pill": { "price": 100.0, "x": 720, "label": "BÁN (ENTRY)", "color": "#ef4444" },
+      "stop_loss_line": { "price": 126.0, "label": "SL TRÊN ĐỈNH", "color": "#ef4444" },
+      "checklist_rules": [
+        "❶ Đừng bắt đáy trong vùng sideway",
+        "❷ Thủng đáy - hồi lên bị từ chối = BÁN",
+        "❸ SL trên đỉnh vùng · Phá lên = Đứng ngoài"
+      ]
+    },
+    "s8": {
+      "stage": "GHI NHỚ & CTA",
+      "telemetry": { "left": "GHI NHỚ", "right": "KENVINZONE" },
+      "ladder_model": {
+        "title": "NGỪNG GIẢM ≠ HẾT GIẢM",
+        "steps": [
+          { "price": 170, "label": "GOM BÁN 1" },
+          { "price": 135, "label": "GOM BÁN 2" },
+          { "price": 100, "label": "GOM BÁN 3" }
+        ]
+      },
+      "cta": {
+        "text": "Mình cập nhật thị trường mỗi ngày trong nhóm",
+        "telegram": "@minhanh_0808 / @kenvinzone"
+      }
+    }
+  }
+}
