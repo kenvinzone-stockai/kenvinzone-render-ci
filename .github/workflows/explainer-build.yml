@@ -1,0 +1,149 @@
+name: explainer-build
+
+# Dựng video "Giải Mã Trading" (dòng AURORA EXPLAINER — bài giảng khái niệm trading).
+# 2 đường vào:
+#   - workflow_dispatch: chạy tay — chọn lesson_file (bài soạn sẵn trong lessons/explainer/)
+#     hoặc nhập topic để Brain (build_explainer_deck.py của ANTI) tự soạn bài.
+#   - repository_dispatch (type: explainer-build): hệ ngoài bắn, client_payload.lesson_file / .topic.
+# Render 2D GSAP qua HyperFrames trên runner ubuntu (không cần GPU) — giống gold/giaima.
+on:
+  workflow_dispatch:
+    inputs:
+      lesson_file:
+        description: "Bài học soạn sẵn (JSON trong repo)"
+        required: false
+        default: "lessons/explainer/sample-sideway-b.json"
+        type: string
+      topic:
+        description: "Chủ đề cho Brain tự soạn (cần build_explainer_deck.py; bỏ trống = dùng lesson_file)"
+        required: false
+        type: string
+      privacy:
+        description: "Chế độ đăng YouTube"
+        required: false
+        default: "private"
+        type: choice
+        options: ["private", "unlisted", "public"]
+  repository_dispatch:
+    types: [explainer-build]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: explainer-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout hệ thống render
+        uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Setup Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install edge-tts elevenlabs playwright
+          python -m playwright install --with-deps chromium
+          sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Dựng deck Explainer (Brain hoặc bài soạn sẵn)
+        id: brain
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PAYLOAD_TOPIC: ${{ github.event.client_payload.topic }}
+          PAYLOAD_LESSON: ${{ github.event.client_payload.lesson_file }}
+          INPUT_TOPIC: ${{ github.event.inputs.topic }}
+          INPUT_LESSON: ${{ github.event.inputs.lesson_file }}
+        run: |
+          set -o pipefail
+          TOPIC="${PAYLOAD_TOPIC:-$INPUT_TOPIC}"
+          LESSON="${PAYLOAD_LESSON:-${INPUT_LESSON:-lessons/explainer/sample-sideway-b.json}}"
+          if [ -n "$TOPIC" ] && [ -f build_explainer_deck.py ]; then
+            echo "Brain Type C soạn bài theo chủ đề: $TOPIC"
+            python build_explainer_deck.py --topic "$TOPIC" 2>&1 | tee brain.log
+          elif [ -n "$TOPIC" ]; then
+            echo "::error::build_explainer_deck.py (Brain của ANTI) chưa có trong repo — hãy dùng lesson_file."
+            exit 1
+          else
+            echo "Đóng gói bài soạn sẵn: $LESSON"
+            python make_explainer_project.py "$LESSON" --force 2>&1 | tee brain.log
+          fi
+          PROJ=$(grep -oP 'PROJECT=\K\S+' brain.log | tail -1)
+          echo "proj=$PROJ" >> "$GITHUB_OUTPUT"
+          test -n "$PROJ"
+
+      - name: TTS + render HyperFrames + upload Private
+        id: build
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TTS_CONFIG_JSON: ${{ secrets.TTS_CONFIG_JSON }}
+          SOCIAL_UPLOAD_JSON: ${{ secrets.SOCIAL_UPLOAD_JSON }}
+          YT_CHANNEL_ID: ${{ secrets.EXPLAINER_YT_CHANNEL_ID || secrets.YT_CHANNEL_ID }}
+          HYPERFRAMES_NO_TELEMETRY: "1"
+          PRIVACY: ${{ github.event.inputs.privacy || 'private' }}
+        run: |
+          set -o pipefail
+          python ci_build_video.py "slide/${{ steps.brain.outputs.proj }}" --privacy "$PRIVACY" 2>&1 | tee ci-run.log
+
+      - name: Lưu last-upload + commit
+        if: always()
+        env:
+          YT_CHANNEL_ID: ${{ secrets.EXPLAINER_YT_CHANNEL_ID || secrets.YT_CHANNEL_ID }}
+          CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PROJ: ${{ steps.brain.outputs.proj }}
+        run: |
+          mkdir -p ci-logs ci-state
+          cp brain.log "ci-logs/explainer-brain-${{ github.run_id }}.log" 2>/dev/null || true
+          cp ci-run.log "ci-logs/explainer-run-${{ github.run_id }}.log" 2>/dev/null || true
+          if [ -f upload-result.json ]; then
+            python - <<'PY'
+          import json, os
+          r = json.load(open("upload-result.json"))
+          json.dump({"video_id": r.get("video_id",""), "project": os.environ.get("PROJ",""),
+                     "channel_id": os.environ.get("YT_CHANNEL_ID","").strip(), "chat": os.environ.get("CHAT","")},
+                    open("ci-state/last-upload.json","w"), ensure_ascii=False)
+          PY
+          fi
+          git config user.name "ci-bot"; git config user.email "ci@kenvinzone.local"
+          git add -A && git commit -m "explainer ${{ steps.brain.outputs.proj }} (run ${{ github.run_id }})" || true
+          git pull --rebase || true
+          git push || true
+
+      - name: Báo Telegram
+        if: always()
+        env:
+          TG: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PROJ: ${{ steps.brain.outputs.proj }}
+        run: |
+          if [ -z "$TG" ] || [ -z "$CHAT" ]; then echo "Telegram chưa cấu hình"; exit 0; fi
+          if [ -f upload-result.json ]; then
+            URL=$(python3 -c "import json;print(json.load(open('upload-result.json')).get('url',''))" 2>/dev/null)
+            MSG="🧩 Xong video GIẢI MÃ TRADING [$PROJ] — đang để PRIVATE:
+          $URL
+
+          Xem xong, nhắn \"duyệt\" để công khai."
+          else
+            MSG="❌ Lỗi khi dựng video Explainer [$PROJ]. Xem log repo (ci-logs/)."
+          fi
+          curl -s -X POST "https://api.telegram.org/bot$TG/sendMessage" --data-urlencode chat_id="$CHAT" --data-urlencode text="$MSG" -o /dev/null -w "notify %{http_code}\n" || true
+
+      - name: Upload artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: explainer-${{ steps.brain.outputs.proj }}
+          path: |
+            slide/${{ steps.brain.outputs.proj }}/output/final_video.mp4
+            upload-result.json
+          if-no-files-found: warn
+          retention-days: 14
