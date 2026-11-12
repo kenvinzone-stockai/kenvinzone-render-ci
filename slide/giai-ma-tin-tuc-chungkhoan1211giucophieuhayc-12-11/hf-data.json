@@ -1,0 +1,192 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "12/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "MoneyF",
+    "short": "MoneyF",
+    "author": "Long Giang",
+    "headline": "Chứng khoán 12/11: Giữ cổ phiếu hay chốt lời khi VN-Index tiến sát 1.750 điểm?",
+    "date": "12/11/2026",
+    "url": "moneyf.vn/chung-khoan-1211-giu-co-phieu-hay-chot-loi-khi-vn-l6mg3ix2"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "VN-Index Sát 1.750",
+      "Nên Giữ Hay Bán?"
+    ],
+    "sub": "Các công ty chứng khoán bất đồng quan điểm trước ngưỡng cản lớn",
+    "chips": [
+      {
+        "icon": "▲",
+        "text": "Kháng cự 1.750-1.770",
+        "tone": "gold"
+      },
+      {
+        "icon": "▼",
+        "text": "Khối lượng -22%",
+        "tone": "down"
+      },
+      {
+        "icon": "⑂",
+        "text": "4 góc nhìn trái chiều",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "VN-Index tiến sát vùng cản <mark>1.750 đến 1.770 điểm</mark> nhưng khối lượng khớp lệnh lại sụt giảm mạnh, tạo nên cuộc tranh luận nảy lửa giữa các chuyên gia."
+  },
+  "s2": {
+    "title_lines": [
+      "Thanh khoản sụt giảm",
+      "tín hiệu nói lên điều gì?"
+    ],
+    "stats": [
+      {
+        "value": -22,
+        "decimals": 0,
+        "unit": "%",
+        "label": "Khối lượng khớp lệnh so với bình quân 20 phiên",
+        "badge": "CSI ghi nhận",
+        "tone": "down",
+        "beat": 1
+      }
+    ],
+    "note": "VN-Index đóng cửa ở 1.747 điểm với nến con xoay spinning top."
+  },
+  "s3": {
+    "title_lines": [
+      "Nhận định thị trường",
+      "phân hóa ra sao?"
+    ],
+    "lead": "Phe lạc quan và phe thận trọng",
+    "bars": [
+      {
+        "label": "CSI (Mua gia tăng)",
+        "display": "Lạc quan",
+        "value": 75,
+        "beat": 1
+      },
+      {
+        "label": "SHS (Dưới cản giảm)",
+        "display": "Thận trọng",
+        "value": -60,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 1750,
+      "suffix": " đ",
+      "text": "Ngưỡng cản tâm lý cực kỳ quan trọng",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Chiến lược cụ thể",
+      "từng bên đề xuất?"
+    ],
+    "cards": [
+      {
+        "big": "CSI",
+        "title": "Tận dụng rung lắc",
+        "text": "Áp lực bán hạ nhiệt, có thể tích lũy thêm cổ phiếu."
+      },
+      {
+        "big": "Asean",
+        "title": "Tỷ trọng vừa phải",
+        "text": "Hỗ trợ 1.740-1.750 điểm, tuyệt đối không mua đuổi."
+      },
+      {
+        "big": "OCBS",
+        "title": "Hạ bớt đòn bẩy",
+        "text": "Chốt lời từng phần mã đạt kỳ vọng, kiểm soát margin."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Chi tiết lập luận",
+      "từ các chuyên gia?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "GÓC NHÌN TÍCH CỰC",
+        "title": "CSI kỳ vọng tạo đà",
+        "text": "Thanh khoản cạn kiệt cho thấy lực cung bán tháo không còn lớn."
+      },
+      {
+        "color": "yellow",
+        "tag": "GÓC NHÌN CÂN BẰNG",
+        "title": "Asean & OCBS chọn an toàn",
+        "text": "Chỉ báo RSI trung tính, dòng tiền MFI suy yếu nên cần giữ tỷ trọng vừa phải."
+      },
+      {
+        "color": "red",
+        "tag": "GÓC NHÌN PHÒNG THỦ",
+        "title": "SHS cảnh báo rủi ro",
+        "text": "Thị trường vẫn nằm dưới đường xu hướng giảm kéo dài từ tháng chín năm 2026."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Tín hiệu đèn giao thông",
+      "cho tài khoản của bạn?"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh",
+        "text": "Cổ phiếu cơ bản tốt thuộc nhóm ngân hàng, chứng khoán có dòng tiền khỏe.",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng",
+        "text": "Giữ tỷ trọng cổ phiếu ở mức vừa phải quanh vùng một nghìn bảy trăm năm mươi.",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ",
+        "text": "Hành vi mua đuổi giá xanh và duy trì tỷ lệ vay ký quỹ quá căng thẳng.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Gợi ý hành động",
+      "dành cho nhà đầu tư F0?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Chủ động hiện thực hóa lợi nhuận",
+        "text": "Bán tỉa dần từng phần những mã đã chạm mục tiêu ngắn hạn.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Cắt giảm đòn bẩy tài chính",
+        "text": "Đưa tỷ lệ margin về ngưỡng an toàn để chủ động trước biến số rung lắc.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Chờ đợi sự xác nhận của dòng tiền",
+        "text": "Chỉ nâng tỷ trọng lớn khi VN-Index bứt phá dứt khoát khỏi kênh giảm.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Vùng cản thử thách bản lĩnh giữ tiền",
+    "cta": "Theo dõi KenvinZone để giải mã thị trường mỗi ngày"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
