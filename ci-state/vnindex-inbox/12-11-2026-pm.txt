@@ -1,0 +1,161 @@
+ KenvinZone
+Phân tích chiến lược VNINDEX · HoSE
+● Tự động
+VNINDEX    12/11/2026 15:01
+⚡ Quan điểm nhanh
+VNINDEX đang suy yếu rõ rệt trong ngắn hạn: D1 gãy xuống dưới toàn bộ EMA
+(20/50/200), H4-H1 full bearish, thanh khoản phiên chiều rất thấp (vol
+ratio 0.32). Giá đóng cửa 1734.07 thấp hơn prev day close 1746.9 gần 13
+điểm, cho thấy áp lực bán chưa dừng. Không phải vùng entry, ưu tiên quan
+sát.
+45
+/ 100 điểm
+Watchlist
+55%
+Kỹ thuật
+14/30
+D1/H4/H1 đồng thuận bearish, chỉ W1/3D còn giữ bullish nhưng MACD đã cảnh
+báo yếu - cấu trúc đa khung phân kỳ rõ rệt, nghiêng về rủi ro giảm tiếp
+Timing
+8/20
+Giá đang test swing low 1734.03, M15 có pin bar nhưng momentum weakening và
+volume thấp khiến timing vào lệnh kém hấp dẫn, dễ kẹt T+2
+Dòng tiền
+7/20
+Vol ratio 0.32 là mức rất yếu, dòng tiền không ủng hộ bất kỳ breakout hay
+bounce nào lúc này
+Sector
+6/15
+Dữ liệu sector hạn chế, không đủ cơ sở xác nhận dòng tiền lan tỏa hay tập
+trung nhóm nào rõ ràng
+Rủi ro
+10/15
+Chưa có catalyst chính sách lớn xuất hiện, rủi ro chủ yếu đến từ kỹ thuật
+và thanh khoản nội tại
+🇻🇳 Bối cảnh thị trường
+Chỉ số đang test vùng hỗ trợ quanh 1734 (swing low) sau khi bị bán mạnh từ
+đỉnh prev day high 1751.57. Cấu trúc D1 chuyển bearish với giá nằm dưới
+EMA20/50/200, trong khi khung tuần vẫn giữ bullish nhưng MACD W1 đã bearish
+- dấu hiệu suy yếu momentum trung hạn. Thanh khoản phiên chiều cực thấp
+(0.32 vol ratio) khiến các tín hiệu nảy giá kém tin cậy.
+🔑 Vĩ mô & Catalyst
+Thanh khoản suy giảm mạnh phiên chiều
+Vol ratio chỉ 0.32 so với trung bình, cho thấy dòng tiền đứng ngoài quan
+sát, chưa có lực cầu bắt đáy rõ ràng
+Thanh khoản suy giảm mạnh phiên chiều
+Vol ratio chỉ 0.32 so với trung bình, cho thấy dòng tiền đứng ngoài quan
+sát, chưa có lực cầu bắt đáy rõ ràng
+Giá phá vỡ cấu trúc EMA ngắn hạn D1
+D1 đóng cửa dưới cả EMA20 (1737.26), EMA50 (1751.52) và EMA200 (1753.43),
+xác nhận xu hướng ngắn hạn đã chuyển bearish
+📊 Phân tích đa khung thời gian
+📅 Weekly (W1)
+W1 giữ trend bullish với EMA full bullish alignment, RSI vùng trung tính,
+tuy nhiên MACD bias đã chuyển bearish - tín hiệu cảnh báo sớm về suy yếu
+momentum trung hạn dù cấu trúc tăng chưa bị phá.
+📐 3 ngày (3D)
+3D cùng nhịp với W1 về trend bullish nhưng EMA align là Mixed, MACD bearish
+- xác nhận thêm sự suy yếu đang lan dần từ ngắn hạn lên các khung lớn hơn,
+cần theo dõi sát.
+📈 Daily (D1)
+D1 là tín hiệu quan trọng nhất: trend đã chuyển Bearish, EMA align Full
+Bearish, giá 1734.75 nằm dưới toàn bộ EMA20/50/200. RSI D1 thực tế 48.44
+(vùng trung tính nghiêng yếu), MACD hist dương 1.97 nhưng đang thu hẹp -
+cho thấy đà giảm có thể tiếp diễn trước khi MACD cắt xuống hẳn.
+⚡ M15
+M15 cho tín hiệu giằng co: trend bullish nhưng cấu trúc Mixed/Range, RSI đã
+vào vùng bearish, momentum weakening, volume thấp. Xuất hiện Bullish Pin
+Bar tại vùng hỗ trợ 1734 nhưng thanh khoản yếu khiến tín hiệu này kém
+thuyết phục, chỉ nên xem là phản ứng kỹ thuật ngắn, không đủ cơ sở đảo
+chiều.
+💰 Dòng tiền & Thanh khoản
+Dòng tiền đang rút khỏi thị trường rõ rệt trong phiên chiều, vol ratio 0.32
+là mức rất thấp so với chuẩn. Đây là tín hiệu thận trọng cao, nhà đầu tư
+lớn có thể đang đứng ngoài chờ xác nhận xu hướng hoặc chờ vùng giá tốt hơn
+trước khi giải ngân trở lại.
+🔄 Sector Rotation
+🟢 Dẫn dắt
+Chưa xác định rõ nhóm dẫn dắt do thanh khoản yếu toàn thị trường
+🔵 Đang hút tiền
+Cần theo dõi thêm dữ liệu sector-level
+🟡 Tăng nóng
+Nhóm đã tăng nóng trước đó có thể chịu áp lực chốt lời khi chỉ số điều chỉnh
+🔴 Nên tránh
+Cổ phiếu đang dùng margin cao trong nhịp giảm, beta cao với VNINDEX
+👁 Góc nhìn
+🏦 Quỹ / Tổ chức
+Khối lượng giao dịch thấp bất thường trong phiên chiều cho thấy dòng tiền
+tổ chức/khối ngoại có thể đang tạm dừng giải ngân, chờ tín hiệu xác nhận hỗ
+trợ hoặc phá vỡ rõ ràng hơn ở vùng 1734. Chưa thấy dấu hiệu gom hàng mạnh.
+👤 Trader cá nhân
+Nhà đầu tư cá nhân nên thận trọng với các tín hiệu nảy giá ngắn trên M15 do
+thanh khoản thấp, dễ rơi vào bull trap. Margin trong giai đoạn này có rủi
+ro cao nếu giá tiếp tục phá hỗ trợ 1734.
+📋 Ma trận kịch bản
+KB1 45%
+Tiếp tục điều chỉnh, thủng hỗ trợ 1734
+Điều kiện kích hoạt
+Giá đóng cửa dưới 1734.03 với volume tăng trở lại
+Mục tiêu
+1720.85 - 1725
+KB1 45%
+Tiếp tục điều chỉnh, thủng hỗ trợ 1734
+Điều kiện kích hoạt
+Giá đóng cửa dưới 1734.03 với volume tăng trở lại
+Mục tiêu
+1720.85 - 1725
+KB2 35%
+Phục hồi kỹ thuật ngắn hạn từ vùng hỗ trợ
+Điều kiện kích hoạt
+Giữ vững trên 1734, volume cải thiện, RSI M15 thoát vùng bearish
+Mục tiêu
+1737.28 - 1738.85
+⏱ Chiến lược theo chân trời
+📍 Hôm nay
+Giữ quan sát, không vào lệnh mới cuối phiên do thanh khoản quá yếu và tín
+hiệu đa khung chưa đồng thuận
+📆 Trong tuần
+Theo dõi vùng 1734 có giữ được không, nếu thủng cần giảm tỷ trọng, nếu giữ
+và volume cải thiện có thể cân nhắc giải ngân thăm dò
+🎯 Trung hạn
+Xu hướng W1 vẫn bullish nên nhịp điều chỉnh hiện tại có thể là cơ hội tích
+lũy nếu hỗ trợ 1720-1734 được bảo toàn
+✅ Checklist hành động nhanh
+1
+Theo dõi volume phiên tới có vượt mức trung bình không
+2
+Theo dõi volume phiên tới có vượt mức trung bình không
+3
+Xác nhận giá giữ trên swing low 1734.03
+4
+Quan sát MACD D1 có cắt xuống âm hay không
+5
+Kiểm tra phản ứng tại vùng EMA20 D1 (1737.26) khi hồi phục
+🎯 Kế hoạch hành động
+🎯 Vị thế mới
+Không mở vị thế mới lúc này, chờ xác nhận thanh khoản và cấu trúc D1 ổn
+định trở lại trên EMA20
+📦 Đang nắm giữ
+Nhà đầu tư đang giữ cổ phiếu nên theo dõi sát vùng 1734, cân nhắc giảm tỷ
+trọng nếu thủng hỗ trợ kèm volume lớn
+⚠️ Margin
+Hạ tỷ lệ margin ngay trong giai đoạn này do rủi ro T+2 cao khi cấu trúc D1
+đã bearish rõ
+✅ Nhóm ưu tiên
+Chưa đủ dữ liệu sector cụ thể, ưu tiên nhóm vốn hóa lớn có nền tảng cơ bản
+tốt khi thị trường ổn định trở lại
+🚫 Tránh FOMO
+Tránh nhóm đầu cơ đã tăng nóng trước đó, dễ bị bán tháo mạnh khi chỉ số
+điều chỉnh
+⏳ Đang chờ
+Xác nhận thanh khoản phục hồi và D1 đóng cửa lại trên EMA20 trước khi hành
+động
+🔼 Thesis mạnh lên khi
+Giá đóng cửa vững trên 1737 (EMA20 D1) kèm volume tăng mạnh
+🔽 Thesis vô hiệu khi
+Thủng 1734.03 với thanh khoản xác nhận, mở đường về 1720-1725
+Báo cáo dựa trên dữ liệu kỹ thuật tự động. Không phải khuyến nghị đầu tư
+chính thức. Nhà đầu tư tự chịu trách nhiệm quyết định.
+📊 Xem Dashboard đầy đủ tại KenvinZone
+<https://kenvinzone-stockai.github.io/vnindex-report-daily/>
+kenvinzone.com · Báo cáo tự động mỗi phiên
