@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "S&P 500 & Nasdaq: Bias Trung Lập Đồng Pha | Bản Tin Định Lượng Ngày",
+    "description": "📊 Bản tin Phân tích định lượng Chứng khoán Mỹ hàng ngày từ KenvinZone Analytics.\n\n🎯 TỔNG QUAN PHIÊN GIAO DỊCH:\n• S&P 500 (SPX): Bias ngày -1.3 (Trung lập) | Bias tuần -3.4\n• Nasdaq 100: Bias ngày -2.2 (Trung lập) | Bias tuần -4.9\n• Cả hai chỉ số đồng pha duy trì trạng thái giằng co, chịu áp lực từ tỷ giá USD và khẩu vị rủi ro, nhưng được nâng đỡ bởi kỳ vọng lãi suất Fed.\n\n🧱 CẤU TRÚC GAMMA VÀ BIÊN ĐỘ:\n• SPY: Net GEX +691 triệu USD | Spot 759.81 (trên Flip 753.51) | Put Wall 744.0 - Call Wall 775.0 | Biến động dự phóng ±4.4\n• QQQ: Net GEX +333 triệu USD | Spot 690.38 (trên Flip 676.02) | Put Wall 640.0 - Call Wall 740.0 | Biến động dự phóng ±7.3\n\n⚠️ Tuyên bố miễn trừ trách nhiệm: Bản tin chỉ nhằm mục đích cung cấp thông tin định lượng tham khảo, KHÔNG phải lời khuyên đầu tư hay khuyến nghị mua bán tài chính.\n\n#sp500 #nasdaq #chungkhoanmy #gamma #kenvinzone",
+    "tags": [
+      "sp500",
+      "nasdaq",
+      "chứng khoán mỹ",
+      "nhận định thị trường",
+      "kenvinzone",
+      "aurora",
+      "gamma gex",
+      "spy",
+      "qqq",
+      "phân tích định lượng",
+      "đầu tư mỹ",
+      "wall street",
+      "quyền chọn"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "equity-bias",
+    "date": "12/11/2026"
+  }
+}
