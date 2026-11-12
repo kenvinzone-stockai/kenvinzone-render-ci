@@ -166,3 +166,88 @@ Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-ren
 === [3/3] Upload YouTube (privacy=private) ===
 {"ok": true, "platform": "youtube", "project": "equity-us-12112026", "video_id": "AsxlzzCIJAw", "url": "https://youtu.be/AsxlzzCIJAw", "studio_url": "https://studio.youtube.com/video/AsxlzzCIJAw/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
   Xong: https://youtu.be/AsxlzzCIJAw
+=== DECK: gold-bias-12112026 | template=gold-daily-bias-hf | preset giọng=giai-ma-nganh ===
+  Đã tái tạo config/tts.json (giọng clone).
+  Đã tái tạo config/social-upload.json từ secret.
+  [phát âm] đã áp từ điển phiên âm cho giọng đọc (chữ hiển thị giữ nguyên).
+=== [1/3] Tạo giọng đọc (gemini) ===
+/opt/hostedtoolcache/Python/3.12.16/x64/bin/python: can't open file '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/split_voiceover.py': [Errno 2] No such file or directory
+ffmpeg version 8.0.1-3ubuntu2 Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 15 (Ubuntu 15.2.0-13ubuntu3)
+  configuration: --prefix=/usr --extra-version=3ubuntu2 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-pocketsphinx --disable-libcaca --disable-libmfx --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libdvdnav --enable-libdvdread --enable-libjack --enable-libjxl --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-librsvg --enable-shared
+  libavutil      60.  8.100 / 60.  8.100
+  libavcodec     62. 11.100 / 62. 11.100
+  libavformat    62.  3.100 / 62.  3.100
+  libavdevice    62.  1.100 / 62.  1.100
+  libavfilter    11.  4.100 / 11.  4.100
+  libswscale      9.  1.100 /  9.  1.100
+  libswresample   6.  1.100 /  6.  1.100
+Input #0, concat, from '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-12112026/output/concat_list.txt':
+  Duration: N/A, start: -0.046042, bitrate: 71 kb/s
+  Stream #0:0: Audio: mp3 (mp3float), 24000 Hz, mono, fltp, 71 kb/s, start -0.046042
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> mp3 (libmp3lame))
+Press [q] to stop, [?] for help
+Output #0, mp3, to '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-12112026/output/voiceover_concat.mp3':
+  Metadata:
+    TSSE            : Lavf62.3.100
+  Stream #0:0: Audio: mp3, 24000 Hz, mono, fltp
+    Metadata:
+      encoder         : Lavc62.11.100 libmp3lame
+[out#0/mp3 @ 0x568a87ef6b40] video:0KiB audio:398KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.057976%
+size=     398KiB time=00:00:44.96 bitrate=  72.5kbits/s speed= 276x elapsed=0:00:00.16    
+Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
+Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
+Sending full script to Gemini TTS: 6 slides, 673 chars
+Full Gemini TTS saved: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-12112026/output/gemini_full_voiceover.mp3
+
+=== Splitting full Gemini TTS voiceover ===
+⚠ Full Gemini split failed (Command '['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/split_voiceover.py', '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-12112026', '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-12112026/output/gemini_full_voiceover.mp3', '--output-dir', '/home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-12112026/output']' returned non-zero exit status 2.). Falling back to per-slide Gemini TTS.
+Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
+Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
+=== Generating per-slide TTS ===
+Slide 1 TTS: 5.76s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-12112026/output/line_0.mp3
+Slide 2 TTS: 6.36s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-12112026/output/line_1.mp3
+Slide 3 TTS: 6.36s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-12112026/output/line_2.mp3
+Slide 4 TTS: 12.04s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-12112026/output/line_3.mp3
+Slide 5 TTS: 7.08s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-12112026/output/line_4.mp3
+Slide 6 TTS: 7.32s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-12112026/output/line_5.mp3
+
+=== Concatenating per-slide audio ===
+Concatenated voiceover: 44.92s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-12112026/output/voiceover_concat.mp3
+=== [2/3] Render HyperFrames (30fps đầy đủ) ===
+=== HyperFrames (gold-daily-bias-hf): dung project tai /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-12112026/output/hf ===
+  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
+=== HyperFrames: dung composition tu hf-data.json ===
+  [anchor] 'gold_spec' ('yếu tố riêng') not heard -> default position
+  [anchor] 'm2' ('thanh khoản') not heard -> default position
+  [anchor] 'spot_xau' ('ba chín tám một') not heard -> default position
+TOTAL 49.52 scenes [('hook', 0.0, 6.76), ('forces', 6.76, 12.72), ('gamma', 19.48, 12.04), ('scen', 31.52, 7.08), ('cta', 38.6, 10.92), ('captions', 0, 49.52)]
+=== HyperFrames: render tung khung hinh (49.5s video) ===
+  Trinh duyet render: /home/runner/.cache/ms-playwright/chromium_headless_shell-1254/chrome-headless-shell-linux64/chrome-headless-shell
+  ◆  Rendering hf → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-12112026/output/final_video.hf.mp4
+     30fps · high · auto workers (4 cores detected)
+     GPU: browser GPU (auto-detect)
+  [?25l│
+  ◒  Checking browser...
+  [1G[J◇  Browser: env
+  [?25h
+    Lint: 0 error(s), 1 warning(s) — run with --lint-verbose for full output.
+    Continuing render despite lint issues. Use --strict to block errors.
+  HyperFrames render 5%
+  HyperFrames render 20%
+  HyperFrames render 30%
+  HyperFrames render 40%
+  HyperFrames render 50%
+  HyperFrames render 60%
+  HyperFrames render 70%
+  HyperFrames render 80%
+  HyperFrames render 90%
+  ◇  /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-12112026/output/final_video.hf.mp4
+     12.6 MB · 49.5s video · rendered in 2m 3.2s
+     beginframe capture · software gpu · compile 1.6s · extract 0.0s · audio 3.1s · probe 0.3s · setup 1.8s · capture 1m 55.9s · encode (during capture) 1m 55.9s · assemble 0.6s
+Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-12112026/output/final_video.mp4
+  Video: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-12112026/output/final_video.mp4
+=== [3/3] Upload YouTube (privacy=private) ===
+{"ok": true, "platform": "youtube", "project": "gold-bias-12112026", "video_id": "fSEQPvuLJBI", "url": "https://youtu.be/fSEQPvuLJBI", "studio_url": "https://studio.youtube.com/video/fSEQPvuLJBI/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
+  Xong: https://youtu.be/fSEQPvuLJBI
