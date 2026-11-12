@@ -1,0 +1,207 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "12/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "Vietstock",
+    "short": "Vietstock",
+    "author": "Chí Kiên",
+    "headline": "Chuyên gia gợi ý kế hoạch phân bổ vốn cho 1 năm tới, điểm mấu chốt là đánh giá tổng thể năng lực tài chính",
+    "date": "12/11/2026",
+    "url": "https://vietstock.vn/2026/11/chuyen-gia-goi-y-ke-hoach-phan-bo-von-cho-1-nam-toi-diem-mau-chot-la-danh-gia-tong-the-nang-luc-tai-chinh-145-1514293.htm"
+  },
+  "hook": {
+    "eyebrow": "Kế Hoạch Phân Bổ Vốn",
+    "title_lines": [
+      "Phân Bổ Vốn Ra Sao",
+      "Cho 1 Năm Tới?"
+    ],
+    "sub": "Đánh giá năng lực tài chính trước khi xuống tiền",
+    "chips": [
+      {
+        "icon": "◆",
+        "text": "P/E 9.3x hấp dẫn",
+        "tone": "up"
+      },
+      {
+        "icon": "⑂",
+        "text": "30-40% thu nhập cố định",
+        "tone": "gold"
+      },
+      {
+        "icon": "↘",
+        "text": "Hạ đòn bẩy nợ",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Chiến lược phân bổ 12 tháng tới",
+    "summary_html": "Tại Vietnam Investment Forum, các chuyên gia gợi ý <mark>kế hoạch phân bổ dòng tiền</mark> và nhấn mạnh tầm quan trọng của <mark>quản trị rủi ro tài chính</mark> cá nhân."
+  },
+  "s2": {
+    "title_lines": [
+      "Định giá cổ phiếu",
+      "đang ở vùng nào?"
+    ],
+    "stats": [
+      {
+        "value": 9.3,
+        "decimals": 1,
+        "unit": "lần",
+        "label": "P/E thị trường (trừ VIC)",
+        "badge": "Vùng hấp dẫn",
+        "tone": "gold",
+        "beat": 1
+      },
+      {
+        "value": 8.5,
+        "decimals": 1,
+        "unit": "lần",
+        "label": "P/E dự phóng khi LN +17%",
+        "badge": "Biên an toàn cao",
+        "tone": "blue",
+        "beat": 2
+      }
+    ],
+    "note": "Theo SHS, lợi nhuận kỳ vọng của thị trường đang lớn hơn rủi ro."
+  },
+  "s3": {
+    "title_lines": [
+      "Dịch chuyển dòng tiền",
+      "vào lớp tài sản nào?"
+    ],
+    "lead": "Tối ưu thanh khoản và thu nhập cố định",
+    "bars": [
+      {
+        "label": "Thu nhập cố định",
+        "display": "30-40%",
+        "value": 35,
+        "beat": 1
+      },
+      {
+        "label": "Cổ phiếu định giá rẻ",
+        "display": "Tăng dần",
+        "value": 30,
+        "beat": 1
+      },
+      {
+        "label": "BĐS đầu cơ & Vàng",
+        "display": "Hạ tỷ trọng",
+        "value": -20,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 40,
+      "suffix": "%",
+      "text": "tỷ trọng tài sản thu nhập cố định được chuyên gia SHS ưu tiên",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Ba lớp quản trị",
+      "rủi ro cần nhớ?"
+    ],
+    "cards": [
+      {
+        "big": "6-12 tháng",
+        "title": "Bảo đảm sinh hoạt",
+        "text": "Giữ dòng tiền chi trả nghĩa vụ thiết yếu ngay cả khi mất thu nhập."
+      },
+      {
+        "big": "Ngưỡng cắt lỗ",
+        "title": "Chặn đứng rủi ro",
+        "text": "Xác định mức lỗ tối đa cho từng tài sản để không bị ép bán tháo."
+      },
+      {
+        "big": "Lợi nhuận/Rủi ro",
+        "title": "Cân đối kỳ vọng",
+        "text": "Lợi nhuận kỳ vọng phải đủ hấp dẫn tương xứng với mức chịu lỗ."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Tín hiệu các kênh",
+      "đầu tư hiện nay?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "ĐÈN XANH",
+        "title": "Cổ phiếu & Chứng chỉ quỹ",
+        "text": "Định giá hấp dẫn, mở ra cơ hội tích lũy dài hạn tốt."
+      },
+      {
+        "color": "yellow",
+        "tag": "ĐÈN VÀNG",
+        "title": "BĐS dòng tiền & Trái phiếu",
+        "text": "Tạo thanh khoản ổn định nhưng cần chọn lọc dự án kỹ lưỡng."
+      },
+      {
+        "color": "red",
+        "tag": "ĐÈN ĐỎ",
+        "title": "Đòn bẩy tài chính cao",
+        "text": "Lãi suất neo cao, dùng đòn bẩy quá mức dễ gây mất khả năng trả nợ."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Giải pháp nào",
+      "cho nhà đầu tư F0?"
+    ],
+    "chain": [
+      {
+        "title": "Ủy thác qua quỹ mở",
+        "text": "Tận dụng chuyên môn của các quỹ nếu chưa có kinh nghiệm tự chọn cổ phiếu.",
+        "beat": 1
+      },
+      {
+        "title": "Dư địa cho kênh rủi ro",
+        "text": "Chỉ dùng dòng tiền thặng dư sau khi trừ chi phí thiết yếu để thử sức kênh mới.",
+        "beat": 2
+      },
+      {
+        "title": "Ưu tiên sự an toàn",
+        "text": "Giữ tính thanh khoản cao giúp linh hoạt nắm bắt cơ hội mới.",
+        "beat": 2
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Chiến lược hành động",
+      "trong 1 năm tới?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Giảm đòn bẩy vay nợ",
+        "text": "Hạ tỷ lệ nợ vay để bảo đảm an toàn dòng tiền gia đình.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Tăng tài sản thanh khoản",
+        "text": "Cân đối giữa tiền gửi, trái phiếu và cổ phiếu định giá tốt.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Tránh bán rẻ tài sản",
+        "text": "Không để thiếu hụt dòng tiền khiến bạn phải bán tháo tài sản tốt.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Kể Chuyện Chứng Khoán",
+    "closing": "Đánh giá đúng năng lực tài chính là nền tảng của mọi thắng lợi.",
+    "cta": "Theo dõi KenvinZone để cập nhật chiến lược tài chính mới nhất"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
