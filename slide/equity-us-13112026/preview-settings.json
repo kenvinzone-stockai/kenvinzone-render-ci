@@ -1,0 +1,42 @@
+{
+  "subtitles": {
+    "enabled": true,
+    "color": "#7dd3fc",
+    "fontSize": 18,
+    "bottom": 60,
+    "maxLines": 1
+  },
+  "backgroundFx": "candlestick",
+  "bgm": {
+    "mode": "preset",
+    "preset": "ambient",
+    "volume": 0.18
+  },
+  "scriptLines": [
+    "S&P 500 và Nasdaq cùng duy trì sắc thái trung lập với điểm Bias lần lượt là -5.2 và -6.5 trong trạng thái đồng pha thận trọng.",
+    "Tại S&P 500, sức ép lớn nhất đến từ đồng USD -5.44 và khẩu vị rủi ro -2.09, dù lực đỡ từ Fed vẫn ghi nhận +2.17.",
+    "Cấu trúc Gamma của SPY mang Net GEX âm -1969 triệu, giá 757.12 dưới Flip 761.61, kẹp giữa Put Wall 760.0 và Call Wall 776.0 kèm biến động kỳ vọng ±5.7 điểm.",
+    "Nasdaq chịu tác động tương tự khi đồng USD đè nặng -5.99 và rủi ro -2.92 lấn át lực nâng từ lãi suất Fed +4.49.",
+    "Chỉ số QQQ cũng chìm trong Net GEX âm -382 triệu, giá 688.17 dưới Flip 691.16, nằm giữa Put Wall 650.0 và Call Wall 710.0 với biên độ ±9.1 điểm.",
+    "Hai chỉ số hoàn toàn đồng pha, dự báo phiên tới có năm mươi lăm phần trăm đi ngang, hai mươi lăm phần trăm rung lắc và hai mươi phần trăm hồi phục.",
+    "Hãy thận trọng theo dõi các mốc hỗ trợ then chốt và nhấn follow KenvinZone cùng hệ thống AURORA để cập nhật dữ liệu định lượng mỗi ngày."
+  ],
+  "slides": {
+    "deletedIds": [],
+    "scriptLines": [
+      "S&P 500 và Nasdaq cùng duy trì sắc thái trung lập với điểm Bias lần lượt là -5.2 và -6.5 trong trạng thái đồng pha thận trọng.",
+      "Tại S&P 500, sức ép lớn nhất đến từ đồng USD -5.44 và khẩu vị rủi ro -2.09, dù lực đỡ từ Fed vẫn ghi nhận +2.17.",
+      "Cấu trúc Gamma của SPY mang Net GEX âm -1969 triệu, giá 757.12 dưới Flip 761.61, kẹp giữa Put Wall 760.0 và Call Wall 776.0 kèm biến động kỳ vọng ±5.7 điểm.",
+      "Nasdaq chịu tác động tương tự khi đồng USD đè nặng -5.99 và rủi ro -2.92 lấn át lực nâng từ lãi suất Fed +4.49.",
+      "Chỉ số QQQ cũng chìm trong Net GEX âm -382 triệu, giá 688.17 dưới Flip 691.16, nằm giữa Put Wall 650.0 và Call Wall 710.0 với biên độ ±9.1 điểm.",
+      "Hai chỉ số hoàn toàn đồng pha, dự báo phiên tới có năm mươi lăm phần trăm đi ngang, hai mươi lăm phần trăm rung lắc và hai mươi phần trăm hồi phục.",
+      "Hãy thận trọng theo dõi các mốc hỗ trợ then chốt và nhấn follow KenvinZone cùng hệ thống AURORA để cập nhật dữ liệu định lượng mỗi ngày."
+    ]
+  },
+  "visuals": {
+    "colorMode": "dark",
+    "backgroundColor": "#060a13",
+    "gridEnabled": false,
+    "backgroundFx": "candlestick-diag"
+  }
+}

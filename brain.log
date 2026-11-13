@@ -1,4 +1,4 @@
   model khả dụng: ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest'] -> chọn gemini-flash-latest
-=== [1/2] Gemini dựng deck VNINDEX 12/11/2026 (Thứ Năm) | model=gemini-flash-latest ===
-=== [2/2] Đã dựng vnindex-12112026-ngay ===
-PROJECT=vnindex-12112026-ngay
+=== [1/2] Gemini viết kịch bản CK Mỹ [daily] 13/11/2026 | SPX -5.2 TRUNG LẬP · NAS -6.5 TRUNG LẬP | model=gemini-flash-latest ===
+=== [2/2] Đã dựng equity-us-13112026 ===
+PROJECT=equity-us-13112026

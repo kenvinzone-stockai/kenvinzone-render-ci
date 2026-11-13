@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "S&P 500 & Nasdaq: Bias Trung Lập, Net GEX Âm | Nhận Định Phiên Tới",
+    "description": "📊 Bản tin Phân tích Định lượng Chứng khoán Mỹ từ KenvinZone Analytics.\n\nTổng hợp số liệu phiên giao dịch hôm nay:\n🔹 S&P 500 (SPX): Bias Ngày -5.2 | Tuần -2.9 (Đồng pha Trung Lập)\n- Lực đè: Đồng USD (-5.44), Khẩu vị rủi ro (-2.09)\n- Lực đỡ: Lãi suất / Fed (+2.17)\n- SPY Gamma: Net GEX -1969M (Âm) | Spot 757.12 dưới Gamma Flip 761.61 | Put Wall 760.0 - Call Wall 776.0 | Biên độ ±5.7\n\n🔹 Nasdaq 100: Bias Ngày -6.5 | Tuần -10.9 (Đồng pha Trung Lập)\n- Lực đè: Đồng USD (-5.99), Khẩu vị rủi ro (-2.92)\n- Lực đỡ: Lãi suất / Fed (+4.49)\n- QQQ Gamma: Net GEX -382M (Âm) | Spot 688.17 dưới Gamma Flip 691.16 | Put Wall 650.0 - Call Wall 710.0 | Biên độ ±9.1\n\n🎯 Kịch bản phiên tới: 55% Đi ngang giằng co | 25% Rủi ro điều chỉnh | 20% Hồi phục kỹ thuật.\n\n⚠️ Tuyên bố miễn trừ trách nhiệm: Nội dung mang tính chất định lượng tham khảo, KHÔNG phải lời khuyên đầu tư tài chính.\n\n#sp500 #nasdaq #chungkhoanmy #gamma #kenvinzone #aurora #options #spy #qqq",
+    "tags": [
+      "sp500",
+      "nasdaq",
+      "chứng khoán mỹ",
+      "kenvinzone",
+      "aurora",
+      "gamma flip",
+      "net gex",
+      "spy",
+      "qqq",
+      "put wall",
+      "call wall",
+      "nhận định thị trường",
+      "phân tích định lượng"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "equity-bias",
+    "date": "13/11/2026"
+  }
+}
