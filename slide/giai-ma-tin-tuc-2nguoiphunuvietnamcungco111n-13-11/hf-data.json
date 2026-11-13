@@ -1,0 +1,192 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "13/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "CafeF",
+    "short": "CafeF",
+    "author": "Hà Linh",
+    "headline": "2 người phụ nữ Việt Nam cùng có 111 nghìn tỷ",
+    "date": "13/11/2026",
+    "url": "https://m.cafef.vn/2-nguoi-phu-nu-viet-nam-cung-co-111-nghin-ty-188261112224722157.chn"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "Hai Nữ Tỷ Phú",
+      "Cùng Có 111 Nghìn Tỷ"
+    ],
+    "sub": "Sự trùng hợp đặc biệt trên bảng xếp hạng Forbes",
+    "chips": [
+      {
+        "icon": "◆",
+        "text": "Forbes 4,3 tỷ USD",
+        "tone": "gold"
+      },
+      {
+        "icon": "⑂",
+        "text": "Gốc Đông Âu",
+        "tone": "blue"
+      },
+      {
+        "icon": "↗",
+        "text": "2 đế chế lớn",
+        "tone": "up"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Hai nữ tỷ phú giàu nhất Việt Nam bất ngờ cùng chạm mốc tài sản <mark>bốn phẩy ba tỷ USD</mark>, tương đương <mark>một trăm mười một nghìn tỷ đồng</mark>."
+  },
+  "s2": {
+    "title_lines": [
+      "Cột mốc trùng hợp",
+      "trên bảng xếp hạng"
+    ],
+    "stats": [
+      {
+        "value": 111000,
+        "decimals": 0,
+        "unit": "tỷ",
+        "label": "Tài sản mỗi nữ tỷ phú",
+        "badge": "4,3 tỷ USD",
+        "tone": "gold",
+        "beat": 1
+      }
+    ],
+    "note": "Số liệu ghi nhận theo Forbes Real-Time ngày 12/11/2026."
+  },
+  "s3": {
+    "title_lines": [
+      "Điểm chung khởi nghiệp",
+      "từ vùng Đông Âu"
+    ],
+    "lead": "Khởi đầu từ du học và thương trường quốc tế",
+    "bars": [
+      {
+        "label": "Nguyễn Thị Phương Thảo",
+        "display": "4,3 tỷ USD",
+        "value": 4.3,
+        "beat": 1
+      },
+      {
+        "label": "Phạm Thu Hương",
+        "display": "4,3 tỷ USD",
+        "value": 4.3,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 100,
+      "suffix": "năm 80-90",
+      "text": "Đều tôi luyện kinh doanh tại Đông Âu",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Hai hướng đi",
+      "tạo nên hai đế chế"
+    ],
+    "cards": [
+      {
+        "big": "Hàng không - Ngân hàng",
+        "title": "Bà Nguyễn Thị Phương Thảo",
+        "text": "Dấu ấn lớn với Vietjet, Sovico và HDBank."
+      },
+      {
+        "big": "Đa ngành - Xe điện",
+        "title": "Bà Phạm Thu Hương",
+        "text": "Đồng hành cùng Vingroup và giữ ghế Chủ tịch GSM."
+      },
+      {
+        "big": "Hai phong cách",
+        "title": "Đối lập truyền thông",
+        "text": "Một người năng động quốc tế, một người kín tiếng."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Các góc nhìn",
+      "cho nhà đầu tư"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "THẮNG THẾ",
+        "title": "Hệ sinh thái lớn",
+        "text": "Doanh nghiệp đầu ngành có năng lực thích ứng vĩ mô rất bền bỉ."
+      },
+      {
+        "color": "yellow",
+        "tag": "LƯU Ý",
+        "title": "Biến động thị giá",
+        "text": "Tài sản tỷ phú gắn liền với dao động cổ phiếu trên sàn."
+      },
+      {
+        "color": "red",
+        "tag": "KHÓ KHĂN",
+        "title": "Áp lực tăng trưởng",
+        "text": "Quy mô khổng lồ đòi hỏi bài toán quản trị dòng tiền cực kỳ thận trọng."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Tín hiệu thị trường",
+      "nhìn từ ba góc độ"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh",
+        "text": "Vị thế nữ doanh nhân Việt Nam vươn tầm châu Á.",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng",
+        "text": "Định giá phụ thuộc lớn vào chu kỳ ngành nghề.",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ",
+        "text": "Tâm lý hưng phấn ngắn hạn theo bảng xếp hạng tài sản.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư F0",
+      "nên theo dõi gì?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Hiểu mô hình kinh doanh",
+        "text": "Nhìn vào nội lực doanh nghiệp thay vì chỉ nhìn tài sản cá nhân.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Theo dõi thanh khoản",
+        "text": "Chọn cổ phiếu có dòng tiền kinh doanh ổn định.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Tránh mua đuổi",
+        "text": "Không mua theo danh tiếng người sáng lập.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Hành trình khởi nghiệp của các nữ tỷ phú là bài học lớn về tầm nhìn và quản trị.",
+    "cta": "Theo dõi KenvinZone để cùng giải mã thị trường mỗi ngày"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
