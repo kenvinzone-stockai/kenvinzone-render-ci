@@ -1,0 +1,40 @@
+{
+  "subtitles": {
+    "enabled": true,
+    "color": "#fde047",
+    "fontSize": 18,
+    "bottom": 60,
+    "maxLines": 1
+  },
+  "backgroundFx": "candlestick",
+  "bgm": {
+    "mode": "preset",
+    "preset": "ambient",
+    "volume": 0.18
+  },
+  "scriptLines": [
+    "Hôm nay điểm Bias Vàng rơi xuống âm mười một phẩy bốn, xác nhận chế độ Giảm Giá và nối dài đà lao dốc phiên thứ ba liên tiếp.",
+    "Sức ép lớn nhất đến từ áp lực USD âm mười một phẩy hai lăm điểm, cộng thêm dòng tiền âm ba phẩy năm mươi sáu và yếu tố riêng âm hai phẩy hai mươi ba.",
+    "Lực đỡ đối trọng đến từ lãi suất thực dương bốn điểm cùng thanh khoản M2 và khẩu vị rủi ro dương, cho thấy tín dụng chưa căng thẳng.",
+    "Với Net GEX dương hai phẩy năm triệu USD, GLD 367.82 tương đương XAUUSD 3.981 vẫn nằm trên Gamma Flip 365 và bị kìm nén dao động giữa Put Wall 360 cùng Call Wall 375.",
+    "Phiên tới nghiêng về kịch bản: năm mươi lăm phần trăm giằng co kìm nén; ba mươi phần trăm thủng Flip 365 test Put Wall 360; và mười lăm phần trăm hồi phục lên 375.",
+    "Nhà đầu tư nên giữ trung tính trong biên 360–375, chỉ cân nhắc mua lại khi giá trụ vững trên Gamma Flip 365, và hãy follow KenvinZone cùng AURORA để nhận cảnh báo sớm."
+  ],
+  "slides": {
+    "deletedIds": [],
+    "scriptLines": [
+      "Hôm nay điểm Bias Vàng rơi xuống âm mười một phẩy bốn, xác nhận chế độ Giảm Giá và nối dài đà lao dốc phiên thứ ba liên tiếp.",
+      "Sức ép lớn nhất đến từ áp lực USD âm mười một phẩy hai lăm điểm, cộng thêm dòng tiền âm ba phẩy năm mươi sáu và yếu tố riêng âm hai phẩy hai mươi ba.",
+      "Lực đỡ đối trọng đến từ lãi suất thực dương bốn điểm cùng thanh khoản M2 và khẩu vị rủi ro dương, cho thấy tín dụng chưa căng thẳng.",
+      "Với Net GEX dương hai phẩy năm triệu USD, GLD 367.82 tương đương XAUUSD 3.981 vẫn nằm trên Gamma Flip 365 và bị kìm nén dao động giữa Put Wall 360 cùng Call Wall 375.",
+      "Phiên tới nghiêng về kịch bản: năm mươi lăm phần trăm giằng co kìm nén; ba mươi phần trăm thủng Flip 365 test Put Wall 360; và mười lăm phần trăm hồi phục lên 375.",
+      "Nhà đầu tư nên giữ trung tính trong biên 360–375, chỉ cân nhắc mua lại khi giá trụ vững trên Gamma Flip 365, và hãy follow KenvinZone cùng AURORA để nhận cảnh báo sớm."
+    ]
+  },
+  "visuals": {
+    "colorMode": "dark",
+    "backgroundColor": "#060a13",
+    "gridEnabled": false,
+    "backgroundFx": "candlestick-diag"
+  }
+}
