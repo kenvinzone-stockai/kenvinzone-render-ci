@@ -173,7 +173,9 @@ async def main() -> None:
                 style_prompt=args.style_prompt,
                 style_preset=args.style_preset,
                 config_path=config_path,
-                full_text=script_path.read_text(encoding="utf-8"),
+                # Ngắt đoạn (dòng trống) giữa các dòng script → Gemini nghỉ rõ hơn ở
+                # ranh giới dòng, giúp split_voiceover.py cắt chính xác.
+                full_text="\n\n".join(lines),
                 force=args.force,
             )
             speed = float(args.voice_speed) if args.voice_speed else 1.0
