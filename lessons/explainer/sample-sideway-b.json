@@ -738,7 +738,22 @@
    "callout_b_shape": {
     "label": "HÌNH CHỮ b",
     "warning": "CẨN THẬN ⚠"
-   }
+   },
+   "annotations": [
+    {
+     "text": "POC = vùng khớp lệnh dày nhất",
+     "sentence": 1,
+     "price": 114,
+     "color": "poc",
+     "keep_until": "s3"
+    },
+    {
+     "text": "Phình sát đáy → hình chữ b",
+     "sentence": 2,
+     "color": "warn",
+     "keep_until": "s4"
+    }
+   ]
   },
   "s4": {
    "stage": "BÓC TÁCH KHỐI LƯỢNG",
@@ -755,7 +770,21 @@
     "top_price": 125.0,
     "bottom_price": 105.0,
     "label": "BỤNG PHÌNH = VÙNG SIDEWAY (Khối lượng lớn)"
-   }
+   },
+   "annotations": [
+    {
+     "text": "Thân mảnh: rơi nhanh, ít giao dịch",
+     "sentence": 1,
+     "color": "vp",
+     "keep_until": "s4"
+    },
+    {
+     "text": "Bụng phình: volume cực lớn ở đáy",
+     "sentence": 2,
+     "color": "warn",
+     "keep_until": "s4"
+    }
+   ]
   },
   "s5": {
    "stage": "BẢN CHẤT CÁ MẬP",
@@ -776,7 +805,21 @@
    "badge_conclusion": {
     "text": "TẠO ĐÁY ✘  TRẠM DỪNG ✔",
     "color": "#f59e0b"
-   }
+   },
+   "annotations": [
+    {
+     "text": "Vol lớn + giá không lên",
+     "sentence": 1,
+     "color": "down",
+     "keep_until": "s5"
+    },
+    {
+     "text": "= phe bán đang xả dần",
+     "sentence": 2,
+     "color": "down",
+     "keep_until": "s5"
+    }
+   ]
   },
   "s6": {
    "stage": "NGƯỜI MỚI vs NGƯỜI CÓ NGHỀ",

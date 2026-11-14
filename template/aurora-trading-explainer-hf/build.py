@@ -721,6 +721,176 @@ def captions():
     return "captions", TOTAL, scene_file("captions", TOTAL, css, "\n".join(groups), "\n".join(js))
 
 
+# ============================ NOTES — lớp nhãn tích lũy (V5-1) ============================
+# Nhãn hiện đúng nhịp đọc rồi NẰM LẠI chồng lớp như giáo viên ghi bảng, sống độc lập với
+# cảnh (giống layer phụ đề). Dữ liệu: scenes.sX.annotations = [{
+#   text, sentence (chỉ số câu trong dòng script, ưu tiên) | beat (0..1 thời lượng cảnh),
+#   keep_until: "sY" | "end" | bỏ trống (= hết cảnh hiện tại),
+#   color: down|up|poc|level|vp|warn|cyan|ink|#hex,
+#   price (tuỳ chọn): neo nhãn ở mức giá, có đường dẫn tới anchor_x (mặc định mép phải hộp
+#   sideway) — nhãn neo đứng yên vì s3..s7 dùng chung hệ toạ độ giá }].
+# Nhãn không neo xếp vào "vùng bảng" của từng cảnh, trượt sang vùng mới khi đổi cảnh.
+# scenes.sX.notes_zone = {x0,y0,x1,y1} ghi đè vùng; scenes.sX.notes_layer = "hide" | "show".
+NOTE_COLORS = {"down": DOWN, "up": UP, "poc": POC, "level": LEVEL, "vp": VP, "warn": "#f59e0b",
+               "cyan": "#22d3ee", "ink": "#e7e9f0"}
+NOTE_H, NOTE_GAP = 58, 12
+_TOP_RIGHT = {"x0": 600, "y0": 352, "x1": 1030, "y1": 668}
+_BAND = {"x0": 64, "y0": 1112, "x1": 1016, "y1": 1366}
+NOTE_ZONES = {"s0": _TOP_RIGHT, "s1": _TOP_RIGHT, "s3": _BAND, "s4": _BAND,
+              "s5": {"x0": 724, "y0": 452, "x1": 1040, "y1": 676}, "s7": _TOP_RIGHT}
+# s2/s6/s8 bố cục khác hẳn chart chung; s7 đã dày nhãn trên chart (retest, nhánh kịch bản 2)
+# → tạm ẩn lớp nhãn. Cảnh nào muốn hiện: scenes.sX.notes_layer = "show" (+ notes_zone).
+NOTE_HIDE = {"s2", "s6", "s7", "s8"}
+
+
+def _note_color(c):
+    c = str(c or "warn")
+    return c if c.startswith("#") else NOTE_COLORS.get(c, NOTE_COLORS["warn"])
+
+
+def _scene_hidden(cid):
+    mode = sc(cid).get("notes_layer")
+    return (mode == "hide") if mode in ("hide", "show") else (cid in NOTE_HIDE)
+
+
+def _note_items():
+    items = []
+    for idx in range(9):
+        cid = f"s{idx}"; st, en = SCENES[idx][1], SCENES[idx][2]
+        for a in sc(cid).get("annotations") or []:
+            if not isinstance(a, dict) or not str(a.get("text", "")).strip():
+                continue
+            if "sentence" in a:
+                t0 = B(idx, int(a["sentence"]), float(a.get("delay", 0.25)))
+            else:
+                t0 = st + sb(a, en - st, 0.4)
+            keep = str(a.get("keep_until") or cid)
+            if keep == "end":
+                t1 = START["s8"]
+            elif re.fullmatch(r"s[0-8]", keep):
+                k = max(int(keep[1:]), idx); t1 = SCENES[k][2]
+            else:
+                t1 = en
+            t1 = min(t1, START["s8"]) - 0.05 if idx < 8 else en - 0.05
+            t0 = min(max(t0, st + 0.15), t1 - 0.6)
+            items.append({"scene": idx, "t0": round(t0, 3), "t1": round(t1, 3), "a": a,
+                          "text": str(a["text"]).strip(), "color": _note_color(a.get("color"))})
+    items.sort(key=lambda n: n["t0"])
+    for i, n in enumerate(items):
+        n["id"] = f"nt{i}"
+    return items
+
+
+def _note_w(text, fs):
+    return min(940, 46 + len(text) * fs * 0.56)
+
+
+def notes():
+    items = _note_items()
+    if not items:
+        return None
+    body, js = [], []
+    lines_svg = []
+    rail = [n for n in items if n["a"].get("price") is None]
+    anch = [n for n in items if n["a"].get("price") is not None]
+
+    # --- nhãn neo giá: vị trí cố định + đường dẫn ---------------------------------
+    box_r = sc("s1").get("sideway_box") or {}
+    placed = []
+    for n in anch:
+        a = n["a"]; fs = 25 if len(n["text"]) <= 28 else 22
+        y = price_to_y(float(a["price"]), COORD) - NOTE_H / 2
+        ax = float(a.get("anchor_x", box_r.get("end_x", CX1 - 300)))
+        x = float(a.get("box_x", min(ax + 40, 1030 - _note_w(n["text"], fs))))
+        for p in placed:   # tránh đè nhãn neo khác cùng lúc sống
+            if p["t1"] > n["t0"] and n["t1"] > p["t0"] and abs(p["y"] - y) < NOTE_H + 8:
+                y = p["y"] + NOTE_H + 8
+        n.update(x=x, y=y, fs=fs); placed.append(n)
+        ay = price_to_y(float(a["price"]), COORD)
+        lines_svg.append(f'<line id="{n["id"]}L" x1="{ax:.0f}" y1="{ay:.0f}" x2="{x:.0f}" y2="{y + NOTE_H/2:.0f}" '
+                         f'stroke="{n["color"]}" stroke-width="3" stroke-dasharray="7 6" opacity="0"/>'
+                         f'<circle id="{n["id"]}D" cx="{ax:.0f}" cy="{ay:.0f}" r="7" fill="{n["color"]}" opacity="0"/>')
+
+    # --- nhãn bảng: xếp slot theo từng cảnh, trượt khi đổi cảnh ----------------------
+    def zone(idx):
+        z = dict(NOTE_ZONES.get(f"s{idx}", _TOP_RIGHT)); z.update(sc(f"s{idx}").get("notes_zone") or {}); return z
+
+    def slot_xy(z, k):
+        return z["x0"], z["y0"] + k * (NOTE_H + NOTE_GAP)
+
+    moves = {n["id"]: [] for n in rail}          # (t, x, y) — điểm đặt/di chuyển
+    evict = {}                                   # id -> thời điểm bị đẩy khỏi bảng (hết chỗ)
+    for idx in range(9):
+        cid = f"s{idx}"; st, en = SCENES[idx][1], SCENES[idx][2]
+        z = zone(idx); cap = max(1, int((z["y1"] - z["y0"] + NOTE_GAP) // (NOTE_H + NOTE_GAP)))
+        alive = lambda n, t: n["t0"] <= t < n["t1"] and evict.get(n["id"], 1e9) > t
+        stack = [n for n in rail if alive(n, st + 0.01) and n["t0"] < st]
+        while len(stack) > cap:                  # dư → bỏ nhãn cũ nhất
+            evict[stack[0]["id"]] = st; stack.pop(0)
+        for k, n in enumerate(stack):
+            moves[n["id"]].append((st, *slot_xy(z, k)))
+        for n in [n for n in rail if st <= n["t0"] < en]:
+            stack = [m for m in stack if alive(m, n["t0"])]
+            used = {k for k, m in enumerate(stack)}
+            if len(stack) >= cap:
+                evict[stack[0]["id"]] = n["t0"]; stack.pop(0)
+            # giữ chỗ cũ của nhãn đang sống: nhãn mới vào slot trống đầu tiên phía dưới
+            slots = [moves[m["id"]][-1][2] for m in stack]
+            k = 0
+            while slot_xy(z, k)[1] in slots:
+                k += 1
+            k = min(k, cap - 1)
+            moves[n["id"]].append((n["t0"], *slot_xy(z, k)))
+            stack.append(n)
+    for n in rail:
+        n["fs"] = 25 if len(n["text"]) <= 28 else 22
+        if n["id"] in evict:
+            n["t1"] = min(n["t1"], evict[n["id"]])
+        t, n["x"], n["y"] = moves[n["id"]][0]
+
+    # --- HTML + timeline -----------------------------------------------------------
+    for n in items:
+        c = n["color"]
+        body.append(f'<div class="note" id="{n["id"]}" style="left:{n["x"]:.0f}px;top:{n["y"]:.0f}px;'
+                    f'--c:{c};font-size:{n["fs"]}px;"><span class="nb"></span><span class="nt">{esc(n["text"])}</span></div>')
+        js.append(f"gsap.set('#{n['id']}',{{opacity:0,visibility:'hidden'}});")
+        js.append(f"tl.set('#{n['id']}',{{visibility:'visible'}},{n['t0']});"
+                  f"tl.fromTo('#{n['id']}',{{opacity:0,clipPath:'inset(0 100% 0 0)'}},"
+                  f"{{opacity:1,clipPath:'inset(0 0% 0 0)',duration:0.45,ease:'power2.out',immediateRender:false}},{n['t0']});")
+        if n["a"].get("price") is not None:
+            js.append(f"tl.fromTo('#{n['id']}D',{{opacity:0,scale:0,transformOrigin:'center'}},{{opacity:1,scale:1,duration:0.25,immediateRender:false}},{n['t0']-0.2});"
+                      f"tl.fromTo('#{n['id']}L',{{opacity:0}},{{opacity:0.9,duration:0.3,immediateRender:false}},{n['t0']-0.1});"
+                      f"tl.to('#{n['id']}L,#{n['id']}D',{{opacity:0,duration:0.3}},{n['t1']-0.3});")
+        else:
+            for (t, x, y) in moves[n["id"]][1:]:
+                if t < n["t1"]:
+                    js.append(f"tl.to('#{n['id']}',{{left:{x:.0f},top:{y:.0f},duration:0.5,ease:'power2.inOut'}},{t + 0.05});")
+        # nhãn mới nhất sáng rõ, nhãn cũ lùi nhẹ xuống nền (chồng lớp như ghi bảng)
+        newer = [m["t0"] for m in items if m["t0"] > n["t0"] + 0.3 and m["t0"] < n["t1"] - 0.5]
+        if newer:
+            js.append(f"tl.to('#{n['id']} .nt',{{opacity:0.68,duration:0.3}},{newer[0]});")
+        js.append(f"tl.to('#{n['id']}',{{opacity:0,duration:0.3}},{n['t1']-0.3});"
+                  f"tl.set('#{n['id']}',{{visibility:'hidden'}},{n['t1']});")
+    # ẩn cả lớp trong các cảnh bố cục khác (s2/s6/s8)
+    for idx in range(9):
+        if _scene_hidden(f"s{idx}"):
+            st, en = SCENES[idx][1], SCENES[idx][2]
+            js.append(f"tl.to('#notesAll',{{opacity:0,duration:0.25}},{max(st - 0.3, 0)});")
+            if idx < 8:
+                js.append(f"tl.to('#notesAll',{{opacity:1,duration:0.3}},{en + 0.05});")
+    css = """
+#notesAll{position:absolute;inset:0;}
+#notesAll svg{position:absolute;inset:0;width:100%;height:100%;}
+.note{position:absolute;height:58px;display:flex;align-items:center;gap:12px;padding:0 20px 0 14px;white-space:nowrap;
+ background:rgba(11,15,25,.93);border:1.5px solid color-mix(in srgb,var(--c) 55%,transparent);border-radius:14px;
+ box-shadow:0 10px 26px rgba(0,0,0,.55),0 0 18px color-mix(in srgb,var(--c) 22%,transparent);font-weight:800;color:#eef1f7;}
+.note .nb{width:6px;height:30px;border-radius:3px;background:var(--c);flex-shrink:0;}
+"""
+    body_html = (f'<div id="notesAll"><svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">'
+                 f'{"".join(lines_svg)}</svg>{"".join(body)}</div>')
+    return "notes", TOTAL, scene_file("notes", TOTAL, css, body_html, "\n".join(js))
+
+
 # ============================ ROOT ============================
 CHAPTER_COLORS = ["#f59e0b", "#f43f5e", "#22d3ee", "#8b5cf6", "#8b5cf6",
                   "#8b5cf6", "#eab308", "#10b981", "#38bdf8"]
@@ -731,10 +901,10 @@ def root(scene_meta):
                    for i in range(9))
     seg_js = "".join(
         f"tl.fromTo('#sg{i}',{{scaleX:0}},{{scaleX:1,duration:{max(round(e - st, 3), 0.1)},ease:'none',immediateRender:false}},{st});"
-        for i, (cid, st, e) in enumerate((c, st_, st_ + d) for c, st_, d in scene_meta if c != "captions"))
+        for i, (cid, st, e) in enumerate((c, st_, st_ + d) for c, st_, d in scene_meta if c not in ("captions", "notes")))
     hosts = "\n".join(
         f'<div id="{cid}" data-composition-id="{cid}" data-composition-src="compositions/{cid}.html" data-start="{st}" data-duration="{dur}" '
-        f'data-track-index="{i+2}" data-track-kind="{"captions" if cid=="captions" else "graphics"}" data-width="{W}" data-height="{H}" style="z-index:{50 if cid=="captions" else 10+i};"></div>'
+        f'data-track-index="{i+2}" data-track-kind="{"captions" if cid=="captions" else "graphics"}" data-width="{W}" data-height="{H}" style="z-index:{ {"captions": 50, "notes": 40}.get(cid, 10+i) };"></div>'
         for i, (cid, st, dur) in enumerate(scene_meta))
     bgm_vol = D.get("bgm_volume", 0.16)
     return f"""<!doctype html><html lang="vi"><head><meta charset="UTF-8"/>
@@ -776,6 +946,9 @@ def main():
     meta = []
     for fn in (s_hook, s_trap, s_two, s_vpq, s_anatomy, s_shark, s_howto, s_entry, s_outro):
         cid, dur, txt = fn(); (comps / f"{cid}.html").write_text(txt, encoding="utf-8"); meta.append((cid, round(START[cid], 3), dur))
+    nt = notes()
+    if nt:
+        cid, dur, txt = nt; (comps / "notes.html").write_text(txt, encoding="utf-8"); meta.append(("notes", 0, dur))
     if D.get("captions", True):
         cid, dur, txt = captions(); (comps / "captions.html").write_text(txt, encoding="utf-8"); meta.append(("captions", 0, dur))
     (ROOT / "index.html").write_text(root(meta), encoding="utf-8")
