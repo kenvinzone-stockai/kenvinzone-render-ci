@@ -77,8 +77,10 @@ def sb(el, dur, default=0.3):
 
 # ============================ các mảnh SVG cục bộ (ngoài 8 hàm) ============================
 def svg_layer(content, vid):
-    return (f'<svg id="{vid}" class="layer" xmlns="http://www.w3.org/2000/svg" '
-            f'viewBox="0 0 {W} {H}" preserveAspectRatio="xMidYMid meet">{content}</svg>')
+    """Lớp SVG toàn khung, bọc trong .camwrap/.cam để camera (V5-2) phóng/dịch đồng loạt."""
+    return (f'<div class="camwrap"><div class="cam">'
+            f'<svg id="{vid}" class="layer" xmlns="http://www.w3.org/2000/svg" '
+            f'viewBox="0 0 {W} {H}" preserveAspectRatio="xMidYMid meet">{content}</svg></div></div>')
 
 
 def arrow(p1, p2, label="", color=DOWN, idn="arr"):
@@ -153,7 +155,7 @@ FONT_CSS = """
 BASE_CSS = """
 #root{position:absolute;inset:0;font-family:'BVP','Noto Sans',Arial,sans-serif;color:#e7e9f0;}
 .mono{font-family:'JBM',monospace;}
-.layer{position:absolute;inset:0;width:100%;height:100%;z-index:5;}
+.layer{position:absolute;inset:0;width:100%;height:100%;z-index:5;}\n.camwrap{position:absolute;inset:0;z-index:5;}\n.cam{position:absolute;inset:0;}\n.spotwrap{position:absolute;inset:0;z-index:6;pointer-events:none;}\n.spot{position:absolute;border-radius:18px;border:2.5px solid rgba(251,191,36,.85);box-shadow:0 0 0 2400px rgba(4,6,12,.64),0 0 28px rgba(251,191,36,.35);opacity:0;}
 .panel{position:absolute;left:36px;right:36px;top:252px;height:842px;background:#131722;border:1px solid rgba(255,255,255,.08);border-radius:28px;box-shadow:0 30px 80px rgba(0,0,0,.5);z-index:1;}
 .crumb{position:absolute;top:296px;left:0;right:0;text-align:center;font-size:31px;font-weight:900;letter-spacing:6px;color:#aab3c5;text-transform:uppercase;z-index:8;}
 .eb{position:absolute;top:238px;left:0;right:0;text-align:center;z-index:8;}
@@ -180,6 +182,9 @@ BASE_CSS = """
 
 
 def scene_file(cid, dur, css, body, js):
+    if re.fullmatch(r"s[0-8]", cid) and sc(cid).get("camera"):
+        cam_body, cam_js = camera(cid, dur)
+        body += cam_body; js += cam_js
     return f"""<template>
 <style>{FONT_CSS}{BASE_CSS}{css}</style>
 <div id="root" data-composition-id="{cid}" data-width="{W}" data-height="{H}" data-duration="{dur}">
@@ -229,6 +234,88 @@ def sig_ring(c, color, idn):
     r = max(40.0, abs(price_to_y(c["h"], COORD) - price_to_y(c["l"], COORD)) / 2 + 20)
     return (f'<circle class="sigring" id="{idn}" cx="{x:.0f}" cy="{y:.0f}" r="{r:.0f}" fill="none"'
             f' stroke="{color}" stroke-width="3.4" stroke-dasharray="9 7" opacity="0.95"/>')
+
+
+# ============================ CAMERA — zoom + spotlight (V5-2) ============================
+# scenes.sX.camera = [{sentence (hoặc beat 0..1), until_sentence | hold (giây),
+#   focus: "sideway" | "breakout" | "retest" | "poc" | {x0,x1,price_top,price_bottom},
+#   scale (tuỳ chọn, mặc định tự khớp, trần 2.0), spotlight: true|false (mặc định true)}]
+# Phóng nhóm SVG của cảnh vào tiêu điểm rồi lùi ra; telemetry/tiêu đề/phụ đề đứng yên.
+PANEL = (36, 252, 1044, 1094)          # x0, y0, x1, y1 của khung chart
+PANEL_CLIP = f"inset({PANEL[1]}px {W-PANEL[2]}px {H-PANEL[3]}px {PANEL[0]}px round 28px)"
+
+
+def _focus_rect(f):
+    """focus → (x0, y0, x1, y1) trên canvas."""
+    pad = 34
+    if isinstance(f, dict):
+        x0, x1 = float(f.get("x0", CX0)), float(f.get("x1", CX1))
+        y0 = price_to_y(float(f["price_top"]), COORD); y1 = price_to_y(float(f["price_bottom"]), COORD)
+        return x0 - pad, y0 - pad, x1 + pad, y1 + pad
+    box = sc("s1").get("sideway_box") or {}
+    if f == "sideway" and box:
+        return (box["start_x"] - pad, price_to_y(box["top_price"], COORD) - pad - 40,
+                box["end_x"] + pad, price_to_y(box["bottom_price"], COORD) + pad)
+    if f == "breakout" and sc("s1").get("breakout_candle"):
+        c = sc("s1")["breakout_candle"]; x = float(c["x"])
+        top = max(c["h"], box.get("top_price", c["h"]))
+        return x - 190, price_to_y(top, COORD) - pad, x + 110, price_to_y(c["l"], COORD) + pad + 30
+    if f == "retest" and sc("s7").get("retest_candle"):
+        c = sc("s7")["retest_candle"]; x = float(c["x"])
+        sl = (sc("s7").get("stop_loss_line") or {}).get("price", c["h"] + 10)
+        return x - 230, price_to_y(max(sl, c["h"]), COORD) - pad, min(CX1 + 60, x + 360), price_to_y(c["l"], COORD) + pad + 70
+    if f == "poc":
+        poc = (sc("s3").get("volume_profile") or {}).get("poc_price", 0)
+        return CX0 - 70, price_to_y(poc, COORD) - 130, CX0 + 330, price_to_y(poc, COORD) + 130
+    return None
+
+
+def camera(cid, dur):
+    idx = int(cid[1:]); st = START[cid]
+    pw, ph = PANEL[2] - PANEL[0], PANEL[3] - PANEL[1]
+    pcx, pcy = (PANEL[0] + PANEL[2]) / 2, (PANEL[1] + PANEL[3]) / 2 + 20   # chừa chỗ tiêu đề crumb
+    body, js = [], []
+    for k, c in enumerate(sc(cid).get("camera") or []):
+        r = _focus_rect(c.get("focus"))
+        if not r:
+            continue
+        fx0, fy0, fx1, fy1 = r; fw, fh = fx1 - fx0, fy1 - fy0
+        fit = min((pw - 80) / fw, (ph - 160) / fh)
+        sc_ = round(max(1.1, min(float(c.get("scale", fit)), fit, 2.0)), 3)
+        tx = round(pcx - sc_ * (fx0 + fx1) / 2, 1); ty = round(pcy - sc_ * (fy0 + fy1) / 2, 1)
+        if "sentence" in c:
+            t0 = lt(cid, B(idx, int(c["sentence"]), float(c.get("delay", 0.1))))
+        else:
+            t0 = sb(c, dur, 0.4)
+        if "until_sentence" in c:
+            t1 = lt(cid, B(idx, int(c["until_sentence"]), -0.1))
+        else:
+            t1 = t0 + float(c.get("hold", 3.2))
+        t1 = min(t1, dur - 0.95); t0 = max(0.2, min(t0, t1 - 1.4))
+        js.append(f"tl.set(QA('.camwrap'),{{clipPath:'{PANEL_CLIP}'}},{t0});"
+                  f"tl.to(QA('.cam'),{{x:{tx},y:{ty},scale:{sc_},transformOrigin:'0px 0px',duration:0.8,ease:'power3.inOut'}},{t0});"
+                  f"tl.to(QA('.cam'),{{x:0,y:0,scale:1,duration:0.7,ease:'power3.inOut'}},{round(t1, 3)});"
+                  f"tl.set(QA('.camwrap'),{{clipPath:'none'}},{round(t1 + 0.72, 3)});")
+        if c.get("spotlight", True):
+            hw, hh = sc_ * fw, sc_ * fh
+            hx = max(PANEL[0] + 14, pcx - hw / 2); hy = max(PANEL[1] + 70, pcy - hh / 2)
+            hw = min(hw, PANEL[2] - 14 - hx); hh = min(hh, PANEL[3] - 14 - hy)
+            body.append(f'<div class="spot" id="{cid}spot{k}" style="left:{hx:.0f}px;top:{hy:.0f}px;width:{hw:.0f}px;height:{hh:.0f}px;"></div>')
+            js.append(f"tl.fromTo('#{cid}spot{k}',{{opacity:0,scale:1.06}},{{opacity:1,scale:1,duration:0.45,ease:'power2.out',immediateRender:false}},{round(t0 + 0.6, 3)});"
+                      f"tl.to('#{cid}spot{k}',{{opacity:0,duration:0.3}},{round(t1 - 0.05, 3)});")
+    html_ = f'<div class="spotwrap" style="clip-path:{PANEL_CLIP};">{"".join(body)}</div>' if body else ""
+    return html_, "".join(js)
+
+
+def camera_windows():
+    """Các khoảng (tuyệt đối) camera đang phóng — lớp nhãn dùng để tạm ẩn nhãn neo giá."""
+    out = []
+    for idx in range(9):
+        cid = f"s{idx}"; dur = SCENES[idx][2] - SCENES[idx][1]
+        for m in re.finditer(r"tl\.to\(QA\('\.cam'\),\{x:[^0][^}]*\},([\d.]+)\);tl\.to\(QA\('\.cam'\),\{x:0,y:0,scale:1[^}]*\},([\d.]+)\)",
+                             camera(cid, dur)[1] if sc(cid).get("camera") else ""):
+            out.append((START[cid] + float(m.group(1)), START[cid] + float(m.group(2)) + 0.7))
+    return out
 
 
 # ============================ SCENES ============================
@@ -563,19 +650,19 @@ def s_entry():
     if bo:
         evs.append((f'<g id="g7bo">{render_candlesticks([dict(bo, width=bo.get("width", 20), id="c7bo")], COORD)}'
                     f'{sig_ring(bo, DOWN, "r7bo")}'
-                    f'{candle_tag(bo, bo.get("label", ""), DOWN, "t7bo", below=True)}</g>', 1))
+                    f'{candle_tag(bo, bo.get("label", ""), DOWN, "t7bo", below=True)}</g>', int(bo.get("sentence", 0))))
     if rt:
         evs.append((f'<g id="g7rt">{render_candlesticks([dict(rt, width=rt.get("width", 20), id="c7rt")], COORD)}'
                     f'{sig_ring(rt, POC, "r7rt")}'
-                    f'{candle_tag(rt, rt.get("label", ""), POC, "t7rt")}</g>', 2))
+                    f'{candle_tag(rt, rt.get("label", ""), POC, "t7rt")}</g>', int(rt.get("sentence", 1))))
     if ep:
         ey = price_to_y(ep.get("price", 100), COORD)
         ex0 = float(ep.get("x", 720))
         evs.append((f'<g id="g7ep"><line x1="{ex0:.0f}" y1="{ey:.0f}" x2="{CX1-10}" y2="{ey:.0f}"'
                     f' stroke="{ep.get("color", DOWN)}" stroke-width="2.6" stroke-dasharray="8 5"/>'
-                    f'{pill(CX1 - 120, ey, ep.get("label", "BÁN"), ep.get("color", DOWN), "p7ep", fs=22)}</g>', 2))
+                    f'{pill(CX1 - 120, ey, ep.get("label", "BÁN"), ep.get("color", DOWN), "p7ep", fs=22)}</g>', int(ep.get("sentence", 1))))
     if slx:
-        evs.append((f'<g id="g7sl">{render_level_line(slx["price"], COORD, label=slx.get("label",""), color=slx.get("color", DOWN))}</g>', 2))
+        evs.append((f'<g id="g7sl">{render_level_line(slx["price"], COORD, label=slx.get("label",""), color=slx.get("color", DOWN))}</g>', int(slx.get("sentence", 1))))
     alt = s.get("alt_branch")
     if alt:
         ax = float(alt.get("from_x", (box.get("start_x", CX0) + box.get("end_x", CX1)) / 2))
@@ -610,9 +697,11 @@ def s_entry():
                       f"tl.fromTo('#g7ep line',{{opacity:0}},{{opacity:1,duration:0.3,immediateRender:false}},{lt(cid,B(7,beat))});")
         else:
             js.append(pop_js(gid, lt(cid, B(7, beat)), 0.85))
-    js.append("QA('.sigring').forEach(r=>{tl.fromTo(r,{scale:1.7,opacity:0,transformOrigin:'center'},"
-              "{scale:1,opacity:1,duration:0.4,ease:'back.out(2)',immediateRender:false},"
-              + str(lt(cid, B(7, 1, 0.35))) + ");});")
+    for rid, el, dflt in (("#r7bo", bo, 0), ("#r7rt", rt, 1)):
+        if el:
+            js.append(f"tl.fromTo('{rid}',{{scale:1.7,opacity:0,transformOrigin:'center'}},"
+                      f"{{scale:1,opacity:1,duration:0.4,ease:'back.out(2)',immediateRender:false}},"
+                      f"{lt(cid, B(7, int(el.get('sentence', dflt)), 0.35))});")
     if alt:
         t_alt = lt(cid, B(7, 2, 1.1))
         js.append(f"tl.set('#g7alt',{{opacity:1}},{t_alt});"
@@ -696,27 +785,30 @@ def _caption_chunks(words, max_w=8):
 
 
 def captions():
+    """Phụ đề karaoke kiểu Giải Mã Chứng Khoán: khung bo 22px bán trong suốt, chữ 44px,
+    chữ đang đọc bật thành HỘP VÀNG nền đặc (chữ tối), chữ đã đọc chuyển trắng."""
     groups, js, gi = [], [], 0
     flat = [ch for c in SUBS["captions"] for ch in _caption_chunks(c["words"])]
     for gi, ch in enumerate(flat):
         s = round(ch[0]["start"] + OFF, 3)
         e = round(max(ch[-1].get("end", ch[-1]["start"] + 0.3), ch[-1]["start"] + 0.1) + OFF, 3)
         nxt = flat[gi + 1][0]["start"] + OFF if gi + 1 < len(flat) else e + 0.6
-        e2 = round(min(e + 0.3, nxt - 0.02), 3)
+        e2 = round(min(e + 0.25, nxt - 0.02), 3)
         ws = "".join(f'<span class="cw" id="cw{gi}_{wi}">{esc(w["text"])}</span> ' for wi, w in enumerate(ch))
         groups.append(f'<div class="cg" id="cg{gi}"><div class="cpill">{ws}</div></div>')
         js.append(f"tl.set('#cg{gi}',{{opacity:1,visibility:'visible'}},{s});"
                   f"tl.fromTo('#cg{gi} .cpill',{{y:18,opacity:0}},{{y:0,opacity:1,duration:0.14,ease:'power3.out',immediateRender:false}},{s});")
         for wi, w in enumerate(ch):
             ws_ = round(w["start"] + OFF, 3)
-            we_ = round(max(w.get("end", w["start"] + 0.2), w["start"] + 0.1) + OFF, 3)
-            js.append(f"tl.fromTo('#cw{gi}_{wi}',{{color:'#8e99ab'}},{{color:'#fbbf24',duration:0.05,immediateRender:false}},{ws_});"
-                      f"tl.to('#cw{gi}_{wi}',{{color:'#ffffff',duration:0.1}},{we_});")
-        js.append(f"tl.to('#cg{gi} .cpill',{{opacity:0,duration:0.1}},{e2-0.1});tl.set('#cg{gi}',{{opacity:0,visibility:'hidden'}},{e2});")
+            we_ = round(max(w.get("end", w["start"] + 0.2), w["start"] + 0.07) + OFF, 3)
+            js.append(f"tl.fromTo('#cw{gi}_{wi}',{{color:'#cbd5e1',backgroundColor:'rgba(245,158,11,0)'}},"
+                      f"{{color:'#0b0f19',backgroundColor:'rgba(251,191,36,1)',duration:0.06,immediateRender:false}},{ws_});"
+                      f"tl.to('#cw{gi}_{wi}',{{color:'#ffffff',backgroundColor:'rgba(245,158,11,0)',duration:0.06}},{we_});")
+        js.append(f"tl.to('#cg{gi} .cpill',{{opacity:0,duration:0.1,ease:'power2.in'}},{e2-0.1});tl.set('#cg{gi}',{{opacity:0,visibility:'hidden'}},{e2});")
     css = """
-.cg{position:absolute;left:0;right:0;top:1500px;text-align:center;opacity:0;visibility:hidden;}
-.cpill{display:inline-block;white-space:nowrap;max-width:1000px;padding:12px 30px;border-radius:99px;background:rgba(15,23,42,.94);border:1.5px solid rgba(255,255,255,.18);box-shadow:0 12px 35px rgba(0,0,0,.65),0 0 20px rgba(56,213,231,.15);font-size:36px;font-weight:800;line-height:1.35;color:#8e99ab;}
-.cw{display:inline-block;padding:0 4px;}
+.cg{position:absolute;left:0;right:0;top:1490px;text-align:center;opacity:0;visibility:hidden;}
+.cpill{display:inline-block;max-width:960px;padding:14px 26px;border-radius:22px;background:rgba(2,6,23,.72);border:1px solid rgba(255,255,255,.08);font-size:44px;font-weight:800;line-height:1.35;color:#cbd5e1;}
+.cw{display:inline-block;padding:0 6px;border-radius:10px;}
 """
     return "captions", TOTAL, scene_file("captions", TOTAL, css, "\n".join(groups), "\n".join(js))
 
@@ -861,6 +953,14 @@ def notes():
             js.append(f"tl.fromTo('#{n['id']}D',{{opacity:0,scale:0,transformOrigin:'center'}},{{opacity:1,scale:1,duration:0.25,immediateRender:false}},{n['t0']-0.2});"
                       f"tl.fromTo('#{n['id']}L',{{opacity:0}},{{opacity:0.9,duration:0.3,immediateRender:false}},{n['t0']-0.1});"
                       f"tl.to('#{n['id']}L,#{n['id']}D',{{opacity:0,duration:0.3}},{n['t1']-0.3});")
+            for (w0, w1) in camera_windows():
+                if w0 < n["t1"] and w1 > n["t0"]:
+                    sel = f"#{n['id']},#{n['id']}L,#{n['id']}D"
+                    js.append(f"tl.to('{sel}',{{autoAlpha:0,duration:0.25}},{max(w0, n['t0'] + 0.5):.3f});")
+                    if w1 < n["t1"] - 0.4:
+                        js.append(f"tl.to('#{n['id']}',{{autoAlpha:1,duration:0.3}},{w1:.3f});"
+                                  f"tl.to('#{n['id']}L',{{autoAlpha:0.9,duration:0.3}},{w1:.3f});"
+                                  f"tl.to('#{n['id']}D',{{autoAlpha:1,duration:0.3}},{w1:.3f});")
         else:
             for (t, x, y) in moves[n["id"]][1:]:
                 if t < n["t1"]:
