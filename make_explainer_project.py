@@ -30,7 +30,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent
 TEMPLATE = "aurora-trading-explainer-hf"
 SENT_PATTERN = [1, 3, 3, 3, 4, 4, 3, 3, 3]   # nhịp câu chuẩn 9 cảnh (đã chốt với ANTI)
-MAX_WORDS = 720                               # trần ~3 phút (chuẩn Giải Mã < 3 min)
+MAX_WORDS = 620                               # trần an toàn < 3 phút (đo thực: ~4.1 từ/giây)
 
 
 def slugify(s: str, maxlen: int = 44) -> str:
@@ -56,18 +56,24 @@ def main() -> None:
     script = lesson.pop("script", None)
     upload = lesson.pop("upload", None)
     proj_name = lesson.pop("project", None)
+    # nhịp câu linh hoạt: bài dài hơn (tối đa <3 phút) chỉ cần khai "sentence_pattern"
+    pattern = lesson.pop("sentence_pattern", None) or SENT_PATTERN
+    if len(pattern) != 9:
+        sys.exit(f"sentence_pattern phải có 9 số (s0..s8), đang có {len(pattern)}")
 
     errs = []
     if not isinstance(script, list) or len(script) != 9:
         errs.append(f"script phải là 9 dòng (s0..s8), đang có {len(script) if isinstance(script, list) else 'không có'}")
     else:
-        for i, (line, want) in enumerate(zip(script, SENT_PATTERN)):
+        for i, (line, want) in enumerate(zip(script, pattern)):
             got = nsents(line)
             if got != want:
                 errs.append(f"script dòng s{i}: cần {want} câu, đang có {got}")
         words = sum(len(l.split()) for l in script)
         if words > MAX_WORDS:
             errs.append(f"script {words} từ > trần {MAX_WORDS} (video sẽ vượt 3 phút)")
+        est = words / 4.1 + 5
+        print(f"  [nhịp] {words} từ ≈ {est:.0f}s thoại + outro → video ~{est+4:.0f}s")
 
     lesson.setdefault("template", TEMPLATE)
     if lesson["template"] != TEMPLATE:

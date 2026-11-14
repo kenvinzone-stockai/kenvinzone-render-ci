@@ -134,14 +134,24 @@ def crumb(cid):
 
 
 FONT_CSS = """
+@font-face{font-family:'BVP';font-weight:700;src:url('assets/fonts/be-vietnam-pro-vietnamese-700-normal.woff2') format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;}
+@font-face{font-family:'BVP';font-weight:700;src:url('assets/fonts/be-vietnam-pro-latin-ext-700-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
 @font-face{font-family:'BVP';font-weight:700;src:url('assets/fonts/be-vietnam-pro-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'BVP';font-weight:800;src:url('assets/fonts/be-vietnam-pro-vietnamese-800-normal.woff2') format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;}
+@font-face{font-family:'BVP';font-weight:800;src:url('assets/fonts/be-vietnam-pro-latin-ext-800-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
 @font-face{font-family:'BVP';font-weight:800;src:url('assets/fonts/be-vietnam-pro-latin-800-normal.woff2') format('woff2');}
+@font-face{font-family:'BVP';font-weight:900;src:url('assets/fonts/be-vietnam-pro-vietnamese-900-normal.woff2') format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;}
+@font-face{font-family:'BVP';font-weight:900;src:url('assets/fonts/be-vietnam-pro-latin-ext-900-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
 @font-face{font-family:'BVP';font-weight:900;src:url('assets/fonts/be-vietnam-pro-latin-900-normal.woff2') format('woff2');}
+@font-face{font-family:'JBM';font-weight:700;src:url('assets/fonts/jetbrains-mono-vietnamese-700-normal.woff2') format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;}
+@font-face{font-family:'JBM';font-weight:700;src:url('assets/fonts/jetbrains-mono-latin-ext-700-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
 @font-face{font-family:'JBM';font-weight:700;src:url('assets/fonts/jetbrains-mono-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'JBM';font-weight:800;src:url('assets/fonts/jetbrains-mono-vietnamese-800-normal.woff2') format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;}
+@font-face{font-family:'JBM';font-weight:800;src:url('assets/fonts/jetbrains-mono-latin-ext-800-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
 @font-face{font-family:'JBM';font-weight:800;src:url('assets/fonts/jetbrains-mono-latin-800-normal.woff2') format('woff2');}
 """
 BASE_CSS = """
-#root{position:absolute;inset:0;font-family:'BVP','Segoe UI',sans-serif;color:#e7e9f0;}
+#root{position:absolute;inset:0;font-family:'BVP','Noto Sans',Arial,sans-serif;color:#e7e9f0;}
 .mono{font-family:'JBM',monospace;}
 .layer{position:absolute;inset:0;width:100%;height:100%;z-index:5;}
 .panel{position:absolute;left:36px;right:36px;top:252px;height:842px;background:#131722;border:1px solid rgba(255,255,255,.08);border-radius:28px;box-shadow:0 30px 80px rgba(0,0,0,.5);z-index:1;}
@@ -445,8 +455,81 @@ def s_shark():
     return cid, dur, scene_file(cid, dur, css5, body, js)
 
 
+def _avatar_box(icon, color, idn):
+    """Avatar chibi gói trong svg nhỏ để nhúng vào pane HTML."""
+    return (f'<svg class="cmp-av" id="{idn}" viewBox="-54 -62 108 108" width="96" height="96">'
+            f'{render_icon_avatar(icon, 0, 14, scale=1.15)}</svg>')
+
+
 def s_howto():
+    """s6 — NGƯỜI MỚI vs NGƯỜI CÓ NGHỀ (góc nhìn kép).
+
+    Dữ liệu: scenes.s6.compare = {novice:{label,icon,verdict,items[]}, pro:{...}}.
+    Không khai compare -> quay về bố cục rule_badge + support_line như cũ.
+    """
     cid, dur = mk(6); s = sc("s6")
+    cmp_ = s.get("compare")
+    if not cmp_:
+        return _s_howto_legacy(cid, dur, s)
+
+    nov = cmp_.get("novice", {}); pro = cmp_.get("pro", {})
+    box = sc("s1").get("sideway_box", {})
+    vp6 = sc("s3").get("volume_profile", {})
+    # nền chart mờ giữ liên tục bối cảnh
+    parts = [grid(COORD), backdrop_candles(dim=0.13),
+             f'<g opacity="0.11">{render_volume_profile(vp6.get("bins", []), COORD, vp6.get("poc_price", 0), x_start=CX0, max_w=215)}</g>']
+    if box:
+        parts.append(f'<g opacity="0.18">{render_price_box(box["top_price"], box["bottom_price"], box["start_x"], box["end_x"], COORD, style="dashed")}</g>')
+
+    def pane(side, spec, top, col, idp):
+        items = "".join(
+            f'<div class="cmp-item" id="{idp}i{k}"><span class="d"></span>{esc(it)}</div>'
+            for k, it in enumerate(spec.get("items", [])[:3]))
+        return (f'<div class="cmpane {side}" id="{idp}" style="top:{top}px;">'
+                f'<div class="cmp-head">{_avatar_box(spec.get("icon", "face_guess"), col, idp + "av")}'
+                f'<div class="cmp-ttl"><div class="l">{esc(spec.get("label", ""))}</div>'
+                f'<div class="v">{esc(spec.get("verdict", ""))}</div></div></div>'
+                f'<div class="cmp-list">{items}</div></div>')
+
+    css6 = f"""
+.cmpane{{position:absolute;left:44px;right:44px;height:404px;border-radius:24px;padding:22px 28px;z-index:8;
+  background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(10,14,24,.86));border:2px solid;}}
+.cmpane.nov{{border-color:rgba(244,63,94,.55);box-shadow:0 18px 44px rgba(0,0,0,.5),0 0 34px rgba(244,63,94,.12);}}
+.cmpane.pro{{border-color:rgba(16,185,129,.55);box-shadow:0 18px 44px rgba(0,0,0,.5),0 0 34px rgba(16,185,129,.14);}}
+.cmp-head{{display:flex;align-items:center;gap:18px;}}
+.cmp-av{{flex-shrink:0;}}
+.cmp-ttl .l{{font-size:38px;font-weight:900;letter-spacing:1px;}}
+.cmpane.nov .cmp-ttl .l{{color:{DOWN};}} .cmpane.pro .cmp-ttl .l{{color:{UP};}}
+.cmp-ttl .v{{margin-top:6px;display:inline-block;font-size:24px;font-weight:900;padding:7px 18px;border-radius:99px;}}
+.cmpane.nov .cmp-ttl .v{{background:rgba(244,63,94,.18);color:#fecdd3;border:1.5px solid rgba(244,63,94,.5);}}
+.cmpane.pro .cmp-ttl .v{{background:rgba(16,185,129,.16);color:#a7f3d0;border:1.5px solid rgba(16,185,129,.5);}}
+.cmp-list{{margin-top:18px;display:flex;flex-direction:column;gap:13px;}}
+.cmp-item{{display:flex;align-items:center;gap:15px;font-size:28px;font-weight:800;color:#dbe2ee;line-height:1.3;}}
+.cmp-item .d{{width:13px;height:13px;border-radius:50%;flex-shrink:0;}}
+.cmpane.nov .cmp-item .d{{background:{DOWN};}} .cmpane.pro .cmp-item .d{{background:{UP};}}
+.cmp-vs{{position:absolute;left:0;right:0;top:766px;text-align:center;z-index:9;}}
+.cmp-vs span{{display:inline-block;font-family:'JBM';font-weight:800;font-size:28px;letter-spacing:4px;color:#aab3c5;
+  background:#0b0f19;border:2px solid rgba(255,255,255,.14);border-radius:99px;padding:8px 26px;}}
+"""
+    body = (f'{crumb(cid)}{svg_layer("".join(parts), "g6")}'
+            f'{pane("nov", nov, 358, DOWN, "pnov")}'
+            f'<div class="cmp-vs" id="pvs"><span>VS</span></div>'
+            f'{pane("pro", pro, 802, UP, "ppro")}'
+            f'{telemetry("s6")}')
+
+    js = ["gsap.set('#pnov,#ppro,#pvs,.cmp-item',{opacity:0});",
+          f"tl.fromTo('#pnov',{{opacity:0,x:-70}},{{opacity:1,x:0,duration:0.5,ease:'expo.out',immediateRender:false}},{lt(cid,B(6,0,0.15))});"]
+    for k in range(len(nov.get("items", [])[:3])):
+        js.append(f"tl.fromTo('#pnovi{k}',{{opacity:0,x:-34}},{{opacity:1,x:0,duration:0.34,ease:'expo.out',immediateRender:false}},{lt(cid,B(6,0,0.65+k*0.42))});")
+    js.append(stamp_js('#pvs', lt(cid, B(6, 1))))
+    js.append(f"tl.fromTo('#ppro',{{opacity:0,x:70}},{{opacity:1,x:0,duration:0.5,ease:'expo.out',immediateRender:false}},{lt(cid,B(6,1,0.25))});")
+    for k in range(len(pro.get("items", [])[:3])):
+        js.append(f"tl.fromTo('#pproi{k}',{{opacity:0,x:34}},{{opacity:1,x:0,duration:0.34,ease:'expo.out',immediateRender:false}},{lt(cid,B(6,1,0.75+k*0.42))});")
+    js.append(f"tl.fromTo('#s6-tele',{{opacity:0}},{{opacity:1,duration:0.4}},0.2);{ex('#g6,.cmpane,.cmp-vs',dur)}")
+    return cid, dur, scene_file(cid, dur, css6, body, "".join(js))
+
+
+def _s_howto_legacy(cid, dur, s):
     rb = s.get("rule_badge_1", {}); sl = s.get("support_line", {})
     box = sc("s1").get("sideway_box", {})
     vp6 = sc("s3").get("volume_profile", {})
@@ -464,7 +547,6 @@ def s_howto():
           + f"tl.fromTo('#g6rb',{{opacity:0,x:-60}},{{opacity:1,x:0,duration:0.5,ease:'expo.out',immediateRender:false}},{lt(cid,B(6,2))});"
           + f"tl.fromTo('#s6-tele',{{opacity:0}},{{opacity:1,duration:0.4}},0.2);{ex('.panel,#g6,.checklist',dur)}")
     return cid, dur, scene_file(cid, dur, "", body, js)
-
 
 def s_entry():
     cid, dur = mk(7); s = sc("s7")
@@ -661,7 +743,7 @@ def root(scene_meta):
 <style>{FONT_CSS}
 *{{margin:0;padding:0;box-sizing:border-box;}}
 html,body{{width:{W}px;height:{H}px;overflow:hidden;background:#0e111a;}}
-#root{{position:relative;width:100%;height:100%;font-family:'BVP','Segoe UI',sans-serif;color:#e7e9f0;}}
+#root{{position:relative;width:100%;height:100%;font-family:'BVP','Noto Sans',Arial,sans-serif;color:#e7e9f0;}}
 .bg{{position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 25%,#141926 0%,#0e111a 60%,#090b12 100%);}}
 .brand{{position:absolute;left:60px;right:60px;top:170px;height:44px;display:flex;align-items:center;gap:14px;z-index:60;}}
 .brand .n{{font-size:28px;font-weight:800;letter-spacing:1px;color:rgba(255,255,255,.75);}}
@@ -673,7 +755,7 @@ html,body{{width:{W}px;height:{H}px;overflow:hidden;background:#0e111a;}}
 </style></head><body>
 <div id="root" data-composition-id="main" data-start="0" data-duration="{TOTAL}" data-width="{W}" data-height="{H}">
   <div class="bg"></div>
-  <div class="brand" id="brand"><span class="n">{esc(D.get('handle','@kenvinzone'))} · THƯ VIỆN TRADING</span></div>
+  <div class="brand" id="brand"><span class="n">{esc(D.get('handle','@kenvinzone'))} · CHUYỆN TRADING</span></div>
   <div class="prog" id="prog">{segs}</div>
   <div class="rootdisc">Dữ liệu minh hoạ — không phải giá thực · Nội dung giáo dục, không phải khuyến nghị đầu tư</div>
 {hosts}

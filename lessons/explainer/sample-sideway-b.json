@@ -33,7 +33,7 @@
      "c": 186,
      "x": 148,
      "width": 11,
-     "spawn_beat": 0.08
+     "spawn_beat": 0.06
     },
     {
      "id": "c0_1",
@@ -43,7 +43,7 @@
      "c": 179,
      "x": 170,
      "width": 11,
-     "spawn_beat": 0.142
+     "spawn_beat": 0.092
     },
     {
      "id": "c0_2",
@@ -53,7 +53,7 @@
      "c": 181,
      "x": 192,
      "width": 11,
-     "spawn_beat": 0.204
+     "spawn_beat": 0.124
     },
     {
      "id": "c0_3",
@@ -63,7 +63,7 @@
      "c": 172,
      "x": 214,
      "width": 11,
-     "spawn_beat": 0.266
+     "spawn_beat": 0.156
     },
     {
      "id": "c0_4",
@@ -73,7 +73,7 @@
      "c": 165,
      "x": 236,
      "width": 11,
-     "spawn_beat": 0.328
+     "spawn_beat": 0.188
     },
     {
      "id": "c0_5",
@@ -83,7 +83,7 @@
      "c": 167,
      "x": 258,
      "width": 11,
-     "spawn_beat": 0.39
+     "spawn_beat": 0.22
     },
     {
      "id": "c0_6",
@@ -93,7 +93,7 @@
      "c": 158,
      "x": 280,
      "width": 11,
-     "spawn_beat": 0.452
+     "spawn_beat": 0.252
     },
     {
      "id": "c0_7",
@@ -103,7 +103,7 @@
      "c": 151,
      "x": 302,
      "width": 11,
-     "spawn_beat": 0.514
+     "spawn_beat": 0.284
     },
     {
      "id": "c0_8",
@@ -113,7 +113,7 @@
      "c": 144,
      "x": 324,
      "width": 11,
-     "spawn_beat": 0.576
+     "spawn_beat": 0.316
     },
     {
      "id": "c0_9",
@@ -123,7 +123,7 @@
      "c": 137,
      "x": 346,
      "width": 11,
-     "spawn_beat": 0.638
+     "spawn_beat": 0.348
     },
     {
      "id": "c0_10",
@@ -133,7 +133,7 @@
      "c": 132,
      "x": 368,
      "width": 11,
-     "spawn_beat": 0.7
+     "spawn_beat": 0.38
     },
     {
      "id": "c0_11",
@@ -143,7 +143,7 @@
      "c": 128,
      "x": 390,
      "width": 11,
-     "spawn_beat": 0.762
+     "spawn_beat": 0.412
     }
    ],
    "arrow_drop": {
@@ -378,32 +378,123 @@
     "badge_status": "ĐẢO CHIỀU ↗",
     "candles": [
      {
-      "o": 160,
-      "h": 162,
-      "l": 130,
-      "c": 132,
-      "x": 140
+      "o": 168,
+      "h": 169.0,
+      "l": 158.5,
+      "c": 161,
+      "x": 100
      },
      {
-      "o": 132,
-      "h": 134,
-      "l": 110,
-      "c": 112,
-      "x": 170
+      "o": 161,
+      "h": 165.3,
+      "l": 159.1,
+      "c": 163,
+      "x": 126
      },
      {
-      "o": 112,
-      "h": 118,
-      "l": 105,
-      "c": 115,
-      "x": 200
+      "o": 163,
+      "h": 164.1,
+      "l": 151.2,
+      "c": 154,
+      "x": 152
      },
      {
-      "o": 115,
-      "h": 140,
-      "l": 114,
-      "c": 138,
+      "o": 154,
+      "h": 156.8,
+      "l": 144.0,
+      "c": 146,
+      "x": 178
+     },
+     {
+      "o": 146,
+      "h": 150.0,
+      "l": 144.8,
+      "c": 148,
+      "x": 204
+     },
+     {
+      "o": 148,
+      "h": 148.5,
+      "l": 137.4,
+      "c": 139,
       "x": 230
+     },
+     {
+      "o": 139,
+      "h": 141.2,
+      "l": 130.3,
+      "c": 131,
+      "x": 256
+     },
+     {
+      "o": 131,
+      "h": 132.8,
+      "l": 126.1,
+      "c": 127,
+      "x": 282
+     },
+     {
+      "o": 127,
+      "h": 130.9,
+      "l": 126.4,
+      "c": 130,
+      "x": 308
+     },
+     {
+      "o": 130,
+      "h": 132.2,
+      "l": 126.6,
+      "c": 128.4,
+      "x": 334
+     },
+     {
+      "o": 128.4,
+      "h": 130.6,
+      "l": 126.9,
+      "c": 128.6,
+      "x": 360
+     },
+     {
+      "o": 128.6,
+      "h": 129.2,
+      "l": 123.9,
+      "c": 125,
+      "x": 386
+     },
+     {
+      "o": 125,
+      "h": 130.3,
+      "l": 124.3,
+      "c": 129,
+      "x": 412
+     },
+     {
+      "o": 129,
+      "h": 131.1,
+      "l": 125.9,
+      "c": 127,
+      "x": 438
+     },
+     {
+      "o": 127,
+      "h": 130.8,
+      "l": 125.1,
+      "c": 130,
+      "x": 464
+     },
+     {
+      "o": 130,
+      "h": 142.8,
+      "l": 127.2,
+      "c": 142,
+      "x": 490
+     },
+     {
+      "o": 142,
+      "h": 157.8,
+      "l": 139.9,
+      "c": 156,
+      "x": 516
      }
     ]
    },
@@ -412,32 +503,123 @@
     "badge_status": "GIẢM TIẾP ↘",
     "candles": [
      {
-      "o": 160,
-      "h": 162,
-      "l": 130,
-      "c": 132,
-      "x": 140
+      "o": 168,
+      "h": 169.5,
+      "l": 159.1,
+      "c": 161,
+      "x": 100
      },
      {
-      "o": 132,
-      "h": 134,
-      "l": 110,
-      "c": 112,
-      "x": 170
+      "o": 161,
+      "h": 164.0,
+      "l": 160.4,
+      "c": 163,
+      "x": 126
      },
      {
-      "o": 112,
-      "h": 118,
-      "l": 105,
-      "c": 108,
-      "x": 200
+      "o": 163,
+      "h": 166.0,
+      "l": 152.8,
+      "c": 154,
+      "x": 152
      },
      {
-      "o": 108,
-      "h": 110,
-      "l": 82,
-      "c": 85,
+      "o": 154,
+      "h": 156.8,
+      "l": 144.9,
+      "c": 146,
+      "x": 178
+     },
+     {
+      "o": 146,
+      "h": 151.3,
+      "l": 142.9,
+      "c": 148,
+      "x": 204
+     },
+     {
+      "o": 148,
+      "h": 150.7,
+      "l": 136.3,
+      "c": 139,
       "x": 230
+     },
+     {
+      "o": 139,
+      "h": 141.2,
+      "l": 128.4,
+      "c": 131,
+      "x": 256
+     },
+     {
+      "o": 131,
+      "h": 131.7,
+      "l": 125.7,
+      "c": 127,
+      "x": 282
+     },
+     {
+      "o": 127,
+      "h": 131.9,
+      "l": 126.2,
+      "c": 130,
+      "x": 308
+     },
+     {
+      "o": 130,
+      "h": 132.1,
+      "l": 126.4,
+      "c": 128.4,
+      "x": 334
+     },
+     {
+      "o": 128.4,
+      "h": 129.8,
+      "l": 127.3,
+      "c": 128.6,
+      "x": 360
+     },
+     {
+      "o": 128.6,
+      "h": 129.9,
+      "l": 123.8,
+      "c": 125,
+      "x": 386
+     },
+     {
+      "o": 125,
+      "h": 131.2,
+      "l": 123.8,
+      "c": 129,
+      "x": 412
+     },
+     {
+      "o": 129,
+      "h": 129.5,
+      "l": 126.3,
+      "c": 127,
+      "x": 438
+     },
+     {
+      "o": 127,
+      "h": 131.7,
+      "l": 124.8,
+      "c": 130,
+      "x": 464
+     },
+     {
+      "o": 130,
+      "h": 131.7,
+      "l": 114.3,
+      "c": 116,
+      "x": 490
+     },
+     {
+      "o": 116,
+      "h": 118.1,
+      "l": 98.3,
+      "c": 101,
+      "x": 516
      }
     ]
    }
@@ -597,10 +779,10 @@
    }
   },
   "s6": {
-   "stage": "GIAO DỊCH THẾ NÀO?",
+   "stage": "NGƯỜI MỚI vs NGƯỜI CÓ NGHỀ",
    "telemetry": {
-    "left": "CHỜ TÍN HIỆU",
-    "right": "ĐỨNG NGOÀI"
+    "left": "HAI CÁCH XỬ LÝ",
+    "right": "KHÁC BIỆT"
    },
    "rule_badge_1": {
     "text": "❶ ĐỪNG BẮT ĐÁY TRONG VÙNG SIDEWAY",
@@ -610,6 +792,28 @@
     "price": 105.0,
     "label": "ĐÁY VÙNG",
     "color": "#eab308"
+   },
+   "compare": {
+    "novice": {
+     "label": "NGƯỜI MỚI",
+     "icon": "face_guess",
+     "verdict": "MẮC KẸT",
+     "items": [
+      "Thấy giá ngừng rơi là vào lệnh bắt đáy",
+      "Đặt cắt lỗ ngay sát đáy vùng sideway",
+      "Giá thủng đáy thì gồng lỗ, chờ về bờ"
+     ]
+    },
+    "pro": {
+     "label": "NGƯỜI CÓ NGHỀ",
+     "icon": "face_smile",
+     "verdict": "CHỜ XÁC NHẬN",
+     "items": [
+      "Chờ giá rời hẳn khỏi vùng mới hành động",
+      "Vào lệnh khi nhịp hồi bị từ chối",
+      "Cắt lỗ trên đỉnh vùng, lãi gấp ba lần rủi ro"
+     ]
+    }
    }
   },
   "s7": {
@@ -697,7 +901,7 @@
   "Muốn phân biệt, hãy bật Volume Profile lên. Vùng phình to nhất gọi là POC, nơi khối lượng dày đặc. Và khi vùng phình nằm sát đáy tạo hình chữ b, hãy cẩn thận.",
   "Bóc tách hình chữ b sẽ thấy hai phần rõ rệt. Phần thân mảnh phía trên là cú rơi, giá đi nhanh nên ít giao dịch. Phần bụng phình phía dưới là vùng đi ngang, khối lượng cực lớn. Toàn bộ lực mua bán đang dồn hết vào đáy.",
   "Vậy bản chất là gì? Khối lượng lớn mà giá không lên nổi, nghĩa là có người bán chặn ở trên. Phe bán chưa hề rời đi, họ chỉ đang xả dần. Nên đây không phải tạo đáy, mà là trạm dừng.",
-  "Vậy giao dịch thế nào? Quy tắc đầu tiên: đừng bắt đáy khi giá còn trong vùng đi ngang. Hãy kiên nhẫn chờ tín hiệu ở đáy vùng.",
+  "Cùng một vùng giá đó, người mới và người có nghề xử lý khác hẳn nhau. Người mới thấy giá ngừng rơi là vào lệnh ngay, đặt cắt lỗ sát đáy vùng, rồi gồng lỗ khi giá thủng xuống. Người có nghề thì chờ giá rời hẳn khỏi vùng, vào lệnh khi nhịp hồi bị từ chối, và luôn đặt cắt lỗ trên đỉnh vùng để lãi gấp ba lần rủi ro.",
   "Điểm vào lệnh rõ nhất là khi giá đóng cửa hẳn bên dưới vùng. Nếu giá hồi lên mà bị từ chối, đó là điểm bán, cắt lỗ đặt trên đỉnh vùng. Còn nếu giá phá lên trên, tốt nhất đứng ngoài.",
   "Ghi nhớ: giá ngừng giảm không có nghĩa là hết giảm. Nếu thấy hữu ích, hãy theo dõi KenvinZone để học tiếp các mô hình giá. Đây là góc nhìn tham khảo, không phải lời khuyên đầu tư!"
  ],
