@@ -104,6 +104,11 @@ def main() -> None:
     if not proj_name:
         base = lesson.get("topic_id") or (lesson.get("header") or {}).get("title") or "explainer"
         proj_name = f"giai-ma-trading-{slugify(base)}-{today}"
+    # Bài giảng là nội dung trường tồn, không gắn ngày — nhưng render_hyperframes
+    # có chốt an toàn so ngày trong hf-data với ngày ở tên thư mục (chống dùng
+    # nhầm số liệu của ngày khác). Luôn đồng bộ để chốt đó không chặn nhầm.
+    lesson["date"] = datetime.now().strftime("%d/%m/%Y")
+
     out = REPO / "slide" / proj_name
     if out.exists() and "--force" not in sys.argv[2:]:
         sys.exit(f"slide/{proj_name} đã tồn tại — thêm --force để ghi đè.")
