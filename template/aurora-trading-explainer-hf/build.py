@@ -160,10 +160,11 @@ BASE_CSS = """
 .crumb{position:absolute;top:296px;left:0;right:0;text-align:center;font-size:31px;font-weight:900;letter-spacing:6px;color:#aab3c5;text-transform:uppercase;z-index:8;}
 .eb{position:absolute;top:238px;left:0;right:0;text-align:center;z-index:8;}
 .eb span{display:inline-block;background:linear-gradient(135deg,#8b5cf6,#22d3ee);color:#0a0616;font-weight:900;font-size:26px;letter-spacing:4px;padding:11px 26px;border-radius:12px;}
-.tele{position:absolute;left:40px;right:40px;top:1380px;display:flex;gap:20px;z-index:8;}
-.tele .cell{flex:1;background:#0b0f19;border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:22px;text-align:center;}
-.tele .cell .k{display:block;font-size:22px;font-weight:800;letter-spacing:2px;color:#6b7280;}
-.tele .cell .v{display:block;margin-top:8px;font-size:38px;font-weight:900;}
+/* Vùng an toàn Shorts/TikTok/Reels: chữ quan trọng nằm trong x 60–900, y <= 1450 */
+.tele{position:absolute;left:60px;right:120px;top:1296px;display:flex;justify-content:center;gap:12px;z-index:8;}
+.tele .cell{display:flex;align-items:center;gap:12px;background:#0b0f19;border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:7px 18px;white-space:nowrap;}
+.tele .cell .k{font-size:19px;font-weight:800;letter-spacing:1.5px;color:#6b7280;}
+.tele .cell .v{font-size:29px;font-weight:900;}
 .tele .cell.l .v{color:#f43f5e;} .tele .cell.r .v{color:#f59e0b;}
 .htitle{position:absolute;left:40px;right:40px;top:120px;text-align:center;font-size:62px;font-weight:900;line-height:1.08;letter-spacing:-1px;z-index:8;}
 .htitle .b{color:#f59e0b;}
@@ -171,9 +172,9 @@ BASE_CSS = """
 .bigq .g{background:linear-gradient(100deg,#22d3ee,#8b5cf6);-webkit-background-clip:text;background-clip:text;color:transparent;}
 .badge{position:absolute;left:0;right:0;top:1160px;text-align:center;z-index:8;}
 .badge span{display:inline-block;padding:18px 34px;border-radius:18px;font-size:40px;font-weight:900;background:#0b0f19;border:2px solid currentColor;}
-.checklist{position:absolute;left:70px;right:70px;top:1120px;display:flex;flex-direction:column;gap:18px;z-index:8;}
-.chk{display:flex;align-items:center;gap:20px;background:#131722;border:1px solid rgba(255,255,255,.1);border-left:5px solid #10b981;border-radius:16px;padding:18px 24px;font-size:29px;font-weight:800;}
-.chk .n{width:48px;height:48px;border-radius:50%;background:#10b981;color:#06240f;display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0;}
+.checklist{position:absolute;left:70px;right:120px;top:1120px;display:flex;flex-direction:column;gap:10px;z-index:8;}
+.chk{display:flex;align-items:center;gap:20px;background:#131722;border:1px solid rgba(255,255,255,.1);border-left:5px solid #10b981;border-radius:16px;padding:10px 22px;font-size:27px;font-weight:800;}
+.chk .n{width:42px;height:42px;border-radius:50%;background:#10b981;color:#06240f;display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0;}
 .chk.warn{border-left-color:#f59e0b;} .chk.warn .n{background:#f59e0b;color:#2a1a04;}
 .pane2{position:absolute;left:40px;right:40px;height:420px;background:#131722;border:1px solid rgba(255,255,255,.08);border-radius:22px;z-index:1;}
 .pane2 .lab{position:absolute;top:18px;left:28px;font-size:30px;font-weight:900;}
@@ -422,8 +423,8 @@ def _pane_svg(spec, top_y, vid):
     """Mini chart trong 1 pane s2: tự co trục giá + trải đều X vào pane."""
     cands = spec.get("candles", [])
     lo = min(c["l"] for c in cands) - 6; hi = max(c["h"] for c in cands) + 6
-    c2 = {"price_min": lo, "price_max": hi, "chart_top_y": top_y + 86,
-          "chart_height_px": 290, "chart_left_x": 200, "chart_width_px": 680}
+    c2 = {"price_min": lo, "price_max": hi, "chart_top_y": top_y + 80,
+          "chart_height_px": 270, "chart_left_x": 200, "chart_width_px": 680}
     xs = [c["x"] for c in cands]
     x_lo, x_hi = min(xs), max(xs)
     span = (x_hi - x_lo) or 1
@@ -435,14 +436,14 @@ def _pane_svg(spec, top_y, vid):
 def s_two():
     cid, dur = mk(2); s = sc("s2")
     a, b = s.get("chart_top", {}), s.get("chart_bottom", {})
-    parts = [_pane_svg(a, 380, "mA"), _pane_svg(b, 830, "mB")]
+    parts = [_pane_svg(a, 360, "mA"), _pane_svg(b, 770, "mB")]
     body = (f'{crumb(cid)}'
-            f'<div class="pane2" style="top:380px;"><div class="lab" style="color:{UP};">{esc(a.get("label",""))}</div>'
+            f'<div class="pane2" style="top:360px;height:390px;"><div class="lab" style="color:{UP};">{esc(a.get("label",""))}</div>'
             f'<div class="bst" style="color:{UP};">{esc(a.get("badge_status",""))}</div></div>'
-            f'<div class="pane2" style="top:830px;"><div class="lab" style="color:{DOWN};">{esc(b.get("label",""))}</div>'
+            f'<div class="pane2" style="top:770px;height:390px;"><div class="lab" style="color:{DOWN};">{esc(b.get("label",""))}</div>'
             f'<div class="bst" style="color:{DOWN};">{esc(b.get("badge_status",""))}</div></div>'
             f'{svg_layer("".join(parts), "g2")}'
-            f'<div class="bigq" style="top:1280px;font-size:42px;">Mắt thường nhìn <span class="g">giống hệt nhau</span> — phân biệt thế nào?</div>'
+            f'<div class="bigq" style="top:1176px;font-size:42px;right:120px;">Mắt thường nhìn <span class="g">giống hệt nhau</span> — phân biệt thế nào?</div>'
             f'{telemetry("s2")}')
     js = ("gsap.set('#mA .candle-item,#mB .candle-item',{opacity:0});"
           "tl.fromTo('.pane2',{opacity:0,y:30},{opacity:1,y:0,duration:0.5,stagger:0.25,ease:'expo.out'},0.2);"
@@ -660,7 +661,7 @@ def s_entry():
         ex0 = float(ep.get("x", 720))
         evs.append((f'<g id="g7ep"><line x1="{ex0:.0f}" y1="{ey:.0f}" x2="{CX1-10}" y2="{ey:.0f}"'
                     f' stroke="{ep.get("color", DOWN)}" stroke-width="2.6" stroke-dasharray="8 5"/>'
-                    f'{pill(CX1 - 120, ey, ep.get("label", "BÁN"), ep.get("color", DOWN), "p7ep", fs=22)}</g>', int(ep.get("sentence", 1))))
+                    f'{pill(CX1 - 190, ey, ep.get("label", "BÁN"), ep.get("color", DOWN), "p7ep", fs=22)}</g>', int(ep.get("sentence", 1))))
     if slx:
         evs.append((f'<g id="g7sl">{render_level_line(slx["price"], COORD, label=slx.get("label",""), color=slx.get("color", DOWN))}</g>', int(slx.get("sentence", 1))))
     alt = s.get("alt_branch")
@@ -688,7 +689,7 @@ def s_entry():
     rows = "".join(f'<div class="chk{" warn" if i==0 else ""}" id="chk{i}"><div class="n">{i+1}</div><div>{esc(re.sub(chr(10), " ", it))}</div></div>'
                    for i, it in enumerate(items))
     body = (f'{crumb(cid)}<div class="panel" style="height:800px;"></div>{svg_layer("".join(parts), "g7")}'
-            f'<div class="checklist" style="top:1090px;">{rows}</div>{telemetry("s7")}')
+            f'<div class="checklist" style="top:1068px;">{rows}</div>{telemetry("s7")}')
     js = ["gsap.set('#g7bo,#g7rt,#g7ep,#g7sl,.chk,#g7alt',{opacity:0});"]
     gids = [g for g, used in [("#g7bo", bo), ("#g7rt", rt), ("#g7ep", ep), ("#g7sl", slx)] if used]
     for (frag, beat), gid in zip(evs, gids):
@@ -739,11 +740,11 @@ def s_outro():
                 y2 = price_to_y(steps[i + 1]["price"], c8)
                 parts.append(f'<g class="ladarr" id="ladarr{i}">{arrow((x_a+seg_w-30, y+8), (x_a+seg_w+4, y2-8), "", "#8b93a7", f"laa{i}")}</g>')
     css8 = f"""
-.o8-h{{position:absolute;top:1005px;left:0;right:0;text-align:center;font-family:'JBM';font-weight:800;font-size:62px;background:linear-gradient(135deg,#22d3ee,#8b5cf6 55%,{POC});-webkit-background-clip:text;background-clip:text;color:transparent;z-index:8;}}
-.o8-cta{{position:absolute;top:1092px;left:50px;right:50px;text-align:center;font-size:30px;font-weight:800;color:#e2e8f0;line-height:1.35;z-index:8;}}
-.o8-pl{{position:absolute;top:1186px;left:0;right:0;display:flex;gap:14px;justify-content:center;z-index:8;}}
+.o8-h{{position:absolute;top:990px;left:0;right:0;text-align:center;font-family:'JBM';font-weight:800;font-size:62px;background:linear-gradient(135deg,#22d3ee,#8b5cf6 55%,{POC});-webkit-background-clip:text;background-clip:text;color:transparent;z-index:8;}}
+.o8-cta{{position:absolute;top:1072px;left:60px;right:140px;text-align:center;font-size:30px;font-weight:800;color:#e2e8f0;line-height:1.35;z-index:8;}}
+.o8-pl{{position:absolute;top:1160px;left:60px;right:120px;display:flex;gap:14px;justify-content:center;z-index:8;}}
 .o8-pl span{{font-family:'JBM';font-weight:800;font-size:27px;color:#93c5fd;border:2px solid rgba(96,165,250,.5);border-radius:12px;padding:7px 18px;}}
-.o8-d{{position:absolute;left:70px;right:70px;top:1268px;text-align:center;font-size:26px;line-height:1.4;color:#fed7aa;padding:12px 18px;border:1px solid rgba(245,158,11,.3);border-radius:14px;background:rgba(255,255,255,.03);z-index:8;}}
+.o8-d{{position:absolute;left:70px;right:140px;top:1236px;text-align:center;font-size:26px;line-height:1.4;color:#fed7aa;padding:12px 18px;border:1px solid rgba(245,158,11,.3);border-radius:14px;background:rgba(255,255,255,.03);z-index:8;}}
 .o8-d b{{color:#fff;}}
 """
     tg = cta.get("telegram", "")
@@ -806,8 +807,8 @@ def captions():
                       f"tl.to('#cw{gi}_{wi}',{{color:'#ffffff',backgroundColor:'rgba(245,158,11,0)',duration:0.06}},{we_});")
         js.append(f"tl.to('#cg{gi} .cpill',{{opacity:0,duration:0.1,ease:'power2.in'}},{e2-0.1});tl.set('#cg{gi}',{{opacity:0,visibility:'hidden'}},{e2});")
     css = """
-.cg{position:absolute;left:0;right:0;top:1490px;text-align:center;opacity:0;visibility:hidden;}
-.cpill{display:inline-block;max-width:960px;padding:14px 26px;border-radius:22px;background:rgba(2,6,23,.72);border:1px solid rgba(255,255,255,.08);font-size:44px;font-weight:800;line-height:1.35;color:#cbd5e1;}
+.cg{position:absolute;left:60px;right:120px;bottom:470px;text-align:center;opacity:0;visibility:hidden;}
+.cpill{display:inline-block;max-width:900px;padding:12px 24px;border-radius:22px;background:rgba(2,6,23,.72);border:1px solid rgba(255,255,255,.08);font-size:42px;font-weight:800;line-height:1.3;color:#cbd5e1;}
 .cw{display:inline-block;padding:0 6px;border-radius:10px;}
 """
     return "captions", TOTAL, scene_file("captions", TOTAL, css, "\n".join(groups), "\n".join(js))
@@ -827,7 +828,7 @@ NOTE_COLORS = {"down": DOWN, "up": UP, "poc": POC, "level": LEVEL, "vp": VP, "wa
                "cyan": "#22d3ee", "ink": "#e7e9f0"}
 NOTE_H, NOTE_GAP = 58, 12
 _TOP_RIGHT = {"x0": 600, "y0": 352, "x1": 1030, "y1": 668}
-_BAND = {"x0": 64, "y0": 1112, "x1": 1016, "y1": 1366}
+_BAND = {"x0": 64, "y0": 1108, "x1": 900, "y1": 1284}
 NOTE_ZONES = {"s0": _TOP_RIGHT, "s1": _TOP_RIGHT, "s3": _BAND, "s4": _BAND,
               "s5": {"x0": 724, "y0": 452, "x1": 1040, "y1": 676}, "s7": _TOP_RIGHT}
 # s2/s6/s8 bố cục khác hẳn chart chung; s7 đã dày nhãn trên chart (retest, nhánh kịch bản 2)
@@ -923,15 +924,20 @@ def notes():
             moves[n["id"]].append((st, *slot_xy(z, k)))
         for n in [n for n in rail if st <= n["t0"] < en]:
             stack = [m for m in stack if alive(m, n["t0"])]
-            used = {k for k, m in enumerate(stack)}
             if len(stack) >= cap:
+                # hết chỗ: đẩy nhãn cũ nhất ra, các nhãn còn lại trượt lên → giữ thứ tự cũ→mới
                 evict[stack[0]["id"]] = n["t0"]; stack.pop(0)
-            # giữ chỗ cũ của nhãn đang sống: nhãn mới vào slot trống đầu tiên phía dưới
-            slots = [moves[m["id"]][-1][2] for m in stack]
-            k = 0
-            while slot_xy(z, k)[1] in slots:
-                k += 1
-            k = min(k, cap - 1)
+                for j, m in enumerate(stack):
+                    if moves[m["id"]][-1][1:] != slot_xy(z, j):
+                        moves[m["id"]].append((n["t0"] - 0.15, *slot_xy(z, j)))
+                k = len(stack)
+            else:
+                # giữ chỗ nhãn đang sống: nhãn mới vào slot trống đầu tiên phía dưới
+                slots = [moves[m["id"]][-1][2] for m in stack]
+                k = 0
+                while slot_xy(z, k)[1] in slots:
+                    k += 1
+                k = min(k, cap - 1)
             moves[n["id"]].append((n["t0"], *slot_xy(z, k)))
             stack.append(n)
     for n in rail:
