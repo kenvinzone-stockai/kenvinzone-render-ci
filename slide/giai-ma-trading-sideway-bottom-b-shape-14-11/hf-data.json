@@ -364,6 +364,13 @@
      "label": "KẸT X",
      "spawn_beat": 0.86
     }
+   ],
+   "camera": [
+    {
+     "sentence": 1,
+     "until_sentence": 2,
+     "focus": "sideway"
+    }
    ]
   },
   "s2": {
@@ -819,6 +826,18 @@
      "color": "down",
      "keep_until": "s5"
     }
+   ],
+   "camera": [
+    {
+     "sentence": 1,
+     "until_sentence": 2,
+     "focus": {
+      "x0": 380,
+      "x1": 700,
+      "price_top": 131,
+      "price_bottom": 104
+     }
+    }
    ]
   },
   "s6": {
@@ -906,7 +925,14 @@
      "PHÁ LÊN ĐỈNH VÙNG",
      "ĐỨNG NGOÀI"
     ]
-   }
+   },
+   "camera": [
+    {
+     "sentence": 1,
+     "until_sentence": 2,
+     "focus": "retest"
+    }
+   ]
   },
   "s8": {
    "stage": "GHI NHỚ & CTA",

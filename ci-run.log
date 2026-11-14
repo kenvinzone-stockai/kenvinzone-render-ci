@@ -3,26 +3,26 @@
   Đã tái tạo config/social-upload.json từ secret.
   [phát âm] đã áp từ điển phiên âm cho giọng đọc (chữ hiển thị giữ nguyên).
 === [1/3] Tạo giọng đọc (gemini) ===
-Full voiceover 101.16s · 60 quãng lặng · 9 dòng
-  ranh 1: ước   5.88s → lặng 5.12–5.90 (0.77s) cắt 5.51s
-  ranh 2: ước  14.97s → lặng 14.18–14.92 (0.74s) cắt 14.55s
-  ranh 3: ước  24.97s → lặng 24.05–24.86 (0.81s) cắt 24.45s
-  ranh 4: ước  34.53s → lặng 34.71–35.44 (0.73s) cắt 35.07s
-  ranh 5: ước  47.83s → lặng 48.04–48.80 (0.77s) cắt 48.42s
-  ranh 6: ước  59.34s → lặng 59.97–60.92 (0.95s) cắt 60.44s
-  ranh 7: ước  78.70s → lặng 79.58–80.40 (0.82s) cắt 79.99s
-  ranh 8: ước  90.12s → lặng 91.04–91.58 (0.54s) cắt 91.31s
+Full voiceover 101.12s · 64 quãng lặng · 9 dòng
+  ranh 1: ước   5.68s → lặng 5.23–6.21 (0.98s) cắt 5.72s
+  ranh 2: ước  14.78s → lặng 14.26–15.12 (0.86s) cắt 14.69s
+  ranh 3: ước  24.80s → lặng 24.75–25.64 (0.88s) cắt 25.19s
+  ranh 4: ước  34.36s → lặng 35.23–36.11 (0.87s) cắt 35.67s
+  ranh 5: ước  47.68s → lặng 49.13–49.92 (0.79s) cắt 49.53s
+  ranh 6: ước  59.20s → lặng 60.56–61.65 (1.08s) cắt 61.10s
+  ranh 7: ước  78.59s → lặng 79.83–80.66 (0.82s) cắt 80.25s
+  ranh 8: ước  90.02s → lặng 91.18–91.59 (0.40s) cắt 91.38s
   → snap được 8/8 ranh giới vào quãng lặng
-Slide 1:    0.00s →    5.51s  = 5.51s  -> line_0.mp3
-Slide 2:    5.51s →   14.55s  = 9.04s  -> line_1.mp3
-Slide 3:   14.55s →   24.45s  = 9.90s  -> line_2.mp3
-Slide 4:   24.45s →   35.07s  = 10.62s  -> line_3.mp3
-Slide 5:   35.07s →   48.42s  = 13.35s  -> line_4.mp3
-Slide 6:   48.42s →   60.44s  = 12.02s  -> line_5.mp3
-Slide 7:   60.44s →   79.99s  = 19.54s  -> line_6.mp3
-Slide 8:   79.99s →   91.31s  = 11.32s  -> line_7.mp3
-Slide 9:   91.31s →  101.16s  = 9.85s  -> line_8.mp3
-Concatenated voiceover: 101.16s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-14-11/output/voiceover_concat.mp3
+Slide 1:    0.00s →    5.72s  = 5.72s  -> line_0.mp3
+Slide 2:    5.72s →   14.69s  = 8.97s  -> line_1.mp3
+Slide 3:   14.69s →   25.19s  = 10.51s  -> line_2.mp3
+Slide 4:   25.19s →   35.67s  = 10.48s  -> line_3.mp3
+Slide 5:   35.67s →   49.53s  = 13.86s  -> line_4.mp3
+Slide 6:   49.53s →   61.10s  = 11.58s  -> line_5.mp3
+Slide 7:   61.10s →   80.25s  = 19.14s  -> line_6.mp3
+Slide 8:   80.25s →   91.38s  = 11.14s  -> line_7.mp3
+Slide 9:   91.38s →  101.12s  = 9.73s  -> line_8.mp3
+Concatenated voiceover: 101.12s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-14-11/output/voiceover_concat.mp3
 Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
 Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
 Sending full script to Gemini TTS: 9 slides, 1639 chars
@@ -33,8 +33,8 @@ Full Gemini TTS saved: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-
 === HyperFrames (aurora-trading-explainer-hf): dung project tai /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-14-11/output/hf ===
   [captions] Khong co word timing tu whisper -> chia deu theo so tu.
 === HyperFrames: dung composition tu hf-data.json ===
-TOTAL 105.46 scenes ['s0', 's1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 'notes', 'captions']
-=== HyperFrames: render tung khung hinh (105.5s video) ===
+TOTAL 105.42 scenes ['s0', 's1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 'notes', 'captions']
+=== HyperFrames: render tung khung hinh (105.4s video) ===
   Trinh duyet render: /home/runner/.cache/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux64/chrome-headless-shell
   ◆  Rendering hf → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-14-11/output/final_video.hf.mp4
      30fps · high · auto workers (4 cores detected)
@@ -55,10 +55,10 @@ TOTAL 105.46 scenes ['s0', 's1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 'note
   HyperFrames render 80%
   HyperFrames render 90%
   ◇  /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-14-11/output/final_video.hf.mp4
-     12.3 MB · 1m 45.5s video · rendered in 2m 12.6s
-     beginframe capture · software gpu · compile 1.5s · extract 0.0s · audio 2.7s · probe 0.2s · setup 1.3s · capture 2m 6.5s · encode (during capture) 2m 6.4s · assemble 0.5s
+     14.2 MB · 1m 45.4s video · rendered in 2m 45.3s
+     beginframe capture · software gpu · compile 1.8s · extract 0.0s · audio 3.8s · probe 0.3s · setup 2.2s · capture 2m 36.7s · encode (during capture) 2m 36.7s · assemble 0.6s
 Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-14-11/output/final_video.mp4
   Video: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-14-11/output/final_video.mp4
 === [3/3] Upload YouTube (privacy=private) ===
-{"ok": true, "platform": "youtube", "project": "giai-ma-trading-sideway-bottom-b-shape-14-11", "video_id": "TK6ZT_6pJj0", "url": "https://youtu.be/TK6ZT_6pJj0", "studio_url": "https://studio.youtube.com/video/TK6ZT_6pJj0/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
-  Xong: https://youtu.be/TK6ZT_6pJj0
+{"ok": true, "platform": "youtube", "project": "giai-ma-trading-sideway-bottom-b-shape-14-11", "video_id": "gnM8op9tj-M", "url": "https://youtu.be/gnM8op9tj-M", "studio_url": "https://studio.youtube.com/video/gnM8op9tj-M/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
+  Xong: https://youtu.be/gnM8op9tj-M
