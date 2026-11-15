@@ -1,0 +1,192 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "15/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "MoneyF",
+    "short": "MF",
+    "author": "Long Giang",
+    "headline": "Quốc hội thông qua loạt thay đổi quan trọng trong Luật Chứng khoán",
+    "date": "13/11/2026",
+    "url": "https://moneyf.vn/quoc-hoi-thong-qua-loat-thay-doi-quan-trong-trong-st6aypar"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "Luật Chứng khoán",
+      "chính thức sửa đổi"
+    ],
+    "sub": "Quốc hội thông qua nhiều thay đổi then chốt",
+    "chips": [
+      {
+        "icon": "✓",
+        "text": "463/464 tán thành",
+        "tone": "up"
+      },
+      {
+        "icon": "⑂",
+        "text": "Cơ chế thử nghiệm",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "Hiệu lực từ 1/3/2027",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Quốc hội đã chính thức thông qua <mark>Luật Chứng khoán sửa đổi</mark> với sự tán thành áp đảo, bổ sung <mark>cơ chế thử nghiệm có kiểm soát</mark> và đơn giản hóa thủ tục lưu ký."
+  },
+  "s2": {
+    "title_lines": [
+      "Quốc hội biểu quyết",
+      "tán thành áp đảo"
+    ],
+    "stats": [
+      {
+        "value": 463,
+        "decimals": 0,
+        "unit": "đại biểu",
+        "label": "tán thành trên 464 đại biểu có mặt",
+        "badge": "99,78%",
+        "tone": "gold",
+        "beat": 1
+      }
+    ],
+    "note": "Luật có hiệu lực thi hành từ ngày 1/3/2027 nhằm kiện toàn thị trường."
+  },
+  "s3": {
+    "title_lines": [
+      "Cơ chế thử nghiệm",
+      "lần đầu xuất hiện"
+    ],
+    "lead": "Mở đường cho đổi mới sáng tạo tài chính",
+    "bars": [
+      {
+        "label": "Kiểm soát rủi ro",
+        "display": "Chặt chẽ",
+        "value": 100,
+        "beat": 1
+      },
+      {
+        "label": "Bảo vệ tài sản NĐT",
+        "display": "Ưu tiên",
+        "value": 100,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 1,
+      "suffix": "/3/2027",
+      "text": "Thời điểm luật chính thức có hiệu lực thi hành",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Cắt giảm thủ tục",
+      "nới lỏng nhân sự"
+    ],
+    "cards": [
+      {
+        "big": "Tránh trùng lặp",
+        "title": "Thủ tục lưu ký",
+        "text": "Bỏ bớt điều kiện vốn đã được ngân hàng giám sát"
+      },
+      {
+        "big": "Tối thiểu 1",
+        "title": "Đại diện pháp luật",
+        "text": "Chỉ cần 1 người có chứng chỉ hành nghề chứng khoán"
+      },
+      {
+        "big": "2 năm",
+        "title": "Thời gian chuyển tiếp",
+        "text": "Doanh nghiệp có lộ trình sắp xếp lại nhân sự"
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Ba trọng tâm",
+      "thay đổi cốt lõi"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "THỬ NGHIỆM",
+        "title": "Cơ chế Sandbox",
+        "text": "Mở cửa cho các sản phẩm, dịch vụ tài chính công nghệ mới"
+      },
+      {
+        "color": "yellow",
+        "tag": "ĐIỀU HÀNH",
+        "title": "Mô hình Sở",
+        "text": "Thủ tướng quyết định mô hình sở để linh hoạt thích ứng"
+      },
+      {
+        "color": "red",
+        "tag": "AN TOÀN",
+        "title": "Tách biệt tài sản",
+        "text": "Quy định đối chiếu và tất toán bảo vệ tuyệt đối vốn khách hàng"
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Tín hiệu chính sách",
+      "đến thị trường"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh - Mở rộng",
+        "text": "Hút dòng vốn quốc tế và thúc đẩy sản phẩm đầu tư mới",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng - Chờ đợi",
+        "text": "Cần 3 văn bản hướng dẫn chi tiết đi vào đời sống",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ - Sàng lọc",
+        "text": "Siết an toàn công nghệ, đào thải đơn vị thiếu chuẩn mực",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư cá nhân",
+      "cần làm gì?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Yên tâm về tài sản",
+        "text": "Hệ thống lưu ký và đối chiếu dữ liệu được chuẩn hóa an toàn",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Chọn CTCK uy tín",
+        "text": "Ưu tiên đơn vị có nền tảng công nghệ và tuân thủ cao",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Theo dõi nghị định",
+        "text": "Nắm bắt các sản phẩm thử nghiệm mới khi hoàn thiện hành lang",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Khung pháp lý mới sẽ nâng tầm thị trường chứng khoán Việt Nam từ 2027.",
+    "cta": "Theo dõi KenvinZone để đón đầu xu hướng đầu tư mới"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
