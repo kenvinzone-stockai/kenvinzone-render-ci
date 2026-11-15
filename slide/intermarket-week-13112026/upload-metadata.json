@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "Liên thị trường tuần 13/11: Áp lực từ USD, S&P 500 & Nasdaq thử thách",
+    "description": "📊 Bản tin Phân tích Định lượng Liên thị trường tuần kết thúc ngày 13/11/2026 từ KenvinZone Analytics.\n\nĐiểm tổng hợp Composite liên thị trường ghi nhận -8.9 điểm, phản ánh sự thận trọng bao trùm khi sức mạnh đồng USD gia tăng đè nặng lên các lớp tài sản rủi ro.\n\n📌 TỔNG HỢP SỐ LIỆU ĐỊNH LƯỢNG:\n• Composite Liên thị trường: -8.9 / 100\n• S&P 500: -2.9 (Trung lập) | M2 +1.31 vs USD -4.93 | Gamma Âm\n• Nasdaq: -10.9 (Giảm) | Lãi suất thực +1.14 vs USD -5.43 | Gamma Âm\n• Vàng (XAUUSD): -12.9 (Giảm) | M2 +2.59 vs USD -10.20 | Gamma Dương\n\n🎯 LỰC VĨ MÔ NỔI BẬT:\nĐồng USD đóng vai trò lực cản trung bình lớn nhất (-6.85), triệt tiêu phần lớn nỗ lực nâng đỡ từ thanh khoản M2 (+1.51).\n\n⚠️ Tuyên bố miễn trừ trách nhiệm: Nội dung chỉ nhằm mục đích cung cấp thông tin và phân tích định lượng, KHÔNG phải lời khuyên đầu tư. Nhà đầu tư tự chịu trách nhiệm với quyết định giao dịch của mình.\n\n#lienthitruong #marketbias #vang #sp500 #nasdaq #kenvinzone",
+    "tags": [
+      "liên thị trường",
+      "market bias",
+      "sp500",
+      "nasdaq",
+      "vàng",
+      "xauusd",
+      "kenvinzone",
+      "vĩ mô",
+      "thanh khoản m2",
+      "đồng usd",
+      "lãi suất thực",
+      "định lượng",
+      "phân tích kỹ thuật"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "intermarket-weekly",
+    "date": "13/11/2026"
+  }
+}
