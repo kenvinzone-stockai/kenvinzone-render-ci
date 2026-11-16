@@ -230,7 +230,16 @@ def scene_index(key, line_hdr, line_gamma):
     t_lv = tline(line_gamma, 0.5, stsc)
     t_em = tline(line_gamma, 0.8, stsc)
     pos = (sc + 100) / 200 * 100
+    # lực lớn nhất (thường là USD/lợi suất): trục cân nghiêng về phía nó + thanh phát sáng nhịp
+    big = max(range(len(rows)), key=lambda i: abs(rows[i]["value"]))
+    t_big = tline(line_hdr, 0.28 + 0.52 * (big / max(1, len(rows) - 1)), stsc)
+    press_js = (f"tl.to('#{cid}-axis', {{rotation:{-2.5 if rows[big]['value'] < 0 else 2.5}, transformOrigin:'50% 100%', duration:0.6, ease:'power2.out'}}, {t_big + 0.5});"
+                f"tl.fromTo('#{cid}-bar{big}', {{filter:'brightness(1)'}}, {{filter:'brightness(1.7)', duration:0.35, yoyo:true, repeat:3, ease:'sine.inOut', immediateRender:false}}, {t_big + 0.6});")
+    # Gamma âm: viền khung chớp đỏ + dấu "BIẾN ĐỘNG KHUẾCH ĐẠI"
+    neg_js = (f"tl.fromTo('#{cid}-gp', {{boxShadow:'0 0 0px #ef4444'}}, {{boxShadow:'0 0 46px #ef4444', duration:0.12, repeat:5, yoyo:true, ease:'none', immediateRender:false}}, {t_gex + 0.4});"
+              f"tl.fromTo('#{cid}-amp', {{opacity:0, scale:2, rotation:-6}}, {{opacity:1, scale:1, rotation:-3, duration:0.28, ease:'back.out(2.4)', immediateRender:false}}, {t_gex + 0.5});") if neg else ""
     css = f"""
+.ix-amp{{position:absolute;right:200px;top:{top0+6*rh-4}px;font-size:24px;font-weight:900;letter-spacing:1.5px;color:#fff;background:#ef4444;padding:6px 14px;border-radius:10px;box-shadow:0 6px 24px rgba(239,68,68,.5);z-index:3;opacity:0;}}
 .ix-hd{{position:absolute;left:60px;right:60px;top:250px;}}
 .ix-tk{{display:inline-block;font-size:30px;font-weight:900;letter-spacing:2px;color:#fff;background:{acc};padding:8px 20px;border-radius:12px;}}
 .ix-nm2{{display:inline-block;margin-left:14px;font-size:40px;font-weight:900;color:{acc};vertical-align:middle;}}
@@ -267,6 +276,7 @@ def scene_index(key, line_hdr, line_gamma):
   <div class="ix-side" style="right:70px;color:#4ade80;">NÂNG ĐỠ ▶</div>
   <div class="ix-axis" id="{cid}-axis"></div>
   {''.join(frows)}
+  {f'<div class="ix-amp" id="{cid}-amp">BIẾN ĐỘNG KHUẾCH ĐẠI</div>' if neg else ''}
   <div class="ix-gp" id="{cid}-gp">
     <div class="row1"><div class="gk">GAMMA {gword}</div><div class="gex"><span style="font-size:22px;color:#94a3b8;">Net GEX </span><span id="{cid}-gex">$0M</span></div></div>
     <div class="ix-lvls">
@@ -290,6 +300,7 @@ tl.fromTo('#{cid}-axis', {{scaleY:0}}, {{scaleY:1, duration:0.6, ease:'power2.in
 {''.join(fjs)}
 tl.fromTo('#{cid}-gp', {{opacity:0, y:40, filter:'blur(8px)'}}, {{opacity:1, y:0, filter:'blur(0px)', duration:0.45, ease:'expo.out', immediateRender:false}}, {t_gpanel});
 counter('#{cid}-gex', 0, {g['net_gex_m']}, {t_gex}, 1.0, 0, '$', 'M');
+{press_js}{neg_js}
 tl.fromTo('#{cid}-em', {{opacity:0}}, {{opacity:1, duration:0.4, immediateRender:false}}, {t_em});
 tl.to('#{cid}-stage', {{opacity:0, y:-100, filter:'blur(12px)', duration:0.3, ease:'power3.in'}}, {dur - 0.32});
 """
