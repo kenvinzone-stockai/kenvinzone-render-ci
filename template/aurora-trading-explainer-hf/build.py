@@ -352,8 +352,8 @@ def s_hook():
     # tách tiêu đề 2 dòng theo dấu chấm giữa (• hoặc ·)
     tparts = [x.strip() for x in re.split(r"[•·]", str(h.get("title", ""))) if x.strip()] or [str(h.get("title", ""))]
     la = tparts[0]; lb = tparts[1] if len(tparts) > 1 else ""
-    fa = int(max(56, min(104, 880 / (max(1, len(la)) * 0.70))))
-    fb = int(max(50, min(92, 880 / (max(1, len(lb)) * 0.70)))) if lb else 0
+    fa = int(max(56, min(96, 880 / (max(1, len(la)) * 0.70))))
+    fb = int(max(50, min(86, 880 / (max(1, len(lb)) * 0.70)))) if lb else 0
     points = cover.get("points") or [sc(k).get("stage", "") for k in ("s2", "s3", "s7")]
     points = [pt for pt in points if pt][:3]
     chips = "".join(f'<div class="c0-chip" id="c0chip{i}"><span class="n">{i+1}</span>{esc(pt)}</div>'
@@ -362,7 +362,7 @@ def s_hook():
     chart_svg = ""
     if cands:
         lo = min(c["l"] for c in cands) - 4; hi = max(c["h"] for c in cands) + 4
-        c0 = {"price_min": lo, "price_max": hi, "chart_top_y": 925, "chart_height_px": 240,
+        c0 = {"price_min": lo, "price_max": hi, "chart_top_y": 960, "chart_height_px": 225,
               "chart_left_x": 120, "chart_width_px": 840}
         laid = [dict(c, x=170 + k * (760 / max(1, len(cands) - 1)), width=16, id=f"cv{k}")
                 for k, c in enumerate(cands)]
@@ -371,22 +371,23 @@ def s_hook():
         chart_svg = svg_layer(grid(c0) + f'<g id="g0c">{render_candlesticks(laid, c0)}</g>'
                               + arrow(a1, a2, s.get("arrow_drop", {}).get("label", ""), DOWN, "arr0"), "g0")
     css0 = f"""
-.c0-plate{{position:absolute;top:356px;left:40px;right:40px;text-align:center;z-index:8;}}
+.c0-col{{position:absolute;top:322px;left:40px;right:40px;display:flex;flex-direction:column;align-items:center;gap:20px;z-index:8;}}
+.c0-plate{{text-align:center;}}
 .c0-plate>div{{display:inline-block;padding:24px 34px;border-radius:26px;border:2px solid rgba(139,92,246,.5);background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(139,92,246,.08));box-shadow:0 18px 50px rgba(0,0,0,.45),0 0 40px rgba(34,211,238,.18);}}
 .c0-plate h1{{font-weight:900;line-height:1.16;letter-spacing:-0.5px;margin:0;}}
 .c0-plate .a{{display:block;padding-top:.16em;font-size:{fa}px;white-space:nowrap;background:linear-gradient(100deg,#22d3ee,#8b5cf6);-webkit-background-clip:text;background-clip:text;color:transparent;}}
 .c0-plate .b{{display:block;padding-top:.14em;font-size:{fb}px;white-space:nowrap;background:linear-gradient(100deg,#fde68a,{POC});-webkit-background-clip:text;background-clip:text;color:transparent;}}
-.c0-sub{{position:absolute;top:634px;left:0;right:0;text-align:center;font-size:33px;font-weight:900;letter-spacing:3px;color:{POC};text-transform:uppercase;z-index:8;}}
-.c0-chips{{position:absolute;top:694px;left:60px;right:60px;display:flex;flex-direction:column;align-items:center;gap:12px;z-index:8;}}
+.c0-sub{{text-align:center;font-size:33px;font-weight:900;letter-spacing:3px;color:{POC};text-transform:uppercase;z-index:8;}}
+.c0-chips{{display:flex;flex-direction:column;align-items:center;gap:12px;}}
 .c0-chip{{display:flex;align-items:center;gap:14px;font-weight:800;font-size:29px;color:#e2e8f0;padding:10px 24px;border-radius:99px;border:2px solid rgba(139,92,246,.45);background:rgba(15,23,42,.72);}}
 .c0-chip .n{{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8b5cf6,#22d3ee);color:#0a0616;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px;flex-shrink:0;}}
 """
     body = (f'<div class="eb"><span>AURORA EXPLAINER</span></div>'
-            f'<div class="c0-plate" id="c0t"><div><h1><span class="a">{esc(la)}</span>'
+            f'<div class="c0-col"><div class="c0-plate" id="c0t"><div><h1><span class="a">{esc(la)}</span>'
             + (f'<span class="b">{esc(lb)}</span>' if lb else "") + '</h1></div></div>'
             f'<div class="c0-sub" id="c0s">{esc(cover.get("sub", "HÔM NAY BẠN SẼ HIỂU"))}</div>'
-            f'<div class="c0-chips" id="c0c">{chips}</div>'
-            f'<div class="panel" style="top:892px;height:300px;border-radius:24px;"></div>{chart_svg}{telemetry("s0")}')
+            f'<div class="c0-chips" id="c0c">{chips}</div></div>'
+            f'<div class="panel" style="top:930px;height:290px;border-radius:24px;"></div>{chart_svg}{telemetry("s0")}')
     js = ["tl.fromTo('#c0t',{opacity:0,scale:1.12,filter:'blur(12px)'},{opacity:1,scale:1,filter:'blur(0px)',duration:0.55,ease:'expo.out'},0.15);",
           "gsap.set('#c0s,.c0-chip,#g0 .candle-item,#g0 .arrow',{opacity:0});",
           "tl.fromTo('#c0s',{opacity:0,y:16},{opacity:1,y:0,duration:0.4,ease:'expo.out'},0.7);",

@@ -313,7 +313,7 @@ def scene_journey():
 .jn-warn{{color:#fde68a;background:rgba(245,158,11,.12);border:2px solid rgba(245,158,11,.5);}}
 .jn-warn b,.jn-twist b{{font-family:'JBM';color:#fff;}}
 .jn-twist{{color:#fff;background:linear-gradient(135deg,rgba({TH['glow']},.35),rgba(15,23,42,.6));border:2px solid {TH['l']};}}
-.jn-card{{position:absolute;left:60px;right:60px;height:108px;border-radius:20px;background:rgba(15,23,42,.72);border:2px solid;padding:12px 24px;}}
+.jn-card{{position:absolute;left:60px;right:60px;height:100px;border-radius:20px;background:rgba(15,23,42,.72);border:2px solid;padding:12px 24px;}}
 .jn-card .t{{font-family:'JBM';font-weight:800;font-size:26px;}} .jn-card .m{{font-size:28px;color:#94a3b8;margin-left:14px;font-weight:700;}}
 .jn-card .x{{font-size:29px;font-weight:700;color:#e2e8f0;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}} .jn-card .x b{{font-family:'JBM';color:#fff;}}
 .jn-rlab{{position:absolute;right:70px;top:{yr - 46:.0f}px;font-size:26px;font-weight:800;color:#fca5a5;}}
@@ -331,8 +331,8 @@ def scene_journey():
 </svg>
 <div class="jn-rlab" id="jn-rlab">{esc(r['label'])}</div>
 <div class="jn-zlab" id="jn-zlab">{esc(z['label'])}</div>
-<div class="jn-card" id="jn-am" style="top:960px;border-color:{TONE['up']}88;"><div><span class="t" style="color:{TONE['up']};">{esc(am['time'])}</span><span class="m">{esc(am['meta'])}</span></div><div class="x" style="font-size:{_fit_fs(am['text'])}px;">{am['text']}</div></div>
-<div class="jn-card" id="jn-pm" style="top:1078px;border-color:{TH['l']}aa;"><div><span class="t" style="color:{TH['l']};">{esc(pm['time'])}</span><span class="m">{esc(pm['meta'])}</span></div><div class="x" style="font-size:{_fit_fs(pm['text'])}px;">{pm['text']}</div></div>
+<div class="jn-card" id="jn-am" style="top:938px;border-color:{TONE['up']}88;"><div><span class="t" style="color:{TONE['up']};">{esc(am['time'])}</span><span class="m">{esc(am['meta'])}</span></div><div class="x" style="font-size:{_fit_fs(am['text'])}px;">{am['text']}</div></div>
+<div class="jn-card" id="jn-pm" style="top:1046px;border-color:{TH['l']}aa;"><div><span class="t" style="color:{TH['l']};">{esc(pm['time'])}</span><span class="m">{esc(pm['meta'])}</span></div><div class="x" style="font-size:{_fit_fs(pm['text'])}px;">{pm['text']}</div></div>
 </div>"""
     t2, t3, t4 = lt(cid, L(2)[0]), lt(cid, L(3)[0]), lt(cid, L(4)[0])
     d4 = L(4)[1]
@@ -376,6 +376,20 @@ def scene_subs():
         p = v / m
         return "#f87171" if p < 0.45 else ("#fbbf24" if p <= 0.65 else "#4ade80")
     rows, js_rows = [], []
+    # "GIẢM MẠNH NHẤT" chỉ khi thật sự có thành phần giảm (trước đây hiện cả khi mọi thành phần +0)
+    worst_down = subs[worst]["pm"] - subs[worst]["am"] < 0
+    worst_tag = f'<div class="sb-tag" id="sb-tag" style="top:{420 + worst*128 - 40}px;">GIẢM MẠNH NHẤT</div>' if worst_down else ""
+    # Dòng tiền: nhãn trạng thái riêng (đúng trọng tâm tiêu đề bản tin)
+    fi = next((i for i, x in enumerate(subs) if "dòng tiền" in str(x["label"]).lower()), None)
+    flow_tag, flow_js = "", ""
+    if fi is not None:
+        f = subs[fi]; fd = f["pm"] - f["am"]; fr = f["pm"] / f["max"]
+        ft = ("DÒNG TIỀN RÚT RA", "#ef4444") if fd < 0 else (("DÒNG TIỀN VÀO", "#16a34a") if fd > 0 else
+             (("DÒNG TIỀN YẾU", "#d97706") if fr < 0.45 else ("", "")))
+        if ft[0] and not (worst_down and fi == worst):
+            flow_tag = f'<div class="sb-tag" id="sb-flow" style="top:{420 + fi*128 - 40}px;background:{ft[1]};">{ft[0]}</div>'
+            flow_js = (f"tl.fromTo('#sb-flow', {{opacity:0, scale:0.6}}, {{opacity:1, scale:1, duration:0.35, ease:'back.out(2)', immediateRender:false}}, {{T}});"
+                       f"tl.fromTo('#sb-b{fi}', {{filter:'brightness(1)'}}, {{filter:'brightness(1.7)', duration:0.3, yoyo:true, repeat:3, ease:'sine.inOut', immediateRender:false}}, {{T}});")
     for i, s in enumerate(subs):
         y = 420 + i * 128
         wam = BW * s["am"] / s["max"]
@@ -407,15 +421,16 @@ def scene_subs():
 <div class="ttl" id="sb-ttl">5 điểm thành phần <span class="acc">tổng {tot:+d}</span></div>
 <div class="sub" id="sb-sub">Sáng 11:01 → chiều 15:01 · vạch mờ = điểm sáng</div>
 {''.join(rows)}
-<div class="sb-tag" id="sb-tag" style="top:{420 + worst*128 - 40}px;">GIẢM MẠNH NHẤT</div>
+{worst_tag}{flow_tag}
 <div class="sb-note" id="sb-note">{esc(D.get('subscore_note', ''))}</div>
 </div>"""
     js = f"""
-gsap.set('#sb-stage .sb-row, #sb-tag, #sb-note', {{opacity:0}});
+gsap.set('#sb-stage .sb-row, #sb-tag, #sb-flow, #sb-note', {{opacity:0}});
 {title_in('#sb-ttl')}
 tl.fromTo('#sb-sub', {{opacity:0}}, {{opacity:1, duration:0.3}}, 0.3);
 {''.join(js_rows)}
 tl.fromTo('#sb-tag', {{opacity:0, scale:0.6}}, {{opacity:1, scale:1, duration:0.35, ease:'back.out(2)', immediateRender:false}}, {lt(cid, beat(5, 0.55))});
+{flow_js.replace('{T}', str(lt(cid, beat(5, 0.08 + (fi or 0) * 0.1)) + 1.4)) if flow_js else ''}
 tl.fromTo('#sb-note', {{opacity:0, y:30}}, {{opacity:1, y:0, duration:0.45, ease:'expo.out', immediateRender:false}}, {lt(cid, beat(5, 0.6))});
 {exit_js('#sb-stage', dur, 'up')}
 """
@@ -430,15 +445,17 @@ def scene_tf():
     cards, js = [], []
     order = sorted(range(len(tfs)), key=lambda i: {"D1": 0, "W1": 1, "3D": 2}.get(tfs[i]["tf"], 3))
     for rank, i in enumerate(order):
-        t = tfs[i]; x, y = pos[i]; c = TONE.get(t["trend"], "#fbbf24")
+        t = tfs[i]; x, y = pos[rank]; c = TONE.get(t["trend"], "#fbbf24")
+        hero = t["tf"] == "D1"
+        hero_css = f"border-width:4px;box-shadow:0 0 36px {c}55,inset 0 0 30px {c}14;" if hero else "opacity:.92;"
         cards.append(
-            f'<div class="tf-card" id="tf-c{i}" style="left:{x}px;top:{y}px;border-color:{c}99;">'
+            f'<div class="tf-card{" tf-hero" if hero else ""}" id="tf-c{i}" style="left:{x}px;top:{y}px;border-color:{c}{"" if hero else "99"};{hero_css}">'
             f'<div class="tf-top"><span class="tf mono" style="color:{c};">{esc(t["tf"])}</span><span class="nm">{esc(t["name"])}</span></div>'
             f'<div class="tf-badge" style="background:{c}26;color:{c};border-color:{c}88;">{esc(t["badge"])}</div>'
             f'<div class="tf-d">{t["detail"]}</div></div>')
-        js.append(f"tl.fromTo('#tf-c{i}', {{opacity:0, y:50, scale:0.95}}, {{opacity:1, y:0, scale:1, duration:0.5, ease:'expo.out', immediateRender:false}}, {lt(cid, beat(6, 0.05 + rank * 0.2))});")
+        js.append(f"tl.fromTo('#tf-c{i}', {{opacity:0, y:50, scale:0.95}}, {{opacity:1, y:0, scale:{1.04 if hero else 1}, duration:0.5, ease:'expo.out', immediateRender:false}}, {lt(cid, beat(6, 0.05 + rank * 0.2))});")
     css = ACC_CSS + """
-.tf-card{position:absolute;width:465px;height:300px;border:2px solid;border-radius:26px;background:rgba(15,23,42,.66);padding:24px 26px;}
+.tf-card{position:absolute;width:465px;height:300px;transform-origin:center;border:2px solid;border-radius:26px;background:rgba(15,23,42,.66);padding:24px 26px;}
 .tf-top{display:flex;align-items:baseline;gap:14px;} .tf-top .tf{font-size:62px;font-weight:800;} .tf-top .nm{font-size:30px;font-weight:700;color:#94a3b8;}
 .tf-badge{display:inline-block;margin-top:10px;font-size:28px;font-weight:900;letter-spacing:1px;padding:6px 18px;border-radius:99px;border:2px solid;}
 .tf-d{margin-top:16px;font-size:29px;font-weight:600;line-height:1.35;color:#e2e8f0;} .tf-d b{font-family:'JBM';color:#fff;}
@@ -489,6 +506,16 @@ def scene_levels():
         js.append(f"tl.fromTo('#lv-l{k}', {{opacity:0, scaleX:0}}, {{opacity:1, scaleX:1, transformOrigin:'left center', duration:0.5, ease:'expo.out', immediateRender:false}}, {lt(cid, beat(7, 0.08 + k * 0.07))});"
                   f"tl.fromTo('#lv-k{k}, #lv-t{k}', {{opacity:0}}, {{opacity:1, duration:0.3, immediateRender:false}}, {lt(cid, beat(7, 0.08 + k * 0.07)) + 0.25});")
     keyk = next((k for k, it in enumerate(items) if it.get("key")), None)
+    # mốc bị xuyên: hỗ trợ nằm TRÊN giá đóng (đã thủng → chớp đỏ), kháng cự nằm DƯỚI giá (đã vượt → chớp xanh)
+    t_sp = lt(cid, beat(7, 0.2))
+    breach_js = "".join(
+        f"tl.fromTo('#lv-l{k}', {{opacity:1}}, {{opacity:0.15, duration:0.09, repeat:5, yoyo:true, ease:'none', immediateRender:false}}, {t_sp + 1.0 + j * 0.5});"
+        f"tl.to('#lv-l{k}', {{attr:{{stroke:'{'#ef4444' if it['kind'] == 'sup' else '#22c55e'}'}}, duration:0.2}}, {t_sp + 1.0 + j * 0.5});"
+        for j, (k, it) in enumerate((k, it) for k, it in enumerate(items)
+                                    if (it["kind"] == "sup" and it["price"] > lv["price"]) or (it["kind"] == "res" and it["price"] < lv["price"])))
+    breach_js += "".join(
+        f"tl.fromTo('#lv-ring{n % 2}', {{attr:{{r:20}}, opacity:0.9}}, {{attr:{{r:62}}, opacity:0, duration:1.3, ease:'power1.out', immediateRender:false}}, {round(t_sp + 0.9 + n * 0.7, 3)});"
+        for n in range(12) if t_sp + 0.9 + n * 0.7 < dur - 0.9)
     key_js = (f"tl.fromTo('#lv-l{keyk}', {{strokeWidth:6}}, {{strokeWidth:12, duration:0.25, yoyo:true, repeat:3, ease:'power2.inOut', immediateRender:false}}, {lt(cid, beat(7, 0.66))});" if keyk is not None else "")
     css = ACC_CSS + f"""
 .lv-svg{{position:absolute;left:0;top:0;width:{W}px;height:{H}px;}}
@@ -500,6 +527,8 @@ def scene_levels():
 <svg class="lv-svg" viewBox="0 0 {W} {H}">
   <line x1="{x0}" x2="{x0}" y1="{yt - 30}" y2="{yb + 30}" stroke="rgba(255,255,255,.3)" stroke-width="3"/>
   {''.join(rows)}
+  <circle class="lv-ring" id="lv-ring0" cx="{x0 + 175}" cy="{py:.1f}" r="20" fill="none" stroke="#fff" stroke-width="3" opacity="0"/>
+  <circle class="lv-ring" id="lv-ring1" cx="{x0 + 175}" cy="{py:.1f}" r="20" fill="none" stroke="#fff" stroke-width="3" opacity="0"/>
   <g id="lv-price"><circle cx="{x0 + 175}" cy="{py:.1f}" r="20" fill="#fff" style="filter:drop-shadow(0 0 14px #fff);"/>
   <text x="{x0 - 14}" y="{py + 10:.1f}" text-anchor="end" class="mono" font-size="0"> </text></g>
 </svg>
@@ -513,6 +542,7 @@ gsap.set('#lv-price, #lv-plab, #lv-chips', {{opacity:0}});
 tl.fromTo('#lv-price', {{opacity:0, x:-120}}, {{opacity:1, x:0, duration:0.8, ease:'expo.out', immediateRender:false}}, {lt(cid, beat(7, 0.2))});
 tl.fromTo('#lv-plab', {{opacity:0}}, {{opacity:1, duration:0.3, immediateRender:false}}, {lt(cid, beat(7, 0.3))});
 {key_js}
+{breach_js}
 tl.fromTo('#lv-chips', {{opacity:0, y:30}}, {{opacity:1, y:0, duration:0.45, ease:'expo.out', immediateRender:false}}, {lt(cid, beat(7, 0.78))});
 {exit_js('#lv-stage', dur, 'left')}
 """
@@ -570,7 +600,7 @@ def scene_end():
 .ed-card{{position:absolute;left:60px;right:60px;height:176px;border:2px solid;border-radius:24px;background:rgba(15,23,42,.66);}}
 .ed-ico{{position:absolute;left:26px;top:38px;width:96px;height:96px;border-radius:22px;display:flex;align-items:center;justify-content:center;font-size:56px;font-weight:900;}}
 .ed-t{{position:absolute;left:148px;right:24px;top:26px;}}
-.ed-h{{font-size:33px;font-weight:900;text-transform:uppercase;}}
+.ed-h{{font-family:'JBM';font-size:38px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;}}
 .ed-d{{margin-top:8px;font-size:29px;font-weight:600;line-height:1.35;color:#e2e8f0;}} .ed-d b{{font-family:'JBM';color:#fde68a;}}
 .ot-plate{{position:absolute;top:300px;left:60px;right:60px;text-align:center;}}
 .ot-plate .k{{font-size:28px;font-weight:900;letter-spacing:5px;color:{TH['l']};}}
