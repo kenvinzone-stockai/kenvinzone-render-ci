@@ -120,6 +120,28 @@ def main() -> None:
     if not args.no_upload:
         restore_social_config()
 
+    # 0) Cổng QA zero-credit (tools/qa/gate.py) — chạy TRƯỚC TTS: font hệ thống, chữ đè chữ,
+    #    chữ tràn khung, vùng UI Shorts che. KZ_QA=report (mặc định: chỉ báo) | block (lỗi → dừng,
+    #    không tốn credit TTS) | off. Bản thân cổng lỗi thì bỏ qua, không bao giờ chặn dây chuyền.
+    qa_mode = os.environ.get("KZ_QA", "report").strip().lower()
+    if qa_mode != "off":
+        print("=== [0/3] Cổng QA (zero-credit) ===", flush=True)
+        try:
+            qa = subprocess.run([sys.executable, str(REPO / "tools" / "qa" / "gate.py"), str(slide),
+                                 "--out", str(slide / "output" / "qa")], cwd=str(REPO), timeout=420)
+            rep = slide / "output" / "qa" / "report.md"
+            if rep.exists() and os.environ.get("GITHUB_STEP_SUMMARY"):
+                with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as fh:
+                    fh.write(rep.read_text(encoding="utf-8") + "\n")
+            if qa.returncode != 0 and qa_mode == "block":
+                sys.exit("Cổng QA phát hiện LỖI — dừng trước TTS (KZ_QA=block). Xem output/qa/report.md")
+        except subprocess.TimeoutExpired:
+            print("  [QA] quá thời gian — bỏ qua.", flush=True)
+        except SystemExit:
+            raise
+        except Exception as e:  # noqa: BLE001
+            print(f"  [QA] lỗi khi chạy cổng — bỏ qua: {e}", flush=True)
+
     # 1) TTS — giọng + style lấy từ config/tts.json (auto-clone). Chỉ ép style-preset nếu deck khai báo.
     # Từ điển phát âm: ghi bản phiên âm vào script cho TTS đọc đúng, rồi KHÔI PHỤC bản gốc + sửa timing
     # để phụ đề/chữ hiển thị vẫn là nguyên bản (vd "KenvinZone").

@@ -70,15 +70,40 @@ def lt(scene, t_abs):
 
 FONT_CSS = """
 @font-face{font-family:'BVP';font-weight:500;src:url('assets/fonts/be-vietnam-pro-vietnamese-500-normal.woff2') format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;}
+@font-face{font-family:'BVP';font-weight:500;src:url('assets/fonts/be-vietnam-pro-latin-ext-500-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
 @font-face{font-family:'BVP';font-weight:500;src:url('assets/fonts/be-vietnam-pro-latin-500-normal.woff2') format('woff2');}
 @font-face{font-family:'BVP';font-weight:700;src:url('assets/fonts/be-vietnam-pro-vietnamese-700-normal.woff2') format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;}
+@font-face{font-family:'BVP';font-weight:700;src:url('assets/fonts/be-vietnam-pro-latin-ext-700-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
 @font-face{font-family:'BVP';font-weight:700;src:url('assets/fonts/be-vietnam-pro-latin-700-normal.woff2') format('woff2');}
 @font-face{font-family:'BVP';font-weight:800;src:url('assets/fonts/be-vietnam-pro-vietnamese-800-normal.woff2') format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;}
+@font-face{font-family:'BVP';font-weight:800;src:url('assets/fonts/be-vietnam-pro-latin-ext-800-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
 @font-face{font-family:'BVP';font-weight:800;src:url('assets/fonts/be-vietnam-pro-latin-800-normal.woff2') format('woff2');}
 @font-face{font-family:'BVP';font-weight:900;src:url('assets/fonts/be-vietnam-pro-vietnamese-900-normal.woff2') format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;}
+@font-face{font-family:'BVP';font-weight:900;src:url('assets/fonts/be-vietnam-pro-latin-ext-900-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
 @font-face{font-family:'BVP';font-weight:900;src:url('assets/fonts/be-vietnam-pro-latin-900-normal.woff2') format('woff2');}
+@font-face{font-family:'JBM';font-weight:800;src:url('assets/fonts/jetbrains-mono-vietnamese-800-normal.woff2') format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;}
+@font-face{font-family:'JBM';font-weight:800;src:url('assets/fonts/jetbrains-mono-latin-ext-800-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
 @font-face{font-family:'JBM';font-weight:800;src:url('assets/fonts/jetbrains-mono-latin-800-normal.woff2') format('woff2');}
+@font-face{font-family:'JBM';font-weight:700;src:url('assets/fonts/jetbrains-mono-vietnamese-700-normal.woff2') format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;}
+@font-face{font-family:'JBM';font-weight:700;src:url('assets/fonts/jetbrains-mono-latin-ext-700-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
 @font-face{font-family:'JBM';font-weight:700;src:url('assets/fonts/jetbrains-mono-latin-700-normal.woff2') format('woff2');}
+/*KZ-SYMBOLS*/
+@font-face{font-family:'BVP';font-weight:500;src:url('assets/fonts/kz-emoji.woff2') format('woff2');unicode-range:U+200D,U+23F0,U+23F3,U+26A0-26A1,U+26FD,U+2705,U+274C,U+2B50,U+1F31F,U+1F389,U+1F3AF,U+1F3E6,U+1F3ED,U+1F402,U+1F43B,U+1F440,U+1F449,U+1F48E,U+1F4A1,U+1F4B0,U+1F4B5,U+1F4B8-1F4B9,U+1F4C4,U+1F4C8-1F4CA,U+1F4CC-1F4CD,U+1F4E2-1F4E3,U+1F4F0,U+1F501,U+1F504,U+1F514,U+1F525,U+1F534-1F535,U+1F550,U+1F5D3,U+1F680,U+1F6E1-1F6E2,U+1F7E0-1F7E2,U+1F91D,U+1F947,U+1F9E0,U+1F9ED,U+1FA99;}
+@font-face{font-family:'BVP';font-weight:500;src:url('assets/fonts/kz-symbols.woff2') format('woff2');unicode-range:U+2190-2311,U+2318-2319,U+231C-2321,U+2324-2328,U+232B-232C,U+2373-2375,U+237A,U+237D,U+2387,U+2394,U+239B-23AE,U+23CE-23CF,U+23E3,U+23E5,U+23E8,U+2460-2469,U+2500-269C,U+269E-269F,U+26A2-26B8,U+26C0-26C3,U+26E2,U+2701-2704,U+2706-2709,U+270C-2727,U+2729-274B,U+274D,U+274F-2752,U+2756,U+2758-275E,U+2761-2794,U+2798-27AF,U+27B1-27BE;}
+@font-face{font-family:'BVP';font-weight:700;src:url('assets/fonts/kz-emoji.woff2') format('woff2');unicode-range:U+200D,U+23F0,U+23F3,U+26A0-26A1,U+26FD,U+2705,U+274C,U+2B50,U+1F31F,U+1F389,U+1F3AF,U+1F3E6,U+1F3ED,U+1F402,U+1F43B,U+1F440,U+1F449,U+1F48E,U+1F4A1,U+1F4B0,U+1F4B5,U+1F4B8-1F4B9,U+1F4C4,U+1F4C8-1F4CA,U+1F4CC-1F4CD,U+1F4E2-1F4E3,U+1F4F0,U+1F501,U+1F504,U+1F514,U+1F525,U+1F534-1F535,U+1F550,U+1F5D3,U+1F680,U+1F6E1-1F6E2,U+1F7E0-1F7E2,U+1F91D,U+1F947,U+1F9E0,U+1F9ED,U+1FA99;}
+@font-face{font-family:'BVP';font-weight:700;src:url('assets/fonts/kz-symbols.woff2') format('woff2');unicode-range:U+2190-2311,U+2318-2319,U+231C-2321,U+2324-2328,U+232B-232C,U+2373-2375,U+237A,U+237D,U+2387,U+2394,U+239B-23AE,U+23CE-23CF,U+23E3,U+23E5,U+23E8,U+2460-2469,U+2500-269C,U+269E-269F,U+26A2-26B8,U+26C0-26C3,U+26E2,U+2701-2704,U+2706-2709,U+270C-2727,U+2729-274B,U+274D,U+274F-2752,U+2756,U+2758-275E,U+2761-2794,U+2798-27AF,U+27B1-27BE;}
+@font-face{font-family:'BVP';font-weight:800;src:url('assets/fonts/kz-emoji.woff2') format('woff2');unicode-range:U+200D,U+23F0,U+23F3,U+26A0-26A1,U+26FD,U+2705,U+274C,U+2B50,U+1F31F,U+1F389,U+1F3AF,U+1F3E6,U+1F3ED,U+1F402,U+1F43B,U+1F440,U+1F449,U+1F48E,U+1F4A1,U+1F4B0,U+1F4B5,U+1F4B8-1F4B9,U+1F4C4,U+1F4C8-1F4CA,U+1F4CC-1F4CD,U+1F4E2-1F4E3,U+1F4F0,U+1F501,U+1F504,U+1F514,U+1F525,U+1F534-1F535,U+1F550,U+1F5D3,U+1F680,U+1F6E1-1F6E2,U+1F7E0-1F7E2,U+1F91D,U+1F947,U+1F9E0,U+1F9ED,U+1FA99;}
+@font-face{font-family:'BVP';font-weight:800;src:url('assets/fonts/kz-symbols.woff2') format('woff2');unicode-range:U+2190-2311,U+2318-2319,U+231C-2321,U+2324-2328,U+232B-232C,U+2373-2375,U+237A,U+237D,U+2387,U+2394,U+239B-23AE,U+23CE-23CF,U+23E3,U+23E5,U+23E8,U+2460-2469,U+2500-269C,U+269E-269F,U+26A2-26B8,U+26C0-26C3,U+26E2,U+2701-2704,U+2706-2709,U+270C-2727,U+2729-274B,U+274D,U+274F-2752,U+2756,U+2758-275E,U+2761-2794,U+2798-27AF,U+27B1-27BE;}
+@font-face{font-family:'BVP';font-weight:900;src:url('assets/fonts/kz-emoji.woff2') format('woff2');unicode-range:U+200D,U+23F0,U+23F3,U+26A0-26A1,U+26FD,U+2705,U+274C,U+2B50,U+1F31F,U+1F389,U+1F3AF,U+1F3E6,U+1F3ED,U+1F402,U+1F43B,U+1F440,U+1F449,U+1F48E,U+1F4A1,U+1F4B0,U+1F4B5,U+1F4B8-1F4B9,U+1F4C4,U+1F4C8-1F4CA,U+1F4CC-1F4CD,U+1F4E2-1F4E3,U+1F4F0,U+1F501,U+1F504,U+1F514,U+1F525,U+1F534-1F535,U+1F550,U+1F5D3,U+1F680,U+1F6E1-1F6E2,U+1F7E0-1F7E2,U+1F91D,U+1F947,U+1F9E0,U+1F9ED,U+1FA99;}
+@font-face{font-family:'BVP';font-weight:900;src:url('assets/fonts/kz-symbols.woff2') format('woff2');unicode-range:U+2190-2311,U+2318-2319,U+231C-2321,U+2324-2328,U+232B-232C,U+2373-2375,U+237A,U+237D,U+2387,U+2394,U+239B-23AE,U+23CE-23CF,U+23E3,U+23E5,U+23E8,U+2460-2469,U+2500-269C,U+269E-269F,U+26A2-26B8,U+26C0-26C3,U+26E2,U+2701-2704,U+2706-2709,U+270C-2727,U+2729-274B,U+274D,U+274F-2752,U+2756,U+2758-275E,U+2761-2794,U+2798-27AF,U+27B1-27BE;}
+@font-face{font-family:'JBM';font-weight:700;src:url('assets/fonts/kz-emoji.woff2') format('woff2');unicode-range:U+200D,U+23F0,U+23F3,U+26A0-26A1,U+26FD,U+2705,U+274C,U+2B50,U+1F31F,U+1F389,U+1F3AF,U+1F3E6,U+1F3ED,U+1F402,U+1F43B,U+1F440,U+1F449,U+1F48E,U+1F4A1,U+1F4B0,U+1F4B5,U+1F4B8-1F4B9,U+1F4C4,U+1F4C8-1F4CA,U+1F4CC-1F4CD,U+1F4E2-1F4E3,U+1F4F0,U+1F501,U+1F504,U+1F514,U+1F525,U+1F534-1F535,U+1F550,U+1F5D3,U+1F680,U+1F6E1-1F6E2,U+1F7E0-1F7E2,U+1F91D,U+1F947,U+1F9E0,U+1F9ED,U+1FA99;}
+@font-face{font-family:'JBM';font-weight:700;src:url('assets/fonts/kz-symbols.woff2') format('woff2');unicode-range:U+2190-2311,U+2318-2319,U+231C-2321,U+2324-2328,U+232B-232C,U+2373-2375,U+237A,U+237D,U+2387,U+2394,U+239B-23AE,U+23CE-23CF,U+23E3,U+23E5,U+23E8,U+2460-2469,U+2500-269C,U+269E-269F,U+26A2-26B8,U+26C0-26C3,U+26E2,U+2701-2704,U+2706-2709,U+270C-2727,U+2729-274B,U+274D,U+274F-2752,U+2756,U+2758-275E,U+2761-2794,U+2798-27AF,U+27B1-27BE;}
+@font-face{font-family:'JBM';font-weight:800;src:url('assets/fonts/kz-emoji.woff2') format('woff2');unicode-range:U+200D,U+23F0,U+23F3,U+26A0-26A1,U+26FD,U+2705,U+274C,U+2B50,U+1F31F,U+1F389,U+1F3AF,U+1F3E6,U+1F3ED,U+1F402,U+1F43B,U+1F440,U+1F449,U+1F48E,U+1F4A1,U+1F4B0,U+1F4B5,U+1F4B8-1F4B9,U+1F4C4,U+1F4C8-1F4CA,U+1F4CC-1F4CD,U+1F4E2-1F4E3,U+1F4F0,U+1F501,U+1F504,U+1F514,U+1F525,U+1F534-1F535,U+1F550,U+1F5D3,U+1F680,U+1F6E1-1F6E2,U+1F7E0-1F7E2,U+1F91D,U+1F947,U+1F9E0,U+1F9ED,U+1FA99;}
+@font-face{font-family:'JBM';font-weight:800;src:url('assets/fonts/kz-symbols.woff2') format('woff2');unicode-range:U+2190-2311,U+2318-2319,U+231C-2321,U+2324-2328,U+232B-232C,U+2373-2375,U+237A,U+237D,U+2387,U+2394,U+239B-23AE,U+23CE-23CF,U+23E3,U+23E5,U+23E8,U+2460-2469,U+2500-269C,U+269E-269F,U+26A2-26B8,U+26C0-26C3,U+26E2,U+2701-2704,U+2706-2709,U+270C-2727,U+2729-274B,U+274D,U+274F-2752,U+2756,U+2758-275E,U+2761-2794,U+2798-27AF,U+27B1-27BE;}
+/*/KZ-SYMBOLS*/
+
+
+
 """
 
 BASE_CSS = """
@@ -251,6 +276,14 @@ tl.fromTo('#sc-pill', {{opacity:0}}, {{opacity:1, duration:0.4, immediateRender:
 
 
 # ================================================================ JOURNEY (lines 2-4)
+def _fit_fs(text, width=912, base=29, floor=21):
+    """Cỡ chữ vừa một dòng trong thẻ (thẻ cao cố định nên không xuống dòng được).
+    Be Vietnam Pro 700 ~0,56 em/ký tự; số JBM rộng hơn ~0,62 em."""
+    plain = re.sub(r"<[^>]+>", "", html.unescape(str(text)))
+    em = sum(0.62 if ch.isdigit() or ch in ",." else 0.56 for ch in plain) or 1
+    return max(floor, min(base, int(width / em)))
+
+
 def scene_journey():
     cid = "journey"; st, en = SCENES[2][1], SCENES[2][2]; dur = round(en - st, 3)
     j = D["journey"]; lo, hi = j["axis"]
@@ -282,7 +315,7 @@ def scene_journey():
 .jn-twist{{color:#fff;background:linear-gradient(135deg,rgba({TH['glow']},.35),rgba(15,23,42,.6));border:2px solid {TH['l']};}}
 .jn-card{{position:absolute;left:60px;right:60px;height:108px;border-radius:20px;background:rgba(15,23,42,.72);border:2px solid;padding:12px 24px;}}
 .jn-card .t{{font-family:'JBM';font-weight:800;font-size:26px;}} .jn-card .m{{font-size:28px;color:#94a3b8;margin-left:14px;font-weight:700;}}
-.jn-card .x{{font-size:29px;font-weight:700;color:#e2e8f0;margin-top:4px;white-space:nowrap;}} .jn-card .x b{{font-family:'JBM';color:#fff;}}
+.jn-card .x{{font-size:29px;font-weight:700;color:#e2e8f0;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}} .jn-card .x b{{font-family:'JBM';color:#fff;}}
 .jn-rlab{{position:absolute;right:70px;top:{yr - 46:.0f}px;font-size:26px;font-weight:800;color:#fca5a5;}}
 .jn-zlab{{position:absolute;left:150px;top:{zb + 6:.0f}px;font-size:26px;font-weight:800;color:#fde68a;}}
 """
@@ -298,8 +331,8 @@ def scene_journey():
 </svg>
 <div class="jn-rlab" id="jn-rlab">{esc(r['label'])}</div>
 <div class="jn-zlab" id="jn-zlab">{esc(z['label'])}</div>
-<div class="jn-card" id="jn-am" style="top:960px;border-color:{TONE['up']}88;"><div><span class="t" style="color:{TONE['up']};">{esc(am['time'])}</span><span class="m">{esc(am['meta'])}</span></div><div class="x">{am['text']}</div></div>
-<div class="jn-card" id="jn-pm" style="top:1078px;border-color:{TH['l']}aa;"><div><span class="t" style="color:{TH['l']};">{esc(pm['time'])}</span><span class="m">{esc(pm['meta'])}</span></div><div class="x">{pm['text']}</div></div>
+<div class="jn-card" id="jn-am" style="top:960px;border-color:{TONE['up']}88;"><div><span class="t" style="color:{TONE['up']};">{esc(am['time'])}</span><span class="m">{esc(am['meta'])}</span></div><div class="x" style="font-size:{_fit_fs(am['text'])}px;">{am['text']}</div></div>
+<div class="jn-card" id="jn-pm" style="top:1078px;border-color:{TH['l']}aa;"><div><span class="t" style="color:{TH['l']};">{esc(pm['time'])}</span><span class="m">{esc(pm['meta'])}</span></div><div class="x" style="font-size:{_fit_fs(pm['text'])}px;">{pm['text']}</div></div>
 </div>"""
     t2, t3, t4 = lt(cid, L(2)[0]), lt(cid, L(3)[0]), lt(cid, L(4)[0])
     d4 = L(4)[1]
