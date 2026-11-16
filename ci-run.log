@@ -190,3 +190,63 @@ Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-ren
 === [3/3] Upload YouTube (privacy=private) ===
 {"ok": true, "platform": "youtube", "project": "equity-us-16112026", "video_id": "_a4QryO8zJY", "url": "https://youtu.be/_a4QryO8zJY", "studio_url": "https://studio.youtube.com/video/_a4QryO8zJY/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
   Xong: https://youtu.be/_a4QryO8zJY
+=== DECK: gold-week-16112026 | template=gold-daily-bias-hf | preset giọng=giai-ma-nganh ===
+  Đã tái tạo config/tts.json (giọng clone).
+  Đã tái tạo config/social-upload.json từ secret.
+  [phát âm] đã áp từ điển phiên âm cho giọng đọc (chữ hiển thị giữ nguyên).
+=== [1/3] Tạo giọng đọc (gemini) ===
+Full voiceover 53.00s · 33 quãng lặng · 6 dòng
+  ranh 1: ước   8.91s → lặng 7.50–8.05 (0.55s) cắt 7.78s
+  ranh 2: ước  17.96s → lặng 15.84–16.44 (0.60s) cắt 16.14s
+  ranh 3: ước  27.10s → lặng 24.40–24.96 (0.56s) cắt 24.68s
+  ranh 4: ước  36.48s → lặng 37.14–37.67 (0.53s) cắt 37.41s
+  ranh 5: ước  45.28s → lặng 45.21–45.88 (0.67s) cắt 45.55s
+  → snap được 5/5 ranh giới vào quãng lặng
+Slide 1:    0.00s →    7.78s  = 7.78s  -> line_0.mp3
+Slide 2:    7.78s →   16.14s  = 8.37s  -> line_1.mp3
+Slide 3:   16.14s →   24.68s  = 8.54s  -> line_2.mp3
+Slide 4:   24.68s →   37.41s  = 12.72s  -> line_3.mp3
+Slide 5:   37.41s →   45.55s  = 8.14s  -> line_4.mp3
+Slide 6:   45.55s →   53.00s  = 7.46s  -> line_5.mp3
+Concatenated voiceover: 53.00s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-week-16112026/output/voiceover_concat.mp3
+Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
+Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
+Sending full script to Gemini TTS: 6 slides, 823 chars
+Full Gemini TTS saved: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-week-16112026/output/gemini_full_voiceover.mp3
+
+=== Splitting full Gemini TTS voiceover ===
+=== [2/3] Render HyperFrames (30fps đầy đủ) ===
+=== HyperFrames (gold-daily-bias-hf): dung project tai /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-week-16112026/output/hf ===
+  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
+=== HyperFrames: dung composition tu hf-data.json ===
+  [anchor] 'rates' ('âm một phẩy bảy') not heard -> default position
+  [anchor] 'spot_xau' ('ba chín tám một') not heard -> default position
+  [anchor] 'flip' ('Gamma Flip') not heard -> default position
+  [anchor] 'follow' ('Hãy follow') not heard -> default position
+TOTAL 57.6 scenes [('hook', 0.0, 8.777), ('forces', 8.777, 16.905), ('gamma', 25.682, 12.723), ('scen', 38.405, 8.14), ('cta', 46.545, 11.055), ('captions', 0, 57.6)]
+=== HyperFrames: render tung khung hinh (57.6s video) ===
+  Trinh duyet render: /home/runner/.cache/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux64/chrome-headless-shell
+  ◆  Rendering hf → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-week-16112026/output/final_video.hf.mp4
+     30fps · high · auto workers (4 cores detected)
+     GPU: browser GPU (auto-detect)
+  [?25l│
+  ◒  Checking browser...
+  [1G[J◇  Browser: env
+  [?25h[INFO] [Render] Pipeline started {"renderJobId":"fc624394-26fa-44bf-bccf-b49c4560ff5b","platform":"linux","arch":"x64","nodeVersion":"v22.23.4","fps":{"num":30,"den":1},"format":"mp4","quality":"high","browserGpuMode":"auto","forceScreenshot":false,"protocolTimeout":300000,"browserTimeout":120000,"pageNavigationTimeout":60000,"playerReadyTimeout":45000}
+  HyperFrames render 5%
+  HyperFrames render 20%
+  HyperFrames render 30%
+  HyperFrames render 40%
+  HyperFrames render 50%
+  HyperFrames render 60%
+  HyperFrames render 70%
+  HyperFrames render 80%
+  HyperFrames render 90%
+  ◇  /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-week-16112026/output/final_video.hf.mp4
+     14.5 MB · 57.6s video · rendered in 2m 18.9s
+     beginframe capture · software gpu · compile 1.5s · extract 0.0s · audio 3.4s · probe 0.3s · setup 2.2s · capture 2m 11.2s · encode (during capture) 2m 11.2s · assemble 0.6s
+Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-week-16112026/output/final_video.mp4
+  Video: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-week-16112026/output/final_video.mp4
+=== [3/3] Upload YouTube (privacy=private) ===
+{"ok": true, "platform": "youtube", "project": "gold-week-16112026", "video_id": "iY_l1NaC_nY", "url": "https://youtu.be/iY_l1NaC_nY", "studio_url": "https://studio.youtube.com/video/iY_l1NaC_nY/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
+  Xong: https://youtu.be/iY_l1NaC_nY

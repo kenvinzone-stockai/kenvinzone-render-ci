@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "Bias Vàng Tuần 16/11: Chế Độ Giảm Giá, Gamma Kìm Nén Biên Độ",
+    "description": "📊 PHÂN TÍCH ĐỊNH LƯỢNG BIAS VÀNG TUẦN 16/11/2026 - KENVINZONE ANALYTICS\n\n1. ĐIỂM BIAS TỔNG THỂ:\n• Điểm Bias: -14.80/100 (Chế độ: GIẢM GIÁ)\n• Thay đổi: -1.90 so với tuần trước\n• Xu hướng: Đảo chiều giảm rõ rệt sau 2 tuần giữ mức nhẹ (+1.00 -> +5.90 -> -14.80)\n\n2. 6 LỰC KÉO ĐỊNH LƯỢNG:\n• Áp lực USD: -11.83 (Áp lực tiêu cực lớn nhất)\n• Dòng tiền & Xu hướng: -3.54\n• Lãi suất thực: -1.72\n• Yếu tố riêng Vàng: -1.33\n• Thanh khoản M2: +2.59 (Nâng đỡ)\n• Khẩu vị rủi ro: +1.33 (Tín dụng ổn định, chưa có hoảng loạn)\n\n3. CẤU TRÚC GAMMA VÀ TÙY CHỌN:\n• Net GEX: +2.5 triệu USD (Gamma dương kìm nén biến động)\n• Spot GLD: 367.82 (XAUUSD ≈ 3981.9)\n• Gamma Flip: GLD 365.0 (XAUUSD ≈ 3951.0)\n• Put Wall: GLD 360.0 (XAUUSD ≈ 3897.0)\n• Call Wall: GLD 375.0 (XAUUSD ≈ 4060.0)\n\n4. KỊCH BẢN XÁC SUẤT TUẦN TỚI:\n• 55% Giằng co kìm nén trong biên 360 - 375 GLD (≈ 3.897 - 4.060 XAUUSD)\n• 30% Thủng Gamma Flip 365 và Put Wall 360 hướng về các mốc sâu hơn\n• 15% Hồi phục kỹ thuật kiểm định Call Wall 375\n\n5. KẾ HOẠCH HÀNH ĐỘNG:\n• Giữ trung tính: Biên độ 360–375 GLD (≈ 3.897–4.060 XAUUSD)\n• Điều kiện mua lại: Giữ vững Gamma Flip 365 và điểm Bias đảo chiều dương\n• Quản trị rủi ro: Cảnh giác khi thủng Put Wall 360 kích hoạt bán tháo\n\n⚠️ Tuyên bố miễn trừ trách nhiệm: Bản tin phân tích định lượng dựa trên mô hình dữ liệu, KHÔNG phải lời khuyên đầu tư tài chính.\n\n#vang #gold #xauusd #giavang #phantichdinhluong #kenvinzone",
+    "tags": [
+      "vàng",
+      "gold",
+      "xauusd",
+      "giá vàng hôm nay",
+      "phân tích giá vàng",
+      "nhận định vàng",
+      "dự báo giá vàng",
+      "bias vàng",
+      "định lượng vàng",
+      "gamma vàng",
+      "kenvinzone",
+      "đầu tư vàng",
+      "vĩ mô vàng"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "gold-daily-bias",
+    "date": "16/11/2026"
+  }
+}
