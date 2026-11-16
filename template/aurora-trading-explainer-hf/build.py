@@ -99,8 +99,9 @@ def arrow(p1, p2, label="", color=DOWN, idn="arr"):
 
 def pill(x, y, text, color, idn="pil", fs=20):
     w = 28 + len(str(text)) * fs * 0.62
-    return (f'<g class="spill" id="{idn}"><rect x="{x-w/2:.0f}" y="{y-18:.0f}" width="{w:.0f}" height="36"'
-            f' rx="18" fill="{color}"/><text x="{x:.0f}" y="{y+7:.0f}" fill="{INK}" font-size="{fs}"'
+    h = max(36, round(fs * 1.75))          # khung + chân chữ nở theo cỡ chữ (fs ≤ 20 giữ y như cũ)
+    return (f'<g class="spill" id="{idn}"><rect x="{x-w/2:.0f}" y="{y-h/2:.0f}" width="{w:.0f}" height="{h}"'
+            f' rx="{h/2:.0f}" fill="{color}"/><text x="{x:.0f}" y="{y + fs*0.35:.0f}" fill="{INK}" font-size="{fs}"'
             f' font-weight="900" text-anchor="middle" font-family="BVP, Be Vietnam Pro, sans-serif">{esc(text)}</text></g>')
 
 
@@ -123,8 +124,17 @@ def sc(cid):
     return SC.get(cid, {})
 
 
+def _tele_val(v, label):
+    """Bỏ phần nhãn bị lặp trong giá trị Brain viết (vd "PHE NẮM QUYỀN: ?" → "?")."""
+    v = str(v or "").strip()
+    if v.upper().startswith(label):
+        v = v[len(label):].lstrip(" :·-–—").strip()
+    return v or "—"
+
+
 def telemetry(cid):
-    t = sc(cid).get("telemetry", {"left": "", "right": ""})
+    t = dict(sc(cid).get("telemetry", {"left": "", "right": ""}))
+    t["left"] = _tele_val(t.get("left"), "TÂM LÝ"); t["right"] = _tele_val(t.get("right"), "PHE NẮM QUYỀN")
     return (f'<div class="tele" id="{cid}-tele"><div class="cell l"><span class="k">TÂM LÝ</span>'
             f'<span class="v" id="{cid}-tl">{esc(t.get("left",""))}</span></div>'
             f'<div class="cell r"><span class="k">PHE NẮM QUYỀN</span>'
@@ -413,9 +423,24 @@ def s_trap():
             'class="avatar-icon"', f'class="avatar-icon buyer-av" id="buy{j}"', 1))
     if brk:
         parts.append(f'<g id="g1brk">{render_candlesticks([brk], COORD, highlight_idx=0)}</g>')
-    for j, (b, lab) in enumerate(zip(traps, _labels(traps))):
-        parts.append(render_icon_avatar(b["type"], b["x"], b["y"], label=lab, scale=0.9).replace(
+    stamp_txt = s.get("trap_stamp", "BẪY BẮT ĐÁY · MẮC KẸT!")
+    for j, b in enumerate(traps):          # nhãn nhỏ "KẸT X" → thay bằng 1 con dấu lớn bên dưới
+        parts.append(render_icon_avatar(b["type"], b["x"], b["y"], label=None, scale=1.0).replace(
             'class="avatar-icon"', f'class="avatar-icon trap-av" id="trap{j}"', 1))
+    if traps:
+        tx = sum(b["x"] for b in traps) / len(traps); ty = max(b["y"] for b in traps) + 74
+        tx = min(max(tx, CX0 + 260), 888 - 260)
+        parts.append(f'<g id="s1stamp">{pill(tx, ty, stamp_txt, DOWN, "s1st", fs=34)}</g>')
+    if brk and box:
+        # vết nứt răng cưa dọc đáy hộp sideway + mũi tên cắm xuống cạnh nến thủng
+        yb = price_to_y(box["bottom_price"], COORD); x0, x1 = box["start_x"], box["end_x"]
+        pts, k = [], 0
+        for xx in range(int(x0), int(x1) + 1, 22):
+            pts.append(f"{xx},{yb + (7 if k % 2 else -7):.0f}"); k += 1
+        parts.append(f'<polyline id="s1crack" points="{" ".join(pts)}" fill="none" stroke="{DOWN}" stroke-width="5" '
+                     f'stroke-linejoin="round" stroke-dasharray="2000" stroke-dashoffset="2000" opacity="0"/>')
+        xa = float(brk["x"]) + 46; ya0 = yb - 6; ya1 = price_to_y(brk["l"], COORD) + 30
+        parts.append(f'<g id="s1arr" opacity="0">{arrow((xa, ya0), (xa, ya1), "", DOWN, "s1a")}</g>')
     body = f'{crumb(cid)}<div class="panel"></div>{svg_layer("".join(parts), "g1")}{telemetry("s1")}'
     js = ["gsap.set('#g1side .candle-item,#g1 .price-box,#g1 .buyer-av,#g1 #g1brk,#g1 .trap-av',{opacity:0});",
           draw_candles_js('#g1side', 0.3, step=0.1),
@@ -430,6 +455,20 @@ def s_trap():
     for j, b in enumerate(s.get("trapped_buyers", [])):
         js.append(f"tl.to('#buy{j}',{{opacity:0,duration:0.2}},{sb(b,dur,0.85)});")
         js.append(pop_js(f"#trap{j}", sb(b, dur, 0.85)))
+    if brk and box:
+        th = round(sb(brk, dur, 0.75) + 0.4, 3)      # thân nến vươn xong = khoảnh khắc "sập bẫy"
+        js.append(f"tl.set('#s1crack',{{opacity:1}},{th});"
+                  f"tl.to('#s1crack',{{attr:{{'stroke-dashoffset':0}},duration:0.28,ease:'power3.out'}},{th});"
+                  f"tl.fromTo('#g1 .price-box',{{x:-7}},{{x:7,duration:0.05,repeat:5,yoyo:true,ease:'none',immediateRender:false}},{th});"
+                  f"tl.set('#g1 .price-box',{{x:0}},{th + 0.32});"
+                  f"tl.fromTo('#g1',{{y:-5}},{{y:5,duration:0.05,repeat:5,yoyo:true,ease:'none',immediateRender:false}},{th});"
+                  f"tl.set('#g1',{{y:0}},{th + 0.32});"
+                  f"tl.fromTo('#s1arr',{{opacity:0,y:-30}},{{opacity:1,y:0,duration:0.3,ease:'power3.in',immediateRender:false}},{th + 0.05});")
+    if traps:
+        tst = round(max(sb(b, dur, 0.85) for b in traps) + 0.25, 3)
+        js.append("gsap.set('#s1stamp',{opacity:0});"
+                  f"tl.fromTo('#s1stamp',{{opacity:0,scale:2.2,rotation:-8,transformOrigin:'50% 50%'}},"
+                  f"{{opacity:1,scale:1,rotation:-3,duration:0.28,ease:'back.out(2.4)',immediateRender:false}},{tst});")
     js.append(f"tl.fromTo('#s1-tele',{{opacity:0}},{{opacity:1,duration:0.4}},0.2);{ex('.panel,#g1',dur)}")
     return cid, dur, scene_file(cid, dur, "", body, "".join(js))
 
@@ -469,6 +508,23 @@ def s_two():
     return cid, dur, scene_file(cid, dur, "", body, js)
 
 
+def _b_outline(box):
+    """Viền neon hình chữ "b": thân = đường chéo song song phía trên đỉnh cú giảm (s0),
+    bụng = khung bo tròn ôm hộp sideway. Vẽ dần bằng stroke-dashoffset."""
+    cands = sc("s0").get("candles", [])
+    if not box or not cands:
+        return ""
+    c0 = cands[0]; x0c = float(c0["x"]) + float(c0.get("width", 14)) / 2; y0c = price_to_y(c0["h"], COORD) - 34
+    bx0, bx1 = box["start_x"] - 22, box["end_x"] + 22
+    yt = price_to_y(box["top_price"], COORD) - 22; yb = price_to_y(box["bottom_price"], COORD) + 22
+    r = min(40, (yb - yt) / 2)
+    d = (f"M{x0c:.0f},{y0c:.0f} L{bx0:.0f},{yt:.0f} L{bx0:.0f},{yb:.0f} L{bx1 - r:.0f},{yb:.0f} "
+         f"Q{bx1:.0f},{yb:.0f} {bx1:.0f},{yb - r:.0f} L{bx1:.0f},{yt + r:.0f} Q{bx1:.0f},{yt:.0f} {bx1 - r:.0f},{yt:.0f} L{bx0:.0f},{yt:.0f}")
+    return (f'<g id="g3b" style="filter:drop-shadow(0 0 10px #fb923c) drop-shadow(0 0 22px rgba(244,63,94,.55));">'
+            f'<path d="{d}" fill="none" stroke="#fb923c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" '
+            f'stroke-dasharray="3000" stroke-dashoffset="3000"/></g>')
+
+
 def s_vpq():
     cid, dur = mk(3); s = sc("s3")
     vp = s.get("volume_profile", {})
@@ -477,6 +533,9 @@ def s_vpq():
     parts = [grid(COORD), backdrop_candles(dim=0.5)]
     if box:
         parts.append(f'<g opacity="0.65">{render_price_box(box["top_price"], box["bottom_price"], box["start_x"], box["end_x"], COORD, style="dashed")}</g>')
+    bshape = _b_outline(box)
+    if bshape:
+        parts.append(bshape)
     parts.append(f'<g id="g3vp">{render_volume_profile(vp.get("bins", []), COORD, vp.get("poc_price", 0), x_start=CX0, max_w=215)}</g>')
     if co:
         parts.append(f'<g id="g3co">{pill(CX0 + 330, price_to_y(vp.get("poc_price", 100), COORD) - 72, co.get("label", "HÌNH CHỮ b"), POC, "copill", fs=24)}'
@@ -486,6 +545,10 @@ def s_vpq():
           f"tl.fromTo('#g3vp .vp-bar',{{scaleX:0}},{{scaleX:1,duration:0.6,stagger:0.07,ease:'power2.out',immediateRender:false}},{lt(cid,B(3,1))});"
           f"tl.to('#g3vp .vp-bar[data-poc=\"1\"]',{{filter:'drop-shadow(0 0 16px {POC})',duration:0.4}},{lt(cid,B(3,2))});"
           + pop_js('#g3co', lt(cid, B(3, 2, 0.2)))
+          + ("gsap.set('#g3b',{opacity:0});"
+             f"tl.set('#g3b',{{opacity:1}},{lt(cid, B(3, 2))});"
+             f"tl.fromTo('#g3b path',{{attr:{{'stroke-dashoffset':3000}}}},{{attr:{{'stroke-dashoffset':0}},duration:1.1,ease:'power2.inOut',immediateRender:false}},{lt(cid, B(3, 2))});"
+             if box else "")
           + f"tl.fromTo('#s3-tele',{{opacity:0}},{{opacity:1,duration:0.4}},0.2);{ex('.panel,#g3',dur)}")
     return cid, dur, scene_file(cid, dur, "", body, js)
 
@@ -736,51 +799,76 @@ def s_entry():
 
 
 def s_outro():
+    """Slide cuối = 2 pha trong cùng cảnh (câu thoại không đổi):
+    A · bài học (câu 0 "Ghi nhớ…"): bậc thang gom bán phóng to, chấm giá trượt rơi từng bậc.
+    B · outro (từ câu 1): pha A mờ đi; handle + CTA + nền tảng + miễn trừ chiếm màn hình."""
     cid, dur = mk(8); s = sc("s8")
     lad = s.get("ladder_model", {}); cta = s.get("cta", {})
     steps = lad.get("steps", [])
-    # trục giá CỤC BỘ cho bậc thang nằm gọn trong panel 500..960
-    parts = []
+    X0, X1 = CX0 + 20, min(CX1, 888) - 20          # chừa cột nút phải Shorts
+    parts, dots = [], []
     if steps:
-        plo = min(x["price"] for x in steps) - 14; phi = max(x["price"] for x in steps) + 14
-        c8 = {"price_min": plo, "price_max": phi, "chart_top_y": 545, "chart_height_px": 330,
+        plo = min(x["price"] for x in steps) - 10; phi = max(x["price"] for x in steps) + 10
+        c8 = {"price_min": plo, "price_max": phi, "chart_top_y": 600, "chart_height_px": 500,
               "chart_left_x": CX0, "chart_width_px": COORD["chart_width_px"]}
-        n = max(1, len(steps)); seg_w = int((CX1 - CX0 - 80) / n)
+        n = max(1, len(steps)); seg_w = int((X1 - X0) / n)
         for i, stp in enumerate(steps):
-            y = price_to_y(stp["price"], c8); x_a = CX0 + 40 + i * seg_w
+            y = price_to_y(stp["price"], c8); x_a = X0 + i * seg_w; x_b = x_a + seg_w - 44
             parts.append(f'<g class="lad" id="lad{i}">'
-                         f'<line x1="{x_a}" y1="{y:.0f}" x2="{x_a+seg_w-36}" y2="{y:.0f}" stroke="{DOWN}" stroke-width="7" stroke-linecap="round"/>'
-                         f'{pill(x_a + (seg_w-36)/2, y + 40, stp.get("label", ""), DOWN, f"ladp{i}", fs=18)}</g>')
+                         f'<rect x="{x_a}" y="{y:.0f}" width="{x_b - x_a}" height="{1180 - y:.0f}" fill="{DOWN}" opacity="0.10" rx="6"/>'
+                         f'<line x1="{x_a}" y1="{y:.0f}" x2="{x_b}" y2="{y:.0f}" stroke="{DOWN}" stroke-width="10" stroke-linecap="round"/>'
+                         f'{pill((x_a + x_b) / 2, y + 52, stp.get("label", ""), DOWN, f"ladp{i}", fs=26)}</g>')
+            dots.append(((x_a + x_b) / 2, y - 16))
             if i < n - 1:
                 y2 = price_to_y(steps[i + 1]["price"], c8)
-                parts.append(f'<g class="ladarr" id="ladarr{i}">{arrow((x_a+seg_w-30, y+8), (x_a+seg_w+4, y2-8), "", "#8b93a7", f"laa{i}")}</g>')
+                parts.append(f'<g class="ladarr" id="ladarr{i}">{arrow((x_b + 4, y + 10), (x_b + 40, y2 - 12), "", "#8b93a7", f"laa{i}")}</g>')
+        x0d, y0d = dots[0]
+        parts.append(f'<circle id="ladd" cx="{x0d:.0f}" cy="{y0d:.0f}" r="15" fill="#fff" stroke="{DOWN}" stroke-width="5"/>')
     css8 = f"""
-.o8-h{{position:absolute;top:990px;left:0;right:0;text-align:center;font-family:'JBM';font-weight:800;font-size:62px;background:linear-gradient(135deg,#22d3ee,#8b5cf6 55%,{POC});-webkit-background-clip:text;background-clip:text;color:transparent;z-index:8;}}
-.o8-cta{{position:absolute;top:1072px;left:60px;right:140px;text-align:center;font-size:30px;font-weight:800;color:#e2e8f0;line-height:1.35;z-index:8;}}
-.o8-pl{{position:absolute;top:1160px;left:60px;right:120px;display:flex;gap:14px;justify-content:center;z-index:8;}}
-.o8-pl span{{font-family:'JBM';font-weight:800;font-size:27px;color:#93c5fd;border:2px solid rgba(96,165,250,.5);border-radius:12px;padding:7px 18px;}}
-.o8-d{{position:absolute;left:70px;right:140px;top:1236px;text-align:center;font-size:26px;line-height:1.4;color:#fed7aa;padding:12px 18px;border:1px solid rgba(245,158,11,.3);border-radius:14px;background:rgba(255,255,255,.03);z-index:8;}}
+.o8-a{{position:absolute;inset:0;}}
+.o8-b{{position:absolute;inset:0;transform:translateY(90px);}}
+.o8-h{{position:absolute;top:610px;left:40px;right:192px;text-align:center;font-family:'JBM';font-weight:800;font-size:84px;background:linear-gradient(135deg,#22d3ee,#8b5cf6 55%,{POC});-webkit-background-clip:text;background-clip:text;color:transparent;z-index:8;}}
+.o8-sub{{position:absolute;top:500px;left:40px;right:192px;text-align:center;font-size:30px;font-weight:800;letter-spacing:6px;color:#94a3b8;z-index:8;}}
+.o8-cta{{position:absolute;top:740px;left:70px;right:200px;text-align:center;font-size:36px;font-weight:800;color:#e2e8f0;line-height:1.35;z-index:8;}}
+.o8-pl{{position:absolute;top:900px;left:40px;right:192px;display:flex;gap:16px;justify-content:center;z-index:8;}}
+.o8-pl span{{font-family:'JBM';font-weight:800;font-size:30px;color:#93c5fd;border:2px solid rgba(96,165,250,.5);border-radius:14px;padding:9px 22px;}}
+.o8-d{{position:absolute;left:70px;right:200px;top:1020px;text-align:center;font-size:27px;line-height:1.4;color:#fed7aa;padding:14px 20px;border:1px solid rgba(245,158,11,.35);border-radius:16px;background:rgba(255,255,255,.03);z-index:8;}}
 .o8-d b{{color:#fff;}}
 """
     tg = cta.get("telegram", "")
-    body = (f'<div class="eb" style="top:260px;"><span>GHI NHỚ</span></div>'
-            f'<div class="htitle" style="top:350px;">“{esc(lad.get("title","NGỪNG GIẢM ≠ HẾT GIẢM"))}”</div>'
-            f'<div class="panel" style="top:500px;height:460px;"></div>{svg_layer("".join(parts), "g8")}'
+    body = (f'<div class="o8-a" id="o8a">'
+            f'<div class="eb" style="top:250px;"><span>GHI NHỚ</span></div>'
+            f'<div class="htitle" style="top:330px;">“{esc(lad.get("title","NGỪNG GIẢM ≠ HẾT GIẢM"))}”</div>'
+            f'<div class="panel" style="top:470px;height:760px;right:180px;"></div>{svg_layer("".join(parts), "g8")}</div>'
+            f'<div class="o8-b" id="o8b">'
+            f'<div class="o8-sub">THEO DÕI ĐỂ HỌC TIẾP</div>'
             f'<div class="o8-h" id="o8h">{esc(D.get("handle","@kenvinzone"))}</div>'
             f'<div class="o8-cta" id="o8c">{esc(cta.get("text",""))}' + (f' → <span class="mono" style="color:#22d3ee;">{esc(tg)}</span>' if tg else "") + '</div>'
             f'<div class="o8-pl" id="o8p"><span>TikTok</span><span>Reels</span><span>Shorts</span></div>'
-            f'<div class="o8-d" id="o8d">Nội dung mang tính <b>giáo dục</b>, chỉ để tham khảo — <b>KHÔNG phải khuyến nghị đầu tư</b>.</div>')
-    js = ["tl.fromTo('.htitle',{opacity:0,scale:1.1,filter:'blur(10px)'},{opacity:1,scale:1,filter:'blur(0px)',duration:0.5,ease:'expo.out'},0.2);",
-          "gsap.set('#g8 .lad,#g8 .ladarr,#o8h,#o8c,#o8p,#o8d',{opacity:0});"]
+            f'<div class="o8-d" id="o8d">Nội dung mang tính <b>giáo dục</b>, chỉ để tham khảo — <b>KHÔNG phải khuyến nghị đầu tư</b>.</div></div>')
+    t_b = lt(cid, B(8, 1, -0.15))
+    js = ["tl.fromTo('#o8a .htitle',{opacity:0,scale:1.1,filter:'blur(10px)'},{opacity:1,scale:1,filter:'blur(0px)',duration:0.5,ease:'expo.out'},0.2);",
+          "gsap.set('#g8 .lad,#g8 .ladarr,#ladd,#o8b,#o8b .o8-sub,#o8h,#o8c,#o8p span,#o8d',{opacity:0});"]
+    step_t = []
     for i in range(len(steps)):
-        js.append(wipe_js(f"#lad{i}", lt(cid, B(8, 0, 0.5 + i * 0.5))))
+        t = lt(cid, B(8, 0, 0.45 + i * 0.6)); step_t.append(t)
+        js.append(wipe_js(f"#lad{i}", t))
         if i < len(steps) - 1:
-            js.append(pop_js(f"#ladarr{i}", lt(cid, B(8, 0, 0.85 + i * 0.5)), 0.7))
-    js.append(f"tl.fromTo('#o8h',{{opacity:0,y:18}},{{opacity:1,y:0,duration:0.45,ease:'expo.out',immediateRender:false}},{lt(cid,B(8,1))});")
-    js.append(f"tl.fromTo('#o8c',{{opacity:0}},{{opacity:1,duration:0.4,immediateRender:false}},{lt(cid,B(8,1,0.3))});")
-    js.append(f"QA('#o8p span').forEach((x,k)=>{{tl.fromTo(x,{{opacity:0,y:14}},{{opacity:1,y:0,duration:0.3,ease:'back.out(2)',immediateRender:false}},{lt(cid,B(8,1,0.55))}+k*0.12);}});"
-              f"tl.set('#o8p',{{opacity:1}},{lt(cid,B(8,1,0.5))});")
-    js.append(f"tl.fromTo('#o8d',{{opacity:0}},{{opacity:1,duration:0.4,immediateRender:false}},{lt(cid,B(8,2))});")
+            js.append(pop_js(f"#ladarr{i}", t + 0.35, 0.7))
+    if steps:
+        js.append(f"tl.fromTo('#ladd',{{opacity:0,scale:0,transformOrigin:'center'}},{{opacity:1,scale:1,duration:0.3,ease:'back.out(2)',immediateRender:false}},{step_t[0] + 0.3});")
+        for i in range(1, len(steps)):
+            x, y = dots[i]
+            # chấm giá "ngừng giảm" ở bậc trên rồi trượt rơi xuống bậc dưới
+            js.append(f"tl.to('#ladd',{{attr:{{cx:{x:.0f},cy:{y:.0f}}},duration:0.45,ease:'power2.in'}},{step_t[i] + 0.05});")
+    # pha B: bài học lùi, outro lên
+    js.append(f"tl.to('#o8a',{{opacity:0,y:-40,filter:'blur(6px)',duration:0.45,ease:'power2.in'}},{t_b});")
+    js.append(f"tl.fromTo('#o8b',{{opacity:0}},{{opacity:1,duration:0.01,immediateRender:false}},{t_b + 0.35});")
+    js.append(f"tl.fromTo('#o8b .o8-sub',{{opacity:0,y:16}},{{opacity:1,y:0,duration:0.4,immediateRender:false}},{t_b + 0.35});")
+    js.append(f"tl.fromTo('#o8h',{{opacity:0,scale:0.85}},{{opacity:1,scale:1,duration:0.55,ease:'back.out(1.8)',immediateRender:false}},{t_b + 0.45});")
+    js.append(f"tl.fromTo('#o8c',{{opacity:0,y:14}},{{opacity:1,y:0,duration:0.4,immediateRender:false}},{t_b + 0.75});")
+    js.append(f"QA('#o8p span').forEach((x,k)=>{{tl.fromTo(x,{{opacity:0,y:14}},{{opacity:1,y:0,duration:0.3,ease:'back.out(2)',immediateRender:false}},{t_b + 1.0}+k*0.12);}});")
+    js.append(f"tl.fromTo('#o8d',{{opacity:0}},{{opacity:1,duration:0.4,immediateRender:false}},{max(lt(cid,B(8,2)), t_b + 1.3)});")
     return cid, dur, scene_file(cid, dur, css8, body, "".join(js))
 
 # ============================ CAPTIONS ============================
@@ -823,7 +911,7 @@ def captions():
         js.append(f"tl.to('#cg{gi} .cpill',{{opacity:0,duration:0.1,ease:'power2.in'}},{e2-0.1});tl.set('#cg{gi}',{{opacity:0,visibility:'hidden'}},{e2});")
     css = """
 .cg{position:absolute;left:60px;right:120px;bottom:470px;text-align:center;opacity:0;visibility:hidden;}
-.cpill{display:inline-block;max-width:900px;padding:12px 24px;border-radius:22px;background:rgba(2,6,23,.72);border:1px solid rgba(255,255,255,.08);font-size:42px;font-weight:800;line-height:1.3;color:#cbd5e1;}
+.cpill{display:inline-block;max-width:900px;padding:12px 24px;border-radius:22px;background:rgba(15,23,42,.94);border:1.5px solid rgba(255,255,255,.18);box-shadow:0 12px 35px rgba(0,0,0,.65),0 0 20px rgba(56,189,248,.15);font-size:42px;font-weight:800;line-height:1.3;color:#cbd5e1;}
 .cw{display:inline-block;padding:0 6px;border-radius:10px;}
 """
     return "captions", TOTAL, scene_file("captions", TOTAL, css, "\n".join(groups), "\n".join(js))

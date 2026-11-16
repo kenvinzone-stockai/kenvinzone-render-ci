@@ -22,7 +22,7 @@
    "stage": "MỞ ĐẦU",
    "telemetry": {
     "left": "SAU CÚ GIẢM",
-    "right": "PHE NẮM QUYỀN: ?"
+    "right": "CHƯA RÕ"
    },
    "candles": [
     {
@@ -748,7 +748,7 @@
    },
    "annotations": [
     {
-     "text": "POC = vùng khớp lệnh dày nhất",
+     "text": "PoC · VÙNG XẢ HÀNG CHÍNH",
      "sentence": 1,
      "price": 114,
      "color": "poc",
