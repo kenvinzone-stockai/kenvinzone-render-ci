@@ -1,0 +1,64 @@
+=== DECK: giai-ma-trading-sideway-bottom-b-shape-14-11 | template=aurora-trading-explainer-hf | preset giọng=giai-ma-nganh ===
+  Đã tái tạo config/tts.json (giọng clone).
+  Đã tái tạo config/social-upload.json từ secret.
+  [phát âm] đã áp từ điển phiên âm cho giọng đọc (chữ hiển thị giữ nguyên).
+=== [1/3] Tạo giọng đọc (gemini) ===
+Full voiceover 96.28s · 60 quãng lặng · 9 dòng
+  ranh 1: ước   5.67s → lặng 5.24–6.34 (1.10s) cắt 5.79s
+  ranh 2: ước  14.30s → lặng 13.77–14.59 (0.82s) cắt 14.18s
+  ranh 3: ước  23.81s → lặng 23.34–24.24 (0.90s) cắt 23.79s
+  ranh 4: ước  32.89s → lặng 33.24–34.22 (0.98s) cắt 33.73s
+  ranh 5: ước  45.54s → lặng 45.80–46.58 (0.79s) cắt 46.19s
+  ranh 6: ước  56.47s → lặng 57.01–57.81 (0.80s) cắt 57.41s
+  ranh 7: ước  74.88s → lặng 74.68–75.53 (0.85s) cắt 75.11s
+  ranh 8: ước  85.73s → lặng 85.45–86.03 (0.58s) cắt 85.74s
+  → snap được 8/8 ranh giới vào quãng lặng
+Slide 1:    0.00s →    5.79s  = 5.79s  -> line_0.mp3
+Slide 2:    5.79s →   14.18s  = 8.39s  -> line_1.mp3
+Slide 3:   14.18s →   23.79s  = 9.61s  -> line_2.mp3
+Slide 4:   23.79s →   33.73s  = 9.94s  -> line_3.mp3
+Slide 5:   33.73s →   46.19s  = 12.46s  -> line_4.mp3
+Slide 6:   46.19s →   57.41s  = 11.22s  -> line_5.mp3
+Slide 7:   57.41s →   75.11s  = 17.69s  -> line_6.mp3
+Slide 8:   75.11s →   85.74s  = 10.64s  -> line_7.mp3
+Slide 9:   85.74s →   96.28s  = 10.54s  -> line_8.mp3
+Concatenated voiceover: 96.28s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-14-11/output/voiceover_concat.mp3
+Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
+Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
+Sending full script to Gemini TTS: 9 slides, 1639 chars
+Full Gemini TTS saved: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-14-11/output/gemini_full_voiceover.mp3
+
+=== Splitting full Gemini TTS voiceover ===
+=== [2/3] Render HyperFrames (30fps đầy đủ) ===
+=== HyperFrames (aurora-trading-explainer-hf): dung project tai /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-14-11/output/hf ===
+  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
+=== HyperFrames: dung composition tu hf-data.json ===
+TOTAL 100.58 scenes ['s0', 's1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 'notes', 'captions']
+=== HyperFrames: render tung khung hinh (100.6s video) ===
+  Trinh duyet render: /home/runner/.cache/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux64/chrome-headless-shell
+  ◆  Rendering hf → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-14-11/output/final_video.hf.mp4
+     30fps · high · auto workers (4 cores detected)
+     GPU: browser GPU (auto-detect)
+  [?25l│
+  ◒  Checking browser...
+  [1G[J◇  Browser: env
+  [?25h
+    Lint: 2 error(s), 2 warning(s) — run with --lint-verbose for full output.
+    Continuing render despite lint issues. Use --strict to block errors.
+  HyperFrames render 5%
+  HyperFrames render 20%
+  HyperFrames render 30%
+  HyperFrames render 40%
+  HyperFrames render 50%
+  HyperFrames render 60%
+  HyperFrames render 70%
+  HyperFrames render 80%
+  HyperFrames render 90%
+  ◇  /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-14-11/output/final_video.hf.mp4
+     13.8 MB · 1m 40.6s video · rendered in 2m 10.9s
+     beginframe capture · software gpu · compile 2.0s · extract 0.0s · audio 2.7s · probe 0.2s · setup 1.3s · capture 2m 4.4s · encode (during capture) 2m 4.4s · assemble 0.5s
+Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-14-11/output/final_video.mp4
+  Video: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-14-11/output/final_video.mp4
+=== [3/3] Upload YouTube (privacy=private) ===
+{"ok": true, "platform": "youtube", "project": "giai-ma-trading-sideway-bottom-b-shape-14-11", "video_id": "D7d7yG33l-Q", "url": "https://youtu.be/D7d7yG33l-Q", "studio_url": "https://studio.youtube.com/video/D7d7yG33l-Q/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
+  Xong: https://youtu.be/D7d7yG33l-Q

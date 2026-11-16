@@ -77,8 +77,10 @@ def sb(el, dur, default=0.3):
 
 # ============================ các mảnh SVG cục bộ (ngoài 8 hàm) ============================
 def svg_layer(content, vid):
-    return (f'<svg id="{vid}" class="layer" xmlns="http://www.w3.org/2000/svg" '
-            f'viewBox="0 0 {W} {H}" preserveAspectRatio="xMidYMid meet">{content}</svg>')
+    """Lớp SVG toàn khung, bọc trong .camwrap/.cam để camera (V5-2) phóng/dịch đồng loạt."""
+    return (f'<div class="camwrap"><div class="cam">'
+            f'<svg id="{vid}" class="layer" xmlns="http://www.w3.org/2000/svg" '
+            f'viewBox="0 0 {W} {H}" preserveAspectRatio="xMidYMid meet">{content}</svg></div></div>')
 
 
 def arrow(p1, p2, label="", color=DOWN, idn="arr"):
@@ -91,7 +93,7 @@ def arrow(p1, p2, label="", color=DOWN, idn="arr"):
            f'<polygon points="{x2},{y2} {a1[0]:.0f},{a1[1]:.0f} {a2[0]:.0f},{a2[1]:.0f}" fill="{color}"/>')
     if label:
         svg += (f'<text x="{(x1+x2)/2+16:.0f}" y="{(y1+y2)/2-10:.0f}" fill="{color}" font-size="27"'
-                f' font-weight="900" font-family="Consolas,monospace">{esc(label)}</text>')
+                f' font-weight="900" font-family="JBM, JetBrains Mono, monospace">{esc(label)}</text>')
     return svg + '</g>'
 
 
@@ -99,7 +101,7 @@ def pill(x, y, text, color, idn="pil", fs=20):
     w = 28 + len(str(text)) * fs * 0.62
     return (f'<g class="spill" id="{idn}"><rect x="{x-w/2:.0f}" y="{y-18:.0f}" width="{w:.0f}" height="36"'
             f' rx="18" fill="{color}"/><text x="{x:.0f}" y="{y+7:.0f}" fill="{INK}" font-size="{fs}"'
-            f' font-weight="900" text-anchor="middle" font-family="Arial">{esc(text)}</text></g>')
+            f' font-weight="900" text-anchor="middle" font-family="BVP, Be Vietnam Pro, sans-serif">{esc(text)}</text></g>')
 
 
 def candle_tag(c, text, color, idn, below=False):
@@ -168,15 +170,16 @@ FONT_CSS = """
 BASE_CSS = """
 #root{position:absolute;inset:0;font-family:'BVP','Noto Sans',Arial,sans-serif;color:#e7e9f0;}
 .mono{font-family:'JBM',monospace;}
-.layer{position:absolute;inset:0;width:100%;height:100%;z-index:5;}
+.layer{position:absolute;inset:0;width:100%;height:100%;z-index:5;}\n.camwrap{position:absolute;inset:0;z-index:5;}\n.cam{position:absolute;inset:0;}\n.spotwrap{position:absolute;inset:0;z-index:6;pointer-events:none;}\n.spot{position:absolute;border-radius:18px;border:2.5px solid rgba(251,191,36,.85);box-shadow:0 0 0 2400px rgba(4,6,12,.64),0 0 28px rgba(251,191,36,.35);opacity:0;}
 .panel{position:absolute;left:36px;right:36px;top:252px;height:842px;background:#131722;border:1px solid rgba(255,255,255,.08);border-radius:28px;box-shadow:0 30px 80px rgba(0,0,0,.5);z-index:1;}
 .crumb{position:absolute;top:296px;left:0;right:0;text-align:center;font-size:31px;font-weight:900;letter-spacing:6px;color:#aab3c5;text-transform:uppercase;z-index:8;}
 .eb{position:absolute;top:238px;left:0;right:0;text-align:center;z-index:8;}
 .eb span{display:inline-block;background:linear-gradient(135deg,#8b5cf6,#22d3ee);color:#0a0616;font-weight:900;font-size:26px;letter-spacing:4px;padding:11px 26px;border-radius:12px;}
-.tele{position:absolute;left:40px;right:40px;top:1380px;display:flex;gap:20px;z-index:8;}
-.tele .cell{flex:1;background:#0b0f19;border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:22px;text-align:center;}
-.tele .cell .k{display:block;font-size:22px;font-weight:800;letter-spacing:2px;color:#6b7280;}
-.tele .cell .v{display:block;margin-top:8px;font-size:38px;font-weight:900;}
+/* Vùng an toàn Shorts/TikTok/Reels: chữ quan trọng nằm trong x 60–900, y <= 1450 */
+.tele{position:absolute;left:60px;right:120px;top:1296px;display:flex;justify-content:center;gap:12px;z-index:8;}
+.tele .cell{display:flex;align-items:center;gap:12px;background:#0b0f19;border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:7px 18px;white-space:nowrap;}
+.tele .cell .k{font-size:19px;font-weight:800;letter-spacing:1.5px;color:#6b7280;}
+.tele .cell .v{font-size:29px;font-weight:900;}
 .tele .cell.l .v{color:#f43f5e;} .tele .cell.r .v{color:#f59e0b;}
 .htitle{position:absolute;left:40px;right:40px;top:120px;text-align:center;font-size:62px;font-weight:900;line-height:1.08;letter-spacing:-1px;z-index:8;}
 .htitle .b{color:#f59e0b;}
@@ -184,9 +187,9 @@ BASE_CSS = """
 .bigq .g{background:linear-gradient(100deg,#22d3ee,#8b5cf6);-webkit-background-clip:text;background-clip:text;color:transparent;}
 .badge{position:absolute;left:0;right:0;top:1160px;text-align:center;z-index:8;}
 .badge span{display:inline-block;padding:18px 34px;border-radius:18px;font-size:40px;font-weight:900;background:#0b0f19;border:2px solid currentColor;}
-.checklist{position:absolute;left:70px;right:70px;top:1120px;display:flex;flex-direction:column;gap:18px;z-index:8;}
-.chk{display:flex;align-items:center;gap:20px;background:#131722;border:1px solid rgba(255,255,255,.1);border-left:5px solid #10b981;border-radius:16px;padding:18px 24px;font-size:29px;font-weight:800;}
-.chk .n{width:48px;height:48px;border-radius:50%;background:#10b981;color:#06240f;display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0;}
+.checklist{position:absolute;left:70px;right:120px;top:1120px;display:flex;flex-direction:column;gap:10px;z-index:8;}
+.chk{display:flex;align-items:center;gap:20px;background:#131722;border:1px solid rgba(255,255,255,.1);border-left:5px solid #10b981;border-radius:16px;padding:10px 22px;font-size:27px;font-weight:800;}
+.chk .n{width:42px;height:42px;border-radius:50%;background:#10b981;color:#06240f;display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0;}
 .chk.warn{border-left-color:#f59e0b;} .chk.warn .n{background:#f59e0b;color:#2a1a04;}
 .pane2{position:absolute;left:40px;right:40px;height:420px;background:#131722;border:1px solid rgba(255,255,255,.08);border-radius:22px;z-index:1;}
 .pane2 .lab{position:absolute;top:18px;left:28px;font-size:30px;font-weight:900;}
@@ -195,6 +198,9 @@ BASE_CSS = """
 
 
 def scene_file(cid, dur, css, body, js):
+    if re.fullmatch(r"s[0-8]", cid) and sc(cid).get("camera"):
+        cam_body, cam_js = camera(cid, dur)
+        body += cam_body; js += cam_js
     return f"""<template>
 <style>{FONT_CSS}{BASE_CSS}{css}</style>
 <div id="root" data-composition-id="{cid}" data-width="{W}" data-height="{H}" data-duration="{dur}">
@@ -244,6 +250,88 @@ def sig_ring(c, color, idn):
     r = max(40.0, abs(price_to_y(c["h"], COORD) - price_to_y(c["l"], COORD)) / 2 + 20)
     return (f'<circle class="sigring" id="{idn}" cx="{x:.0f}" cy="{y:.0f}" r="{r:.0f}" fill="none"'
             f' stroke="{color}" stroke-width="3.4" stroke-dasharray="9 7" opacity="0.95"/>')
+
+
+# ============================ CAMERA — zoom + spotlight (V5-2) ============================
+# scenes.sX.camera = [{sentence (hoặc beat 0..1), until_sentence | hold (giây),
+#   focus: "sideway" | "breakout" | "retest" | "poc" | {x0,x1,price_top,price_bottom},
+#   scale (tuỳ chọn, mặc định tự khớp, trần 2.0), spotlight: true|false (mặc định true)}]
+# Phóng nhóm SVG của cảnh vào tiêu điểm rồi lùi ra; telemetry/tiêu đề/phụ đề đứng yên.
+PANEL = (36, 252, 1044, 1094)          # x0, y0, x1, y1 của khung chart
+PANEL_CLIP = f"inset({PANEL[1]}px {W-PANEL[2]}px {H-PANEL[3]}px {PANEL[0]}px round 28px)"
+
+
+def _focus_rect(f):
+    """focus → (x0, y0, x1, y1) trên canvas."""
+    pad = 34
+    if isinstance(f, dict):
+        x0, x1 = float(f.get("x0", CX0)), float(f.get("x1", CX1))
+        y0 = price_to_y(float(f["price_top"]), COORD); y1 = price_to_y(float(f["price_bottom"]), COORD)
+        return x0 - pad, y0 - pad, x1 + pad, y1 + pad
+    box = sc("s1").get("sideway_box") or {}
+    if f == "sideway" and box:
+        return (box["start_x"] - pad, price_to_y(box["top_price"], COORD) - pad - 40,
+                box["end_x"] + pad, price_to_y(box["bottom_price"], COORD) + pad)
+    if f == "breakout" and sc("s1").get("breakout_candle"):
+        c = sc("s1")["breakout_candle"]; x = float(c["x"])
+        top = max(c["h"], box.get("top_price", c["h"]))
+        return x - 190, price_to_y(top, COORD) - pad, x + 110, price_to_y(c["l"], COORD) + pad + 30
+    if f == "retest" and sc("s7").get("retest_candle"):
+        c = sc("s7")["retest_candle"]; x = float(c["x"])
+        sl = (sc("s7").get("stop_loss_line") or {}).get("price", c["h"] + 10)
+        return x - 230, price_to_y(max(sl, c["h"]), COORD) - pad, min(CX1 + 60, x + 360), price_to_y(c["l"], COORD) + pad + 70
+    if f == "poc":
+        poc = (sc("s3").get("volume_profile") or {}).get("poc_price", 0)
+        return CX0 - 70, price_to_y(poc, COORD) - 130, CX0 + 330, price_to_y(poc, COORD) + 130
+    return None
+
+
+def camera(cid, dur):
+    idx = int(cid[1:]); st = START[cid]
+    pw, ph = PANEL[2] - PANEL[0], PANEL[3] - PANEL[1]
+    pcx, pcy = (PANEL[0] + PANEL[2]) / 2, (PANEL[1] + PANEL[3]) / 2 + 20   # chừa chỗ tiêu đề crumb
+    body, js = [], []
+    for k, c in enumerate(sc(cid).get("camera") or []):
+        r = _focus_rect(c.get("focus"))
+        if not r:
+            continue
+        fx0, fy0, fx1, fy1 = r; fw, fh = fx1 - fx0, fy1 - fy0
+        fit = min((pw - 80) / fw, (ph - 160) / fh)
+        sc_ = round(max(1.1, min(float(c.get("scale", fit)), fit, 2.0)), 3)
+        tx = round(pcx - sc_ * (fx0 + fx1) / 2, 1); ty = round(pcy - sc_ * (fy0 + fy1) / 2, 1)
+        if "sentence" in c:
+            t0 = lt(cid, B(idx, int(c["sentence"]), float(c.get("delay", 0.1))))
+        else:
+            t0 = sb(c, dur, 0.4)
+        if "until_sentence" in c:
+            t1 = lt(cid, B(idx, int(c["until_sentence"]), -0.1))
+        else:
+            t1 = t0 + float(c.get("hold", 3.2))
+        t1 = min(t1, dur - 0.95); t0 = max(0.2, min(t0, t1 - 1.4))
+        js.append(f"tl.set(QA('.camwrap'),{{clipPath:'{PANEL_CLIP}'}},{t0});"
+                  f"tl.to(QA('.cam'),{{x:{tx},y:{ty},scale:{sc_},transformOrigin:'0px 0px',duration:0.8,ease:'power3.inOut'}},{t0});"
+                  f"tl.to(QA('.cam'),{{x:0,y:0,scale:1,duration:0.7,ease:'power3.inOut'}},{round(t1, 3)});"
+                  f"tl.set(QA('.camwrap'),{{clipPath:'none'}},{round(t1 + 0.72, 3)});")
+        if c.get("spotlight", True):
+            hw, hh = sc_ * fw, sc_ * fh
+            hx = max(PANEL[0] + 14, pcx - hw / 2); hy = max(PANEL[1] + 70, pcy - hh / 2)
+            hw = min(hw, PANEL[2] - 14 - hx); hh = min(hh, PANEL[3] - 14 - hy)
+            body.append(f'<div class="spot" id="{cid}spot{k}" style="left:{hx:.0f}px;top:{hy:.0f}px;width:{hw:.0f}px;height:{hh:.0f}px;"></div>')
+            js.append(f"tl.fromTo('#{cid}spot{k}',{{opacity:0,scale:1.06}},{{opacity:1,scale:1,duration:0.45,ease:'power2.out',immediateRender:false}},{round(t0 + 0.6, 3)});"
+                      f"tl.to('#{cid}spot{k}',{{opacity:0,duration:0.3}},{round(t1 - 0.05, 3)});")
+    html_ = f'<div class="spotwrap" style="clip-path:{PANEL_CLIP};">{"".join(body)}</div>' if body else ""
+    return html_, "".join(js)
+
+
+def camera_windows():
+    """Các khoảng (tuyệt đối) camera đang phóng — lớp nhãn dùng để tạm ẩn nhãn neo giá."""
+    out = []
+    for idx in range(9):
+        cid = f"s{idx}"; dur = SCENES[idx][2] - SCENES[idx][1]
+        for m in re.finditer(r"tl\.to\(QA\('\.cam'\),\{x:[^0][^}]*\},([\d.]+)\);tl\.to\(QA\('\.cam'\),\{x:0,y:0,scale:1[^}]*\},([\d.]+)\)",
+                             camera(cid, dur)[1] if sc(cid).get("camera") else ""):
+            out.append((START[cid] + float(m.group(1)), START[cid] + float(m.group(2)) + 0.7))
+    return out
 
 
 # ============================ SCENES ============================
@@ -350,8 +438,8 @@ def _pane_svg(spec, top_y, vid):
     """Mini chart trong 1 pane s2: tự co trục giá + trải đều X vào pane."""
     cands = spec.get("candles", [])
     lo = min(c["l"] for c in cands) - 6; hi = max(c["h"] for c in cands) + 6
-    c2 = {"price_min": lo, "price_max": hi, "chart_top_y": top_y + 86,
-          "chart_height_px": 290, "chart_left_x": 200, "chart_width_px": 680}
+    c2 = {"price_min": lo, "price_max": hi, "chart_top_y": top_y + 80,
+          "chart_height_px": 270, "chart_left_x": 200, "chart_width_px": 680}
     xs = [c["x"] for c in cands]
     x_lo, x_hi = min(xs), max(xs)
     span = (x_hi - x_lo) or 1
@@ -363,14 +451,14 @@ def _pane_svg(spec, top_y, vid):
 def s_two():
     cid, dur = mk(2); s = sc("s2")
     a, b = s.get("chart_top", {}), s.get("chart_bottom", {})
-    parts = [_pane_svg(a, 380, "mA"), _pane_svg(b, 830, "mB")]
+    parts = [_pane_svg(a, 360, "mA"), _pane_svg(b, 770, "mB")]
     body = (f'{crumb(cid)}'
-            f'<div class="pane2" style="top:380px;"><div class="lab" style="color:{UP};">{esc(a.get("label",""))}</div>'
+            f'<div class="pane2" style="top:360px;height:390px;"><div class="lab" style="color:{UP};">{esc(a.get("label",""))}</div>'
             f'<div class="bst" style="color:{UP};">{esc(a.get("badge_status",""))}</div></div>'
-            f'<div class="pane2" style="top:830px;"><div class="lab" style="color:{DOWN};">{esc(b.get("label",""))}</div>'
+            f'<div class="pane2" style="top:770px;height:390px;"><div class="lab" style="color:{DOWN};">{esc(b.get("label",""))}</div>'
             f'<div class="bst" style="color:{DOWN};">{esc(b.get("badge_status",""))}</div></div>'
             f'{svg_layer("".join(parts), "g2")}'
-            f'<div class="bigq" style="top:1280px;font-size:42px;">Mắt thường nhìn <span class="g">giống hệt nhau</span> — phân biệt thế nào?</div>'
+            f'<div class="bigq" style="top:1176px;font-size:42px;right:120px;">Mắt thường nhìn <span class="g">giống hệt nhau</span> — phân biệt thế nào?</div>'
             f'{telemetry("s2")}')
     js = ("gsap.set('#mA .candle-item,#mB .candle-item',{opacity:0});"
           "tl.fromTo('.pane2',{opacity:0,y:30},{opacity:1,y:0,duration:0.5,stagger:0.25,ease:'expo.out'},0.2);"
@@ -578,19 +666,19 @@ def s_entry():
     if bo:
         evs.append((f'<g id="g7bo">{render_candlesticks([dict(bo, width=bo.get("width", 20), id="c7bo")], COORD)}'
                     f'{sig_ring(bo, DOWN, "r7bo")}'
-                    f'{candle_tag(bo, bo.get("label", ""), DOWN, "t7bo", below=True)}</g>', 1))
+                    f'{candle_tag(bo, bo.get("label", ""), DOWN, "t7bo", below=True)}</g>', int(bo.get("sentence", 0))))
     if rt:
         evs.append((f'<g id="g7rt">{render_candlesticks([dict(rt, width=rt.get("width", 20), id="c7rt")], COORD)}'
                     f'{sig_ring(rt, POC, "r7rt")}'
-                    f'{candle_tag(rt, rt.get("label", ""), POC, "t7rt")}</g>', 2))
+                    f'{candle_tag(rt, rt.get("label", ""), POC, "t7rt")}</g>', int(rt.get("sentence", 1))))
     if ep:
         ey = price_to_y(ep.get("price", 100), COORD)
         ex0 = float(ep.get("x", 720))
         evs.append((f'<g id="g7ep"><line x1="{ex0:.0f}" y1="{ey:.0f}" x2="{CX1-10}" y2="{ey:.0f}"'
                     f' stroke="{ep.get("color", DOWN)}" stroke-width="2.6" stroke-dasharray="8 5"/>'
-                    f'{pill(CX1 - 120, ey, ep.get("label", "BÁN"), ep.get("color", DOWN), "p7ep", fs=22)}</g>', 2))
+                    f'{pill(CX1 - 190, ey, ep.get("label", "BÁN"), ep.get("color", DOWN), "p7ep", fs=22)}</g>', int(ep.get("sentence", 1))))
     if slx:
-        evs.append((f'<g id="g7sl">{render_level_line(slx["price"], COORD, label=slx.get("label",""), color=slx.get("color", DOWN))}</g>', 2))
+        evs.append((f'<g id="g7sl">{render_level_line(slx["price"], COORD, label=slx.get("label",""), color=slx.get("color", DOWN))}</g>', int(slx.get("sentence", 1))))
     alt = s.get("alt_branch")
     if alt:
         ax = float(alt.get("from_x", (box.get("start_x", CX0) + box.get("end_x", CX1)) / 2))
@@ -616,7 +704,7 @@ def s_entry():
     rows = "".join(f'<div class="chk{" warn" if i==0 else ""}" id="chk{i}"><div class="n">{i+1}</div><div>{esc(re.sub(chr(10), " ", it))}</div></div>'
                    for i, it in enumerate(items))
     body = (f'{crumb(cid)}<div class="panel" style="height:800px;"></div>{svg_layer("".join(parts), "g7")}'
-            f'<div class="checklist" style="top:1090px;">{rows}</div>{telemetry("s7")}')
+            f'<div class="checklist" style="top:1068px;">{rows}</div>{telemetry("s7")}')
     js = ["gsap.set('#g7bo,#g7rt,#g7ep,#g7sl,.chk,#g7alt',{opacity:0});"]
     gids = [g for g, used in [("#g7bo", bo), ("#g7rt", rt), ("#g7ep", ep), ("#g7sl", slx)] if used]
     for (frag, beat), gid in zip(evs, gids):
@@ -625,9 +713,11 @@ def s_entry():
                       f"tl.fromTo('#g7ep line',{{opacity:0}},{{opacity:1,duration:0.3,immediateRender:false}},{lt(cid,B(7,beat))});")
         else:
             js.append(pop_js(gid, lt(cid, B(7, beat)), 0.85))
-    js.append("QA('.sigring').forEach(r=>{tl.fromTo(r,{scale:1.7,opacity:0,transformOrigin:'center'},"
-              "{scale:1,opacity:1,duration:0.4,ease:'back.out(2)',immediateRender:false},"
-              + str(lt(cid, B(7, 1, 0.35))) + ");});")
+    for rid, el, dflt in (("#r7bo", bo, 0), ("#r7rt", rt, 1)):
+        if el:
+            js.append(f"tl.fromTo('{rid}',{{scale:1.7,opacity:0,transformOrigin:'center'}},"
+                      f"{{scale:1,opacity:1,duration:0.4,ease:'back.out(2)',immediateRender:false}},"
+                      f"{lt(cid, B(7, int(el.get('sentence', dflt)), 0.35))});")
     if alt:
         t_alt = lt(cid, B(7, 2, 1.1))
         js.append(f"tl.set('#g7alt',{{opacity:1}},{t_alt});"
@@ -665,11 +755,11 @@ def s_outro():
                 y2 = price_to_y(steps[i + 1]["price"], c8)
                 parts.append(f'<g class="ladarr" id="ladarr{i}">{arrow((x_a+seg_w-30, y+8), (x_a+seg_w+4, y2-8), "", "#8b93a7", f"laa{i}")}</g>')
     css8 = f"""
-.o8-h{{position:absolute;top:1005px;left:0;right:0;text-align:center;font-family:'JBM';font-weight:800;font-size:62px;background:linear-gradient(135deg,#22d3ee,#8b5cf6 55%,{POC});-webkit-background-clip:text;background-clip:text;color:transparent;z-index:8;}}
-.o8-cta{{position:absolute;top:1092px;left:50px;right:50px;text-align:center;font-size:30px;font-weight:800;color:#e2e8f0;line-height:1.35;z-index:8;}}
-.o8-pl{{position:absolute;top:1186px;left:0;right:0;display:flex;gap:14px;justify-content:center;z-index:8;}}
+.o8-h{{position:absolute;top:990px;left:0;right:0;text-align:center;font-family:'JBM';font-weight:800;font-size:62px;background:linear-gradient(135deg,#22d3ee,#8b5cf6 55%,{POC});-webkit-background-clip:text;background-clip:text;color:transparent;z-index:8;}}
+.o8-cta{{position:absolute;top:1072px;left:60px;right:140px;text-align:center;font-size:30px;font-weight:800;color:#e2e8f0;line-height:1.35;z-index:8;}}
+.o8-pl{{position:absolute;top:1160px;left:60px;right:120px;display:flex;gap:14px;justify-content:center;z-index:8;}}
 .o8-pl span{{font-family:'JBM';font-weight:800;font-size:27px;color:#93c5fd;border:2px solid rgba(96,165,250,.5);border-radius:12px;padding:7px 18px;}}
-.o8-d{{position:absolute;left:70px;right:70px;top:1268px;text-align:center;font-size:26px;line-height:1.4;color:#fed7aa;padding:12px 18px;border:1px solid rgba(245,158,11,.3);border-radius:14px;background:rgba(255,255,255,.03);z-index:8;}}
+.o8-d{{position:absolute;left:70px;right:140px;top:1236px;text-align:center;font-size:26px;line-height:1.4;color:#fed7aa;padding:12px 18px;border:1px solid rgba(245,158,11,.3);border-radius:14px;background:rgba(255,255,255,.03);z-index:8;}}
 .o8-d b{{color:#fff;}}
 """
     tg = cta.get("telegram", "")
@@ -711,29 +801,215 @@ def _caption_chunks(words, max_w=8):
 
 
 def captions():
+    """Phụ đề karaoke kiểu Giải Mã Chứng Khoán: khung bo 22px bán trong suốt, chữ 44px,
+    chữ đang đọc bật thành HỘP VÀNG nền đặc (chữ tối), chữ đã đọc chuyển trắng."""
     groups, js, gi = [], [], 0
     flat = [ch for c in SUBS["captions"] for ch in _caption_chunks(c["words"])]
     for gi, ch in enumerate(flat):
         s = round(ch[0]["start"] + OFF, 3)
         e = round(max(ch[-1].get("end", ch[-1]["start"] + 0.3), ch[-1]["start"] + 0.1) + OFF, 3)
         nxt = flat[gi + 1][0]["start"] + OFF if gi + 1 < len(flat) else e + 0.6
-        e2 = round(min(e + 0.3, nxt - 0.02), 3)
+        e2 = round(min(e + 0.25, nxt - 0.02), 3)
         ws = "".join(f'<span class="cw" id="cw{gi}_{wi}">{esc(w["text"])}</span> ' for wi, w in enumerate(ch))
         groups.append(f'<div class="cg" id="cg{gi}"><div class="cpill">{ws}</div></div>')
         js.append(f"tl.set('#cg{gi}',{{opacity:1,visibility:'visible'}},{s});"
                   f"tl.fromTo('#cg{gi} .cpill',{{y:18,opacity:0}},{{y:0,opacity:1,duration:0.14,ease:'power3.out',immediateRender:false}},{s});")
         for wi, w in enumerate(ch):
             ws_ = round(w["start"] + OFF, 3)
-            we_ = round(max(w.get("end", w["start"] + 0.2), w["start"] + 0.1) + OFF, 3)
-            js.append(f"tl.fromTo('#cw{gi}_{wi}',{{color:'#8e99ab'}},{{color:'#fbbf24',duration:0.05,immediateRender:false}},{ws_});"
-                      f"tl.to('#cw{gi}_{wi}',{{color:'#ffffff',duration:0.1}},{we_});")
-        js.append(f"tl.to('#cg{gi} .cpill',{{opacity:0,duration:0.1}},{e2-0.1});tl.set('#cg{gi}',{{opacity:0,visibility:'hidden'}},{e2});")
+            we_ = round(max(w.get("end", w["start"] + 0.2), w["start"] + 0.07) + OFF, 3)
+            js.append(f"tl.fromTo('#cw{gi}_{wi}',{{color:'#cbd5e1',backgroundColor:'rgba(245,158,11,0)'}},"
+                      f"{{color:'#0b0f19',backgroundColor:'rgba(251,191,36,1)',duration:0.06,immediateRender:false}},{ws_});"
+                      f"tl.to('#cw{gi}_{wi}',{{color:'#ffffff',backgroundColor:'rgba(245,158,11,0)',duration:0.06}},{we_});")
+        js.append(f"tl.to('#cg{gi} .cpill',{{opacity:0,duration:0.1,ease:'power2.in'}},{e2-0.1});tl.set('#cg{gi}',{{opacity:0,visibility:'hidden'}},{e2});")
     css = """
-.cg{position:absolute;left:0;right:0;top:1500px;text-align:center;opacity:0;visibility:hidden;}
-.cpill{display:inline-block;white-space:nowrap;max-width:1000px;padding:12px 30px;border-radius:99px;background:rgba(15,23,42,.94);border:1.5px solid rgba(255,255,255,.18);box-shadow:0 12px 35px rgba(0,0,0,.65),0 0 20px rgba(56,213,231,.15);font-size:36px;font-weight:800;line-height:1.35;color:#8e99ab;}
-.cw{display:inline-block;padding:0 4px;}
+.cg{position:absolute;left:60px;right:120px;bottom:470px;text-align:center;opacity:0;visibility:hidden;}
+.cpill{display:inline-block;max-width:900px;padding:12px 24px;border-radius:22px;background:rgba(2,6,23,.72);border:1px solid rgba(255,255,255,.08);font-size:42px;font-weight:800;line-height:1.3;color:#cbd5e1;}
+.cw{display:inline-block;padding:0 6px;border-radius:10px;}
 """
     return "captions", TOTAL, scene_file("captions", TOTAL, css, "\n".join(groups), "\n".join(js))
+
+
+# ============================ NOTES — lớp nhãn tích lũy (V5-1) ============================
+# Nhãn hiện đúng nhịp đọc rồi NẰM LẠI chồng lớp như giáo viên ghi bảng, sống độc lập với
+# cảnh (giống layer phụ đề). Dữ liệu: scenes.sX.annotations = [{
+#   text, sentence (chỉ số câu trong dòng script, ưu tiên) | beat (0..1 thời lượng cảnh),
+#   keep_until: "sY" | "end" | bỏ trống (= hết cảnh hiện tại),
+#   color: down|up|poc|level|vp|warn|cyan|ink|#hex,
+#   price (tuỳ chọn): neo nhãn ở mức giá, có đường dẫn tới anchor_x (mặc định mép phải hộp
+#   sideway) — nhãn neo đứng yên vì s3..s7 dùng chung hệ toạ độ giá }].
+# Nhãn không neo xếp vào "vùng bảng" của từng cảnh, trượt sang vùng mới khi đổi cảnh.
+# scenes.sX.notes_zone = {x0,y0,x1,y1} ghi đè vùng; scenes.sX.notes_layer = "hide" | "show".
+NOTE_COLORS = {"down": DOWN, "up": UP, "poc": POC, "level": LEVEL, "vp": VP, "warn": "#f59e0b",
+               "cyan": "#22d3ee", "ink": "#e7e9f0"}
+NOTE_H, NOTE_GAP = 58, 12
+_TOP_RIGHT = {"x0": 600, "y0": 352, "x1": 1030, "y1": 668}
+_BAND = {"x0": 64, "y0": 1108, "x1": 900, "y1": 1284}
+NOTE_ZONES = {"s0": _TOP_RIGHT, "s1": _TOP_RIGHT, "s3": _BAND, "s4": _BAND,
+              "s5": {"x0": 724, "y0": 452, "x1": 1040, "y1": 676}, "s7": _TOP_RIGHT}
+# s2/s6/s8 bố cục khác hẳn chart chung; s7 đã dày nhãn trên chart (retest, nhánh kịch bản 2)
+# → tạm ẩn lớp nhãn. Cảnh nào muốn hiện: scenes.sX.notes_layer = "show" (+ notes_zone).
+NOTE_HIDE = {"s2", "s6", "s7", "s8"}
+
+
+def _note_color(c):
+    c = str(c or "warn")
+    return c if c.startswith("#") else NOTE_COLORS.get(c, NOTE_COLORS["warn"])
+
+
+def _scene_hidden(cid):
+    mode = sc(cid).get("notes_layer")
+    return (mode == "hide") if mode in ("hide", "show") else (cid in NOTE_HIDE)
+
+
+def _note_items():
+    items = []
+    for idx in range(9):
+        cid = f"s{idx}"; st, en = SCENES[idx][1], SCENES[idx][2]
+        for a in sc(cid).get("annotations") or []:
+            if not isinstance(a, dict) or not str(a.get("text", "")).strip():
+                continue
+            if "sentence" in a:
+                t0 = B(idx, int(a["sentence"]), float(a.get("delay", 0.25)))
+            else:
+                t0 = st + sb(a, en - st, 0.4)
+            keep = str(a.get("keep_until") or cid)
+            if keep == "end":
+                t1 = START["s8"]
+            elif re.fullmatch(r"s[0-8]", keep):
+                k = max(int(keep[1:]), idx); t1 = SCENES[k][2]
+            else:
+                t1 = en
+            t1 = min(t1, START["s8"]) - 0.05 if idx < 8 else en - 0.05
+            t0 = min(max(t0, st + 0.15), t1 - 0.6)
+            items.append({"scene": idx, "t0": round(t0, 3), "t1": round(t1, 3), "a": a,
+                          "text": str(a["text"]).strip(), "color": _note_color(a.get("color"))})
+    items.sort(key=lambda n: n["t0"])
+    for i, n in enumerate(items):
+        n["id"] = f"nt{i}"
+    return items
+
+
+def _note_w(text, fs):
+    return min(940, 46 + len(text) * fs * 0.56)
+
+
+def notes():
+    items = _note_items()
+    if not items:
+        return None
+    body, js = [], []
+    lines_svg = []
+    rail = [n for n in items if n["a"].get("price") is None]
+    anch = [n for n in items if n["a"].get("price") is not None]
+
+    # --- nhãn neo giá: vị trí cố định + đường dẫn ---------------------------------
+    box_r = sc("s1").get("sideway_box") or {}
+    placed = []
+    for n in anch:
+        a = n["a"]; fs = 25 if len(n["text"]) <= 28 else 22
+        y = price_to_y(float(a["price"]), COORD) - NOTE_H / 2
+        ax = float(a.get("anchor_x", box_r.get("end_x", CX1 - 300)))
+        x = float(a.get("box_x", min(ax + 40, 1030 - _note_w(n["text"], fs))))
+        for p in placed:   # tránh đè nhãn neo khác cùng lúc sống
+            if p["t1"] > n["t0"] and n["t1"] > p["t0"] and abs(p["y"] - y) < NOTE_H + 8:
+                y = p["y"] + NOTE_H + 8
+        n.update(x=x, y=y, fs=fs); placed.append(n)
+        ay = price_to_y(float(a["price"]), COORD)
+        lines_svg.append(f'<line id="{n["id"]}L" x1="{ax:.0f}" y1="{ay:.0f}" x2="{x:.0f}" y2="{y + NOTE_H/2:.0f}" '
+                         f'stroke="{n["color"]}" stroke-width="3" stroke-dasharray="7 6" opacity="0"/>'
+                         f'<circle id="{n["id"]}D" cx="{ax:.0f}" cy="{ay:.0f}" r="7" fill="{n["color"]}" opacity="0"/>')
+
+    # --- nhãn bảng: xếp slot theo từng cảnh, trượt khi đổi cảnh ----------------------
+    def zone(idx):
+        z = dict(NOTE_ZONES.get(f"s{idx}", _TOP_RIGHT)); z.update(sc(f"s{idx}").get("notes_zone") or {}); return z
+
+    def slot_xy(z, k):
+        return z["x0"], z["y0"] + k * (NOTE_H + NOTE_GAP)
+
+    moves = {n["id"]: [] for n in rail}          # (t, x, y) — điểm đặt/di chuyển
+    evict = {}                                   # id -> thời điểm bị đẩy khỏi bảng (hết chỗ)
+    for idx in range(9):
+        cid = f"s{idx}"; st, en = SCENES[idx][1], SCENES[idx][2]
+        z = zone(idx); cap = max(1, int((z["y1"] - z["y0"] + NOTE_GAP) // (NOTE_H + NOTE_GAP)))
+        alive = lambda n, t: n["t0"] <= t < n["t1"] and evict.get(n["id"], 1e9) > t
+        stack = [n for n in rail if alive(n, st + 0.01) and n["t0"] < st]
+        while len(stack) > cap:                  # dư → bỏ nhãn cũ nhất
+            evict[stack[0]["id"]] = st; stack.pop(0)
+        for k, n in enumerate(stack):
+            moves[n["id"]].append((st, *slot_xy(z, k)))
+        for n in [n for n in rail if st <= n["t0"] < en]:
+            stack = [m for m in stack if alive(m, n["t0"])]
+            if len(stack) >= cap:
+                # hết chỗ: đẩy nhãn cũ nhất ra, các nhãn còn lại trượt lên → giữ thứ tự cũ→mới
+                evict[stack[0]["id"]] = n["t0"]; stack.pop(0)
+                for j, m in enumerate(stack):
+                    if moves[m["id"]][-1][1:] != slot_xy(z, j):
+                        moves[m["id"]].append((n["t0"] - 0.15, *slot_xy(z, j)))
+                k = len(stack)
+            else:
+                # giữ chỗ nhãn đang sống: nhãn mới vào slot trống đầu tiên phía dưới
+                slots = [moves[m["id"]][-1][2] for m in stack]
+                k = 0
+                while slot_xy(z, k)[1] in slots:
+                    k += 1
+                k = min(k, cap - 1)
+            moves[n["id"]].append((n["t0"], *slot_xy(z, k)))
+            stack.append(n)
+    for n in rail:
+        n["fs"] = 25 if len(n["text"]) <= 28 else 22
+        if n["id"] in evict:
+            n["t1"] = min(n["t1"], evict[n["id"]])
+        t, n["x"], n["y"] = moves[n["id"]][0]
+
+    # --- HTML + timeline -----------------------------------------------------------
+    for n in items:
+        c = n["color"]
+        body.append(f'<div class="note" id="{n["id"]}" style="left:{n["x"]:.0f}px;top:{n["y"]:.0f}px;'
+                    f'--c:{c};font-size:{n["fs"]}px;"><span class="nb"></span><span class="nt">{esc(n["text"])}</span></div>')
+        js.append(f"gsap.set('#{n['id']}',{{opacity:0,visibility:'hidden'}});")
+        js.append(f"tl.set('#{n['id']}',{{visibility:'visible'}},{n['t0']});"
+                  f"tl.fromTo('#{n['id']}',{{opacity:0,clipPath:'inset(0 100% 0 0)'}},"
+                  f"{{opacity:1,clipPath:'inset(0 0% 0 0)',duration:0.45,ease:'power2.out',immediateRender:false}},{n['t0']});")
+        if n["a"].get("price") is not None:
+            js.append(f"tl.fromTo('#{n['id']}D',{{opacity:0,scale:0,transformOrigin:'center'}},{{opacity:1,scale:1,duration:0.25,immediateRender:false}},{n['t0']-0.2});"
+                      f"tl.fromTo('#{n['id']}L',{{opacity:0}},{{opacity:0.9,duration:0.3,immediateRender:false}},{n['t0']-0.1});"
+                      f"tl.to('#{n['id']}L,#{n['id']}D',{{opacity:0,duration:0.3}},{n['t1']-0.3});")
+            for (w0, w1) in camera_windows():
+                if w0 < n["t1"] and w1 > n["t0"]:
+                    sel = f"#{n['id']},#{n['id']}L,#{n['id']}D"
+                    js.append(f"tl.to('{sel}',{{autoAlpha:0,duration:0.25}},{max(w0, n['t0'] + 0.5):.3f});")
+                    if w1 < n["t1"] - 0.4:
+                        js.append(f"tl.to('#{n['id']}',{{autoAlpha:1,duration:0.3}},{w1:.3f});"
+                                  f"tl.to('#{n['id']}L',{{autoAlpha:0.9,duration:0.3}},{w1:.3f});"
+                                  f"tl.to('#{n['id']}D',{{autoAlpha:1,duration:0.3}},{w1:.3f});")
+        else:
+            for (t, x, y) in moves[n["id"]][1:]:
+                if t < n["t1"]:
+                    js.append(f"tl.to('#{n['id']}',{{left:{x:.0f},top:{y:.0f},duration:0.5,ease:'power2.inOut'}},{t + 0.05});")
+        # nhãn mới nhất sáng rõ, nhãn cũ lùi nhẹ xuống nền (chồng lớp như ghi bảng)
+        newer = [m["t0"] for m in items if m["t0"] > n["t0"] + 0.3 and m["t0"] < n["t1"] - 0.5]
+        if newer:
+            js.append(f"tl.to('#{n['id']} .nt',{{opacity:0.68,duration:0.3}},{newer[0]});")
+        js.append(f"tl.to('#{n['id']}',{{opacity:0,duration:0.3}},{n['t1']-0.3});"
+                  f"tl.set('#{n['id']}',{{visibility:'hidden'}},{n['t1']});")
+    # ẩn cả lớp trong các cảnh bố cục khác (s2/s6/s8)
+    for idx in range(9):
+        if _scene_hidden(f"s{idx}"):
+            st, en = SCENES[idx][1], SCENES[idx][2]
+            js.append(f"tl.to('#notesAll',{{opacity:0,duration:0.25}},{max(st - 0.3, 0)});")
+            if idx < 8:
+                js.append(f"tl.to('#notesAll',{{opacity:1,duration:0.3}},{en + 0.05});")
+    css = """
+#notesAll{position:absolute;inset:0;}
+#notesAll svg{position:absolute;inset:0;width:100%;height:100%;}
+.note{position:absolute;height:58px;display:flex;align-items:center;gap:12px;padding:0 20px 0 14px;white-space:nowrap;
+ background:rgba(11,15,25,.93);border:1.5px solid color-mix(in srgb,var(--c) 55%,transparent);border-radius:14px;
+ box-shadow:0 10px 26px rgba(0,0,0,.55),0 0 18px color-mix(in srgb,var(--c) 22%,transparent);font-weight:800;color:#eef1f7;}
+.note .nb{width:6px;height:30px;border-radius:3px;background:var(--c);flex-shrink:0;}
+"""
+    body_html = (f'<div id="notesAll"><svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">'
+                 f'{"".join(lines_svg)}</svg>{"".join(body)}</div>')
+    return "notes", TOTAL, scene_file("notes", TOTAL, css, body_html, "\n".join(js))
 
 
 # ============================ ROOT ============================
@@ -746,10 +1022,10 @@ def root(scene_meta):
                    for i in range(9))
     seg_js = "".join(
         f"tl.fromTo('#sg{i}',{{scaleX:0}},{{scaleX:1,duration:{max(round(e - st, 3), 0.1)},ease:'none',immediateRender:false}},{st});"
-        for i, (cid, st, e) in enumerate((c, st_, st_ + d) for c, st_, d in scene_meta if c != "captions"))
+        for i, (cid, st, e) in enumerate((c, st_, st_ + d) for c, st_, d in scene_meta if c not in ("captions", "notes")))
     hosts = "\n".join(
         f'<div id="{cid}" data-composition-id="{cid}" data-composition-src="compositions/{cid}.html" data-start="{st}" data-duration="{dur}" '
-        f'data-track-index="{i+2}" data-track-kind="{"captions" if cid=="captions" else "graphics"}" data-width="{W}" data-height="{H}" style="z-index:{50 if cid=="captions" else 10+i};"></div>'
+        f'data-track-index="{i+2}" data-track-kind="{"captions" if cid=="captions" else "graphics"}" data-width="{W}" data-height="{H}" style="z-index:{ {"captions": 50, "notes": 40}.get(cid, 10+i) };"></div>'
         for i, (cid, st, dur) in enumerate(scene_meta))
     bgm_vol = D.get("bgm_volume", 0.16)
     return f"""<!doctype html><html lang="vi"><head><meta charset="UTF-8"/>
@@ -791,6 +1067,9 @@ def main():
     meta = []
     for fn in (s_hook, s_trap, s_two, s_vpq, s_anatomy, s_shark, s_howto, s_entry, s_outro):
         cid, dur, txt = fn(); (comps / f"{cid}.html").write_text(txt, encoding="utf-8"); meta.append((cid, round(START[cid], 3), dur))
+    nt = notes()
+    if nt:
+        cid, dur, txt = nt; (comps / "notes.html").write_text(txt, encoding="utf-8"); meta.append(("notes", 0, dur))
     if D.get("captions", True):
         cid, dur, txt = captions(); (comps / "captions.html").write_text(txt, encoding="utf-8"); meta.append(("captions", 0, dur))
     (ROOT / "index.html").write_text(root(meta), encoding="utf-8")

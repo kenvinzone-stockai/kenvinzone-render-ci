@@ -192,7 +192,7 @@ def render_subpanel_rsi(rsi_points, coord_sub, midline=50):
     )
     out.append(
         f'<text class="rsi-midlabel" x="{lx+14:.1f}" y="{my-10:.1f}" fill="{MIDLINE}"'
-        f' font-size="22" font-weight="800" font-family="Consolas,monospace">MỐC {midline:g}</text>'
+        f' font-size="22" font-weight="800" font-family="JBM, JetBrains Mono, monospace">MỐC {midline:g}</text>'
     )
     if rsi_points:
         pts = " ".join(f'{p["x"]:.1f},{ry(p["rsi"]):.1f}' for p in rsi_points)
@@ -257,7 +257,7 @@ def render_price_box(top_price, bottom_price, start_x, end_x, coord,
     if label:
         out.append(
             f'<text class="box-label" x="{x+10:.1f}" y="{y1-10:.1f}" fill="{lab_col}"'
-            f' font-size="23" font-weight="800" font-family="Consolas,monospace">{_esc(label)}</text>'
+            f' font-size="23" font-weight="800" font-family="JBM, JetBrains Mono, monospace">{_esc(label)}</text>'
         )
     out.append('</g>')
     return "\n".join(out)
@@ -290,7 +290,7 @@ def render_polyline(points, coord, mode="trendline", markers=None, stroke_color=
                     out.append(
                         f'<g class="pl-marker"><circle cx="{x:.1f}" cy="{y+dy:.1f}" r="16" fill="{stroke_color}"/>'
                         f'<text x="{x:.1f}" y="{y+dy+7:.1f}" fill="{INK}" font-size="20" font-weight="900"'
-                        f' text-anchor="middle" font-family="Arial">{_esc(markers[i])}</text></g>'
+                        f' text-anchor="middle" font-family="BVP, Be Vietnam Pro, sans-serif">{_esc(markers[i])}</text></g>'
                     )
     out.append('</g>')
     return "\n".join(out)
@@ -317,7 +317,7 @@ def render_level_line(price, coord, label="THANH KHOẢN TRÊN", line_style="das
             f'<g class="ll-label"><rect x="{x1-w:.1f}" y="{y-16:.1f}" width="{w:.1f}" height="32"'
             f' rx="16" fill="{color}"/>'
             f'<text x="{x1-w/2:.1f}" y="{y+7:.1f}" fill="{INK}" font-size="19" font-weight="800"'
-            f' text-anchor="middle" font-family="Arial">{_esc(label)}</text></g>'
+            f' text-anchor="middle" font-family="BVP, Be Vietnam Pro, sans-serif">{_esc(label)}</text></g>'
         )
     out.append('</g>')
     return "\n".join(out)
@@ -368,7 +368,7 @@ def render_icon_avatar(icon_type, x, y, label=None, scale=1.0):
                  '<path d="M-8 11 Q0 6 8 13" stroke="#1f2937" stroke-width="2.6" fill="none"'
                  ' stroke-linecap="round"/>'
                  f'<text x="24" y="-18" fill="{MIDLINE}" font-size="30" font-weight="900"'
-                 ' font-family="Arial">?</text>')
+                 ' font-family="BVP, Be Vietnam Pro, sans-serif">?</text>')
     elif icon_type == "face_smile":
         inner = ('<circle cx="0" cy="0" r="22" fill="#fde68a"/>'
                  '<circle cx="-8" cy="-5" r="3.2" fill="#1f2937"/>'
@@ -384,7 +384,7 @@ def render_icon_avatar(icon_type, x, y, label=None, scale=1.0):
         pill = (f'<g class="avatar-pill"><rect x="{-w/2:.1f}" y="-74" width="{w:.1f}" height="31"'
                 f' rx="15.5" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>'
                 f'<text x="0" y="-52" fill="#e2e8f0" font-size="19" font-weight="800"'
-                f' text-anchor="middle" font-family="Arial">{_esc(label)}</text></g>')
+                f' text-anchor="middle" font-family="BVP, Be Vietnam Pro, sans-serif">{_esc(label)}</text></g>')
     return (f'<g class="avatar-icon" data-icon="{icon_type}"'
             f' transform="translate({float(x):.1f},{float(y):.1f}) scale({float(scale):.3f})">'
             f'{pill}{inner}</g>')
@@ -505,7 +505,7 @@ def sideway_box(axis, x, w, lo_price, hi_price, color=BOX, idn="swbox", label=No
            f' stroke="{color}" stroke-width="2.2" stroke-dasharray="6 4" rx="6"/>')
     if label:
         svg += (f'<text class="sw-label" x="{x+10:.1f}" y="{y1-12:.1f}" fill="{color}"'
-                f' font-size="26" font-weight="800" font-family="Consolas,monospace">{_esc(label)}</text>')
+                f' font-size="26" font-weight="800" font-family="JBM, JetBrains Mono, monospace">{_esc(label)}</text>')
     return svg
 
 
@@ -515,12 +515,12 @@ def buyer_icon(x, y, state="buy", idn="buyer"):
     if state == "buy":
         pill = (f'<g class="pill-buy"><rect x="-34" y="-74" width="68" height="30" rx="15" fill="{UP}"/>'
                 f'<text x="0" y="-53" fill="#06240f" font-size="20" font-weight="900"'
-                f' text-anchor="middle" font-family="Arial">MUA</text></g>')
+                f' text-anchor="middle" font-family="BVP, Be Vietnam Pro, sans-serif">MUA</text></g>')
         x_mark = ""
     else:
         pill = ('<g class="pill-trap"><rect x="-60" y="-78" width="120" height="32" rx="16" fill="#f43f5e"/>'
                 '<text x="0" y="-56" fill="#2a0810" font-size="19" font-weight="900"'
-                ' text-anchor="middle" font-family="Arial">MẮC KẸT</text></g>')
+                ' text-anchor="middle" font-family="BVP, Be Vietnam Pro, sans-serif">MẮC KẸT</text></g>')
         x_mark = ('<path d="M-13 -26 L13 0 M13 -26 L-13 0" stroke="#f43f5e" stroke-width="5"'
                   ' stroke-linecap="round"/>')
     return (f'<g class="buyer {state}" id="{idn}" transform="translate({x:.0f},{y:.0f})">'
