@@ -93,7 +93,7 @@ def arrow(p1, p2, label="", color=DOWN, idn="arr"):
            f'<polygon points="{x2},{y2} {a1[0]:.0f},{a1[1]:.0f} {a2[0]:.0f},{a2[1]:.0f}" fill="{color}"/>')
     if label:
         svg += (f'<text x="{(x1+x2)/2+16:.0f}" y="{(y1+y2)/2-10:.0f}" fill="{color}" font-size="27"'
-                f' font-weight="900" font-family="Consolas,monospace">{esc(label)}</text>')
+                f' font-weight="900" font-family="JBM, JetBrains Mono, monospace">{esc(label)}</text>')
     return svg + '</g>'
 
 
@@ -101,7 +101,7 @@ def pill(x, y, text, color, idn="pil", fs=20):
     w = 28 + len(str(text)) * fs * 0.62
     return (f'<g class="spill" id="{idn}"><rect x="{x-w/2:.0f}" y="{y-18:.0f}" width="{w:.0f}" height="36"'
             f' rx="18" fill="{color}"/><text x="{x:.0f}" y="{y+7:.0f}" fill="{INK}" font-size="{fs}"'
-            f' font-weight="900" text-anchor="middle" font-family="Arial">{esc(text)}</text></g>')
+            f' font-weight="900" text-anchor="middle" font-family="BVP, Be Vietnam Pro, sans-serif">{esc(text)}</text></g>')
 
 
 def candle_tag(c, text, color, idn, below=False):
