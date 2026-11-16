@@ -1,0 +1,29 @@
+{
+  "youtube": {
+    "title": "S&P 500 & Nasdaq: Đồng pha chịu áp lực USD | Phân tích Bias & Gamma",
+    "description": "📊 Bản tin định lượng Chứng khoán Mỹ hôm nay từ KenvinZone Analytics:\n\n🔹 Phân tích Bias S&P 500 (-5.7) & Nasdaq 100 (-7.3).\n🔹 Đánh giá cấu trúc Gamma SPY & QQQ (Net GEX, Gamma Flip, Put/Call Wall).\n🔹 Dự phóng kịch bản định lượng cho phiên giao dịch tiếp theo.\n\n⚠️ Lưu ý: Nội dung chỉ nhằm mục đích cung cấp thông tin và phân tích định lượng, KHÔNG phải lời khuyên đầu tư tài chính.\n\n#sp500 #nasdaq #chungkhoanmy #gamma #kenvinzone",
+    "tags": [
+      "sp500",
+      "nasdaq",
+      "chứng khoán mỹ",
+      "nhận định thị trường",
+      "kenvinzone",
+      "aurora",
+      "phân tích định lượng",
+      "gamma gex",
+      "spy",
+      "qqq",
+      "put wall",
+      "call wall",
+      "đầu tư mỹ",
+      "kinh tế mỹ"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "equity-bias",
+    "date": "16/11/2026"
+  }
+}

@@ -130,3 +130,63 @@ Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-ren
 === [3/3] Upload YouTube (privacy=private) ===
 {"ok": true, "platform": "youtube", "project": "intermarket-week-13112026", "video_id": "d1psQvda7Vs", "url": "https://youtu.be/d1psQvda7Vs", "studio_url": "https://studio.youtube.com/video/d1psQvda7Vs/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
   Xong: https://youtu.be/d1psQvda7Vs
+=== DECK: equity-us-16112026 | template=equity-bias-hf | preset giọng=giai-ma-nganh ===
+  Đã tái tạo config/tts.json (giọng clone).
+  Đã tái tạo config/social-upload.json từ secret.
+  [phát âm] đã áp từ điển phiên âm cho giọng đọc (chữ hiển thị giữ nguyên).
+=== [1/3] Tạo giọng đọc (gemini) ===
+Full voiceover 78.32s · 43 quãng lặng · 7 dòng
+  ranh 1: ước  12.07s → lặng 10.97–11.80 (0.83s) cắt 11.39s
+  ranh 2: ước  22.39s → lặng 22.15–22.89 (0.74s) cắt 22.52s
+  ranh 3: ước  34.00s → lặng 37.64–38.40 (0.76s) cắt 38.02s
+  ranh 4: ước  43.80s → lặng 47.23–48.03 (0.79s) cắt 47.63s
+  ranh 5: ước  55.72s → lặng 62.02–62.81 (0.79s) cắt 62.41s
+  ranh 6: ước  67.43s → lặng 69.99–70.56 (0.56s) cắt 70.27s
+  → snap được 6/6 ranh giới vào quãng lặng
+Slide 1:    0.00s →   11.39s  = 11.38s  -> line_0.mp3
+Slide 2:   11.39s →   22.52s  = 11.14s  -> line_1.mp3
+Slide 3:   22.52s →   38.02s  = 15.49s  -> line_2.mp3
+Slide 4:   38.02s →   47.63s  = 9.61s  -> line_3.mp3
+Slide 5:   47.63s →   62.41s  = 14.78s  -> line_4.mp3
+Slide 6:   62.41s →   70.27s  = 7.86s  -> line_5.mp3
+Slide 7:   70.27s →   78.32s  = 8.04s  -> line_6.mp3
+Concatenated voiceover: 78.32s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-16112026/output/voiceover_concat.mp3
+Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
+Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
+Sending full script to Gemini TTS: 7 slides, 1032 chars
+Full Gemini TTS saved: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-16112026/output/gemini_full_voiceover.mp3
+
+=== Splitting full Gemini TTS voiceover ===
+=== [2/3] Render HyperFrames (30fps đầy đủ) ===
+=== HyperFrames (equity-bias-hf): dung project tai /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-16112026/output/hf ===
+  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
+=== HyperFrames: dung composition tu hf-data.json ===
+TOTAL 82.92 scenes [('hook', 0.0, 12.385), ('spx', 12.385, 26.633), ('nas', 39.018, 24.397), ('cmp', 63.415, 7.86), ('cta', 71.275, 11.645), ('captions', 0, 82.92)]
+=== HyperFrames: render tung khung hinh (82.9s video) ===
+  Trinh duyet render: /home/runner/.cache/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux64/chrome-headless-shell
+  ◆  Rendering hf → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-16112026/output/final_video.hf.mp4
+     30fps · high · auto workers (4 cores detected)
+     GPU: browser GPU (auto-detect)
+  [?25l│
+  ◒  Checking browser...
+  [1G[J◇  Browser: env
+  [?25h
+    Lint: 2 error(s), 1 warning(s) — run with --lint-verbose for full output.
+    Continuing render despite lint issues. Use --strict to block errors.
+  HyperFrames render 5%
+  HyperFrames render 20%
+  HyperFrames render 30%
+  HyperFrames render 40%
+  HyperFrames render 50%
+  HyperFrames render 60%
+  HyperFrames render 70%
+  HyperFrames render 80%
+  HyperFrames render 90%
+  ◇  /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-16112026/output/final_video.hf.mp4
+     15.8 MB · 1m 22.9s video · rendered in 3m 4.7s
+     beginframe capture · software gpu · compile 1.5s · extract 0.0s · audio 4.5s · probe 0.2s · setup 1.7s · capture 2m 56.2s · encode (during capture) 2m 56.2s · assemble 0.7s
+Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-16112026/output/final_video.mp4
+  Video: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-16112026/output/final_video.mp4
+=== [3/3] Upload YouTube (privacy=private) ===
+{"ok": true, "platform": "youtube", "project": "equity-us-16112026", "video_id": "_a4QryO8zJY", "url": "https://youtu.be/_a4QryO8zJY", "studio_url": "https://studio.youtube.com/video/_a4QryO8zJY/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
+  Xong: https://youtu.be/_a4QryO8zJY

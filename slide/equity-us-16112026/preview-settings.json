@@ -1,0 +1,42 @@
+{
+  "subtitles": {
+    "enabled": true,
+    "color": "#7dd3fc",
+    "fontSize": 18,
+    "bottom": 60,
+    "maxLines": 1
+  },
+  "backgroundFx": "candlestick",
+  "bgm": {
+    "mode": "preset",
+    "preset": "ambient",
+    "volume": 0.18
+  },
+  "scriptLines": [
+    "Bản tin định lượng ghi nhận S&P 500 đạt Bias -5.7 ở mức trung lập, còn Nasdaq nghiêng về giảm với -7.3 khi cả hai đồng pha chịu sức ép từ khung tuần sang ngày.",
+    "Với S&P 500, áp lực chính đến từ sức mạnh Đồng USD âm 6.81 và khẩu vị rủi ro âm 1.77, dù độ rộng thị trường nâng đỡ dương 1.98.",
+    "Cấu trúc Gamma của SPY giữ Net GEX dương 76 triệu, giá 754.37 trên Flip 753.38, kẹp giữa Put Wall 763.0 và Call Wall 769.0 với biến động kỳ vọng 6.4 điểm.",
+    "Chỉ số Nasdaq chịu sức ép lớn từ Đồng USD âm 7.50 và khẩu vị rủi ro âm 2.70, dẫu có lực đỡ từ lãi suất Fed dương 2.17.",
+    "Cấu trúc QQQ duy trì Net GEX dương 29 triệu, giá 679.89 trên Flip 678.08, nằm trong biên độ Put Wall 640.0 và Call Wall 700.0 với biến động kỳ vọng 10.1 điểm.",
+    "Do cả hai đồng pha thiên yếu, phiên tới ưu tiên kịch bản giằng co năm mươi lăm phần trăm, rủi ro điều chỉnh ba mươi phần trăm và hồi phục mười lăm phần trăm.",
+    "Hãy theo dõi sát các mốc Gamma Flip của SPY và QQQ, đồng thời bấm theo dõi KenvinZone cùng mô hình AURORA để cập nhật dữ liệu định lượng mỗi ngày."
+  ],
+  "slides": {
+    "deletedIds": [],
+    "scriptLines": [
+      "Bản tin định lượng ghi nhận S&P 500 đạt Bias -5.7 ở mức trung lập, còn Nasdaq nghiêng về giảm với -7.3 khi cả hai đồng pha chịu sức ép từ khung tuần sang ngày.",
+      "Với S&P 500, áp lực chính đến từ sức mạnh Đồng USD âm 6.81 và khẩu vị rủi ro âm 1.77, dù độ rộng thị trường nâng đỡ dương 1.98.",
+      "Cấu trúc Gamma của SPY giữ Net GEX dương 76 triệu, giá 754.37 trên Flip 753.38, kẹp giữa Put Wall 763.0 và Call Wall 769.0 với biến động kỳ vọng 6.4 điểm.",
+      "Chỉ số Nasdaq chịu sức ép lớn từ Đồng USD âm 7.50 và khẩu vị rủi ro âm 2.70, dẫu có lực đỡ từ lãi suất Fed dương 2.17.",
+      "Cấu trúc QQQ duy trì Net GEX dương 29 triệu, giá 679.89 trên Flip 678.08, nằm trong biên độ Put Wall 640.0 và Call Wall 700.0 với biến động kỳ vọng 10.1 điểm.",
+      "Do cả hai đồng pha thiên yếu, phiên tới ưu tiên kịch bản giằng co năm mươi lăm phần trăm, rủi ro điều chỉnh ba mươi phần trăm và hồi phục mười lăm phần trăm.",
+      "Hãy theo dõi sát các mốc Gamma Flip của SPY và QQQ, đồng thời bấm theo dõi KenvinZone cùng mô hình AURORA để cập nhật dữ liệu định lượng mỗi ngày."
+    ]
+  },
+  "visuals": {
+    "colorMode": "dark",
+    "backgroundColor": "#060a13",
+    "gridEnabled": false,
+    "backgroundFx": "candlestick-diag"
+  }
+}
