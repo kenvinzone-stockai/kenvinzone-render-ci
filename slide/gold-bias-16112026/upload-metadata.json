@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "Bias Vàng 16/11: Áp Lực USD Kéo Điểm Giảm Mạnh",
+    "description": "📊 BẢN TIN PHÂN TÍCH ĐỊNH LƯỢNG BIAS VÀNG (16/11/2026)\n\n1️⃣ TỔNG QUAN MARKET BIAS:\n• Điểm Bias: -15.10 / 100 (Chế độ: GIẢM MẠNH)\n• Thay đổi phiên: -2.50 điểm\n• Xu hướng 3 phiên: -2.20 ➔ -11.40 ➔ -15.10\n\n2️⃣ BẢN ĐỒ 6 LỰC KÉO ĐỊNH LƯỢNG:\n• Áp lực USD: -14.08 (Sức ép chủ đạo)\n• Dòng tiền & Xu hướng: -2.99\n• Yếu tố riêng của Vàng: -1.84\n• Lãi suất thực: +1.67\n• Thanh khoản M2: +2.87\n• Khẩu vị rủi ro: +1.49 (Tín dụng ổn định, chưa có stress ép bán)\n\n3️⃣ CẤU TRÚC GAMMA (GLD & XAUUSD):\n• Net GEX: +2.5M USD (Gamma Dương ➔ Biến động bị kìm nén)\n• Spot GLD: 367.82 (≈ 3981.9 XAUUSD) - Nằm trên Flip\n• Gamma Flip: 365.0 (≈ 3951.0 XAUUSD)\n• Put Wall: 360.0 (≈ 3897.0 XAUUSD)\n• Call Wall: 375.0 (≈ 4060.0 XAUUSD)\n\n4️⃣ 3 KỊCH BẢN PHIÊN TỚI:\n• 58% Giằng co trong biên 360 - 375 GLD (≈ 3897 - 4060 XAUUSD)\n• 27% Phá vỡ giảm nếu thủng 365 hướng về 360 GLD\n• 15% Bứt phá kiểm định Call Wall 375 GLD\n\n5️⃣ KẾ HOẠCH HÀNH ĐỘNG:\n• Ưu tiên giao dịch trung tính trong vùng 360 - 375 GLD.\n• Điều kiện mua thăm dò: Đóng nến bảo vệ vững mốc 365 GLD (≈ 3951 XAUUSD).\n• Rủi ro phòng vệ: Đóng vị thế nếu thủng Put Wall 360 GLD.\n\n⚠️ Tuyên bố miễn trừ trách nhiệm: Bản tin phân tích định lượng dựa trên mô hình dữ liệu, KHÔNG phải lời khuyên đầu tư tài chính.\n\n#vang #gold #xauusd #giavang #phantichdinhluong #kenvinzone",
+    "tags": [
+      "vàng",
+      "gold",
+      "xauusd",
+      "giá vàng hôm nay",
+      "nhận định vàng",
+      "phân tích định lượng",
+      "kenvinzone",
+      "market bias",
+      "gex",
+      "gamma flip",
+      "đầu tư vàng",
+      "tài chính",
+      "chứng khoán"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "gold-daily-bias",
+    "date": "16/11/2026"
+  }
+}

@@ -1,0 +1,309 @@
+=== DECK: giai-ma-trading-sideway-bottom-b-shape-14-11 | template=aurora-trading-explainer-hf | preset giọng=giai-ma-nganh ===
+  Đã tái tạo config/tts.json (giọng clone).
+  Đã tái tạo config/social-upload.json từ secret.
+  [phát âm] đã áp từ điển phiên âm cho giọng đọc (chữ hiển thị giữ nguyên).
+=== [1/3] Tạo giọng đọc (gemini) ===
+Full voiceover 99.68s · 61 quãng lặng · 9 dòng
+  ranh 1: ước   5.83s → lặng 5.32–6.33 (1.01s) cắt 5.82s
+  ranh 2: ước  14.77s → lặng 14.36–15.41 (1.05s) cắt 14.88s
+  ranh 3: ước  24.63s → lặng 24.82–25.77 (0.94s) cắt 25.30s
+  ranh 4: ước  34.03s → lặng 35.40–36.03 (0.63s) cắt 35.71s
+  ranh 5: ước  47.14s → lặng 50.02–50.82 (0.80s) cắt 50.42s
+  ranh 6: ước  58.47s → lặng 60.08–60.77 (0.69s) cắt 60.43s
+  ranh 7: ước  77.54s → lặng 78.86–79.49 (0.63s) cắt 79.18s
+  ranh 8: ước  88.78s → lặng 89.90–90.45 (0.55s) cắt 90.17s
+  → snap được 8/8 ranh giới vào quãng lặng
+Slide 1:    0.00s →    5.82s  = 5.82s  -> line_0.mp3
+Slide 2:    5.82s →   14.88s  = 9.06s  -> line_1.mp3
+Slide 3:   14.88s →   25.30s  = 10.41s  -> line_2.mp3
+Slide 4:   25.30s →   35.71s  = 10.42s  -> line_3.mp3
+Slide 5:   35.71s →   50.42s  = 14.70s  -> line_4.mp3
+Slide 6:   50.42s →   60.43s  = 10.01s  -> line_5.mp3
+Slide 7:   60.43s →   79.18s  = 18.75s  -> line_6.mp3
+Slide 8:   79.18s →   90.17s  = 10.99s  -> line_7.mp3
+Slide 9:   90.17s →   99.68s  = 9.51s  -> line_8.mp3
+Concatenated voiceover: 99.68s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-14-11/output/voiceover_concat.mp3
+Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
+Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
+Sending full script to Gemini TTS: 9 slides, 1639 chars
+Full Gemini TTS saved: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-14-11/output/gemini_full_voiceover.mp3
+
+=== Splitting full Gemini TTS voiceover ===
+=== [2/3] Render HyperFrames (30fps đầy đủ) ===
+=== HyperFrames (aurora-trading-explainer-hf): dung project tai /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-14-11/output/hf ===
+  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
+=== HyperFrames: dung composition tu hf-data.json ===
+TOTAL 103.98 scenes ['s0', 's1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 'captions']
+=== HyperFrames: render tung khung hinh (104.0s video) ===
+  Trinh duyet render: /home/runner/.cache/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux64/chrome-headless-shell
+  ◆  Rendering hf → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-14-11/output/final_video.hf.mp4
+     30fps · high · auto workers (4 cores detected)
+     GPU: browser GPU (auto-detect)
+  [?25l│
+  ◒  Checking browser...
+  [1G[J◇  Browser: env
+  [?25h
+    Lint: 0 error(s), 1 warning(s) — run with --lint-verbose for full output.
+    Continuing render despite lint issues. Use --strict to block errors.
+  HyperFrames render 5%
+  HyperFrames render 20%
+  HyperFrames render 30%
+  HyperFrames render 40%
+  HyperFrames render 50%
+  HyperFrames render 60%
+  HyperFrames render 70%
+  HyperFrames render 80%
+  HyperFrames render 90%
+  ◇  /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-14-11/output/final_video.hf.mp4
+     12.0 MB · 1m 44.0s video · rendered in 3m 12.3s
+     beginframe capture · software gpu · compile 2.2s · extract 0.0s · audio 4.8s · probe 0.3s · setup 2.9s · capture 3m 1.3s · encode (during capture) 3m 1.3s · assemble 0.8s
+Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-14-11/output/final_video.mp4
+  Video: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-trading-sideway-bottom-b-shape-14-11/output/final_video.mp4
+=== [3/3] Upload YouTube (privacy=private) ===
+{"ok": true, "platform": "youtube", "project": "giai-ma-trading-sideway-bottom-b-shape-14-11", "video_id": "1q181B0IrsY", "url": "https://youtu.be/1q181B0IrsY", "studio_url": "https://studio.youtube.com/video/1q181B0IrsY/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
+  Xong: https://youtu.be/1q181B0IrsY
+=== DECK: intermarket-week-13112026 | template=intermarket-weekly-hf | preset giọng=ban-tin-vnindex ===
+  Đã tái tạo config/tts.json (giọng clone).
+  Đã tái tạo config/social-upload.json từ secret.
+  [phát âm] đã áp từ điển phiên âm cho giọng đọc (chữ hiển thị giữ nguyên).
+=== [1/3] Tạo giọng đọc (gemini) ===
+Full voiceover 67.08s · 35 quãng lặng · 8 dòng
+  ranh 1: ước   8.95s → lặng 7.96–8.47 (0.51s) cắt 8.21s
+  ranh 2: ước  17.96s → lặng 16.80–17.53 (0.73s) cắt 17.17s
+  ranh 3: ước  26.22s → lặng 26.58–27.23 (0.65s) cắt 26.90s
+  ranh 4: ước  33.91s → lặng 35.10–35.85 (0.75s) cắt 35.48s
+  ranh 5: ước  42.18s → lặng 44.83–45.55 (0.72s) cắt 45.19s
+  ranh 6: ước  49.77s → lặng 51.61–52.28 (0.67s) cắt 51.94s
+  ranh 7: ước  58.78s → lặng 59.50–60.17 (0.66s) cắt 59.84s
+  → snap được 7/7 ranh giới vào quãng lặng
+Slide 1:    0.00s →    8.21s  = 8.21s  -> line_0.mp3
+Slide 2:    8.21s →   17.17s  = 8.95s  -> line_1.mp3
+Slide 3:   17.17s →   26.90s  = 9.74s  -> line_2.mp3
+Slide 4:   26.90s →   35.48s  = 8.57s  -> line_3.mp3
+Slide 5:   35.48s →   45.19s  = 9.71s  -> line_4.mp3
+Slide 6:   45.19s →   51.94s  = 6.76s  -> line_5.mp3
+Slide 7:   51.94s →   59.84s  = 7.89s  -> line_6.mp3
+Slide 8:   59.84s →   67.08s  = 7.24s  -> line_7.mp3
+Concatenated voiceover: 67.08s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/intermarket-week-13112026/output/voiceover_concat.mp3
+Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
+Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
+Sending full script to Gemini TTS: 8 slides, 1089 chars
+Full Gemini TTS saved: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/intermarket-week-13112026/output/gemini_full_voiceover.mp3
+
+=== Splitting full Gemini TTS voiceover ===
+=== [2/3] Render HyperFrames (30fps đầy đủ) ===
+=== HyperFrames (intermarket-weekly-hf): dung project tai /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/intermarket-week-13112026/output/hf ===
+  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
+=== HyperFrames: dung composition tu hf-data.json ===
+TOTAL 71.68 scenes [('hook', 0.0, 9.214), ('macro', 9.214, 8.954), ('assets', 18.168, 28.021), ('rot', 46.189, 6.757), ('scen', 52.946, 7.891), ('cta', 60.837, 10.843), ('captions', 0, 71.68)]
+=== HyperFrames: render tung khung hinh (71.7s video) ===
+  Trinh duyet render: /home/runner/.cache/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux64/chrome-headless-shell
+  ◆  Rendering hf → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/intermarket-week-13112026/output/final_video.hf.mp4
+     30fps · high · auto workers (4 cores detected)
+     GPU: browser GPU (auto-detect)
+  [?25l│
+  ◒  Checking browser...
+  [1G[J◇  Browser: env
+  [?25h
+    Lint: 7 error(s), 1 warning(s) — run with --lint-verbose for full output.
+    Continuing render despite lint issues. Use --strict to block errors.
+  HyperFrames render 5%
+  HyperFrames render 20%
+  [Browser:WARN] GSAP target #iv-ttl not found. https://gsap.com
+  [Browser:WARN] GSAP target  not found. https://gsap.com
+  [Browser:WARN] GSAP target  not found. https://gsap.com
+  [Browser:WARN] GSAP target #iv-ttl not found. https://gsap.com
+  [Browser:WARN] GSAP target  not found. https://gsap.com
+  HyperFrames render 30%
+  [Browser:WARN] GSAP target  not found. https://gsap.com
+  HyperFrames render 40%
+  HyperFrames render 50%
+  HyperFrames render 60%
+  HyperFrames render 70%
+  HyperFrames render 80%
+  HyperFrames render 90%
+  ◇  /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/intermarket-week-13112026/output/final_video.hf.mp4
+     14.6 MB · 1m 11.7s video · rendered in 2m 48.4s
+     beginframe capture · software gpu · compile 1.6s · extract 0.0s · audio 4.5s · probe 0.3s · setup 2.1s · capture 2m 39.5s · encode (during capture) 2m 39.5s · assemble 0.7s
+Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/intermarket-week-13112026/output/final_video.mp4
+  Video: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/intermarket-week-13112026/output/final_video.mp4
+=== [3/3] Upload YouTube (privacy=private) ===
+{"ok": true, "platform": "youtube", "project": "intermarket-week-13112026", "video_id": "d1psQvda7Vs", "url": "https://youtu.be/d1psQvda7Vs", "studio_url": "https://studio.youtube.com/video/d1psQvda7Vs/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
+  Xong: https://youtu.be/d1psQvda7Vs
+=== DECK: equity-us-16112026 | template=equity-bias-hf | preset giọng=giai-ma-nganh ===
+  Đã tái tạo config/tts.json (giọng clone).
+  Đã tái tạo config/social-upload.json từ secret.
+  [phát âm] đã áp từ điển phiên âm cho giọng đọc (chữ hiển thị giữ nguyên).
+=== [1/3] Tạo giọng đọc (gemini) ===
+Full voiceover 78.32s · 43 quãng lặng · 7 dòng
+  ranh 1: ước  12.07s → lặng 10.97–11.80 (0.83s) cắt 11.39s
+  ranh 2: ước  22.39s → lặng 22.15–22.89 (0.74s) cắt 22.52s
+  ranh 3: ước  34.00s → lặng 37.64–38.40 (0.76s) cắt 38.02s
+  ranh 4: ước  43.80s → lặng 47.23–48.03 (0.79s) cắt 47.63s
+  ranh 5: ước  55.72s → lặng 62.02–62.81 (0.79s) cắt 62.41s
+  ranh 6: ước  67.43s → lặng 69.99–70.56 (0.56s) cắt 70.27s
+  → snap được 6/6 ranh giới vào quãng lặng
+Slide 1:    0.00s →   11.39s  = 11.38s  -> line_0.mp3
+Slide 2:   11.39s →   22.52s  = 11.14s  -> line_1.mp3
+Slide 3:   22.52s →   38.02s  = 15.49s  -> line_2.mp3
+Slide 4:   38.02s →   47.63s  = 9.61s  -> line_3.mp3
+Slide 5:   47.63s →   62.41s  = 14.78s  -> line_4.mp3
+Slide 6:   62.41s →   70.27s  = 7.86s  -> line_5.mp3
+Slide 7:   70.27s →   78.32s  = 8.04s  -> line_6.mp3
+Concatenated voiceover: 78.32s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-16112026/output/voiceover_concat.mp3
+Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
+Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
+Sending full script to Gemini TTS: 7 slides, 1032 chars
+Full Gemini TTS saved: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-16112026/output/gemini_full_voiceover.mp3
+
+=== Splitting full Gemini TTS voiceover ===
+=== [2/3] Render HyperFrames (30fps đầy đủ) ===
+=== HyperFrames (equity-bias-hf): dung project tai /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-16112026/output/hf ===
+  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
+=== HyperFrames: dung composition tu hf-data.json ===
+TOTAL 82.92 scenes [('hook', 0.0, 12.385), ('spx', 12.385, 26.633), ('nas', 39.018, 24.397), ('cmp', 63.415, 7.86), ('cta', 71.275, 11.645), ('captions', 0, 82.92)]
+=== HyperFrames: render tung khung hinh (82.9s video) ===
+  Trinh duyet render: /home/runner/.cache/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux64/chrome-headless-shell
+  ◆  Rendering hf → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-16112026/output/final_video.hf.mp4
+     30fps · high · auto workers (4 cores detected)
+     GPU: browser GPU (auto-detect)
+  [?25l│
+  ◒  Checking browser...
+  [1G[J◇  Browser: env
+  [?25h
+    Lint: 2 error(s), 1 warning(s) — run with --lint-verbose for full output.
+    Continuing render despite lint issues. Use --strict to block errors.
+  HyperFrames render 5%
+  HyperFrames render 20%
+  HyperFrames render 30%
+  HyperFrames render 40%
+  HyperFrames render 50%
+  HyperFrames render 60%
+  HyperFrames render 70%
+  HyperFrames render 80%
+  HyperFrames render 90%
+  ◇  /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-16112026/output/final_video.hf.mp4
+     15.8 MB · 1m 22.9s video · rendered in 3m 4.7s
+     beginframe capture · software gpu · compile 1.5s · extract 0.0s · audio 4.5s · probe 0.2s · setup 1.7s · capture 2m 56.2s · encode (during capture) 2m 56.2s · assemble 0.7s
+Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-16112026/output/final_video.mp4
+  Video: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-16112026/output/final_video.mp4
+=== [3/3] Upload YouTube (privacy=private) ===
+{"ok": true, "platform": "youtube", "project": "equity-us-16112026", "video_id": "_a4QryO8zJY", "url": "https://youtu.be/_a4QryO8zJY", "studio_url": "https://studio.youtube.com/video/_a4QryO8zJY/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
+  Xong: https://youtu.be/_a4QryO8zJY
+=== DECK: gold-week-16112026 | template=gold-daily-bias-hf | preset giọng=giai-ma-nganh ===
+  Đã tái tạo config/tts.json (giọng clone).
+  Đã tái tạo config/social-upload.json từ secret.
+  [phát âm] đã áp từ điển phiên âm cho giọng đọc (chữ hiển thị giữ nguyên).
+=== [1/3] Tạo giọng đọc (gemini) ===
+Full voiceover 53.00s · 33 quãng lặng · 6 dòng
+  ranh 1: ước   8.91s → lặng 7.50–8.05 (0.55s) cắt 7.78s
+  ranh 2: ước  17.96s → lặng 15.84–16.44 (0.60s) cắt 16.14s
+  ranh 3: ước  27.10s → lặng 24.40–24.96 (0.56s) cắt 24.68s
+  ranh 4: ước  36.48s → lặng 37.14–37.67 (0.53s) cắt 37.41s
+  ranh 5: ước  45.28s → lặng 45.21–45.88 (0.67s) cắt 45.55s
+  → snap được 5/5 ranh giới vào quãng lặng
+Slide 1:    0.00s →    7.78s  = 7.78s  -> line_0.mp3
+Slide 2:    7.78s →   16.14s  = 8.37s  -> line_1.mp3
+Slide 3:   16.14s →   24.68s  = 8.54s  -> line_2.mp3
+Slide 4:   24.68s →   37.41s  = 12.72s  -> line_3.mp3
+Slide 5:   37.41s →   45.55s  = 8.14s  -> line_4.mp3
+Slide 6:   45.55s →   53.00s  = 7.46s  -> line_5.mp3
+Concatenated voiceover: 53.00s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-week-16112026/output/voiceover_concat.mp3
+Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
+Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
+Sending full script to Gemini TTS: 6 slides, 823 chars
+Full Gemini TTS saved: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-week-16112026/output/gemini_full_voiceover.mp3
+
+=== Splitting full Gemini TTS voiceover ===
+=== [2/3] Render HyperFrames (30fps đầy đủ) ===
+=== HyperFrames (gold-daily-bias-hf): dung project tai /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-week-16112026/output/hf ===
+  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
+=== HyperFrames: dung composition tu hf-data.json ===
+  [anchor] 'rates' ('âm một phẩy bảy') not heard -> default position
+  [anchor] 'spot_xau' ('ba chín tám một') not heard -> default position
+  [anchor] 'flip' ('Gamma Flip') not heard -> default position
+  [anchor] 'follow' ('Hãy follow') not heard -> default position
+TOTAL 57.6 scenes [('hook', 0.0, 8.777), ('forces', 8.777, 16.905), ('gamma', 25.682, 12.723), ('scen', 38.405, 8.14), ('cta', 46.545, 11.055), ('captions', 0, 57.6)]
+=== HyperFrames: render tung khung hinh (57.6s video) ===
+  Trinh duyet render: /home/runner/.cache/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux64/chrome-headless-shell
+  ◆  Rendering hf → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-week-16112026/output/final_video.hf.mp4
+     30fps · high · auto workers (4 cores detected)
+     GPU: browser GPU (auto-detect)
+  [?25l│
+  ◒  Checking browser...
+  [1G[J◇  Browser: env
+  [?25h[INFO] [Render] Pipeline started {"renderJobId":"fc624394-26fa-44bf-bccf-b49c4560ff5b","platform":"linux","arch":"x64","nodeVersion":"v22.23.4","fps":{"num":30,"den":1},"format":"mp4","quality":"high","browserGpuMode":"auto","forceScreenshot":false,"protocolTimeout":300000,"browserTimeout":120000,"pageNavigationTimeout":60000,"playerReadyTimeout":45000}
+  HyperFrames render 5%
+  HyperFrames render 20%
+  HyperFrames render 30%
+  HyperFrames render 40%
+  HyperFrames render 50%
+  HyperFrames render 60%
+  HyperFrames render 70%
+  HyperFrames render 80%
+  HyperFrames render 90%
+  ◇  /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-week-16112026/output/final_video.hf.mp4
+     14.5 MB · 57.6s video · rendered in 2m 18.9s
+     beginframe capture · software gpu · compile 1.5s · extract 0.0s · audio 3.4s · probe 0.3s · setup 2.2s · capture 2m 11.2s · encode (during capture) 2m 11.2s · assemble 0.6s
+Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-week-16112026/output/final_video.mp4
+  Video: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-week-16112026/output/final_video.mp4
+=== [3/3] Upload YouTube (privacy=private) ===
+{"ok": true, "platform": "youtube", "project": "gold-week-16112026", "video_id": "iY_l1NaC_nY", "url": "https://youtu.be/iY_l1NaC_nY", "studio_url": "https://studio.youtube.com/video/iY_l1NaC_nY/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
+  Xong: https://youtu.be/iY_l1NaC_nY
+=== DECK: gold-bias-16112026 | template=gold-daily-bias-hf | preset giọng=giai-ma-nganh ===
+  Đã tái tạo config/tts.json (giọng clone).
+  Đã tái tạo config/social-upload.json từ secret.
+  [phát âm] đã áp từ điển phiên âm cho giọng đọc (chữ hiển thị giữ nguyên).
+=== [1/3] Tạo giọng đọc (gemini) ===
+Full voiceover 48.28s · 29 quãng lặng · 6 dòng
+  ranh 1: ước   7.34s → lặng 6.06–6.65 (0.59s) cắt 6.35s
+  ranh 2: ước  15.42s → lặng 13.77–14.34 (0.57s) cắt 14.06s
+  ranh 3: ước  23.78s → lặng 21.18–21.73 (0.54s) cắt 21.45s
+  ranh 4: ước  32.58s → lặng 33.75–34.32 (0.57s) cắt 34.03s
+  ranh 5: ước  40.34s → lặng 40.42–41.05 (0.63s) cắt 40.73s
+  → snap được 5/5 ranh giới vào quãng lặng
+Slide 1:    0.00s →    6.35s  = 6.35s  -> line_0.mp3
+Slide 2:    6.35s →   14.06s  = 7.70s  -> line_1.mp3
+Slide 3:   14.06s →   21.45s  = 7.40s  -> line_2.mp3
+Slide 4:   21.45s →   34.03s  = 12.58s  -> line_3.mp3
+Slide 5:   34.03s →   40.73s  = 6.70s  -> line_4.mp3
+Slide 6:   40.73s →   48.28s  = 7.55s  -> line_5.mp3
+Concatenated voiceover: 48.28s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-16112026/output/voiceover_concat.mp3
+Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
+Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
+Sending full script to Gemini TTS: 6 slides, 791 chars
+Full Gemini TTS saved: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-16112026/output/gemini_full_voiceover.mp3
+
+=== Splitting full Gemini TTS voiceover ===
+=== [2/3] Render HyperFrames (30fps đầy đủ) ===
+=== HyperFrames (gold-daily-bias-hf): dung project tai /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-16112026/output/hf ===
+  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
+=== HyperFrames: dung composition tu hf-data.json ===
+  [anchor] 'spot_xau' ('ba chín tám một') not heard -> default position
+TOTAL 52.88 scenes [('hook', 0.0, 7.353), ('forces', 7.353, 15.102), ('gamma', 22.455, 12.578), ('scen', 35.033, 6.701), ('cta', 41.734, 11.146), ('captions', 0, 52.88)]
+=== HyperFrames: render tung khung hinh (52.9s video) ===
+  Trinh duyet render: /home/runner/.cache/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux64/chrome-headless-shell
+  ◆  Rendering hf → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-16112026/output/final_video.hf.mp4
+     30fps · high · auto workers (4 cores detected)
+     GPU: browser GPU (auto-detect)
+  [?25l│
+  ◒  Checking browser...
+  [1G[J◇  Browser: env
+  [?25h[INFO] [Render] Pipeline started {"renderJobId":"97876d4c-1dd3-454c-8d89-c81a6f69ccc1","platform":"linux","arch":"x64","nodeVersion":"v22.23.4","fps":{"num":30,"den":1},"format":"mp4","quality":"high","browserGpuMode":"auto","forceScreenshot":false,"protocolTimeout":300000,"browserTimeout":120000,"pageNavigationTimeout":60000,"playerReadyTimeout":45000}
+  HyperFrames render 5%
+  HyperFrames render 20%
+  HyperFrames render 30%
+  HyperFrames render 40%
+  HyperFrames render 50%
+  HyperFrames render 60%
+  HyperFrames render 70%
+  HyperFrames render 80%
+  HyperFrames render 90%
+  ◇  /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-16112026/output/final_video.hf.mp4
+     13.7 MB · 52.9s video · rendered in 1m 32.6s
+     beginframe capture · software gpu · compile 1.0s · extract 0.0s · audio 2.1s · probe 0.2s · setup 1.4s · capture 1m 27.6s · encode (during capture) 1m 27.6s · assemble 0.4s
+Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-16112026/output/final_video.mp4
+  Video: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-16112026/output/final_video.mp4
+=== [3/3] Upload YouTube (privacy=private) ===
+{"ok": true, "platform": "youtube", "project": "gold-bias-16112026", "video_id": "UeINKp-UDeI", "url": "https://youtu.be/UeINKp-UDeI", "studio_url": "https://studio.youtube.com/video/UeINKp-UDeI/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
+  Xong: https://youtu.be/UeINKp-UDeI

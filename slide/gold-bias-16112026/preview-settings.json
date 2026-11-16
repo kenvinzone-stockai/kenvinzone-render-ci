@@ -1,0 +1,40 @@
+{
+  "subtitles": {
+    "enabled": true,
+    "color": "#fde047",
+    "fontSize": 18,
+    "bottom": 60,
+    "maxLines": 1
+  },
+  "backgroundFx": "candlestick",
+  "bgm": {
+    "mode": "preset",
+    "preset": "ambient",
+    "volume": 0.18
+  },
+  "scriptLines": [
+    "Điểm Bias Vàng hôm nay rơi về âm mười lăm phẩy một, xác nhận chế độ Giảm Mạnh sau chuỗi ba phiên giảm sâu liên tiếp.",
+    "Lực đè chính đến từ áp lực USD cực mạnh âm mười bốn phẩy một điểm, cộng thêm dòng tiền rút ra và yếu tố nội tại Vàng suy yếu.",
+    "Đối trọng nâng đỡ giá là thanh khoản M2, lãi suất thực dương một phẩy bảy điểm cùng khẩu vị rủi ro ổn định, chưa có căng thẳng tín dụng.",
+    "Cấu trúc Net GEX dương hai phẩy năm triệu USD giúp kìm nén biên độ khi giá GLD 367.82 neo trên Gamma Flip 365 giữa Put Wall 360 và Call Wall 375.",
+    "Kịch bản phiên tới: năm mươi tám phần trăm giằng co trong biên; hai mươi bảy phần trăm phá vỡ giảm; mười lăm phần trăm hồi phục.",
+    "Khuyến nghị giữ trung tính trong biên độ, chỉ cân nhắc mua lại khi giữ vững 365, theo dõi cảnh báo từ AURORA và follow KenvinZone."
+  ],
+  "slides": {
+    "deletedIds": [],
+    "scriptLines": [
+      "Điểm Bias Vàng hôm nay rơi về âm mười lăm phẩy một, xác nhận chế độ Giảm Mạnh sau chuỗi ba phiên giảm sâu liên tiếp.",
+      "Lực đè chính đến từ áp lực USD cực mạnh âm mười bốn phẩy một điểm, cộng thêm dòng tiền rút ra và yếu tố nội tại Vàng suy yếu.",
+      "Đối trọng nâng đỡ giá là thanh khoản M2, lãi suất thực dương một phẩy bảy điểm cùng khẩu vị rủi ro ổn định, chưa có căng thẳng tín dụng.",
+      "Cấu trúc Net GEX dương hai phẩy năm triệu USD giúp kìm nén biên độ khi giá GLD 367.82 neo trên Gamma Flip 365 giữa Put Wall 360 và Call Wall 375.",
+      "Kịch bản phiên tới: năm mươi tám phần trăm giằng co trong biên; hai mươi bảy phần trăm phá vỡ giảm; mười lăm phần trăm hồi phục.",
+      "Khuyến nghị giữ trung tính trong biên độ, chỉ cân nhắc mua lại khi giữ vững 365, theo dõi cảnh báo từ AURORA và follow KenvinZone."
+    ]
+  },
+  "visuals": {
+    "colorMode": "dark",
+    "backgroundColor": "#060a13",
+    "gridEnabled": false,
+    "backgroundFx": "candlestick-diag"
+  }
+}
