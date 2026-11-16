@@ -628,10 +628,12 @@ def scene_end():
     acts = D["actions"]; o = D["outro"]
     cards = "".join(
         f'<div class="ed-card" id="ed-a{i}" style="top:{400 + i*200}px;border-color:{TONE.get(a["tone"])}99;"><div class="ed-ico" style="background:{TONE.get(a["tone"])}2e;color:{TONE.get(a["tone"])};">{"!" if a["tone"] == "urgent" else "✓"}</div>'
-        f'<div class="ed-t"><div class="ed-h" style="color:{TONE.get(a["tone"])};">{esc(a["title"])}</div><div class="ed-d">{a["desc"]}</div></div></div>'
+        f'<div class="ed-t"><div class="ed-h" style="color:{TONE.get(a["tone"])};">{esc(a["title"])}</div><div class="ed-d">{a["desc"]}</div></div>'
+        + (f'<div class="kw" style="background:{TONE.get(a["tone"])};">{esc(a["keyword"])}</div>' if a.get("keyword") else "") + '</div>'
         for i, a in enumerate(acts))
     t_out = round(max(lt(cid, beat(9, 0.62)), 3.0), 3)
     css = ACC_CSS + f"""
+.kw{{position:absolute;top:-31px;left:140px;font-family:'JBM';font-weight:800;font-size:36px;line-height:1;letter-spacing:1px;color:#0b0f19;padding:5px 16px;border-radius:10px;white-space:nowrap;transform:rotate(-2deg);box-shadow:0 8px 24px rgba(0,0,0,.55);}}
 .ed-card{{position:absolute;left:60px;right:60px;height:176px;border:2px solid;border-radius:24px;background:rgba(15,23,42,.66);}}
 .ed-ico{{position:absolute;left:26px;top:38px;width:96px;height:96px;border-radius:22px;display:flex;align-items:center;justify-content:center;font-size:56px;font-weight:900;}}
 .ed-t{{position:absolute;left:148px;right:24px;top:26px;}}
@@ -663,6 +665,7 @@ def scene_end():
 gsap.set('#ed-stage .ed-card, #ot-stage', {{opacity:0}});
 {title_in('#ed-ttl')}
 QA('.ed-card').forEach((c,i)=>tl.fromTo(c, {{opacity:0, y:50, scale:0.96}}, {{opacity:1, y:0, scale:1, duration:0.45, ease:'expo.out', immediateRender:false}}, 0.25 + i*0.55));
+QA('.ed-card').forEach((c,i)=>{{ const k=c.querySelector('.kw'); if(k) tl.fromTo(k, {{opacity:0, scale:2.2, rotation:-10}}, {{opacity:1, scale:1, rotation:-2, duration:0.22, ease:'back.out(2.4)', immediateRender:false}}, 0.55 + i*0.55); }});
 tl.to('#ed-stage', {{opacity:0, scale:0.92, filter:'blur(12px)', duration:0.35, ease:'power3.in'}}, {t_out});
 tl.fromTo('#ot-stage', {{opacity:0, scale:1.06, filter:'blur(12px)'}}, {{opacity:1, scale:1, filter:'blur(0px)', duration:0.5, ease:'expo.out', immediateRender:false}}, {t_out + 0.3});
 """

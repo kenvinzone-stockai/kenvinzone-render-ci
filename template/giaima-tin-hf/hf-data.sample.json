@@ -16,7 +16,7 @@
     "sub": "Lợi nhuận Q3 giảm mạnh nhưng phân hóa rõ rệt",
     "chips": [
       {"icon": "↘", "text": "LNTT -42%", "tone": "down"},
-      {"icon": "⑂", "text": "Phân hóa mạnh", "tone": "gold"},
+      {"icon": "↳", "text": "Phân hóa mạnh", "tone": "gold"},
       {"icon": "◆", "text": "Margin là trụ cột", "tone": "blue"}
     ]
   },

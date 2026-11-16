@@ -40,7 +40,7 @@ QUY TẮC BẤT BIẾN:
 ĐẦU RA: CHỈ một đối tượng JSON (không văn bản thừa) theo đúng schema sau. Mỗi cảnh một ý; số liệu khớp bài.
 {
   "source": {"site": "tên báo", "short": "viết tắt", "author": "tên tác giả hoặc ''", "headline": "tiêu đề gốc của bài", "date": "DD/MM/YYYY", "url": "url rút gọn"},
-  "hook": {"eyebrow": "Chuyện Chứng Khoán", "title_lines": ["dòng 1 <=20 ký tự", "dòng 2 <=20 ký tự"], "sub": "1 câu phụ ngắn", "chips": [{"icon":"↘","text":"vd LNTT -42%","tone":"down"},{"icon":"⑂","text":"...","tone":"gold"},{"icon":"◆","text":"...","tone":"blue"}]},
+  "hook": {"eyebrow": "Chuyện Chứng Khoán", "title_lines": ["dòng 1 <=20 ký tự", "dòng 2 <=20 ký tự"], "sub": "1 câu phụ ngắn", "chips": [{"icon":"↘","text":"vd LNTT -42%","tone":"down"},{"icon":"↳","text":"...","tone":"gold"},{"icon":"◆","text":"...","tone":"blue"}]},
   "s1": {"title": "Tin hôm nay ta giải mã", "summary_html": "1-2 câu, cụm cần nhấn bọc <mark>...</mark>"},
   "s2": {"title_lines": ["Bức tranh chung","ảm đạm đến đâu?"], "stats": [{"value": 11000, "decimals":0, "unit":"tỷ", "label":"...", "badge":"-42% YoY", "tone":"gold", "beat":1}], "note": "1 câu nền"},
   "s3": {"title_lines": ["Sự phân hóa","thể hiện ra sao?"], "lead": "Kẻ thắng — người thua", "bars": [{"label":"TCBS","display":"+6%","value":6,"beat":1},{"label":"VIX","display":"-92,9%","value":-92.9,"beat":2}], "callout": {"value":41,"suffix":"%","text":"...","beat":1}},

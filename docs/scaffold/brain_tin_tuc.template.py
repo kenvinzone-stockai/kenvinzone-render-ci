@@ -49,7 +49,7 @@ QUY TẮC BẤT BIẾN:
 ĐẦU RA: CHỈ một object JSON theo schema (không chữ thừa):
 {
   "source": {"site":"","short":"","author":"","headline":"","date":"DD/MM/YYYY","url":""},
-  "hook": {"eyebrow":"","title_lines":["≤20 ký tự","≤20 ký tự"],"sub":"","chips":[{"icon":"↘","text":"","tone":"down"},{"icon":"⑂","text":"","tone":"gold"},{"icon":"◆","text":"","tone":"blue"}]},
+  "hook": {"eyebrow":"","title_lines":["≤20 ký tự","≤20 ký tự"],"sub":"","chips":[{"icon":"↘","text":"","tone":"down"},{"icon":"↳","text":"","tone":"gold"},{"icon":"◆","text":"","tone":"blue"}]},
   "s1": {"...": "..."},  "s2": {"...": "..."},  "s3": {"...": "..."},
   "s4": {"...": "..."},  "s5": {"lights":[{"color":"green"},{"color":"yellow"},{"color":"red"}]},
   "s6": {"...": "..."},  "s7": {"...": "..."},

@@ -593,9 +593,11 @@ def scene_cta():
     acts = D["actions"]
     cards = "".join(
         f'<div class="ac-card" id="ac-{i}" style="top:{420 + i*205}px;border-color:{a["color"]}99;"><div class="ac-ico" style="background:{a["color"]}33;color:{a["color"]};">{a["icon"]}</div>'
-        f'<div class="ac-t"><div class="ac-h" style="color:{a["color"]};">{esc(a["title"])}</div><div class="ac-d">{a["desc"]}</div></div></div>'
+        f'<div class="ac-t"><div class="ac-h" style="color:{a["color"]};">{esc(a["title"])}</div><div class="ac-d">{a["desc"]}</div></div>'
+        + (f'<div class="kw" style="background:{a["color"]};">{esc(a["keyword"])}</div>' if a.get("keyword") else "") + '</div>'
         for i, a in enumerate(acts))
     css = """
+.kw{position:absolute;top:-31px;left:140px;font-family:'JBM';font-weight:800;font-size:36px;line-height:1;letter-spacing:1px;color:#0b0f19;padding:5px 16px;border-radius:10px;white-space:nowrap;transform:rotate(-2deg);box-shadow:0 8px 24px rgba(0,0,0,.55);}
 .ac-card{position:absolute;left:60px;right:60px;height:180px;border:2px solid;border-radius:24px;background:rgba(15,23,42,.65);}
 .ac-ico{position:absolute;left:26px;top:40px;width:96px;height:96px;border-radius:22px;display:flex;align-items:center;justify-content:center;font-size:52px;font-weight:900;}
 .ac-t{position:absolute;left:148px;right:24px;top:28px;}
@@ -633,6 +635,7 @@ gsap.set('#ac-stage .ac-card, #ac-aur, #ct-stage', {{opacity:0}});
 tl.fromTo('#ac-ttl', {{opacity:0, y:-60, filter:'blur(10px)'}}, {{opacity:1, y:0, filter:'blur(0px)', duration:0.4, ease:'expo.out'}}, 0.05);
 tl.fromTo('#ac-sub', {{opacity:0}}, {{opacity:1, duration:0.3}}, 0.3);
 [{t_a}, {t_b}, {t_c}].forEach((t,i)=>tl.fromTo('#ac-'+i, {{opacity:0, y:50, scale:0.96}}, {{opacity:1, y:0, scale:1, duration:0.5, ease:'expo.out', immediateRender:false}}, t));
+[{t_a}, {t_b}, {t_c}].forEach((t,i)=>{{ const k=document.querySelector('[data-composition-id="cta"] #ac-'+i+' .kw'); if(k) tl.fromTo(k, {{opacity:0, scale:2.2, rotation:-10}}, {{opacity:1, scale:1, rotation:-2, duration:0.22, ease:'back.out(2.4)', immediateRender:false}}, t + 0.3); }});
 tl.fromTo('#ac-aur', {{opacity:0, scale:0.85}}, {{opacity:1, scale:1, duration:0.4, ease:'back.out(1.8)', immediateRender:false}}, {min(t_aur - 0.6, t_c + 1.9)});
 tl.to('#ac-stage', {{opacity:0, scale:0.9, filter:'blur(12px)', duration:0.35, ease:'power3.in'}}, {t_f - 0.1});
 tl.fromTo('#ct-stage', {{opacity:0, scale:1.08, filter:'blur(12px)'}}, {{opacity:1, scale:1, filter:'blur(0px)', duration:0.5, ease:'expo.out', immediateRender:false}}, {t_f + 0.2});

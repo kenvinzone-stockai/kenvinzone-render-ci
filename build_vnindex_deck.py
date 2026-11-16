@@ -78,7 +78,7 @@ SCHEMA_EXAMPLE = r"""
   "actions": [
     {"tone":"urgent","title":"Chưa mở vị thế mới","desc":"Chờ D1 lấy lại <b>1747,78</b> kèm thanh khoản"},
     {"tone":"positive","title":"Đang nắm giữ","desc":"Có thể giữ, dừng lỗ chặt dưới <b>1730,93</b>, không bình quân giá xuống"},
-    {"tone":"urgent","title":"Margin","desc":"Nên giảm tỷ trọng, ưu tiên bảo toàn vốn"}
+    {"tone":"urgent","title":"Margin","keyword":"GIẢM MARGIN","desc":"Nên giảm tỷ trọng, ưu tiên bảo toàn vốn"}
   ],
   "outro": {"up":"D1 đóng vững trên 1747,78 kèm thanh khoản đột biến","down":"Thủng 1730,93 kèm volume — thesis vô hiệu","promise":"Hẹn anh em bản tin tổng hợp thứ Hai tuần sau","follow_handle":"@kenvinzone"},
   "script_lines": ["... đúng 10 dòng ..."],
@@ -113,6 +113,7 @@ LƯU Ý SCRIPT:
 TÊN RIÊNG / CHỈ SỐ / THUẬT NGỮ: luôn viết chuẩn: VNINDEX (hoặc VN-Index), EMA20/EMA50/EMA200, RSI, MACD, KenvinZone, Dow Jones, S&P 500, Nasdaq. KHÔNG phiên âm tiếng Việt kiểu "Đao Giôn", "Ét pi", "Vi-En In-đéc".
 
 cover.title_lines: 2 dòng ngắn (≤18 ký tự/dòng), nêu ý chính của ngày (vd "Hồi lên 1742" / "chưa qua EMA20"). status: ánh xạ nhãn báo cáo → chữ in hoa: "Watchlist"→"WATCHLIST — THEO DÕI"; "Avoid New Entry"→"TRÁNH VÀO MỚI"; "Buy/Accumulate"→"MUA/TÍCH LŨY"; "Sell/Reduce"→"BÁN/GIẢM"; giữ status_pct đúng % độ tin cậy trong báo cáo.
+actions[].keyword (tuỳ chọn): cụm IN HOA ≤16 ký tự tóm hành động (vd "GIẢM MARGIN"). cover.stamp (tuỳ chọn): con dấu bìa ≤26 ký tự, chỉ nêu SỰ KIỆN có trong báo cáo (vd "THỦNG MA20"); bỏ trống thì hệ thống tự suy từ vị trí giá so với EMA.
 
 yt_description: mô tả YouTube dài, nhiều emoji, gồm các mục: HÀNH TRÌNH CẢ NGÀY (sáng/chiều), 5 THÀNH PHẦN ĐIỂM SỐ, PHÂN TÍCH ĐA KHUNG, VÙNG GIÁ CHỐT NGÀY (hỗ trợ/kháng cự), KỊCH BẢN PHIÊN TỚI, KẾ HOẠCH HÀNH ĐỘNG, rồi disclaimer "KHÔNG phải lời khuyên đầu tư", kết bằng lời hẹn + hashtag (#giaimachungkhoan #kechuyenchungkhoan #xuhuongchungkhoan #vnindex #chungkhoan #phantichkythuat). yt_tags: 12–15 tag không có #.
 

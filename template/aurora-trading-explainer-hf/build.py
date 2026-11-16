@@ -350,7 +350,10 @@ def s_hook():
     cands = s.get("candles", [])
     cover = D.get("cover", {}) or s.get("cover", {})
     # tách tiêu đề 2 dòng theo dấu chấm giữa (• hoặc ·)
-    tparts = [x.strip() for x in re.split(r"[•·]", str(h.get("title", ""))) if x.strip()] or [str(h.get("title", ""))]
+    ttl = str(cover.get("title") or h.get("title", ""))       # cover.title (ANTI) ghi đè header.title
+    tparts = [x.strip() for x in re.split(r"[•·]", ttl) if x.strip()] or [ttl]
+    if len(tparts) == 1 and ":" in ttl:                         # "SIDEWAY Ở ĐÁY: ĐÁY THẬT HAY BẪY?" → 2 dòng
+        k = ttl.index(":"); tparts = [ttl[:k + 1].strip(), ttl[k + 1:].strip()]
     la = tparts[0]; lb = tparts[1] if len(tparts) > 1 else ""
     fa = int(max(56, min(96, 880 / (max(1, len(la)) * 0.70))))
     fb = int(max(50, min(86, 880 / (max(1, len(lb)) * 0.70)))) if lb else 0
@@ -424,7 +427,7 @@ def s_trap():
             'class="avatar-icon"', f'class="avatar-icon buyer-av" id="buy{j}"', 1))
     if brk:
         parts.append(f'<g id="g1brk">{render_candlesticks([brk], COORD, highlight_idx=0)}</g>')
-    stamp_txt = s.get("trap_stamp", "BẪY BẮT ĐÁY · MẮC KẸT!")
+    stamp_txt = s.get("trap_stamp") or D.get("trap_stamp") or (D.get("cover") or {}).get("trap_stamp") or "BẪY BẮT ĐÁY · MẮC KẸT!"
     for j, b in enumerate(traps):          # nhãn nhỏ "KẸT X" → thay bằng 1 con dấu lớn bên dưới
         parts.append(render_icon_avatar(b["type"], b["x"], b["y"], label=None, scale=1.0).replace(
             'class="avatar-icon"', f'class="avatar-icon trap-av" id="trap{j}"', 1))

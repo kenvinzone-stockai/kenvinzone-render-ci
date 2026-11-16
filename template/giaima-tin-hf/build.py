@@ -12,7 +12,8 @@ import json, sys, math, html, re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-DATA = json.load(open(sys.argv[1] if len(sys.argv) > 1 else ROOT / "data.json", encoding="utf-8"))
+DATA = json.loads(open(sys.argv[1] if len(sys.argv) > 1 else ROOT / "data.json", encoding="utf-8").read()
+                  .replace("⑂", "↳"))   # ⑂ không font nào có → thay bằng mũi tên rẽ nhánh chuẩn
 SUBS = json.load(open(sys.argv[2] if len(sys.argv) > 2 else ROOT / "subtitle-word-timing.json", encoding="utf-8"))
 D = DATA
 

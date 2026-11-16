@@ -181,6 +181,7 @@ def finalize(deck, spx, nas, det):
         "indices": [spx, nas],
         "divergence_tag": deck.get("divergence_tag") or divergence_fallback(spx, nas),
         "scenarios": scen,
+        **({"catalysts": (det.get("catalysts") or deck.get("catalysts"))[:4]} if (det.get("catalysts") or deck.get("catalysts")) else {}),
         "audio_offset": 1.0,
         "outro_hold": 3.6,
     }

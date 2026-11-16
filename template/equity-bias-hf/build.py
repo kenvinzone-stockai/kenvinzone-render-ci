@@ -380,7 +380,18 @@ def scene_cmp():
                 f'<div class="cmp-r"><span>Ngày</span><b style="color:{regime_col(ix.get("day_score",ix["score"]))};">{ix.get("day_score",ix["score"]):+.1f}</b></div>'
                 f'<div class="cmp-r"><span>Tuần</span><b style="color:{regime_col(ix.get("week_score",ix["score"]))};">{ix.get("week_score",ix["score"]):+.1f}</b></div>'
                 f'<div class="cmp-r"><span>Gamma</span><b style="color:{"#f87171" if ix["gamma"]["net_gex_m"]<0 else "#4ade80"};">{"ÂM" if ix["gamma"]["net_gex_m"]<0 else "DƯƠNG"}</b></div></div>')
+    cats = (D.get("catalysts") or [])[:4]
+    cat_html = ("" if not cats else '<div class="cat-row" id="cat-row"><span class="cat-k">LỊCH SỰ KIỆN</span>'
+                + "".join(f'<span class="cat" id="cat{i}"><b>{esc(c.get("day", ""))}</b>{esc(c.get("event", ""))}</span>' for i, c in enumerate(cats))
+                + '</div>')
+    cat_fs = 24 if sum(len(str(c.get("event", ""))) for c in cats) < 46 else 21
+    for i in range(len(cats)):
+        js.append(f"tl.fromTo('#cat{i}', {{opacity:0, scale:0.6, y:16}}, {{opacity:1, scale:1, y:0, duration:0.3, ease:'back.out(2)', immediateRender:false}}, {tline(5, 0.14 + i*0.05, st)});")
     css = f"""
+.cat-row{{position:absolute;left:60px;right:60px;top:712px;display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:nowrap;white-space:nowrap;}}
+.cat-k{{font-size:20px;font-weight:900;letter-spacing:2px;color:#94a3b8;margin-right:4px;}}
+.cat{{font-size:{cat_fs}px;font-weight:700;color:#e2e8f0;padding:7px 14px;border-radius:99px;border:2px solid rgba(56,189,248,.45);background:rgba(56,189,248,.10);}}
+.cat b{{font-family:'JBM';font-weight:800;color:#7dd3fc;margin-right:8px;}}
 .cmp-wrap{{position:absolute;left:60px;right:60px;top:420px;display:flex;gap:24px;}}
 .cmp-col{{flex:1;border:2px solid;border-radius:22px;background:rgba(15,23,42,.55);padding:22px 24px;}}
 .cmp-h{{font-size:34px;font-weight:900;text-align:center;margin-bottom:14px;}}
@@ -397,6 +408,7 @@ def scene_cmp():
 <div id="cmp-stage">
   <div class="ttl" id="cmp-ttl"><span class="sky">So sánh</span> & phân kỳ</div>
   <div class="cmp-wrap" id="cmp-wrap">{col(spx)}{col(nas)}</div>
+  {cat_html}
   <div class="cs-dv" id="cs-dv">{dv}</div>
   <div class="cs-ttl">KỊCH BẢN PHIÊN TỚI</div>
   {''.join(cards)}

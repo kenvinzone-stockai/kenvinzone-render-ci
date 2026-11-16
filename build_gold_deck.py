@@ -189,7 +189,7 @@ GAMMA (bám đúng chế độ hiện tại):
 - Spot nằm TRÊN Gamma Flip → đang ở vùng gamma dương; DƯỚI Flip → vùng gamma âm. Mô tả cho đúng.
 
 3 KỊCH BẢN (scenarios): đúng 3, tone lần lượt gợi ý base/down/up, tổng pct = 100 (số nguyên). desc nêu mốc Put/Call/Flip thật (GLD và ≈XAUUSD), dùng thẻ <b></b> cho số.
-3 HÀNH ĐỘNG (actions): đúng 3 với key "neutral" (giữ trung tính trong biên), "buy" (điều kiện mua lại), "risk" (rủi ro cần tránh) — mỗi cái nêu mốc cụ thể.
+3 HÀNH ĐỘNG (actions): đúng 3 với key "neutral" (giữ trung tính trong biên), "buy" (điều kiện mua lại), "risk" (rủi ro cần tránh) — mỗi cái nêu mốc cụ thể. Tuỳ chọn mỗi action có "keyword": cụm IN HOA ≤16 ký tự tóm hành động (vd "GIỮ TIỀN MẶT"), chỉ dùng chữ/số/dấu cách.
 
 SCRIPT ĐỌC (script_lines) — ĐÚNG 6 DÒNG, mỗi dòng 1 câu trọn ý, tổng ~90–140 TỪ (video BẮT BUỘC DƯỚI 3 phút, càng gọn càng tốt). THỨ TỰ CỐ ĐỊNH (để khớp hình):
 1. Hook: điểm Bias Vàng hôm nay + nhãn chế độ (TRUNG LẬP/TĂNG/GIẢM) + xu hướng mấy phiên.
@@ -267,7 +267,8 @@ def finalize(deck: dict, det: dict) -> dict:
     acts = []
     for a in deck.get("actions", []):
         icon, color = ACTION_STYLE.get(a.get("key", "neutral"), ("•", "#fbbf24"))
-        acts.append({"icon": icon, "color": color, "title": a.get("title", ""), "desc": a.get("desc", "")})
+        acts.append({"icon": icon, "color": color, "title": a.get("title", ""), "desc": a.get("desc", ""),
+                     **({"keyword": a["keyword"]} if a.get("keyword") else {})})
     hf = {
         "template": "gold-daily-bias-hf",
         "date": det["date"],
