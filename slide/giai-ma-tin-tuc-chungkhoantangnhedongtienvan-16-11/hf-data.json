@@ -1,0 +1,207 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "16/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "Báo Tiền phong (CafeF dẫn lại)",
+    "short": "CafeF",
+    "author": "Việt Linh",
+    "headline": "Chứng khoán tăng nhẹ, dòng tiền vẫn mất hút",
+    "date": "16/11/2026",
+    "url": "https://m.cafef.vn/chung-khoan-tang-nhe-dong-tien-van-mat-hut-188261116205542079.chn"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "Chỉ số xanh nhẹ",
+      "Dòng tiền mất hút"
+    ],
+    "sub": "VN-Index giữ sắc xanh nhưng thanh khoản rơi về đáy một tháng",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "GTGD 11.877 tỷ (-21,5%)",
+        "tone": "down"
+      },
+      {
+        "icon": "↳",
+        "text": "VIC gánh +8,2 điểm",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "Hơn 200 mã giảm",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "VN-Index chốt phiên tăng nhẹ lên 1.736,8 điểm nhờ <mark>lực kéo từ một vài trụ lớn</mark>, tuy nhiên thanh khoản toàn sàn HoSE sụt giảm mạnh về <mark>mức thấp nhất trong một tháng</mark>."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh chung",
+      "ảm đạm đến đâu?"
+    ],
+    "stats": [
+      {
+        "value": 11877,
+        "decimals": 0,
+        "unit": "tỷ",
+        "label": "Giá trị giao dịch HoSE",
+        "badge": "-21,5% DoD",
+        "tone": "down",
+        "beat": 1
+      },
+      {
+        "value": -23,
+        "decimals": 0,
+        "unit": "%",
+        "label": "So với bình quân 20 phiên",
+        "badge": "Đáy 1 tháng",
+        "tone": "gold",
+        "beat": 2
+      }
+    ],
+    "note": "Dòng tiền trên thị trường rơi vào trạng thái cạn kiệt và thận trọng rõ rệt."
+  },
+  "s3": {
+    "title_lines": [
+      "Sự phân hóa",
+      "thể hiện ra sao?"
+    ],
+    "lead": "Xanh vỏ đỏ lòng — Trụ kéo, bảng chìm",
+    "bars": [
+      {
+        "label": "VIC",
+        "display": "+8,2 điểm",
+        "value": 8.2,
+        "beat": 1
+      },
+      {
+        "label": "MCH",
+        "display": "+1,86 điểm",
+        "value": 1.86,
+        "beat": 1
+      },
+      {
+        "label": "VCB",
+        "display": "-1,03 điểm",
+        "value": -1.03,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 200,
+      "suffix": " mã đỏ",
+      "text": "Số cổ phiếu giảm áp đảo hoàn toàn phe xanh",
+      "beat": 2
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Dịch chuyển",
+      "giữa các nhóm?"
+    ],
+    "cards": [
+      {
+        "big": "Trụ đỡ",
+        "title": "Nhóm vốn hóa lớn",
+        "text": "VIC và MCH đóng góp điểm số chủ đạo giúp giữ sắc xanh cho chỉ số."
+      },
+      {
+        "big": "-2,5%",
+        "title": "Nhóm Ngân hàng",
+        "text": "TCB, VPB, VIB, VCB đồng loạt điều chỉnh, tạo áp lực ghìm thị trường."
+      },
+      {
+        "big": "-2,0%",
+        "title": "Chứng khoán & BĐS",
+        "text": "SSI, VCI, VIX, DXG, KDH chìm trong sắc đỏ trước áp lực chốt lời."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Bức tranh",
+      "ba sắc thái ngành"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "TRỤ ĐỠ",
+        "title": "Cổ phiếu vốn hóa lớn",
+        "text": "Lực đỡ đơn lẻ từ VIC và MCH giúp VN-Index giữ được mức tăng 1,91 điểm."
+      },
+      {
+        "color": "yellow",
+        "tag": "ĐIỀU CHỈNH",
+        "title": "Nhóm Ngân hàng",
+        "text": "TCB giảm 2,52%, VPB giảm 1,81%, VCB lấy đi hơn một điểm của chỉ số."
+      },
+      {
+        "color": "red",
+        "tag": "BÁN LAN RỘNG",
+        "title": "Chứng khoán & Bất động sản",
+        "text": "Sắc đỏ áp đảo trên diện rộng với hơn hai trăm mã giảm trên sàn HoSE."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Tín hiệu đèn",
+      "cần theo dõi?"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh: SBV bơm tiền",
+        "text": "Ngân hàng Nhà nước mua ngoại tệ giá 25.500 đồng/USD định kỳ hai phiên mỗi tuần để hỗ trợ tiền đồng.",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng: Tiền co cụm",
+        "text": "Thanh khoản không lan tỏa mà chỉ chọn lọc ở một vài cổ phiếu riêng lẻ.",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ: Hụt thanh khoản",
+        "text": "Khối lượng giao dịch rơi về đáy một tháng báo hiệu thị trường còn tiếp tục rung lắc.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư",
+      "nên làm gì?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Theo dõi mốc 1.700-1.720",
+        "text": "Khả năng trụ vững tại vùng hỗ trợ này quyết định xu hướng tiếp theo.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Quản trị tỷ trọng an toàn",
+        "text": "Ưu tiên nắm giữ tiền mặt hợp lý, kiên nhẫn chờ thanh khoản quay trở lại.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Hạn chế mua đuổi",
+        "text": "Tránh fomo theo các nhịp kéo trụ cục bộ khi độ rộng thị trường còn yếu.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Chỉ số giữ sắc xanh nhưng thiếu thanh khoản luôn tiềm ẩn nhiều biến số khó lường.",
+    "cta": "Theo dõi KenvinZone để cập nhật nhịp đập thị trường mỗi ngày"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
