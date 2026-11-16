@@ -109,13 +109,21 @@ async () => {
       // Khung của CHÍNH dòng chữ (Range trên text node), không phải cả thẻ chứa — thẻ rộng
       // hết bề ngang với chữ căn giữa sẽ báo nhầm đè chữ / lọt vùng an toàn.
       let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+      const lines = [];                     // từng mảnh dòng (chữ xuống dòng = nhiều mảnh)
       for (const c of el.childNodes) {
         if (c.nodeType !== 3 || !c.textContent.trim()) continue;
         const rg = document.createRange(); rg.selectNodeContents(c);
         for (const q of rg.getClientRects()) {
           if (q.width < 1) continue;
+          lines.push([q.left, q.top, q.width, q.height]);
           x0 = Math.min(x0, q.left); y0 = Math.min(y0, q.top); x1 = Math.max(x1, q.right); y1 = Math.max(y1, q.bottom);
         }
+      }
+      // nằm trong vùng bị cắt (clip-path, vd camera đang phóng) → phần ngoài không hiển thị
+      let clipped = false;
+      for (let p = el.parentElement; p; p = p.parentElement) {
+        const cp = getComputedStyle(p).clipPath;
+        if (cp && cp !== 'none') { clipped = true; break; }
       }
       if (x1 < x0) continue;
       const r = {left: x0, top: y0, width: x1 - x0, height: y1 - y0};
@@ -129,7 +137,7 @@ async () => {
       const cs0 = getComputedStyle(el);
       out.push({qa: el.dataset.qa, text: own.slice(0, 60), x: r.left, y: r.top, w: r.width, h: r.height,
                 op: +op.toFixed(2), comp: host ? host.dataset.compositionId : '', tag, anc: anc.join(' '), ancq,
-                ff: cs0.fontFamily, fw: cs0.fontWeight, svg: el instanceof SVGElement, full: (el.textContent || '').trim().slice(0, 120), fs: parseFloat(cs0.fontSize) || 0});
+                ff: cs0.fontFamily, lines, clipped, fw: cs0.fontWeight, svg: el instanceof SVGElement, full: (el.textContent || '').trim().slice(0, 120), fs: parseFloat(cs0.fontSize) || 0});
     }
     return out;
   };
@@ -215,7 +223,7 @@ def run_gate(slide_dir: Path, outdir: Path, samples: int) -> dict:
                         bad.append(tx)
             # CLIP + SAFE
             for tx in texts:
-                if tx["x"] < -2 or tx["y"] < -2 or tx["x"] + tx["w"] > W + 2 or tx["y"] + tx["h"] > H + 2:
+                if not tx["clipped"] and (tx["x"] < -2 or tx["y"] < -2 or tx["x"] + tx["w"] > W + 2 or tx["y"] + tx["h"] > H + 2):
                     issues.append({"level": "LỖI", "kind": "CLIP", "at": label, "text": tx["text"],
                                    "detail": f"ra ngoài khung ({tx['x']:.0f},{tx['y']:.0f},{tx['w']:.0f}×{tx['h']:.0f})", "comp": tx["comp"]})
                     bad.append(tx)
@@ -235,15 +243,20 @@ def run_gate(slide_dir: Path, outdir: Path, samples: int) -> dict:
                     hh = 0.72 * t["fs"]
                     return {**t, "y": t["y"] + (t["h"] - hh) / 2, "h": hh}
                 return t
-            boxes = [body(t) for t in texts]
+            # mỗi mảnh dòng là một khung riêng (chữ xuống dòng không bị gộp thành khung to)
+            boxes = [body({**t, "x": q[0], "y": q[1], "w": q[2], "h": q[3]}) for t in texts for q in (t["lines"] or [[t["x"], t["y"], t["w"], t["h"]]])]
+            hit = set()
             for i, a in enumerate(boxes):
                 for c in boxes[i + 1:]:
+                    if a["qa"] == c["qa"] or (a["qa"], c["qa"]) in hit:
+                        continue
                     if _contains(a, c) or _contains(c, a) or a["qa"] in c["ancq"] or c["qa"] in a["ancq"]:
                         continue
                     ix = max(0.0, min(a["x"] + a["w"], c["x"] + c["w"]) - max(a["x"], c["x"]))
                     iy = max(0.0, min(a["y"] + a["h"], c["y"] + c["h"]) - max(a["y"], c["y"]))
                     # đè thật = chồng đáng kể theo CẢ hai chiều (hai đoạn cạnh nhau cùng dòng chỉ chạm mép)
                     if ix > 0.3 * min(a["w"], c["w"]) and iy > 0.4 * min(a["h"], c["h"]):
+                        hit.add((a["qa"], c["qa"]))
                         issues.append({"level": "LỖI", "kind": "OVERLAP", "at": label,
                                        "text": f"「{a['text']}」 ⟂ 「{c['text']}」", "detail": f"{a['comp']} / {c['comp']}", "comp": a["comp"]})
                         bad += [a, c]
