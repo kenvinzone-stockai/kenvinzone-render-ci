@@ -177,7 +177,23 @@ def scene_cover():
     _fa = int(max(60, min(92, 912 / (max(1, _maxlen) * 0.72))))
     _subtxt = re.sub(r"<[^>]+>", "", str(c.get("sub_html", "")))
     _subfs = int(max(30, min(40, 980 / (max(1, len(_subtxt)) * 0.52))))
+    # Con dấu sự kiện thật: Brain có thể khai cover.stamp, không thì suy từ vị trí giá so với các EMA D1
+    stamp = c.get("stamp")
+    if not stamp:
+        lv = D.get("levels") or {}
+        px = lv.get("price")
+        emas = [it["price"] for it in lv.get("items", []) if "EMA" in str(it.get("label", "")).upper()]
+        if px is not None and emas:
+            above = sum(px > e for e in emas)
+            stamp = (f"TRÊN CẢ {len(emas)} ĐƯỜNG EMA" if above == len(emas) else
+                     f"DƯỚI CẢ {len(emas)} ĐƯỜNG EMA" if above == 0 else f"KẸP GIỮA CÁC EMA · TRÊN {above}/{len(emas)}")
+    stamp_html = f'<div class="cv-stamp" id="cv-stamp"><span>{esc(stamp)}</span></div>' if stamp else ""
+    t_stamp = lt(cid, beat(0, 0.22))
     css = ACC_CSS + f"""
+.cv-radar{{position:absolute;left:{540-100}px;top:{405-100}px;width:200px;height:200px;}}
+.cv-stamp{{position:absolute;top:948px;left:60px;right:192px;text-align:center;}}
+.cv-stamp span{{display:inline-block;transform:rotate(-4deg);padding:10px 30px;border:5px double {TH['c']};border-radius:14px;background:rgba(15,23,42,.88);box-shadow:0 10px 40px rgba(0,0,0,.6),0 0 30px rgba({TH['glow']},.45);font-family:'JBM';font-weight:800;font-size:36px;letter-spacing:2px;color:#fff;text-transform:uppercase;white-space:nowrap;}}
+.cv-flash{{position:absolute;inset:0;background:rgba({TH['glow']},.22);opacity:0;pointer-events:none;}}
 .cv-eb{{position:absolute;top:250px;left:0;right:0;text-align:center;}}
 .cv-eb span{{display:inline-block;background:linear-gradient(135deg,{TH['l']},{TH['c']});color:#0b0f19;font-weight:900;font-size:30px;letter-spacing:4px;text-transform:uppercase;padding:14px 36px;border-radius:99px;box-shadow:0 10px 40px rgba({TH['glow']},.45);}}
 .cv-logo{{position:absolute;top:340px;left:0;right:0;text-align:center;}}
@@ -191,25 +207,44 @@ def scene_cover():
 .cv-chip{{font-family:'JBM';font-weight:800;font-size:28px;color:#e2e8f0;padding:10px 18px;border-radius:99px;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.14);}}
 .cv-chip b{{color:#fff;}} .cv-chip .i{{margin-right:8px;}}
 .cv-chip.hot{{background:rgba({TH['glow']},.18);border-color:rgba({TH['glow']},.6);color:{TH['l']};}}
-.cv-cta{{position:absolute;top:985px;left:60px;right:60px;text-align:center;font-size:40px;font-weight:900;color:{TH['l']};}}
-.cv-date{{position:absolute;top:1070px;left:60px;right:60px;text-align:center;font-family:'JBM';font-weight:700;font-size:30px;color:#94a3b8;}}
+.cv-cta{{position:absolute;top:1042px;left:60px;right:60px;text-align:center;font-size:40px;font-weight:900;color:{TH['l']};}}
+.cv-date{{position:absolute;top:1118px;left:60px;right:60px;text-align:center;font-family:'JBM';font-weight:700;font-size:30px;color:#94a3b8;}}
 .cv-date b{{color:#7dd3fc;}}
 """
     body = f"""<div id="cv-stage">
 <div class="cv-eb"><span>{esc(c['eyebrow'])}</span></div>
+<svg class="cv-radar" id="cv-radar" viewBox="0 0 200 200">
+  <defs><linearGradient id="cvsw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="rgb({TH['glow']})" stop-opacity="0"/><stop offset="1" stop-color="rgb({TH['glow']})" stop-opacity=".55"/></linearGradient></defs>
+  <circle cx="100" cy="100" r="96" fill="none" stroke="rgba({TH['glow']},.35)" stroke-width="2"/>
+  <circle cx="100" cy="100" r="80" fill="none" stroke="rgba({TH['glow']},.18)" stroke-width="1.5" stroke-dasharray="4 6"/>
+  <g id="cv-sweep" style="transform-origin:100px 100px;"><path d="M100,100 L196,100 A96,96 0 0,0 168,32 Z" fill="url(#cvsw)"/><line x1="100" y1="100" x2="196" y2="100" stroke="rgb({TH['glow']})" stroke-width="3"/></g>
+  <circle class="cv-ping" cx="100" cy="100" r="66" fill="none" stroke="rgb({TH['glow']})" stroke-width="3" opacity="0"/>
+  <circle class="cv-ping" cx="100" cy="100" r="66" fill="none" stroke="rgb({TH['glow']})" stroke-width="3" opacity="0"/>
+</svg>
 <div class="cv-logo"><img src="assets/img/logo-kenvinzone.svg" alt=""/></div>
 <div class="cv-plate"><div><h1 class="acc">{title}</h1></div></div>
 <div class="cv-sub">{c['sub_html']}</div>
 <div class="cv-chips">{chips}</div>
 <div class="cv-cta">{esc(c['cta'])} <span id="cv-arrow" style="display:inline-block;">→</span></div>
 <div class="cv-date"><b>{esc(D['handle'])}</b> · {esc(D['weekday'])} {esc(D['date'])}</div>
-</div>"""
+{stamp_html}
+</div>
+<div class="cv-flash" id="cv-flash"></div>"""
     hot = next((i for i, ch in enumerate(c["chips"]) if ch.get("hot")), len(c["chips"]) - 1)
     js = f"""
 // everything is on screen at frame 0 (thumbnail = hook); motion lands on the narration
 tl.fromTo('#cv-chip{hot}', {{scale:1}}, {{scale:1.12, duration:0.2, ease:'power3.out', immediateRender:false}}, {lt(cid, beat(0, 0.45))});
 tl.to('#cv-chip{hot}', {{scale:1, duration:0.5, ease:'expo.out'}}, {lt(cid, beat(0, 0.45)) + 0.2});
 tl.fromTo('#cv-arrow', {{x:0}}, {{x:18, duration:0.35, ease:'power2.inOut', yoyo:true, repeat:3, immediateRender:false}}, {lt(cid, beat(0, 0.8))});
+// radar quét quanh logo suốt cảnh bìa (tuyến tính, tất định) + 2 vòng sóng lan ra
+tl.fromTo('#cv-sweep', {{rotation:0}}, {{rotation:{-360*max(1, round(dur/2.2))}, duration:{dur:.3f}, ease:'none'}}, 0);
+QA('.cv-ping').forEach((c,i)=>tl.fromTo(c, {{attr:{{r:66}}, opacity:.9}}, {{attr:{{r:98}}, opacity:0, duration:1.1, ease:'power2.out', immediateRender:false}}, {t_stamp} + i*0.35));
+// con dấu đóng thụp + rung màn hình + chớp màu xu hướng; chip nóng chớp sáng
+{"" if not stamp else f"tl.fromTo('#cv-stamp', {{opacity:0, scale:3, filter:'blur(10px)'}}, {{opacity:1, scale:1, filter:'blur(0px)', duration:0.22, ease:'back.out(2.2)', immediateRender:false}}, {t_stamp});"}
+tl.fromTo('#cv-stage', {{x:-8, y:3}}, {{x:8, y:-3, duration:0.04, repeat:4, yoyo:true, ease:'none', immediateRender:false}}, {t_stamp + 0.18});
+tl.set('#cv-stage', {{x:0, y:0}}, {t_stamp + 0.4});
+tl.fromTo('#cv-flash', {{opacity:0}}, {{opacity:1, duration:0.06, yoyo:true, repeat:1, ease:'none', immediateRender:false}}, {t_stamp + 0.18});
+tl.fromTo('#cv-chip{hot}', {{boxShadow:'0 0 0px rgba({TH['glow']},0)'}}, {{boxShadow:'0 0 45px rgba({TH['glow']},.9)', duration:0.2, yoyo:true, repeat:3, ease:'none', immediateRender:false}}, {t_stamp + 0.5});
 {exit_js('#cv-stage', dur)}
 """
     return cid, dur, scene_file(cid, dur, css, body, js)

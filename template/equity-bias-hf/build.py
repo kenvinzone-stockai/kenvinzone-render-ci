@@ -137,6 +137,41 @@ def regime_col(score):
 
 
 # ============================================================= SCENE 0 HOOK
+# Bìa 3 tầng: eyebrow "định lượng & vĩ mô"; tiêu đề = lực lớn nhất (cộng 2 chỉ số) từ dữ liệu thật
+_EQ_PHRASE = [("USD", "USD GÂY SỨC ÉP", "USD SUY YẾU NÂNG ĐỠ"), ("LÃI SUẤT", "LÃI SUẤT / FED GÂY ÁP LỰC", "LÃI SUẤT / FED HỖ TRỢ"),
+              ("KHẨU VỊ", "KHẨU VỊ RỦI RO SUY GIẢM", "KHẨU VỊ RỦI RO CẢI THIỆN"), ("QUYỀN CHỌN", "QUYỀN CHỌN NGHIÊNG GIẢM", "QUYỀN CHỌN NGHIÊNG TĂNG"),
+              ("ĐỘ RỘNG", "ĐỘ RỘNG THỊ TRƯỜNG YẾU", "ĐỘ RỘNG THỊ TRƯỜNG MẠNH"), ("DÒNG TIỀN", "DÒNG TIỀN RÚT RA", "DÒNG TIỀN ĐỔ VÀO"),
+              ("VỊ THẾ", "VỊ THẾ NGHIÊNG GIẢM", "VỊ THẾ NGHIÊNG TĂNG")]
+
+
+def hook_texts():
+    tot = {}
+    for ix in D["indices"]:
+        for f in ix["forces"]:
+            tot[f["label"]] = tot.get(f["label"], 0.0) + f["value"]
+    lab, val = max(tot.items(), key=lambda kv: abs(kv[1])) if tot else ("", 0.0)
+    up = lab.upper()
+    ph = next(((n if val < 0 else p_) for k, n, p_ in _EQ_PHRASE if k in up), f"{up} {'KÉO XUỐNG' if val < 0 else 'NÂNG ĐỠ'}")
+    title = D.get("hook_title_html") or f"S&amp;P 500 &amp; NASDAQ<br/>{esc(ph)}"
+    eb = D.get("eyebrow") or ""
+    if not eb or "DAILY BIAS" in eb or "WEEKLY BIAS" in eb:
+        eb = "⚡ ĐỊNH LƯỢNG & VĨ MÔ · CHỨNG KHOÁN MỸ" + (" · TUẦN" if "WEEKLY" in eb else "")
+    spx, nas = IDX["spx"], IDX["nas"]
+    negs = [ix for ix in (spx, nas) if ix["gamma"]["net_gex_m"] < 0]
+    if len(negs) == 2:
+        stamp, scol = "GAMMA ÂM · BIẾN ĐỘNG KHUẾCH ĐẠI", "#ef4444"
+    elif negs:
+        stamp, scol = f"GAMMA ÂM · {negs[0]['name'].upper()}", "#ef4444"
+    elif str(spx["regime"]) == str(nas["regime"]):
+        stamp, scol = f"CẢ HAI · {str(spx['regime']).upper()}", regime_col((spx["score"] + nas["score"]) / 2)
+    else:
+        stamp, scol = f"S&P {str(spx['regime']).upper()} · NASDAQ {str(nas['regime']).upper()}", "#f59e0b"
+    tape = [(f"S&P 500 {spx['score']:+.1f}", spx["score"]), (f"NASDAQ {nas['score']:+.1f}", nas["score"])]
+    tape += [(f"{l} {v:+.2f}", v) for l, v in sorted(tot.items(), key=lambda kv: -abs(kv[1]))[:4]]
+    tape += [(f"GEX {ix['ticker']} ${ix['gamma']['net_gex_m']:,.0f}M", ix["gamma"]["net_gex_m"]) for ix in (spx, nas)]
+    return title, eb, stamp, scol, tape
+
+
 def scene_hook():
     st, en = SCENES[0][1], SCENES[0][2]
     dur = round(en - st, 3)
@@ -151,39 +186,55 @@ def scene_hook():
                 f'<div class="hk-gb"><div class="hk-gmk" style="left:{pos:.1f}%;"></div></div>'
                 f'<div class="hk-gs mono">/ 100</div></div>')
     dv = D.get("divergence_tag") or ""
+    title, eb, stamp, scol, tape = hook_texts()
+    tape_html = "".join(f'<span style="color:{"#f87171" if v < 0 else "#4ade80"};">{esc(t)}</span><i>·</i>' for t, v in tape)
     css = f"""
+.hk-tape{{position:absolute;top:618px;left:60px;width:820px;height:46px;overflow:hidden;clip-path:inset(0);border-top:1px solid rgba(56,189,248,.35);border-bottom:1px solid rgba(56,189,248,.35);background:rgba(3,7,18,.6);}}
+.hk-tape .run{{position:absolute;left:0;top:7px;white-space:nowrap;font-family:'JBM';font-weight:800;font-size:24px;letter-spacing:1px;}}
+.hk-tape i{{font-style:normal;color:#475569;margin:0 16px;}}
+.hk-stamp{{position:absolute;top:966px;left:60px;right:192px;text-align:center;}}
+.hk-stamp span{{display:inline-block;transform:rotate(-4deg);padding:9px 26px;border:5px double {scol};border-radius:12px;background:rgba(3,7,18,.9);box-shadow:0 10px 36px rgba(0,0,0,.6),0 0 30px {scol}77;font-family:'JBM';font-weight:800;font-size:32px;letter-spacing:2px;color:#fff;white-space:nowrap;}}
 .hk-eyebrow{{position:absolute;top:250px;left:0;right:0;display:flex;justify-content:center;}}
 .hk-eyebrow span{{background:linear-gradient(135deg,#38bdf8,#6366f1);color:#fff;font-weight:900;font-size:27px;letter-spacing:3px;padding:14px 32px;border-radius:99px;box-shadow:0 10px 40px rgba(99,102,241,.45);}}
 .hk-title{{position:absolute;top:360px;left:60px;right:60px;text-align:center;}}
 .hk-title h1{{font-size:62px;font-weight:900;line-height:1.14;letter-spacing:-1px;}}
 .hk-date{{position:absolute;top:560px;left:0;right:0;text-align:center;}}
 .hk-date span{{font-family:'JBM';font-weight:800;font-size:27px;color:#7dd3fc;border:2px solid rgba(56,189,248,.45);padding:8px 24px;border-radius:99px;background:rgba(56,189,248,.08);letter-spacing:2px;}}
-.hk-g{{position:absolute;top:660px;text-align:center;}}
+.hk-g{{position:absolute;top:680px;text-align:center;}}
 .hk-gn{{font-size:40px;font-weight:900;letter-spacing:1px;}}
 .hk-gr{{margin-top:4px;font-size:25px;font-weight:800;letter-spacing:3px;color:#94a3b8;}}
 .hk-gv{{font-family:'JBM';font-weight:800;font-size:104px;line-height:1.1;}}
 .hk-gb{{position:relative;margin:6px auto 0;width:420px;height:14px;border-radius:99px;background:linear-gradient(90deg,#ef4444,#f59e0b 50%,#22c55e);}}
 .hk-gmk{{position:absolute;top:-12px;width:9px;height:38px;margin-left:-4px;border-radius:5px;background:#fff;box-shadow:0 0 16px #fff;}}
 .hk-gs{{margin-top:12px;font-size:24px;color:#64748b;}}
-.hk-dv{{position:absolute;top:1010px;left:70px;right:70px;text-align:center;font-size:30px;font-weight:800;line-height:1.35;padding:20px 26px;border-radius:20px;border:2px solid rgba(251,191,36,.5);background:rgba(251,191,36,.10);color:#fde68a;}}
+.hk-dv{{position:absolute;top:1052px;left:70px;right:70px;text-align:center;font-size:30px;font-weight:800;line-height:1.35;padding:20px 26px;border-radius:20px;border:2px solid rgba(251,191,36,.5);background:rgba(251,191,36,.10);color:#fde68a;}}
 .hk-dv b{{color:#fff;}}
 """
     body = f"""
 <div class="hk-stage" id="hk-stage">
-  <div class="hk-eyebrow"><span>{esc(D.get('eyebrow') or '⚡ BIAS ĐỊNH LƯỢNG · CHỨNG KHOÁN MỸ')}</span></div>
-  <div class="hk-title"><h1>{D.get('title_html','BIAS CHỨNG KHOÁN MỸ')}</h1></div>
+  <div class="hk-eyebrow"><span>{esc(eb)}</span></div>
+  <div class="hk-title"><h1>{title}</h1></div>
+  <div class="hk-tape" id="hk-tape"><div class="run" id="hk-run">{tape_html}{tape_html}</div></div>
   <div class="hk-date"><span>{esc(D.get('date_prefix') or 'PHIÊN')} {esc(D['date'])}</span></div>
   {gauge(spx, 290)}
   {gauge(nas, 790)}
   <div class="hk-dv" id="hk-dv">{dv}</div>
+  <div class="hk-stamp" id="hk-stamp"><span>{esc(stamp)}</span></div>
 </div>"""
     t_spx = tline(0, 0.35, st); t_nas = tline(0, 0.6, st); t_dv = tline(0, 0.86, st)
     js = f"""
 gsap.set('#hk-dv', {{opacity:0}});
 tl.fromTo('#hk-spx', {{scale:1.25, opacity:0}}, {{scale:1, opacity:1, duration:0.45, ease:'back.out(1.7)', immediateRender:false}}, {t_spx});
-counter('#hk-spx', 0, {spx['score']}, {t_spx}, 0.55, 1, '{'+' if spx['score']>0 else ''}', '');
 tl.fromTo('#hk-nas', {{scale:1.25, opacity:0}}, {{scale:1, opacity:1, duration:0.45, ease:'back.out(1.7)', immediateRender:false}}, {t_nas});
-counter('#hk-nas', 0, {nas['score']}, {t_nas}, 0.55, 1, '{'+' if nas['score']>0 else ''}', '');
+// băng điện tử chạy ngang (tuyến tính) — nhiễu sóng + tách màu RGB khi số liệu đập vào
+tl.fromTo('#hk-run', {{x:0}}, {{x:-900, duration:{dur:.3f}, ease:'none'}}, 0);
+tl.fromTo('#hk-tape', {{x:0, skewX:0}}, {{x:7, skewX:-8, duration:0.03, repeat:5, yoyo:true, ease:'none', immediateRender:false}}, {t_nas + 0.5});
+tl.set('#hk-tape', {{x:0, skewX:0}}, {t_nas + 0.68});
+tl.fromTo('#hk-spx, #hk-nas', {{textShadow:'-4px 0 rgba(255,0,60,.9), 4px 0 rgba(0,229,255,.9)'}}, {{textShadow:'0px 0 rgba(255,0,60,0), 0px 0 rgba(0,229,255,0)', duration:0.12, ease:'none', immediateRender:false}}, {t_nas + 0.45});
+// con dấu sự kiện thật đóng thụp + rung sân khấu
+tl.fromTo('#hk-stamp', {{opacity:0, scale:2.6, rotation:-12}}, {{opacity:1, scale:1, rotation:0, duration:0.2, ease:'power4.out', immediateRender:false}}, {t_nas + 0.5});
+tl.fromTo('#hk-stage', {{x:-8, y:3}}, {{x:8, y:-3, duration:0.04, repeat:4, yoyo:true, ease:'none', immediateRender:false}}, {t_nas + 0.66});
+tl.set('#hk-stage', {{x:0, y:0}}, {t_nas + 0.86});
 tl.fromTo('#hk-dv', {{opacity:0, y:30, filter:'blur(8px)'}}, {{opacity:1, y:0, filter:'blur(0px)', duration:0.45, ease:'expo.out', immediateRender:false}}, {t_dv});
 tl.to('#hk-stage', {{opacity:0, filter:'blur(10px)', scale:0.96, duration:0.28, ease:'power3.in'}}, {dur - 0.3});
 """
