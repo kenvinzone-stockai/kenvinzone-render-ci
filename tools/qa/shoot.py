@@ -40,7 +40,7 @@ with sync_playwright() as p:
     pg.goto(f"http://127.0.0.1:{port}/index.html"); meta = pg.evaluate(JS)
     sc = {m[0]: (m[1], m[2]) for m in meta}
     for spec in sys.argv[3:]:
-        m = re.fullmatch(r"(s\d)@([\d.]+)", spec)
+        m = re.fullmatch(r"([A-Za-z][\w-]*)@([\d.]+)", spec)
         t = sc[m.group(1)][0] + sc[m.group(1)][1] * float(m.group(2)) if m else float(spec)
         pg.evaluate(f"seekAll({t})"); pg.wait_for_timeout(60)
         pg.screenshot(path=str(outd / f"{spec.replace('@','_')}.png"))

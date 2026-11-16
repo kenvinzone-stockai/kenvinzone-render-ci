@@ -245,8 +245,12 @@ def scene_hook():
     js = f"""
 gsap.set('#hk-stage .hk-pt, #hk-tag', {{opacity:0}});
 // score is on screen from frame 0 (thumbnail = hook). Punch on the spoken number.
-tl.fromTo('#hk-num', {{scale:1}}, {{scale:1.14, duration:0.18, ease:'power3.out', immediateRender:false}}, {t_score});
-tl.to('#hk-num', {{scale:1, color:'{TCOL}', duration:0.5, ease:'expo.out'}}, {t_score + 0.18});
+// "đóng dấu lại": phồng → đập xuống + rung khung + viền tấm tiêu đề loé màu xu hướng
+tl.fromTo('#hk-num', {{scale:1}}, {{scale:1.34, duration:0.12, ease:'power2.out', immediateRender:false}}, {t_score});
+tl.to('#hk-num', {{scale:1, color:'{TCOL}', duration:0.24, ease:'back.out(3)'}}, {t_score + 0.12});
+tl.fromTo('#hk-stage', {{x:-6}}, {{x:6, duration:0.05, repeat:5, yoyo:true, ease:'none', immediateRender:false}}, {t_score + 0.12});
+tl.set('#hk-stage', {{x:0}}, {t_score + 0.42});
+tl.fromTo('.hk-plate', {{boxShadow:'0 0 0px {TCOL}'}}, {{boxShadow:'0 0 60px {TCOL}', duration:0.3, yoyo:true, repeat:1, ease:'power2.out', immediateRender:false}}, {t_score + 0.12});
 tl.fromTo('#hk-mk', {{x:0}}, {{x:{14 if up else -14}, duration:0.25, ease:'power2.out', yoyo:true, repeat:3, immediateRender:false}}, {t_score});
 // 3 sessions in a row: the line draws through the points
 tl.fromTo('#hk-line', {{strokeDashoffset:1000}}, {{strokeDashoffset:0, duration:1.4, ease:'power2.inOut', immediateRender:false}}, {t_trend});
@@ -324,6 +328,9 @@ tl.fromTo('#fr-axis', {{scaleY:0}}, {{scaleY:1, duration:0.8, ease:'power2.inOut
 tl.fromTo('#fr-sl', {{opacity:0, x:30}}, {{opacity:1, x:0, duration:0.4, ease:'expo.out'}}, 0.6);
 {''.join(js_rows)}
 tl.fromTo('#fr-big', {{opacity:0, scale:0.6}}, {{opacity:1, scale:1, duration:0.35, ease:'back.out(2)', immediateRender:false}}, {at(rows[big]['key'], st) + 0.7});
+// cán cân lệch trọng tâm về phía lực lớn nhất (âm → nghiêng trái, dương → phải)
+tl.to('#fr-axis', {{rotation:{-2.5 if rows[big].get("value", 0) < 0 else 2.5}, transformOrigin:'50% 100%', duration:0.6, ease:'power2.out'}}, {at(rows[big]['key'], st) + 0.5});
+tl.fromTo('#fr-bar{big}', {{filter:'brightness(1)'}}, {{filter:'brightness(1.6)', duration:0.35, yoyo:true, repeat:3, ease:'sine.inOut', immediateRender:false}}, {at(rows[big]['key'], st) + 0.9});
 tl.fromTo('#fr-sr', {{opacity:0, x:-30}}, {{opacity:1, x:0, duration:0.4, ease:'expo.out', immediateRender:false}}, {t_counter});
 tl.fromTo('#fr-card', {{opacity:0, y:40, filter:'blur(8px)'}}, {{opacity:1, y:0, filter:'blur(0px)', duration:0.45, ease:'expo.out', immediateRender:false}}, {t_stress});
 tl.to('#fr-stage', {{opacity:0, y:-120, filter:'blur(14px)', duration:0.3, ease:'power3.in'}}, {dur - 0.32});
@@ -414,6 +421,7 @@ def scene_gamma():
 .gm-x{{color:#fde68a !important;margin-left:8px;}}
 .gm-zone{{position:absolute;left:{x0}px;width:{x1-x0}px;}}
 .gm-spot{{position:absolute;left:{x0+770}px;top:{lv['spot']-22:.0f}px;width:44px;height:44px;margin-left:-22px;border-radius:50%;background:#fff;box-shadow:0 0 0 8px rgba(255,255,255,.18),0 0 40px #fff;}}
+.gm-ring{{position:absolute;left:{x0+770}px;top:{lv['spot']-22:.0f}px;width:44px;height:44px;margin-left:-22px;border-radius:50%;border:3px solid {"#f87171" if neg_gamma else "#fff"};opacity:0;}}
 .gm-spot-lab{{position:absolute;right:60px;top:{spot_lab_y:.0f}px;text-align:right;font-size:28px;font-weight:800;line-height:1.3;}}
 .gm-spot-lab .p{{font-family:'JBM';font-size:40px;color:#fff;}}
 .gm-spot-lab .x{{font-family:'JBM';font-size:34px;color:#fde68a;}}
@@ -432,6 +440,7 @@ def scene_gamma():
   {level('call', '#4ade80', 'CALL WALL', True)}
   {level('flip', '#fbbf24', 'GAMMA FLIP', True)}
   {level('put', '#f87171', 'PUT WALL', False)}
+  <div class="gm-ring" id="gm-ring0"></div><div class="gm-ring" id="gm-ring1"></div>
   <div class="gm-spot" id="gm-spot"></div>
   <div class="gm-spot-lab" id="gm-spot-lab">GIÁ HIỆN TẠI<br/>{('<span class="p">GLD ' + format(g['spot']['gld'], 'g') + '</span><br/>') if g['spot'].get('gld') not in (None, '') else ''}<span class="x" id="gm-spotx">{'≈ ' if g['spot'].get('gld') not in (None, '') else ''}{g['spot']['xau']:,.1f} XAUUSD</span></div>
   <div class="gm-vtag" id="gm-vtag" style="color:{GCOL_SOFT};">{vtag_txt}</div>
@@ -457,6 +466,12 @@ lvl('flip', {t_flip});
 tl.fromTo('#gm-zneg', {{opacity:0}}, {{opacity:1, duration:0.6, immediateRender:false}}, {t_flip + 0.7});
 tl.fromTo('#gm-zpos', {{opacity:0}}, {{opacity:1, duration:0.6, immediateRender:false}}, {t_flip + 0.9});
 lvl('put', {t_put});
+// Put Wall chớp đỏ 3 lần như rào chắn báo động
+tl.fromTo('#gm-put-ln', {{opacity:1}}, {{opacity:0.15, duration:0.09, repeat:5, yoyo:true, ease:'none', immediateRender:false}}, {t_put + 0.75});
+// sóng xung kích tỏa từ điểm giá — nhịp cố định trên timeline (tất định, không dùng CSS animation)
+for (let k = 0, t0 = {t_spot} + 0.95; t0 < {dur} - 0.9 && k < 12; k++, t0 += 0.7) {{
+  tl.fromTo('#gm-ring' + (k % 2), {{scale:0.6, opacity:0.9}}, {{scale:2.8, opacity:0, duration:1.3, ease:'power1.out', immediateRender:false}}, t0);
+}}
 lvl('call', {t_call});
 tl.fromTo('#gm-vpath', {{strokeDashoffset:4000}}, {{strokeDashoffset:0, duration:3.2, ease:'power1.inOut', immediateRender:false}}, {t_vol});
 tl.fromTo('#gm-vtag', {{opacity:0, y:20}}, {{opacity:1, y:0, duration:0.4, ease:'expo.out', immediateRender:false}}, {t_vol + 0.4});
