@@ -246,7 +246,7 @@ def scene_index(key, line_hdr, line_gamma):
 .ix-nm{{font-size:24px;font-weight:700;color:#cbd5e1;}}
 .ix-vl{{font-size:30px;font-weight:800;margin-left:8px;}}
 .ix-side{{position:absolute;top:430px;font-size:22px;font-weight:800;letter-spacing:2px;}}
-.ix-gp{{position:absolute;left:60px;right:60px;top:{top0+6*rh+20}px;border-radius:22px;border:2px solid {gcol}88;background:linear-gradient(135deg,{gcol}18,rgba(15,23,42,.6));padding:22px 26px;}}
+.ix-gp{{position:absolute;left:60px;right:180px;top:{top0+6*rh+20}px;border-radius:22px;border:2px solid {gcol}88;background:linear-gradient(135deg,{gcol}18,rgba(15,23,42,.6));padding:22px 26px;}}
 .ix-gp .row1{{display:flex;justify-content:space-between;align-items:center;}}
 .ix-gp .gk{{font-size:30px;font-weight:900;color:{gcol};letter-spacing:1px;}}
 .ix-gp .gex{{font-family:'JBM';font-weight:800;font-size:34px;color:{gcol};}}
@@ -403,8 +403,8 @@ def captions():
         js.append(f"tl.to('#cg{gi} .cpill', {{opacity:0, duration:0.1, ease:'power2.in'}}, {e2 - 0.1});"
                   f"tl.set('#cg{gi}', {{opacity:0, visibility:'hidden'}}, {e2});")
     css = """
-.cg{position:absolute;left:0;right:0;top:1205px;text-align:center;opacity:0;visibility:hidden;}
-.cpill{display:inline-block;max-width:960px;padding:14px 26px;border-radius:22px;background:rgba(2,6,23,.78);border:1px solid rgba(255,255,255,.08);font-size:44px;font-weight:800;line-height:1.35;color:#cbd5e1;}
+.cg{position:absolute;left:40px;right:192px;top:1205px;text-align:center;opacity:0;visibility:hidden;}
+.cpill{display:inline-block;max-width:848px;padding:14px 26px;border-radius:22px;background:rgba(2,6,23,.78);border:1px solid rgba(255,255,255,.08);font-size:44px;font-weight:800;line-height:1.35;color:#cbd5e1;}
 .cw{display:inline-block;padding:0 6px;border-radius:10px;}
 """
     return "captions", TOTAL, scene_file("captions", TOTAL, css, "\n".join(groups), "\n".join(js))

@@ -394,7 +394,7 @@ def s4():
     html_cards, js = [], []
     for i, c in enumerate(cards):
         y = 450 + i * 225
-        html_cards.append(f'<div class="s4-c" id="s4-c{i}" style="top:{y}px;"><div class="s4-n mono">{i+1}</div><div class="s4-big mono">{esc(c.get("big", ""))}</div>'
+        html_cards.append(f'<div class="s4-c" id="s4-c{i}" style="top:{y}px;"><div class="s4-n mono">{i+1}</div><div class="s4-big mono" style="font-size:{min(44, int(300 / (max(1, len(str(c.get("big", "")))) * 0.6)))}px;">{esc(c.get("big", ""))}</div>'
                           f'<div class="s4-tx"><div class="h">{esc(c["title"])}</div><div class="d">{esc(c["text"])}</div></div></div>')
         t = lt(cid, B(4, i + 1, 0.1))
         js.append(f"tl.fromTo('#s4-c{i}', {{opacity:0, x:{-160 if i % 2 == 0 else 160}}}, {{opacity:1, x:0, duration:0.55, ease:'expo.out', immediateRender:false}}, {t});")
@@ -437,7 +437,7 @@ def s5():
     css = """
 .s5-pole{position:absolute;left:60px;top:445px;width:170px;height:700px;border-radius:40px;background:linear-gradient(180deg,#1e293b,#0f172a);border:3px solid #334155;box-shadow:inset 0 0 30px rgba(0,0,0,.6);}
 .s5-lamp{position:absolute;left:85px;width:120px;height:120px;border-radius:50%;}
-.s5-c{position:absolute;left:260px;right:60px;height:205px;border:2px solid;border-radius:24px;background:rgba(15,23,42,.72);padding:22px 26px;}
+.s5-c{position:absolute;left:236px;right:180px;height:205px;border:2px solid;border-radius:24px;background:rgba(15,23,42,.72);padding:22px 26px;}
 .s5-c .tg{position:absolute;right:20px;top:-18px;font-weight:900;font-size:24px;letter-spacing:2px;color:#0b0f19;padding:6px 14px;border-radius:10px;}
 .s5-c .h{font-size:34px;font-weight:900;line-height:1.2;} .s5-c .d{margin-top:8px;font-size:29px;font-weight:600;line-height:1.35;color:#e2e8f0;}
 """
@@ -575,8 +575,8 @@ def captions():
         js.append(f"tl.to('#cg{gi} .cpill', {{opacity:0, duration:0.1, ease:'power2.in'}}, {e2 - 0.1});"
                   f"tl.set('#cg{gi}', {{opacity:0, visibility:'hidden'}}, {e2});")
     css = """
-.cg{position:absolute;left:0;right:0;top:1190px;text-align:center;opacity:0;visibility:hidden;}
-.cpill{display:inline-block;max-width:960px;padding:14px 26px;border-radius:22px;background:rgba(2,6,23,.72);border:1px solid rgba(255,255,255,.08);font-size:44px;font-weight:800;line-height:1.35;color:#cbd5e1;}
+.cg{position:absolute;left:40px;right:192px;top:1190px;text-align:center;opacity:0;visibility:hidden;}
+.cpill{display:inline-block;max-width:848px;padding:14px 26px;border-radius:22px;background:rgba(2,6,23,.72);border:1px solid rgba(255,255,255,.08);font-size:44px;font-weight:800;line-height:1.35;color:#cbd5e1;}
 .cw{display:inline-block;padding:0 6px;border-radius:10px;}
 """
     dur = TOTAL

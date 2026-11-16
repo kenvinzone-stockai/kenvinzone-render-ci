@@ -192,7 +192,7 @@ def scene_hook():
     up = len(hist) < 2 or hist[-1][1] >= hist[-2][1]
     TCOL = "#4ade80" if up else "#f87171"       # today's colour: green when the score improved
     # mini trend geometry
-    xs = [190, 540, 890]
+    xs = [170, 480, 790]          # điểm cuối + nhãn nằm trước cột nút phải Shorts (x ≤ 888)
     vals = [h[1] for h in hist]
     lo, hi = min(vals) - 1.0, max(vals) + 1.0
     ys = [1095 - (v - lo) / (hi - lo) * 0 for v in vals]  # placeholder
@@ -484,7 +484,7 @@ def scene_scen():
             f"counter('#sc-p{i}', 0, {s['pct']}, {t}, 1.2, 0, '', '%');"
             f"tl.fromTo('#sc-f{i}', {{scaleX:0}}, {{scaleX:1, duration:1.2, ease:'power3.out', immediateRender:false}}, {t});")
     css = """
-.sc-card{position:absolute;left:60px;right:60px;height:215px;border:2px solid;border-radius:26px;}
+.sc-card{position:absolute;left:60px;right:180px;height:215px;border:2px solid;border-radius:26px;}
 .sc-pct{position:absolute;left:30px;top:44px;width:210px;font-size:88px;font-weight:800;}
 .sc-txt{position:absolute;left:250px;right:28px;top:26px;}
 .sc-name{font-size:33px;font-weight:900;text-transform:uppercase;line-height:1.15;}
@@ -586,8 +586,8 @@ def captions():
         js.append(f"tl.to('#cg{gi} .cpill', {{opacity:0, duration:0.1, ease:'power2.in'}}, {e2 - 0.1});"
                   f"tl.set('#cg{gi}', {{opacity:0, visibility:'hidden'}}, {e2});")
     css = """
-.cg{position:absolute;left:0;right:0;top:1190px;text-align:center;opacity:0;visibility:hidden;}
-.cpill{display:inline-block;max-width:960px;padding:14px 26px;border-radius:22px;background:rgba(2,6,23,.72);border:1px solid rgba(255,255,255,.08);font-size:44px;font-weight:800;line-height:1.35;color:#cbd5e1;}
+.cg{position:absolute;left:40px;right:192px;top:1190px;text-align:center;opacity:0;visibility:hidden;}
+.cpill{display:inline-block;max-width:848px;padding:14px 26px;border-radius:22px;background:rgba(2,6,23,.72);border:1px solid rgba(255,255,255,.08);font-size:44px;font-weight:800;line-height:1.35;color:#cbd5e1;}
 .cw{display:inline-block;padding:0 6px;border-radius:10px;}
 """
     dur = TOTAL

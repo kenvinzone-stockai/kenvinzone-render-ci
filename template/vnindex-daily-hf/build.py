@@ -187,8 +187,8 @@ def scene_cover():
 .cv-plate h1{{font-size:{_fa}px;font-weight:900;line-height:1.16;letter-spacing:-1px;text-transform:uppercase;padding-top:.14em;white-space:nowrap;}}
 .cv-sub{{position:absolute;top:790px;left:60px;right:60px;text-align:center;font-size:{_subfs}px;font-weight:700;color:#e2e8f0;white-space:nowrap;}}
 .cv-sub b{{font-family:'JBM';color:{TH['l']};}}
-.cv-chips{{position:absolute;top:870px;left:40px;right:40px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}}
-.cv-chip{{font-family:'JBM';font-weight:800;font-size:32px;color:#e2e8f0;padding:12px 24px;border-radius:99px;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.14);}}
+.cv-chips{{position:absolute;top:870px;left:40px;right:192px;display:flex;gap:12px;justify-content:center;flex-wrap:nowrap;white-space:nowrap;}}
+.cv-chip{{font-family:'JBM';font-weight:800;font-size:28px;color:#e2e8f0;padding:10px 18px;border-radius:99px;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.14);}}
 .cv-chip b{{color:#fff;}} .cv-chip .i{{margin-right:8px;}}
 .cv-chip.hot{{background:rgba({TH['glow']},.18);border-color:rgba({TH['glow']},.6);color:{TH['l']};}}
 .cv-cta{{position:absolute;top:985px;left:60px;right:60px;text-align:center;font-size:40px;font-weight:900;color:{TH['l']};}}
@@ -235,7 +235,7 @@ def scene_score():
 .sc-delta{{position:absolute;left:770px;top:395px;font-family:'JBM';font-weight:800;font-size:52px;color:#fff;background:{TONE['down'] if delta < 0 else TONE['up']};padding:6px 20px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.4);}}
 .sc-status{{position:absolute;left:0;right:0;top:785px;text-align:center;}}
 .sc-status span{{display:inline-block;font-weight:900;font-size:32px;letter-spacing:2px;color:{TH['l']};border:2px solid {TH['c']};background:rgba({TH['glow']},.12);padding:8px 26px;border-radius:99px;}}
-.sc-row{{position:absolute;left:70px;right:70px;height:70px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.08);}}
+.sc-row{{position:absolute;left:70px;right:192px;height:70px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.08);}}
 .sc-row .k{{width:250px;font-size:32px;font-weight:700;color:#cbd5e1;}}
 .sc-row .v{{flex:1;font-size:36px;color:#94a3b8;}} .sc-row .v b{{color:#fff;}} .sc-row .v i{{font-style:normal;color:#64748b;}}
 .sc-row .d{{font-size:32px;font-weight:800;text-align:right;}}
@@ -392,7 +392,7 @@ def scene_subs():
             f"tl.fromTo('#sb-b{i}', {{scaleX:1}}, {{scaleX:{(wpm / wam if wam else 1):.4f}, duration:0.9, ease:'power3.inOut', immediateRender:false}}, {t + 0.45});"
             f"counter('#sb-v{i}', {s['am']}, {s['pm']}, {t + 0.45}, 0.9, 0, '', '');")
     css = ACC_CSS + f"""
-.sb-row{{position:absolute;left:70px;right:70px;height:110px;}}
+.sb-row{{position:absolute;left:70px;right:192px;height:110px;}}
 .sb-h{{display:flex;align-items:baseline;justify-content:space-between;}}
 .sb-h .k{{font-size:34px;font-weight:800;color:#e2e8f0;width:300px;}}
 .sb-h .v{{flex:1;font-size:32px;color:#94a3b8;}} .sb-h .v b{{color:#fff;font-size:40px;}} .sb-h .v i{{font-style:normal;font-size:28px;color:#94a3b8;}}
@@ -624,8 +624,8 @@ def captions():
         js.append(f"tl.to('#cg{gi} .cpill', {{opacity:0, duration:0.1, ease:'power2.in'}}, {e2 - 0.1});"
                   f"tl.set('#cg{gi}', {{opacity:0, visibility:'hidden'}}, {e2});")
     css = """
-.cg{position:absolute;left:0;right:0;top:1190px;text-align:center;opacity:0;visibility:hidden;}
-.cpill{display:inline-block;max-width:960px;padding:14px 26px;border-radius:22px;background:rgba(2,6,23,.72);border:1px solid rgba(255,255,255,.08);font-size:44px;font-weight:800;line-height:1.35;color:#cbd5e1;}
+.cg{position:absolute;left:40px;right:192px;top:1190px;text-align:center;opacity:0;visibility:hidden;}
+.cpill{display:inline-block;max-width:848px;padding:14px 26px;border-radius:22px;background:rgba(2,6,23,.72);border:1px solid rgba(255,255,255,.08);font-size:44px;font-weight:800;line-height:1.35;color:#cbd5e1;}
 .cw{display:inline-block;padding:0 6px;border-radius:10px;}
 """
     dur = TOTAL

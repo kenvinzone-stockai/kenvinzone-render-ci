@@ -234,7 +234,8 @@ def run_gate(slide_dir: Path, outdir: Path, samples: int) -> dict:
                     a = _inter(tx, {"x": x0, "y": y0, "w": x1 - x0, "h": y1 - y0})
                     if a > 0.35 * tx["w"] * tx["h"]:
                         issues.append({"level": "CẢNH BÁO", "kind": "SAFE", "at": label, "text": tx["text"],
-                                       "detail": f"vùng {name} (y={tx['y']:.0f}, x={tx['x']:.0f}–{tx['x'] + tx['w']:.0f})", "comp": tx["comp"]})
+                                       "detail": f"vùng {name} (y={tx['y']:.0f}, x={tx['x']:.0f}–{tx['x'] + tx['w']:.0f})", "comp": tx["comp"],
+                                       "css": (tx["tag"] + " < " + tx["anc"])[:160]})
                         bad.append(tx)
                         break
             # OVERLAP — co khung dòng đơn về thân chữ (~0,72 × cỡ chữ) để bỏ phần đệm dòng cao
@@ -258,7 +259,8 @@ def run_gate(slide_dir: Path, outdir: Path, samples: int) -> dict:
                     if ix > 0.3 * min(a["w"], c["w"]) and iy > 0.4 * min(a["h"], c["h"]):
                         hit.add((a["qa"], c["qa"]))
                         issues.append({"level": "LỖI", "kind": "OVERLAP", "at": label,
-                                       "text": f"「{a['text']}」 ⟂ 「{c['text']}」", "detail": f"{a['comp']} / {c['comp']}", "comp": a["comp"]})
+                                       "text": f"「{a['text']}」 ⟂ 「{c['text']}」", "detail": f"{a['comp']} / {c['comp']}", "comp": a["comp"],
+                                       "css": (a["tag"] + " | " + c["tag"])[:160]})
                         bad += [a, c]
             frames.append((label, shot, bad))
         for e in js_errors:

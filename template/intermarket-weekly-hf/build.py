@@ -290,7 +290,7 @@ def scene_assets():
     css = """
 .iv-ttl{position:absolute;left:60px;top:250px;font-size:34px;font-weight:900;letter-spacing:1px;}
 .iv-ttl span{color:#7dd3fc;}
-.iv-card{position:absolute;left:60px;right:60px;height:218px;border:2px solid;border-radius:24px;background:rgba(15,23,42,.5);padding:22px 30px;}
+.iv-card{position:absolute;left:60px;right:180px;height:218px;border:2px solid;border-radius:24px;background:rgba(15,23,42,.5);padding:22px 30px;}
 .iv-hd{display:flex;align-items:center;}
 .iv-tk{font-size:23px;font-weight:900;color:#fff;padding:6px 14px;border-radius:9px;letter-spacing:1px;}
 .iv-nm{margin-left:12px;font-size:38px;font-weight:900;}
@@ -437,8 +437,8 @@ def captions():
         js.append(f"tl.to('#cg{gi} .cpill', {{opacity:0, duration:0.1, ease:'power2.in'}}, {e2 - 0.1});"
                   f"tl.set('#cg{gi}', {{opacity:0, visibility:'hidden'}}, {e2});")
     css = """
-.cg{position:absolute;left:0;right:0;top:1205px;text-align:center;opacity:0;visibility:hidden;}
-.cpill{display:inline-block;max-width:960px;padding:14px 26px;border-radius:22px;background:rgba(2,6,23,.78);border:1px solid rgba(255,255,255,.08);font-size:44px;font-weight:800;line-height:1.35;color:#cbd5e1;}
+.cg{position:absolute;left:40px;right:192px;top:1205px;text-align:center;opacity:0;visibility:hidden;}
+.cpill{display:inline-block;max-width:848px;padding:14px 26px;border-radius:22px;background:rgba(2,6,23,.78);border:1px solid rgba(255,255,255,.08);font-size:44px;font-weight:800;line-height:1.35;color:#cbd5e1;}
 .cw{display:inline-block;padding:0 6px;border-radius:10px;}
 """
     return "captions", TOTAL, scene_file("captions", TOTAL, css, "\n".join(groups), "\n".join(js))
