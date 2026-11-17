@@ -1,0 +1,198 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "17/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "CafeF",
+    "short": "CafeF",
+    "author": "Mai Chi",
+    "headline": "Phiên 17/11: Khối ngoại tiếp đà bán ròng, xả mạnh 2 cổ phiếu bluechips",
+    "date": "17/11/2026",
+    "url": "cafef.vn/phien-17-11-khoi-ngoai-tiep-da-ban-rong-xa-manh-2-co-phieu-bluechips-1882611171539393.chn"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "Khối Ngoại Xả Ròng",
+      "Hai Trụ Cột Bluechip"
+    ],
+    "sub": "Áp lực rút vốn đè nặng lên thị trường",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "Bán ròng 383 tỷ",
+        "tone": "down"
+      },
+      {
+        "icon": "↳",
+        "text": "Xả FPT & VCB",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "Gom mạnh MSN",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Thị trường chìm trong sắc đỏ khi khối ngoại <mark>bán ròng gần bốn trăm tỷ đồng</mark>, tập trung rút mạnh ở các mã đầu ngành."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh chung",
+      "ảm đạm đến đâu?"
+    ],
+    "stats": [
+      {
+        "value": 383,
+        "decimals": 0,
+        "unit": "tỷ",
+        "label": "Bán ròng toàn thị trường",
+        "badge": "HOSE chịu 360 tỷ",
+        "tone": "gold",
+        "beat": 1
+      }
+    ],
+    "note": "VN-Index lùi sâu hơn 10 điểm giữa tâm lý thận trọng"
+  },
+  "s3": {
+    "title_lines": [
+      "Sự phân hóa",
+      "thể hiện ra sao?"
+    ],
+    "lead": "Tâm điểm cơ cấu danh mục ngoại",
+    "bars": [
+      {
+        "label": "FPT",
+        "display": "-146 tỷ",
+        "value": -146,
+        "beat": 1
+      },
+      {
+        "label": "VCB",
+        "display": "-103 tỷ",
+        "value": -103,
+        "beat": 1
+      },
+      {
+        "label": "MSN",
+        "display": "+147 tỷ",
+        "value": 147,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 249,
+      "suffix": " tỷ",
+      "text": "Tổng giá trị xả ở FPT và VCB",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Dòng tiền phân bổ",
+      "trên các sàn?"
+    ],
+    "cards": [
+      {
+        "big": "360 tỷ",
+        "title": "HOSE bán ròng",
+        "text": "Tập trung rút khỏi FPT, VCB và MBB"
+      },
+      {
+        "big": "13 tỷ",
+        "title": "HNX bán ròng",
+        "text": "Bán PVS mười chín tỷ nhưng gom ròng SHS"
+      },
+      {
+        "big": "10 tỷ",
+        "title": "UPCoM bán ròng",
+        "text": "Xả ACV sáu tỷ và mua nhẹ cổ phiếu TIN"
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Nhóm nào gom",
+      "mã nào bị xả?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "ĐƯỢC GOM",
+        "title": "Tiêu dùng & Điện",
+        "text": "MSN dẫn đầu nhận hơn một trăm bốn mươi tỷ"
+      },
+      {
+        "color": "yellow",
+        "tag": "GIAO PHỐI",
+        "title": "Thép & Chứng khoán",
+        "text": "HPG và SHS vẫn được dòng vốn ngoại nhặt rải rác"
+      },
+      {
+        "color": "red",
+        "tag": "CHỊU ÁP LỰC",
+        "title": "Công nghệ & Ngân hàng",
+        "text": "FPT cùng VCB gánh đợt rút vốn quyết liệt"
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Tín hiệu đèn báo",
+      "cho thị trường?"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh",
+        "text": "Dòng vốn ngoại không rút sạch mà đảo sang bán lẻ",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng",
+        "text": "Thanh khoản chung còn dè dặt quanh mười lăm nghìn tỷ",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ",
+        "text": "Các trụ cột lớn bị xả mạnh gây rung lắc chỉ số",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Tác động ra sao",
+      "đến VN-Index?"
+    ],
+    "items": [
+      {
+        "icon": "warn",
+        "title": "Tâm lý đè nặng",
+        "text": "Trụ giảm khiến bảng điện lan tỏa sắc đỏ",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Điểm tựa dòng tiền nội",
+        "text": "Cần lực cầu trong nước cân lại đà bán ròng",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Rủi ro ngắn hạn",
+        "text": "Khối ngoại bán ròng liên tục làm chậm nhịp phục hồi",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Hiểu rõ hướng đi của dòng tiền ngoại để giữ vững kỷ luật danh mục.",
+    "cta": "Theo dõi để giải mã tin tiếp theo"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
