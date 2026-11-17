@@ -1,0 +1,67 @@
+=== DECK: giai-ma-tin-tuc-chungkhoantangnhedongtienvan-16-11 | template=giaima-tin-hf | preset giọng=giai-ma-nganh ===
+  Đã tái tạo config/tts.json (giọng clone).
+  Đã tái tạo config/social-upload.json từ secret.
+=== [0/3] Cổng QA (zero-credit) ===
+  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
+QA giai-ma-tin-tuc-chungkhoantangnhedongtienvan-16-11 [giaima-tin-hf]: 27 khung · 0 lỗi · 0 cảnh báo → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-tin-tuc-chungkhoantangnhedongtienvan-16-11/output/qa
+  [phát âm] đã áp từ điển phiên âm cho giọng đọc (chữ hiển thị giữ nguyên).
+=== [1/3] Tạo giọng đọc (gemini) ===
+Full voiceover 160.96s · 83 quãng lặng · 9 dòng
+  ranh 1: ước   6.53s → lặng 6.64–7.33 (0.69s) cắt 6.98s
+  ranh 2: ước  25.58s → lặng 26.14–26.76 (0.63s) cắt 26.45s
+  ranh 3: ước  45.01s → lặng 45.67–46.35 (0.68s) cắt 46.01s
+  ranh 4: ước  61.61s → lặng 62.61–63.26 (0.65s) cắt 62.94s
+  ranh 5: ước  82.17s → lặng 86.16–86.65 (0.49s) cắt 86.41s
+  ranh 6: ước 108.86s → lặng 112.25–112.77 (0.53s) cắt 112.51s
+  ranh 7: ước 125.41s → lặng 127.11–127.61 (0.50s) cắt 127.36s
+  ranh 8: ước 143.64s → lặng 143.76–144.31 (0.55s) cắt 144.04s
+  → snap được 8/8 ranh giới vào quãng lặng
+Slide 1:    0.00s →    6.98s  = 6.98s  -> line_0.mp3
+Slide 2:    6.98s →   26.45s  = 19.47s  -> line_1.mp3
+Slide 3:   26.45s →   46.01s  = 19.55s  -> line_2.mp3
+Slide 4:   46.01s →   62.94s  = 16.93s  -> line_3.mp3
+Slide 5:   62.94s →   86.41s  = 23.47s  -> line_4.mp3
+Slide 6:   86.41s →  112.51s  = 26.10s  -> line_5.mp3
+Slide 7:  112.51s →  127.36s  = 14.85s  -> line_6.mp3
+Slide 8:  127.36s →  144.04s  = 16.68s  -> line_7.mp3
+Slide 9:  144.04s →  160.96s  = 16.92s  -> line_8.mp3
+Concatenated voiceover: 160.96s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-tin-tuc-chungkhoantangnhedongtienvan-16-11/output/voiceover_concat.mp3
+Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
+Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
+Sending full script to Gemini TTS: 9 slides, 3071 chars
+Full Gemini TTS saved: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-tin-tuc-chungkhoantangnhedongtienvan-16-11/output/gemini_full_voiceover.mp3
+
+=== Splitting full Gemini TTS voiceover ===
+=== [2/3] Render HyperFrames (30fps đầy đủ) ===
+=== HyperFrames (giaima-tin-hf): dung project tai /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-tin-tuc-chungkhoantangnhedongtienvan-16-11/output/hf ===
+  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
+=== HyperFrames: dung composition tu hf-data.json ===
+TOTAL 165.56 scenes [('s0', 0.0, 7.984), ('s1', 7.984, 19.469), ('s2', 27.453, 19.555), ('s3', 47.008, 16.929), ('s4', 63.937, 23.473), ('s5', 87.41, 26.103), ('s6', 113.513, 14.849), ('s7', 128.362, 16.676), ('s8', 145.038, 20.522), ('captions', 0, 165.56)]
+=== HyperFrames: render tung khung hinh (165.6s video) ===
+  Trinh duyet render: /home/runner/.cache/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux64/chrome-headless-shell
+  ◆  Rendering hf → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-tin-tuc-chungkhoantangnhedongtienvan-16-11/output/final_video.hf.mp4
+     30fps · high · auto workers (4 cores detected)
+     GPU: browser GPU (auto-detect)
+  [?25l│
+  ◒  Checking browser...
+  [1G[J◇  Browser: env
+  [?25h
+    Lint: 0 error(s), 2 warning(s) — run with --lint-verbose for full output.
+    Continuing render despite lint issues. Use --strict to block errors.
+  HyperFrames render 5%
+  HyperFrames render 20%
+  HyperFrames render 30%
+  HyperFrames render 40%
+  HyperFrames render 50%
+  HyperFrames render 60%
+  HyperFrames render 70%
+  HyperFrames render 80%
+  HyperFrames render 90%
+  ◇  /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-tin-tuc-chungkhoantangnhedongtienvan-16-11/output/final_video.hf.mp4
+     35.3 MB · 2m 45.6s video · rendered in 5m 26.7s
+     beginframe capture · software gpu · compile 2.0s · extract 0.0s · audio 5.1s · probe 0.3s · setup 2.0s · capture 5m 16.7s · encode (during capture) 5m 16.7s · assemble 0.8s
+Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-tin-tuc-chungkhoantangnhedongtienvan-16-11/output/final_video.mp4
+  Video: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/giai-ma-tin-tuc-chungkhoantangnhedongtienvan-16-11/output/final_video.mp4
+=== [3/3] Upload YouTube (privacy=private) ===
+{"ok": true, "platform": "youtube", "project": "giai-ma-tin-tuc-chungkhoantangnhedongtienvan-16-11", "video_id": "geuYDhqg_UA", "url": "https://youtu.be/geuYDhqg_UA", "studio_url": "https://studio.youtube.com/video/geuYDhqg_UA/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
+  Xong: https://youtu.be/geuYDhqg_UA
