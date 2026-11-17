@@ -1,0 +1,210 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "17/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "CafeF",
+    "short": "CafeF",
+    "author": "Ngọc Ly",
+    "headline": "Hơn 26.000 tỷ đồng vốn hóa “bốc hơi” khỏi nhóm thép từ đầu năm, chuyện gì đây?",
+    "date": "17/11/2026",
+    "url": "cafef.vn/hon-26000-ty-dong-von-hoa-boc-hoi-khoi-nhom-thep"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "Vốn hóa ngành thép",
+      "bốc hơi 26.000 tỷ"
+    ],
+    "sub": "Lợi nhuận phục hồi nhưng cổ phiếu lại liên tục sụt giảm",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "Vốn hóa -26.700 tỷ",
+        "tone": "down"
+      },
+      {
+        "icon": "↳",
+        "text": "HPG mất ~25.000 tỷ",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "LNST vẫn tăng vọt",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Hơn <mark>26.000 tỷ đồng</mark> vốn hóa thị trường biến mất khỏi nhóm thép từ đầu năm 2026, tạo nên nghịch lý lớn khi lợi nhuận nhiều doanh nghiệp vẫn tăng trưởng vượt trội."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh chung",
+      "suy giảm ra sao?"
+    ],
+    "stats": [
+      {
+        "value": 26700,
+        "decimals": 0,
+        "unit": "tỷ",
+        "label": "Vốn hóa 8 mã thép bốc hơi",
+        "badge": "Từ đầu năm 2026",
+        "tone": "gold",
+        "beat": 1
+      }
+    ],
+    "note": "Phần lớn cổ phiếu thép tiêu biểu đều ghi nhận mức giảm hai con số"
+  },
+  "s3": {
+    "title_lines": [
+      "Sự phân hóa",
+      "thể hiện thế nào?"
+    ],
+    "lead": "Sắc đỏ áp đảo toàn ngành",
+    "bars": [
+      {
+        "label": "TVN",
+        "display": "+29%",
+        "value": 29,
+        "beat": 1
+      },
+      {
+        "label": "NKG",
+        "display": "-9,3%",
+        "value": -9.3,
+        "beat": 1
+      },
+      {
+        "label": "HPG",
+        "display": "-10,7%",
+        "value": -10.7,
+        "beat": 2
+      },
+      {
+        "label": "HSG",
+        "display": "-12,1%",
+        "value": -12.1,
+        "beat": 2
+      },
+      {
+        "label": "SMC",
+        "display": "-28%",
+        "value": -28,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 25000,
+      "suffix": "tỷ",
+      "text": "Vốn hóa Hòa Phát sụt giảm",
+      "beat": 2
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Nghịch lý lớn",
+      "ở kết quả kinh doanh?"
+    ],
+    "cards": [
+      {
+        "big": "23.746 tỷ",
+        "title": "LNST 9 tháng Hòa Phát",
+        "text": "Tăng hơn gấp đôi cùng kỳ năm trước"
+      },
+      {
+        "big": "+22%",
+        "title": "Lợi nhuận Nam Kim",
+        "text": "Lũy kế 9 tháng đạt gần 252 tỷ đồng"
+      },
+      {
+        "big": "75 tỷ",
+        "title": "SMC đảo chiều có lãi",
+        "text": "Thoát lỗ lớn nhưng giá cổ phiếu vẫn giảm sâu"
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Bức tranh lợi nhuận",
+      "ba sắc thái khác biệt?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "TĂNG TỐC",
+        "title": "Hòa Phát bứt phá mạnh",
+        "text": "Hưởng lợi từ sản lượng tiêu thụ và mở rộng Dung Quất 2"
+      },
+      {
+        "color": "yellow",
+        "tag": "ĐI NGANG",
+        "title": "Hoa Sen chững lại",
+        "text": "Lãi quý ba giảm 36%, lũy kế 9 tháng dậm chân tại chỗ"
+      },
+      {
+        "color": "red",
+        "tag": "BẤT THƯỜNG",
+        "title": "TVN tăng nhờ tài chính",
+        "text": "Lãi đột biến chủ yếu đến từ thoái vốn và doanh thu phụ"
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Vì sao cổ phiếu",
+      "ngược dòng lợi nhuận?"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh",
+        "text": "Nội lực các doanh nghiệp đầu ngành đang hồi phục rất rõ rệt.",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng",
+        "text": "Dòng tiền lớn trên VN-Index vẫn tỏ ra thận trọng với chu kỳ thép.",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ",
+        "text": "Áp lực định giá và rủi ro biến động giá nguyên liệu còn tiềm ẩn.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Góc nhìn nào",
+      "cho nhà đầu tư F0?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Tách bạch kinh doanh và giá",
+        "text": "Cổ phiếu có độ trễ so với báo cáo tài chính",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Ưu tiên đầu ngành cốt lõi",
+        "text": "Chọn doanh nghiệp có lợi thế cạnh tranh bền vững",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Tránh đu bám lợi nhuận ảo",
+        "text": "Cẩn trọng với mức lãi đột biến nhờ thoái vốn",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Giá cổ phiếu giảm chưa hẳn là tin xấu nếu nội lực vẫn tiến lên",
+    "cta": "Theo dõi KenvinZone để đón xem bản tin tiếp theo"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
