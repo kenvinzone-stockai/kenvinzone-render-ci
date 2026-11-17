@@ -46,7 +46,7 @@ QUY TẮC BẤT BIẾN:
    - không hợp kiểu nào thì để "".
    hook.stamp = con dấu ≤24 ký tự IN HOA nêu SỰ KIỆN/CON SỐ THẬT trong bài (vd "BƠM 48.800 TỶ", "THANH KHOẢN -21%"); KHÔNG dùng giọng giật gân không có trong bài. hook.stamp_tone = "red" (tin xấu) | "green" (tin tốt) | "gold".
 13. CẢNH s3 có 3 kiểu (s3.mode): "bars" (mặc định, so sánh nhiều đơn vị bằng thanh), "vs" (đúng 2 phe đối đầu → s3.vs = 2 mục {"label","display","tone":"up|down","note":"≤40 ký tự","beat"}), "grid" (3–4 nhóm ngành → s3.grid = mục {"name":"≤14 ký tự","tickers":"MÃ · MÃ","display":"+18%","tone","beat"}). Chọn kiểu khớp nội dung; với "vs"/"grid" vẫn giữ "lead" và "callout".
-14. MẬT ĐỘ CHỮ: s6.chain[].text ≤ 60 ký tự, s7.items[].text ≤ 70 ký tự. Trong MỖI text của s6 và s7, bọc ĐÚNG 1 cụm từ khoá 1–4 chữ bằng <b>...</b> (vd "<b>hạ tỷ trọng</b>", "<b>cầm tiền chờ đáy</b>"); cụm này nên xuất hiện NGUYÊN VĂN trong lời đọc của dòng script tương ứng (dòng 7 cho s6, dòng 8 cho s7) để hiệu ứng sáng đúng lúc giọng đọc tới.
+14. MẬT ĐỘ CHỮ: s6.chain[].text ≤ 60 ký tự, s7.items[].text ≤ 70 ký tự. Trong MỖI text của s6 và s7, bọc ĐÚNG 1 cụm từ khoá 1–4 chữ bằng <b>...</b> (vd "<b>hạ tỷ trọng</b>", "<b>cầm tiền chờ đáy</b>"); cụm này nên xuất hiện NGUYÊN VĂN trong lời đọc của dòng script tương ứng (dòng 7 cho s6, dòng 8 cho s7) để hiệu ứng sáng đúng lúc giọng đọc tới — chỉ chọn chữ có sẵn, KHÔNG thêm câu mới vào script (số câu mỗi dòng vẫn phải đúng quy tắc 1).
 15. TIÊU ĐỀ ĐĂNG (youtube.title): ≤ 70 ký tự; 40 ký tự ĐẦU phải chứa chủ thể + con số/sự kiện chính của bài; KHÔNG thêm "[Giải mã]" ở đầu, KHÔNG thêm "| Chuyện Chứng Khoán" hay tên kênh ở cuối (đã có trong hashtag). Viết hoa chữ cái đầu bình thường, không viết HOA toàn bộ; giật tò mò bằng câu hỏi hoặc hệ quả, nhưng KHÔNG phóng đại vượt dữ kiện trong bài và vẫn tuân thủ quy tắc 6.
 
 ĐẦU RA: CHỈ một đối tượng JSON (không văn bản thừa) theo đúng schema sau. Mỗi cảnh một ý; số liệu khớp bài.
@@ -94,6 +94,24 @@ def clean_title(t):
     if len(t) > 90:
         t = t[:90].rsplit(" ", 1)[0].rstrip(" ,:;-–—") + "…"
     return t
+
+
+REVEAL = [1, 3, 3, 3, 4, 4, 3, 3, 3]
+
+
+def fit_sentences(line, n):
+    """Gemini hay viết dư 1 câu ở một dòng → gộp các câu cuối bằng dấu phẩy cho đủ số câu (không đổi nội dung).
+    Thiếu câu thì giữ nguyên để vòng sửa của Gemini xử lý."""
+    sents = [x for x in re.split(r"(?<=[.!?])\s+", line) if x.strip()]
+    while len(sents) > n and len(sents) >= 2:
+        a, b = sents[-2], sents[-1]
+        if a.endswith("?") or a.endswith("!"):
+            a2 = a[:-1] + ","
+        else:
+            a2 = a[:-1] + "," if a.endswith(".") else a + ","
+        b2 = b[0].lower() + b[1:] if b[:1].isupper() and not re.match(r"[A-ZĐ]{2,}|[A-Z][a-z]*[A-Z]", b) else b
+        sents = sents[:-2] + [a2 + " " + b2]
+    return " ".join(sents)
 
 
 def today_vn():
@@ -186,7 +204,8 @@ def assemble(deck, proj, date_full, out_dir):
     hf["audio_offset"] = 1.0
     hf["outro_hold"] = 3.6
     (out_dir / "hf-data.json").write_text(json.dumps(hf, ensure_ascii=False, indent=2), encoding="utf-8")
-    lines = [str(x).strip() for x in deck.get("script_lines", [])]
+    lines = [fit_sentences(str(x).strip(), REVEAL[k]) if k < len(REVEAL) else str(x).strip()
+             for k, x in enumerate(deck.get("script_lines", []))]
     (out_dir / "script-90s.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
     y = deck.get("youtube", {})
     title = clean_title(y.get("title", ""))
