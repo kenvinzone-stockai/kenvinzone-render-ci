@@ -1,0 +1,213 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "17/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "MoneyF",
+    "short": "MoneyF",
+    "author": "Hữu Nguyên",
+    "headline": "VN-Index mất hơn 10 điểm, loạt cổ phiếu dầu khí bất ngờ bị bán mạnh trong phiên 17/11",
+    "date": "17/11/2026",
+    "url": "https://moneyf.vn/vn-index-mat-hon-10-diem-loat-co-phieu-dau-khi-bat-lex12fcm"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "Dầu khí bị xả mạnh",
+      "VN-Index mất 10 điểm"
+    ],
+    "sub": "Áp lực chốt lời lan rộng cùng đà bán ròng của khối ngoại",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "VN-Index -10,17đ",
+        "tone": "down"
+      },
+      {
+        "icon": "↘",
+        "text": "Dầu khí -3,8%",
+        "tone": "down"
+      },
+      {
+        "icon": "↳",
+        "text": "Bán ròng 359 tỷ",
+        "tone": "gold"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Thị trường chìm trong sắc đỏ khi <mark>nhóm dầu khí và ngân hàng</mark> chịu áp lực bán tháo mạnh, kéo VN-Index mất hơn 10 điểm giữa lúc <mark>khối ngoại bán ròng 359 tỷ đồng</mark>."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh chung",
+      "đỏ lửa diện rộng"
+    ],
+    "stats": [
+      {
+        "value": 1726.72,
+        "decimals": 2,
+        "unit": "điểm",
+        "label": "VN-Index đóng cửa",
+        "badge": "-0,59%",
+        "tone": "down",
+        "beat": 1
+      },
+      {
+        "value": 14900,
+        "decimals": 0,
+        "unit": "tỷ",
+        "label": "Thanh khoản HoSE",
+        "badge": "+25% vol",
+        "tone": "gold",
+        "beat": 2
+      }
+    ],
+    "note": "Độ rộng nghiêng hẳn về bên bán với 207 mã giảm so với 110 mã tăng giá"
+  },
+  "s3": {
+    "title_lines": [
+      "Tâm điểm điều chỉnh",
+      "nhóm dầu khí"
+    ],
+    "lead": "Ngành năng lượng giảm bình quân hơn 3,8%",
+    "bars": [
+      {
+        "label": "PVT",
+        "display": "-5,26%",
+        "value": -5.26,
+        "beat": 2
+      },
+      {
+        "label": "BSR",
+        "display": "-4,72%",
+        "value": -4.72,
+        "beat": 2
+      },
+      {
+        "label": "GAS",
+        "display": "-3,71%",
+        "value": -3.71,
+        "beat": 2
+      },
+      {
+        "label": "PVS",
+        "display": "-3,10%",
+        "value": -3.1,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 3.8,
+      "suffix": "%",
+      "text": "Mức giảm bình quân toàn ngành dầu khí",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Áp lực bủa vây",
+      "từ nhiều phía"
+    ],
+    "cards": [
+      {
+        "big": "VCB, BID",
+        "title": "Ngân hàng suy yếu",
+        "text": "Đồng loạt giảm hơn 2%, gây sức ép lớn lên chỉ số"
+      },
+      {
+        "big": "359 tỷ",
+        "title": "Khối ngoại bán ròng",
+        "text": "Chấm dứt 2 phiên mua, xả mạnh FPT và VCB"
+      },
+      {
+        "big": "Phân hóa",
+        "title": "Chứng khoán nỗ lực",
+        "text": "SHS, CTS giữ sắc xanh nhưng chưa đủ gánh thị trường"
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Ba xung lực",
+      "khiến thị trường lùi bước"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "THỨ NHẤT",
+        "title": "Trụ lớn mất điểm tựa",
+        "text": "VCB và BID giảm hơn 2% khiến chỉ số mất lực nâng đỡ"
+      },
+      {
+        "color": "yellow",
+        "tag": "THỨ HAI",
+        "title": "Khối ngoại quay đầu",
+        "text": "Bán ròng hơn 359 tỷ đồng tập trung vào FPT và VCB"
+      },
+      {
+        "color": "red",
+        "tag": "THỨ BA",
+        "title": "Thiếu nhóm dẫn dắt",
+        "text": "Dòng chứng khoán phân hóa mạnh, không đủ bù đắp đà giảm"
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Cộng hưởng",
+      "bối cảnh quốc tế"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh",
+        "text": "Lực cầu bắt đáy vùng 1.715 điểm giúp thu hẹp đà giảm",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng",
+        "text": "Nasdaq, Dow Jones và S&P 500 đỏ lửa lan tâm lý thận trọng sang Việt Nam",
+        "beat": 1
+      },
+      {
+        "title": "Đèn đỏ",
+        "text": "Thanh khoản bán tại rổ VN30 tăng vọt 28% báo hiệu áp lực cung ngắn hạn",
+        "beat": 2
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư F0",
+      "hành động ra sao?"
+    ],
+    "items": [
+      {
+        "icon": "warn",
+        "title": "Tránh bắt đáy vội",
+        "text": "Không vội vàng trung bình giá nhóm dầu khí đang đà rơi",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Hạ bớt đòn bẩy",
+        "text": "Giữ tỷ trọng tiền mặt hợp lý để chủ động phòng vệ",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Quan sát vùng cân bằng",
+        "text": "Chờ đợi tín hiệu dòng tiền tạo nền tích lũy vững chắc",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Quản trị danh mục thận trọng là chìa khóa vượt qua những phiên biến động lớn.",
+    "cta": "Theo dõi KenvinZone để cập nhật chuyển động thị trường mỗi ngày"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
