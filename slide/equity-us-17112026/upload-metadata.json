@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "S&P 500 & Nasdaq: Đồng pha suy yếu, Gamma âm cảnh báo biến động",
+    "description": "📊 Bản tin định lượng thị trường chứng khoán Mỹ từ KenvinZone Analytics.\n\nCả S&P 500 và Nasdaq 100 đều ghi nhận tín hiệu đồng pha suy yếu trên cả khung ngày và khung tuần. Áp lực tăng từ Đồng USD cùng tâm lý né tránh rủi ro đang tạo sức ép lớn lên thị trường. Đồng thời, vùng Net GEX âm ở cả SPY và QQQ cảnh báo biến động hai chiều mở rộng trong phiên tới.\n\n📌 Chi tiết chỉ số:\n- S&P 500: Bias ngày -11.1, Bias tuần -2.9 | SPY Gamma Flip: 749.7\n- Nasdaq 100: Bias ngày -13.2, Bias tuần -10.9 | QQQ Gamma Flip: 679.46\n\n⚠️ Tuyên bố miễn trừ trách nhiệm: Nội dung chỉ mang tính chất phân tích định lượng tham khảo, KHÔNG phải lời khuyên đầu tư.\n\n#sp500 #nasdaq #chungkhoanmy #gamma #kenvinzone",
+    "tags": [
+      "sp500",
+      "nasdaq",
+      "chứng khoán mỹ",
+      "định lượng",
+      "gamma",
+      "net gex",
+      "spy",
+      "qqq",
+      "kenvinzone",
+      "aurora",
+      "phân tích kỹ thuật",
+      "nhận định thị trường",
+      "đầu tư mỹ"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "equity-bias",
+    "date": "17/11/2026"
+  }
+}
