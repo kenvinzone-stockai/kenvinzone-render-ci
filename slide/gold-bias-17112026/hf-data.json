@@ -1,0 +1,182 @@
+{
+  "template": "gold-daily-bias-hf",
+  "date": "17/11/2026",
+  "title_html": "BÁO CÁO NHANH VĨ MÔ<br/>&amp; BIAS NGÀY",
+  "eyebrow": "⚡ DAILY FLASH BIAS · VÀNG",
+  "date_prefix": "PHIÊN NGÀY",
+  "regime": "GIẢM MẠNH",
+  "score": -17.4,
+  "history": [
+    [
+      "13/11",
+      -11.4
+    ],
+    [
+      "16/11",
+      -15.1
+    ],
+    [
+      "17/11",
+      -17.4
+    ]
+  ],
+  "trend_tag": "3 phiên liên tiếp xấu đi",
+  "forces": [
+    {
+      "key": "usd",
+      "label": "Áp lực USD",
+      "value": -15.37,
+      "color": "#ef4444"
+    },
+    {
+      "key": "flows",
+      "label": "Dòng tiền & xu hướng",
+      "value": -3.74,
+      "color": "#f87171"
+    },
+    {
+      "key": "gold_spec",
+      "label": "Yếu tố riêng của Vàng",
+      "value": -1.3,
+      "color": "#fb923c"
+    },
+    {
+      "key": "rates",
+      "label": "Lãi suất thực",
+      "value": -0.18,
+      "color": "#ef4444"
+    },
+    {
+      "key": "m2",
+      "label": "Thanh khoản M2",
+      "value": 2.87,
+      "color": "#4ade80"
+    },
+    {
+      "key": "risk",
+      "label": "Khẩu vị rủi ro",
+      "value": 2.42,
+      "color": "#38bdf8"
+    }
+  ],
+  "stress": "Khẩu vị rủi ro ổn định · tín dụng chưa căng",
+  "gamma": {
+    "axis": [
+      355,
+      380
+    ],
+    "net_gex_m": 2.5,
+    "call": {
+      "gld": 375.0,
+      "xau": 4060.0
+    },
+    "flip": {
+      "gld": 365.0,
+      "xau": 3951.0
+    },
+    "spot": {
+      "gld": 367.82,
+      "xau": 3981.9
+    },
+    "put": {
+      "gld": 360.0,
+      "xau": 3897.0
+    }
+  },
+  "scenarios": [
+    {
+      "key": "s_base",
+      "pct": 55,
+      "color": "#fbbf24",
+      "name": "Giằng co trong biên",
+      "desc": "Kìm nén giữa Put Wall <b>360</b> (≈<b>3.897</b>) và Call Wall <b>375</b> (≈<b>4.060</b>)"
+    },
+    {
+      "key": "s_down",
+      "pct": 32,
+      "color": "#f87171",
+      "name": "Phá vỡ giảm",
+      "desc": "Bias âm áp đảo, gãy Gamma Flip <b>365</b> (≈<b>3.951</b>) test sâu Put Wall <b>360</b> (≈<b>3.897</b>)"
+    },
+    {
+      "key": "s_up",
+      "pct": 13,
+      "color": "#4ade80",
+      "name": "Hồi phục kỹ thuật",
+      "desc": "Lực đỡ M2 kích hoạt nhịp hồi hướng về Call Wall <b>375</b> (≈<b>4.060</b>)"
+    }
+  ],
+  "actions": [
+    {
+      "icon": "⇆",
+      "color": "#fbbf24",
+      "title": "Giữ trung tính trong biên",
+      "desc": "Vận động trong biên <b>360–375</b> GLD · ≈ <b>3.897–4.060</b> XAUUSD",
+      "keyword": "GIỮ TRUNG TÍNH"
+    },
+    {
+      "icon": "▲",
+      "color": "#4ade80",
+      "title": "Điều kiện mua lại",
+      "desc": "Trụ vững trên Gamma Flip <b>365</b> (≈ <b>3.951</b>) kèm Bias cải thiện",
+      "keyword": "CHỜ TÍN HIỆU MUA"
+    },
+    {
+      "icon": "▼",
+      "color": "#f87171",
+      "title": "Rủi ro cần tránh",
+      "desc": "Thủng Put Wall <b>360</b> (≈ <b>3.897</b>) kích hoạt đà bán tháo mạnh",
+      "keyword": "QUẢN TRỊ RỦI RO"
+    }
+  ],
+  "anchors": {
+    "score": "âm 17.40",
+    "trend": "suy yếu",
+    "neutral": "GIẢM MẠNH",
+    "usd": "âm 15.37",
+    "flows": "âm 3.74",
+    "gold_spec": "kéo giá",
+    "counterweight": "Đối trọng",
+    "rates": "đỡ giá",
+    "m2": "dương 2.87",
+    "risk": "dương 2.42",
+    "stress": "tín dụng",
+    "gex": "Net GEX",
+    "gex_value": "dương 2.5",
+    "spot": "GLD 367.82",
+    "spot_xau": "367.82",
+    "flip": "Gamma Flip 365",
+    "put": "Put Wall 360",
+    "call": "Call Wall 375",
+    "vol": "kìm nén",
+    "s_base": "năm mươi lăm phần",
+    "s_down": "ba mươi hai phần",
+    "s_up": "mười ba phần",
+    "act_neutral": "giữ trung tính",
+    "act_buy": "mua lại",
+    "aurora": "AURORA",
+    "follow": "hãy follow"
+  },
+  "sfx_ticks": [
+    "usd",
+    "flows",
+    "gold_spec",
+    "rates",
+    "m2",
+    "risk",
+    "spot",
+    "flip",
+    "put",
+    "call",
+    "s_base",
+    "s_down",
+    "s_up"
+  ],
+  "sfx_impacts": [
+    "score",
+    "gex"
+  ],
+  "audio_offset": 1.0,
+  "outro_hold": 3.6,
+  "stress_note_html": "✅ Khẩu vị rủi ro (+2.42) và M2 (+2.87) đều <b>dương</b>, hệ thống tín dụng ổn định chưa tạo áp lực tháo chạy khỏi Vàng"
+}

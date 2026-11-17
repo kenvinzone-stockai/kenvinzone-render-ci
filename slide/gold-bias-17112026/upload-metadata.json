@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "Vàng 17/11: Bias GIẢM MẠNH -17.40 | Gamma kìm nén biên độ",
+    "description": "📊 BẢN TIN ĐỊNH LƯỢNG BIAS VÀNG NGÀY 17/11/2026\n\n🎯 ĐIỂM BIAS TỔNG THỂ:\n• Bias Score: -17.40 / 100\n• Chế độ: GIẢM MẠNH (Thay đổi: -4.80)\n• Chuỗi 3 phiên: -11.40 ➔ -15.10 ➔ -17.40 (Đà suy yếu tiếp diễn)\n\n⚡ 6 LỰC KÉO THỊ TRƯỜNG:\n• Áp lực USD: -15.37 điểm (Kéo giảm mạnh nhất)\n• Dòng tiền & Xu hướng: -3.74 điểm\n• Yếu tố riêng của Vàng: -1.30 điểm\n• Lãi suất thực: -0.18 điểm\n• Thanh khoản M2: +2.87 điểm (Đỡ giá)\n• Khẩu vị rủi ro: +2.42 điểm (Ổn định, chưa có căng thẳng tín dụng)\n\n🧲 CẤU TRÚC GAMMA (GLD & XAUUSD):\n• Net GEX: +2.5M USD (Dương ➔ Biến động bị kìm nén trong biên)\n• Spot: GLD 367.82 (XAUUSD ≈ 3981.9) — Nằm TRÊN Gamma Flip\n• Gamma Flip: 365.0 (XAUUSD ≈ 3951.0)\n• Put Wall (Hỗ trợ quyền chọn): 360.0 (XAUUSD ≈ 3897.0)\n• Call Wall (Kháng cự quyền chọn): 375.0 (XAUUSD ≈ 4060.0)\n\n🎲 3 KỊCH BẢN PHIÊN TỚI:\n1. 55% — Giằng co trong biên 360–375 GLD (≈ 3.897–4.060 XAUUSD)\n2. 32% — Áp lực USD đè bẹp, thủng Flip 365 rơi về kiểm định Put Wall 360\n3. 13% — Dòng tiền thanh khoản hỗ trợ, phục hồi nhẹ hướng Call Wall 375\n\n📌 KẾ HOẠCH HÀNH ĐỘNG:\n• Giữ trung tính: Giao dịch thận trọng trong biên 360–375 GLD (3.897–4.060 XAUUSD)\n• Điều kiện mua lại: Chờ đóng nến bảo vệ vững mốc Gamma Flip 365 kèm bias hồi phục\n• Rủi ro cần tránh: Thủng Put Wall 360 cảnh báo áp lực bán tháo gia tăng\n\n⚠️ Tuyên bố miễn trừ trách nhiệm: Bản tin phục vụ mục đích cung cấp thông tin định lượng tham khảo, KHÔNG PHẢI lời khuyên đầu tư tài chính.\n\n#vang #gold #xauusd #giavang #phantichdinhluong #kenvinzone #gld #biasgold #aurora",
+    "tags": [
+      "vàng",
+      "gold",
+      "xauusd",
+      "giá vàng",
+      "phân tích định lượng",
+      "kenvinzone",
+      "aurora",
+      "market bias",
+      "nhận định giá vàng",
+      "gld",
+      "gamma",
+      "đầu tư vàng",
+      "ngoại hối"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "gold-daily-bias",
+    "date": "17/11/2026"
+  }
+}
