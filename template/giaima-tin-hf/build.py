@@ -135,6 +135,34 @@ def esc(s):
     return html.escape(str(s), quote=True)
 
 
+_ACC_RE = re.compile(r"&lt;(b|mark)&gt;(.*?)&lt;/\1&gt;", re.S)
+
+
+def rich(s, cls="acc"):
+    """Escape nhưng giữ <b>/<mark> do Brain đánh dấu → từ khoá vàng/xanh neon (Kinetic Word Accent)."""
+    return _ACC_RE.sub(lambda m: f'<span class="{cls}">{m.group(2)}</span>', esc(s))
+
+
+def _norm(w):
+    return re.sub(r"[^\w]", "", str(w).lower())
+
+
+def acc_times(i, text, after_abs, fallback):
+    """Mốc video (giây) khi giọng đọc tới từng cụm nhấn trong text — dò theo word timestamps của dòng i."""
+    st = float(SLIDES[i]["start"]); en = st + float(SLIDES[i]["duration"])
+    ws = [(_norm(t), s0 + OFF) for t, s0 in WORDS if st - 0.05 <= s0 < en]
+    out = []
+    for m in re.finditer(r"<(b|mark)>(.*?)</\1>", str(text), re.S):
+        toks = [_norm(x) for x in re.sub(r"<[^>]+>", " ", m.group(2)).split() if _norm(x)]
+        hit = None
+        if toks:
+            for k, (w, t) in enumerate(ws):
+                if t >= after_abs - 0.3 and w == toks[0] and all(k + j < len(ws) and ws[k + j][0] == toks[j] for j in range(1, min(2, len(toks)))):
+                    hit = t; break
+        out.append(hit if hit is not None else fallback + 0.5 * len(out))
+    return out
+
+
 def scene_file(cid, dur, css, body, js):
     return f"""<template>
 <style>{FONT_CSS}{BASE_CSS}{css}</style>
@@ -178,9 +206,9 @@ def gcss(i):
 
 
 TITLE_CSS = """
-.q{position:absolute;left:60px;right:60px;top:250px;text-align:center;font-weight:900;line-height:1.12;letter-spacing:-0.5px;}
-.q .l1{font-size:56px;color:#f8fafc;display:block;}
-.q .l2{font-size:62px;display:block;padding-top:.1em;line-height:1.15;}
+.q{position:absolute;left:60px;right:60px;top:250px;text-align:center;font-weight:900;line-height:1.18;letter-spacing:-0.5px;}
+.q .l1{font-size:56px;color:#f8fafc;display:block;padding-top:.12em;}
+.q .l2{font-size:62px;display:block;padding-top:.12em;line-height:1.18;}
 """
 
 
@@ -207,6 +235,105 @@ def mk(fn_id, idx):
     return fn_id, round(en - st, 3)
 
 
+# ================================================================ S0 THEMATIC VISUAL HOOK (V2)
+HOOK_PAL = ["#3b82f6", "#10b981", "#f5c451", "#a855f7"]
+_AUTO_HOOK = [
+    ("shock_alert", r"bán tháo|bốc hơi|lao dốc|sập|giảm sâu|xả (?:ròng|hàng)|bán ròng kỷ lục|hoảng loạn|cảnh báo|rơi tự do"),
+    ("liquidity_pump", r"bơm (?:tiền|ròng|thanh khoản)|\bomo\b|giải ngân|mua ròng|dòng tiền (?:đổ|vào|quay lại)|nới lỏng|hạ lãi suất"),
+]
+
+
+def hook_variant():
+    """Brain khai hook.theme_variant; không khai thì tự đoán (chỉ 2 kiểu không cần dữ liệu riêng)."""
+    h = D["hook"]; vis = h.get("visual") or {}
+    items = vis.get("items") or []
+    v = str(h.get("theme_variant") or "").strip()
+    need = {"vs_clash": 2, "pie_allocation": 2, "sector_radar": 3}
+    if v in need and len(items) < need[v]:
+        v = ""
+    if v not in ("liquidity_pump", "shock_alert", "vs_clash", "pie_allocation", "sector_radar"):
+        blob = " ".join([str(D["source"].get("headline", "")), " ".join(map(str, h.get("title_lines", [])))]).lower()
+        v = next((k for k, pat in _AUTO_HOOK if re.search(pat, blob)), "")
+    return v, items
+
+
+def hook_visual(v, items, t):
+    """SVG 960×170 đặt ở dải logo (y 328). Khung 0 = trạng thái cuối (thumbnail); hoạt cảnh chạy lại từ t."""
+    css, svg, js = "", "", []
+    if v == "liquidity_pump":
+        bars = []
+        hs = [50, 72, 96, 120, 150, 120, 96, 72, 50]
+        for i, hh in enumerate(hs):
+            x = 300 + i * 42
+            bars.append(f'<rect class="hp-bar" x="{x}" y="{165 - hh}" width="28" height="{hh}" rx="6" fill="url(#hpg)" style="transform-origin:{x + 14}px 165px;"/>')
+        parts = "".join(f'<circle class="hp-pt" cx="{300 + (i * 53) % 370}" cy="150" r="{3 + i % 3}" fill="#67e8f9" opacity="0"/>' for i in range(14))
+        svg = (f'<defs><linearGradient id="hpg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#10b981"/><stop offset="1" stop-color="#67e8f9"/></linearGradient></defs>'
+               f'{"".join(bars)}{parts}<text x="700" y="70" class="hv-t" fill="#67e8f9">{esc(str((D["hook"].get("visual") or {}).get("label") or "DÒNG TIỀN")[:14])}</text>')
+        js.append(f"QA('.hp-bar').forEach((b,i)=>tl.fromTo(b, {{scaleY:0}}, {{scaleY:1, duration:0.55, ease:'back.out(1.6)', immediateRender:false}}, {t} + Math.abs(i-4)*0.07));")
+        js.append(f"QA('.hp-pt').forEach((p,i)=>tl.fromTo(p, {{attr:{{cy:150}}, opacity:0.95}}, {{attr:{{cy:-10}}, opacity:0, duration:1.4, ease:'power1.out', immediateRender:false}}, {t + 0.4} + (i%7)*0.18 + Math.floor(i/7)*0.9));")
+    elif v == "shock_alert":
+        pts = "60,40 170,60 240,50 330,95 400,80 480,128 560,112 650,150 900,165"
+        svg = (f'<polyline id="hs-ln" points="{pts}" fill="none" stroke="#ef4444" stroke-width="8" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="1200" style="filter:drop-shadow(0 0 10px #ef4444);"/>'
+               f'<polygon id="hs-bolt" points="500,6 452,92 490,92 466,166 540,64 500,64 528,6" fill="#fde047" stroke="#f59e0b" stroke-width="3" style="filter:drop-shadow(0 0 16px #f59e0b);transform-origin:496px 86px;"/>'
+               f'<text x="60" y="150" class="hv-t" fill="#f87171">▼ RỦI RO</text>')
+        js.append(f"tl.fromTo('#hs-ln', {{strokeDashoffset:1200}}, {{strokeDashoffset:0, duration:0.7, ease:'power2.in', immediateRender:false}}, {t});")
+        js.append(f"tl.fromTo('#hs-bolt', {{opacity:0, scale:2.4}}, {{opacity:1, scale:1, duration:0.18, ease:'power4.out', immediateRender:false}}, {t + 0.6});")
+        js.append(f"tl.fromTo('#h0-flash', {{opacity:0}}, {{opacity:1, duration:0.07, yoyo:true, repeat:3, ease:'none', immediateRender:false}}, {t + 0.62});")
+    elif v == "vs_clash":
+        a, b = items[0], items[1]
+        def blk(it, x, c, ident):
+            lab = esc(str(it.get("label", ""))[:18]); val = esc(str(it.get("value", ""))[:14])
+            return (f'<g id="{ident}"><rect x="{x}" y="22" width="380" height="126" rx="22" fill="{c}22" stroke="{c}" stroke-width="3"/>'
+                    f'<text x="{x + 190}" y="70" text-anchor="middle" class="hv-t" fill="#fff">{lab}</text>'
+                    f'<text x="{x + 190}" y="126" text-anchor="middle" class="hv-n" fill="{c}">{val}</text></g>')
+        svg = (blk(a, 30, "#4ade80" if a.get("tone") != "down" else "#f87171", "hvA") + blk(b, 550, "#f87171" if b.get("tone") != "up" else "#4ade80", "hvB")
+               + '<polygon id="hv-sp" points="480,30 494,70 536,72 502,96 514,138 480,114 446,138 458,96 424,72 466,70" fill="#fde047" style="filter:drop-shadow(0 0 14px #f59e0b);transform-origin:480px 85px;"/>'
+               + '<text x="480" y="96" text-anchor="middle" class="hv-vs">VS</text>')
+        js.append(f"tl.fromTo('#hvA', {{x:-260, opacity:0}}, {{x:0, opacity:1, duration:0.45, ease:'power4.in', immediateRender:false}}, {t});")
+        js.append(f"tl.fromTo('#hvB', {{x:260, opacity:0}}, {{x:0, opacity:1, duration:0.45, ease:'power4.in', immediateRender:false}}, {t});")
+        js.append(f"tl.fromTo('#hv-sp', {{scale:0, rotation:-40}}, {{scale:1, rotation:0, duration:0.3, ease:'back.out(3)', immediateRender:false}}, {t + 0.45});")
+        js.append(f"tl.fromTo('#hvA', {{x:0}}, {{x:-14, duration:0.08, yoyo:true, repeat:1, immediateRender:false}}, {t + 0.45}); tl.fromTo('#hvB', {{x:0}}, {{x:14, duration:0.08, yoyo:true, repeat:1, immediateRender:false}}, {t + 0.45});")
+    elif v == "pie_allocation":
+        its = items[:4]
+        tot = sum(max(0.0, float(i.get("value", 0) or 0)) for i in its) or 1.0
+        hi = max(range(len(its)), key=lambda k: float(its[k].get("value", 0) or 0)) if not any(i.get("hi") for i in its) else next(k for k, i in enumerate(its) if i.get("hi"))
+        cx, cy, r = 480, 85, 78
+        acc, slices, legs = -math.pi / 2, [], []
+        for k, it in enumerate(its):
+            frac = max(0.0, float(it.get("value", 0) or 0)) / tot
+            a0, a1 = acc, acc + frac * 2 * math.pi; acc = a1
+            if frac >= 0.999:
+                d = f"M{cx},{cy - r} A{r},{r} 0 1,1 {cx - 0.01},{cy - r} Z"
+            else:
+                large = 1 if frac > 0.5 else 0
+                d = f"M{cx},{cy} L{cx + r * math.cos(a0):.1f},{cy + r * math.sin(a0):.1f} A{r},{r} 0 {large},1 {cx + r * math.cos(a1):.1f},{cy + r * math.sin(a1):.1f} Z"
+            mid = (a0 + a1) / 2
+            c = it.get("color") or HOOK_PAL[k % 4]
+            slices.append(f'<path id="pie{k}" d="{d}" fill="{c}" stroke="#0b1220" stroke-width="3" data-dx="{16 * math.cos(mid):.1f}" data-dy="{16 * math.sin(mid):.1f}"/>')
+            lx = 40 if k % 2 == 0 else 600; ly = 60 + (k // 2) * 62
+            legs.append(f'<g><rect x="{lx}" y="{ly - 22}" width="22" height="22" rx="5" fill="{c}"/><text x="{lx + 32}" y="{ly - 3}" class="hv-l" fill="#e2e8f0">{esc(str(it.get("label", ""))[:12])} '
+                        f'<tspan fill="{c}">{esc(it.get("display") or (str(round(float(it.get("value", 0) or 0))) + "%"))}</tspan></text></g>')
+        svg = f'<g id="pie" style="transform-origin:{cx}px {cy}px;">{"".join(slices)}</g>{"".join(legs)}'
+        js.append(f"tl.fromTo('#pie', {{rotation:-360}}, {{rotation:0, duration:1.0, ease:'power3.out', immediateRender:false}}, {t});")
+        js.append(f"(function(){{const s=Q('#pie{hi}'); tl.fromTo(s, {{x:0, y:0, filter:'drop-shadow(0 0 0px #fff)'}}, {{x:+s.dataset.dx, y:+s.dataset.dy, filter:'drop-shadow(0 0 14px #fde047)', duration:0.4, ease:'back.out(2.5)', immediateRender:false}}, {t + 1.0});}})();")
+        # thumbnail: lát nổi bật đã tách sẵn (gsap.set) — hoạt cảnh xoay rồi bật lại từ t
+        js.append(f"(function(){{const s=Q('#pie{hi}'); gsap.set(s, {{x:+s.dataset.dx, y:+s.dataset.dy, filter:'drop-shadow(0 0 14px #fde047)'}});}})();")
+    elif v == "sector_radar":
+        its = items[:4]
+        chips = []
+        for k, it in enumerate(its):
+            lx = 20 if k % 2 == 0 else 640; ly = 22 + (k // 2) * 76
+            chips.append(f'<g class="sr-c" id="sr{k}"><rect x="{lx}" y="{ly}" width="300" height="58" rx="14" fill="rgba(56,189,248,.12)" stroke="#38bdf8" stroke-width="2.5"/>'
+                         f'<text x="{lx + 150}" y="{ly + 39}" text-anchor="middle" class="hv-l" fill="#e0f2fe">{esc(str(it.get("label", ""))[:16])}</text></g>')
+        svg = ('<circle cx="480" cy="85" r="80" fill="none" stroke="rgba(56,189,248,.45)" stroke-width="2"/><circle cx="480" cy="85" r="52" fill="none" stroke="rgba(56,189,248,.25)" stroke-width="1.5" stroke-dasharray="4 6"/>'
+               '<defs><linearGradient id="srg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#38bdf8" stop-opacity="0"/><stop offset="1" stop-color="#38bdf8" stop-opacity=".6"/></linearGradient></defs>'
+               '<g id="sr-sw" style="transform-origin:480px 85px;"><path d="M480,85 L560,85 A80,80 0 0,0 537,28 Z" fill="url(#srg)"/><line x1="480" y1="85" x2="560" y2="85" stroke="#38bdf8" stroke-width="3"/></g>'
+               + "".join(chips))
+        js.append(f"tl.fromTo('#sr-sw', {{rotation:0}}, {{rotation:720, duration:2.4, ease:'none', immediateRender:false}}, {t});")
+        js.append(f"QA('.sr-c').forEach((c,i)=>tl.fromTo(c.querySelector('rect'), {{attr:{{fill:'rgba(56,189,248,.12)'}}}}, {{attr:{{fill:'rgba(56,189,248,.45)'}}, duration:0.18, yoyo:true, repeat:1, immediateRender:false}}, {t + 0.25} + i*0.3));")
+    return css, svg, js
+
+
 # ================================================================ S0 HOOK
 def s0():
     cid, dur = mk("s0", 0)
@@ -215,18 +342,32 @@ def s0():
     # Giữ công thức gốc (tiêu đề ngắn vẫn to tới 120px) nhưng NÂNG SÀN tối thiểu để tiêu đề dài không bị bé xíu.
     fa = int(max(58, min(120, 900 / (max(1, len(lines[0])) * 0.72))))
     fb = int(max(54, min(104, 900 / (max(1, len(lines[1]) if len(lines) > 1 else 1) * 0.72))))
-    tb = 495 + int(fa * 1.34) + (int(fb * 1.30) if len(lines) > 1 else 0) + 44
+    v, vitems = hook_variant()
+    t_h = lt(cid, B(0, 0))
+    hv_css, hv_svg, hv_js = hook_visual(v, vitems, t_h + 0.15) if v else ("", "", [])
+    py = 515 if v else 495                     # dải hình ẩn dụ (y 328–498) đẩy bảng tiêu đề xuống 20px
+    stamp = str(h.get("stamp") or "").strip()[:28]
+    s_col = {"red": "#ef4444", "down": "#ef4444", "green": "#22c55e", "up": "#22c55e"}.get(str(h.get("stamp_tone", "")), GOLD)
+    tb = py + int(fa * 1.34) + (int(fb * 1.30) if len(lines) > 1 else 0) + 44
     chips = "".join(f'<div class="h0-chip" id="h0-c{i}" style="border-color:{TONE.get(c.get("tone","gold"))}99;color:{TONE.get(c.get("tone","gold"))};"><span>{esc(c["icon"])}</span> {esc(c["text"])}</div>' for i, c in enumerate(h["chips"]))
     css = f"""
 .h0-eb{{position:absolute;top:250px;left:0;right:0;text-align:center;}}
 .h0-eb span{{display:inline-block;background:linear-gradient(135deg,#fde68a,{GOLD});color:#0b0f19;font-weight:900;font-size:30px;letter-spacing:4px;text-transform:uppercase;padding:14px 36px;border-radius:99px;box-shadow:0 10px 40px rgba(245,196,81,.45);}}
 .h0-logo{{position:absolute;top:345px;left:0;right:0;text-align:center;}} .h0-logo img{{width:120px;height:120px;filter:drop-shadow(0 0 30px rgba(59,130,246,.6));}}
-.h0-plate{{position:absolute;top:495px;left:40px;right:40px;text-align:center;}}
+.h0-plate{{position:absolute;top:{py}px;left:40px;right:40px;text-align:center;}}
+.h0-vis{{position:absolute;left:60px;top:328px;width:960px;height:170px;}}
+.h0-vis .hv-t{{font-family:'BVP';font-weight:900;font-size:30px;letter-spacing:1px;}}
+.h0-vis .hv-l{{font-family:'BVP';font-weight:800;font-size:26px;}}
+.h0-vis .hv-n{{font-family:'JBM';font-weight:800;font-size:44px;}}
+.h0-vis .hv-vs{{font-family:'BVP';font-weight:900;font-size:30px;fill:#0b0f19;}}
+.h0-stamp{{position:absolute;left:0;right:0;top:{tb - 16}px;text-align:center;}}
+.h0-stamp span{{display:inline-block;transform:rotate(-3deg);padding:8px 26px;border:5px double {s_col};border-radius:12px;background:rgba(15,23,42,.9);box-shadow:0 10px 34px rgba(0,0,0,.6),0 0 28px {s_col}66;font-family:'JBM';font-weight:800;font-size:34px;letter-spacing:2px;color:#fff;white-space:nowrap;text-transform:uppercase;}}
+.h0-flash{{position:absolute;inset:0;pointer-events:none;opacity:0;box-shadow:inset 0 0 120px 30px rgba(239,68,68,.75);}}
 .h0-plate div{{display:inline-block;padding:22px 30px;border-radius:26px;border:2px solid rgba(96,165,250,.45);background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(59,130,246,.08));box-shadow:0 18px 50px rgba(0,0,0,.45),0 0 40px rgba(59,130,246,.2);}}
 .h0-plate h1{{font-weight:900;line-height:1.18;text-transform:uppercase;letter-spacing:-0.5px;}}
 .h0-plate .a{{display:block;padding-top:.16em;font-size:{fa}px;white-space:nowrap;{gcss(1)}}}
 .h0-plate .b{{display:block;padding-top:.12em;font-size:{fb}px;white-space:nowrap;{gcss(0)}}}
-.h0-flow{{position:absolute;top:{tb + 72}px;left:40px;right:40px;display:flex;flex-direction:column;align-items:center;gap:26px;}}
+.h0-flow{{position:absolute;top:{tb + (84 if stamp else 72)}px;left:40px;right:40px;display:flex;flex-direction:column;align-items:center;gap:26px;}}
 .h0-sub{{text-align:center;font-size:38px;font-weight:800;color:{GOLD};text-transform:uppercase;line-height:1.25;padding:0 20px;}}
 .h0-chips{{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}}
 .h0-chip{{font-weight:800;font-size:30px;padding:12px 22px;border-radius:99px;border:2px solid;background:rgba(15,23,42,.6);}}
@@ -235,21 +376,27 @@ def s0():
 """
     body = f"""<div id="h0">
 <div class="h0-eb"><span>{esc(h['eyebrow'])}</span></div>
-<div class="h0-logo"><img src="assets/img/logo-kenvinzone.svg" alt=""/></div>
+{'<svg class="h0-vis" id="h0-vis" viewBox="0 0 960 170">' + hv_svg + '</svg>' + ('<div class="h0-logo" style="top:356px;"><img src="assets/img/logo-kenvinzone.svg" alt="" style="width:110px;height:110px;"/></div>' if v in ('liquidity_pump', 'sector_radar') else '') if v else '<div class="h0-logo"><img src="assets/img/logo-kenvinzone.svg" alt=""/></div>'}
 <div class="h0-plate"><div><h1><span class="a">{esc(lines[0])}</span><span class="b">{esc(lines[1]) if len(lines) > 1 else ''}</span></h1></div></div>
 <div class="h0-flow">
 <div class="h0-sub">{esc(h['sub'])}</div>
 <div class="h0-chips">{chips}</div>
 <div class="h0-src"><span>Nguồn: {esc(src['short'])} · {esc(src['date'])}</span></div>
 </div>
+{f'<div class="h0-stamp" id="h0-stamp"><span>{esc(stamp)}</span></div>' if stamp else ''}
+<div class="h0-flash" id="h0-flash"></div>
 </div>"""
     t = lt(cid, B(0, 0))
     js = f"""
 // frame 0 already shows the full cover (thumbnail); chips light up one by one on the hook sentence
 QA('.h0-chip').forEach((c,i)=>{{ tl.fromTo(c, {{scale:1}}, {{scale:1.1, duration:0.18, ease:'power3.out', immediateRender:false}}, {t + 1.2} + i*0.5); tl.to(c, {{scale:1, duration:0.4, ease:'expo.out'}}, {t + 1.38} + i*0.5); }});
+{"".join(hv_js)}
+{f"""tl.fromTo('#h0-stamp', {{opacity:0, scale:2.8, rotation:-10}}, {{opacity:1, scale:1, rotation:0, duration:0.2, ease:'power4.out', immediateRender:false}}, {t_h + 0.85});
+tl.fromTo('#h0', {{x:-8, y:3}}, {{x:8, y:-3, duration:0.04, repeat:4, yoyo:true, ease:'none', immediateRender:false}}, {t_h + 1.02});
+tl.set('#h0', {{x:0, y:0}}, {t_h + 1.22});""" if stamp else ""}
 {ex('#h0', dur)}
 """
-    return cid, dur, scene_file(cid, dur, TITLE_CSS + css, body, VN_JS + js)
+    return cid, dur, scene_file(cid, dur, TITLE_CSS + hv_css + css, body, VN_JS + js)
 
 
 # ================================================================ S1 SOURCE
@@ -341,11 +488,35 @@ tl.fromTo('#s2-note', {{opacity:0}}, {{opacity:1, duration:0.5, immediateRender:
 # ================================================================ S3 CORE: winners vs losers
 def s3():
     cid, dur = mk("s3", 3)
-    s = D["s3"]; bars = s["bars"]
+    s = D["s3"]; bars = s.get("bars") or []
+    mode = str(s.get("mode") or "bars")
+    if mode == "vs" and len(s.get("vs") or []) < 2: mode = "bars"
+    if mode == "grid" and len(s.get("grid") or []) < 3: mode = "bars"
     cx, half = 540, 420
-    mx = max(abs(b["value"]) for b in bars) or 1
+    mx = max([abs(b["value"]) for b in bars] or [1]) or 1
     rows, js = [], []
-    for i, b in enumerate(bars):
+    if mode == "vs":            # So găng 1 đối 1: 2 thẻ lớn lao vào nhau, tia lửa ở giữa
+        for i, it in enumerate(s["vs"][:2]):
+            c = TONE.get(it.get("tone") or ("down" if float(it.get("value", 0) or 0) < 0 else "up"), GOLD)
+            x = 60 if i == 0 else 580
+            rows.append(f'<div class="s3-vs" id="s3-v{i}" style="left:{x}px;border-color:{c};box-shadow:0 0 40px {c}44;"><div class="lb">{esc(it.get("label", ""))}</div>'
+                        f'<div class="nb mono" style="color:{c};font-size:{min(88, int(380 / (max(1, len(str(it.get("display", "")))) * 0.62)))}px;">{esc(it.get("display", ""))}</div>'
+                        f'<div class="nt">{esc(it.get("note", ""))}</div></div>')
+            t = lt(cid, B(3, it.get("beat", 1), 0.3))
+            js.append(f"tl.fromTo('#s3-v{i}', {{opacity:0, x:{-300 if i == 0 else 300}}}, {{opacity:1, x:0, duration:0.45, ease:'power4.in', immediateRender:false}}, {t});"
+                      f"tl.fromTo('#s3-v{i}', {{x:0}}, {{x:{-12 if i == 0 else 12}, duration:0.07, yoyo:true, repeat:1, immediateRender:false}}, {t + 0.45});")
+        rows.append('<div class="s3-vsb" id="s3-vsb">VS</div>')
+        js.append(f"tl.fromTo('#s3-vsb', {{opacity:0, scale:0, rotation:-90}}, {{opacity:1, scale:1, rotation:0, duration:0.35, ease:'back.out(3)', immediateRender:false}}, {lt(cid, B(3, s['vs'][1].get('beat', 1), 0.75))});")
+    elif mode == "grid":        # Lưới 4 ô: ngành / mã tiêu biểu / mức thay đổi
+        for i, it in enumerate(s["grid"][:4]):
+            c = TONE.get(it.get("tone", "gold"), GOLD)
+            x = 60 + (i % 2) * 420; y = 520 + (i // 2) * 200
+            rows.append(f'<div class="s3-g" id="s3-g{i}" style="left:{x}px;top:{y}px;border-color:{c}aa;"><div class="nm">{esc(it.get("name", ""))}</div>'
+                        f'<div class="tk mono">{esc(it.get("tickers", ""))}</div><div class="dv mono" style="color:{c};">{esc(it.get("display", ""))}</div></div>')
+            t = lt(cid, B(3, it.get("beat", 1), 0.3 + 0.55 * (i % 2)))
+            js.append(f"tl.fromTo('#s3-g{i}', {{opacity:0, scale:0.7, y:30}}, {{opacity:1, scale:1, y:0, duration:0.4, ease:'back.out(1.8)', immediateRender:false}}, {t});"
+                      f"tl.fromTo('#s3-g{i}', {{boxShadow:'0 0 0px {c}'}}, {{boxShadow:'0 0 36px {c}', duration:0.25, yoyo:true, repeat:1, immediateRender:false}}, {t + 0.35});")
+    for i, b in enumerate(bars if mode == "bars" else []):
         y = 560 + i * 120
         w = max(18, min(1.0, abs(b["value"]) / mx) * half)
         neg = b["value"] < 0
@@ -365,6 +536,13 @@ def s3():
 .s3-row{position:absolute;left:0;right:0;height:100px;}
 .s3-bar{position:absolute;top:24px;height:52px;border-radius:12px;}
 .s3-lab{position:absolute;top:30px;width:500px;font-size:30px;font-weight:700;color:#e2e8f0;white-space:nowrap;} .s3-lab b{color:#fff;font-weight:900;}
+.s3-vs{position:absolute;top:530px;width:440px;height:300px;border:3px solid;border-radius:28px;background:rgba(15,23,42,.8);text-align:center;padding:26px 18px;}
+.s3-vs .lb{font-size:36px;font-weight:900;color:#fff;line-height:1.2;} .s3-vs .nb{margin-top:14px;font-weight:800;line-height:1.1;white-space:nowrap;}
+.s3-vs .nt{margin-top:14px;font-size:27px;font-weight:600;color:#cbd5e1;line-height:1.3;}
+.s3-vsb{position:absolute;left:490px;top:630px;width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,#fde047,#f59e0b);color:#0b0f19;font-size:40px;font-weight:900;display:flex;align-items:center;justify-content:center;box-shadow:0 0 50px #f59e0b;}
+.s3-g{position:absolute;width:400px;height:180px;border:2px solid;border-radius:24px;background:rgba(15,23,42,.78);padding:20px 22px;}
+.s3-g .nm{font-size:34px;font-weight:900;color:#fff;line-height:1.15;white-space:nowrap;} .s3-g .tk{margin-top:8px;font-size:24px;font-weight:700;color:#93c5fd;white-space:nowrap;}
+.s3-g .dv{margin-top:6px;font-size:44px;font-weight:800;white-space:nowrap;}
 .s3-co{position:absolute;left:60px;right:60px;top:960px;display:flex;align-items:center;gap:26px;padding:22px 30px;border-radius:24px;border:2px solid rgba(245,196,81,.6);background:rgba(245,196,81,.1);}
 .s3-co .n{font-family:'JBM';font-weight:800;font-size:96px;color:#f5c451;line-height:1;} .s3-co .x{font-size:32px;font-weight:700;color:#fde68a;line-height:1.3;}
 """
@@ -373,14 +551,14 @@ def s3():
                   + (f' <span style="color:#64748b;">—</span> <span style="color:#f87171;">{esc(_lead.split("—")[1].strip())} ▼</span>' if '—' in _lead else '')) if _lead else ''
     body = f"""<div id="g3">{qtitle(3, s['title_lines'], 's3-q')}
 <div class="s3-lead" id="s3-lead">{_lead_html}</div>
-<div class="s3-axis" id="s3-axis"></div>{''.join(rows)}
+{'<div class="s3-axis" id="s3-axis"></div>' if mode == "bars" else ''}{''.join(rows)}
 {f'<div class="s3-co" id="s3-co"><div class="n mono"><span id="s3-con">0</span>{esc(co.get("suffix", ""))}</div><div class="x">{esc(co["text"])}</div></div>' if co else ''}
 </div>"""
     jss = f"""
-gsap.set('#g3 .s3-row, #s3-co, #s3-lead', {{opacity:0}});
+gsap.set('#g3 .s3-row, #g3 .s3-vs, #g3 .s3-g, #s3-vsb, #s3-co, #s3-lead', {{opacity:0}});
 {q_in('s3-q', max(0.1, lt(cid, B(3, 0))))}
 tl.fromTo('#s3-lead', {{opacity:0, y:20}}, {{opacity:1, y:0, duration:0.4, ease:'expo.out', immediateRender:false}}, {lt(cid, B(3, 0, 1.2))});
-tl.fromTo('#s3-axis', {{scaleY:0}}, {{scaleY:1, duration:0.7, ease:'power2.inOut', immediateRender:false}}, {lt(cid, B(3, 0, 1.4))});
+{f"tl.fromTo('#s3-axis', {{scaleY:0}}, {{scaleY:1, duration:0.7, ease:'power2.inOut', immediateRender:false}}, {lt(cid, B(3, 0, 1.4))});" if mode == "bars" else ""}
 {''.join(js)}
 {f"tl.fromTo('#s3-co', {{opacity:0, y:40}}, {{opacity:1, y:0, duration:0.5, ease:'expo.out', immediateRender:false}}, {t_co}); vnCounter('#s3-con', 0, {co['value']}, {t_co + 0.1}, 1.3, 0, '', '');" if co else ''}
 {ex('#g3', dur)}
@@ -461,7 +639,7 @@ def s6():
     seen = {}
     for i, n in enumerate(ch):
         y = 450 + i * 245
-        nodes.append(f'<div class="s6-n" id="s6-n{i}" style="top:{y}px;"><div class="h">{esc(n["title"])}</div><div class="d">{esc(n["text"])}</div></div>')
+        nodes.append(f'<div class="s6-n" id="s6-n{i}" style="top:{y}px;"><div class="h">{rich(n["title"])}</div><div class="d" style="font-size:{30 if len(re.sub("<[^>]+>", "", str(n["text"]))) <= 62 else 26}px;">{rich(n["text"])}</div></div>')
         if i:
             nodes.append(f'<div class="s6-ar" id="s6-a{i}" style="top:{y - 62}px;">▼</div>')
         b = n.get("beat", 1); k = seen.get(b, 0); seen[b] = k + 1
@@ -469,10 +647,13 @@ def s6():
         if i:
             js.append(f"tl.fromTo('#s6-a{i}', {{opacity:0, y:-20}}, {{opacity:1, y:0, duration:0.3, ease:'power2.out', immediateRender:false}}, {t - 0.2});")
         js.append(f"tl.fromTo('#s6-n{i}', {{opacity:0, scale:0.85, filter:'blur(8px)'}}, {{opacity:1, scale:1, filter:'blur(0px)', duration:0.5, ease:'expo.out', immediateRender:false}}, {t});")
+        for k2, ta in enumerate(acc_times(6, f'{n["title"]} {n["text"]}', START[cid] + t, START[cid] + t + 0.7)):
+            js.append(f"tl.fromTo(QA('#s6-n{i} .acc')[{k2}], {{scale:1, textShadow:'0 0 0px #f5c451'}}, {{scale:1.12, textShadow:'0 0 22px #f5c451', duration:0.22, yoyo:true, repeat:1, ease:'power2.out', immediateRender:false}}, {round(ta - START[cid], 3)});")
     css = """
 .s6-n{position:absolute;left:110px;right:110px;height:170px;border-radius:26px;border:2px solid rgba(168,85,247,.6);background:linear-gradient(135deg,rgba(168,85,247,.18),rgba(15,23,42,.7));text-align:center;padding:26px 24px;}
 .s6-n .h{font-size:40px;font-weight:900;color:#fff;line-height:1.15;} .s6-n .d{margin-top:10px;font-size:30px;font-weight:600;color:#e9d5ff;}
 .s6-ar{position:absolute;left:0;right:0;text-align:center;font-size:44px;color:#c084fc;}
+.s6-n .acc{display:inline-block;color:#fde047;font-weight:900;font-size:1.2em;line-height:1.05;}
 """
     body = f"""<div id="g6">{qtitle(6, s['title_lines'], 's6-q')}{''.join(nodes)}</div>"""
     jss = f"""
@@ -497,14 +678,17 @@ def s7():
         rows.append(f'<div class="s7-r" id="s7-r{i}" style="top:{y}px;border-color:{c}88;"><svg class="s7-ic" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="{c}22" stroke="{c}" stroke-width="6"/>'
                     + (f'<path id="s7-p{i}" d="M28 52 L44 68 L74 34" fill="none" stroke="{c}" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="80" stroke-dashoffset="80"/>' if not warn else
                        f'<path id="s7-p{i}" d="M50 24 L50 58 M50 74 L50 76" fill="none" stroke="{c}" stroke-width="11" stroke-linecap="round" stroke-dasharray="80" stroke-dashoffset="80"/>')
-                    + f'</svg><div class="tx"><div class="h">{esc(it["title"])}</div><div class="d">{esc(it["text"])}</div></div></div>')
+                    + (f'</svg><div class="tx"><div class="h">{rich(it["title"])}</div><div class="d" style="font-size:{29 if len(re.sub("<[^>]+>", "", str(it["text"]))) <= 70 else 26}px;">{rich(it["text"])}</div></div></div>').replace('class="acc"', 'class="acc" style="color:#fbbf24;"' if warn else 'class="acc"'))
         b = it.get("beat", 1); k = seen.get(b, 0); seen[b] = k + 1
         t = lt(cid, B(7, b, 0.2 + k * 2.2))
         js.append(f"tl.fromTo('#s7-r{i}', {{opacity:0, x:-80}}, {{opacity:1, x:0, duration:0.45, ease:'expo.out', immediateRender:false}}, {t});"
                   f"tl.fromTo('#s7-p{i}', {{strokeDashoffset:80}}, {{strokeDashoffset:0, duration:0.45, ease:'power2.out', immediateRender:false}}, {t + 0.35});")
+        for k2, ta in enumerate(acc_times(7, f'{it["title"]} {it["text"]}', START[cid] + t, START[cid] + t + 0.8)):
+            js.append(f"tl.fromTo(QA('#s7-r{i} .acc')[{k2}], {{scale:1, textShadow:'0 0 0px {c}'}}, {{scale:1.12, textShadow:'0 0 22px {c}', duration:0.22, yoyo:true, repeat:1, ease:'power2.out', immediateRender:false}}, {round(ta - START[cid], 3)});")
     css = """
 .s7-r{position:absolute;left:60px;right:60px;height:190px;border:2px solid;border-radius:24px;background:rgba(15,23,42,.72);}
 .s7-ic{position:absolute;left:26px;top:40px;width:110px;height:110px;}
+.s7-r .acc{display:inline-block;color:#4ade80;font-weight:900;font-size:1.2em;line-height:1.05;}
 .s7-r .tx{position:absolute;left:164px;right:24px;top:34px;} .s7-r .h{font-size:35px;font-weight:900;color:#fff;line-height:1.2;} .s7-r .d{margin-top:8px;font-size:29px;font-weight:600;color:#cbd5e1;}
 .s7-shield{position:absolute;left:0;right:0;top:1110px;text-align:center;}
 .s7-shield span{display:inline-block;font-weight:900;font-size:32px;letter-spacing:2px;color:#0b0f19;background:linear-gradient(135deg,#fde68a,#f5c451);padding:12px 30px;border-radius:99px;box-shadow:0 10px 30px rgba(245,196,81,.4);}
@@ -548,7 +732,9 @@ def s8():
     js = f"""
 gsap.set('#s8-plate, #s8-h, #s8-cta, #s8-pl, #s8-d', {{opacity:0}});
 tl.fromTo('#s8-tag', {{opacity:0, scale:1.2, filter:'blur(10px)'}}, {{opacity:1, scale:1, filter:'blur(0px)', duration:0.45, ease:'expo.out'}}, 0.1);
-tl.fromTo('#s8-plate', {{opacity:0, y:40}}, {{opacity:1, y:0, duration:0.5, ease:'expo.out', immediateRender:false}}, {max(0.4, lt(cid, B(8, 0, 0.4)))});
+// pha 1 — bài học chốt: bảng câu kết nằm giữa, to; pha 2 — bảng lùi lên, hiện handle/CTA/nền tảng/miễn trừ
+tl.fromTo('#s8-plate', {{opacity:0, y:220, scale:1.12}}, {{opacity:1, y:200, scale:1.12, duration:0.5, ease:'expo.out', immediateRender:false}}, {max(0.4, lt(cid, B(8, 0, 0.4)))});
+tl.to('#s8-plate', {{y:0, scale:1, duration:0.55, ease:'power3.inOut'}}, {lt(cid, B(8, 1)) - 0.45});
 tl.fromTo('#s8-h', {{opacity:0, scale:0.9}}, {{opacity:1, scale:1, duration:0.45, ease:'back.out(1.8)', immediateRender:false}}, {lt(cid, B(8, 1))});
 tl.fromTo('#s8-cta, #s8-pl', {{opacity:0, y:20}}, {{opacity:1, y:0, duration:0.4, ease:'expo.out', immediateRender:false}}, {lt(cid, B(8, 1, 0.5))});
 tl.fromTo('#s8-d', {{opacity:0}}, {{opacity:1, duration:0.5, immediateRender:false}}, {lt(cid, B(8, 2))});

@@ -37,11 +37,11 @@ def main(d):
                 bad(f"số câu/dòng {counts} ≠ {REVEAL}")
         words = len(re.findall(r"\w+", " ".join(lines)))
         if words > 720:
-            bad(f"script {words} từ — QUÁ DÀI, video sẽ vượt 3 phút Shorts; cắt gọn còn ≤ 620 từ (câu ngắn, bỏ ý lan man)")
+            bad(f"script {words} từ — QUÁ DÀI, video sẽ vượt 3 phút Shorts; cắt gọn về 550–650 từ (câu ngắn, bỏ ý lan man)")
         elif words > 680:
-            warn(f"script {words} từ — hơi dài (sát mốc 3 phút), nên gọn thêm nếu được")
-        elif words < 420:
-            warn(f"script {words} từ — hơi ngắn")
+            warn(f"script {words} từ — hơi dài (sát mốc 3 phút), chuẩn là 550–650 từ")
+        elif words < 480:
+            warn(f"script {words} từ — hơi ngắn (chuẩn 550–650 từ)")
         low = (sc or "").lower()
         for w in FORBID:
             if re.search(r"(?<!\w)" + re.escape(w) + r"(?!\w)", low):
@@ -86,6 +86,18 @@ def main(d):
             warn("s4.cards nên có 3")
         if len((hf.get("s7") or {}).get("items") or []) != 3:
             warn("s7.items nên có 3")
+        hv = str(hook.get("theme_variant") or "")
+        nit = len(((hook.get("visual") or {}).get("items")) or [])
+        if hv in ("vs_clash", "pie_allocation", "sector_radar") and nit < (2 if hv != "sector_radar" else 3):
+            warn(f"hook.theme_variant '{hv}' thiếu hook.visual.items ({nit}) — template sẽ tự bỏ hình ẩn dụ")
+        if len(str(hook.get("stamp") or "")) > 28:
+            warn("hook.stamp dài >28 ký tự")
+        for n in (hf.get("s6") or {}).get("chain") or []:
+            if len(re.sub(r"<[^>]+>", "", str(n.get("text", "")))) > 75:
+                warn(f"s6 text dài ({len(str(n.get('text','')))} ký tự) — nên ≤ 60")
+        for n in (hf.get("s7") or {}).get("items") or []:
+            if len(re.sub(r"<[^>]+>", "", str(n.get("text", "")))) > 85:
+                warn(f"s7 text dài ({len(str(n.get('text','')))} ký tự) — nên ≤ 70")
         src = hf.get("source") or {}
         if not src.get("site") or not src.get("headline"):
             bad("hf-data.source thiếu site/headline (dẫn nguồn)")
@@ -100,8 +112,10 @@ def main(d):
         t = y.get("title", "")
         if not t or len(t) > 100:
             bad(f"YouTube title rỗng hoặc >100 ({len(t)})")
-        if not t.lstrip().startswith("[Giải mã]"):
-            warn("YouTube title nên bắt đầu '[Giải mã] '")
+        if re.search(r"^\s*\[gi[ảa]i m[ãa]\]|chuyện chứng khoán\s*$", t, re.I):
+            warn("YouTube title còn tiền tố [Giải mã] / hậu tố tên kênh — bỏ để 40 ký tự đầu dành cho con số chính")
+        if len(t) > 70:
+            warn(f"YouTube title {len(t)} ký tự (>70) — Shorts chỉ hiện ~40–50 ký tự đầu")
         if "khuyến nghị" not in y.get("description", "").lower():
             bad("YouTube description thiếu câu 'không phải khuyến nghị đầu tư'")
         if "http" not in y.get("description", ""):

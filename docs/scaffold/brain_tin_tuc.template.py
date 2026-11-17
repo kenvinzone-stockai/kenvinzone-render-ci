@@ -82,9 +82,8 @@ def assemble(deck, proj, date_full, out_dir):
     (out_dir / "script-90s.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
     y = deck.get("youtube", {})
-    title = str(y.get("title", "")).strip()
-    if not title.startswith("[Giải mã]"):
-        title = "[Giải mã] " + title
+    # Tiêu đề gọn cho mobile: không tiền tố [Giải mã], không hậu tố tên kênh (Shorts chỉ hiện ~40–50 ký tự đầu)
+    title = re.sub(r"^\s*\[\s*gi[ảa]i\s*m[ãa]\s*\]\s*", "", str(y.get("title", "")).strip(), flags=re.I)
     meta = {"youtube": {"title": title[:100], "description": y.get("description", ""),
                         "tags": y.get("tags", []), "privacyStatus": "private",
                         "categoryId": "25", "madeForKids": False},

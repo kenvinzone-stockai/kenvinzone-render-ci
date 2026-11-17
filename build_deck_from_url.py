@@ -31,26 +31,38 @@ QUY TẮC BẤT BIẾN:
 4. Dòng 2 nêu nguồn: "Câu chuyện hôm nay được kể lại từ bài viết trên <trang>, tác giả <tên>, đăng ngày <ngày>...". Nếu bài không có tác giả, bỏ phần tác giả.
 5. Dòng 9 = cái kết mở + mời theo dõi KenvinZone + disclaimer "đây chỉ là góc nhìn tham khảo chứ không phải lời khuyên đầu tư".
 6. TUYỆT ĐỐI KHÔNG dùng các từ: "thao túng" (thay bằng "giao dịch phối hợp"), "mua ngay", "bán ngay", "chắc chắn tăng/giảm", "cam kết lãi", "x2/x3 tài khoản", "làm giàu nhanh", "bí mật nội bộ", "all in", "lãi đảm bảo". Giọng: "góc nhìn tham khảo", "kịch bản", "cần theo dõi".
-7. ĐỘ DÀI LÀ RÀNG BUỘC SỐ 1: tổng script chỉ 480–560 TỪ, TUYỆT ĐỐI KHÔNG quá 640 từ — video BẮT BUỘC DƯỚI 3 phút (Shorts). Với tin dày thông tin (vĩ mô, chính sách), CẮT BỚT chi tiết để đạt độ dài thay vì gói hết. Viết câu NGẮN, súc tích; thà bỏ bớt ý phụ còn hơn vượt độ dài. Mỗi mặt lợi kèm mặt rủi ro nhưng diễn đạt gọn.
+7. ĐỘ DÀI LÀ RÀNG BUỘC SỐ 1: tổng script 550–650 TỪ (âm tiết; ~2–3 phút đọc), TUYỆT ĐỐI KHÔNG quá 680 từ — video BẮT BUỘC DƯỚI 3 phút (Shorts). Với tin dày thông tin (vĩ mô, chính sách), CẮT BỚT chi tiết để đạt độ dài thay vì gói hết. Viết câu NGẮN, súc tích; thà bỏ bớt ý phụ còn hơn vượt độ dài. Mỗi mặt lợi kèm mặt rủi ro nhưng diễn đạt gọn.
 8. Tin nước ngoài/vĩ mô (Fed, phố Wall...) thì cảnh s6 BẮT BUỘC liên hệ chứng khoán Việt Nam.
 9. Báo cáo của công ty chứng khoán: nêu rõ "đây là quan điểm của <đơn vị>", không biến "TVS chọn 5 cổ phiếu" thành "nên mua".
 10. Nếu người dùng đưa tiêu đề cover sẵn, GIỮ NGUYÊN VĂN (kể cả chữ "Cổ phiếu"), không rút gọn.
 11. TÊN RIÊNG / CHỈ SỐ / THUẬT NGỮ TIẾNG ANH — trong script_lines VÀ mọi chữ hiện trên slide (title, box, caption): LUÔN viết chuẩn quốc tế: Dow Jones, S&P 500, Nasdaq, Nasdaq 100, VN-Index, VN30, Fed, Phố Wall, KenvinZone. TUYỆT ĐỐI KHÔNG phiên âm tiếng Việt (CẤM "Đao Giôn", "Ét pi", "Nát-đác", "Vi-En In-đéc", "Kênh-zin-zone"). Gemini TTS đọc tiếng Anh TỐT nên cứ để nguyên tiếng Anh; phiên âm làm caption thiếu chuyên nghiệp. Số nằm TRONG tên chỉ số (S&P 500, Nasdaq 100, VN30) giữ nguyên chữ SỐ — quy tắc "viết số thành chữ" ở mục 3 CHỈ áp cho số liệu định lượng (phần trăm, điểm, tỷ đồng), KHÔNG áp cho tên riêng.
 
+12. HÌNH ẨN DỤ CẢNH BÌA (hook.theme_variant) — chọn 1 theo bản chất câu chuyện:
+   - "liquidity_pump": bơm tiền / thanh khoản / giải ngân / dòng tiền lớn đổ vào.
+   - "shock_alert": bán tháo / bốc hơi / lao dốc / xả kỷ lục / cú sốc rủi ro.
+   - "vs_clash": hai phe đối đầu (khối ngoại vs nội, 2 doanh nghiệp/nhân vật) → BẮT BUỘC hook.visual.items = 2 mục {"label","value","tone":"up|down"} (value là chuỗi hiển thị, vd "-3.000 tỷ").
+   - "pie_allocation": phân bổ vốn / tỷ trọng danh mục → BẮT BUỘC hook.visual.items 2–4 mục {"label","value": số %} lấy ĐÚNG từ bài; bài không có tỷ lệ thì KHÔNG chọn kiểu này.
+   - "sector_radar": nhiều nhóm ngành/cổ phiếu hưởng lợi → hook.visual.items 3–4 mục {"label"} (tên ngành ngắn ≤14 ký tự).
+   - không hợp kiểu nào thì để "".
+   hook.stamp = con dấu ≤24 ký tự IN HOA nêu SỰ KIỆN/CON SỐ THẬT trong bài (vd "BƠM 48.800 TỶ", "THANH KHOẢN -21%"); KHÔNG dùng giọng giật gân không có trong bài. hook.stamp_tone = "red" (tin xấu) | "green" (tin tốt) | "gold".
+13. CẢNH s3 có 3 kiểu (s3.mode): "bars" (mặc định, so sánh nhiều đơn vị bằng thanh), "vs" (đúng 2 phe đối đầu → s3.vs = 2 mục {"label","display","tone":"up|down","note":"≤40 ký tự","beat"}), "grid" (3–4 nhóm ngành → s3.grid = mục {"name":"≤14 ký tự","tickers":"MÃ · MÃ","display":"+18%","tone","beat"}). Chọn kiểu khớp nội dung; với "vs"/"grid" vẫn giữ "lead" và "callout".
+14. MẬT ĐỘ CHỮ: s6.chain[].text ≤ 60 ký tự, s7.items[].text ≤ 70 ký tự. Trong MỖI text của s6 và s7, bọc ĐÚNG 1 cụm từ khoá 1–4 chữ bằng <b>...</b> (vd "<b>hạ tỷ trọng</b>", "<b>cầm tiền chờ đáy</b>"); cụm này nên xuất hiện NGUYÊN VĂN trong lời đọc của dòng script tương ứng (dòng 7 cho s6, dòng 8 cho s7) để hiệu ứng sáng đúng lúc giọng đọc tới.
+15. TIÊU ĐỀ ĐĂNG (youtube.title): ≤ 70 ký tự; 40 ký tự ĐẦU phải chứa chủ thể + con số/sự kiện chính của bài; KHÔNG thêm "[Giải mã]" ở đầu, KHÔNG thêm "| Chuyện Chứng Khoán" hay tên kênh ở cuối (đã có trong hashtag). Viết hoa chữ cái đầu bình thường, không viết HOA toàn bộ; giật tò mò bằng câu hỏi hoặc hệ quả, nhưng KHÔNG phóng đại vượt dữ kiện trong bài và vẫn tuân thủ quy tắc 6.
+
 ĐẦU RA: CHỈ một đối tượng JSON (không văn bản thừa) theo đúng schema sau. Mỗi cảnh một ý; số liệu khớp bài.
 {
   "source": {"site": "tên báo", "short": "viết tắt", "author": "tên tác giả hoặc ''", "headline": "tiêu đề gốc của bài", "date": "DD/MM/YYYY", "url": "url rút gọn"},
-  "hook": {"eyebrow": "Chuyện Chứng Khoán", "title_lines": ["dòng 1 <=20 ký tự", "dòng 2 <=20 ký tự"], "sub": "1 câu phụ ngắn", "chips": [{"icon":"↘","text":"vd LNTT -42%","tone":"down"},{"icon":"↳","text":"...","tone":"gold"},{"icon":"◆","text":"...","tone":"blue"}]},
+  "hook": {"eyebrow": "Chuyện Chứng Khoán", "theme_variant": "liquidity_pump|shock_alert|vs_clash|pie_allocation|sector_radar|''", "stamp": "≤24 ký tự", "stamp_tone": "red|green|gold", "visual": {"items": []}, "title_lines": ["dòng 1 <=20 ký tự", "dòng 2 <=20 ký tự"], "sub": "1 câu phụ ngắn", "chips": [{"icon":"↘","text":"vd LNTT -42%","tone":"down"},{"icon":"↳","text":"...","tone":"gold"},{"icon":"◆","text":"...","tone":"blue"}]},
   "s1": {"title": "Tin hôm nay ta giải mã", "summary_html": "1-2 câu, cụm cần nhấn bọc <mark>...</mark>"},
   "s2": {"title_lines": ["Bức tranh chung","ảm đạm đến đâu?"], "stats": [{"value": 11000, "decimals":0, "unit":"tỷ", "label":"...", "badge":"-42% YoY", "tone":"gold", "beat":1}], "note": "1 câu nền"},
-  "s3": {"title_lines": ["Sự phân hóa","thể hiện ra sao?"], "lead": "Kẻ thắng — người thua", "bars": [{"label":"TCBS","display":"+6%","value":6,"beat":1},{"label":"VIX","display":"-92,9%","value":-92.9,"beat":2}], "callout": {"value":41,"suffix":"%","text":"...","beat":1}},
+  "s3": {"title_lines": ["Sự phân hóa","thể hiện ra sao?"], "mode": "bars|vs|grid", "lead": "Kẻ thắng — người thua", "bars": [{"label":"TCBS","display":"+6%","value":6,"beat":1},{"label":"VIX","display":"-92,9%","value":-92.9,"beat":2}], "callout": {"value":41,"suffix":"%","text":"...","beat":1}},
   "s4": {"title_lines": ["Dịch chuyển","giữa các mảng?"], "cards": [{"big":"12.300 tỷ","title":"...","text":"..."},{"big":"...","title":"...","text":"..."},{"big":"...","title":"...","text":"..."}]},
   "s5": {"title_lines": ["Ai thắng","ai thua?"], "lights": [{"color":"green","tag":"THẮNG THẾ","title":"...","text":"..."},{"color":"yellow","tag":"LƯU Ý","title":"...","text":"..."},{"color":"red","tag":"KHÓ KHĂN","title":"...","text":"..."}]},
   "s6": {"title_lines": ["Vì sao","phân hóa lớn vậy?"], "chain": [{"title":"...","text":"...","beat":1},{"title":"...","text":"...","beat":1},{"title":"...","text":"...","beat":2}]},
   "s7": {"title_lines": ["Nhà đầu tư","nên làm gì?"], "items": [{"icon":"check","title":"...","text":"...","beat":1},{"icon":"check","title":"...","text":"...","beat":1},{"icon":"warn","title":"...","text":"...","beat":2}]},
   "outro": {"tag": "Giải Mã Chứng Khoán", "closing": "1 câu kết đọng", "cta": "Theo dõi để giải mã tin tiếp theo"},
   "script_lines": ["... 9 dòng ..."],
-  "youtube": {"title": "<trục chuyện> | Chuyện Chứng Khoán (<=90 ký tự, KHÔNG tự thêm [Giải mã])", "description": "icon + 1 câu giải mã + 'Trong video:' 4-5 gạch đầu dòng số liệu + 'Nguồn: <trang> — <tác giả>, <ngày>: <url>' + 'Tổng hợp & bình luận lại, KHÔNG phải khuyến nghị đầu tư.' + hashtag", "tags": ["khong dau #","..."]}
+  "youtube": {"title": "<chủ thể + con số chính trong 40 ký tự đầu> (≤70 ký tự, KHÔNG [Giải mã], KHÔNG hậu tố tên kênh)", "description": "icon + 1 câu giải mã + 'Trong video:' 4-5 gạch đầu dòng số liệu + 'Nguồn: <trang> — <tác giả>, <ngày>: <url>' + 'Tổng hợp & bình luận lại, KHÔNG phải khuyến nghị đầu tư.' + hashtag", "tags": ["khong dau #","..."]}
 }
 - "tone" của chip: up/down/gold/blue. "value" trong stats/bars là SỐ (âm cho giảm). "beat" = câu thứ mấy (đếm từ 0) trong dòng script tương ứng mà khối xuất hiện (câu hỏi dẫn là câu 0, nội dung thường beat 1 hoặc 2).
 - description PHẢI có link url nguồn và câu disclaimer 'không phải khuyến nghị đầu tư'. hashtag gồm: #ChuyenChungKhoan #KenvinZone #giaimachungkhoan #kechuyenchungkhoan #xuhuongchungkhoan + vài tag theo bài.
@@ -72,6 +84,16 @@ def normalize_names(s):
     for pat, rep in rules:
         s = _re.sub(pat, rep, s, flags=_re.IGNORECASE)
     return s
+
+
+def clean_title(t):
+    """Tiêu đề đăng gọn cho mobile: bỏ tiền tố [Giải mã] và hậu tố tên kênh (Shorts chỉ hiện ~40–50 ký tự đầu)."""
+    t = re.sub(r"\s+", " ", str(t)).strip()
+    t = re.sub(r"^\s*\[\s*gi[ảa]i\s*m[ãa]\s*\]\s*[:\-–—]?\s*", "", t, flags=re.I)
+    t = re.sub(r"\s*[|｜\-–—]+\s*(?:chuyện chứng khoán|kể chuyện chứng khoán|kenvinzone)\s*$", "", t, flags=re.I)
+    if len(t) > 90:
+        t = t[:90].rsplit(" ", 1)[0].rstrip(" ,:;-–—") + "…"
+    return t
 
 
 def today_vn():
@@ -167,18 +189,15 @@ def assemble(deck, proj, date_full, out_dir):
     lines = [str(x).strip() for x in deck.get("script_lines", [])]
     (out_dir / "script-90s.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
     y = deck.get("youtube", {})
-    title = str(y.get("title", "")).strip()
-    if not title.lstrip().startswith("[Giải mã]"):
-        title = "[Giải mã] " + title
-    title = title[:100]
+    title = clean_title(y.get("title", ""))
     src = deck.get("source", {})
     meta = {
         "youtube": {"title": title, "description": y.get("description", ""), "tags": y.get("tags", []),
                     "privacyStatus": "private", "categoryId": "25", "madeForKids": False},
         "facebook_reels": {"caption": (deck.get("s1", {}).get("summary_html", "") or title).replace("<mark>", "").replace("</mark>", ""),
                            "videoState": "DRAFT", "sourceComment": f"Nguồn: {src.get('url','')} — {src.get('site','')}"},
-        "tiktok": {"title": title.replace("[Giải mã] ", ""), "privacy": "SELF_ONLY"},
-        "instagram": {"caption": title.replace("[Giải mã] ", ""), "privacy": "private"},
+        "tiktok": {"title": title, "privacy": "SELF_ONLY"},
+        "instagram": {"caption": title, "privacy": "private"},
         "source": src,
     }
     (out_dir / "upload-metadata.json").write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
