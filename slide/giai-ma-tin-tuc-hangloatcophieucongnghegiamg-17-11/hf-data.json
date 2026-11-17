@@ -1,0 +1,195 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "17/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "MoneyF",
+    "short": "MoneyF",
+    "author": "Mạnh Huyền",
+    "headline": "Hàng loạt cổ phiếu công nghệ giảm giá sâu, vì sao dòng tiền vẫn chưa “bắt đáy”?",
+    "date": "17/11/2026",
+    "url": "https://moneyf.vn/hang-loat-co-phieu-cong-nghe-giam-gia-sau-vi-sao-d-3likq66h"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "title_lines": [
+      "Cổ phiếu công nghệ",
+      "rơi sâu vì sao?"
+    ],
+    "sub": "Định giá rẻ đi một nửa nhưng dòng tiền lớn vẫn đứng ngoài quan sát",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "Chỉ số ngành -40%",
+        "tone": "down"
+      },
+      {
+        "icon": "↳",
+        "text": "Khối ngoại xả mạnh",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "P/E về 12-17 lần",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Cổ phiếu công nghệ lao dốc",
+    "summary_html": "Chỉ số ngành công nghệ thông tin đã <mark>giảm hơn 40%</mark> trong một năm, nhiều mã trụ cột rơi về mức thấp nhất nhiều tháng qua."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh chung",
+      "ảm đạm đến đâu?"
+    ],
+    "stats": [
+      {
+        "value": 40,
+        "decimals": 0,
+        "unit": "%",
+        "label": "Mức giảm chỉ số ngành trong một năm",
+        "badge": "-40% YoY",
+        "tone": "down",
+        "beat": 1
+      },
+      {
+        "value": 2500,
+        "decimals": 0,
+        "unit": "tỷ",
+        "label": "Khối ngoại bán ròng FPT 20 phiên",
+        "badge": "Áp lực lớn",
+        "tone": "gold",
+        "beat": 2
+      }
+    ],
+    "note": "Khối ngoại liên tục rút vốn khỏi các cổ phiếu công nghệ đầu ngành"
+  },
+  "s3": {
+    "title_lines": [
+      "Nhiều mã lớn",
+      "về vùng đáy?"
+    ],
+    "lead": "Đà bán diễn ra trên diện rộng",
+    "bars": [
+      {
+        "label": "FPT",
+        "display": "-66%",
+        "value": -66,
+        "beat": 1
+      },
+      {
+        "label": "CMG",
+        "display": "-56%",
+        "value": -56,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 50,
+      "suffix": "k/cp",
+      "text": "FPT lùi về vùng đáy tháng bảy năm hai nghìn hai mươi ba",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Dịch chuyển",
+      "cơ cấu động lực?"
+    ],
+    "cards": [
+      {
+        "big": "Gia công",
+        "title": "Động lực cũ chậm lại",
+        "text": "Tăng trưởng doanh thu dịch vụ phần mềm truyền thống có dấu hiệu giảm tốc"
+      },
+      {
+        "big": "AI & Data",
+        "title": "Động lực mới nổi lên",
+        "text": "Doanh nghiệp dồn nguồn lực xây dựng trung tâm dữ liệu và hạ tầng tính toán"
+      },
+      {
+        "big": "12-17x",
+        "title": "Định giá chiết khấu",
+        "text": "P/E toàn ngành lùi sâu từ mức đỉnh hai mươi lăm đến hai mươi tám lần"
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Bản chất dòng tiền",
+      "nằm ở đâu?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "ĐỊNH GIÁ",
+        "title": "P/E về vùng hấp dẫn",
+        "text": "Định giá đã chiết khấu sâu sau đà bán tháo kéo dài"
+      },
+      {
+        "color": "yellow",
+        "tag": "CHUYỂN ĐỔI",
+        "title": "Cần thêm thời gian",
+        "text": "Doanh nghiệp cần chứng minh hiệu quả từ các khoản đầu tư AI"
+      },
+      {
+        "color": "red",
+        "tag": "DÒNG VỐN",
+        "title": "Khối ngoại bán ròng",
+        "text": "Áp lực rút vốn quốc tế tạo sức ép cung bền bỉ"
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Tín hiệu",
+      "đèn giao thông?"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh",
+        "text": "Xuất khẩu phần mềm duy trì tăng trưởng mười lăm đến hai mươi phần trăm",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng",
+        "text": "Làn sóng thận trọng với AI từ Phố Wall lan sang thị trường Việt Nam",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ",
+        "text": "Chi phí khấu hao và lãi vay trung tâm dữ liệu bào mòn biên lợi nhuận",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Góc nhìn",
+      "cho nhà đầu tư?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Tầm nhìn trung hạn",
+        "text": "Quan sát vùng giá hấp dẫn cho mục tiêu một đến hai năm",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Theo dõi khối ngoại",
+        "text": "Chờ áp lực bán từ nhà đầu tư nước ngoài hạ nhiệt",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "KenvinZone",
+    "closing": "Định giá rẻ mở ra cơ hội, nhưng sự kiên nhẫn mới quyết định thành quả.",
+    "cta": "Bấm theo dõi KenvinZone để cùng giải mã nhịp đập thị trường mỗi ngày!"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
