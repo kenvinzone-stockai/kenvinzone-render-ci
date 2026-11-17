@@ -500,3 +500,77 @@ Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-ren
 === [3/3] Upload YouTube (privacy=private) ===
 {"ok": true, "platform": "youtube", "project": "gold-bias-17112026", "video_id": "-1smhZiMazs", "url": "https://youtu.be/-1smhZiMazs", "studio_url": "https://studio.youtube.com/video/-1smhZiMazs/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
   Xong: https://youtu.be/-1smhZiMazs
+=== DECK: vnindex-17112026-ngay | template=vnindex-daily-hf | preset giọng=ban-tin-vnindex ===
+  Đã tái tạo config/tts.json (giọng clone).
+  Đã tái tạo config/social-upload.json từ secret.
+=== [0/3] Cổng QA (zero-credit) ===
+  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
+QA vnindex-17112026-ngay [vnindex-daily-hf]: 24 khung · 0 lỗi · 1 cảnh báo → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-17112026-ngay/output/qa
+  CẢNH BÁO SAFE    → — vùng cột nút phải (y=1042, x=894–928) @ cover@0.25, cover@0.5, cover@0.92
+  [phát âm] đã áp từ điển phiên âm cho giọng đọc (chữ hiển thị giữ nguyên).
+=== [1/3] Tạo giọng đọc (gemini) ===
+Full voiceover 72.92s · 45 quãng lặng · 10 dòng
+  ranh 1: ước   7.70s → lặng 7.11–7.68 (0.56s) cắt 7.40s
+  ranh 2: ước  15.48s → lặng 14.61–15.07 (0.46s) cắt 14.84s
+  ranh 3: ước  23.23s → lặng 23.14–23.51 (0.37s) cắt 23.32s
+  ranh 4: ước  29.81s → lặng 30.33–30.80 (0.47s) cắt 30.56s
+  ranh 5: ước  36.91s → lặng 37.72–38.19 (0.47s) cắt 37.96s
+  ranh 6: ước  43.61s → lặng 43.06–43.57 (0.51s) cắt 43.31s
+  ranh 7: ước  51.22s → lặng 51.15–51.67 (0.52s) cắt 51.41s
+  ranh 8: ước  57.96s → lặng 57.24–57.76 (0.52s) cắt 57.50s
+  ranh 9: ước  65.10s → lặng 66.03–66.50 (0.47s) cắt 66.27s
+  → snap được 9/9 ranh giới vào quãng lặng
+Slide 1:    0.00s →    7.40s  = 7.40s  -> line_0.mp3
+Slide 2:    7.40s →   14.84s  = 7.45s  -> line_1.mp3
+Slide 3:   14.84s →   23.32s  = 8.48s  -> line_2.mp3
+Slide 4:   23.32s →   30.56s  = 7.24s  -> line_3.mp3
+Slide 5:   30.56s →   37.96s  = 7.39s  -> line_4.mp3
+Slide 6:   37.96s →   43.31s  = 5.36s  -> line_5.mp3
+Slide 7:   43.31s →   51.41s  = 8.10s  -> line_6.mp3
+Slide 8:   51.41s →   57.50s  = 6.08s  -> line_7.mp3
+Slide 9:   57.50s →   66.27s  = 8.77s  -> line_8.mp3
+Slide 10:   66.27s →   72.92s  = 6.65s  -> line_9.mp3
+Concatenated voiceover: 72.92s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-17112026-ngay/output/voiceover_concat.mp3
+Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
+Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
+Sending full script to Gemini TTS: 10 slides, 921 chars
+Full Gemini TTS saved: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-17112026-ngay/output/gemini_full_voiceover.mp3
+
+=== Splitting full Gemini TTS voiceover ===
+=== [2/3] Render HyperFrames (30fps đầy đủ) ===
+=== HyperFrames (vnindex-daily-hf): dung project tai /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-17112026-ngay/output/hf ===
+  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
+=== HyperFrames: dung composition tu hf-data.json ===
+TOTAL 77.52 scenes [('cover', 0.0, 8.396), ('score', 8.396, 7.448), ('journey', 15.844, 23.112), ('subs', 38.956, 5.358), ('tf', 44.314, 8.1), ('levels', 52.414, 6.084), ('scen', 58.498, 8.768), ('end', 67.266, 10.254), ('captions', 0, 77.52)]
+=== HyperFrames: render tung khung hinh (77.5s video) ===
+  Trinh duyet render: /home/runner/.cache/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux64/chrome-headless-shell
+  ◆  Rendering hf → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-17112026-ngay/output/final_video.hf.mp4
+     30fps · high · auto workers (4 cores detected)
+     GPU: browser GPU (auto-detect)
+  [?25l│
+  ◒  Checking browser...
+  [1G[J◇  Browser: env
+  [?25h
+    Lint: 0 error(s), 1 warning(s) — run with --lint-verbose for full output.
+    Continuing render despite lint issues. Use --strict to block errors.
+  HyperFrames render 5%
+  HyperFrames render 20%
+  [Browser:WARN] GSAP target #sb-tag not found. https://gsap.com
+  [Browser:WARN] GSAP target  not found. https://gsap.com
+  [Browser:WARN] GSAP target #sb-tag not found. https://gsap.com
+  HyperFrames render 30%
+  HyperFrames render 40%
+  HyperFrames render 50%
+  [Browser:WARN] GSAP target  not found. https://gsap.com
+  HyperFrames render 60%
+  HyperFrames render 70%
+  HyperFrames render 80%
+  HyperFrames render 90%
+  ◇  /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-17112026-ngay/output/final_video.hf.mp4
+     18.1 MB · 1m 17.5s video · rendered in 2m 16.1s
+     beginframe capture · software gpu · compile 1.4s · extract 0.0s · audio 3.2s · probe 0.2s · setup 1.4s · capture 2m 9.5s · encode (during capture) 2m 9.5s · assemble 0.5s
+Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-17112026-ngay/output/final_video.mp4
+  Video: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-17112026-ngay/output/final_video.mp4
+=== [3/3] Upload YouTube (privacy=private) ===
+{"ok": true, "platform": "youtube", "project": "vnindex-17112026-ngay", "video_id": "rlA2pE7SoGc", "url": "https://youtu.be/rlA2pE7SoGc", "studio_url": "https://studio.youtube.com/video/rlA2pE7SoGc/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
+  Xong: https://youtu.be/rlA2pE7SoGc
