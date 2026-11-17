@@ -183,12 +183,25 @@ def youtube_access_token_for_channel(config: dict, youtube: dict, channel: dict)
         headers={"Content-Type": "application/x-www-form-urlencoded"},
         method="POST",
     )
-    try:
-        with urlopen(request, timeout=60) as response:
-            data = json.loads(response.read().decode("utf-8"))
-    except HTTPError as exc:
-        detail = exc.read().decode("utf-8", "replace")
-        raise RuntimeError(f"YouTube token refresh failed: HTTP {exc.code}: {detail}") from exc
+    # Google đôi khi trả 5xx "internal_failure" tạm thời (16/11 22:10) → thử lại có giãn cách, chỉ dừng hẳn với lỗi 4xx
+    import time as _time
+    from urllib.error import URLError
+    data = None
+    for attempt in range(6):
+        try:
+            with urlopen(request, timeout=60) as response:
+                data = json.loads(response.read().decode("utf-8"))
+            break
+        except HTTPError as exc:
+            detail = exc.read().decode("utf-8", "replace")
+            if exc.code < 500 or attempt == 5:
+                raise RuntimeError(f"YouTube token refresh failed: HTTP {exc.code}: {detail}") from exc
+            print(f"  token refresh HTTP {exc.code}, thử lại sau {15 * (attempt + 1)}s…", flush=True)
+        except (URLError, TimeoutError) as exc:
+            if attempt == 5:
+                raise RuntimeError(f"YouTube token refresh failed: {exc}") from exc
+            print(f"  token refresh lỗi mạng ({exc}), thử lại sau {15 * (attempt + 1)}s…", flush=True)
+        _time.sleep(15 * (attempt + 1))
 
     tokens.update(
         {
