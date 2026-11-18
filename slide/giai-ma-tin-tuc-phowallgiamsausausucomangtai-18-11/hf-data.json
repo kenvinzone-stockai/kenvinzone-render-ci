@@ -1,0 +1,231 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "18/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "MoneyF",
+    "short": "MoneyF",
+    "author": "Nguyễn Huyền",
+    "headline": "Phố Wall giảm sâu sau sự cố mạng tại NSA, cổ phiếu công nghệ tiếp tục chịu áp lực",
+    "date": "18/11/2026",
+    "url": "moneyf.vn"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "theme_variant": "shock_alert",
+    "stamp": "DOW JONES -849 ĐIỂM",
+    "stamp_tone": "red",
+    "title_key": "-849 ĐIỂM",
+    "title_tone": "red",
+    "visual": {
+      "items": []
+    },
+    "title_lines": [
+      "Phố Wall chao đảo",
+      "Dow Jones -849 điểm"
+    ],
+    "sub": "Sự cố mạng tại NSA kích hoạt làn sóng bán tháo",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "Dow Jones -849 đ",
+        "tone": "down"
+      },
+      {
+        "icon": "↘",
+        "text": "S&P 500 đáy 4 tháng",
+        "tone": "down"
+      },
+      {
+        "icon": "◆",
+        "text": "Sự cố bảo mật NSA",
+        "tone": "gold"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Thị trường Phố Wall vừa trải qua phiên giảm sâu khi <mark>Dow Jones mất 849 điểm</mark> sau thông tin mạng lưới của Cơ quan An ninh Quốc gia Mỹ NSA gặp sự cố kỹ thuật."
+  },
+  "s2": {
+    "title_lines": [
+      "Cú sốc điểm số",
+      "Phố Wall bốc hơi"
+    ],
+    "stats": [
+      {
+        "value": -849,
+        "decimals": 0,
+        "unit": "điểm",
+        "label": "Dow Jones giảm",
+        "badge": "-1,64%",
+        "tone": "gold",
+        "beat": 1
+      },
+      {
+        "value": -1.03,
+        "decimals": 2,
+        "unit": "%",
+        "label": "S&P 500 chốt 7.341",
+        "badge": "Đáy 4 tháng",
+        "tone": "gold",
+        "beat": 2
+      },
+      {
+        "value": -0.74,
+        "decimals": 2,
+        "unit": "%",
+        "label": "Nasdaq Composite",
+        "badge": "Từng giảm 2,1%",
+        "tone": "gold",
+        "beat": 2
+      }
+    ],
+    "note": "Áp lực bán tháo lan rộng trước khi lực cầu bắt đáy giúp chỉ số thu hẹp đà giảm cuối ngày."
+  },
+  "s3": {
+    "title_lines": [
+      "Cổ phiếu công nghệ",
+      "tiếp tục bị xả"
+    ],
+    "mode": "bars",
+    "lead": "Sắc đỏ bao trùm nhóm chip và hệ sinh thái AI",
+    "bars": [
+      {
+        "label": "Iren",
+        "display": "-3,0%",
+        "value": -3,
+        "beat": 1
+      },
+      {
+        "label": "Microsoft",
+        "display": "-2,0%",
+        "value": -2,
+        "beat": 1
+      },
+      {
+        "label": "Nebius",
+        "display": "-1,0%",
+        "value": -1,
+        "beat": 2
+      },
+      {
+        "label": "Nvidia",
+        "display": "-0,5%",
+        "value": -0.5,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 1000,
+      "suffix": " đ",
+      "text": "Biên độ giảm tối đa của chỉ số Dow Jones trong phiên",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Nguyên nhân kích hoạt",
+      "nỗi sợ hệ thống"
+    ],
+    "cards": [
+      {
+        "big": "Sự cố NSA",
+        "title": "Bảo mật quốc gia",
+        "text": "Mạng lưới NSA suy giảm hiệu năng làm dấy lên nỗi lo hạ tầng công nghệ."
+      },
+      {
+        "big": "Chuỗi lỗi kỹ thuật",
+        "title": "Hạ tầng liên tiếp lỗi",
+        "text": "Trước đó chứng kiến lệnh dừng bay FAA, lỗi Outlook và ứng dụng ngân hàng."
+      },
+      {
+        "big": "Nvidia chờ BCTC",
+        "title": "Nghi ngại lãnh đạo",
+        "text": "Băn khoăn về ghế CEO của Jensen Huang và kiểm soát xuất khẩu đè nặng tâm lý."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Bóc tách tín hiệu",
+      "thị trường ra sao?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "ĐÈN XANH",
+        "title": "Hạ tầng vẫn an toàn",
+        "text": "NSA khẳng định nhiệm vụ thiết yếu vẫn vận hành, chỉ bảo trì định kỳ."
+      },
+      {
+        "color": "yellow",
+        "tag": "ĐÈN VÀNG",
+        "title": "Tâm lý thận trọng",
+        "text": "Đà bán nhóm công nghệ Mỹ có thể gây rung lắc các sàn chứng khoán châu Á."
+      },
+      {
+        "color": "red",
+        "tag": "ĐÈN ĐỎ",
+        "title": "Rủi ro định giá",
+        "text": "Các rào cản chính sách và rủi ro điều chỉnh chiến lược AI vẫn hiện hữu."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Tác động thế nào",
+      "tới chứng khoán Việt?"
+    ],
+    "chain": [
+      {
+        "title": "Mở cửa rung lắc",
+        "text": "Dễ tạo ra <b>tâm lý thận trọng</b> lên VN-Index.",
+        "beat": 1
+      },
+      {
+        "title": "Hấp thụ tin tức",
+        "text": "Dòng tiền nội cần <b>giữ vị thế cân bằng</b> ổn định.",
+        "beat": 1
+      },
+      {
+        "title": "Quản trị danh mục",
+        "text": "Nhà đầu tư cần <b>chủ động quản trị</b> rủi ro tài khoản.",
+        "beat": 2
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư F0",
+      "nên ứng phó gì?"
+    ],
+    "items": [
+      {
+        "icon": "warn",
+        "title": "Hạ bớt rủi ro",
+        "text": "Nên chủ động <b>hạ tỷ lệ đòn bẩy</b> về ngưỡng an toàn.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Chọn lọc doanh nghiệp",
+        "text": "Tránh vội vã <b>chạy theo kỳ vọng AI</b> thiếu nền tảng.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Kiên nhẫn quan sát",
+        "text": "Ưu tiên phương án <b>cầm tiền chờ đáy</b> tại hỗ trợ mạnh.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Thận trọng trước các biến động công nghệ toàn cầu",
+    "cta": "Theo dõi KenvinZone để cập nhật dòng tiền sớm nhất"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
