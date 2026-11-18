@@ -1,0 +1,231 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "18/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "MoneyF",
+    "short": "MoneyF",
+    "author": "Duy Khánh",
+    "headline": "Áp lực bán lan rộng trên thị trường chứng khoán, VN-Index giảm hơn 23 điểm",
+    "date": "18/11/2026",
+    "url": "moneyf.vn/ap-luc-ban-lan-rong-tren-thi-truong-chung-khoan-vn-rdu5xeyq"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "theme_variant": "shock_alert",
+    "stamp": "VN-INDEX MẤT 23 ĐIỂM",
+    "stamp_tone": "red",
+    "title_key": "MẤT 23 ĐIỂM",
+    "title_tone": "red",
+    "visual": {
+      "items": []
+    },
+    "title_lines": [
+      "ÁP LỰC BÁN LAN RỘNG",
+      "VN-INDEX MẤT 23 ĐIỂM"
+    ],
+    "sub": "Thanh khoản tăng mạnh đi kèm áp lực xả hàng diện rộng",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "VN-Index -23,71 điểm",
+        "tone": "down"
+      },
+      {
+        "icon": "↳",
+        "text": "HoSE 272 mã giảm",
+        "tone": "down"
+      },
+      {
+        "icon": "◆",
+        "text": "Khớp lệnh 17.453 tỷ",
+        "tone": "gold"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "VN-Index đóng cửa giảm mạnh <mark>23,71 điểm</mark> về ngưỡng 1.703,01 điểm khi sắc đỏ áp đảo toàn diện. Đáng chú ý, thanh khoản tăng lên hơn <mark>17.453 tỷ đồng</mark> chủ yếu do lực xả quyết liệt từ khối nội lẫn khối ngoại."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh chung",
+      "áp lực đến đâu?"
+    ],
+    "stats": [
+      {
+        "value": 23.71,
+        "decimals": 2,
+        "unit": "điểm",
+        "label": "VN-Index giảm",
+        "badge": "-1,37%",
+        "tone": "red",
+        "beat": 1
+      },
+      {
+        "value": 17453.8,
+        "decimals": 1,
+        "unit": "tỷ",
+        "label": "Giá trị giao dịch",
+        "badge": "+17%",
+        "tone": "gold",
+        "beat": 2
+      },
+      {
+        "value": 272,
+        "decimals": 0,
+        "unit": "mã",
+        "label": "Cổ phiếu giảm",
+        "badge": "Áp đảo",
+        "tone": "red",
+        "beat": 1
+      }
+    ],
+    "note": "Sắc đỏ hoàn toàn chi phối trên sàn HoSE với độ rộng thị trường nghiêng hẳn về bên bán."
+  },
+  "s3": {
+    "title_lines": [
+      "Nhóm cổ phiếu trụ",
+      "gây sức ép lớn?"
+    ],
+    "mode": "bars",
+    "lead": "Sức ép mạnh từ ngân hàng và nhóm vốn hóa lớn",
+    "bars": [
+      {
+        "label": "LPB",
+        "display": "-4,63%",
+        "value": -4.63,
+        "beat": 1
+      },
+      {
+        "label": "FPT",
+        "display": "-3,20%",
+        "value": -3.2,
+        "beat": 2
+      },
+      {
+        "label": "VPB",
+        "display": "-2,78%",
+        "value": -2.78,
+        "beat": 1
+      },
+      {
+        "label": "VCB",
+        "display": "-2,50%",
+        "value": -2.5,
+        "beat": 1
+      }
+    ],
+    "callout": {
+      "value": 12.9,
+      "suffix": " điểm",
+      "text": "VIC, VHM và 5 mã bank lớn lấy đi của VN-Index",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Dịch chuyển",
+      "giữa các nhóm ngành?"
+    ],
+    "cards": [
+      {
+        "big": "-6,5 điểm",
+        "title": "Bộ đôi VIC và VHM",
+        "text": "Đảo chiều giảm trong phiên chiều, đè nặng lên chỉ số"
+      },
+      {
+        "big": "-6,4 điểm",
+        "title": "5 cổ phiếu ngân hàng",
+        "text": "VCB, VPB, LPB, BID và TCB đồng loạt bị bán mạnh"
+      },
+      {
+        "big": "4,7 triệu cp",
+        "title": "Khối ngoại xả FPT",
+        "text": "FPT giảm 3,2% và nối dài chuỗi bán ròng dai dẳng"
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Tín hiệu thị trường",
+      "cảnh báo điều gì?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "ĐIỂM SÁNG",
+        "title": "Lực cầu chọn lọc",
+        "text": "KDH tăng 3,19% và được khối ngoại gom 2,6 triệu cổ phiếu"
+      },
+      {
+        "color": "yellow",
+        "tag": "CẢNH BÁO",
+        "title": "Thanh khoản bán vọt",
+        "text": "Thanh khoản tăng mạnh đi kèm một phiên giảm điểm sâu"
+      },
+      {
+        "color": "red",
+        "tag": "RỦI RO",
+        "title": "Ngoại xả cổ phiếu trụ",
+        "text": "FPT, SHB, HPG và VIX đều chịu áp lực bán ròng triệu đơn vị"
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Vì sao",
+      "đà rơi lan rộng?"
+    ],
+    "chain": [
+      {
+        "title": "Áp lực nguồn cung",
+        "text": "Thanh khoản cao cho thấy áp lực <b>cung gia tăng</b>.",
+        "beat": 1
+      },
+      {
+        "title": "Đà bán khối ngoại",
+        "text": "Tâm lý bị đè nặng do <b>khối ngoại bán ròng</b> liên tục.",
+        "beat": 1
+      },
+      {
+        "title": "Gãy đà kỹ thuật",
+        "text": "Chỉ số dễ dàng <b>mất mốc hỗ trợ</b> ngắn hạn.",
+        "beat": 2
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư",
+      "nên làm gì lúc này?"
+    ],
+    "items": [
+      {
+        "icon": "warn",
+        "title": "Tránh vội vã",
+        "text": "Nhà đầu tư nên <b>hạn chế bắt đáy</b> khi đà rơi chưa dừng.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Hạ đòn bẩy",
+        "text": "Ưu tiên <b>hạ tỷ trọng</b> ở các mã đã vi phạm ngưỡng cắt lỗ.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Giữ kỷ luật",
+        "text": "Kiên nhẫn cầm tiền và <b>chờ điểm cân bằng</b> rõ ràng hơn.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Thị trường biến động là lúc kỷ luật quản trị danh mục lên ngôi",
+    "cta": "Theo dõi KenvinZone để cập nhật tin tức tiếp theo"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
