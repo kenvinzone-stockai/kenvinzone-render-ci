@@ -552,7 +552,7 @@ def s3():
     body = f"""<div id="g3">{qtitle(3, s['title_lines'], 's3-q')}
 <div class="s3-lead" id="s3-lead">{_lead_html}</div>
 {'<div class="s3-axis" id="s3-axis"></div>' if mode == "bars" else ''}{''.join(rows)}
-{f'<div class="s3-co" id="s3-co"><div class="n mono"><span id="s3-con">0</span>{esc(co.get("suffix", ""))}</div><div class="x">{esc(co["text"])}</div></div>' if co else ''}
+{f'<div class="s3-co" id="s3-co"><div class="n mono" style="font-size:{min(96, int(330 / (max(1, len(str(co.get("value"))) + len(str(co.get("suffix", "")))) * 0.6)))}px;white-space:nowrap;"><span id="s3-con">0</span>{esc(co.get("suffix", ""))}</div><div class="x">{esc(co["text"])}</div></div>' if co else ''}
 </div>"""
     jss = f"""
 gsap.set('#g3 .s3-row, #g3 .s3-vs, #g3 .s3-g, #s3-vsb, #s3-co, #s3-lead', {{opacity:0}});
