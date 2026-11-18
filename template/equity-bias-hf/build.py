@@ -152,7 +152,8 @@ def hook_texts():
     lab, val = max(tot.items(), key=lambda kv: abs(kv[1])) if tot else ("", 0.0)
     up = lab.upper()
     ph = next(((n if val < 0 else p_) for k, n, p_ in _EQ_PHRASE if k in up), f"{up} {'KÉO XUỐNG' if val < 0 else 'NÂNG ĐỠ'}")
-    title = D.get("hook_title_html") or f"S&amp;P 500 &amp; NASDAQ<br/>{esc(ph)}"
+    title = D.get("hook_title_html") or f'<span class="l1">S&amp;P 500 &amp; NASDAQ</span><span class="l2">{esc(ph)}</span>'
+    hook_texts.len = max(16, len(ph))
     eb = D.get("eyebrow") or ""
     if not eb or "DAILY BIAS" in eb or "WEEKLY BIAS" in eb:
         eb = "⚡ ĐỊNH LƯỢNG & VĨ MÔ · CHỨNG KHOÁN MỸ" + (" · TUẦN" if "WEEKLY" in eb else "")
@@ -182,38 +183,45 @@ def scene_hook():
         return (f'<div class="hk-g" style="left:{cx-250}px;width:500px;">'
                 f'<div class="hk-gn" style="color:{COLOR[ix["key"]]};">{esc(ix["name"])}</div>'
                 f'<div class="hk-gr">{esc(ix["regime"])}</div>'
-                f'<div class="hk-gv mono" id="hk-{ix["key"]}" style="color:{col};">{sc:+.1f}</div>'
-                f'<div class="hk-gb"><div class="hk-gmk" style="left:{pos:.1f}%;"></div></div>'
-                f'<div class="hk-gs mono">/ 100</div></div>')
+                f'<div class="hk-gv mono" id="hk-{ix["key"]}" style="color:{col};text-shadow:0 0 30px {col}88;">{sc:+.1f}</div>'
+                f'<div class="hk-gb"><div class="hk-gmk" style="left:{pos:.1f}%;"></div></div></div>')
     dv = D.get("divergence_tag") or ""
     title, eb, stamp, scol, tape = hook_texts()
+    avg = (spx["score"] + nas["score"]) / 2
+    (g1, g2), GLOW = (("#fecaca", "#fb923c"), "#ef4444") if avg < -5 else ((("#bbf7d0", "#22d3ee"), "#10b981") if avg > 5 else (("#bfdbfe", "#3b82f6"), "#38bdf8"))
+    tfs = int(max(54, min(80, 930 / (getattr(hook_texts, "len", 18) * 0.64))))
+    TB = 322 + 40 + int(tfs * 2.62)                 # đáy bảng tiêu đề
     tape_html = "".join(f'<span style="color:{"#f87171" if v < 0 else "#4ade80"};">{esc(t)}</span><i>·</i>' for t, v in tape)
     css = f"""
-.hk-tape{{position:absolute;top:618px;left:60px;width:820px;height:46px;overflow:hidden;clip-path:inset(0);border-top:1px solid rgba(56,189,248,.35);border-bottom:1px solid rgba(56,189,248,.35);background:rgba(3,7,18,.6);}}
+.hk-tape{{position:absolute;top:{TB + 76}px;left:60px;width:820px;height:46px;overflow:hidden;clip-path:inset(0);border-top:1px solid rgba(56,189,248,.35);border-bottom:1px solid rgba(56,189,248,.35);background:rgba(3,7,18,.6);}}
 .hk-tape .run{{position:absolute;left:0;top:7px;white-space:nowrap;font-family:'JBM';font-weight:800;font-size:24px;letter-spacing:1px;}}
 .hk-tape i{{font-style:normal;color:#475569;margin:0 16px;}}
-.hk-stamp{{position:absolute;top:966px;left:60px;right:192px;text-align:center;}}
+.hk-stamp{{position:absolute;top:{TB + 404}px;left:60px;right:192px;text-align:center;}}
 .hk-stamp span{{display:inline-block;transform:rotate(-4deg);padding:9px 26px;border:5px double {scol};border-radius:12px;background:rgba(3,7,18,.9);box-shadow:0 10px 36px rgba(0,0,0,.6),0 0 30px {scol}77;font-family:'JBM';font-weight:800;font-size:32px;letter-spacing:2px;color:#fff;white-space:nowrap;}}
 .hk-eyebrow{{position:absolute;top:250px;left:0;right:0;display:flex;justify-content:center;}}
 .hk-eyebrow span{{background:linear-gradient(135deg,#38bdf8,#6366f1);color:#fff;font-weight:900;font-size:27px;letter-spacing:3px;padding:14px 32px;border-radius:99px;box-shadow:0 10px 40px rgba(99,102,241,.45);}}
-.hk-title{{position:absolute;top:360px;left:60px;right:60px;text-align:center;}}
-.hk-title h1{{font-size:62px;font-weight:900;line-height:1.14;letter-spacing:-1px;}}
-.hk-date{{position:absolute;top:560px;left:0;right:0;text-align:center;}}
+.hk-title{{position:absolute;top:322px;left:40px;right:40px;text-align:center;}}
+.hk-plate{{position:relative;overflow:hidden;display:inline-block;padding:20px 30px;border-radius:26px;border:2px solid {GLOW}99;background:linear-gradient(160deg,rgba(255,255,255,.09),{GLOW}14);box-shadow:0 18px 50px rgba(0,0,0,.45),0 0 46px {GLOW}44;}}
+.hk-plate .l1{{display:block;padding-top:.12em;white-space:nowrap;background:linear-gradient(180deg,#fff,#e2e8f0);-webkit-background-clip:text;background-clip:text;color:transparent;}}
+.hk-plate .l2{{display:block;padding-top:.12em;white-space:nowrap;background:linear-gradient(180deg,{g1},{g2});-webkit-background-clip:text;background-clip:text;color:transparent;}}
+.hk-sheen{{position:absolute;top:-20%;bottom:-20%;left:0;width:22%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.38),transparent);transform:translateX(-160%) skewX(-18deg);pointer-events:none;}}
+.hk-title h1{{font-size:{tfs}px;font-weight:900;line-height:1.18;letter-spacing:-1px;filter:drop-shadow(0 3px 0 rgba(0,0,0,.55)) drop-shadow(0 0 16px {GLOW}66);}}
+.hk-date{{position:absolute;top:{TB + 16}px;left:0;right:0;text-align:center;}}
 .hk-date span{{font-family:'JBM';font-weight:800;font-size:27px;color:#7dd3fc;border:2px solid rgba(56,189,248,.45);padding:8px 24px;border-radius:99px;background:rgba(56,189,248,.08);letter-spacing:2px;}}
-.hk-g{{position:absolute;top:680px;text-align:center;}}
+.hk-g{{position:absolute;top:{TB + 148}px;text-align:center;}}
 .hk-gn{{font-size:40px;font-weight:900;letter-spacing:1px;}}
 .hk-gr{{margin-top:4px;font-size:25px;font-weight:800;letter-spacing:3px;color:#94a3b8;}}
-.hk-gv{{font-family:'JBM';font-weight:800;font-size:104px;line-height:1.1;}}
-.hk-gb{{position:relative;margin:6px auto 0;width:420px;height:14px;border-radius:99px;background:linear-gradient(90deg,#ef4444,#f59e0b 50%,#22c55e);}}
+.hk-gv{{font-family:'JBM';font-weight:800;font-size:122px;line-height:1.08;}}
+.hk-gb{{position:relative;margin:8px auto 0;width:420px;height:18px;border-radius:99px;background:linear-gradient(90deg,#ef4444,#f59e0b 50%,#22c55e);}}
 .hk-gmk{{position:absolute;top:-12px;width:9px;height:38px;margin-left:-4px;border-radius:5px;background:#fff;box-shadow:0 0 16px #fff;}}
 .hk-gs{{margin-top:12px;font-size:24px;color:#64748b;}}
-.hk-dv{{position:absolute;top:1052px;left:70px;right:70px;text-align:center;font-size:30px;font-weight:800;line-height:1.35;padding:20px 26px;border-radius:20px;border:2px solid rgba(251,191,36,.5);background:rgba(251,191,36,.10);color:#fde68a;}}
+.hk-dv{{position:absolute;top:{TB + 482}px;left:70px;right:70px;text-align:center;font-size:30px;font-weight:800;line-height:1.35;padding:20px 26px;border-radius:20px;border:2px solid rgba(251,191,36,.5);background:rgba(251,191,36,.10);color:#fde68a;}}
 .hk-dv b{{color:#fff;}}
 """
     body = f"""
 <div class="hk-stage" id="hk-stage">
   <div class="hk-eyebrow"><span>{esc(eb)}</span></div>
-  <div class="hk-title"><h1>{title}</h1></div>
+  <div class="hk-title"><div class="hk-plate"><h1>{title}</h1><i class="hk-sheen" id="hk-sheen"></i></div></div>
   <div class="hk-tape" id="hk-tape"><div class="run" id="hk-run">{tape_html}{tape_html}</div></div>
   <div class="hk-date"><span>{esc(D.get('date_prefix') or 'PHIÊN')} {esc(D['date'])}</span></div>
   {gauge(spx, 290)}
@@ -223,7 +231,9 @@ def scene_hook():
 </div>"""
     t_spx = tline(0, 0.35, st); t_nas = tline(0, 0.6, st); t_dv = tline(0, 0.86, st)
     js = f"""
-gsap.set('#hk-dv', {{opacity:0}});
+// khung 0 (ảnh bìa) có đủ dòng nhận định; 0.4s sau ẩn đi để hiện lại đúng lúc giọng đọc
+tl.to('#hk-dv', {{opacity:0, duration:0.2}}, 0.3);
+tl.fromTo('#hk-sheen', {{xPercent:-160}}, {{xPercent:560, duration:0.9, ease:'power2.inOut', immediateRender:false}}, 0.35);
 tl.fromTo('#hk-spx', {{scale:1.25, opacity:0}}, {{scale:1, opacity:1, duration:0.45, ease:'back.out(1.7)', immediateRender:false}}, {t_spx});
 tl.fromTo('#hk-nas', {{scale:1.25, opacity:0}}, {{scale:1, opacity:1, duration:0.45, ease:'back.out(1.7)', immediateRender:false}}, {t_nas});
 // băng điện tử chạy ngang (tuyến tính) — nhiễu sóng + tách màu RGB khi số liệu đập vào

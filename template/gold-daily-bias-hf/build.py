@@ -199,11 +199,13 @@ def hook_title():
     bf = big_force()
     weekly = "TUẦN" in str(D.get("date_prefix", "")).upper()
     l2 = f"BIAS VÀNG {'TUẦN · ' if weekly else ''}{str(D['regime']).upper()}"
+    reg = str(D["regime"]).upper()
+    l2h = esc(l2).replace(esc(reg), f'<span class="key">{esc(reg)}</span>', 1)   # chế độ bias = từ khoá nền vàng
     if not bf:
-        return esc(l2), len(l2)
+        return f'<span class="l2">{l2h}</span>', len(l2)
     neg = bf["value"] < 0
     ph = _GOLD_PHRASE.get(bf.get("key"), (f"{bf['label'].upper()} KÉO XUỐNG", f"{bf['label'].upper()} NÂNG ĐỠ"))[0 if neg else 1]
-    return f"{esc(ph)}<br/>{esc(l2)}", max(len(ph), len(l2))
+    return f'<span class="l1">{esc(ph)}</span><span class="l2">{l2h}</span>', max(len(ph), len(l2))
 
 
 def hook_eyebrow():
@@ -229,16 +231,22 @@ def scene_hook():
     vals = [h[1] for h in hist]
     lo, hi = min(vals) - 1.0, max(vals) + 1.0
     ys = [1095 - (v - lo) / (hi - lo) * 0 for v in vals]  # placeholder
-    ymap = lambda v: 1012 + (hi - v) / (hi - lo) * 70
+    _tl = hook_title()[1] or 20
+    SB = 505 + int(int(max(52, min(78, 930 / (max(1, _tl) * 0.64)))) * 2.62) + 110     # đỉnh khối điểm số
+    TY = SB + 272                                                                       # đỉnh đường xu hướng
+    ymap = lambda v: TY + (hi - v) / (hi - lo) * 30
     pts = [(x, ymap(v)) for x, v in zip(xs, vals)]
     path = "M" + " L".join(f"{x:.0f},{y:.0f}" for x, y in pts)
     dots = "".join(
         f'<g class="hk-pt" id="hk-pt{i}"><circle cx="{x:.0f}" cy="{y:.0f}" r="{12 if i==2 else 9}" fill="{TCOL if i==2 else "#fbbf24"}"/>'
         f'<text x="{x:.0f}" y="{y-26:.0f}" text-anchor="middle" class="mono" font-size="30" font-weight="800" fill="{TCOL if i==2 else "#fde68a"}">{v:+.2f}</text>'
-        f'<text x="{x:.0f}" y="{y+52:.0f}" text-anchor="middle" font-size="28" font-weight="700" fill="#94a3b8">{esc(l)}</text></g>'
+        f'<text x="{x:.0f}" y="{y+44:.0f}" text-anchor="middle" font-size="26" font-weight="700" fill="#94a3b8">{esc(l)}</text></g>'
         for i, ((l, v), (x, y)) in enumerate(zip(hist, pts)))
     title_html, tlen = hook_title()
-    tfs = int(max(50, min(66, 900 / (max(1, tlen or 20) * 0.66))))
+    tfs = int(max(52, min(78, 930 / (max(1, tlen or 20) * 0.64))))
+    # màu bìa theo sắc thái: điểm âm → đỏ cam, dương → xanh lá, trung tính → vàng kim (nhận diện kênh Vàng)
+    TG = (("#fecaca", "#fb923c"), "#ef4444") if sc < -5 else ((("#bbf7d0", "#22d3ee"), "#10b981") if sc > 5 else (("#fef9c3", "#f59e0b"), "#f59e0b"))
+    (g1, g2), GLOW = TG
     bf = big_force()
     usd_press = bool(bf and bf.get("key") == "usd" and bf["value"] < 0)
     stamp = f"{str(D['regime']).upper()} · {sc:+.1f}"
@@ -247,37 +255,41 @@ def scene_hook():
 .hk-weight{{position:absolute;left:{540-95}px;top:300px;width:190px;height:74px;border-radius:14px;background:linear-gradient(180deg,#475569,#1e293b);border:3px solid #ef4444;box-shadow:0 14px 34px rgba(0,0,0,.6),0 0 26px rgba(239,68,68,.5);display:flex;align-items:center;justify-content:center;font-family:'JBM';font-weight:800;font-size:34px;color:#fff;letter-spacing:2px;opacity:0;z-index:4;}}
 .hk-weight small{{font-size:22px;color:#fca5a5;margin-left:8px;}}
 .hk-crack{{position:absolute;left:{540-110}px;top:322px;width:220px;height:190px;z-index:3;}}
-.hk-stamp{{position:absolute;top:992px;left:60px;right:192px;text-align:center;}}
-.hk-stamp span{{display:inline-block;transform:rotate(-4deg);padding:10px 28px;border:5px double {SC};border-radius:12px;background:rgba(15,23,42,.88);box-shadow:0 10px 36px rgba(0,0,0,.6),0 0 30px {SC}77;font-family:'JBM';font-weight:800;font-size:36px;letter-spacing:3px;color:#fff;white-space:nowrap;}}
+.hk-stamp{{position:relative;margin-bottom:8px;}} .hk-stamp b{{font-weight:800;color:#fff;}}
+.hk-stamp span{{display:inline-block;transform:rotate(-3deg);padding:6px 22px;border:5px double {SC};border-radius:12px;background:rgba(15,23,42,.9);box-shadow:0 10px 36px rgba(0,0,0,.6),0 0 30px {SC}77;font-family:'JBM';font-weight:800;font-size:28px;letter-spacing:3px;color:#cbd5e1;white-space:nowrap;}}
 .hk-flash{{position:absolute;inset:0;background:{SC}38;opacity:0;pointer-events:none;}}
 .hk-eyebrow{{position:absolute;top:250px;left:0;right:0;display:flex;justify-content:center;}}
 .hk-eyebrow span{{background:linear-gradient(135deg,#38bdf8,#0284c7);color:#fff;font-weight:900;font-size:28px;letter-spacing:4px;padding:14px 34px;border-radius:99px;box-shadow:0 10px 40px rgba(56,189,248,.45);}}
-.hk-bars{{position:absolute;top:322px;left:0;right:0;display:flex;justify-content:center;}}
-.hk-bars img{{width:220px;filter:drop-shadow(0 18px 40px rgba(245,158,11,.55));}}
-.hk-title{{position:absolute;top:515px;left:60px;right:60px;text-align:center;}}
-.hk-plate{{display:inline-block;padding:22px 30px;border-radius:24px;border:2px solid rgba(251,191,36,.35);background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(251,191,36,.05));}}
-.hk-plate h1{{font-size:{tfs}px;font-weight:900;line-height:1.18;letter-spacing:-1px;padding-top:.12em;}}
-.hk-date{{position:absolute;top:728px;left:0;right:0;text-align:center;}}
+.hk-bars{{position:absolute;top:318px;left:0;right:0;display:flex;justify-content:center;}}
+.hk-bars img{{width:230px;filter:drop-shadow(0 18px 44px rgba(245,158,11,.6));}}
+.hk-title{{position:absolute;top:505px;left:40px;right:40px;text-align:center;}}
+.hk-plate{{position:relative;overflow:hidden;display:inline-block;padding:20px 30px;border-radius:26px;border:2px solid {GLOW}99;background:linear-gradient(160deg,rgba(255,255,255,.09),{GLOW}14);box-shadow:0 18px 50px rgba(0,0,0,.45),0 0 46px {GLOW}44;}}
+.hk-plate h1{{font-size:{tfs}px;font-weight:900;line-height:1.18;letter-spacing:-1px;filter:drop-shadow(0 3px 0 rgba(0,0,0,.55)) drop-shadow(0 0 16px {GLOW}66);}}
+.hk-plate .l1{{display:block;padding-top:.12em;white-space:nowrap;background:linear-gradient(180deg,#fff,#e2e8f0);-webkit-background-clip:text;background-clip:text;color:transparent;}}
+.hk-plate .l2{{display:block;padding-top:.12em;white-space:nowrap;background:linear-gradient(180deg,{g1},{g2});-webkit-background-clip:text;background-clip:text;color:transparent;}}
+.hk-plate .key{{display:inline-block;color:#0b0f19;-webkit-text-fill-color:#0b0f19;background:#fde047;padding:0 .14em;border-radius:.14em;transform:rotate(-2deg);box-shadow:0 6px 18px rgba(0,0,0,.45);line-height:1.08;}}
+.hk-sheen{{position:absolute;top:-20%;bottom:-20%;left:0;width:22%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.38),transparent);transform:translateX(-160%) skewX(-18deg);pointer-events:none;}}
+.hk-date{{position:absolute;top:{505 + int(tfs * 2.62) + 56}px;left:0;right:0;text-align:center;}}
 .hk-date span{{font-family:'JBM';font-weight:800;font-size:28px;color:#7dd3fc;border:2px solid rgba(56,189,248,.45);padding:9px 26px;border-radius:99px;background:rgba(56,189,248,.08);letter-spacing:2px;}}
-.hk-score{{position:absolute;top:788px;left:0;right:0;text-align:center;}}
+.hk-score{{position:absolute;top:{505 + int(tfs * 2.62) + 110}px;left:0;right:0;text-align:center;}}
 .hk-lbl{{font-size:28px;font-weight:800;letter-spacing:4px;color:#94a3b8;}}
-.hk-val{{font-family:'JBM';font-weight:800;font-size:112px;line-height:1.05;color:#fbbf24;font-variant-numeric:tabular-nums;}}
+.hk-val{{font-family:'JBM';font-weight:800;font-size:124px;line-height:1.02;color:{TCOL};font-variant-numeric:tabular-nums;text-shadow:0 0 34px {GLOW}88;}}
 .hk-val small{{font-size:34px;color:#64748b;}}
-.hk-bar{{position:relative;margin:4px auto 0;width:760px;height:16px;border-radius:99px;background:linear-gradient(90deg,#ef4444,#f59e0b 50%,#22c55e);}}
+.hk-bar{{position:relative;margin:6px auto 0;width:800px;height:20px;border-radius:99px;background:linear-gradient(90deg,#ef4444,#f59e0b 50%,#22c55e);}}
 .hk-band{{position:absolute;top:-10px;bottom:-10px;left:42.5%;width:15%;border:2px solid rgba(255,255,255,.0);border-radius:10px;}}
 .hk-mk{{position:absolute;top:-14px;width:10px;height:44px;margin-left:-5px;border-radius:5px;background:#fff;box-shadow:0 0 18px #fff;left:{pos:.2f}%;}}
 .hk-trend{{position:absolute;left:0;top:0;width:{W}px;height:{H}px;}}
-.hk-tag{{position:absolute;top:1138px;left:0;right:0;text-align:center;font-size:30px;font-weight:800;color:{"#86efac" if up else "#fca5a5"};}}
+.hk-tag{{position:absolute;top:{TY + 96}px;left:0;right:0;text-align:center;font-size:30px;font-weight:800;color:{"#86efac" if up else "#fca5a5"};}}
 """
     body = f"""
 <div class="hk-stage" id="hk-stage">
   <div class="hk-eyebrow"><span>{esc(hook_eyebrow())}</span></div>
   <div class="hk-bars" id="hk-bars"><img src="assets/img/gold-bars-3d-3bars.png" alt=""/></div>
   {'<svg class="hk-crack" viewBox="0 0 220 190"><polyline id="hk-cr1" points="60,120 78,138 70,152 92,170" fill="none" stroke="#ff3b3b" stroke-width="4" stroke-linecap="round" stroke-dasharray="120" stroke-dashoffset="120" style="filter:drop-shadow(0 0 6px #ef4444)"/><polyline id="hk-cr2" points="140,112 128,132 146,146 132,168" fill="none" stroke="#ff3b3b" stroke-width="4" stroke-linecap="round" stroke-dasharray="120" stroke-dashoffset="120" style="filter:drop-shadow(0 0 6px #ef4444)"/></svg><div class="hk-weight" id="hk-weight">DXY<small>▲ USD</small></div>' if usd_press else ''}
-  <div class="hk-title"><div class="hk-plate"><h1 class="gold">{title_html}</h1></div></div>
+  <div class="hk-title"><div class="hk-plate"><h1>{title_html}</h1><i class="hk-sheen" id="hk-sheen"></i></div></div>
   <div class="hk-date"><span>{esc(D.get('date_prefix') or 'PHIÊN NGÀY')} {esc(D['date'])}</span></div>
   <div class="hk-score" id="hk-score">
-    <div class="hk-lbl">COMPOSITE BIAS · <span id="hk-regime">{esc(D['regime'])}</span></div>
+    <div class="hk-stamp" id="hk-stamp"><span>COMPOSITE BIAS · <b id="hk-regime">{esc(str(D['regime']).upper())}</b></span></div>
     <div class="hk-val"><span id="hk-num">{sc:+.2f}</span><small> / 100</small></div>
     <div class="hk-bar"><div class="hk-band" id="hk-band"></div><div class="hk-mk" id="hk-mk"></div></div>
   </div>
@@ -287,11 +299,14 @@ def scene_hook():
     {dots}
   </svg>
   <div class="hk-tag" id="hk-tag">{esc(D['trend_tag'])}</div>
-  <div class="hk-stamp" id="hk-stamp"><span>{esc(stamp)}</span></div>
 </div>
 <div class="hk-flash" id="hk-flash"></div>"""
     js = f"""
-gsap.set('#hk-stage .hk-pt, #hk-tag', {{opacity:0}});
+// khung 0 (ảnh bìa): đường xu hướng + nhãn đã hiện đủ; 0.45s sau ẩn đi để vẽ lại đúng lúc giọng đọc
+gsap.set('#hk-line', {{strokeDashoffset:0}});
+tl.to('#hk-line', {{strokeDashoffset:1000, duration:0.01}}, 0.45);
+tl.to('#hk-stage .hk-pt, #hk-tag', {{opacity:0, duration:0.25}}, 0.3);
+tl.fromTo('#hk-sheen', {{xPercent:-160}}, {{xPercent:560, duration:0.9, ease:'power2.inOut', immediateRender:false}}, 0.35);
 // score is on screen from frame 0 (thumbnail = hook). Punch on the spoken number.
 // "đóng dấu lại": phồng → đập xuống + rung khung + viền tấm tiêu đề loé màu xu hướng
 tl.fromTo('#hk-num', {{scale:1}}, {{scale:1.34, duration:0.12, ease:'power2.out', immediateRender:false}}, {t_score});
@@ -311,7 +326,6 @@ tl.fromTo('#hk-weight', {{y:0}}, {{y:25, duration:0.12, ease:'power2.out', immed
 tl.fromTo('#hk-cr1, #hk-cr2', {{strokeDashoffset:120}}, {{strokeDashoffset:0, duration:0.35, ease:'power2.out', stagger:0.08, immediateRender:false}}, {t_score + 0.14});""" if usd_press else ""}
 tl.fromTo('#hk-bars img', {{y:0}}, {{y:-8, duration:0.6, ease:'sine.inOut', yoyo:true, repeat:1}}, 0);
 // 3 sessions in a row: the line draws through the points
-tl.to('#hk-stamp', {{opacity:0, y:-20, filter:'blur(6px)', duration:0.25, ease:'power2.in'}}, {t_trend} - 0.3);
 tl.fromTo('#hk-line', {{strokeDashoffset:1000}}, {{strokeDashoffset:0, duration:1.4, ease:'power2.inOut', immediateRender:false}}, {t_trend});
 QA('.hk-pt').forEach((p,i)=>tl.fromTo(p, {{opacity:0, y:14}}, {{opacity:1, y:0, duration:0.35, ease:'back.out(1.6)', immediateRender:false}}, {t_trend} + i*0.45));
 tl.fromTo('#hk-tag', {{opacity:0, filter:'blur(8px)'}}, {{opacity:1, filter:'blur(0px)', duration:0.25, ease:'power3.out', immediateRender:false}}, {t_trend} + 1.4);
