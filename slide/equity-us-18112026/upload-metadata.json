@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "S&P 500 & Nasdaq Đồng Pha Giảm: Net GEX Âm Sâu | Bản Tin Định Lượng",
+    "description": "📊 Bản tin Phân tích định lượng Chứng khoán Mỹ - KenvinZone Analytics\n\nCập nhật góc nhìn đa chiều về S&P 500 và Nasdaq thông qua mô hình chấm điểm Bias, bóc tách dòng tiền liên thị trường và cấu trúc Gamma từ hợp đồng quyền chọn SPY/QQQ.\n\n⚠️ Bản tin được xây dựng hoàn toàn từ dữ liệu định lượng nhằm mục đích cung cấp thông tin tham khảo, KHÔNG phải lời khuyên đầu tư tài chính.\n\n#sp500 #nasdaq #chungkhoanmy #gamma #kenvinzone",
+    "tags": [
+      "sp500",
+      "nasdaq",
+      "chứng khoán mỹ",
+      "định lượng chứng khoán",
+      "spy",
+      "qqq",
+      "gamma",
+      "net gex",
+      "gamma flip",
+      "put wall",
+      "call wall",
+      "kenvinzone",
+      "aurora"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "equity-bias",
+    "date": "18/11/2026"
+  }
+}
