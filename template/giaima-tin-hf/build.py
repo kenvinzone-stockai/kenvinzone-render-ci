@@ -409,7 +409,15 @@ def s0():
     la, ka = keyed(lines[0], key)
     lb, kb = keyed(lines[1], "" if ka else key) if len(lines) > 1 else ("", False)
     tb = py + int(fa * 1.34) + (int(fb * 1.30) if len(lines) > 1 else 0) + 44
-    chips = "".join(f'<div class="h0-chip" id="h0-c{i}" style="border-color:{TONE.get(c.get("tone","gold"))}99;color:{TONE.get(c.get("tone","gold"))};"><span>{esc(c["icon"])}</span> {esc(c["text"])}</div>' for i, c in enumerate(h["chips"]))
+    # chip: bỏ chip trùng con số đã có ở tiêu đề / con dấu; chip "hot" (hoặc chip đầu) to hơn, viền sáng theo màu sắc thái
+    _seen = " ".join(raw) + " " + stamp
+    _nums = lambda t: [n for n in re.findall(r"\d[\d.,]*", str(t)) if len(re.sub(r"\D", "", n)) >= 2]
+    clist = [c for c in h["chips"] if not any(n in _seen for n in _nums(c.get("text", "")))] or list(h["chips"][:1])
+    hot = next((k for k, c in enumerate(clist) if c.get("hot")), 0)
+    chips = "".join(
+        f'<div class="h0-chip{" hot" if k == hot else ""}" id="h0-c{k}" style="border-color:{(glow if k == hot else TONE.get(c.get("tone", "gold")) + "99")};color:{TONE.get(c.get("tone", "gold"))};'
+        + (f'box-shadow:0 0 26px {glow}66;' if k == hot else '') + f'"><span>{esc(c["icon"])}</span> {esc(c["text"])}</div>'
+        for k, c in enumerate(clist))
     css = f"""
 .h0-eb{{position:absolute;top:250px;left:0;right:0;text-align:center;}}
 .h0-eb span{{display:inline-block;background:linear-gradient(135deg,#fde68a,{GOLD});color:#0b0f19;font-weight:900;font-size:30px;letter-spacing:4px;text-transform:uppercase;padding:14px 36px;border-radius:99px;box-shadow:0 10px 40px rgba(245,196,81,.45);}}
@@ -429,10 +437,11 @@ def s0():
 .h0-plate .b{{display:block;padding-top:.12em;font-size:{fb}px;white-space:nowrap;{gb}}}
 .h0-plate .key{{display:inline-block;color:#0b0f19;-webkit-text-fill-color:#0b0f19;background:#fde047;padding:0 .14em;margin:0 .04em;border-radius:.14em;transform:rotate(-2deg);box-shadow:0 6px 18px rgba(0,0,0,.45);line-height:1.08;}}
 .h0-sheen{{position:absolute;top:-20%;bottom:-20%;left:0;width:22%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.38),transparent);transform:translateX(-160%) skewX(-18deg);pointer-events:none;}}
-.h0-flow{{position:absolute;top:{tb + (84 if stamp else 72)}px;left:40px;right:40px;display:flex;flex-direction:column;align-items:center;gap:26px;}}
-.h0-sub{{text-align:center;font-size:38px;font-weight:800;color:{GOLD};text-transform:uppercase;line-height:1.25;padding:0 20px;}}
+.h0-flow{{position:absolute;top:{tb + (98 if stamp else 72)}px;left:40px;right:40px;display:flex;flex-direction:column;align-items:center;gap:26px;}}
+.h0-sub{{text-align:center;font-size:35px;font-weight:700;color:#e5e7eb;line-height:1.3;padding:0 30px;}}
 .h0-chips{{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}}
-.h0-chip{{font-weight:800;font-size:30px;padding:12px 22px;border-radius:99px;border:2px solid;background:rgba(15,23,42,.6);}}
+.h0-chip{{font-weight:800;font-size:28px;padding:11px 20px;border-radius:99px;border:2px solid;background:rgba(15,23,42,.6);}}
+.h0-chip.hot{{font-size:36px;padding:13px 28px;border-width:3px;background:rgba(15,23,42,.85);}}
 .h0-src{{text-align:center;}}
 .h0-src span{{font-family:'JBM';font-weight:700;font-size:28px;color:#93c5fd;border:2px solid rgba(96,165,250,.45);padding:8px 22px;border-radius:99px;background:rgba(59,130,246,.1);}}
 """
