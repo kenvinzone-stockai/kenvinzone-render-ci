@@ -334,20 +334,80 @@ def hook_visual(v, items, t):
     return css, svg, js
 
 
+# Màu tiêu đề bìa theo sắc thái tin (giữ bảng, font, bố cục — chỉ đổi màu chữ)
+COVER_TONES = {
+    "red":   (("#fecaca", "#fb923c"), "#ef4444"),
+    "green": (("#bbf7d0", "#22d3ee"), "#10b981"),
+    "gold":  (("#fef9c3", "#f59e0b"), "#f59e0b"),
+    "blue":  (("#bfdbfe", "#3b82f6"), "#3b82f6"),
+}
+
+
+def cover_tone(v, items):
+    h = D["hook"]
+    t = str(h.get("title_tone") or "").strip()
+    if t in COVER_TONES or t == "vs":
+        return t
+    st = str(h.get("stamp_tone") or "")
+    if v == "vs_clash" and len(items) >= 2:
+        return "vs"
+    if v == "shock_alert" or st in ("red", "down"):
+        return "red"
+    if v == "liquidity_pump" or st in ("green", "up"):
+        return "green"
+    if v == "pie_allocation" or st == "gold":
+        return "gold"
+    return "blue"
+
+
+def tone_grad(tone):
+    (a, b), g = COVER_TONES[tone]
+    return f"background:linear-gradient(180deg,{a} 0%,{b} 100%);-webkit-background-clip:text;background-clip:text;color:transparent;", g
+
+
+def keyed(line, key):
+    """Bọc từ khoá (thường là con số) của tiêu đề bìa trong nhãn nền vàng đặc."""
+    e = esc(line)
+    m = _ACC_RE.search(e)
+    if m:
+        return _ACC_RE.sub(lambda mm: f'<span class="key">{mm.group(2)}</span>', e, count=1), True
+    if key:
+        k = esc(key)
+        i = e.upper().find(k.upper())
+        if i >= 0:
+            return e[:i] + f'<span class="key">{e[i:i + len(k)]}</span>' + e[i + len(k):], True
+    return e, False
+
+
 # ================================================================ S0 HOOK
 def s0():
     cid, dur = mk("s0", 0)
     h = D["hook"]; src = D["source"]
-    lines = h["title_lines"]
+    lines = [str(x) for x in h["title_lines"]]
+    raw = [re.sub(r"<[^>]+>", "", x) for x in lines]
     # Giữ công thức gốc (tiêu đề ngắn vẫn to tới 120px) nhưng NÂNG SÀN tối thiểu để tiêu đề dài không bị bé xíu.
-    fa = int(max(58, min(120, 900 / (max(1, len(lines[0])) * 0.72))))
-    fb = int(max(54, min(104, 900 / (max(1, len(lines[1]) if len(lines) > 1 else 1) * 0.72))))
+    fa = int(max(58, min(120, 900 / (max(1, len(raw[0])) * 0.72))))
+    fb = int(max(54, min(104, 900 / (max(1, len(raw[1]) if len(raw) > 1 else 1) * 0.72))))
     v, vitems = hook_variant()
     t_h = lt(cid, B(0, 0))
     hv_css, hv_svg, hv_js = hook_visual(v, vitems, t_h + 0.15) if v else ("", "", [])
     py = 515 if v else 495                     # dải hình ẩn dụ (y 328–498) đẩy bảng tiêu đề xuống 20px
     stamp = str(h.get("stamp") or "").strip()[:28]
     s_col = {"red": "#ef4444", "down": "#ef4444", "green": "#22c55e", "up": "#22c55e"}.get(str(h.get("stamp_tone", "")), GOLD)
+    tone = cover_tone(v, vitems)
+    if tone == "vs":
+        ga, gla = tone_grad("green" if str(vitems[0].get("tone")) != "down" else "red")
+        gb, glb = tone_grad("red" if str(vitems[1].get("tone")) != "up" else "green")
+        glow = "#f59e0b"
+    else:
+        gb, glow = tone_grad(tone)
+        ga = "background:linear-gradient(180deg,#ffffff 0%,#e2e8f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;"
+    key = str(h.get("title_key") or "")
+    if not key and not any("<b>" in x or "<mark>" in x for x in lines):
+        mm = re.search(r"[-+]?\d[\d.,]*\s*(?:%|nghìn tỷ|tỷ|điểm)|[-+]?\d[\d.,]{2,}", " ".join(raw), re.I)
+        key = mm.group(0).strip() if mm else ""   # chỉ con số "đáng giá": có đơn vị hoặc ≥3 ký tự số
+    la, ka = keyed(lines[0], key)
+    lb, kb = keyed(lines[1], "" if ka else key) if len(lines) > 1 else ("", False)
     tb = py + int(fa * 1.34) + (int(fb * 1.30) if len(lines) > 1 else 0) + 44
     chips = "".join(f'<div class="h0-chip" id="h0-c{i}" style="border-color:{TONE.get(c.get("tone","gold"))}99;color:{TONE.get(c.get("tone","gold"))};"><span>{esc(c["icon"])}</span> {esc(c["text"])}</div>' for i, c in enumerate(h["chips"]))
     css = f"""
@@ -363,10 +423,12 @@ def s0():
 .h0-stamp{{position:absolute;left:0;right:0;top:{tb - 16}px;text-align:center;}}
 .h0-stamp span{{display:inline-block;transform:rotate(-3deg);padding:8px 26px;border:5px double {s_col};border-radius:12px;background:rgba(15,23,42,.9);box-shadow:0 10px 34px rgba(0,0,0,.6),0 0 28px {s_col}66;font-family:'JBM';font-weight:800;font-size:34px;letter-spacing:2px;color:#fff;white-space:nowrap;text-transform:uppercase;}}
 .h0-flash{{position:absolute;inset:0;pointer-events:none;opacity:0;box-shadow:inset 0 0 120px 30px rgba(239,68,68,.75);}}
-.h0-plate div{{display:inline-block;padding:22px 30px;border-radius:26px;border:2px solid rgba(96,165,250,.45);background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(59,130,246,.08));box-shadow:0 18px 50px rgba(0,0,0,.45),0 0 40px rgba(59,130,246,.2);}}
-.h0-plate h1{{font-weight:900;line-height:1.18;text-transform:uppercase;letter-spacing:-0.5px;}}
-.h0-plate .a{{display:block;padding-top:.16em;font-size:{fa}px;white-space:nowrap;{gcss(1)}}}
-.h0-plate .b{{display:block;padding-top:.12em;font-size:{fb}px;white-space:nowrap;{gcss(0)}}}
+.h0-plate > div{{position:relative;overflow:hidden;display:inline-block;padding:22px 30px;border-radius:26px;border:2px solid {glow}88;background:linear-gradient(160deg,rgba(255,255,255,.09),{glow}14);box-shadow:0 18px 50px rgba(0,0,0,.45),0 0 44px {glow}40;}}
+.h0-plate h1{{font-weight:900;line-height:1.18;text-transform:uppercase;letter-spacing:-0.5px;filter:drop-shadow(0 3px 0 rgba(0,0,0,.55)) drop-shadow(0 0 16px {glow}66);}}
+.h0-plate .a{{display:block;padding-top:.16em;font-size:{fa}px;white-space:nowrap;{ga}}}
+.h0-plate .b{{display:block;padding-top:.12em;font-size:{fb}px;white-space:nowrap;{gb}}}
+.h0-plate .key{{display:inline-block;color:#0b0f19;-webkit-text-fill-color:#0b0f19;background:#fde047;padding:0 .14em;margin:0 .04em;border-radius:.14em;transform:rotate(-2deg);box-shadow:0 6px 18px rgba(0,0,0,.45);line-height:1.08;}}
+.h0-sheen{{position:absolute;top:-20%;bottom:-20%;left:0;width:22%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.38),transparent);transform:translateX(-160%) skewX(-18deg);pointer-events:none;}}
 .h0-flow{{position:absolute;top:{tb + (84 if stamp else 72)}px;left:40px;right:40px;display:flex;flex-direction:column;align-items:center;gap:26px;}}
 .h0-sub{{text-align:center;font-size:38px;font-weight:800;color:{GOLD};text-transform:uppercase;line-height:1.25;padding:0 20px;}}
 .h0-chips{{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}}
@@ -377,7 +439,7 @@ def s0():
     body = f"""<div id="h0">
 <div class="h0-eb"><span>{esc(h['eyebrow'])}</span></div>
 {'<svg class="h0-vis" id="h0-vis" viewBox="0 0 960 170">' + hv_svg + '</svg>' + ('<div class="h0-logo" style="top:356px;"><img src="assets/img/logo-kenvinzone.svg" alt="" style="width:110px;height:110px;"/></div>' if v in ('liquidity_pump', 'sector_radar') else '') if v else '<div class="h0-logo"><img src="assets/img/logo-kenvinzone.svg" alt=""/></div>'}
-<div class="h0-plate"><div><h1><span class="a">{esc(lines[0])}</span><span class="b">{esc(lines[1]) if len(lines) > 1 else ''}</span></h1></div></div>
+<div class="h0-plate"><div><h1><span class="a">{la}</span><span class="b">{lb}</span></h1><i class="h0-sheen" id="h0-sheen"></i></div></div>
 <div class="h0-flow">
 <div class="h0-sub">{esc(h['sub'])}</div>
 <div class="h0-chips">{chips}</div>
@@ -391,6 +453,8 @@ def s0():
 // frame 0 already shows the full cover (thumbnail); chips light up one by one on the hook sentence
 QA('.h0-chip').forEach((c,i)=>{{ tl.fromTo(c, {{scale:1}}, {{scale:1.1, duration:0.18, ease:'power3.out', immediateRender:false}}, {t + 1.2} + i*0.5); tl.to(c, {{scale:1, duration:0.4, ease:'expo.out'}}, {t + 1.38} + i*0.5); }});
 {"".join(hv_js)}
+tl.fromTo('#h0-sheen', {{xPercent:-160}}, {{xPercent:560, duration:0.9, ease:'power2.inOut', immediateRender:false}}, {t_h + 0.3});
+tl.fromTo('#h0 .key', {{scale:1}}, {{scale:1.14, duration:0.16, yoyo:true, repeat:1, ease:'power2.out', immediateRender:false}}, {t_h + 1.0});
 {f"""tl.fromTo('#h0-stamp', {{opacity:0, scale:2.8, rotation:-10}}, {{opacity:1, scale:1, rotation:0, duration:0.2, ease:'power4.out', immediateRender:false}}, {t_h + 0.85});
 tl.fromTo('#h0', {{x:-8, y:3}}, {{x:8, y:-3, duration:0.04, repeat:4, yoyo:true, ease:'none', immediateRender:false}}, {t_h + 1.02});
 tl.set('#h0', {{x:0, y:0}}, {t_h + 1.22});""" if stamp else ""}
@@ -461,7 +525,7 @@ def s2():
             f'<div class="s2-tile" id="s2-t{i}" style="left:{x}px;top:{y}px;width:{w}px;height:{270 if big else 260}px;border-color:{c}88;">'
             f'<div class="v mono" style="color:{c};font-size:{120 if big else 88}px;"><span id="s2-v{i}">0</span><small>{esc(st.get("unit", ""))}</small></div>'
             f'<div class="l">{esc(st["label"])}</div>'
-            + (f'<div class="bd" style="background:{TONE["down"]};">{esc(st["badge"])}</div>' if st.get("badge") else "") + '</div>')
+            + (f'<div class="bd" style="background:{TONE["down"]};{"" if big else "top:-22px;right:18px;font-size:24px;padding:6px 14px;"}">{esc(st["badge"])}</div>' if st.get("badge") else "") + '</div>')   # ô nhỏ: nhãn vắt trên mép, không đè số
         t = lt(cid, B(2, st.get("beat", 1), 0.15 + (0.6 if (i == 2) else 0)))
         js.append(f"tl.fromTo('#s2-t{i}', {{opacity:0, y:60, scale:0.92}}, {{opacity:1, y:0, scale:1, duration:0.5, ease:'expo.out', immediateRender:false}}, {t});"
                   f"vnCounter('#s2-v{i}', 0, {st['value']}, {t + 0.1}, 1.4, {st.get('decimals', 0)}, '', '');")
