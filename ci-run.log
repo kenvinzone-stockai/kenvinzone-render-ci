@@ -637,3 +637,72 @@ Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-ren
 === [3/3] Upload YouTube (privacy=private) ===
 {"ok": true, "platform": "youtube", "project": "equity-us-18112026", "video_id": "7htcVx6Mxb4", "url": "https://youtu.be/7htcVx6Mxb4", "studio_url": "https://studio.youtube.com/video/7htcVx6Mxb4/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
   Xong: https://youtu.be/7htcVx6Mxb4
+=== DECK: vnindex-18112026-ngay | template=vnindex-daily-hf | preset giọng=ban-tin-vnindex ===
+  Đã tái tạo config/tts.json (giọng clone).
+  Đã tái tạo config/social-upload.json từ secret.
+=== [0/3] Cổng QA (zero-credit) ===
+  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
+QA vnindex-18112026-ngay [vnindex-daily-hf]: 24 khung · 0 lỗi · 0 cảnh báo → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-18112026-ngay/output/qa
+  [phát âm] đã áp từ điển phiên âm cho giọng đọc (chữ hiển thị giữ nguyên).
+=== [1/3] Tạo giọng đọc (gemini) ===
+Full voiceover 69.16s · 31 quãng lặng · 10 dòng
+  ranh 1: ước   7.25s → lặng 8.49–9.04 (0.54s) cắt 8.77s
+  ranh 2: ước  14.78s → lặng 16.19–16.72 (0.54s) cắt 16.46s
+  ranh 3: ước  21.16s → lặng 24.76–25.33 (0.57s) cắt 25.05s
+  ranh 4: ước  28.27s → lặng 30.97–31.53 (0.56s) cắt 31.25s
+  ranh 5: ước  35.78s → lặng 38.63–39.17 (0.54s) cắt 38.90s
+  ranh 6: ước  42.19s → lặng 44.03–44.56 (0.54s) cắt 44.29s
+  ranh 7: ước  47.82s → lặng 49.33–49.92 (0.59s) cắt 49.63s
+  ranh 8: ước  54.84s → lặng 55.54–56.08 (0.54s) cắt 55.81s
+  ranh 9: ước  61.85s → lặng 62.49–62.88 (0.39s) cắt 62.69s
+  → snap được 9/9 ranh giới vào quãng lặng
+Slide 1:    0.00s →    8.77s  = 8.77s  -> line_0.mp3
+Slide 2:    8.77s →   16.46s  = 7.69s  -> line_1.mp3
+Slide 3:   16.46s →   25.05s  = 8.59s  -> line_2.mp3
+Slide 4:   25.05s →   31.25s  = 6.20s  -> line_3.mp3
+Slide 5:   31.25s →   38.90s  = 7.66s  -> line_4.mp3
+Slide 6:   38.90s →   44.29s  = 5.39s  -> line_5.mp3
+Slide 7:   44.29s →   49.63s  = 5.33s  -> line_6.mp3
+Slide 8:   49.63s →   55.81s  = 6.18s  -> line_7.mp3
+Slide 9:   55.81s →   62.69s  = 6.88s  -> line_8.mp3
+Slide 10:   62.69s →   69.16s  = 6.47s  -> line_9.mp3
+Concatenated voiceover: 69.16s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-18112026-ngay/output/voiceover_concat.mp3
+Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
+Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
+Sending full script to Gemini TTS: 10 slides, 911 chars
+Full Gemini TTS saved: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-18112026-ngay/output/gemini_full_voiceover.mp3
+
+=== Splitting full Gemini TTS voiceover ===
+=== [2/3] Render HyperFrames (30fps đầy đủ) ===
+=== HyperFrames (vnindex-daily-hf): dung project tai /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-18112026-ngay/output/hf ===
+  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
+=== HyperFrames: dung composition tu hf-data.json ===
+TOTAL 73.76 scenes [('cover', 0.0, 9.765), ('score', 9.765, 7.69), ('journey', 17.455, 22.447), ('subs', 39.902, 5.392), ('tf', 45.294, 5.333), ('levels', 50.627, 6.18), ('scen', 56.807, 6.879), ('end', 63.686, 10.074), ('captions', 0, 73.76)]
+=== HyperFrames: render tung khung hinh (73.8s video) ===
+  Trinh duyet render: /home/runner/.cache/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux64/chrome-headless-shell
+  ◆  Rendering hf → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-18112026-ngay/output/final_video.hf.mp4
+     30fps · high · auto workers (4 cores detected)
+     GPU: browser GPU (auto-detect)
+  [?25l│
+  ◒  Checking browser...
+  [1G[J◇  Browser: env
+  [?25h
+    Lint: 0 error(s), 1 warning(s) — run with --lint-verbose for full output.
+    Continuing render despite lint issues. Use --strict to block errors.
+  HyperFrames render 5%
+  HyperFrames render 20%
+  HyperFrames render 30%
+  HyperFrames render 40%
+  HyperFrames render 50%
+  HyperFrames render 60%
+  HyperFrames render 70%
+  HyperFrames render 80%
+  HyperFrames render 90%
+  ◇  /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-18112026-ngay/output/final_video.hf.mp4
+     16.7 MB · 1m 13.8s video · rendered in 1m 59.5s
+     beginframe capture · software gpu · compile 1.3s · extract 0.0s · audio 2.7s · probe 0.2s · setup 1.4s · capture 1m 53.6s · encode (during capture) 1m 53.6s · assemble 0.4s
+Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-18112026-ngay/output/final_video.mp4
+  Video: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/vnindex-18112026-ngay/output/final_video.mp4
+=== [3/3] Upload YouTube (privacy=private) ===
+{"ok": true, "platform": "youtube", "project": "vnindex-18112026-ngay", "video_id": "tMa0oLdR7ZA", "url": "https://youtu.be/tMa0oLdR7ZA", "studio_url": "https://studio.youtube.com/video/tMa0oLdR7ZA/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
+  Xong: https://youtu.be/tMa0oLdR7ZA
