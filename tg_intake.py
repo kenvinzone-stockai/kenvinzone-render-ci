@@ -107,6 +107,15 @@ def do_approve(chat, video_id):
         print("approve fail:", e)
 
 
+def fail_reason(text):
+    try:
+        sys.path.insert(0, str(REPO / "tools" / "ci"))
+        from fail_reason import reason
+        return reason(text or "")
+    except Exception:
+        return ""
+
+
 def do_render(chat, url, title):
     send(chat, f"✅ Đã nhận link, đang dựng video (giọng clone + render + upload Private, ~15 phút):\n{url}")
     cmd = [sys.executable, str(REPO / "build_deck_from_url.py"), "--url", url]
@@ -116,12 +125,14 @@ def do_render(chat, url, title):
     print(r.stdout[-3000:]); print(r.stderr[-1500:])
     mproj = re.search(r"PROJECT=(\S+)", r.stdout)
     if r.returncode != 0 or not mproj:
-        send(chat, f"❌ Lỗi khi dựng nội dung từ link. Thử lại hoặc kiểm tra link.\n{url}")
+        why = fail_reason(r.stdout + r.stderr)
+        send(chat, f"❌ Lỗi khi dựng nội dung từ link. Thử lại hoặc kiểm tra link.\n{url}" + (f"\n\n{why}" if why else ""))
         sys.exit("build_deck failed")
     proj = mproj.group(1)
     git_commit(f"tg: deck {proj}")
     r2 = subprocess.run([sys.executable, str(REPO / "ci_build_video.py"), f"slide/{proj}", "--privacy", "private"],
-                        cwd=str(REPO))
+                        cwd=str(REPO), capture_output=True, text=True)
+    print(r2.stdout[-6000:]); print(r2.stderr[-3000:])
     res_path = REPO / "upload-result.json"
     if r2.returncode == 0 and res_path.exists():
         res = json.loads(res_path.read_text(encoding="utf-8"))
@@ -133,7 +144,8 @@ def do_render(chat, url, title):
         git_commit(f"tg: last-upload {proj} ({vid})")
         send(chat, f"✅ Xong video [{proj}] — đang để PRIVATE:\n{res.get('url', '')}\n\nXem xong, nhắn \"duyệt\" để công khai.")
     else:
-        send(chat, f"⚠️ Dựng nội dung xong nhưng render/upload lỗi [{proj}]. Xem log repo.")
+        why = fail_reason((r2.stdout or "") + (r2.stderr or ""))
+        send(chat, f"⚠️ Dựng nội dung xong nhưng render/upload lỗi [{proj}]. Xem log repo." + (f"\n\n{why}" if why else ""))
         sys.exit("render/upload failed")
 
 

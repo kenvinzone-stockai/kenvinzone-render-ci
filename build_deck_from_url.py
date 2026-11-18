@@ -188,6 +188,8 @@ def gemini(system, user, api_key, model, tries=4):
             return parts[0].get("text", "")
         except urllib.error.HTTPError as e:
             detail = e.read().decode("utf-8", "replace")[:600]
+            if re.search(r"spending cap|spend cap", detail, re.I):     # hết hạn mức chi tiêu tháng: thử lại vô ích
+                raise RuntimeError(f"Gemini HTTP {e.code} model={model}: spending cap — {detail}")
             if e.code in (429, 500, 502, 503, 504) and k < tries:
                 w = min(30, 5 * k); print(f"  Gemini HTTP {e.code} — thử lại sau {w}s (lượt {k}/{tries})", flush=True); last = f"HTTP {e.code}: {detail}"; time.sleep(w); continue
             raise RuntimeError(f"Gemini HTTP {e.code} model={model}: {detail}")

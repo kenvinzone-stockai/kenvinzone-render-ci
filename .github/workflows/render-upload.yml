@@ -117,6 +117,8 @@ jobs:
             MSG="✅ Render xong [$PROJECT] (chế độ không upload)"
           else
             MSG="❌ Lỗi khi làm video [$PROJECT]. Xem log trong repo (ci-logs/)."
+            WHY=$(python3 tools/ci/fail_reason.py brain.log ci-run.log 2>/dev/null)
+            if [ -n "$WHY" ]; then MSG="$MSG"$'\n\n'"$WHY"; fi
           fi
           curl -s -X POST "https://api.telegram.org/bot$TG/sendMessage" --data-urlencode chat_id="$CHAT" --data-urlencode text="$MSG" -o /dev/null -w "notify %{http_code}\n" || true
 
