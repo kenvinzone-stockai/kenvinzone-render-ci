@@ -1,0 +1,213 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "18/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "CafeF",
+    "short": "CafeF",
+    "author": "Hà Linh",
+    "headline": "Loại nhóm Vingroup, định giá chứng khoán Việt Nam ở mức nào?",
+    "date": "18/11/2026",
+    "url": "https://cafef.vn"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "theme_variant": "vs_clash",
+    "stamp": "P/E BỎ VIC CHỈ 9,4 LẦN",
+    "stamp_tone": "gold",
+    "title_key": "9,4 LẦN",
+    "visual": {
+      "items": [
+        {
+          "label": "Có Vingroup",
+          "value": "P/E neo cao",
+          "tone": "up"
+        },
+        {
+          "label": "Bỏ Vingroup",
+          "value": "P/E 9,4 lần",
+          "tone": "down"
+        }
+      ]
+    },
+    "title_lines": [
+      "ĐỊNH GIÁ CHỨNG KHOÁN",
+      "BỎ VINGROUP CÒN 9,4 LẦN"
+    ],
+    "sub": "Nghịch lý điểm số neo cao nhưng đa số cổ phiếu rơi về vùng đáy lịch sử",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "P/E loại VIC: 9.4x",
+        "tone": "down"
+      },
+      {
+        "icon": "↳",
+        "text": "Bán ròng: -124.000 tỷ",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "Ngang đáy Covid 2020",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "VN-Index neo cao nhờ lực đỡ từ họ Vingroup, nhưng nếu bóc tách nhóm này, định giá thực tế của thị trường <mark>chỉ còn 9,4 lần</mark>, ngang vùng đáy khủng hoảng lịch sử."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh thực tế",
+      "rẻ đến mức nào?"
+    ],
+    "stats": [
+      {
+        "value": 9.4,
+        "decimals": 1,
+        "unit": "lần",
+        "label": "P/E VN-Index loại Vingroup",
+        "badge": "Thấp hơn đáy 2022",
+        "tone": "gold",
+        "beat": 1
+      }
+    ],
+    "note": "Mức định giá P/E chín phẩy bốn lần hiện tại chỉ ngang ngửa thời điểm thị trường chịu cú sốc đại dịch năm 2020."
+  },
+  "s3": {
+    "title_lines": [
+      "Nghịch lý thị trường",
+      "phân hóa ra sao?"
+    ],
+    "mode": "vs",
+    "lead": "Chỉ số neo cao — Cổ phiếu chạm đáy",
+    "vs": [
+      {
+        "label": "Chỉ số VN-Index",
+        "display": "Neo cao",
+        "tone": "up",
+        "note": "Được nâng đỡ lớn bởi nhóm Vingroup",
+        "beat": 1
+      },
+      {
+        "label": "Đa số cổ phiếu",
+        "display": "Chiết khấu sâu",
+        "tone": "down",
+        "note": "Rơi về vùng định giá đáy nhiều năm",
+        "beat": 1
+      }
+    ],
+    "callout": {
+      "value": 4,
+      "suffix": " mã",
+      "text": "Nhóm VIC, VHM, VRE, VPL chi phối điểm số nhưng làm lu mờ bức tranh định giá thực",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Vì sao dòng tiền",
+      "chưa chịu nhập cuộc?"
+    ],
+    "cards": [
+      {
+        "big": "-124.000 tỷ",
+        "title": "Khối ngoại xả kỷ lục",
+        "text": "Lãi suất USD neo cao khiến dòng vốn quốc tế rút ròng quyết liệt khỏi HoSE từ đầu năm."
+      },
+      {
+        "big": "Chi phí vốn",
+        "title": "Dòng tiền nội dè chừng",
+        "text": "Môi trường lãi suất cao khiến dòng tiền trong nước chưa đủ dồi dào để tạo chu kỳ mới."
+      },
+      {
+        "big": "Thiếu vắng",
+        "title": "Hàng công nghệ lớn",
+        "text": "Thị trường thiếu các doanh nghiệp đại diện cho làn sóng AI, bán dẫn để hút vốn ngoại."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Phân định tín hiệu",
+      "cơ hội và rủi ro?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "ĐÈN XANH",
+        "title": "Biên an toàn dài hạn",
+        "text": "Vùng định giá chín phẩy bốn lần mở ra biên an toàn hấp dẫn cho dòng tiền tích sản."
+      },
+      {
+        "color": "yellow",
+        "tag": "ĐÈN VÀNG",
+        "title": "Rẻ có thể kéo dài",
+        "text": "Định giá thấp là điều kiện cần nhưng chưa đủ kích hoạt xu hướng nếu thiếu chất xúc tác."
+      },
+      {
+        "color": "red",
+        "tag": "ĐÈN ĐỎ",
+        "title": "Áp lực rút vốn ngoại",
+        "text": "Đà bán ròng của khối ngoại và tỷ giá neo cao vẫn là lực cản dòng tiền quy mô lớn."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Đâu là rào cản",
+      "kìm hãm dòng tiền?"
+    ],
+    "chain": [
+      {
+        "title": "Lãi suất quốc tế",
+        "text": "Lực cản từ <b>lãi suất quốc tế</b> neo cao",
+        "beat": 1
+      },
+      {
+        "title": "Thiếu hàng mới",
+        "text": "Thiếu vắng <b>hàng hóa công nghệ</b> quy mô lớn",
+        "beat": 2
+      },
+      {
+        "title": "Tâm lý thận trọng",
+        "text": "Thận trọng do <b>khẩu vị rủi ro</b> sụt giảm",
+        "beat": 2
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư cá nhân",
+      "nên hành động gì?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Chiến lược tích lũy",
+        "text": "Tập trung <b>tích lũy cổ phiếu</b> cơ bản định giá rẻ",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Kiên nhẫn chờ thời",
+        "text": "Chủ động <b>kiên nhẫn chờ đợi</b> chất xúc tác mới",
+        "beat": 2
+      },
+      {
+        "icon": "warn",
+        "title": "Quản trị danh mục",
+        "text": "Luôn giữ kỷ luật để <b>kiểm soát tỷ trọng</b> an toàn",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Định giá rẻ là nền tảng, nhưng chất xúc tác mới là chìa khóa mở đường dòng tiền.",
+    "cta": "Bấm theo dõi KenvinZone để cùng giải mã chuyển động tiếp theo"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
