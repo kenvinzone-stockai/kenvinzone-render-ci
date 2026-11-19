@@ -1,0 +1,40 @@
+{
+  "subtitles": {
+    "enabled": true,
+    "color": "#fde047",
+    "fontSize": 18,
+    "bottom": 60,
+    "maxLines": 1
+  },
+  "backgroundFx": "candlestick",
+  "bgm": {
+    "mode": "preset",
+    "preset": "ambient",
+    "volume": 0.18
+  },
+  "scriptLines": [
+    "Điểm Bias Vàng hôm nay ghi nhận mức âm mười bảy điểm, tiếp tục giữ chế độ GIẢM MẠNH và đi ngang ở vùng thấp suốt ba phiên qua.",
+    "Sức ép lớn nhất vẫn đến từ áp lực USD âm mười ba phẩy chín mươi bảy điểm, cộng hưởng cùng dòng tiền âm bốn phẩy năm mươi lăm và yếu tố riêng âm một phẩy mười tám điểm.",
+    "Lực đỡ đối trọng hiện tại là thanh khoản M2 dương hai phẩy tám mươi bảy và khẩu vị rủi ro dương hai phẩy bốn mươi sáu điểm, cho thấy môi trường tín dụng ổn định.",
+    "Về cấu trúc, Net GEX dương hai phẩy năm triệu đô la với Spot GLD 367.82 nằm trên Gamma Flip 365.0, kẹp giữa Put Wall 360.0 và Call Wall 375.0 khiến biên độ bị kìm nén.",
+    "Dự báo phiên tới có năm mươi lăm phần trăm xác suất giằng co trong biên, ba mươi phần trăm rủi ro thủng Flip kiểm định Put Wall, và mười lăm phần trăm hồi phục.",
+    "Nhà đầu tư nên canh biên độ 360.0 đến 375.0, chỉ gia tăng khi giá giữ vững trên 365.0, và hãy follow KenvinZone để theo dõi sát dữ liệu AURORA."
+  ],
+  "slides": {
+    "deletedIds": [],
+    "scriptLines": [
+      "Điểm Bias Vàng hôm nay ghi nhận mức âm mười bảy điểm, tiếp tục giữ chế độ GIẢM MẠNH và đi ngang ở vùng thấp suốt ba phiên qua.",
+      "Sức ép lớn nhất vẫn đến từ áp lực USD âm mười ba phẩy chín mươi bảy điểm, cộng hưởng cùng dòng tiền âm bốn phẩy năm mươi lăm và yếu tố riêng âm một phẩy mười tám điểm.",
+      "Lực đỡ đối trọng hiện tại là thanh khoản M2 dương hai phẩy tám mươi bảy và khẩu vị rủi ro dương hai phẩy bốn mươi sáu điểm, cho thấy môi trường tín dụng ổn định.",
+      "Về cấu trúc, Net GEX dương hai phẩy năm triệu đô la với Spot GLD 367.82 nằm trên Gamma Flip 365.0, kẹp giữa Put Wall 360.0 và Call Wall 375.0 khiến biên độ bị kìm nén.",
+      "Dự báo phiên tới có năm mươi lăm phần trăm xác suất giằng co trong biên, ba mươi phần trăm rủi ro thủng Flip kiểm định Put Wall, và mười lăm phần trăm hồi phục.",
+      "Nhà đầu tư nên canh biên độ 360.0 đến 375.0, chỉ gia tăng khi giá giữ vững trên 365.0, và hãy follow KenvinZone để theo dõi sát dữ liệu AURORA."
+    ]
+  },
+  "visuals": {
+    "colorMode": "dark",
+    "backgroundColor": "#060a13",
+    "gridEnabled": false,
+    "backgroundFx": "candlestick-diag"
+  }
+}
