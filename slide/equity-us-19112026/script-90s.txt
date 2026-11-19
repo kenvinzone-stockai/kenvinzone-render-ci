@@ -1,0 +1,7 @@
+Thị trường phiên hôm nay chứng kiến S&P 500 và Nasdaq đồng loạt giảm điểm với Bias lần lượt là -14.4 và -13.1 trong trạng thái đồng pha tiêu cực.
+Với S&P 500, áp lực bán bị chi phối nặng nề nhất bởi sức ép Đồng USD âm 6.75, Khẩu vị rủi ro âm 3.10 cùng Quyền chọn âm 3.00.
+Cấu trúc Gamma của SPY có Net GEX âm -282 triệu khi giá 730.2 rơi dưới Gamma Flip 734.27, dao động giữa Put Wall 707.0 và Call Wall 748.0 kèm biên độ ±8.3.
+Bên phía Nasdaq, chỉ số cũng chìm trong sắc đỏ trước lực cản lớn từ Đồng USD âm 7.44, Khẩu vị rủi ro âm 2.83 và Quyền chọn âm 2.18.
+Trên QQQ, Net GEX tiếp tục âm -98 triệu với thị giá 659.51 nằm dưới Gamma Flip 666.48, kẹp giữa Put Wall 585.0 và Call Wall 705.0 cùng rủi ro biến động ±12.0.
+Cả hai chỉ số đều duy trì phân kỳ đồng pha giảm; mô hình lượng hóa phiên tới dự báo năm mươi lăm phần trăm điều chỉnh, ba mươi phần trăm giằng co và mười lăm phần trăm hồi phục.
+Nhà đầu tư nên ưu tiên quản trị rủi ro khi thị trường dưới Gamma Flip và tiếp tục theo dõi cập nhật từ KenvinZone cùng AURORA.
