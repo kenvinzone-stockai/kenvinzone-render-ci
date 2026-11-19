@@ -1,0 +1,222 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "19/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "Tin nhanh chứng khoán",
+    "short": "ĐTCK",
+    "author": "Lam Phong",
+    "headline": "Lãi suất cho vay giảm, nhóm doanh nghiệp nào hưởng lợi lớn nhất?",
+    "date": "19/11/2026",
+    "url": "tinnhanhchungkhoan.vn/post401702.html"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "theme_variant": "sector_radar",
+    "stamp": "HẠ LÃI CHO VAY",
+    "stamp_tone": "green",
+    "title_key": "HƯỞNG LỢI",
+    "visual": {
+      "items": [
+        {
+          "label": "Tôn mạ"
+        },
+        {
+          "label": "Bán lẻ/ICT"
+        },
+        {
+          "label": "Đường mía"
+        },
+        {
+          "label": "Chăn nuôi"
+        }
+      ]
+    },
+    "title_lines": [
+      "Lãi suất cho vay hạ",
+      "Ai hưởng lợi lớn nhất?"
+    ],
+    "sub": "Báo cáo VBSE lọc nhóm cổ phiếu nhạy cảm nhất với chi phí vốn",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "Lãi vay giảm 0,5 - 1%",
+        "tone": "up"
+      },
+      {
+        "icon": "↳",
+        "text": "HSG, NKG, PET, SBT",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "Ngấm từ quý 1/2027",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Lãi suất cho vay bắt đầu hạ nhiệt nhưng tác động không chia đều, khi phần lớn doanh nghiệp có <mark>lượng tiền mặt gửi ngân hàng</mark> vượt xa nợ vay ngắn hạn."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh chung",
+      "thực tế đến đâu?"
+    ],
+    "stats": [
+      {
+        "value": 2.6,
+        "decimals": 1,
+        "unit": "%",
+        "label": "Tỷ trọng gói ưu đãi trên tổng tín dụng",
+        "badge": "Độ phủ hẹp",
+        "tone": "gold",
+        "beat": 1
+      },
+      {
+        "value": 0.5,
+        "decimals": 1,
+        "unit": "%",
+        "label": "Mức giảm lãi vay mới thực tế",
+        "badge": "0,2 - 0,5 điểm %",
+        "tone": "up",
+        "beat": 2
+      }
+    ],
+    "note": "Các gói ưu đãi mới tác động cục bộ và cần thời gian đáo hạn hợp đồng cũ"
+  },
+  "s3": {
+    "title_lines": [
+      "Sự phân hóa",
+      "thể hiện ra sao?"
+    ],
+    "mode": "bars",
+    "lead": "Nợ vay ngắn hạn vs Lượng tiền gửi",
+    "bars": [
+      {
+        "label": "Tiền & đầu tư tài chính",
+        "display": "1,178 triệu tỷ",
+        "value": 1178,
+        "beat": 1
+      },
+      {
+        "label": "Nợ vay ngắn hạn",
+        "display": "886 nghìn tỷ",
+        "value": 886,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 231,
+      "suffix": " DN",
+      "text": "Khảo sát nhóm phi tài chính vốn hóa trên 1.000 tỷ đồng của VBSE",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Doanh nghiệp nào",
+      "được gọi tên?"
+    ],
+    "cards": [
+      {
+        "big": "HSG & NKG",
+        "title": "Nhóm Tôn mạ",
+        "text": "100% nợ ngắn hạn, vòng quay vốn nhanh, hưởng lợi khi nhập hàng cuối năm."
+      },
+      {
+        "big": "PET",
+        "title": "Petrosetco",
+        "text": "Chi phí lãi vay 9 tháng tăng 73%, áp lực vốn lưu động phân phối rất lớn."
+      },
+      {
+        "big": "SBT",
+        "title": "Mía đường",
+        "text": "Nợ ngắn hạn gần 14.000 tỷ, lãi vay chiếm tới 65% lợi nhuận hoạt động EBIT."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Cơ chế lọc",
+      "dựa trên điều gì?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "TIÊU CHÍ 1",
+        "title": "Nợ ngắn hạn cao",
+        "text": "Vòng quay vốn nhanh để sớm tái tục hợp đồng với mức lãi suất mới."
+      },
+      {
+        "color": "yellow",
+        "tag": "TIÊU CHÍ 2",
+        "title": "Lãi vay chiếm tỷ trọng lớn",
+        "text": "Chi phí lãi ăn mòn mạnh vào EBIT thì khi giảm sẽ bật tăng lợi nhuận rõ rệt."
+      },
+      {
+        "color": "red",
+        "tag": "TIÊU CHÍ 3",
+        "title": "Nợ vay vượt tiền gửi",
+        "text": "Tránh các mã có tiền gửi nhiều hơn nợ vì hụt thu nhập lãi bù trừ."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Đèn tín hiệu",
+      "cho từng trường hợp?"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh",
+        "text": "Hưởng lợi rõ như HSG nhờ <b>định giá hợp lý</b> P/E mười ba lần.",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng",
+        "text": "Hưởng lợi vừa phải như FRT, DBC, TNG do <b>lãi vay bù trừ</b> tiền gửi.",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ",
+        "text": "NKG đã tăng nóng mười bảy phần trăm, nên <b>thận trọng dư địa</b> ngắn hạn.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Thời điểm ngấm",
+      "thực sự khi nào?"
+    ],
+    "items": [
+      {
+        "icon": "clock",
+        "title": "Độ trễ hợp đồng",
+        "text": "Doanh nghiệp phải chờ đáo hạn để <b>tái tục khoản vay</b> giá rẻ.",
+        "beat": 1
+      },
+      {
+        "icon": "chart",
+        "title": "Điểm rơi lợi nhuận",
+        "text": "Tác động tiết kiệm chi phí sẽ <b>thể hiện từ đầu năm 2027</b>.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Kỳ vọng định giá",
+        "text": "Tránh mua đuổi mã đã phản ánh kỳ vọng mà <b>quan sát định giá</b> thực tế.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Lãi suất hạ là tín hiệu tích cực, nhưng chỉ doanh nghiệp khát vốn lưu động mới thực sự nhẹ gánh.",
+    "cta": "Theo dõi KenvinZone để đón đầu dòng tiền thông minh!"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
