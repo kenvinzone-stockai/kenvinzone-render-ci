@@ -1,0 +1,53 @@
+{
+  "subtitles": {
+    "enabled": true,
+    "color": "#92f93e",
+    "fontSize": 18,
+    "bottom": 60,
+    "maxLines": 1
+  },
+  "backgroundFx": "candlestick",
+  "bgm": {
+    "mode": "custom",
+    "preset": "ambient",
+    "volume": 0.2,
+    "custom": {
+      "name": "Write_You.mp3",
+      "path": "preview-assets/bgm/20260624-151812_Write_You.mp3",
+      "url": "/slide/vnindex-19112026-ngay/preview-assets/bgm/20260624-151812_Write_You.mp3"
+    }
+  },
+  "scriptLines": [
+    "VNINDEX chốt ngày tại 1689,65 điểm, hồi nhẹ không đáng kể và vẫn kẹt sâu dưới toàn bộ các đường trung bình lớn.",
+    "Thứ Năm ngày 19 tháng 11, điểm KenvinZone giảm từ 44 xuống 43, tiếp tục duy trì khuyến nghị Tránh Vào Mới với độ tin cậy 62%.",
+    "Phiên sáng chỉ số giằng co quanh 1689,85 điểm sau nhịp giảm hơn 37 điểm từ đỉnh hôm qua, thanh khoản đạt mức 1,1 lần trung bình.",
+    "Ranh giới then chốt đặt ra từ sáng là mốc 1683,43 điểm, điều kiện vô hiệu xu hướng nếu thủng sâu 1675,08 điểm.",
+    "Sang phiên chiều, áp lực bán vẫn đè nặng khiến chỉ số khựng ở 1689,65 điểm, còn cách đường EMA20 hơn 39 điểm.",
+    "Dòng tiền bị trừ một điểm trong khi các nhóm khác đi ngang, kéo điểm tổng lùi về 43 điểm.",
+    "RSI ngày ở 37,24, MACD âm 2,72 xác nhận áp lực bán, dù khung tuần W1 vẫn giữ cấu trúc tăng.",
+    "Khung M15 xuất hiện doji giằng co trong biên độ nén, mốc swing low then chốt cần canh là 1684,38 điểm.",
+    "Kịch bản phiên tới: 45% tiếp tục chỉnh về 1670–1677 điểm; 35% giằng co quanh 1697–1703 điểm; 20% bật tăng mạnh.",
+    "Nhà đầu tư tuyệt đối không mở vị thế mới, hạ ngay margin và hẹn gặp lại anh em trong bản tin ngày mai."
+  ],
+  "slides": {
+    "deletedIds": [],
+    "scriptLines": [
+      "VNINDEX chốt ngày tại 1689,65 điểm, hồi nhẹ không đáng kể và vẫn kẹt sâu dưới toàn bộ các đường trung bình lớn.",
+      "Thứ Năm ngày 19 tháng 11, điểm KenvinZone giảm từ 44 xuống 43, tiếp tục duy trì khuyến nghị Tránh Vào Mới với độ tin cậy 62%.",
+      "Phiên sáng chỉ số giằng co quanh 1689,85 điểm sau nhịp giảm hơn 37 điểm từ đỉnh hôm qua, thanh khoản đạt mức 1,1 lần trung bình.",
+      "Ranh giới then chốt đặt ra từ sáng là mốc 1683,43 điểm, điều kiện vô hiệu xu hướng nếu thủng sâu 1675,08 điểm.",
+      "Sang phiên chiều, áp lực bán vẫn đè nặng khiến chỉ số khựng ở 1689,65 điểm, còn cách đường EMA20 hơn 39 điểm.",
+      "Dòng tiền bị trừ một điểm trong khi các nhóm khác đi ngang, kéo điểm tổng lùi về 43 điểm.",
+      "RSI ngày ở 37,24, MACD âm 2,72 xác nhận áp lực bán, dù khung tuần W1 vẫn giữ cấu trúc tăng.",
+      "Khung M15 xuất hiện doji giằng co trong biên độ nén, mốc swing low then chốt cần canh là 1684,38 điểm.",
+      "Kịch bản phiên tới: 45% tiếp tục chỉnh về 1670–1677 điểm; 35% giằng co quanh 1697–1703 điểm; 20% bật tăng mạnh.",
+      "Nhà đầu tư tuyệt đối không mở vị thế mới, hạ ngay margin và hẹn gặp lại anh em trong bản tin ngày mai."
+    ]
+  },
+  "visuals": {
+    "colorMode": "dark",
+    "backgroundColor": "#07030d",
+    "gridEnabled": false,
+    "backgroundFx": "candlestick-diag"
+  }
+}

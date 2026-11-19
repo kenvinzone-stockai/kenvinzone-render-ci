@@ -1,0 +1,171 @@
+ KenvinZone
+Phân tích chiến lược VNINDEX · HoSE
+● Tự động
+VNINDEX    19/11/2026 15:01
+⚡ Quan điểm nhanh
+VNINDEX giảm toàn diện trên mọi khung từ D1 đến H1, giá nằm dưới toàn bộ
+EMA quan trọng (EMA20/50/200 D1), RSI D1 chỉ 37.24 cho thấy áp lực bán chưa
+dứt. Phiên chiều hồi nhẹ về 1689.65 nhưng thanh khoản yếu (vol ratio 0.84),
+đây là nhịp hồi kỹ thuật trong downtrend chứ chưa phải đảo chiều.
+43
+/ 100 điểm
+Avoid New Entry
+62%
+Kỹ thuật
+12/30
+D1/H4/H1 đồng thuận bearish, giá dưới mọi EMA D1, chỉ W1/3D còn giữ trend
+bullish nhưng RSI đã suy yếu - cấu trúc đa khung mâu thuẫn và nghiêng về
+bearish ngắn-trung hạn
+Timing
+8/20
+M15 đang squeeze chờ breakout, chưa có tín hiệu entry rõ ràng, phiên chiều
+thanh khoản yếu khiến timing mua mới rủi ro cao do hiệu ứng T+2
+Dòng tiền
+9/20
+Vol ratio 0.84 dưới trung bình, dòng tiền chưa lan tỏa, thiếu xác nhận lực
+cầu mạnh để đỡ giá
+Sector
+6/15
+Thiếu dữ liệu chi tiết độ rộng ngành trong báo cáo này, nhưng bối cảnh điều
+chỉnh toàn diện cho thấy độ rộng thị trường nhiều khả năng tiêu cực
+Rủi ro
+8/15
+Chưa có catalyst chính sách rõ ràng trong dữ liệu, rủi ro chủ yếu đến từ kỹ
+thuật và tâm lý chốt lời sau nhịp tăng nóng
+🇻🇳 Bối cảnh thị trường
+VNINDEX đóng cửa phiên trước 1703.01, mở cửa gap down về vùng 1685-1689 và
+giằng co quanh 1684-1689 trong phiên. Giá hiện tại 1689.65 vẫn thấp hơn
+đáng kể so với EMA20 D1 (1728.78), EMA50 D1 (1745.3) và EMA200 D1 (1751.7),
+xác nhận xu hướng ngắn hạn D1 đã chuyển bearish rõ rệt sau nhịp điều chỉnh
+mạnh từ vùng đỉnh gần 1727. Cấu trúc đa khung thời gian cho thấy mâu thuẫn:
+W1 vẫn bullish về trend tổng thể nhưng RSI đã vào vùng bearish, trong khi
+D1/H4/H1 đồng thuận bearish cả về trend, EMA align và MACD.
+🔑 Vĩ mô & Catalyst
+Áp lực bán lan rộng sau nhịp điều chỉnh từ đỉnh 1727
+VNINDEX giảm hơn 37 điểm từ prev day high 1726.72 xuống vùng 1684-1689, cho
+thấy dòng tiền chốt lời diễn ra nhanh và mạnh trên diện rộng
+Áp lực bán lan rộng sau nhịp điều chỉnh từ đỉnh 1727
+VNINDEX giảm hơn 37 điểm từ prev day high 1726.72 xuống vùng 1684-1689, cho
+thấy dòng tiền chốt lời diễn ra nhanh và mạnh trên diện rộng
+Thanh khoản phiên chiều dưới trung bình
+Vol ratio 0.84 cho thấy lực mua chưa đủ mạnh để xác nhận nhịp hồi, dòng
+tiền bắt đáy còn thận trọng
+📊 Phân tích đa khung thời gian
+📅 Weekly (W1)
+W1 vẫn giữ trend bullish với EMA align Full Bullish, tuy nhiên RSI đã rơi
+vào Bearish Zone và MACD bias chuyển bearish, đây là tín hiệu cảnh báo sớm
+rằng động lực tăng trung hạn đang suy yếu dù cấu trúc giá tuần chưa gãy hẳn.
+📐 3 ngày (3D)
+3D cũng duy trì trend bullish nhưng EMA align chuyển Mixed, RSI Bearish
+Zone và MACD bearish, phản ánh áp lực điều chỉnh đang thẩm thấu từ khung
+ngắn lên khung trung, củng cố thêm cho kịch bản điều chỉnh sâu hơn là chỉ
+pullback nhẹ.
+📈 Daily (D1)
+D1 là khung xác nhận rõ ràng nhất: trend bearish, EMA align Full Bearish,
+giá nằm dưới toàn bộ EMA20/50/200, RSI thực 37.24 (chưa oversold cực độ
+nhưng yếu), MACD hist âm -2.72. Đây là tín hiệu downtrend ngắn-trung hạn đã
+được xác lập, không phải noise một phiên.
+⚡ M15
+M15 cho thấy cấu trúc range/mixed với EMA Full Bearish nhưng MACD bias lại
+bullish và BB đang squeeze chờ breakout, kết hợp doji tại high phiên - đây
+là tín hiệu giằng co, chưa đủ cơ sở để khẳng định đảo chiều ngắn hạn, cần
+chờ breakout rõ ràng khỏi range 1684-1697.
+💰 Dòng tiền & Thanh khoản
+Dòng tiền chưa cho thấy dấu hiệu lan tỏa trở lại, thanh khoản phiên chiều
+thấp hơn trung bình (vol ratio 0.84) trong khi biên độ dao động vẫn rộng
+(prev day range gần 52 điểm), phản ánh tâm lý thận trọng cao độ, dòng tiền
+đang đứng ngoài quan sát nhiều hơn là giải ngân mạnh.
+🔄 Sector Rotation
+🟢 Dẫn dắt
+Chưa xác định rõ nhóm dẫn dắt trong phiên giảm hiện tại do thiếu dữ liệu
+sector cụ thể
+🔵 Đang hút tiền
+Cần theo dõi thêm dòng tiền bắt đáy nếu có ở nhóm vốn hóa lớn khi chỉ số về
+vùng hỗ trợ
+🟡 Tăng nóng
+Nhóm đã tăng nóng trước đó dễ chịu áp lực chốt lời mạnh trong nhịp điều
+chỉnh này
+🔴 Nên tránh
+Nhóm beta cao, margin nhiều dễ bị bán tháo khi VNINDEX thủng hỗ trợ ngắn hạn
+👁 Góc nhìn
+🏦 Quỹ / Tổ chức
+Khối tổ chức nhiều khả năng đang trong trạng thái quan sát/chốt lời một
+phần sau nhịp tăng trước đó, chưa có tín hiệu giải ngân mạnh trở lại do
+thanh khoản yếu và cấu trúc D1 bearish rõ.
+👤 Trader cá nhân
+Nhà đầu tư cá nhân nên tránh bắt đáy sớm khi D1 chưa xác nhận đảo chiều,
+đặc biệt lưu ý rủi ro T+2 khi mua tại vùng giá hồi kỹ thuật có thể bị kẹt
+nếu downtrend D1 tiếp diễn.
+📋 Ma trận kịch bản
+KB1 45%
+Tiếp tục điều chỉnh về vùng hỗ trợ sâu hơn
+Điều kiện kích hoạt
+Giá thủng swing low 1684.38/1677.63 (low 20 bar) với thanh khoản gia tăng
+Mục tiêu
+1670-1677
+KB1 45%
+Tiếp tục điều chỉnh về vùng hỗ trợ sâu hơn
+Điều kiện kích hoạt
+Giá thủng swing low 1684.38/1677.63 (low 20 bar) với thanh khoản gia tăng
+Mục tiêu
+1670-1677
+KB2 35%
+Hồi kỹ thuật trong range trước khi quyết định hướng
+Điều kiện kích hoạt
+Giá giữ trên 1684 và bật lại kiểm tra vùng 1697-1703 nhưng không vượt EMA20
+D1
+Mục tiêu
+1697-1703
+⏱ Chiến lược theo chân trời
+📍 Hôm nay
+Phiên chiều giằng co hồi nhẹ nhưng thanh khoản yếu, chưa đủ tin cậy để giải
+ngân mới, nên đứng ngoài quan sát breakout từ squeeze M15
+📆 Trong tuần
+Theo dõi sát vùng hỗ trợ 1677-1684, nếu thủng với volume lớn thì downtrend
+D1 sẽ được xác nhận mạnh hơn, mục tiêu ngắn hạn mở rộng xuống thấp hơn
+🎯 Trung hạn
+Cần giá lấy lại EMA20/50 D1 (1728-1745) với thanh khoản cải thiện mới có
+thể đảo ngược nhận định bearish trung hạn hiện tại
+✅ Checklist hành động nhanh
+1
+Theo dõi giá có giữ được trên swing low 1684.38 hay không
+2
+Theo dõi giá có giữ được trên swing low 1684.38 hay không
+3
+Quan sát breakout của BB squeeze M15 kèm volume xác nhận hướng đi
+4
+Kiểm tra vol ratio phiên tiếp theo có vượt 1.0 để xác nhận dòng tiền quay
+lại
+5
+Theo dõi phản ứng giá tại EMA20 D1 1728.78 nếu có nhịp hồi mạnh
+🎯 Kế hoạch hành động
+🎯 Vị thế mới
+Không mở vị thế mới lúc này, chờ xác nhận breakout rõ ràng khỏi squeeze M15
+kèm thanh khoản thuyết phục
+📦 Đang nắm giữ
+Nhà đầu tư đang nắm giữ nên cân nhắc giảm tỷ trọng ở nhịp hồi về vùng
+1695-1703 nếu thanh khoản không cải thiện, bảo toàn vốn ưu tiên hơn kỳ vọng
+hồi phục nhanh
+⚠️ Margin
+Giảm margin ngay, D1 Full Bearish kèm giá dưới mọi EMA là tín hiệu rủi ro
+cao, call margin có thể xảy ra nếu tiếp tục giảm về vùng 1670-1677
+✅ Nhóm ưu tiên
+Ưu tiên quan sát nhóm vốn hóa lớn có nền tảng cơ bản tốt khi về vùng định
+giá hấp dẫn hơn, chưa vội giải ngân
+🚫 Tránh FOMO
+Tránh nhóm đã tăng nóng trước đó và nhóm beta cao dễ bị bán tháo mạnh khi
+thị trường chung yếu
+⏳ Đang chờ
+Chờ tín hiệu breakout rõ ràng từ BB squeeze M15 kèm xác nhận thanh khoản
+vượt trung bình trước khi hành động
+🔼 Thesis mạnh lên khi
+Giá vượt lại EMA20 D1 1728.78 kèm thanh khoản đột biến và độ rộng thị
+trường cải thiện rõ rệt
+🔽 Thesis vô hiệu khi
+Giá thủng 1677.63 (low 20 bar) với volume lớn, xác nhận downtrend D1 tiếp
+diễn mạnh hơn
+Báo cáo dựa trên dữ liệu kỹ thuật tự động. Không phải khuyến nghị đầu tư
+chính thức. Nhà đầu tư tự chịu trách nhiệm quyết định.
+📊 Xem Dashboard đầy đủ tại KenvinZone
+<https://kenvinzone-stockai.github.io/vnindex-report-daily/>
+kenvinzone.com · Báo cáo tự động mỗi phiên
