@@ -1,0 +1,182 @@
+{
+  "template": "gold-daily-bias-hf",
+  "date": "20/11/2026",
+  "title_html": "BÁO CÁO NHANH VĨ MÔ<br/>&amp; BIAS NGÀY",
+  "eyebrow": "⚡ DAILY FLASH BIAS · VÀNG",
+  "date_prefix": "PHIÊN NGÀY",
+  "regime": "GIẢM MẠNH",
+  "score": -17.5,
+  "history": [
+    [
+      "18/11",
+      -17.4
+    ],
+    [
+      "19/11",
+      -17.0
+    ],
+    [
+      "20/11",
+      -17.5
+    ]
+  ],
+  "trend_tag": "Giảm nhẹ so với phiên trước",
+  "forces": [
+    {
+      "key": "usd",
+      "label": "Áp lực USD",
+      "value": -13.97,
+      "color": "#ef4444"
+    },
+    {
+      "key": "flows",
+      "label": "Dòng tiền & xu hướng",
+      "value": -4.55,
+      "color": "#f87171"
+    },
+    {
+      "key": "gold_spec",
+      "label": "Yếu tố riêng của Vàng",
+      "value": -1.18,
+      "color": "#fb923c"
+    },
+    {
+      "key": "rates",
+      "label": "Lãi suất thực",
+      "value": -0.71,
+      "color": "#ef4444"
+    },
+    {
+      "key": "m2",
+      "label": "Thanh khoản M2",
+      "value": 2.58,
+      "color": "#4ade80"
+    },
+    {
+      "key": "risk",
+      "label": "Khẩu vị rủi ro",
+      "value": 2.8,
+      "color": "#38bdf8"
+    }
+  ],
+  "stress": "Khẩu vị rủi ro ổn định · tín dụng chưa căng",
+  "gamma": {
+    "axis": [
+      355,
+      380
+    ],
+    "net_gex_m": 2.5,
+    "call": {
+      "gld": 375.0,
+      "xau": 4060.0
+    },
+    "flip": {
+      "gld": 365.0,
+      "xau": 3951.0
+    },
+    "spot": {
+      "gld": 367.82,
+      "xau": 3981.9
+    },
+    "put": {
+      "gld": 360.0,
+      "xau": 3897.0
+    }
+  },
+  "scenarios": [
+    {
+      "key": "s_base",
+      "pct": 55,
+      "color": "#fbbf24",
+      "name": "Kìm nén trong biên",
+      "desc": "Dao động tích lũy giữa Put Wall <b>360.0</b> (≈<b>3897</b>) và Call Wall <b>375.0</b> (≈<b>4060</b>)"
+    },
+    {
+      "key": "s_down",
+      "pct": 30,
+      "color": "#f87171",
+      "name": "Áp lực USD đè thủng đáy",
+      "desc": "USD tiếp tục đè nặng, thủng Gamma Flip <b>365.0</b> (≈<b>3951</b>) lui về Put Wall <b>360.0</b> (≈<b>3897</b>)"
+    },
+    {
+      "key": "s_up",
+      "pct": 15,
+      "color": "#4ade80",
+      "name": "Hồi phục kỹ thuật",
+      "desc": "Dòng tiền M2 hỗ trợ bật tăng kiểm định Call Wall <b>375.0</b> (≈<b>4060</b>)"
+    }
+  ],
+  "actions": [
+    {
+      "icon": "⇆",
+      "color": "#fbbf24",
+      "title": "Giữ trung tính trong biên",
+      "desc": "<b>360.0–375.0</b> GLD · ≈ <b>3897–4060</b> XAUUSD",
+      "keyword": "QUAN SÁT BIÊN"
+    },
+    {
+      "icon": "▲",
+      "color": "#4ade80",
+      "title": "Điều kiện mua lại",
+      "desc": "Giữ vững trên Gamma Flip <b>365.0</b> (≈ <b>3951</b>) và lực bán USD hạ nhiệt",
+      "keyword": "CHỜ VƯỢT FLIP"
+    },
+    {
+      "icon": "▼",
+      "color": "#f87171",
+      "title": "Rủi ro cần tránh",
+      "desc": "Thủng Put Wall <b>360.0</b> (≈ <b>3897</b>) kích hoạt bán tháo theo đà",
+      "keyword": "QUẢN TRỊ RỦI RO"
+    }
+  ],
+  "anchors": {
+    "score": "âm mười bảy phẩy năm",
+    "trend": "đi ngang",
+    "neutral": "Giảm Mạnh",
+    "usd": "âm mười ba phẩy chín bảy",
+    "flows": "âm bốn phẩy năm lăm",
+    "gold_spec": "âm một phẩy một tám",
+    "counterweight": "Điểm tựa",
+    "rates": "âm không phẩy bảy một",
+    "m2": "dương hai phẩy năm tám",
+    "risk": "dương hai phẩy tám",
+    "stress": "tín dụng ổn định",
+    "gex": "Net GEX",
+    "gex_value": "dương hai phẩy năm",
+    "spot": "GLD 367.82",
+    "spot_xau": "3981.9",
+    "flip": "Gamma Flip 365.0",
+    "put": "Put Wall 360.0",
+    "call": "Call Wall 375.0",
+    "vol": "kìm nén biến động",
+    "s_base": "năm mươi lăm phần trăm",
+    "s_down": "ba mươi phần trăm",
+    "s_up": "mười lăm phần trăm",
+    "act_neutral": "quan sát trong biên",
+    "act_buy": "giữ vững",
+    "aurora": "AURORA",
+    "follow": "Hãy follow"
+  },
+  "sfx_ticks": [
+    "usd",
+    "flows",
+    "gold_spec",
+    "rates",
+    "m2",
+    "risk",
+    "spot",
+    "flip",
+    "put",
+    "call",
+    "s_base",
+    "s_down",
+    "s_up"
+  ],
+  "sfx_impacts": [
+    "score",
+    "gex"
+  ],
+  "audio_offset": 1.0,
+  "outro_hold": 3.6,
+  "stress_note_html": "✅ Khẩu vị rủi ro (+2.80) và thanh khoản M2 (+2.58) đều <b>dương</b>, hệ thống tín dụng chưa có dấu hiệu áp lực bán tháo hoảng loạn"
+}
