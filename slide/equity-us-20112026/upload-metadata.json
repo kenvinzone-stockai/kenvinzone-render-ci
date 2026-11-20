@@ -1,0 +1,29 @@
+{
+  "youtube": {
+    "title": "S&P 500 & Nasdaq Đồng Pha Giảm: Rủi Ro Gia Tăng Theo Định Lượng",
+    "description": "📊 Bản tin Phân tích định lượng Chứng khoán Mỹ từ KenvinZone Analytics.\n\n⚡ Cập nhật chỉ số S&P 500 và Nasdaq 100:\n- S&P 500 (SPX): Điểm Bias ngày -15.1 (Giảm mạnh), tuần -14.3. Net GEX SPY âm -8085 triệu, Spot 715.87 nằm dưới Gamma Flip 739.64.\n- Nasdaq (QQQ): Điểm Bias ngày -13.7 (Giảm), tuần -21.0. Net GEX QQQ âm -2579 triệu, Spot 645.04 nằm dưới Gamma Flip 665.2.\n- Cả hai chỉ số đang trong trạng thái đồng pha giảm (Aligned) chịu ảnh hưởng nặng nề bởi đồng USD mạnh và khẩu vị rủi ro suy yếu.\n\n⚠️ Tuyên bố miễn trừ trách nhiệm: Bản tin chỉ mang tính chất tham khảo số liệu định lượng, KHÔNG phải lời khuyên đầu tư tài chính.\n\n#sp500 #nasdaq #chungkhoanmy #gamma #kenvinzone",
+    "tags": [
+      "sp500",
+      "nasdaq",
+      "chứng khoán mỹ",
+      "kenvinzone",
+      "aurora",
+      "gamma flip",
+      "net gex",
+      "spy",
+      "qqq",
+      "phân tích định lượng",
+      "đầu tư mỹ",
+      "quyền chọn",
+      "put wall",
+      "call wall"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "equity-bias",
+    "date": "20/11/2026"
+  }
+}

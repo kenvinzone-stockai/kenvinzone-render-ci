@@ -1,0 +1,42 @@
+{
+  "subtitles": {
+    "enabled": true,
+    "color": "#7dd3fc",
+    "fontSize": 18,
+    "bottom": 60,
+    "maxLines": 1
+  },
+  "backgroundFx": "candlestick",
+  "bgm": {
+    "mode": "preset",
+    "preset": "ambient",
+    "volume": 0.18
+  },
+  "scriptLines": [
+    "Thị trường đồng thuận giảm điểm khi S&P 500 chạm âm 15.1 điểm và Nasdaq ghi nhận âm 13.7 điểm trong trạng thái tiêu cực.",
+    "Với S&P 500, áp lực bán chủ yếu đến từ sức ép Đồng USD âm 6.75, Khẩu vị rủi ro âm 4.17 và Quyền chọn âm 3.00.",
+    "Cấu trúc Gamma SPY mang Net GEX âm 8085 triệu với Spot 715.87 dưới Flip 739.64, dao động giữa Put Wall 620.0 và Call Wall 800.0 kèm biên độ 10.2 điểm.",
+    "Bên phía Nasdaq, chỉ số tiếp tục suy yếu bởi lực cản lớn từ Đồng USD âm 7.44 cùng Khẩu vị rủi ro âm 3.59.",
+    "Trên QQQ, Net GEX âm 2579 triệu khi Spot 645.04 nằm dưới Flip 665.2, kẹp giữa Put Wall 680.0 và Call Wall 720.0 với biến động kỳ vọng 13.7 điểm.",
+    "Cả hai chỉ số đồng pha giảm cả tuần lẫn ngày, đưa dự báo phiên tới gồm năm mươi phần trăm tiếp tục điều chỉnh, ba mươi phần trăm giằng co và hai mươi phần trăm hồi phục kỹ thuật.",
+    "Nhà đầu tư nên ưu tiên phòng vệ rủi ro và bấm theo dõi KenvinZone cùng hệ thống AURORA để cập nhật định lượng mới nhất."
+  ],
+  "slides": {
+    "deletedIds": [],
+    "scriptLines": [
+      "Thị trường đồng thuận giảm điểm khi S&P 500 chạm âm 15.1 điểm và Nasdaq ghi nhận âm 13.7 điểm trong trạng thái tiêu cực.",
+      "Với S&P 500, áp lực bán chủ yếu đến từ sức ép Đồng USD âm 6.75, Khẩu vị rủi ro âm 4.17 và Quyền chọn âm 3.00.",
+      "Cấu trúc Gamma SPY mang Net GEX âm 8085 triệu với Spot 715.87 dưới Flip 739.64, dao động giữa Put Wall 620.0 và Call Wall 800.0 kèm biên độ 10.2 điểm.",
+      "Bên phía Nasdaq, chỉ số tiếp tục suy yếu bởi lực cản lớn từ Đồng USD âm 7.44 cùng Khẩu vị rủi ro âm 3.59.",
+      "Trên QQQ, Net GEX âm 2579 triệu khi Spot 645.04 nằm dưới Flip 665.2, kẹp giữa Put Wall 680.0 và Call Wall 720.0 với biến động kỳ vọng 13.7 điểm.",
+      "Cả hai chỉ số đồng pha giảm cả tuần lẫn ngày, đưa dự báo phiên tới gồm năm mươi phần trăm tiếp tục điều chỉnh, ba mươi phần trăm giằng co và hai mươi phần trăm hồi phục kỹ thuật.",
+      "Nhà đầu tư nên ưu tiên phòng vệ rủi ro và bấm theo dõi KenvinZone cùng hệ thống AURORA để cập nhật định lượng mới nhất."
+    ]
+  },
+  "visuals": {
+    "colorMode": "dark",
+    "backgroundColor": "#060a13",
+    "gridEnabled": false,
+    "backgroundFx": "candlestick-diag"
+  }
+}
