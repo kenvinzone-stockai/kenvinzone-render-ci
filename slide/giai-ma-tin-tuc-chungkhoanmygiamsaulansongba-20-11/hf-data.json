@@ -1,0 +1,221 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "20/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "MoneyF",
+    "short": "MoneyF",
+    "author": "Long Giang",
+    "headline": "Chứng khoán Mỹ giảm sâu, làn sóng bán tháo lan rộng khỏi nhóm công nghệ",
+    "date": "20/11/2026",
+    "url": "https://moneyf.vn/chung-khoan-my-giam-sau-lan-song-ban-thao-lan-rong-wdjr589o"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "theme_variant": "shock_alert",
+    "stamp": "DOW JONES -1.101 ĐIỂM",
+    "stamp_tone": "red",
+    "title_key": "BÁN THÁO",
+    "visual": {
+      "items": []
+    },
+    "title_lines": [
+      "Chứng khoán Mỹ",
+      "BÁN THÁO LAN RỘNG"
+    ],
+    "sub": "Áp lực xả hàng vượt khỏi nhóm công nghệ khi hơn 90% cổ phiếu giảm điểm",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "Dow Jones -1.101đ",
+        "tone": "down"
+      },
+      {
+        "icon": "↘",
+        "text": "S&P 500 -2,0%",
+        "tone": "down"
+      },
+      {
+        "icon": "↳",
+        "text": "90% mã giảm",
+        "tone": "gold"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Thị trường chứng khoán Mỹ chìm trong sắc đỏ khi <mark>hơn 90% cổ phiếu S&P 500 giảm điểm</mark> và Dow Jones bốc hơi hơn một nghìn một trăm điểm."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh chung",
+      "lao dốc thế nào?"
+    ],
+    "stats": [
+      {
+        "value": -1101,
+        "decimals": 0,
+        "unit": "điểm",
+        "label": "Dow Jones bốc hơi",
+        "badge": "-2,2%",
+        "tone": "red",
+        "beat": 1
+      },
+      {
+        "value": -2,
+        "decimals": 1,
+        "unit": "%",
+        "label": "S&P 500 giảm",
+        "badge": "6 phiên giảm liên tiếp",
+        "tone": "red",
+        "beat": 2
+      }
+    ],
+    "note": "Cả bốn chỉ số lớn của Phố Wall đều đồng loạt giảm sâu trên 2%."
+  },
+  "s3": {
+    "title_lines": [
+      "Độ rộng thị trường",
+      "áp đảo ra sao?"
+    ],
+    "mode": "bars",
+    "lead": "Sắc đỏ bao trùm toàn bộ các chỉ số",
+    "bars": [
+      {
+        "label": "S&P 500",
+        "display": "-2,0%",
+        "value": -2.0,
+        "beat": 1
+      },
+      {
+        "label": "Dow Jones",
+        "display": "-2,2%",
+        "value": -2.2,
+        "beat": 1
+      },
+      {
+        "label": "Russell 2000",
+        "display": "-2,2%",
+        "value": -2.2,
+        "beat": 1
+      },
+      {
+        "label": "Nasdaq",
+        "display": "-2,3%",
+        "value": -2.3,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 4.37,
+      "suffix": "lần",
+      "text": "Tỷ lệ mã giảm so với mã tăng trên sàn New York",
+      "beat": 2
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Tâm điểm AI",
+      "phân hóa thế nào?"
+    ],
+    "cards": [
+      {
+        "big": "+17,1%",
+        "title": "Anthropic IPO",
+        "text": "Từng vọt tăng gần 39% nhưng hạ nhiệt về cuối phiên"
+      },
+      {
+        "big": "-3,3%",
+        "title": "Nvidia giảm sâu",
+        "text": "Ghi nhận phiên giảm điểm thứ sáu liên tiếp"
+      },
+      {
+        "big": "-7,7%",
+        "title": "AMD bị bán tháo",
+        "text": "Áp lực tăng sau thông tin quỹ công bố vị thế bán khống"
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Ba nguyên nhân",
+      "kích hoạt bán tháo?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "ĐIỂM SÁNG HIẾM",
+        "title": "Tân binh IPO Anthropic",
+        "text": "Thu hút dòng tiền lớn ngày chào sàn dù sức lan tỏa toàn ngành AI suy yếu."
+      },
+      {
+        "color": "yellow",
+        "tag": "ĐỊNH GIÁ KHẮT KHE",
+        "title": "Chi phí vốn tăng",
+        "text": "Kỳ vọng lợi nhuận cao hơn tạo áp lực chiết khấu dòng tiền công nghệ."
+      },
+      {
+        "color": "red",
+        "tag": "SỨC ÉP LÃI SUẤT",
+        "title": "Biên bản họp của Fed",
+        "text": "Thị trường định giá xác suất 96,4% Fed sẽ tăng thêm 0,25 điểm phần trăm."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Tín hiệu thị trường",
+      "phát đi điều gì?"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh",
+        "text": "Tân binh Anthropic duy trì sắc xanh nhờ <b>sức hút AI</b>.",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng",
+        "text": "Dòng tiền Phố Wall trở nên <b>chọn lọc khắt khe</b> hơn.",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ",
+        "text": "Lãi suất neo cao gây <b>áp lực chiết khấu</b> dòng tiền.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư F0",
+      "nên hành động gì?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Quan sát thận trọng",
+        "text": "Kiên nhẫn <b>cầm tiền chờ đáy</b> và quan sát tín hiệu vĩ mô.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Quản trị đòn bẩy",
+        "text": "Chủ động <b>hạ tỷ trọng</b> đòn bẩy để bảo vệ tài khoản an toàn.",
+        "beat": 2
+      },
+      {
+        "icon": "warn",
+        "title": "Không vội bắt đáy",
+        "text": "Hạn chế bắt đáy sớm khi thị trường <b>rút vốn phòng thủ</b>.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Bảo vệ vốn luôn là ưu tiên hàng đầu khi thị trường quốc tế biến động mạnh.",
+    "cta": "Theo dõi KenvinZone để cập nhật tin tức tài chính mỗi ngày"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
