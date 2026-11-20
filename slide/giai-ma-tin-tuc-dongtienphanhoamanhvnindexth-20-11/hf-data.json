@@ -1,0 +1,238 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "20/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "MoneyF",
+    "short": "MoneyF",
+    "author": "Quang Sơn",
+    "headline": "Dòng tiền phân hóa mạnh, VN-Index thu hẹp đà giảm cuối phiên",
+    "date": "20/11/2026",
+    "url": "https://moneyf.vn/dong-tien-phan-hoa-manh-vn-index-thu-hep-da-giam-c-rnjifwm9"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "theme_variant": "vs_clash",
+    "stamp": "GIẢM 4 PHIÊN LIÊN TIẾP",
+    "stamp_tone": "red",
+    "title_key": "0,83 ĐIỂM",
+    "visual": {
+      "items": [
+        {
+          "label": "Bên giảm",
+          "value": "206 mã",
+          "tone": "down"
+        },
+        {
+          "label": "Bên tăng",
+          "value": "91 mã",
+          "tone": "up"
+        }
+      ]
+    },
+    "title_lines": [
+      "VN-INDEX RÚT CHÂN",
+      "CHỈ GIẢM 0,83 ĐIỂM"
+    ],
+    "sub": "Độ rộng thị trường nghiêng hẳn về phe bán bất chấp nỗ lực kéo trụ",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "VN-Index -0,83 điểm",
+        "tone": "down"
+      },
+      {
+        "icon": "↳",
+        "text": "HoSE 206 mã đỏ",
+        "tone": "down"
+      },
+      {
+        "icon": "◆",
+        "text": "Dầu khí ngược dòng",
+        "tone": "gold"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "VN-Index thu hẹp đà giảm còn <mark>mất 0,83 điểm</mark> về cuối phiên, nhưng bảng điện vẫn chìm trong áp lực phân hóa khi sắc đỏ áp đảo hoàn toàn."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh chung",
+      "xanh vỏ đỏ lòng?"
+    ],
+    "stats": [
+      {
+        "value": 1688.79,
+        "decimals": 2,
+        "unit": "điểm",
+        "label": "Chỉ số VN-Index",
+        "badge": "-0,83 điểm",
+        "tone": "down",
+        "beat": 1
+      },
+      {
+        "value": 206,
+        "decimals": 0,
+        "unit": "mã",
+        "label": "Số mã giảm HoSE",
+        "badge": "Áp đảo 91 mã tăng",
+        "tone": "gold",
+        "beat": 2
+      }
+    ],
+    "note": "Áp lực điều chỉnh vẫn đè nặng bên trong thị trường dù chỉ số lùi không đáng kể."
+  },
+  "s3": {
+    "title_lines": [
+      "Cổ phiếu nào",
+      "ngược dòng thị trường?"
+    ],
+    "mode": "bars",
+    "lead": "Dòng tiền xoay tua cục bộ giữa các mã",
+    "bars": [
+      {
+        "label": "TCH",
+        "display": "+4,91%",
+        "value": 4.91,
+        "beat": 1
+      },
+      {
+        "label": "PVD",
+        "display": "+3,51%",
+        "value": 3.51,
+        "beat": 1
+      },
+      {
+        "label": "TCB",
+        "display": "+2,91%",
+        "value": 2.91,
+        "beat": 1
+      },
+      {
+        "label": "MBB",
+        "display": "-2,41%",
+        "value": -2.41,
+        "beat": 2
+      },
+      {
+        "label": "NVL",
+        "display": "-3,11%",
+        "value": -3.11,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 4,
+      "suffix": " phiên",
+      "text": "Chuỗi điều chỉnh liên tiếp của VN-Index",
+      "beat": 2
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Dòng tiền",
+      "chạy đi đâu?"
+    ],
+    "cards": [
+      {
+        "big": "Ngân hàng",
+        "title": "Phân hóa mạnh",
+        "text": "TCB và STB tăng tốt nhưng MBB, ACB lại giảm trên 2% ghìm chân chỉ số."
+      },
+      {
+        "big": "Bất động sản",
+        "title": "Chịu sức ép xả",
+        "text": "NVL, KDH điều chỉnh sâu dù TCH và VIC nỗ lực giữ nhịp đỡ giá."
+      },
+      {
+        "big": "Dầu khí",
+        "title": "Điểm sáng hiếm hoi",
+        "text": "PVD bật tăng 3,51%, GAS tăng 1,75% hút dòng tiền chủ động."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Ai thắng thế",
+      "ai gặp khó?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "THẮNG THẾ",
+        "title": "Năng lượng & Trụ đỡ",
+        "text": "PVD, GAS và một vài cổ phiếu riêng lẻ như TCH giữ được dòng tiền mua lên."
+      },
+      {
+        "color": "yellow",
+        "tag": "DÈ DẶT",
+        "title": "Bán lẻ & Tiêu dùng",
+        "text": "VNM, MSN và MWG dao động biên độ hẹp trong tâm lý thăm dò của khối nội."
+      },
+      {
+        "color": "red",
+        "tag": "ÁP LỰC",
+        "title": "Bất động sản & FPT",
+        "text": "Nhiều mã địa ốc lùi sâu kèm đà bán ròng dai dẳng của khối ngoại ở FPT."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Vì sao thị trường",
+      "chia rẽ sâu sắc?"
+    ],
+    "chain": [
+      {
+        "title": "Lực cầu rút chân",
+        "text": "Cầu giá thấp <b>nhập cuộc chủ động</b> nâng đỡ nhóm dầu khí.",
+        "beat": 1
+      },
+      {
+        "title": "Thận trọng cao",
+        "text": "Nhà đầu tư dè dặt khiến <b>dòng tiền phân hóa</b> cục bộ.",
+        "beat": 2
+      },
+      {
+        "title": "Sức ép xả hàng",
+        "text": "Áp lực từ <b>chuỗi bán ròng</b> ngoại làm thị trường e dè.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư",
+      "hành động ra sao?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Quản trị danh mục",
+        "text": "Cần <b>kiểm soát tỷ trọng</b> an toàn, hạn chế đòn bẩy.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Chờ đợi thanh khoản",
+        "text": "Kiên nhẫn <b>quan sát thanh khoản</b> trước khi mua mới.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Tỉa cỏ dại",
+        "text": "Chủ động <b>cơ cấu danh mục</b> để bảo vệ nguồn vốn.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Thị Trường",
+    "closing": "Chỉ số thu hẹp đà giảm nhưng độ rộng vẫn yếu, kiên nhẫn quan sát là chìa khóa.",
+    "cta": "Bấm theo dõi KenvinZone để đón nhận góc nhìn thị trường chuẩn xác!"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
