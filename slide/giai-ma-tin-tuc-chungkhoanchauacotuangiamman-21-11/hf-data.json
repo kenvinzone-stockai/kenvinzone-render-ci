@@ -1,0 +1,206 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "21/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "Tin nhanh chứng khoán",
+    "short": "ĐTCK",
+    "author": "Hạc Hiên",
+    "headline": "Chứng khoán châu Á có tuần giảm mạnh nhất kể từ tháng 3/2020",
+    "date": "20/11/2026",
+    "url": "https://m.tinnhanhchungkhoan.vn/chung-khoan-chau-a-co-tuan-giam-manh-nhat-ke-tu-thang-32020-post401782.html"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "theme_variant": "shock_alert",
+    "stamp": "GIẢM KỶ LỤC -7%",
+    "stamp_tone": "red",
+    "title_key": "-7% TUẦN",
+    "visual": {
+      "items": []
+    },
+    "title_lines": [
+      "CHỨNG KHOÁN CHÂU Á",
+      "GIẢM SỐC -7% TUẦN"
+    ],
+    "sub": "Cơn sốt AI thoái trào kích hoạt tháo chạy diện rộng",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "Châu Á -7%/tuần",
+        "tone": "down"
+      },
+      {
+        "icon": "↳",
+        "text": "Cổ phiếu AI bị xả",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "USD & Trái phiếu hút tiền",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Thị trường châu Á vừa ghi nhận <mark>tuần giảm sâu nhất kể từ tháng 3/2020</mark> khi cơn sốt công nghệ AI bất ngờ thoái trào và dòng tiền tháo chạy."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh chung",
+      "chao đảo thế nào?"
+    ],
+    "stats": [
+      {
+        "value": -7,
+        "decimals": 0,
+        "unit": "%",
+        "label": "MSCI Châu Á - TBD",
+        "badge": "Tuần tệ nhất từ 2020",
+        "tone": "red",
+        "beat": 1
+      }
+    ],
+    "note": "Chỉ số toàn cầu MSCI World giảm 7 phiên liên tiếp, chuỗi giảm dài nhất hơn 3 năm."
+  },
+  "s3": {
+    "title_lines": [
+      "Những tâm điểm",
+      "chịu đòn nặng nhất?"
+    ],
+    "mode": "bars",
+    "lead": "Nhóm công nghệ dẫn đầu đà rơi",
+    "bars": [
+      {
+        "label": "Đài Loan",
+        "display": "-6,2%",
+        "value": -6.2,
+        "beat": 1
+      },
+      {
+        "label": "Hàn Quốc",
+        "display": "-5,2%",
+        "value": -5.2,
+        "beat": 1
+      },
+      {
+        "label": "Nikkei 225",
+        "display": "-5,1%",
+        "value": -5.1,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": -20,
+      "suffix": "%",
+      "text": "MSCI Mới nổi mất từ đỉnh tháng 6",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Bản chất cơn sốt",
+      "đang lung lay vì đâu?"
+    ],
+    "cards": [
+      {
+        "big": "Nghi ngờ",
+        "title": "Hiệu quả đầu tư AI",
+        "text": "Hoài nghi lợi nhuận không bù nổi chi phí vốn khổng lồ."
+      },
+      {
+        "big": "Rào cản",
+        "title": "Trung tâm dữ liệu",
+        "text": "Làn sóng siết chính sách sau bầu cử giữa kỳ tại Mỹ."
+      },
+      {
+        "big": "Nhân sự",
+        "title": "Biến động cấp cao",
+        "text": "Áp lực lan rộng từ thông tin biến động lãnh đạo Nvidia."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Những rủi ro nào",
+      "đang bủa vây?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "ĐỊNH GIÁ",
+        "title": "Cơ hội dài hạn",
+        "text": "Định giá nhóm công nghệ hạ nhiệt về mức hợp lý hơn."
+      },
+      {
+        "color": "yellow",
+        "tag": "LÃI SUẤT",
+        "title": "Fed còn cứng rắn",
+        "text": "Khả năng duy trì lãi suất cao gây khó cho dòng tiền."
+      },
+      {
+        "color": "red",
+        "tag": "THÁO CHẠY",
+        "title": "Xả hàng diện rộng",
+        "text": "Vốn rút nhanh khỏi tài sản rủi ro để phòng thủ."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Dòng vốn phản ứng",
+      "theo kịch bản nào?"
+    ],
+    "chain": [
+      {
+        "title": "Bán tháo công nghệ",
+        "text": "Dòng tiền lớn lập tức <b>rút khỏi công nghệ</b> đỉnh điểm.",
+        "beat": 1
+      },
+      {
+        "title": "Trú ẩn an toàn",
+        "text": "Nhà đầu tư vội vã <b>tìm nơi trú ẩn</b> vào trái phiếu Mỹ.",
+        "beat": 2
+      },
+      {
+        "title": "Phòng vệ tài sản",
+        "text": "Tích trữ đồng đô la để <b>bảo toàn danh mục</b> rủi ro.",
+        "beat": 2
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư cá nhân",
+      "nên hành động gì?"
+    ],
+    "items": [
+      {
+        "icon": "warn",
+        "title": "Tái cơ cấu",
+        "text": "Chủ động <b>hạ tỷ trọng</b> ở các mã đầu cơ tăng nóng.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Quản trị vốn",
+        "text": "Thiết lập kỷ luật để <b>kiểm soát rủi ro</b> tài khoản.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Kiên nhẫn",
+        "text": "Tránh bắt đáy vội vã và chủ động <b>giữ sức mua</b>.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Khi kỳ vọng quá đà hạ nhiệt, kỷ luật tiền mặt luôn là lá chắn vững vàng nhất.",
+    "cta": "Theo dõi KenvinZone để cập nhật nhịp đập thị trường tài chính"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
