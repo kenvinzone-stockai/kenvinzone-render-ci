@@ -1,0 +1,209 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "21/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "Tin nhanh chứng khoán",
+    "short": "ĐTCK",
+    "author": "Qui Ánh",
+    "headline": "Thương vụ IPO Anthropic: Rủi ro lớn từ bài toán năng lực tính toán",
+    "date": "18/11/2026",
+    "url": "tinnhanhchungkhoan.vn/thuong-vu-ipo-anthropic-post401602.html"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "theme_variant": "shock_alert",
+    "stamp": "CAM KẾT 901 TỶ USD",
+    "stamp_tone": "red",
+    "title_key": "901 TỶ USD",
+    "visual": {
+      "items": []
+    },
+    "title_lines": [
+      "Anthropic IPO",
+      "Gánh nợ 901 TỶ USD"
+    ],
+    "sub": "Hào quang gọi vốn và cái bẫy hạ tầng tính toán",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "Cam kết 901 tỷ USD",
+        "tone": "down"
+      },
+      {
+        "icon": "↳",
+        "text": "Định giá 1.400 tỷ USD",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "Nhu cầu vượt 6 lần",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Thương vụ <mark>IPO Anthropic</mark> định giá nghìn tỷ đô đang gây sốt toàn cầu, nhưng đằng sau là gánh nặng chi phí hạ tầng tính toán khổng lồ."
+  },
+  "s2": {
+    "title_lines": [
+      "Quy mô IPO",
+      "khủng đến mức nào?"
+    ],
+    "stats": [
+      {
+        "value": 90,
+        "decimals": 0,
+        "unit": "tỷ USD",
+        "label": "Tổng vốn muốn hút",
+        "badge": "Lịch sử",
+        "tone": "gold",
+        "beat": 1
+      },
+      {
+        "value": 1400,
+        "decimals": 0,
+        "unit": "tỷ USD",
+        "label": "Định giá mục tiêu",
+        "badge": "Kỷ lục",
+        "tone": "blue",
+        "beat": 2
+      }
+    ],
+    "note": "Nhu cầu mua cổ phiếu vượt lượng chào bán tới 6 lần."
+  },
+  "s3": {
+    "title_lines": [
+      "Chi phí hạ tầng",
+      "đang đè nặng ra sao?"
+    ],
+    "mode": "bars",
+    "lead": "Nghĩa vụ chi tiêu khổng lồ",
+    "bars": [
+      {
+        "label": "Tổng cam kết hạ tầng",
+        "display": "901 tỷ USD",
+        "value": 901,
+        "beat": 1
+      },
+      {
+        "label": "Đến hạn năm đầu",
+        "display": "71 tỷ USD",
+        "value": 71,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 3.1,
+      "suffix": " tỷ USD/tháng",
+      "text": "Tiền thuê trung tâm Colossus 1 của SpaceX từ tháng 12/2026",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Sự phụ thuộc",
+      "nguy hiểm thế nào?"
+    ],
+    "cards": [
+      {
+        "big": "220.000 chip",
+        "title": "Phụ thuộc SpaceX",
+        "text": "Hợp đồng có quyền hủy chỉ sau 90 ngày báo trước"
+      },
+      {
+        "big": "Google",
+        "title": "Đối thủ cấp hạ tầng",
+        "text": "Nguy cơ bị bóp nghẹt nguồn cung nếu Gemini bứt phá"
+      },
+      {
+        "big": "Gián đoạn",
+        "title": "Rủi ro kỹ thuật",
+        "text": "Tỷ lệ uptime từng kém hơn đáng kể so với OpenAI"
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Bức tranh tài chính",
+      "ba mảng màu?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "DỒN TIỀN MẶT",
+        "title": "Kho tiền dự phòng",
+        "text": "Có hơn 95 tỷ USD tiền mặt và 36 tỷ USD đầu tư ngắn hạn."
+      },
+      {
+        "color": "yellow",
+        "tag": "ĐỊNH GIÁ CAO",
+        "title": "Dấu hỏi bong bóng",
+        "text": "Định giá 1.400 tỷ USD trên doanh thu quy năm 81 tỷ USD."
+      },
+      {
+        "color": "red",
+        "tag": "ÁP LỰC BÁN",
+        "title": "Rủi ro xả hàng",
+        "text": "Lướt sóng qua SPV tạo nguy cơ chốt lời khi chào sàn."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Lực đẩy và",
+      "tác động lan tỏa?"
+    ],
+    "chain": [
+      {
+        "title": "Cơn sốt chip",
+        "text": "Được Nvidia hậu thuẫn tạo <b>hiệu ứng định giá</b> mạnh mẽ.",
+        "beat": 1
+      },
+      {
+        "title": "Chi phí ăn mòn",
+        "text": "Biên lợi nhuận đối mặt <b>bào mòn dòng tiền</b> dài hạn.",
+        "beat": 2
+      },
+      {
+        "title": "Liên hệ Việt Nam",
+        "text": "Dòng tiền công nghệ đón nhận <b>tâm lý tích cực</b> thận trọng.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư F0",
+      "rút ra bài học gì?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Tách bạch kỳ vọng",
+        "text": "Cần <b>nhìn vào lợi nhuận</b> thực chất thay vì độ nóng truyền thông.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Kiểm tra chuỗi cung ứng",
+        "text": "Cảnh giác doanh nghiệp bị <b>phụ thuộc đối thủ</b> cốt lõi.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Tránh mua đuổi",
+        "text": "Tuyệt đối không <b>đu đỉnh theo sóng</b> công nghệ chưa sinh lời.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Kể Chuyện Chứng Khoán",
+    "closing": "Hào quang công nghệ luôn đi kèm bài toán chi phí thật.",
+    "cta": "Bấm theo dõi KenvinZone để cùng bóc tách thị trường!"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
