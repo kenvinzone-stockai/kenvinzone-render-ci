@@ -1,0 +1,202 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "21/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "CafeF",
+    "short": "CafeF",
+    "author": "Ngọc Ly",
+    "headline": "Bán ròng hàng triệu cổ phiếu mỗi ngày, khối ngoại còn nắm bao nhiêu FPT?",
+    "date": "20/11/2026",
+    "url": "https://m.cafef.vn/ban-rong-hang-trieu-co-phieu-moi-ngay-khoi-ngoai-con-nam-bao-nhieu-fpt-188261119215103655.chn"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "theme_variant": "shock_alert",
+    "stamp": "BÁN RÒNG 18.000 TỶ",
+    "stamp_tone": "red",
+    "title_key": "HỞ ROOM 23,6%",
+    "visual": {
+      "items": []
+    },
+    "title_lines": [
+      "Khối ngoại xả FPT",
+      "HỞ ROOM 23,6%"
+    ],
+    "sub": "Tỷ lệ ngoại nắm giữ rớt đáy lịch sử nhiều năm",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "Bán ròng 18.000 tỷ",
+        "tone": "down"
+      },
+      {
+        "icon": "↳",
+        "text": "Room còn 25,38%",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "Đáy giá 3,5 năm",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Cổ phiếu quốc dân <mark>FPT bị khối ngoại bán ròng kỷ lục</mark>, khiến tỷ lệ sở hữu nước ngoài thủng đáy sâu và thị giá rơi về mức thấp nhất hơn 3 năm."
+  },
+  "s2": {
+    "title_lines": [
+      "Làn sóng bán ròng",
+      "mạnh đến mức nào?"
+    ],
+    "stats": [
+      {
+        "value": 18000,
+        "decimals": 0,
+        "unit": "tỷ",
+        "label": "Giá trị bán ròng từ đầu năm",
+        "badge": "~240 triệu cp",
+        "tone": "red",
+        "beat": 2
+      }
+    ],
+    "note": "Chỉ trong 2 phiên 18 và 19/11, khối ngoại đã bán ròng thêm gần 500 tỷ đồng."
+  },
+  "s3": {
+    "title_lines": [
+      "Room ngoại FPT",
+      "sụt giảm ra sao?"
+    ],
+    "mode": "vs",
+    "lead": "Từ kín room 49% đến hở trống kỷ lục",
+    "vs": [
+      {
+        "label": "Trước đây",
+        "display": "49,0%",
+        "tone": "up",
+        "note": "Từng kín room 661 ngày giao dịch",
+        "beat": 1
+      },
+      {
+        "label": "Hiện tại",
+        "display": "25,38%",
+        "tone": "down",
+        "note": "Hở room kỷ lục hơn 445 triệu cp",
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 23.62,
+      "suffix": "%",
+      "text": "Tỷ lệ room ngoại đang bị bỏ trống",
+      "beat": 2
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Tác động lớn",
+      "lên giá cổ phiếu?"
+    ],
+    "cards": [
+      {
+        "big": "45.700đ",
+        "title": "Thị giá lao dốc",
+        "text": "Rơi về vùng giá thấp nhất trong khoảng 3,5 năm qua."
+      },
+      {
+        "big": "-47%",
+        "title": "Biên độ sụt giảm",
+        "text": "Mất gần một nửa giá trị so với vùng đỉnh cuối năm 2025."
+      },
+      {
+        "big": "86.200 tỷ",
+        "title": "Vốn hóa co hẹp",
+        "text": "Hàng chục nghìn tỷ đồng giá trị thị trường đã bốc hơi."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Vì sao khối ngoại",
+      "liên tục bán tháo?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "DOANH THU",
+        "title": "Ký mới chậm lại",
+        "text": "Hợp đồng CNTT quốc tế Q3 chậm lại do đối tác giãn tiến độ."
+      },
+      {
+        "color": "yellow",
+        "tag": "CHUYỂN DỊCH",
+        "title": "Ngân sách sang AI",
+        "text": "Khách hàng dồn tiền thử nghiệm AI trước khi triển khai lớn."
+      },
+      {
+        "color": "red",
+        "tag": "DÒNG VỐN",
+        "title": "Rút vốn diện rộng",
+        "text": "Áp lực cơ cấu danh mục của các quỹ ngoại trên toàn thị trường."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Triển vọng kinh doanh",
+      "thực tế ra sao?"
+    ],
+    "chain": [
+      {
+        "title": "Kỳ vọng Q4",
+        "text": "Nhu cầu phục hồi tại các <b>nhà máy AI</b> lớn.",
+        "beat": 1
+      },
+      {
+        "title": "Mục tiêu 2027",
+        "text": "Kỳ vọng tăng trưởng từ <b>dịch vụ AI-first</b>.",
+        "beat": 2
+      },
+      {
+        "title": "Áp lực ngắn hạn",
+        "text": "Cần tìm điểm <b>cân bằng cung cầu</b> mới.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Hành động nào",
+      "cho nhà đầu tư?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Dòng tiền",
+        "text": "Cần kiên nhẫn <b>quan sát dòng tiền</b> và ngừng bán ròng.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Đơn hàng",
+        "text": "Đánh giá tốc độ <b>ký mới hợp đồng</b> trong quý 4.",
+        "beat": 2
+      },
+      {
+        "icon": "warn",
+        "title": "Kỷ luật",
+        "text": "Luôn chủ động <b>quản trị vốn</b> để phòng ngừa rủi ro.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "FPT đang đứng trước cuộc tái định giá lớn khi room ngoại hở kỷ lục.",
+    "cta": "Theo dõi KenvinZone để đón xem góc nhìn tiếp theo"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
