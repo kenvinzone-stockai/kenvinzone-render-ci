@@ -18,3 +18,7 @@ node_modules/
 # OS
 .DS_Store
 Thumbs.db
+
+# token OAuth kênh tạo bởi tools/yt_add_channel.py — không bao giờ commit
+social-upload-*.json
+!config/social-upload.example.json

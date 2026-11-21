@@ -88,6 +88,8 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           TTS_CONFIG_JSON: ${{ secrets.TTS_CONFIG_JSON }}
           SOCIAL_UPLOAD_JSON: ${{ secrets.SOCIAL_UPLOAD_JSON }}
+          SOCIAL_UPLOAD_JSON_KZ: ${{ secrets.SOCIAL_UPLOAD_JSON_KZ }}
+          KENVINZONE_YT_CHANNEL_ID: ${{ secrets.KENVINZONE_YT_CHANNEL_ID }}
           YT_CHANNEL_ID: ${{ secrets.EQUITY_YT_CHANNEL_ID || secrets.YT_CHANNEL_ID }}
           HYPERFRAMES_NO_TELEMETRY: "1"
         run: |
@@ -109,7 +111,7 @@ jobs:
           import json, os
           r = json.load(open("upload-result.json"))
           json.dump({"video_id": r.get("video_id",""), "project": os.environ.get("PROJ",""),
-                     "channel_id": os.environ.get("YT_CHANNEL_ID","").strip(), "chat": os.environ.get("CHAT","")},
+                     "channel_id": r.get("channel_id") or os.environ.get("YT_CHANNEL_ID","").strip(), "channel_group": r.get("channel_group",""), "chat": os.environ.get("CHAT","")},
                     open("ci-state/last-upload.json","w"), ensure_ascii=False)
           PY
           fi
@@ -128,6 +130,8 @@ jobs:
           if [ -z "$TG" ] || [ -z "$CHAT" ]; then echo "Telegram chưa cấu hình"; exit 0; fi
           if [ -f upload-result.json ]; then
             URL=$(python3 -c "import json;print(json.load(open('upload-result.json')).get('url',''))" 2>/dev/null)
+            KENH=$(python3 -c "import json;print(json.load(open('upload-result.json')).get('channel_title',''))" 2>/dev/null)
+            if [ -n "$KENH" ]; then URL="$URL"$'\n'"📺 Kênh: $KENH"; fi
             MSG="📊 Xong video CHỨNG KHOÁN MỸ (S&P 500 + Nasdaq) [$PROJ] — đang để PRIVATE:
           $URL
 

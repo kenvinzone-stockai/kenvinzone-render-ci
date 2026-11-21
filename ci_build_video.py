@@ -14,6 +14,8 @@ Secrets (env):
     GEMINI_API_KEY      Gemini TTS key (tts.gemini đọc trực tiếp từ env này)
     SOCIAL_UPLOAD_JSON  toàn bộ nội dung config/social-upload.json (client + channels + refresh_token)
     YT_CHANNEL_ID       (tùy chọn) id kênh YouTube muốn đăng; mặc định kênh active trong config
+    SOCIAL_UPLOAD_JSON_KZ     token OAuth kênh @kenvinzone (Vàng / Cổ phiếu Mỹ / Liên thị trường / Explainer)
+    KENVINZONE_YT_CHANNEL_ID  (tùy chọn) id kênh @kenvinzone — định tuyến xem social_upload/routing.py
 """
 from __future__ import annotations
 
@@ -55,16 +57,23 @@ def apply_pron(text, pron):
     return text
 
 
-def restore_social_config() -> None:
-    """Tái tạo config/social-upload.json từ secret SOCIAL_UPLOAD_JSON."""
-    raw = os.environ.get("SOCIAL_UPLOAD_JSON", "").strip()
+def restore_social_config(project: str = "", template: str = "") -> dict:
+    """Tái tạo config/social-upload.json từ secret của ĐÚNG kênh (xem social_upload/routing.py).
+
+    @kechuyen.chungkhoan ← SOCIAL_UPLOAD_JSON ; @kenvinzone ← SOCIAL_UPLOAD_JSON_KZ.
+    Trả về {"group", "channel_id"} để bước upload chọn kênh.
+    """
+    from social_upload.routing import channel_group, resolve, LABEL
+    group = channel_group(project, template)
+    raw, chan, used = resolve(group)
+    print(f"  Kênh đích: {LABEL[used]} (nhóm dòng video: {group})", flush=True)
     if not raw:
-        print("  [cảnh báo] Thiếu SOCIAL_UPLOAD_JSON — chỉ chạy được khi có --no-upload.")
-        return
+        print("  [cảnh báo] Thiếu secret OAuth YouTube — chỉ chạy được khi có --no-upload.")
+        return {"group": used, "channel_id": chan}
     try:
         json.loads(raw)  # validate
     except json.JSONDecodeError as exc:
-        sys.exit(f"SOCIAL_UPLOAD_JSON không phải JSON hợp lệ: {exc}")
+        sys.exit(f"Secret OAuth YouTube ({LABEL[used]}) không phải JSON hợp lệ: {exc}")
     cfg = REPO / "config" / "social-upload.json"
     cfg.parent.mkdir(parents=True, exist_ok=True)
     cfg.write_text(raw, encoding="utf-8")
@@ -73,6 +82,7 @@ def restore_social_config() -> None:
     except OSError:
         pass
     print("  Đã tái tạo config/social-upload.json từ secret.")
+    return {"group": used, "channel_id": chan}
 
 
 def restore_tts_config() -> None:
@@ -117,8 +127,10 @@ def main() -> None:
     print(f"=== DECK: {project} | template={tpl} | preset giọng={preset} ===", flush=True)
 
     restore_tts_config()
+    route = {"group": "", "channel_id": os.environ.get("YT_CHANNEL_ID", "").strip()}
     if not args.no_upload:
-        restore_social_config()
+        sys.path.insert(0, str(REPO))
+        route = restore_social_config(project, tpl)
 
     # 0) Cổng QA zero-credit (tools/qa/gate.py) — chạy TRƯỚC TTS: font hệ thống, chữ đè chữ,
     #    chữ tràn khung, vùng UI Shorts che. KZ_QA=report (mặc định: chỉ báo) | block (lỗi → dừng,
@@ -192,12 +204,19 @@ def main() -> None:
         print("=== [3/3] Bỏ qua upload (--no-upload). Xong. ===")
         return
     print(f"=== [3/3] Upload YouTube (privacy={args.privacy}) ===", flush=True)
-    chan = os.environ.get("YT_CHANNEL_ID", "").strip()
+    chan = route.get("channel_id", "")
     if chan:
         from social_upload.youtube import set_youtube_active_channel
         set_youtube_active_channel(chan)
-    from social_upload.youtube import youtube_upload_video
+    from social_upload.youtube import youtube_upload_video, youtube_active_channel, youtube_config
+    from social_upload.config import read_social_config
+    active = youtube_active_channel(youtube_config(read_social_config()))
+    print(f"  Đăng lên kênh: {active.get('title') or '?'} ({active.get('id') or '?'})", flush=True)
     result = youtube_upload_video({"project": project, "privacyStatus": args.privacy})
+    # Ghi lại kênh thực tế để bước "duyệt" dùng đúng token.
+    result["channel_id"] = active.get("id", "")
+    result["channel_title"] = active.get("title", "")
+    result["channel_group"] = route.get("group", "")
     print(json.dumps(result, ensure_ascii=False), flush=True)
     (REPO / "upload-result.json").write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"  Xong: {result.get('url')}")

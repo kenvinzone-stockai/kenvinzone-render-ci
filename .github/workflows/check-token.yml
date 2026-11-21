@@ -15,23 +15,30 @@ jobs:
       - name: Test YouTube refresh token
         env:
           SOCIAL_UPLOAD_JSON: ${{ secrets.SOCIAL_UPLOAD_JSON }}
+          SOCIAL_UPLOAD_JSON_KZ: ${{ secrets.SOCIAL_UPLOAD_JSON_KZ }}
+          KENVINZONE_YT_CHANNEL_ID: ${{ secrets.KENVINZONE_YT_CHANNEL_ID }}
           YT_CHANNEL_ID: ${{ secrets.YT_CHANNEL_ID }}
         run: |
           python - <<'PY'
-          import os, sys
+          import os, sys, json
           sys.path.insert(0, ".")
-          from ci_build_video import restore_social_config
-          restore_social_config()
-          chan = os.environ.get("YT_CHANNEL_ID", "").strip()
-          if chan:
-              from social_upload.youtube import set_youtube_active_channel
-              set_youtube_active_channel(chan)
-          from social_upload.youtube import read_social_config, youtube_config, youtube_refresh_access_token
-          cfg = read_social_config(); yt = youtube_config(cfg)
-          try:
-              t = youtube_refresh_access_token(cfg, yt)
-              print("YOUTUBE_TOKEN_OK len=", len(t))
-          except Exception as e:
-              print("YOUTUBE_TOKEN_FAIL:", e)
-              sys.exit(1)
+          from social_upload.routing import resolve, LABEL, KECHUYEN, KENVINZONE
+          from social_upload.config import write_social_config, read_social_config
+          from social_upload.youtube import set_youtube_active_channel, youtube_config, youtube_refresh_access_token, youtube_active_channel
+          bad = 0
+          for group in (KECHUYEN, KENVINZONE):
+              raw, chan, used = resolve(group)
+              if used != group or not raw:
+                  print(f"{LABEL[group]}: CHƯA CẤU HÌNH secret token"); bad += group == KECHUYEN; continue
+              try:
+                  write_social_config(json.loads(raw))
+                  if chan:
+                      set_youtube_active_channel(chan)
+                  cfg = read_social_config(); yt = youtube_config(cfg)
+                  t = youtube_refresh_access_token(cfg, yt)
+                  ch = youtube_active_channel(yt)
+                  print(f"{LABEL[group]}: YOUTUBE_TOKEN_OK kênh={ch.get('title')} ({ch.get('id')}) len={len(t)}")
+              except Exception as e:
+                  print(f"{LABEL[group]}: YOUTUBE_TOKEN_FAIL: {e}"); bad += 1
+          sys.exit(1 if bad else 0)
           PY

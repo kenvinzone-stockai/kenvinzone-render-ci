@@ -94,17 +94,37 @@ def do_approve(chat, video_id):
     if not video_id:
         send(chat, "⚠️ Chưa có video nào để công khai. Gửi link bài để dựng video trước đã.")
         return
-    chan = last.get("channel_id", "") or os.environ.get("YT_CHANNEL_ID", "").strip()
-    try:
-        if chan:
-            from social_upload.youtube import set_youtube_active_channel
-            set_youtube_active_channel(chan)
-        from social_upload.youtube import youtube_set_privacy
-        res = youtube_set_privacy(video_id, "public")
-        send(chat, f"✅ Đã CÔNG KHAI video:\n{res.get('url', 'https://youtu.be/' + video_id)}")
-    except Exception as e:
-        send(chat, f"❌ Không công khai được video {video_id}: {e}")
-        print("approve fail:", e)
+    # 2 kênh, 2 bộ token: thử đúng kênh của video trước, lỗi thì thử kênh còn lại
+    # (vd "duyệt <id>" cho một video cũ hơn video vừa đăng).
+    from social_upload.routing import channel_group, resolve, _channel_ids, KENVINZONE, KECHUYEN, LABEL
+    from social_upload.config import write_social_config
+    if video_id == last.get("video_id"):
+        first = last.get("channel_group") or channel_group(last.get("project", ""))
+    else:
+        first = KECHUYEN
+    order = [first] + [g for g in (KECHUYEN, KENVINZONE) if g != first]
+    errors, tried = [], set()
+    for group in order:
+        raw, chan, used = resolve(group)
+        if not raw or used in tried:
+            continue
+        tried.add(used)
+        last_cid = last.get("channel_id", "") if video_id == last.get("video_id") else ""
+        if last_cid and last_cid in _channel_ids(raw):
+            chan = last_cid  # đúng kênh đã đăng video này
+        try:
+            write_social_config(json.loads(raw))
+            if chan:
+                from social_upload.youtube import set_youtube_active_channel
+                set_youtube_active_channel(chan)
+            from social_upload.youtube import youtube_set_privacy
+            res = youtube_set_privacy(video_id, "public")
+            send(chat, f"✅ Đã CÔNG KHAI video trên {LABEL[used]}:\n{res.get('url', 'https://youtu.be/' + video_id)}")
+            return
+        except Exception as e:
+            errors.append(f"{LABEL[used]}: {e}")
+            print("approve fail:", used, e)
+    send(chat, f"❌ Không công khai được video {video_id}:\n" + ("\n".join(errors) or "thiếu secret OAuth YouTube"))
 
 
 def fail_reason(text):
@@ -139,7 +159,8 @@ def do_render(chat, url, title):
         vid = res.get("video_id", "")
         LASTUP.parent.mkdir(parents=True, exist_ok=True)
         LASTUP.write_text(json.dumps({"video_id": vid, "project": proj,
-                                      "channel_id": os.environ.get("YT_CHANNEL_ID", "").strip(),
+                                      "channel_id": res.get("channel_id") or os.environ.get("YT_CHANNEL_ID", "").strip(),
+                                      "channel_group": res.get("channel_group", ""),
                                       "chat": chat}, ensure_ascii=False), encoding="utf-8")
         git_commit(f"tg: last-upload {proj} ({vid})")
         send(chat, f"✅ Xong video [{proj}] — đang để PRIVATE:\n{res.get('url', '')}\n\nXem xong, nhắn \"duyệt\" để công khai.")

@@ -48,6 +48,8 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           SOCIAL_UPLOAD_JSON: ${{ secrets.SOCIAL_UPLOAD_JSON }}
+          SOCIAL_UPLOAD_JSON_KZ: ${{ secrets.SOCIAL_UPLOAD_JSON_KZ }}
+          KENVINZONE_YT_CHANNEL_ID: ${{ secrets.KENVINZONE_YT_CHANNEL_ID }}
           TTS_CONFIG_JSON: ${{ secrets.TTS_CONFIG_JSON }}
           YT_CHANNEL_ID: ${{ secrets.YT_CHANNEL_ID }}
           HYPERFRAMES_NO_TELEMETRY: "1"
