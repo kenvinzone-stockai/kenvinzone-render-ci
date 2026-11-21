@@ -1,0 +1,209 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "21/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "Đầu tư Chứng khoán",
+    "short": "ĐTCK",
+    "author": "Qui Ánh",
+    "headline": "Cổ phiếu Anthropic tăng 17% trong phiên chào sàn Nasdaq, vốn hóa đạt 1.770 tỷ USD",
+    "date": "20/11/2026",
+    "url": "https://tinnhanhchungkhoan.vn/co-phieu-anthropic-tang-17-post401771.html"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "theme_variant": "liquidity_pump",
+    "stamp": "VỐN HÓA 1.770 TỶ USD",
+    "stamp_tone": "green",
+    "title_key": "TĂNG 17%",
+    "visual": {
+      "items": []
+    },
+    "title_lines": [
+      "Cổ phiếu Anthropic",
+      "chào sàn TĂNG 17%"
+    ],
+    "sub": "Thương vụ IPO công nghệ lớn nhất lịch sử hút 107,3 tỷ USD",
+    "chips": [
+      {
+        "icon": "↗",
+        "text": "Giá đóng cửa 97,17 USD",
+        "tone": "up"
+      },
+      {
+        "icon": "↳",
+        "text": "Cầu gấp 7 lần cung",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "Vốn hóa 1.770 tỷ USD",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Kỳ lân trí tuệ nhân tạo Anthropic vừa chính thức chào sàn Nasdaq với mức tăng <mark>mười bảy phần trăm</mark>, nâng định giá lên mốc kỷ lục một nghìn bảy trăm bảy mươi tỷ USD."
+  },
+  "s2": {
+    "title_lines": [
+      "Quy mô kỷ lục",
+      "thể hiện ra sao?"
+    ],
+    "stats": [
+      {
+        "value": 1770,
+        "decimals": 0,
+        "unit": "tỷ USD",
+        "label": "Vốn hóa thị trường",
+        "badge": "+17% ngày đầu",
+        "tone": "gold",
+        "beat": 1
+      },
+      {
+        "value": 107.3,
+        "decimals": 1,
+        "unit": "tỷ USD",
+        "label": "Tổng vốn huy động",
+        "badge": "Kỷ lục IPO",
+        "tone": "gold",
+        "beat": 2
+      }
+    ],
+    "note": "Lượng đặt mua vượt gần bảy lần số lượng cổ phiếu chào bán thực tế"
+  },
+  "s3": {
+    "title_lines": [
+      "Biến động giá",
+      "trong phiên mở màn?"
+    ],
+    "mode": "bars",
+    "lead": "Biên độ dao động của mã ANT",
+    "bars": [
+      {
+        "label": "Đỉnh phiên",
+        "display": "+38,7%",
+        "value": 38.7,
+        "beat": 1
+      },
+      {
+        "label": "Đóng cửa",
+        "display": "+17,1%",
+        "value": 17.1,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 83,
+      "suffix": " USD",
+      "text": "Giá chào bán IPO ban đầu",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Dòng tiền lớn",
+      "đang tập trung đâu?"
+    ],
+    "cards": [
+      {
+        "big": "7 lần",
+        "title": "Cầu vượt cung",
+        "text": "Hơn một nửa trong số 1.200 tổ chức đặt lệnh hoàn toàn trắng tay."
+      },
+      {
+        "big": "4,5 tỷ USD",
+        "title": "Quỹ ngoại GIC",
+        "text": "Quỹ đầu tư quốc gia Singapore duy trì vị thế lớn từ các vòng gọi vốn sớm."
+      },
+      {
+        "big": "50,1%",
+        "title": "Quyền biểu quyết",
+        "text": "Bảy nhà sáng lập giữ quyền kiểm soát tuyệt đối định hướng sau niêm yết."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Cơ hội và rủi ro",
+      "được phân loại thế nào?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "THẮNG THẾ",
+        "title": "Dòng vốn công nghệ",
+        "text": "Định giá bùng nổ chứng minh sức hút của trí tuệ nhân tạo vẫn rất mạnh."
+      },
+      {
+        "color": "yellow",
+        "tag": "LƯU Ý",
+        "title": "Hạ nhiệt cuối phiên",
+        "text": "Áp lực chốt lời khiến đà tăng từ bốn mươi phần trăm thu hẹp về mười bảy phần trăm."
+      },
+      {
+        "color": "red",
+        "tag": "KHÓ KHĂN",
+        "title": "Chi phí tính toán",
+        "text": "Gánh nặng đầu tư hạ tầng dữ liệu và rủi ro an toàn công nghệ còn bỏ ngỏ."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Tác động lan tỏa",
+      "tới thị trường ra sao?"
+    ],
+    "chain": [
+      {
+        "title": "Sàn Mỹ thăng hoa",
+        "text": "Thanh khoản IPO tại Nasdaq <b>bùng nổ kỷ lục</b> sau bốn năm trầm lắng.",
+        "beat": 1
+      },
+      {
+        "title": "Cổ phiếu công nghệ Việt",
+        "text": "Hiệu ứng tâm lý tích cực thúc đẩy nhóm <b>công nghệ trong nước</b>.",
+        "beat": 2
+      },
+      {
+        "title": "Thận trọng định giá",
+        "text": "Nhà đầu tư cần tránh <b>mua đuổi hưng phấn</b> theo các tin tức quốc tế.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư F0",
+      "cần hành động gì?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Theo dõi dòng tiền",
+        "text": "Tập trung quan sát <b>nhóm công nghệ đầu ngành</b> có nền tảng tốt.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Kỷ luật giải ngân",
+        "text": "Kiên nhẫn chờ nhịp chỉnh thay vì <b>đu đỉnh ngắn hạn</b> theo tin tức.",
+        "beat": 2
+      },
+      {
+        "icon": "warn",
+        "title": "Cân bằng tỷ trọng",
+        "text": "Tuyệt đối tuân thủ <b>quản trị rủi ro</b> danh mục trong mọi hoàn cảnh.",
+        "beat": 3
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Cơn sốt công nghệ toàn cầu mang lại cơ hội nhưng đòi hỏi sự tỉnh táo cao độ.",
+    "cta": "Bấm theo dõi KenvinZone để cập nhật câu chuyện tài chính mỗi ngày"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
