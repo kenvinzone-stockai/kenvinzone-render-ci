@@ -1102,3 +1102,76 @@ Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-ren
 === [3/3] Upload YouTube (privacy=private) ===
 {"ok": true, "platform": "youtube", "project": "vnindex-20112026-ngay", "video_id": "cLB8fEIBGmM", "url": "https://youtu.be/cLB8fEIBGmM", "studio_url": "https://studio.youtube.com/video/cLB8fEIBGmM/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing."}
   Xong: https://youtu.be/cLB8fEIBGmM
+=== DECK: intermarket-week-13112026 | template=intermarket-weekly-hf | preset giọng=ban-tin-vnindex ===
+  Đã tái tạo config/tts.json (giọng clone).
+  Kênh đích: @kenvinzone (nhóm dòng video: kenvinzone)
+  Đã tái tạo config/social-upload.json từ secret.
+=== [0/3] Cổng QA (zero-credit) ===
+  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
+QA intermarket-week-13112026 [intermarket-weekly-hf]: 18 khung · 0 lỗi · 0 cảnh báo → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/intermarket-week-13112026/output/qa
+  [phát âm] đã áp từ điển phiên âm cho giọng đọc (chữ hiển thị giữ nguyên).
+=== [1/3] Tạo giọng đọc (gemini) ===
+Full voiceover 60.84s · 39 quãng lặng · 8 dòng
+  ranh 1: ước   9.30s → lặng 9.83–10.63 (0.79s) cắt 10.23s
+  ranh 2: ước  17.17s → lặng 18.48–19.07 (0.59s) cắt 18.78s
+  ranh 3: ước  24.10s → lặng 26.16–26.78 (0.62s) cắt 26.47s
+  ranh 4: ước  30.54s → lặng 32.57–33.11 (0.54s) cắt 32.84s
+  ranh 5: ước  37.52s → lặng 39.99–40.52 (0.53s) cắt 40.25s
+  ranh 6: ước  44.57s → lặng 46.10–46.66 (0.56s) cắt 46.38s
+  ranh 7: ước  53.50s → lặng 54.28–54.85 (0.58s) cắt 54.57s
+  → snap được 7/7 ranh giới vào quãng lặng
+Slide 1:    0.00s →   10.23s  = 10.23s  -> line_0.mp3
+Slide 2:   10.23s →   18.78s  = 8.55s  -> line_1.mp3
+Slide 3:   18.78s →   26.47s  = 7.69s  -> line_2.mp3
+Slide 4:   26.47s →   32.84s  = 6.37s  -> line_3.mp3
+Slide 5:   32.84s →   40.25s  = 7.42s  -> line_4.mp3
+Slide 6:   40.25s →   46.38s  = 6.12s  -> line_5.mp3
+Slide 7:   46.38s →   54.57s  = 8.19s  -> line_6.mp3
+Slide 8:   54.57s →   60.84s  = 6.28s  -> line_7.mp3
+Concatenated voiceover: 60.84s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/intermarket-week-13112026/output/voiceover_concat.mp3
+Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
+Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
+Sending full script to Gemini TTS: 8 slides, 939 chars
+Full Gemini TTS saved: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/intermarket-week-13112026/output/gemini_full_voiceover.mp3
+
+=== Splitting full Gemini TTS voiceover ===
+=== [2/3] Render HyperFrames (30fps đầy đủ) ===
+=== HyperFrames (intermarket-weekly-hf): dung project tai /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/intermarket-week-13112026/output/hf ===
+  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
+=== HyperFrames: dung composition tu hf-data.json ===
+TOTAL 65.44 scenes [('hook', 0.0, 11.228), ('macro', 11.228, 8.55), ('assets', 19.778, 21.475), ('rot', 41.253, 6.125), ('scen', 47.378, 8.187), ('cta', 55.565, 9.875), ('captions', 0, 65.44)]
+=== HyperFrames: render tung khung hinh (65.4s video) ===
+  Trinh duyet render: /home/runner/.cache/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux64/chrome-headless-shell
+  ◆  Rendering hf → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/intermarket-week-13112026/output/final_video.hf.mp4
+     30fps · high · auto workers (4 cores detected)
+     GPU: browser GPU (auto-detect)
+  [?25l│
+  ◒  Checking browser...
+  [1G[J◇  Browser: env
+  [?25h
+    Lint: 7 error(s), 2 warning(s) — run with --lint-verbose for full output.
+    Continuing render despite lint issues. Use --strict to block errors.
+  HyperFrames render 5%
+  HyperFrames render 20%
+  [Browser:WARN] GSAP target #iv-ttl not found. https://gsap.com
+  [Browser:WARN] GSAP target  not found. https://gsap.com
+  [Browser:WARN] GSAP target  not found. https://gsap.com
+  [Browser:WARN] GSAP target #iv-ttl not found. https://gsap.com
+  [Browser:WARN] GSAP target  not found. https://gsap.com
+  HyperFrames render 30%
+  HyperFrames render 40%
+  [Browser:WARN] GSAP target  not found. https://gsap.com
+  HyperFrames render 50%
+  HyperFrames render 60%
+  HyperFrames render 70%
+  HyperFrames render 80%
+  HyperFrames render 90%
+  ◇  /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/intermarket-week-13112026/output/final_video.hf.mp4
+     13.6 MB · 1m 5.4s video · rendered in 1m 55.3s
+     beginframe capture · software gpu · compile 1.3s · extract 0.0s · audio 2.9s · probe 0.2s · setup 1.5s · capture 1m 49.1s · encode (during capture) 1m 49.1s · assemble 0.5s
+Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/intermarket-week-13112026/output/final_video.mp4
+  Video: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/intermarket-week-13112026/output/final_video.mp4
+=== [3/3] Upload YouTube (privacy=private) ===
+  Đăng lên kênh: Kenvin Trading Zone (UCbUOkCbABZqsT1XmViIk1SA)
+{"ok": true, "platform": "youtube", "project": "intermarket-week-13112026", "video_id": "ohQTBRrlsQo", "url": "https://youtu.be/ohQTBRrlsQo", "studio_url": "https://studio.youtube.com/video/ohQTBRrlsQo/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing.", "channel_id": "UCbUOkCbABZqsT1XmViIk1SA", "channel_title": "Kenvin Trading Zone", "channel_group": "kenvinzone"}
+  Xong: https://youtu.be/ohQTBRrlsQo

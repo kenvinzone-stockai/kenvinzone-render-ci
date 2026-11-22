@@ -29,7 +29,7 @@
         "value": -4.93
       },
       "gamma_neg": true,
-      "expected_move": 6.4
+      "expected_move": 16.8
     },
     {
       "key": "nas",
@@ -51,7 +51,7 @@
         "value": -5.43
       },
       "gamma_neg": true,
-      "expected_move": 10.1
+      "expected_move": 20.7
     },
     {
       "key": "gold",
@@ -108,7 +108,7 @@
       "color": "#f87171"
     }
   ],
-  "rotation_tag": "Dòng tiền thu hẹp thế tấn công, <b>xoay trục sang phòng thủ</b> để theo dõi biến động đồng USD.",
+  "rotation_tag": "Dòng tiền dịch chuyển sang <b>phòng thủ</b> trước sức ép tăng giá của đồng USD.",
   "scenarios": [
     {
       "pct": 50,
@@ -118,12 +118,12 @@
     {
       "pct": 30,
       "color": "#f87171",
-      "name": "USD tăng gây áp lực"
+      "name": "USD tiếp tục tăng"
     },
     {
       "pct": 20,
       "color": "#4ade80",
-      "name": "USD hạ nhiệt bật tăng"
+      "name": "USD hạ nhiệt hồi phục"
     }
   ],
   "audio_offset": 1.0,
