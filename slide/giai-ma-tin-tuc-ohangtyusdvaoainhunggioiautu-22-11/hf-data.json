@@ -1,0 +1,222 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "22/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "MoneyF",
+    "short": "MoneyF",
+    "author": "Vương Anh",
+    "headline": "Đổ hàng tỷ USD vào AI, nhưng giới đầu tư vẫn chưa tìm ra công thức đánh bại VN-Index",
+    "date": "19/11/2026",
+    "url": "https://moneyf.vn/do-hang-ty-usd-vao-ai-nhung-gioi-dau-tu-van-chua-t-rdzqjrk2"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "theme_variant": "vs_clash",
+    "stamp": "CHỈ 10/77 QUỸ THẮNG",
+    "stamp_tone": "red",
+    "title_key": "THUA VN-INDEX",
+    "visual": {
+      "items": [
+        {
+          "label": "VN-Index 2025",
+          "value": "+41%",
+          "tone": "up"
+        },
+        {
+          "label": "Quỹ chủ động",
+          "value": "+20%",
+          "tone": "down"
+        }
+      ]
+    },
+    "title_lines": [
+      "Đổ nghìn tỷ vào AI",
+      "Vẫn thua VN-Index"
+    ],
+    "sub": "Sau 3 năm bùng nổ AI, phần lớn quỹ đầu tư vẫn hụt hơi trước chỉ số tham chiếu",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "10/77 quỹ thắng chỉ số",
+        "tone": "down"
+      },
+      {
+        "icon": "↳",
+        "text": "79% quỹ Mỹ thua S&P 500",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "Góc nhìn F0",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Dù các tổ chức chi hàng tỷ USD ứng dụng trí tuệ nhân tạo, <mark>phần lớn quỹ đầu tư vẫn thất thế</mark> trước đà tăng của thị trường chung."
+  },
+  "s2": {
+    "title_lines": [
+      "Quỹ đầu tư Việt",
+      "hụt hơi ra sao?"
+    ],
+    "stats": [
+      {
+        "value": 13,
+        "decimals": 0,
+        "unit": "%",
+        "label": "Tỷ lệ quỹ theo kịp VN-Index 2025",
+        "badge": "10/77 quỹ",
+        "tone": "gold",
+        "beat": 1
+      },
+      {
+        "value": -7,
+        "decimals": 0,
+        "unit": "%",
+        "label": "Hiệu suất bình quân 9 tháng 2026",
+        "badge": "Thị trường đi ngang",
+        "tone": "gold",
+        "beat": 2
+      }
+    ],
+    "note": "Lũy kế từ năm 2024, quỹ cổ phiếu chỉ lãi 32% trong khi VN-Index tăng tới 57%."
+  },
+  "s3": {
+    "title_lines": [
+      "Cạnh tranh gay gắt",
+      "giữa quỹ và chỉ số"
+    ],
+    "mode": "vs",
+    "lead": "Hiệu suất thực tế năm 2025",
+    "callout": {
+      "value": 75,
+      "suffix": "%",
+      "text": "Đà tăng VN-Index đến từ hệ sinh thái Vingroup và Gelex",
+      "beat": 2
+    },
+    "vs": [
+      {
+        "label": "VN-Index",
+        "display": "+41%",
+        "tone": "up",
+        "note": "Tăng mạnh nhờ nhóm trụ",
+        "beat": 1
+      },
+      {
+        "label": "Quỹ bình quân",
+        "display": "+20%",
+        "tone": "down",
+        "note": "Chỉ đạt một nửa mức tăng",
+        "beat": 1
+      }
+    ]
+  },
+  "s4": {
+    "title_lines": [
+      "Phố Wall dùng AI",
+      "có khả quan hơn?"
+    ],
+    "cards": [
+      {
+        "big": "79%",
+        "title": "Quỹ Mỹ thua S&P 500",
+        "text": "Tỷ lệ thua chỉ số của quỹ vốn hóa lớn tăng vọt trong năm 2025 theo SPIVA."
+      },
+      {
+        "big": "4/6",
+        "title": "Mô hình AI cháy vốn",
+        "text": "Thử nghiệm giao dịch phái sinh của Nof1 khiến đa số mô hình lỗ nặng 31% đến 63%."
+      },
+      {
+        "big": "9,6%",
+        "title": "Rào cản phí giao dịch",
+        "text": "Xoay vòng danh mục 5 lần một tháng ngốn chi phí khổng lồ bào mòn lợi nhuận."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Đâu là nút thắt",
+      "khiến AI chưa thắng?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "TỐC ĐỘ XỬ LÝ",
+        "title": "Tự động hóa mạnh mẽ",
+        "text": "Đọc báo cáo và kiểm thử chiến lược siêu nhanh nhưng chưa bảo đảm chất lượng lệnh."
+      },
+      {
+        "color": "yellow",
+        "tag": "DỮ LIỆU CŨ",
+        "title": "Học từ quá khứ",
+        "text": "Chỉ tổng hợp góc nhìn phổ biến, khó tìm ra cơ hội khi dòng tiền kéo cục bộ."
+      },
+      {
+        "color": "red",
+        "tag": "BÀO MÒN VỐN",
+        "title": "Bẫy lướt sóng dày",
+        "text": "Giao dịch quá nhiều khiến chi phí thuế phí ăn sạch phần bù chênh lệch giá."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Tín hiệu thị trường",
+      "đang nói điều gì?"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh",
+        "text": "AI hỗ trợ <b>nghiên cứu dữ liệu</b> và mở rộng phân tích.",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng",
+        "text": "Tâm lý <b>phó mặc cho máy tính</b> tự giao dịch tiền thật.",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ",
+        "text": "Ảo tưởng <b>chén thánh đầu tư</b> đánh bại chỉ số dễ dàng.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư cá nhân",
+      "nên ứng biến sao?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Công cụ trợ lực",
+        "text": "Dùng AI như <b>trợ lý lọc tin tức</b> và bóc tách báo cáo tài chính.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Kiểm soát giao dịch",
+        "text": "Tránh <b>lạm dụng lướt sóng</b> để không bị thuế phí bào mòn vốn gốc.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Kỷ luật quản trị",
+        "text": "Duy trì <b>kỷ luật cắt lỗ</b> bằng chính năng lực đánh giá của bản thân.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Công nghệ là bàn đạp hỗ trợ, bản lĩnh con người mới định đoạt kết quả",
+    "cta": "Theo dõi KenvinZone để cùng giải mã góc nhìn thị trường mỗi ngày"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
