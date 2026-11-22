@@ -1,0 +1,202 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "22/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "MoneyF",
+    "short": "MoneyF",
+    "author": "Hữu Nguyên",
+    "headline": "Đề xuất giảm một nửa thuế giao dịch chứng khoán, khuyến khích lãnh đạo doanh nghiệp trực tiếp mua cổ phiếu",
+    "date": "19/11/2026",
+    "url": "moneyf.vn"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "theme_variant": "liquidity_pump",
+    "stamp": "GIẢM 50% THUẾ BÁN",
+    "stamp_tone": "green",
+    "title_key": "GIẢM 50%",
+    "visual": {
+      "items": []
+    },
+    "title_lines": [
+      "VAFI ĐỀ XUẤT",
+      "GIẢM 50% THUẾ BÁN"
+    ],
+    "sub": "5 nhóm giải pháp tháo gỡ chi phí và thu hút dòng tiền cho thị trường",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "Thuế: 0,1% -> 0,05%",
+        "tone": "up"
+      },
+      {
+        "icon": "↳",
+        "text": "Lãnh đạo mua vào",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "Cổ phiếu quỹ & cổ tức",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "VAFI vừa gửi văn bản kiến nghị đề xuất <mark>giảm 50% thuế giao dịch</mark> và khuyến khích lãnh đạo doanh nghiệp trực tiếp mua gom cổ phiếu."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh kiến nghị",
+      "từ phía VAFI?"
+    ],
+    "stats": [
+      {
+        "value": 50,
+        "decimals": 0,
+        "unit": "%",
+        "label": "Mức đề xuất giảm thuế bán cổ phiếu",
+        "badge": "0,1% xuống 0,05%",
+        "tone": "green",
+        "beat": 1
+      }
+    ],
+    "note": "Nhà đầu tư hiện vẫn phải nộp thuế khi bán cổ phiếu dù giao dịch có lãi hay thua lỗ."
+  },
+  "s3": {
+    "title_lines": [
+      "So sánh thuế suất",
+      "hiện hành và đề xuất?"
+    ],
+    "mode": "vs",
+    "lead": "Mức thuế chuyển nhượng mỗi chiều bán",
+    "vs": [
+      {
+        "label": "Hiện hành",
+        "display": "0,10%",
+        "tone": "down",
+        "note": "Thu trên tổng giá trị bán dù lỗ hay lãi",
+        "beat": 1
+      },
+      {
+        "label": "Đề xuất VAFI",
+        "display": "0,05%",
+        "tone": "up",
+        "note": "Giảm một nửa giúp giảm gánh nặng chi phí",
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 50,
+      "suffix": "%",
+      "text": "Mức cắt giảm chi phí thuế bán cho nhà đầu tư",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Giải pháp doanh nghiệp",
+      "hỗ trợ thị trường?"
+    ],
+    "cards": [
+      {
+        "big": "Cổ phiếu quỹ",
+        "title": "Hỗ trợ thị giá",
+        "text": "Doanh nghiệp chủ động mua lại cổ phiếu để bình ổn giá."
+      },
+      {
+        "big": "Lãnh đạo mua",
+        "title": "Gia tăng niềm tin",
+        "text": "HĐQT và Ban điều hành trực tiếp đăng ký mua tăng sở hữu."
+      },
+      {
+        "big": "Cổ tức tiền",
+        "title": "Bổ sung nguồn lực",
+        "text": "Tạm ứng cổ tức năm 2026 để cổ đông tái cơ cấu giá vốn."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Tín hiệu đèn",
+      "cho từng giải pháp?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "ĐÈN XANH",
+        "title": "Chi phí & tâm lý",
+        "text": "Hạ thuế bán và lãnh đạo mua vào giúp cải thiện tâm lý giao dịch."
+      },
+      {
+        "color": "yellow",
+        "tag": "ĐÈN VÀNG",
+        "title": "Cân đối ngân sách",
+        "text": "Cơ quan quản lý cần xem xét bài toán nguồn thu và quy định pháp lý."
+      },
+      {
+        "color": "red",
+        "tag": "ĐÈN ĐỎ",
+        "title": "Nội lực cốt lõi",
+        "text": "Giảm thuế không thể thay thế cho bức tranh tăng trưởng của doanh nghiệp."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Cơ chế tác động",
+      "lan tỏa ra sao?"
+    ],
+    "chain": [
+      {
+        "title": "Hạ áp lực chi phí",
+        "text": "Hạ thuế bán giúp <b>tiết kiệm chi phí</b> trên mỗi lệnh",
+        "beat": 1
+      },
+      {
+        "title": "Bảo chứng niềm tin",
+        "text": "Doanh nghiệp cùng <b>lãnh đạo mua vào</b> tạo niềm tin",
+        "beat": 2
+      },
+      {
+        "title": "Kích hoạt dòng tiền",
+        "text": "Kỳ vọng giúp <b>kích thích dòng tiền</b> bền bỉ hơn",
+        "beat": 2
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư",
+      "nên hành động gì?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Tập trung nội tại",
+        "text": "Chủ động <b>quản trị danh mục</b> theo sức khỏe doanh nghiệp",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Theo sát chính sách",
+        "text": "Kiên nhẫn <b>theo dõi thông tin</b> chính thức từ cơ quan",
+        "beat": 2
+      },
+      {
+        "icon": "warn",
+        "title": "Kỷ luật vốn",
+        "text": "Tuyệt đối <b>tránh mua đuổi</b> theo các tin đồn ngắn hạn",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Đề xuất giảm thuế và kích cầu nội bộ là tín hiệu tích cực, nhưng nội lực doanh nghiệp mới là thước đo dài hạn.",
+    "cta": "Theo dõi KenvinZone để cập nhật tin tức đầu tư chuẩn xác"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
