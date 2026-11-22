@@ -1,0 +1,200 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "22/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "MoneyF",
+    "short": "MoneyF",
+    "author": "Vương Anh",
+    "headline": "Thủ tướng đặt mục tiêu đưa chứng khoán thành kênh huy động vốn trung và dài hạn chủ lực của nền kinh tế",
+    "date": "20/11/2026",
+    "url": "https://moneyf.vn/thu-tuong-dat-muc-tieu-dua-chung-khoan-thanh-kenh-17sou6co"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "theme_variant": "liquidity_pump",
+    "stamp": "MỤC TIÊU 30 NĂM",
+    "stamp_tone": "green",
+    "title_key": "VỐN CHỦ LỰC",
+    "visual": {
+      "items": []
+    },
+    "title_lines": [
+      "Thủ tướng chỉ đạo",
+      "chứng khoán thành KÊNH VỐN CHỦ LỰC"
+    ],
+    "sub": "Định hướng lớn sau cột mốc 30 năm và nâng hạng thị trường",
+    "chips": [
+      {
+        "icon": "◆",
+        "text": "30 năm ngành",
+        "tone": "gold"
+      },
+      {
+        "icon": "↗",
+        "text": "FTSE nâng hạng",
+        "tone": "up"
+      },
+      {
+        "icon": "↳",
+        "text": "Vốn trung dài hạn",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Thủ tướng gửi thông điệp nhân dịp <mark>30 năm ngành chứng khoán</mark>, đặt mục tiêu đưa thị trường trở thành kênh dẫn vốn trung và dài hạn then chốt cho nền kinh tế."
+  },
+  "s2": {
+    "title_lines": [
+      "Cột mốc lịch sử",
+      "ba thập kỷ phát triển"
+    ],
+    "stats": [
+      {
+        "value": 30,
+        "decimals": 0,
+        "unit": "năm",
+        "label": "Hành trình phát triển",
+        "badge": "1996 - 2026",
+        "tone": "gold",
+        "beat": 1
+      }
+    ],
+    "note": "Từ những bước đi sơ khai đến cấu phần quan trọng của hệ thống tài chính quốc gia."
+  },
+  "s3": {
+    "title_lines": [
+      "Vị thế mới",
+      "sau nâng hạng"
+    ],
+    "mode": "bars",
+    "lead": "Thị trường bước vào chu kỳ hội nhập sâu rộng",
+    "bars": [
+      {
+        "label": "Cận biên",
+        "display": "Quá khứ",
+        "value": 30,
+        "beat": 1
+      },
+      {
+        "label": "Mới nổi thứ cấp",
+        "display": "FTSE Russell",
+        "value": 100,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 2026,
+      "suffix": "",
+      "text": "Ghi nhận nỗ lực cải cách thể chế và công nghệ",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Trọng tâm chỉ đạo",
+      "thời gian tới là gì?"
+    ],
+    "cards": [
+      {
+        "big": "Dài hạn",
+        "title": "Kênh vốn chủ lực",
+        "text": "Giảm áp lực cung ứng vốn trung dài hạn cho hệ thống ngân hàng."
+      },
+      {
+        "big": "Minh bạch",
+        "title": "Bảo vệ nhà đầu tư",
+        "text": "Tăng cường năng lực giám sát và xử lý nghiêm các sai phạm."
+      },
+      {
+        "big": "Công nghệ",
+        "title": "Hiện đại hóa hạ tầng",
+        "text": "Đẩy mạnh chuyển đổi số để sẵn sàng đón nhận dòng vốn ngoại lớn."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Ba trụ cột",
+      "được nhấn mạnh?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "THỂ CHẾ",
+        "title": "Chuẩn hóa tiêu chí",
+        "text": "Tiếp tục cải cách nhằm đáp ứng các chuẩn mực khắt khe của quốc tế."
+      },
+      {
+        "color": "yellow",
+        "tag": "HÀNG HÓA",
+        "title": "Nâng cao chất lượng",
+        "text": "Khuyến khích doanh nghiệp quản trị minh bạch và niêm yết quy chuẩn."
+      },
+      {
+        "color": "red",
+        "tag": "GIÁM SÁT",
+        "title": "Phòng ngừa rủi ro",
+        "text": "Bảo vệ tối đa quyền lợi hợp pháp của người tham gia thị trường."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Tác động thực tế",
+      "đến thị trường ra sao?"
+    ],
+    "chain": [
+      {
+        "title": "Cơ hội",
+        "text": "Dòng vốn lớn mở ra cơ hội <b>hưởng lợi định giá</b> cho bluechip.",
+        "beat": 1
+      },
+      {
+        "title": "Áp lực",
+        "text": "Yêu cầu kỹ thuật buộc các bên phải <b>nâng chuẩn minh bạch</b>.",
+        "beat": 2
+      },
+      {
+        "title": "Rủi ro",
+        "text": "Biến động mạnh đòi hỏi <b>kiểm soát kỳ vọng</b> của nhà đầu tư.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư cá nhân",
+      "cần chuẩn bị gì?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Tư duy dài hạn",
+        "text": "Đồng hành với cổ phiếu cơ bản để <b>đón sóng vốn ngoại</b> lớn.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Quản trị danh mục",
+        "text": "Hạn chế đòn bẩy quá mức để <b>bảo vệ vốn an toàn</b> qua các nhịp rung lắc.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Tránh tâm lý đám đông",
+        "text": "Tuyệt đối không chạy theo tin đồn mà phải <b>tập trung nội tại</b> công ty.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Một sân chơi chuẩn mực hơn đang mở ra cho những nhà đầu tư có kỷ luật.",
+    "cta": "Theo dõi KenvinZone để cập nhật dòng chảy thị trường mỗi ngày"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
