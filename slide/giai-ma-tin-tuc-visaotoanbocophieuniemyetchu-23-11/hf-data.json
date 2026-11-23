@@ -1,0 +1,222 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "23/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "CafeF",
+    "short": "CafeF",
+    "author": "Dương Ngọc",
+    "headline": "Vì sao toàn bộ cổ phiếu niêm yết chuyển hết về HoSE, HNX sẽ đảm nhiệm vai trò gì?",
+    "date": "23/11/2026",
+    "url": "cafef.vn/vi-sao-toan-bo-co-phieu-niem-yet-chuyen-het-ve-hose-hnx-se-dam-nhiem-vai-tro-gi-188261123182057736.chn"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "theme_variant": "vs_clash",
+    "stamp": "DỒN VỀ HOSE 28/12",
+    "stamp_tone": "gold",
+    "title_key": "28/12/2026",
+    "visual": {
+      "items": [
+        {
+          "label": "HOSE",
+          "value": "Toàn bộ cổ phiếu",
+          "tone": "up"
+        },
+        {
+          "label": "HNX",
+          "value": "Trái phiếu & Phái sinh",
+          "tone": "blue"
+        }
+      ]
+    },
+    "title_lines": [
+      "CỔ PHIẾU HNX",
+      "VỀ HOSE 28/12/2026"
+    ],
+    "sub": "Sắp xếp lại toàn bộ thị trường cổ phiếu niêm yết",
+    "chips": [
+      {
+        "icon": "↳",
+        "text": "Hạn chót 28/12",
+        "tone": "gold"
+      },
+      {
+        "icon": "↗",
+        "text": "Mục tiêu 120% GDP",
+        "tone": "up"
+      },
+      {
+        "icon": "◆",
+        "text": "Nâng hạng 2030",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Từ <mark>28/12/2026</mark>, toàn bộ cổ phiếu niêm yết tại HNX sẽ chính thức chuyển sang giao dịch tập trung tại HOSE nhằm hoàn tất <mark>chuyên biệt hóa thị trường</mark>."
+  },
+  "s2": {
+    "title_lines": [
+      "Mốc thời gian",
+      "cần đặc biệt lưu ý"
+    ],
+    "stats": [
+      {
+        "value": 28,
+        "decimals": 0,
+        "unit": "tháng 12",
+        "label": "Giao dịch tập trung tại HOSE",
+        "badge": "28/12/2026",
+        "tone": "up",
+        "beat": 1
+      },
+      {
+        "value": 2,
+        "decimals": 0,
+        "unit": "ngày",
+        "label": "Tạm ngừng giao dịch (24-25/12)",
+        "badge": "Chuyển giao hệ thống",
+        "tone": "gold",
+        "beat": 2
+      }
+    ],
+    "note": "Ngày 23/12/2026 là phiên giao dịch cuối cùng của các cổ phiếu niêm yết tại HNX."
+  },
+  "s3": {
+    "title_lines": [
+      "Phân vai mới",
+      "hai sở chứng khoán"
+    ],
+    "mode": "vs",
+    "lead": "Chuyên biệt hóa mô hình vận hành",
+    "vs": [
+      {
+        "label": "SỞ HOSE",
+        "display": "Cổ phiếu",
+        "tone": "up",
+        "note": "Cổ phiếu, chứng chỉ quỹ và chứng quyền",
+        "beat": 1
+      },
+      {
+        "label": "SỞ HNX",
+        "display": "Phái sinh",
+        "tone": "blue",
+        "note": "Trái phiếu, phái sinh, UPCoM & sản phẩm mới",
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 120,
+      "suffix": "% GDP",
+      "text": "Mục tiêu vốn hóa thị trường cổ phiếu theo Chiến lược 2030",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Sản phẩm mới",
+      "HNX sẽ đảm nhiệm"
+    ],
+    "cards": [
+      {
+        "big": "Trái phiếu",
+        "title": "TPCP & Doanh nghiệp",
+        "text": "Tập trung vận hành chuyên sâu thị trường trái phiếu và UPCoM."
+      },
+      {
+        "big": "Phái sinh",
+        "title": "Công cụ tài chính",
+        "text": "Mở rộng và chuẩn hóa thị trường chứng khoán phái sinh chuyên biệt."
+      },
+      {
+        "big": "Thế hệ mới",
+        "title": "Sàn Carbon & Startup",
+        "text": "Tiên phong nghiên cứu thị trường tín chỉ carbon và sàn khởi nghiệp."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Cơ hội & rủi ro",
+      "thị trường đối diện"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "ĐÈN XANH",
+        "title": "Hạ tầng chuyên biệt",
+        "text": "Thị trường thống nhất, tăng nhận diện và thu hút dòng vốn ngoại."
+      },
+      {
+        "color": "yellow",
+        "tag": "ĐÈN VÀNG",
+        "title": "Nâng chuẩn quản trị",
+        "text": "Doanh nghiệp phải công bố thông tin tiếng Anh và chuẩn ESG."
+      },
+      {
+        "color": "red",
+        "tag": "ĐÈN ĐỎ",
+        "title": "Phân hóa thanh khoản",
+        "text": "Doanh nghiệp nhỏ, quản trị yếu dễ bị lu mờ trước các mã lớn ở HOSE."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Vì sao",
+      "phải gom về một mối?"
+    ],
+    "chain": [
+      {
+        "title": "Xóa phân mảnh",
+        "text": "Quy tụ một đầu mối giúp <b>bỏ phân mảnh</b> cơ chế niêm yết",
+        "beat": 1
+      },
+      {
+        "title": "Hút vốn ngoại",
+        "text": "Thị trường tập trung giúp <b>tăng nhận diện</b> với quỹ ngoại",
+        "beat": 1
+      },
+      {
+        "title": "Đạt chuẩn nâng hạng",
+        "text": "Tạo bước đệm vững chắc hướng tới <b>chuẩn hóa quốc tế</b>",
+        "beat": 2
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư",
+      "cần chuẩn bị gì?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Kiểm tra danh mục",
+        "text": "Nhà đầu tư nên <b>chủ động rà soát</b> lại danh mục HNX đang nắm giữ",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Biên độ mới 7%",
+        "text": "Chuẩn bị tâm lý để <b>thích ứng biên độ</b> mới bảy phần trăm tại HOSE",
+        "beat": 2
+      },
+      {
+        "icon": "warn",
+        "title": "Lọc doanh nghiệp tốt",
+        "text": "Ưu tiên <b>chọn lọc cổ phiếu</b> đáp ứng tiêu chuẩn công bố thông tin",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Thị trường tập trung mở ra kỷ nguyên mới nhưng cũng phân hóa khắt khe hơn.",
+    "cta": "Theo dõi KenvinZone để cập nhật chuyển động thị trường"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
