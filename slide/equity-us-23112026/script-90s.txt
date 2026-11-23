@@ -1,0 +1,7 @@
+Cả S&P 500 và Nasdaq đồng pha giảm mạnh với điểm Bias lần lượt là -19.0 và -15.9, duy trì trạng thái tiêu cực xuyên suốt từ khung tuần sang ngày.
+Điểm Bias của S&P 500 chịu lực đè nặng nề nhất từ khẩu vị rủi ro suy giảm -6.14, đồng USD mạnh -5.23 và độ rộng thị trường co hẹp -4.14.
+Cấu trúc Gamma trên SPY ghi nhận Net GEX dương 29 triệu, giá 689.81 vẫn neo trên Gamma Flip 686.2 kẹp giữa Put Wall 695.0 và Call Wall 720.0 cùng biên độ kỳ vọng ±16.8.
+Với Nasdaq, điểm Bias -15.9 bị chi phối bởi áp lực từ đồng USD -5.76, khẩu vị rủi ro -4.47 và dòng tiền âm -4.33.
+Trên QQQ, rủi ro biến động cao hơn hẳn khi Net GEX âm 46 triệu, thị giá 608.45 rơi dưới Gamma Flip 624.2 tiến sát Put Wall 600.0 với biến động kỳ vọng ±20.7.
+Tín hiệu đồng pha suy yếu dự báo phiên tới có năm mươi lăm phần trăm xác suất giảm tiếp, hai mươi lăm phần trăm thủng hỗ trợ sâu và hai mươi phần trăm hồi phục kỹ thuật.
+Nhà đầu tư nên ưu tiên quản trị rủi ro và follow KenvinZone cùng mô hình định lượng AURORA để cập nhật diễn biến mới nhất.

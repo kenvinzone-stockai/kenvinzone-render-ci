@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "S&P 500 & Nasdaq Đồng Pha Giảm Mạnh: Điểm Bias Tiêu Cực Khung Ngày Và Tuần",
+    "description": "📊 Bản tin Phân tích định lượng Chứng khoán Mỹ hôm nay từ KenvinZone Analytics:\n\nS&P 500 và Nasdaq ghi nhận sự đồng pha giảm mạnh trên cả khung ngày và tuần, với áp lực đè nặng từ đà tăng của đồng USD và khẩu vị rủi ro sụt giảm nghiêm trọng.\n\n📌 Tóm tắt số liệu định lượng:\n- S&P 500: Bias ngày -19.0 (tuần -23.4). SPY Net GEX dương 29 triệu, giá 689.81 trên Flip 686.2, Put Wall 695.0, Call Wall 720.0.\n- Nasdaq 100: Bias ngày -15.9 (tuần -22.5). QQQ Net GEX âm 46 triệu, giá 608.45 dưới Flip 624.2, Put Wall 600.0, Call Wall 660.0.\n\n⚠️ Lưu ý: Nội dung chỉ nhằm mục đích cung cấp thông tin định lượng tham khảo, KHÔNG phải lời khuyên đầu tư.\n\n#sp500 #nasdaq #chungkhoanmy #gamma #kenvinzone #aurora",
+    "tags": [
+      "sp500",
+      "nasdaq",
+      "chứng khoán mỹ",
+      "nhận định thị trường",
+      "gamma",
+      "net gex",
+      "kenvinzone",
+      "aurora",
+      "spy",
+      "qqq",
+      "phân tích định lượng",
+      "put wall",
+      "call wall"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "equity-bias",
+    "date": "23/11/2026"
+  }
+}
