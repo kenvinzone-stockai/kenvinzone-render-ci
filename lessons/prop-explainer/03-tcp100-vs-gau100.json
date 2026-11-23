@@ -1,0 +1,84 @@
+{
+  "topic_id": "03-tcp100-vs-gau100",
+  "accent": "#F3BE62",
+  "accent2": "#38D5E7",
+  "hook": {
+    "badge": "⚔️ SO SÁNH ĐỐI ĐẦU EARN2TRADE",
+    "title_lines": ["TCP100 VS GAU100:", "CHÊNH $10.50 CHỌN GÓI NÀO?"],
+    "sub": "Phân tích sâu trần rút LiveSim, lộ trình $400K & luật mới 02/11/2026",
+    "chips": [
+      {"text": "TCP100 ($105)", "tone": "gold"},
+      {"text": "GAU100 ($94.50)", "tone": "cyan"},
+      {"text": "BIGBF2026 -70%", "tone": "green"}
+    ]
+  },
+  "s1": {
+    "kicker": "PHÂN VÂN KHI SĂN SALE 70%",
+    "title": "THÔNG SỐ VÒNG THI GIỐNG HỆT NHAU NHƯNG QUYỀN LỢI KHÁC XA",
+    "stat_value": "+$1,000",
+    "stat_label": "Trần rút thêm trên LiveSim EOD khi chọn TCP100",
+    "summary": "Khi áp mã Black Week BIGBF2026 giảm 70%, GAU100 có giá $94.50 còn TCP100 là $105.00. Nhiều người chọn GAU100 cho rẻ hơn $10.50 mà bỏ lỡ hàng loạt đặc quyền cực lớn của TCP100!"
+  },
+  "s2": {
+    "type": "compare_table",
+    "kicker": "SO KÈO TRỰC DIỆN",
+    "title": "TCP100 VS GAUNTLET MINI 100K",
+    "left_label": "TCP100 ($105) ★",
+    "right_label": "GAU100 ($94.50)",
+    "rows": [
+      {"metric": "Trần rút trên LiveSim EOD", "left": "Tối đa $6,000", "right": "Chỉ tối đa $5,000", "winner": "left"},
+      {"metric": "Lộ trình nâng vốn (Scale)", "left": "Tự scale tới $400,000", "right": "Cố định mãi ở $100K", "winner": "left"},
+      {"metric": "Reset miễn phí khi Rebill", "left": "Tặng 1 Reset / tháng", "right": "Không tặng Free Reset", "winner": "left"},
+      {"metric": "Target / EOD / Hard DLL", "left": "$6K / $3.5K / $2.2K", "right": "$6K / $3.5K / $2.2K", "winner": ""}
+    ]
+  },
+  "s3": {
+    "kicker": "CẬP NHẬT LUẬT MỚI 02/11/2026",
+    "title": "3 LUẬT MỚI EARN2TRADE BẠN PHẢI NẮM CHẮC",
+    "items": [
+      {"title": "Đã bỏ Progression Ladder cũ", "detail": "Giới hạn hợp đồng cố định 8 Minis, không còn lo bị rớt oan vì vượt thang hợp đồng."},
+      {"title": "Luật 5 ngày có lãi tối thiểu", "detail": "Mỗi kỳ rút cần đủ 5 ngày lãi ròng ≥ $200/ngày (với gói 100K)."},
+      {"title": "Bẫy chia 50/50 vs 80/20", "detail": "Với gói 100K, hãy gom rút từ $3,000 trở lên để chia 80/20 (dưới $3K chỉ chia 50/50!)."}
+    ]
+  },
+  "s4": {
+    "title": "CHỐT NHANH CHO TRADER EARN2TRADE",
+    "verdict": "Chênh nhau chỉ $10.50 nhưng TCP100 thắng tuyệt đối GAU100! Chỉ chọn Gauntlet Mini khi bạn muốn thi thẳng gói lớn GAU150 hoặc GAU200.",
+    "bullets": [
+      "Tận dụng miễn phí ATAS / DeepCharts qua data dxFeed.",
+      "Nhớ Earn2Trade CẤM Trade Copier — chạy nhiều TK phải đánh tay độc lập.",
+      "Cài Personal DLL thấp hơn Hard DLL ($2,200) khoảng 25% để tránh rớt oan."
+    ]
+  },
+  "s5": {
+    "title": "QUẢN TRỊ RỦI RO ĐỂ CHẠM NGƯỠNG 80/20",
+    "rule_head": "BẢO VỆ HARD DLL & GOM ĐỦ 5 NGÀY LÃI",
+    "rule_body": "Trên gói $100K, chỉ cần đi đều 5–8 hợp đồng Micro (MNQ/MGC), mục tiêu $400–$600/ngày để vừa dễ đạt 5 ngày lãi ≥ $200, vừa gom đủ $3,000 nhận tỷ lệ chia 80/20.",
+    "aurora_note": "Dùng hệ thống KenvinZone AURORA trên TradingView để lọc đúng sóng chính, tránh đánh liên tục lúc sideway làm chạm Hard DLL."
+  },
+  "outro": {
+    "heading": "SĂN MÃ BIGBF2026 (-70%) TRƯỚC 29/11",
+    "cta": "👇 Link Earn2Trade & Bảng so sánh đầy đủ ở bình luận ghim!"
+  },
+  "script": [
+    "Khi Earn2Trade đang giảm sâu 70 phần trăm, giữa gói TCP100 giá 105 đô và GAU100 giá 94 phẩy 5 đô, chênh nhau đúng 10 phẩy 5 đô thì chọn gói nào lợi hơn?",
+    "Thông số vòng thi của hai gói giống hệt nhau: mục tiêu 6 ngàn đô, EOD Drawdown 3 ngàn 500 đô và Hard DLL 2 ngàn 200 đô. Nhưng quyền lợi sau khi đỗ lại chênh lệch rất xa!",
+    "TCP100 cho bạn rút tối đa tới 6 ngàn đô trên LiveSim EOD trước khi lên Live, có sẵn lộ trình nâng vốn tự động lên tới 400 ngàn đô, và tặng 1 lần Reset miễn phí mỗi tháng gia hạn. Trong khi GAU100 chỉ cho rút tối đa 5 ngàn đô và đứng yên ở mốc 100 ngàn.",
+    "Ngoài ra từ ngày 2 tháng 11 năm 2026, Earn2Trade đã bỏ hoàn toàn bảng Progression Ladder cũ, thay bằng luật 5 ngày lãi tối thiểu 200 đô mỗi kỳ rút, và nhớ gom rút từ 3 ngàn đô trở lên để hưởng chia 80-20 thay vì 50-50.",
+    "Chốt nhanh: chỉ thêm 10 phẩy 5 đô nhưng TCP100 lời hơn GAU100 toàn diện. Bạn chỉ nên chọn Gauntlet Mini nếu muốn thi thẳng size lớn 150 ngàn hoặc 200 ngàn. Lưu ý Earn2Trade cấm Trade Copier giữa các tài khoản nhé.",
+    "Để vượt 5 ngày lãi và tránh chạm Hard DLL, hãy chia nhỏ khối lượng bằng hợp đồng Micro, cài khóa lỗ cá nhân sớm hơn mức quỹ, và có thể kết hợp hệ thống kỷ luật KenvinZone AURORA trên TradingView để chỉ đánh đúng sóng chính.",
+    "Bấm link ở bình luận ghim hoặc truy cập prop chấm kenvinzone chấm com để xem full bảng so sánh và nhập mã BIGBF2026 trước khi hết hạn ngày 29 tháng 11 nhé!"
+  ],
+  "upload": {
+    "youtube": {
+      "title": "So Sánh Earn2Trade TCP100 vs GAU100 (Sale 70% BIGBF2026): Chọn Gói Nào Lợi Hơn?",
+      "description": "🔥 Đăng ký Earn2Trade (Nhập mã BIGBF2026 giảm tới 70% — hạn 29/11/2026):\n👉 https://www.earn2trade.com/?a_pid=KENVINZONE\n\n📊 Bảng so sánh TCP100 vs GAU100 & Luật mới 02/11/2026:\n👉 https://prop.kenvinzone.com/guide.html#so-sanh-dong-tk\n\n⚡ Hệ thống hỗ trợ kỷ luật pass quỹ trên TradingView (AURORA):\n👉 https://aurora.kenvinzone.com/\n\n#Earn2Trade #TCP100 #GAU100 #BIGBF2026 #TradeQuyFuture #KenvinZone",
+      "tags": ["Earn2Trade", "TCP100", "GAU100", "BIGBF2026", "Trade Quy Future", "Prop Firm Futures", "KenvinZone"]
+    },
+    "facebook_reels": {
+      "caption": "⚔️ Earn2Trade TCP100 ($105) vs GAU100 ($94.50): Chênh nhau $10.50 nhưng khác biệt $1,000 trần rút LiveSim + lộ trình $400K! Link đăng ký mã BIGBF2026 (-70% hết 29/11) ở bình luận ghim 👇\n\n#Earn2Trade #BIGBF2026 #TradeQuyFuture #KenvinZone",
+      "videoState": "DRAFT",
+      "sourceComment": "🔥 Link Earn2Trade (Mã BIGBF2026 -70%): https://www.earn2trade.com/?a_pid=KENVINZONE\n📊 Xem bảng so sánh TCP100 vs GAU100: https://prop.kenvinzone.com/guide.html#so-sanh-dong-tk"
+    }
+  }
+}
