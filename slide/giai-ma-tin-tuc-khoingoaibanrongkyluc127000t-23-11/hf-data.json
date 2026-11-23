@@ -1,0 +1,206 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "23/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "CafeF",
+    "short": "CafeF",
+    "author": "Ngọc Ly",
+    "headline": "Khối ngoại bán ròng kỷ lục 127.000 tỷ đồng, chuyên gia dự báo về thời điểm đảo chiều",
+    "date": "23/11/2026",
+    "url": "cafef.vn/khoi-ngoai-ban-rong-ky-luc-127000-ty-dong"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "theme_variant": "shock_alert",
+    "stamp": "BÁN RÒNG 127.000 TỶ",
+    "stamp_tone": "red",
+    "title_key": "127.000 TỶ",
+    "visual": {
+      "items": []
+    },
+    "title_lines": [
+      "Khối ngoại xả kỷ lục",
+      "gần 127.000 TỶ đồng"
+    ],
+    "sub": "Đã nâng hạng nhưng vì sao dòng tiền ngoại vẫn tháo chạy?",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "Bán ròng -127.000 tỷ",
+        "tone": "down"
+      },
+      {
+        "icon": "↳",
+        "text": "Lộ trình FTSE 4 đợt",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "Phép thử năm 2027",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Dù chứng khoán Việt Nam đã được nâng hạng, khối ngoại vẫn bán ròng kỷ lục <mark>gần 127.000 tỷ đồng</mark> trên HoSE kể từ đầu năm."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh chung",
+      "áp lực xả hàng kỷ lục"
+    ],
+    "stats": [
+      {
+        "value": 127000,
+        "decimals": 0,
+        "unit": "tỷ",
+        "label": "Bán ròng trên HoSE",
+        "badge": "Kỷ lục lịch sử",
+        "tone": "down",
+        "beat": 1
+      }
+    ],
+    "note": "Lần gần nhất thị trường hút ròng mạnh là giai đoạn cuối năm 2022 qua dòng vốn P-Notes."
+  },
+  "s3": {
+    "title_lines": [
+      "Lộ trình nâng hạng",
+      "giải ngân theo từng đợt"
+    ],
+    "mode": "bars",
+    "lead": "Tỷ trọng bổ sung FTSE",
+    "bars": [
+      {
+        "label": "Đợt 1 (T9/2026)",
+        "display": "10%",
+        "value": 10,
+        "beat": 1
+      },
+      {
+        "label": "Đợt 2 (T3/2027)",
+        "display": "20%",
+        "value": 20,
+        "beat": 1
+      },
+      {
+        "label": "Đợt 3 & 4 (2027)",
+        "display": "70%",
+        "value": 70,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 4,
+      "suffix": " đợt",
+      "text": "FTSE giải ngân từng bước kéo dài đến tháng 9/2027",
+      "beat": 2
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Dịch chuyển",
+      "rào cản giữ chân vốn ngoại"
+    ],
+    "cards": [
+      {
+        "big": "USD & Fed",
+        "title": "Lãi suất toàn cầu",
+        "text": "Đồng USD mạnh khiến dòng tiền rút khỏi thị trường mới nổi"
+      },
+      {
+        "big": "Thiếu Tech",
+        "title": "Lệch cơ cấu ngành",
+        "text": "Nhiều ngân hàng, bất động sản nhưng thiếu vắng công nghệ, AI"
+      },
+      {
+        "big": "Room ngoại",
+        "title": "Giới hạn tỷ lệ sở hữu",
+        "text": "Thanh khoản và quy mô vốn hóa khả dụng còn khá hạn chế"
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Ai thắng",
+      "ai đối mặt rủi ro?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "THẮNG THẾ",
+        "title": "Quỹ chỉ số thụ động",
+        "text": "Giải ngân tự động theo từng giai đoạn nâng hạng của FTSE"
+      },
+      {
+        "color": "yellow",
+        "tag": "LƯU Ý",
+        "title": "Cổ phiếu vốn hóa lớn",
+        "text": "Chờ đợi sự cải thiện về tỷ lệ sở hữu và tính thanh khoản"
+      },
+      {
+        "color": "red",
+        "tag": "KHÓ KHĂN",
+        "title": "Cổ phiếu định giá cao",
+        "text": "Dòng vốn chủ động quốc tế tiếp tục chọn lọc khắt khe"
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Vì sao",
+      "chưa thể đảo chiều ngay?"
+    ],
+    "chain": [
+      {
+        "title": "Động lực",
+        "text": "Dòng tiền vào chủ yếu phụ thuộc vào <b>quỹ chỉ số</b>",
+        "beat": 1
+      },
+      {
+        "title": "Cơ cấu",
+        "text": "Danh mục niêm yết đang <b>thiếu nhóm công nghệ</b> đón sóng mới",
+        "beat": 2
+      },
+      {
+        "title": "Thời điểm",
+        "text": "Thị trường bước vào <b>phép thử năm 2027</b> để hút vốn bền",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư",
+      "nên hành động ra sao?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Theo dõi vĩ mô",
+        "text": "Chủ động <b>quan sát lãi suất</b> toàn cầu cùng biến động tỷ giá",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Chọn lọc doanh nghiệp",
+        "text": "Ưu tiên cổ phiếu có <b>tăng trưởng lợi nhuận</b> vững chắc",
+        "beat": 2
+      },
+      {
+        "icon": "warn",
+        "title": "Quản trị rủi ro",
+        "text": "Cần <b>tránh mua đuổi</b> theo kỳ vọng nâng hạng ngắn hạn",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Vốn ngoại đảo chiều cần hội tụ đủ vĩ mô và tăng trưởng nội tại.",
+    "cta": "Bấm theo dõi KenvinZone để cập nhật phân tích thị trường mỗi ngày"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
