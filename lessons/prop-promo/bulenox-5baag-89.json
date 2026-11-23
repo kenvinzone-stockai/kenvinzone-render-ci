@@ -1,0 +1,46 @@
+{
+  "coupon_id": "bulenox-5baag-89",
+  "firm": "Bulenox",
+  "accent": "#38D5E7",
+  "accent2": "#F3BE62",
+  "badge": "SIÊU MÃ ALL-IN-ONE · TỚI 89%",
+  "title_lines": ["BULENOX $50K", "CHỈ CÒN $19.25"],
+  "subtitle": "1 mã duy nhất áp cho Option 1, Option 2 EOD & Fast-Track",
+  "deadline": "HẾT HẠN 30/11/2026",
+  "price_heading": "GÓI QUALIFICATION $50K OPT 1",
+  "plan_name": "Bulenox $50,000 Qualification",
+  "orig_price": 175,
+  "sale_price": 19.25,
+  "unit": "/tháng",
+  "discount_label": "-89%",
+  "plan_note": "Option 1 (-89%): $19.25 • Option 2 EOD (-75%): $43.75",
+  "perks_heading": "3 ĐIỂM MẠNH NHẤT CỦA BULENOX",
+  "perks": [
+    {"title": "Giữ 100% cho $10,000 lãi đầu tiên", "detail": "Sau mốc $10,000 tiếp tục hưởng tỷ lệ chia lợi nhuận 90/10 cực cao."},
+    {"title": "Option 2 EOD hiếm khi giảm tới 75%", "detail": "Drawdown tính cuối ngày an toàn, chạm DLL chỉ Soft Pause khóa ngày."},
+    {"title": "Cho phép Copy Trade tới 5 TK Master", "detail": "Linh hoạt nhân quy mô trên Rithmic, NinjaTrader, Quantower."}
+  ],
+  "code": "5BAAG",
+  "applies_to": "Option 1 (-89%) • Option 2 EOD (-75%) • Fast-Track (-40%) • Momentum",
+  "cta_heading": "SO GIÁ & CHỌN ĐÚNG OPTION",
+  "cta_line": "👇 Link đăng ký Bulenox & Bảng mô phỏng giá live ở bình luận ghim!",
+  "script": [
+    "Gói quỹ Futures 50 ngàn đô của Bulenox nay chỉ còn hơn 19 đô một tháng nhờ siêu mã đa năng giảm tới 89 phần trăm đến hết ngày 30 tháng 11!",
+    "Từ mức giá gốc 175 đô, gói 50 ngàn Option 1 giảm 89 phần trăm chỉ còn 19 phẩy 25 đô, còn gói Option 2 EOD an toàn cũng giảm cực sâu 75 phần trăm chỉ còn 43 phẩy 75 đô.",
+    "Bulenox cho trader giữ trọn 100 phần trăm của 10 ngàn đô lợi nhuận đầu tiên, hỗ trợ copy trade tối đa 5 tài khoản Master, và rất phù hợp để trải nghiệm thi quỹ với chi phí siêu thấp.",
+    "Anh em chỉ cần nhập đúng một mã 5BAAG tại bước thanh toán để nhận mức giảm cao nhất cho mọi dòng tài khoản từ Qualification, Momentum đến Fast Track.",
+    "Bấm ngay link ưu đãi ở bình luận ghim hoặc vào prop chấm kenvinzone chấm com để xem bảng so sánh Option 1 và Option 2 trước khi chốt đơn nhé!"
+  ],
+  "upload": {
+    "youtube": {
+      "title": "Quỹ Bulenox $50K Chỉ $19.25! Mã 5BAAG Giảm 89% Opt 1 & 75% Opt 2 EOD",
+      "description": "⚡ Đăng ký Bulenox (Nhập mã 5BAAG — hạn 30/11/2026):\n👉 https://bulenox.com/member/aff/go/kenvinzone\n\n📊 Bảng mô phỏng giá live & So sánh Option 1 vs Option 2:\n👉 https://prop.kenvinzone.com/coupons.html?firm=bulenox\n\n⚡ Hệ thống hỗ trợ kỷ luật pass quỹ trên TradingView (AURORA):\n👉 https://aurora.kenvinzone.com/\n\n#Bulenox #5BAAG #TradeQuyFuture #PropFirmFutures #KenvinZone",
+      "tags": ["Bulenox", "5BAAG", "Trade Quy Future", "Prop Firm Futures", "KenvinZone", "Coupon Bulenox"]
+    },
+    "facebook_reels": {
+      "caption": "⚡ Quỹ Bulenox $50K chỉ còn $19.25/tháng! Nhập siêu mã 5BAAG giảm 89% Option 1 & 75% Option 2 EOD trước 30/11/2026. Link đăng ký & bảng tính giá ở bình luận ghim 👇\n\n#Bulenox #5BAAG #TradeQuyFuture #PropFirmFutures #KenvinZone",
+      "videoState": "DRAFT",
+      "sourceComment": "⚡ Link đăng ký Bulenox (Mã 5BAAG): https://bulenox.com/member/aff/go/kenvinzone\n📊 Mô phỏng giá & So sánh Opt 1 vs Opt 2: https://prop.kenvinzone.com/coupons.html?firm=bulenox"
+    }
+  }
+}
