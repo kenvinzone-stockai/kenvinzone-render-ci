@@ -1,0 +1,81 @@
+{
+  "topic_id": "02-bay-topstep-first-payout",
+  "accent": "#34D399",
+  "accent2": "#F3BE62",
+  "hook": {
+    "badge": "⚠️ BẪY LUẬT TOPSTEP XFA",
+    "title_lines": ["FIRST PAYOUT TRAP:", "RÚT TIỀN XONG CHÁY TK?"],
+    "sub": "Hiểu đúng cơ chế khóa MLL về $0 để bảo toàn tài khoản cấp vốn",
+    "chips": [
+      {"text": "Topstep XFA", "tone": "green"},
+      {"text": "MLL → $0", "tone": "rose"},
+      {"text": "Giữ Buffer dày", "tone": "gold"}
+    ]
+  },
+  "s1": {
+    "kicker": "NGHỊCH LÝ TRÊN TÀI KHOẢN CẤP VỐN",
+    "title": "PASS COMBINE RẤT MƯỢT NHƯNG CHÁY NGAY SAU LẦN RÚT ĐẦU",
+    "stat_value": "$0 MLL",
+    "stat_label": "Mức Drawdown bị khóa cứng ngay khi bạn rút tiền lần 1",
+    "summary": "Trên Topstep XFA $50K, ban đầu bạn có $2,000 Drawdown. Nhưng ngay khoảnh khắc bạn gửi lệnh rút tiền lần đầu tiên, Maximum Loss Limit (MLL) sẽ lập tức kéo lên và khóa cứng tại $0 (vốn gốc)!"
+  },
+  "s2": {
+    "type": "drawdown_meter",
+    "kicker": "MÔ PHỎNG TÀI KHOẢN XFA $50K",
+    "title": "ĐIỀU GÌ XẢY RA KHI RÚT QUÁ SỚM?",
+    "bars": [
+      {"label": "Bước 1: Mới lãi +$3,000 trên XFA", "val": "Buffer = $3,000", "pct": 85, "color": "#34d399", "note": "Tài khoản đang rất khỏe, đệm chịu lỗ rộng rãi."},
+      {"label": "Bước 2: Rút tối đa 50% ($1,500)", "val": "MLL khóa về $0!", "pct": 45, "color": "#f3be62", "note": "Toàn bộ phần lãi $1,500 còn lại chính là giới hạn thua lỗ duy nhất."},
+      {"label": "Bước 3: Dính chuỗi lỗ -$1,500", "val": "CHÁY XFA NGAY!", "pct": 12, "color": "#fb7185", "note": "Không còn $2,000 Drawdown ban đầu để gồng nữa!"}
+    ]
+  },
+  "s3": {
+    "kicker": "3 LUẬT TOPSTEP KHÁC PHẢI NHỚ",
+    "title": "TRÁNH THÊM 3 LỖI CHẾT NGƯỜI TRÊN TOPSTEP",
+    "items": [
+      {"title": "Giờ đóng lệnh sớm nhất: 3:10 PM CT", "detail": "Hệ thống tự quét từ 3:08 PM CT (03:10 sáng VN mùa Hè / 04:10 mùa Đông), sớm hơn Bulenox 50 phút!"},
+      {"title": "XFA Scaling Plan siết chặt lúc đầu", "detail": "Lúc mới lên XFA 50K (lãi < $1,500), bạn chỉ được đánh tối đa 1 Mini (10 Micros)."},
+      {"title": "Chọn vĩnh viễn nhánh Standard hay Consistency", "detail": "Standard cần 5 ngày $150+; Consistency cần 3 ngày + 40% nhưng trần rút cao hơn ($3K–$6K)."}
+    ]
+  },
+  "s4": {
+    "title": "CHIẾN LƯỢC RÚT TIỀN AN TOÀN",
+    "verdict": "Hãy tích lũy lớp đệm (Buffer) ít nhất $3,000–$4,000 trên XFA 50K trước khi rút, và luôn để lại tối thiểu $2,000 làm vốn đệm chịu lỗ!",
+    "bullets": [
+      "Đừng rút cạn 50% khi số dư lãi mới vừa chớm $1,000–$1,500.",
+      "Cài Personal Daily Loss Limit trên TopstepX để tự khóa tay khi mất bình tĩnh.",
+      "Dùng mã KENVINZONE giảm thẳng 50% lần đầu mua Topstep Combine."
+    ]
+  },
+  "s5": {
+    "title": "ĐÁNH ĐỀU TAY ĐỂ XÂY BUFFER BỀN VỮNG",
+    "rule_head": "TOPSTEPX TÍCH HỢP THẲNG TRADINGVIEW",
+    "rule_body": "Trên XFA giai đoạn đầu chỉ đánh 2–5 hợp đồng Micro (MNQ/MES/MGC), rủi ro tối đa $200/lệnh để giữ nguyên 10 nhịp sai sót sau khi rút tiền.",
+    "aurora_note": "Bạn có thể mở song song hệ thống KenvinZone AURORA ngay trên TradingView để lọc xu hướng MTF và đi lệnh 1R/2R kỷ luật mỗi ngày."
+  },
+  "outro": {
+    "heading": "SOI FULL RULE TOPSTEP & LẤY MÃ -50%",
+    "cta": "👇 Link Topstep (-50% KENVINZONE) & Bảng so sánh 3 quỹ ở bình luận ghim!"
+  },
+  "script": [
+    "Tại sao rất nhiều trader vượt qua vòng thi Topstep cực mượt, rút được khoản tiền đầu tiên xong lại cháy luôn tài khoản cấp vốn XFA ngay tuần sau?",
+    "Đó là vì bẫy First Payout Trap. Khi bạn vừa gửi yêu cầu rút tiền lần đầu trên XFA, mức Maximum Loss Limit sẽ lập tức kéo lên và khóa cứng tại mức 0 đô vốn gốc.",
+    "Ví dụ tài khoản 50 ngàn bạn lãi được 3 ngàn đô rồi rút ra một nửa là 1 ngàn 500 đô. Lúc này bạn không còn 2 ngàn đô Drawdown ban đầu nữa, mà toàn bộ phần đệm chịu lỗ còn lại chỉ đúng 1 ngàn 500 đô — thua chạm mốc đó là cháy ngay!",
+    "Ngoài bẫy rút tiền, trên Topstep bạn còn phải nhớ ba điểm: giờ đóng lệnh 3 giờ 10 chiều CT sớm nhất trong ba quỹ, quy tắc Scaling Plan chỉ cho đánh tối đa 1 Mini khi lãi dưới 1 ngàn 500 đô, và việc chọn nhánh rút tiền là cố định vĩnh viễn.",
+    "Chiến lược an toàn nhất là đừng vội rút cạn Buffer quá sớm. Hãy tích lãi đủ dày rồi mới rút, luôn chừa lại ít nhất 2 ngàn đô đệm an toàn và bật sẵn khóa lỗ ngày trên TopstepX.",
+    "Khi xây Buffer trên XFA, hãy ưu tiên đánh Micro với rủi ro cố định 200 đô mỗi lệnh. Vì TopstepX chạy thẳng giao diện TradingView, anh em có thể kết hợp ngay bộ lọc xu hướng KenvinZone AURORA để vào lệnh kỷ luật theo kế hoạch định sẵn.",
+    "Bấm link ở bình luận ghim hoặc vào prop chấm kenvinzone chấm com để xem chi tiết bảng Scaling Plan Topstep và nhận mã KENVINZONE giảm 50 phần trăm cho lần thi đầu tiên nhé!"
+  ],
+  "upload": {
+    "youtube": {
+      "title": "Bẫy First Payout Trap Của Topstep XFA: Rút Tiền Lần Đầu Xong… Cháy Tài Khoản?",
+      "description": "🛡️ Đăng ký Topstep (Nhập mã KENVINZONE giảm 50% lần đầu):\n👉 https://www.topstep.com/?ref=KENVINZONE\n\n📊 Soi trọn bộ Rule Topstep, XFA Scaling Plan & So sánh 3 quỹ:\n👉 https://prop.kenvinzone.com/\n\n⚡ Hệ thống hỗ trợ kỷ luật pass quỹ trên TradingView (AURORA):\n👉 https://aurora.kenvinzone.com/\n\n#Topstep #FirstPayoutTrap #TradeQuyFuture #PropFirmFutures #KenvinZone",
+      "tags": ["Topstep", "TopstepX", "First Payout Trap", "Trade Quy Future", "Prop Firm Futures", "KenvinZone"]
+    },
+    "facebook_reels": {
+      "caption": "⚠️ Bẫy 'First Payout Trap' trên Topstep XFA: Rút tiền lần đầu làm MLL khóa cứng về $0! Xem cách giữ Buffer an toàn & nhận mã KENVINZONE giảm 50% ở bình luận ghim 👇\n\n#Topstep #TradeQuyFuture #PropFirmFutures #KenvinZone",
+      "videoState": "DRAFT",
+      "sourceComment": "🛡️ Link Topstep (Mã KENVINZONE -50%): https://www.topstep.com/?ref=KENVINZONE\n📊 Soi trọn bộ Rule 3 quỹ: https://prop.kenvinzone.com/"
+    }
+  }
+}
