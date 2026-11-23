@@ -1,0 +1,83 @@
+{
+  "topic_id": "01-bay-non-pro-140",
+  "accent": "#38D5E7",
+  "accent2": "#F3BE62",
+  "hook": {
+    "badge": "⚠️ BẪY LUẬT QUỸ FUTURES #01",
+    "title_lines": ["ĐỪNG BẤM NHẦM 1 NÚT", "MẤT OAN $140/THÁNG!"],
+    "sub": "Sai lầm kinh điển của người mới từ Forex sang thi quỹ CME",
+    "chips": [
+      {"text": "CME / Rithmic", "tone": "cyan"},
+      {"text": "$140+/tháng", "tone": "rose"},
+      {"text": "Non-Professional", "tone": "green"}
+    ]
+  },
+  "s1": {
+    "kicker": "MẤT TIỀN TRƯỚC KHI VÀO LỆNH",
+    "title": "PHÍ DỮ LIỆU SÀN CME CHÊNH NHAU GẤP 10 LẦN",
+    "stat_value": "$140+/tháng",
+    "stat_label": "Phí mỗi sàn CME nếu khai nhầm Professional",
+    "summary": "Sau khi mua gói thi Bulenox hay Earn2Trade, hệ thống Rithmic hoặc dxFeed bắt bạn ký thỏa thuận dữ liệu. Nhiều người thấy chữ 'Professional' nghe rất ngầu liền bấm chọn — và dính ngay mức phí dữ liệu chuyên nghiệp đắt gấp 10 lần!"
+  },
+  "s2": {
+    "type": "compare_table",
+    "kicker": "SO SÁNH 2 TÙY CHỌN",
+    "title": "NON-PROFESSIONAL VS PROFESSIONAL",
+    "left_label": "NON-PROFESSIONAL ★",
+    "right_label": "PROFESSIONAL",
+    "rows": [
+      {"metric": "Đối tượng", "left": "Trader cá nhân tự giao dịch", "right": "Tổ chức, quỹ đầu tư, môi giới", "winner": "left"},
+      {"metric": "Phí data vòng thi", "left": "$0 / tháng (Miễn phí)", "right": "$140+ / tháng / mỗi sàn!", "winner": "left"},
+      {"metric": "Dữ liệu giá nhận được", "left": "Chuẩn CME 100% như nhau", "right": "Giống hệt Non-Pro", "winner": "left"}
+    ]
+  },
+  "s3": {
+    "kicker": "3 ĐIỀU CẦN BIẾT THÊM",
+    "title": "CÒN 2 BẪY PHÍ NGẦM KHÁC CẦN TRÁNH",
+    "items": [
+      {"title": "Tắt Auto-Renewal nếu không thi tiếp", "detail": "Quỹ Futures thu phí thuê bao hàng tháng; rớt tài khoản mà không Cancel Subscription vẫn bị trừ thẻ kỳ sau."},
+      {"title": "Lên Live thật mới chịu phí CME", "detail": "Giai đoạn LiveSim / XFA / Master miễn phí data Non-Pro — nên rút tối đa trên LiveSim trước khi lên Live."},
+      {"title": "Khai form thuế W-8BEN khi đỗ", "detail": "Xác nhận công dân ngoài Mỹ để không bị Mỹ khấu trừ 30% thuế nguồn khi rút tiền."}
+    ]
+  },
+  "s4": {
+    "title": "LÀM ĐÚNG NGAY TỪ BƯỚC ĐĂNG KÝ",
+    "verdict": "Là trader cá nhân tự giao dịch tại nhà, 100% anh em luôn tích chọn NON-PROFESSIONAL khi ký thỏa thuận Rithmic, dxFeed hay Tradovate!",
+    "bullets": [
+      "Luôn kiểm tra kỹ mục Market Data Agreement trước khi bấm Submit.",
+      "Đặt lịch nhắc trước ngày gia hạn 2 ngày để chủ động giữ hoặc hủy gói.",
+      "Nếu chưa quen cài Rithmic, có thể bắt đầu với TopstepX trên trình duyệt."
+    ]
+  },
+  "s5": {
+    "title": "TIẾT KIỆM PHÍ & GIỮ KỶ LUẬT THI QUỸ",
+    "rule_head": "BẮT ĐẦU NHẸ NHÀNG VỚI HỢP ĐỒNG MICRO",
+    "rule_body": "Dùng MNQ, MES hoặc MGC với rủi ro cố định $150–$250/lệnh cho tài khoản $50K. Chỉ cần 6–8 lệnh tỷ lệ 2R rải đều nhiều ngày là vượt Target $3,000 an toàn.",
+    "aurora_note": "Kết hợp hệ thống KenvinZone AURORA trên TradingView để có sẵn kế hoạch Entry – F-SL – TP 1R/2R, lọc nhiễu sideway và tránh chạm Daily Loss Limit."
+  },
+  "outro": {
+    "heading": "ĐỌC FULL CẨM NANG FUTURES 101",
+    "cta": "👇 Link Cẩm nang 101 & Mã giảm giá 3 quỹ ở bình luận ghim!"
+  },
+  "script": [
+    "Đừng bấm nhầm đúng một nút này khi vừa mua gói thi quỹ Futures, nếu không bạn có thể mất oan hơn 140 đô mỗi tháng tiền dữ liệu sàn CME!",
+    "Sau khi đăng ký Bulenox hay Earn2Trade, hệ thống Rithmic hoặc dxFeed sẽ yêu cầu ký thỏa thuận dữ liệu. Rất nhiều người mới thấy chữ Professional nghe rất chuyên nghiệp nên tích chọn, và lập tức bị sàn áp mức phí dữ liệu chuyên nghiệp cực đắt.",
+    "Thực tế dữ liệu giá của hai gói giống hệt nhau 100 phần trăm. Gói Non-Professional dành cho trader cá nhân được miễn phí hoàn toàn trong vòng thi, còn gói Professional chỉ dành cho tổ chức tài chính và môi giới.",
+    "Ngoài ra anh em nhớ tránh thêm hai lỗi mất tiền oan khác: chủ động tắt tự động gia hạn Auto-Renewal nếu thi trượt, tận dụng rút tiền tối đa trên LiveSim trước khi lên Live, và ký form thuế W-8BEN khi rút tiền về Việt Nam.",
+    "Chốt nhanh cho người mới: là trader cá nhân tự đánh tại nhà, bạn luôn luôn chọn Non-Professional khi ký thỏa thuận dữ liệu, và nên đặt lịch nhắc trước ngày gia hạn gói.",
+    "Khi đã vào guồng, hãy luôn giao dịch hợp đồng Micro như MNQ hay MGC với rủi ro khoảng 200 đô mỗi lệnh. Nếu muốn giữ kỷ luật chờ đúng setup có sẵn Entry, Stop-Loss và Take-Profit, anh em có thể tham khảo thêm hệ thống KenvinZone AURORA trên TradingView.",
+    "Truy cập ngay prop chấm kenvinzone chấm com hoặc bấm link ở bình luận ghim để đọc trọn bộ Cẩm nang Nhập môn Futures 101 và săn mã giảm giá sâu nhất của 3 quỹ nhé!"
+  ],
+  "upload": {
+    "youtube": {
+      "title": "Đừng Bấm Nhầm 1 Nút Này Khi Thi Quỹ Futures — Mất Oan $140/Tháng!",
+      "description": "⚠️ Cẩm nang Nhập môn Quỹ Futures 101 & Tránh bẫy mất tiền oan:\n👉 https://prop.kenvinzone.com/guide.html\n\n🔥 Săn Mã Giảm Giá 3 Quỹ (Bulenox -89% • Earn2Trade -70% • Topstep -50%):\n👉 https://prop.kenvinzone.com/coupons.html\n\n⚡ Hệ thống hỗ trợ kỷ luật pass quỹ trên TradingView (AURORA):\n👉 https://aurora.kenvinzone.com/\n\n#TradeQuyFuture #PropFirmFutures #NonProfessional #CMEFutures #KenvinZone",
+      "tags": ["Trade Quy Future", "Prop Firm Futures", "Non-Professional", "Bulenox", "Earn2Trade", "Topstep", "KenvinZone"]
+    },
+    "facebook_reels": {
+      "caption": "⚠️ Đừng bấm nhầm 1 nút này khi mua quỹ Futures — mất oan $140+/tháng tiền data sàn CME! Xem trọn bộ Cẩm nang Futures 101 & Mã giảm giá 3 quỹ ở bình luận ghim 👇\n\n#TradeQuyFuture #PropFirmFutures #KenvinZone",
+      "videoState": "DRAFT",
+      "sourceComment": "📘 Cẩm nang Nhập môn Futures 101: https://prop.kenvinzone.com/guide.html\n🔥 Săn Mã Giảm Giá 3 Quỹ: https://prop.kenvinzone.com/coupons.html"
+    }
+  }
+}
