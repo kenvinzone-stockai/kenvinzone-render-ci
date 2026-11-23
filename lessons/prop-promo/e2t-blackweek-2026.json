@@ -1,0 +1,46 @@
+{
+  "coupon_id": "e2t-blackweek-2026",
+  "firm": "Earn2Trade",
+  "accent": "#F3BE62",
+  "accent2": "#38D5E7",
+  "badge": "BLACK WEEK · GIẢM TỚI 70%",
+  "title_lines": ["EARN2TRADE", "SALE TỚI 70%"],
+  "subtitle": "Áp dụng 2 tháng liên tiếp cho TCP & Gauntlet Mini",
+  "deadline": "HẾT HẠN 29/11/2026",
+  "price_heading": "GÓI TCP100 ($100K → $400K)",
+  "plan_name": "Trader Career Path® TCP100",
+  "orig_price": 350,
+  "sale_price": 105,
+  "unit": "/tháng",
+  "discount_label": "-70% T1 • -60% T2",
+  "plan_note": "Target $6,000 • EOD Drawdown $3,500 • Đã bỏ Progression Ladder",
+  "perks_heading": "3 LÝ DO NÊN CHỐT DEAL NÀY",
+  "perks": [
+    {"title": "Lộ trình nâng vốn tới $400,000", "detail": "TCP100 cho rút tới $6,000 trên LiveSim EOD và tặng 1 Reset miễn phí khi Rebill."},
+    {"title": "Miễn phí phần mềm Order Flow ATAS", "detail": "Chọn data dxFeed được dùng miễn phí ATAS hoặc DeepCharts suốt vòng thi & LiveSim."},
+    {"title": "Không đóng trước phí kích hoạt $139", "detail": "Phí kích hoạt LiveSim được trừ thẳng vào lần rút lợi nhuận đầu tiên."}
+  ],
+  "code": "BIGBF2026",
+  "applies_to": "Tất cả gói TCP25–TCP100 & Gauntlet Mini 50K–200K",
+  "cta_heading": "SO GIÁ & SĂN DEAL NGAY",
+  "cta_line": "👇 Link đăng ký & Bảng so sánh TCP100 vs GAU100 ở bình luận ghim!",
+  "script": [
+    "Earn2Trade đang tung ưu đãi Black Week giảm tới 70 phần trăm trong hai tháng liên tiếp, và chỉ còn hạn đến hết ngày 29 tháng 11!",
+    "Gói TCP 100 ngàn đô từ 350 đô nay giảm thẳng 70 phần trăm tháng đầu chỉ còn 105 đô, tháng hai tiếp tục giảm 60 phần trăm.",
+    "Đặc biệt từ tháng 11 năm 2026, Earn2Trade đã bỏ hoàn toàn bảng Progression Ladder dễ vi phạm, tặng miễn phí phần mềm Order Flow ATAS qua dxFeed, và phí kích hoạt 139 đô được trừ vào lần rút đầu tiên.",
+    "Anh em chỉ cần nhập mã BIGBF2026 tại bước thanh toán để kích hoạt mức giảm sâu nhất cho toàn bộ gói TCP và Gauntlet Mini, kèm giảm giá Reset đến hết tháng 1.",
+    "Bấm ngay link ưu đãi ở phần bình luận ghim hoặc truy cập prop chấm kenvinzone chấm com để so sánh chi tiết TCP100 và GAU100 trước khi hết hạn nhé!"
+  ],
+  "upload": {
+    "youtube": {
+      "title": "Black Week Earn2Trade Giảm 70% (Mã BIGBF2026) — Gói $100K Chỉ Còn $105!",
+      "description": "🔥 Ưu đãi Black Week Earn2Trade 2026 (Hết hạn 29/11/2026):\n👉 Link đăng ký Earn2Trade (Nhập mã BIGBF2026): https://www.earn2trade.com/?a_pid=KENVINZONE\n\n📊 So sánh TCP100 vs GAU100 & Mô phỏng giá tất cả gói 3 quỹ:\n👉 https://prop.kenvinzone.com/coupons.html?firm=earn2trade\n\n🧮 Máy tính Khối lượng 10 mã CME & Consistency Rule miễn phí:\n👉 https://prop.kenvinzone.com/#cong-cu\n\n⚡ Hệ thống hỗ trợ kỷ luật pass quỹ trên TradingView (AURORA):\n👉 https://aurora.kenvinzone.com/\n\n#Earn2Trade #BIGBF2026 #TradeQuyFuture #PropFirmFutures #KenvinZone",
+      "tags": ["Earn2Trade", "BIGBF2026", "Trade Quy Future", "Prop Firm Futures", "KenvinZone", "TCP100", "Black Week 2026"]
+    },
+    "facebook_reels": {
+      "caption": "🔥 Earn2Trade Black Week giảm tới 70% (2 tháng liên tiếp) — Gói $100K chỉ còn $105! Nhập mã BIGBF2026 trước 29/11/2026. Link đăng ký & bảng so sánh TCP100 vs GAU100 ở bình luận ghim 👇\n\n#Earn2Trade #BIGBF2026 #TradeQuyFuture #PropFirmFutures #KenvinZone",
+      "videoState": "DRAFT",
+      "sourceComment": "🔥 Link đăng ký Earn2Trade (Mã BIGBF2026): https://www.earn2trade.com/?a_pid=KENVINZONE\n📊 So sánh & Mô phỏng giá: https://prop.kenvinzone.com/coupons.html?firm=earn2trade"
+    }
+  }
+}
