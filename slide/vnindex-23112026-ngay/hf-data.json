@@ -1,0 +1,256 @@
+{
+  "template": "vnindex-daily-hf",
+  "date": "23/11/2026",
+  "weekday": "Thứ Hai",
+  "handle": "@Kechuyen.Chungkhoan",
+  "score": 44,
+  "score_am": 39,
+  "status": "TRÁNH VÀO MỚI",
+  "status_pct": "62%",
+  "cover": {
+    "eyebrow": "Chứng khoán hôm nay",
+    "title_lines": [
+      "Hồi lên 1697",
+      "chạm cản 1698"
+    ],
+    "sub_html": "Hồi hơn <b>21</b> điểm từ sáng, còn <b>25,2</b> điểm tới EMA20",
+    "chips": [
+      {
+        "icon": "📈",
+        "label": "VNI",
+        "value": "1697"
+      },
+      {
+        "icon": "◎",
+        "label": "Score",
+        "value": "44"
+      },
+      {
+        "icon": "⚡",
+        "label": "EMA20",
+        "value": "−25,2",
+        "hot": true
+      }
+    ],
+    "cta": "Hồi kỹ thuật hay bẫy tăng giá?",
+    "stamp": "DƯỚI TOÀN BỘ EMA D1"
+  },
+  "compare": [
+    {
+      "label": "Score",
+      "am": "39",
+      "pm": "44",
+      "delta": "+5",
+      "tone": "up"
+    },
+    {
+      "label": "Giá VNI",
+      "am": "1675,94",
+      "pm": "1697,11",
+      "delta": "+21,17",
+      "tone": "up"
+    },
+    {
+      "label": "Vol ratio",
+      "am": "1,15",
+      "pm": "0,43",
+      "delta": "−0,72",
+      "tone": "down"
+    }
+  ],
+  "range_pill": "BIÊN 1689,80 – 1698,19 · thủng 1689,80 → về 1680–1686",
+  "journey": {
+    "axis": [
+      1650,
+      1730
+    ],
+    "path": [
+      {
+        "label": "Đáy trước",
+        "price": 1655.18
+      },
+      {
+        "label": "11:01",
+        "price": 1675.94
+      },
+      {
+        "label": "15:01",
+        "price": 1697.11
+      }
+    ],
+    "resistance": {
+      "price": 1722.32,
+      "label": "Cản · EMA20 D1 1722,32"
+    },
+    "zone": {
+      "lo": 1671.72,
+      "hi": 1689.8,
+      "label": "Hỗ trợ sáng 1671,72 · swing low chiều 1689,80"
+    },
+    "am_card": {
+      "time": "11:01 · SÁNG",
+      "meta": "Score 39 · Vol ×1,15",
+      "text": "Giá <b>1675,94</b> lình xình trên hỗ trợ 1671,72, D1 Full Bearish dưới các đường EMA"
+    },
+    "warn_card": "Báo cáo sáng: đóng dưới <b>1671,72</b> kèm volume tăng mạnh kích hoạt call margin",
+    "pm_card": {
+      "time": "15:01 · CHIỀU",
+      "meta": "Score 44 · Vol ×0,43",
+      "text": "Chốt <b>1697,11</b> — chạm sát cản 1698,19, thanh khoản hụt mạnh còn 0,43"
+    },
+    "twist": "Mốc 1671,72 được giữ vững, giá hồi hơn 21 điểm nhưng thanh khoản hụt sâu"
+  },
+  "subscores": [
+    {
+      "label": "Kỹ thuật",
+      "am": 10,
+      "pm": 12,
+      "max": 30
+    },
+    {
+      "label": "Timing",
+      "am": 6,
+      "pm": 8,
+      "max": 20
+    },
+    {
+      "label": "Dòng tiền",
+      "am": 9,
+      "pm": 9,
+      "max": 20
+    },
+    {
+      "label": "Sector",
+      "am": 6,
+      "pm": 7,
+      "max": 15
+    },
+    {
+      "label": "Rủi ro",
+      "am": 8,
+      "pm": 8,
+      "max": 15
+    }
+  ],
+  "subscore_note": "Kỹ thuật +2, Timing +2, Sector +1 → tổng +5",
+  "timeframes": [
+    {
+      "tf": "W1",
+      "name": "Tuần",
+      "trend": "bullish",
+      "badge": "Bullish",
+      "detail": "EMA Full Bullish · MACD bearish"
+    },
+    {
+      "tf": "3D",
+      "name": "3 ngày",
+      "trend": "bullish",
+      "badge": "Chuyển pha",
+      "detail": "EMA Mixed · MACD bearish"
+    },
+    {
+      "tf": "D1",
+      "name": "Ngày",
+      "trend": "bearish",
+      "badge": "Bearish",
+      "detail": "RSI <b>34,29 → 40,21</b> · MACD hist −5,05 → −3,70"
+    },
+    {
+      "tf": "M15",
+      "name": "15 phút",
+      "trend": "neutral",
+      "badge": "Pin Bar",
+      "detail": "Bullish Pin Bar · Volume thấp"
+    }
+  ],
+  "timeframe_note": "Khung M15 có pin bar rút chân nhưng vol ratio chiều chỉ 0,43 thiếu xác nhận",
+  "levels": {
+    "axis": [
+      1670,
+      1755
+    ],
+    "price": 1697.11,
+    "price_label": "Giá chốt 1.697,11",
+    "items": [
+      {
+        "price": 1750.54,
+        "label": "EMA200 D1",
+        "kind": "res"
+      },
+      {
+        "price": 1741.29,
+        "label": "EMA50 D1",
+        "kind": "res"
+      },
+      {
+        "price": 1722.32,
+        "label": "EMA20 D1",
+        "kind": "res"
+      },
+      {
+        "price": 1698.19,
+        "label": "High 20 nến",
+        "kind": "res"
+      },
+      {
+        "price": 1689.8,
+        "label": "Swing low chiều",
+        "kind": "sup",
+        "key": true
+      },
+      {
+        "price": 1671.72,
+        "label": "Hỗ trợ phiên sáng",
+        "kind": "sup"
+      }
+    ],
+    "up": "Vượt bền vững 1698,19 + vol ratio > 1 hướng tới EMA20 D1 1722,32",
+    "down": "Thủng 1689,80 → lùi về kiểm định 1680–1686"
+  },
+  "scenarios": [
+    {
+      "pct": 45,
+      "tone": "down",
+      "name": "Hồi thất bại, test hỗ trợ",
+      "desc": "Không vượt <b>1698,19</b>, quay đầu thủng <b>1689,80</b> → <b>1680–1686,78</b>"
+    },
+    {
+      "pct": 35,
+      "tone": "flat",
+      "name": "Đi ngang tích lũy",
+      "desc": "Biên hẹp <b>1686–1698</b>, thanh khoản duy trì ở mức thấp"
+    },
+    {
+      "pct": 20,
+      "tone": "up",
+      "name": "Vượt cản hướng tới EMA20 (suy luận)",
+      "desc": "Bứt phá qua <b>1698,19</b> kèm volume xác nhận để hướng tới <b>1722,32</b>"
+    }
+  ],
+  "actions": [
+    {
+      "tone": "urgent",
+      "title": "Chưa mở vị thế mới",
+      "desc": "Chờ breakout dứt khoát <b>1698,19</b> với thanh khoản lớn hoặc chờ test lại an toàn"
+    },
+    {
+      "tone": "positive",
+      "title": "Đang nắm giữ",
+      "desc": "Tiếp tục giữ hàng với chặn lỗ chặt dưới <b>1689,80</b>, không mua đuổi vùng cản"
+    },
+    {
+      "tone": "urgent",
+      "title": "Margin",
+      "keyword": "HẠ ĐÒN BẨY",
+      "desc": "Hạn chế tối đa đòn bẩy khi D1/H4 vẫn Full Bearish và thanh khoản còn thấp"
+    }
+  ],
+  "outro": {
+    "up": "D1 bứt phá qua 1698,19 và lấy lại 1722,32 kèm thanh khoản đột biến",
+    "down": "Thủng 1689,80 kèm thanh khoản bán mạnh — thesis vô hiệu",
+    "promise": "Hẹn anh em bản tin ngày mai",
+    "follow_handle": "@kenvinzone"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}

@@ -1,0 +1,53 @@
+{
+  "subtitles": {
+    "enabled": true,
+    "color": "#92f93e",
+    "fontSize": 18,
+    "bottom": 60,
+    "maxLines": 1
+  },
+  "backgroundFx": "candlestick",
+  "bgm": {
+    "mode": "custom",
+    "preset": "ambient",
+    "volume": 0.2,
+    "custom": {
+      "name": "Write_You.mp3",
+      "path": "preview-assets/bgm/20260624-151812_Write_You.mp3",
+      "url": "/slide/vnindex-23112026-ngay/preview-assets/bgm/20260624-151812_Write_You.mp3"
+    }
+  },
+  "scriptLines": [
+    "VNINDEX chốt phiên hồi phục hơn hai mươi mốt điểm lên 1697,11 và đang khựng lại ngay dưới cản 1698,19.",
+    "Thứ Hai ngày 23/11, điểm số KenvinZone tăng từ 39 lên 44, giữ nguyên trạng thái TRÁNH VÀO MỚI ở mức 62%.",
+    "Phiên sáng chỉ số lình xình quanh 1675,94 với vol ratio 1,15, neo sát vùng hỗ trợ kỹ thuật 1671,72.",
+    "Ranh giới sáng đặt ra là mốc 1671,72; nếu bị xuyên thủng kèm volume lớn sẽ kích hoạt làn sóng bán tháo margin.",
+    "Bước sang phiên chiều, mốc hỗ trợ được bảo toàn giúp giá bật tăng nhưng vẫn nằm dưới toàn bộ đường EMA ngày.",
+    "Năm điểm thành phần ghi nhận kỹ thuật cộng hai, timing cộng hai, sector cộng một, đưa tổng điểm tăng năm đơn vị.",
+    "RSI khung ngày cải thiện lên 40,21, MACD hist âm 3,7; xu hướng tuần và ba ngày cho thấy đà tăng đang suy yếu.",
+    "Khung 15 phút xuất hiện nến pin bar rút chân nhưng vol ratio chiều hụt về 0,43, cần canh sát mốc 1689,8.",
+    "Kịch bản tới gồm 45% hồi phục thất bại lùi về 1680–1686, 35% tích lũy biên hẹp và 20% bứt phá qua 1698.",
+    "Nhà đầu tư nên kiên nhẫn chưa mở mua mới, hạ bớt tỷ trọng đòn bẩy và hẹn gặp lại anh em ở bản tin ngày mai."
+  ],
+  "slides": {
+    "deletedIds": [],
+    "scriptLines": [
+      "VNINDEX chốt phiên hồi phục hơn hai mươi mốt điểm lên 1697,11 và đang khựng lại ngay dưới cản 1698,19.",
+      "Thứ Hai ngày 23/11, điểm số KenvinZone tăng từ 39 lên 44, giữ nguyên trạng thái TRÁNH VÀO MỚI ở mức 62%.",
+      "Phiên sáng chỉ số lình xình quanh 1675,94 với vol ratio 1,15, neo sát vùng hỗ trợ kỹ thuật 1671,72.",
+      "Ranh giới sáng đặt ra là mốc 1671,72; nếu bị xuyên thủng kèm volume lớn sẽ kích hoạt làn sóng bán tháo margin.",
+      "Bước sang phiên chiều, mốc hỗ trợ được bảo toàn giúp giá bật tăng nhưng vẫn nằm dưới toàn bộ đường EMA ngày.",
+      "Năm điểm thành phần ghi nhận kỹ thuật cộng hai, timing cộng hai, sector cộng một, đưa tổng điểm tăng năm đơn vị.",
+      "RSI khung ngày cải thiện lên 40,21, MACD hist âm 3,7; xu hướng tuần và ba ngày cho thấy đà tăng đang suy yếu.",
+      "Khung 15 phút xuất hiện nến pin bar rút chân nhưng vol ratio chiều hụt về 0,43, cần canh sát mốc 1689,8.",
+      "Kịch bản tới gồm 45% hồi phục thất bại lùi về 1680–1686, 35% tích lũy biên hẹp và 20% bứt phá qua 1698.",
+      "Nhà đầu tư nên kiên nhẫn chưa mở mua mới, hạ bớt tỷ trọng đòn bẩy và hẹn gặp lại anh em ở bản tin ngày mai."
+    ]
+  },
+  "visuals": {
+    "colorMode": "dark",
+    "backgroundColor": "#07030d",
+    "gridEnabled": false,
+    "backgroundFx": "candlestick-diag"
+  }
+}
