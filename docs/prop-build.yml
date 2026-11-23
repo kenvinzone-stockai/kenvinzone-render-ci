@@ -1,0 +1,129 @@
+name: prop-build
+
+# Dựng video mảng "Trade Quỹ Future" (@KenvinZone.tradequy):
+#   - mode = promo     : Video Flash Sale / Mã giảm giá 30–50s (5 cảnh, prop-promo-hf)
+#   - mode = explainer : Video Giải mã Luật / So sánh 3 quỹ 60–110s (7 cảnh, prop-explainer-hf)
+# Lưu ý: Copy file này vào `.github/workflows/prop-build.yml` trên GitHub Web UI (PAT hiện không có quyền `workflow`).
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Loại video (promo = Mã giảm giá 35s | explainer = Giải mã luật 75s)"
+        required: true
+        default: "promo"
+        type: choice
+        options: ["promo", "explainer"]
+      lesson_file:
+        description: "Đường dẫn JSON (vd: lessons/prop-promo/e2t-blackweek-2026.json hoặc lessons/prop-explainer/01-bay-non-pro-140.json)"
+        required: true
+        default: "lessons/prop-promo/e2t-blackweek-2026.json"
+        type: string
+      no_upload:
+        description: "Chỉ render tải file .mp4 từ Artifact (bật true nếu chưa gắn token kênh @KenvinZone.tradequy)"
+        required: false
+        default: true
+        type: boolean
+      privacy:
+        description: "Chế độ đăng YouTube (khi no_upload = false)"
+        required: false
+        default: "private"
+        type: choice
+        options: ["private", "unlisted", "public"]
+  repository_dispatch:
+    types: [prop-build]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: prop-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout hệ thống render
+        uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Setup Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install edge-tts elevenlabs playwright
+          python -m playwright install --with-deps chromium
+          sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Đồng bộ assets offline & helper cho Prop templates
+        run: |
+          cp -rn template/gold-daily-bias-hf/assets template/prop-promo-hf/
+          cp -rn template/gold-daily-bias-hf/assets template/prop-explainer-hf/
+          cp -f template/common/prop_hf_base.py template/prop-promo-hf/hf_base.py
+          cp -f template/common/prop_hf_base.py template/prop-explainer-hf/hf_base.py
+
+      - name: Đóng gói deck Prop Futures
+        id: pack
+        env:
+          P_MODE: ${{ github.event.client_payload.mode || github.event.inputs.mode || 'promo' }}
+          P_LESSON: ${{ github.event.client_payload.lesson_file || github.event.inputs.lesson_file }}
+        run: |
+          set -o pipefail
+          if [ "$P_MODE" = "explainer" ]; then
+            python make_prop_explainer.py "$P_LESSON" --force 2>&1 | tee brain.log
+          else
+            python make_prop_promo.py "$P_LESSON" --force 2>&1 | tee brain.log
+          fi
+          PROJ=$(grep -oP 'PROJECT=\K\S+' brain.log | tail -1)
+          echo "proj=$PROJ" >> "$GITHUB_OUTPUT"
+          test -n "$PROJ"
+
+      - name: TTS + Render HyperFrames (+ Upload YouTube nếu bật)
+        id: build
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TTS_CONFIG_JSON: ${{ secrets.TTS_CONFIG_JSON }}
+          SOCIAL_UPLOAD_JSON: ${{ secrets.SOCIAL_UPLOAD_JSON }}
+          SOCIAL_UPLOAD_JSON_KZ: ${{ secrets.SOCIAL_UPLOAD_JSON_KZ }}
+          SOCIAL_UPLOAD_JSON_PROP: ${{ secrets.SOCIAL_UPLOAD_JSON_PROP }}
+          PROP_YT_CHANNEL_ID: ${{ secrets.PROP_YT_CHANNEL_ID }}
+          HYPERFRAMES_NO_TELEMETRY: "1"
+          PRIVACY: ${{ github.event.inputs.privacy || 'private' }}
+          NO_UPLOAD: ${{ github.event.inputs.no_upload }}
+        run: |
+          set -o pipefail
+          EXTRA=""
+          if [ "$NO_UPLOAD" = "true" ]; then EXTRA="--no-upload"; fi
+          python ci_build_video.py "slide/${{ steps.pack.outputs.proj }}" --privacy "$PRIVACY" $EXTRA 2>&1 | tee ci-run.log
+
+      - name: Báo Telegram
+        if: always()
+        env:
+          TG: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PROJ: ${{ steps.pack.outputs.proj }}
+        run: |
+          if [ -z "$TG" ] || [ -z "$CHAT" ]; then exit 0; fi
+          if [ -f "slide/$PROJ/output/final_video.mp4" ]; then
+            MSG="🎬 Xong video TRADE QUỸ FUTURE [$PROJ]! Tải file .mp4 + caption tại GitHub Actions Artifacts (Run #${{ github.run_number }})."
+          else
+            MSG="❌ Lỗi render video TRADE QUỸ FUTURE [$PROJ]. Xem log GitHub Actions Run #${{ github.run_number }}."
+          fi
+          curl -s -X POST "https://api.telegram.org/bot$TG/sendMessage" --data-urlencode chat_id="$CHAT" --data-urlencode text="$MSG" -o /dev/null || true
+
+      - name: Upload Artifact (.mp4 + metadata FB Reels & YouTube)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prop-${{ steps.pack.outputs.proj }}
+          path: |
+            slide/${{ steps.pack.outputs.proj }}/output/final_video.mp4
+            slide/${{ steps.pack.outputs.proj }}/upload-metadata.json
+            ci-run.log
+          if-no-files-found: warn
+          retention-days: 14
