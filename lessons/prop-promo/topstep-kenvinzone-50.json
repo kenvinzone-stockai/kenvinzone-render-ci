@@ -1,0 +1,46 @@
+{
+  "coupon_id": "topstep-kenvinzone-50",
+  "firm": "Topstep",
+  "accent": "#34D399",
+  "accent2": "#F3BE62",
+  "badge": "FRIENDSGIVING · GIẢM 50%",
+  "title_lines": ["TOPSTEP COMBINE", "GIẢM THẲNG 50%"],
+  "subtitle": "Mã không bao giờ hết hạn cho trader mới đăng ký lần đầu",
+  "deadline": "KHÔNG HẾT HẠN (LẦN ĐẦU)",
+  "price_heading": "GÓI $50K STANDARD / NAF PATH",
+  "plan_name": "Topstep Trading Combine $50K",
+  "orig_price": 49,
+  "sale_price": 24.5,
+  "unit": "/tháng",
+  "discount_label": "-50%",
+  "plan_note": "Standard: $49 → $24.50 • No Activation Fee + RTA: $85 → $42.50 ($0 kích hoạt!)",
+  "perks_heading": "VÌ SAO NGƯỜI MỚI CHỌN TOPSTEP?",
+  "perks": [
+    {"title": "Giao dịch thẳng trên TopstepX (TradingView)", "detail": "Không cần cài NinjaTrader hay cấu hình Rithmic, có sẵn Copy Trade tới 5 XFA."},
+    {"title": "Gói NAF miễn $149 phí kích hoạt XFA", "detail": "Bật thêm RTA để giảm tới $30/tháng và nhân đôi trần rút tiền (X2 Payout Caps)."},
+    {"title": "Chia lợi nhuận 90/10 & Rút Wise $0 phí", "detail": "Hỗ trợ trader Việt Nam rút tiền nhanh qua Wise hoặc Wire Transfer."}
+  ],
+  "code": "KENVINZONE",
+  "applies_to": "Trading Combine $50K / $100K / $150K (Standard & No Activation Fee)",
+  "cta_heading": "LẤY MÃ GIẢM 50% NGAY",
+  "cta_line": "👇 Link đăng ký Topstep & So sánh Standard vs NAF ở bình luận ghim!",
+  "script": [
+    "Nếu anh em chuyển từ Forex sang muốn thi quỹ Futures dễ làm quen nhất, Topstep đang giảm thẳng 50 phần trăm cho lần mua đầu tiên và mã này không bao giờ hết hạn!",
+    "Gói Combine 50 ngàn bản Standard từ 49 đô giảm một nửa chỉ còn 24 phẩy 5 đô, còn gói miễn phí kích hoạt 149 đô khi bật thêm RTA cũng giảm còn 42 phẩy 5 đô.",
+    "Ưu điểm lớn nhất của Topstep là nền tảng TopstepX chạy thẳng biểu đồ TradingView trên trình duyệt, tích hợp sẵn bộ Copy Trade tới 5 tài khoản và chia lợi nhuận 90 phần trăm.",
+    "Tại bước thanh toán trên Topstep, anh em chỉ cần nhập mã KENVINZONE để được giảm trực tiếp 50 phần trăm cho các gói 50 ngàn, 100 ngàn hoặc 150 ngàn.",
+    "Bấm ngay link ở phần bình luận ghim hoặc vào prop chấm kenvinzone chấm com để đọc kỹ bẫy First Payout Trap trước khi bắt đầu nhé!"
+  ],
+  "upload": {
+    "youtube": {
+      "title": "Mã Giảm 50% Topstep (KENVINZONE) — Gói $50K Chỉ $24.50 & Gói $0 Kích Hoạt!",
+      "description": "🛡️ Đăng ký Topstep (Nhập mã KENVINZONE giảm 50% lần đầu):\n👉 https://www.topstep.com/?ref=KENVINZONE\n\n📊 So sánh Standard vs No Activation Fee & Bật RTA X2 Trần Rút:\n👉 https://prop.kenvinzone.com/coupons.html?firm=topstep\n\n⚡ Hệ thống hỗ trợ kỷ luật pass quỹ trên TradingView (AURORA):\n👉 https://aurora.kenvinzone.com/\n\n#Topstep #TopstepX #TradeQuyFuture #PropFirmFutures #KenvinZone",
+      "tags": ["Topstep", "TopstepX", "KENVINZONE", "Trade Quy Future", "Prop Firm Futures", "Coupon Topstep"]
+    },
+    "facebook_reels": {
+      "caption": "🛡️ Giảm thẳng 50% Topstep Trading Combine lần đầu bằng mã KENVINZONE (không hết hạn) — Gói $50K chỉ từ $24.50, chạy thẳng trên TradingView! Link đăng ký ở bình luận ghim 👇\n\n#Topstep #TopstepX #TradeQuyFuture #PropFirmFutures #KenvinZone",
+      "videoState": "DRAFT",
+      "sourceComment": "🛡️ Link đăng ký Topstep (Mã KENVINZONE -50%): https://www.topstep.com/?ref=KENVINZONE\n📊 So sánh Standard vs NAF: https://prop.kenvinzone.com/coupons.html?firm=topstep"
+    }
+  }
+}
