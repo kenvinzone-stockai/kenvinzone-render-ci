@@ -1384,3 +1384,68 @@ Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-ren
   Đăng lên kênh: Kể Chuyện Chứng Khoán - KenvinZone (UCTdVcUQdViXWxcFioFxWYBA)
 {"ok": true, "platform": "youtube", "project": "vnindex-23112026-ngay", "video_id": "1y9RpuK_O9o", "url": "https://youtu.be/1y9RpuK_O9o", "studio_url": "https://studio.youtube.com/video/1y9RpuK_O9o/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing.", "channel_id": "UCTdVcUQdViXWxcFioFxWYBA", "channel_title": "Kể Chuyện Chứng Khoán - KenvinZone", "channel_group": "kechuyen"}
   Xong: https://youtu.be/1y9RpuK_O9o
+=== DECK: equity-us-24112026 | template=equity-bias-hf | preset giọng=giai-ma-nganh ===
+  Đã tái tạo config/tts.json (giọng clone).
+  Kênh đích: @kenvinzone (nhóm dòng video: kenvinzone)
+  Đã tái tạo config/social-upload.json từ secret.
+=== [0/3] Cổng QA (zero-credit) ===
+  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
+QA equity-us-24112026 [equity-bias-hf]: 15 khung · 0 lỗi · 0 cảnh báo → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-24112026/output/qa
+  [phát âm] đã áp từ điển phiên âm cho giọng đọc (chữ hiển thị giữ nguyên).
+=== [1/3] Tạo giọng đọc (gemini) ===
+Full voiceover 74.36s · 42 quãng lặng · 7 dòng
+  ranh 1: ước  10.51s → lặng 9.64–10.25 (0.61s) cắt 9.94s
+  ranh 2: ước  18.69s → lặng 18.60–19.19 (0.59s) cắt 18.89s
+  ranh 3: ước  30.94s → lặng 35.33–35.96 (0.64s) cắt 35.64s
+  ranh 4: ước  39.19s → lặng 43.92–44.48 (0.56s) cắt 44.20s
+  ranh 5: ước  51.54s → lặng 56.86–57.25 (0.39s) cắt 57.06s
+  ranh 6: ước  63.99s → lặng 66.72–67.34 (0.62s) cắt 67.03s
+  → snap được 6/6 ranh giới vào quãng lặng
+Slide 1:    0.00s →    9.94s  = 9.94s  -> line_0.mp3
+Slide 2:    9.94s →   18.89s  = 8.95s  -> line_1.mp3
+Slide 3:   18.89s →   35.64s  = 16.75s  -> line_2.mp3
+Slide 4:   35.64s →   44.20s  = 8.55s  -> line_3.mp3
+Slide 5:   44.20s →   57.06s  = 12.86s  -> line_4.mp3
+Slide 6:   57.06s →   67.03s  = 9.97s  -> line_5.mp3
+Slide 7:   67.03s →   74.36s  = 7.33s  -> line_6.mp3
+Concatenated voiceover: 74.36s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-24112026/output/voiceover_concat.mp3
+Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
+Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
+Sending full script to Gemini TTS: 7 slides, 905 chars
+Full Gemini TTS saved: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-24112026/output/gemini_full_voiceover.mp3
+
+=== Splitting full Gemini TTS voiceover ===
+=== [2/3] Render HyperFrames (30fps đầy đủ) ===
+=== HyperFrames (equity-bias-hf): dung project tai /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-24112026/output/hf ===
+  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
+=== HyperFrames: dung composition tu hf-data.json ===
+TOTAL 78.96 scenes [('hook', 0.0, 10.942), ('spx', 10.942, 25.702), ('nas', 36.644, 21.413), ('cmp', 58.057, 9.975), ('cta', 68.032, 10.928), ('captions', 0, 78.96)]
+=== HyperFrames: render tung khung hinh (79.0s video) ===
+  Trinh duyet render: /home/runner/.cache/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux64/chrome-headless-shell
+  ◆  Rendering hf → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-24112026/output/final_video.hf.mp4
+     30fps · high · auto workers (4 cores detected)
+     GPU: browser GPU (auto-detect)
+  [?25l│
+  ◒  Checking browser...
+  [1G[J◇  Browser: env
+  [?25h
+    Lint: 2 error(s), 1 warning(s) — run with --lint-verbose for full output.
+    Continuing render despite lint issues. Use --strict to block errors.
+  HyperFrames render 5%
+  HyperFrames render 20%
+  HyperFrames render 30%
+  HyperFrames render 40%
+  HyperFrames render 50%
+  HyperFrames render 60%
+  HyperFrames render 70%
+  HyperFrames render 80%
+  HyperFrames render 90%
+  ◇  /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-24112026/output/final_video.hf.mp4
+     16.2 MB · 1m 19.0s video · rendered in 2m 12.2s
+     beginframe capture · software gpu · compile 1.6s · extract 0.0s · audio 3.1s · probe 0.2s · setup 1.5s · capture 2m 5.5s · encode (during capture) 2m 5.5s · assemble 0.5s
+Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-24112026/output/final_video.mp4
+  Video: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/equity-us-24112026/output/final_video.mp4
+=== [3/3] Upload YouTube (privacy=private) ===
+  Đăng lên kênh: Kenvin Trading Zone (UCbUOkCbABZqsT1XmViIk1SA)
+{"ok": true, "platform": "youtube", "project": "equity-us-24112026", "video_id": "1UvhWfgQFUo", "url": "https://youtu.be/1UvhWfgQFUo", "studio_url": "https://studio.youtube.com/video/1UvhWfgQFUo/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing.", "channel_id": "UCbUOkCbABZqsT1XmViIk1SA", "channel_title": "Kenvin Trading Zone", "channel_group": "kenvinzone"}
+  Xong: https://youtu.be/1UvhWfgQFUo
