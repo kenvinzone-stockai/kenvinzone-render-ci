@@ -1,0 +1,211 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "24/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "CafeF",
+    "short": "CafeF",
+    "author": "Hà Linh",
+    "headline": "Quỹ ngoại quy mô 23.000 tỷ chỉ ra yếu tố then chốt còn thiếu đối với chứng khoán Việt Nam",
+    "date": "24/11/2026",
+    "url": "https://m.cafef.vn/quy-ngoai-quy-mo-23000-ty-chi-ra-yeu-to-then-chot-con-thieu-doi-voi-chung-khoan-viet-nam-188261123222109132.chn"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "theme_variant": "liquidity_pump",
+    "stamp": "QUỸ NGOẠI 23.000 TỶ",
+    "stamp_tone": "gold",
+    "title_key": "23.000 TỶ",
+    "visual": {
+      "items": []
+    },
+    "title_lines": [
+      "QUỸ NGOẠI 23.000 TỶ",
+      "CHỜ HẠ LÃI SUẤT"
+    ],
+    "sub": "Pyn Elite Fund chỉ ra yếu tố then chốt còn thiếu của thị trường",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "Pyn YTD -15%",
+        "tone": "down"
+      },
+      {
+        "icon": "↳",
+        "text": "P/E 2027 chỉ 7,1x",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "Nợ công 35% GDP",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Quỹ ngoại <mark>Pyn Elite Fund</mark> quy mô 23.000 tỷ đồng nhận định định giá đang rất rẻ, nhưng thị trường vẫn thiếu một <mark>mảnh ghép thanh khoản</mark> quyết định."
+  },
+  "s2": {
+    "title_lines": [
+      "Nền tảng vĩ mô",
+      "vững chắc ra sao?"
+    ],
+    "stats": [
+      {
+        "value": 23000,
+        "decimals": 0,
+        "unit": "tỷ",
+        "label": "Quy mô quỹ Pyn Elite",
+        "badge": "784 triệu EUR",
+        "tone": "gold",
+        "beat": 1
+      },
+      {
+        "value": 35,
+        "decimals": 0,
+        "unit": "%",
+        "label": "Tỷ lệ nợ công trên GDP",
+        "badge": "Bộ đệm an toàn",
+        "tone": "blue",
+        "beat": 2
+      }
+    ],
+    "note": "Tốc độ tăng trưởng lợi nhuận của doanh nghiệp niêm yết vẫn duy trì mức khả quan."
+  },
+  "s3": {
+    "title_lines": [
+      "Hiệu suất quỹ",
+      "lệch VN-Index?"
+    ],
+    "mode": "vs",
+    "lead": "Hiệu suất từ đầu năm 2026",
+    "vs": [
+      {
+        "label": "VN-Index",
+        "display": "-2,5%",
+        "tone": "up",
+        "note": "Mức giảm chung toàn thị trường",
+        "beat": 1
+      },
+      {
+        "label": "Pyn Elite Fund",
+        "display": "-15,0%",
+        "tone": "down",
+        "note": "Mức lỗ lớn nhất kể từ năm 2022",
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 80,
+      "suffix": "%",
+      "text": "Tập trung vào Top 10 khoản đầu tư lớn",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Mảnh ghép thiếu",
+      "chính là gì?"
+    ],
+    "cards": [
+      {
+        "big": "7,1 lần",
+        "title": "Định giá P/E 2027",
+        "text": "Mức định giá hấp dẫn xét theo dữ liệu lịch sử của quỹ"
+      },
+      {
+        "big": "Lạm phát",
+        "title": "Cần hạ nhiệt toàn cầu",
+        "text": "Điều kiện tiên quyết tháo gỡ áp lực chi phí tài chính"
+      },
+      {
+        "big": "Thanh khoản",
+        "title": "Dư địa nới lỏng",
+        "text": "Cơ sở để Ngân hàng Nhà nước hạ mặt bằng lãi suất"
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Tín hiệu đèn",
+      "thị trường ra sao?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "ĐÈN XANH",
+        "title": "Nội tại vững vàng",
+        "text": "P/E danh mục về 7,1 lần và nợ công ở mức an toàn 35% GDP."
+      },
+      {
+        "color": "yellow",
+        "tag": "ĐÈN VÀNG",
+        "title": "Tâm lý thận trọng",
+        "text": "Thanh khoản thấp phản ánh dòng tiền lớn vẫn ngập ngừng chờ đợi."
+      },
+      {
+        "color": "red",
+        "tag": "ĐÈN ĐỎ",
+        "title": "Áp lực vĩ mô",
+        "text": "Bất ổn toàn cầu và lạm phát kéo dài thời gian thắt chặt tiền tệ."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Cơ chế kích hoạt",
+      "dòng tiền lớn?"
+    ],
+    "chain": [
+      {
+        "title": "Áp lực bán ngoại",
+        "text": "Lạm phát hạ nhiệt giúp <b>hạ nhiệt rút ròng</b> của ngoại",
+        "beat": 1
+      },
+      {
+        "title": "Chính sách tiền tệ",
+        "text": "Nới lỏng thanh khoản giúp <b>kích hoạt thanh khoản</b>",
+        "beat": 1
+      },
+      {
+        "title": "Sóng tăng trưởng",
+        "text": "Định giá rẻ mở ra cơ hội <b>tái định giá</b> tài sản",
+        "beat": 2
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư",
+      "nên hành động gì?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Tích lũy dài hạn",
+        "text": "Kiên nhẫn <b>tích lũy cổ phiếu</b> cơ bản có định giá hấp dẫn",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Quan sát thanh khoản",
+        "text": "Chủ động <b>theo dõi dòng tiền</b> trước khi giải ngân lớn",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Quản trị rủi ro",
+        "text": "Cần <b>tránh dùng đòn bẩy</b> khi thị trường chưa có xu hướng rõ",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Thanh khoản là chìa khóa mở cánh cửa định giá.",
+    "cta": "Bấm theo dõi KenvinZone để cập nhật góc nhìn thị trường"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
