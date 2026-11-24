@@ -1,0 +1,40 @@
+{
+  "subtitles": {
+    "enabled": true,
+    "color": "#fde047",
+    "fontSize": 18,
+    "bottom": 60,
+    "maxLines": 1
+  },
+  "backgroundFx": "candlestick",
+  "bgm": {
+    "mode": "preset",
+    "preset": "ambient",
+    "volume": 0.18
+  },
+  "scriptLines": [
+    "Điểm Bias Vàng hôm nay ghi nhận âm mười sáu phẩy hai mươi, duy trì chế độ Giảm Mạnh sau chuỗi ba phiên đi ngang vùng âm sâu.",
+    "Lực cản lớn nhất đến từ áp lực USD âm mười ba phẩy năm mươi tám, cùng dòng tiền âm bốn phẩy mười và yếu tố riêng âm không phẩy chín mươi chín.",
+    "Ở chiều ngược lại, lực đỡ từ khẩu vị rủi ro và thanh khoản M2 vẫn dương, cho thấy rủi ro tín dụng chưa căng thẳng.",
+    "Cấu trúc Net GEX dương hai phẩy năm triệu USD với giá GLD 367.82 nằm trên Gamma Flip 365.0 đang kìm nén biến động trong vùng Put Wall 360.0 đến Call Wall 375.0.",
+    "Kịch bản phiên tới gồm năm mươi lăm phần trăm giằng co trong biên, ba mươi phần trăm thủng hỗ trợ và mười lăm phần trăm bật tăng nhẹ.",
+    "Nhà đầu tư nên ưu tiên quan sát trong biên 360.0 đến 375.0, kiên nhẫn chờ xác nhận và hãy follow KenvinZone cùng mô hình AURORA để cập nhật định lượng mỗi ngày."
+  ],
+  "slides": {
+    "deletedIds": [],
+    "scriptLines": [
+      "Điểm Bias Vàng hôm nay ghi nhận âm mười sáu phẩy hai mươi, duy trì chế độ Giảm Mạnh sau chuỗi ba phiên đi ngang vùng âm sâu.",
+      "Lực cản lớn nhất đến từ áp lực USD âm mười ba phẩy năm mươi tám, cùng dòng tiền âm bốn phẩy mười và yếu tố riêng âm không phẩy chín mươi chín.",
+      "Ở chiều ngược lại, lực đỡ từ khẩu vị rủi ro và thanh khoản M2 vẫn dương, cho thấy rủi ro tín dụng chưa căng thẳng.",
+      "Cấu trúc Net GEX dương hai phẩy năm triệu USD với giá GLD 367.82 nằm trên Gamma Flip 365.0 đang kìm nén biến động trong vùng Put Wall 360.0 đến Call Wall 375.0.",
+      "Kịch bản phiên tới gồm năm mươi lăm phần trăm giằng co trong biên, ba mươi phần trăm thủng hỗ trợ và mười lăm phần trăm bật tăng nhẹ.",
+      "Nhà đầu tư nên ưu tiên quan sát trong biên 360.0 đến 375.0, kiên nhẫn chờ xác nhận và hãy follow KenvinZone cùng mô hình AURORA để cập nhật định lượng mỗi ngày."
+    ]
+  },
+  "visuals": {
+    "colorMode": "dark",
+    "backgroundColor": "#060a13",
+    "gridEnabled": false,
+    "backgroundFx": "candlestick-diag"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "BIAS VÀNG 24/11: ÁP LỰC USD ĐÈ NẶNG, GAMMA KÌM NÉN BIÊN ĐỘ",
+    "description": "📊 BẢN TIN ĐỊNH LƯỢNG BIAS VÀNG HẰNG NGÀY — KENVINZONE ANALYTICS (24/11/2026)\n\n1. ĐIỂM BIAS TỔNG THỂ\n• Điểm Bias: -16.20/100 (Chế độ: GIẢM MẠNH)\n• Thay đổi: -2.10 điểm so với phiên trước\n• Xu hướng 3 phiên: 19/11 (-17.00) → 20/11 (-17.50) → 24/11 (-16.20)\n\n2. 6 LỰC KÉO ĐỊNH LƯỢNG\n• Áp lực USD: -13.58 điểm (Lực đè mạnh nhất)\n• Dòng tiền & Xu hướng: -4.10 điểm\n• Lãi suất thực: -1.05 điểm\n• Yếu tố riêng Vàng: -0.99 điểm\n• Thanh khoản M2: +2.57 điểm\n• Khẩu vị rủi ro: +3.02 điểm (Tín dụng ổn định, chưa có tháo chạy)\n\n3. CẤU TRÚC GAMMA (GLD & XAUUSD)\n• Net GEX: +2.5 triệu USD (Gamma dương → biến động bị kìm nén)\n• Spot: GLD 367.82 (≈ 3981.9 XAUUSD) — nằm trên Gamma Flip\n• Gamma Flip: GLD 365.0 (≈ 3951.0 XAUUSD)\n• Put Wall: GLD 360.0 (≈ 3897.0 XAUUSD)\n• Call Wall: GLD 375.0 (≈ 4060.0 XAUUSD)\n\n4. BA KỊCH BẢN PHIÊN TỚI\n• Kịch bản 1 (55%): Giằng co kìm nén trong biên 360.0–375.0 GLD (≈ 3897.0–4060.0 XAUUSD)\n• Kịch bản 2 (30%): Phá vỡ giảm nếu thủng Gamma Flip 365.0 lui về kiểm định Put Wall 360.0\n• Kịch bản 3 (15%): Hồi phục kỹ thuật chạm biên trên Call Wall 375.0\n\n5. KẾ HOẠCH HÀNH ĐỘNG\n• Trung tính: Hạn chế mua đuổi, giao dịch kỷ luật trong biên 360.0–375.0 GLD\n• Điều kiện mua lại: Chờ phản ứng giá đóng cửa vững trên mốc 365.0 kèm dòng tiền quay lại\n• Rủi ro phòng ngừa: Cắt giảm vị thế nếu đánh mất Put Wall 360.0\n\n⚠️ Tuyên bố miễn trừ trách nhiệm: Bản tin định lượng phục vụ mục đích thông tin tham khảo, không cấu thành lời khuyên đầu tư tài chính cá nhân.\n\n#vang #gold #xauusd #giavang #phantichdinhluong #kenvinzone #gld #biasvang #aurora #kinhtevimo",
+    "tags": [
+      "vàng",
+      "gold",
+      "xauusd",
+      "giá vàng",
+      "giá vàng hôm nay",
+      "phân tích vàng",
+      "định lượng vàng",
+      "kenvinzone",
+      "aurora",
+      "gld",
+      "gamma vàng",
+      "dự báo giá vàng",
+      "kinh tế vĩ mô"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "gold-daily-bias",
+    "date": "24/11/2026"
+  }
+}
