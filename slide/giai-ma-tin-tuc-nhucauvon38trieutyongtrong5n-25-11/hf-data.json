@@ -1,0 +1,209 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "25/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "MoneyF",
+    "short": "MoneyF",
+    "author": "Long Giang",
+    "headline": "Nhu cầu vốn 38 triệu tỷ đồng trong 5 năm tới: Thị trường chứng khoán được kỳ vọng trở thành kênh dẫn vốn chủ lực",
+    "date": "25/11/2026",
+    "url": "moneyf.vn/nhu-cau-von-38-trieu-ty-dong-trong-5-nam-toi-thi-t-zobps1i5"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "theme_variant": "liquidity_pump",
+    "stamp": "CẦN 38 TRIỆU TỶ",
+    "stamp_tone": "gold",
+    "title_key": "38 TRIỆU TỶ",
+    "visual": {
+      "items": []
+    },
+    "title_lines": [
+      "Kinh tế cần",
+      "38 TRIỆU TỶ ĐỒNG"
+    ],
+    "sub": "Thị trường chứng khoán gánh trọng trách dẫn vốn",
+    "chips": [
+      {
+        "icon": "↳",
+        "text": "7,7 triệu tỷ/năm",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "Sửa Nghị định 155",
+        "tone": "blue"
+      },
+      {
+        "icon": "↗",
+        "text": "Kênh vốn dài hạn",
+        "tone": "up"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Giai đoạn 2026–2030, kinh tế Việt Nam cần tới <mark>38 triệu tỷ đồng</mark>, đưa thị trường chứng khoán thành kênh dẫn vốn trung và dài hạn chủ lực."
+  },
+  "s2": {
+    "title_lines": [
+      "Quy mô vốn cần",
+      "khủng khiếp cỡ nào?"
+    ],
+    "stats": [
+      {
+        "value": 38,
+        "decimals": 0,
+        "unit": "triệu tỷ",
+        "label": "Tổng vốn 5 năm",
+        "badge": "2026-2030",
+        "tone": "gold",
+        "beat": 1
+      },
+      {
+        "value": 7.7,
+        "decimals": 1,
+        "unit": "triệu tỷ",
+        "label": "Bình quân mỗi năm",
+        "badge": "Nhu cầu lớn",
+        "tone": "blue",
+        "beat": 2
+      }
+    ],
+    "note": "Số liệu ước tính từ Bộ Tài chính được công bố tại Diễn đàn Đầu tư tạo tác động."
+  },
+  "s3": {
+    "title_lines": [
+      "Chứng khoán giữ",
+      "vai trò gì?"
+    ],
+    "mode": "bars",
+    "lead": "Trọng trách chia lửa với tín dụng ngân hàng",
+    "bars": [
+      {
+        "label": "Huy động dài hạn",
+        "display": "Trọng tâm",
+        "value": 80,
+        "beat": 1
+      },
+      {
+        "label": "Năng lực chống chịu",
+        "display": "Cải thiện",
+        "value": 65,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 5,
+      "suffix": " năm",
+      "text": "Chu kỳ chuyển mình đưa thị trường vốn thành trụ cột phát triển",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Khung thể chế",
+      "thay đổi ra sao?"
+    ],
+    "cards": [
+      {
+        "big": "Nghị định 155",
+        "title": "Sửa đổi trọng tâm",
+        "text": "UBCKNN đang hoàn thiện dự thảo nhằm tháo gỡ điểm nghẽn huy động vốn."
+      },
+      {
+        "big": "Luật 56",
+        "title": "Hợp nhất văn bản",
+        "text": "Khung pháp lý mới tạo hành lang bảo vệ nhà đầu tư và chuẩn hóa niêm yết."
+      },
+      {
+        "big": "Vốn quốc tế",
+        "title": "Cân nhắc thời điểm",
+        "text": "Mở rộng thu hút dòng vốn ngoại song hành phòng ngừa rủi ro lãi suất cao."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Ba trụ cột",
+      "huy động là gì?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "THỨ NHẤT",
+        "title": "Nguồn lực nội địa",
+        "text": "Tận dụng tiền gửi dân cư và tổ chức để tài trợ các dự án tạo giá trị."
+      },
+      {
+        "color": "yellow",
+        "tag": "THỨ HAI",
+        "title": "Dòng vốn ngoại",
+        "text": "Khai thác dư địa quốc tế thận trọng theo mặt bằng lãi suất Fed."
+      },
+      {
+        "color": "red",
+        "tag": "THỨ BA",
+        "title": "Minh bạch thị trường",
+        "text": "Thanh lọc gian lận, nâng tiêu chuẩn công bố thông tin minh bạch."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Đánh giá thời cơ",
+      "và thách thức?"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh",
+        "text": "Cơ hội nâng tầm thành <b>kênh dẫn vốn chủ lực</b> dài hạn.",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng",
+        "text": "Cần theo sát <b>chính sách lãi suất Fed</b> và biến động tỷ giá.",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ",
+        "text": "Áp lực <b>cạnh tranh từ tiền gửi</b> hệ thống ngân hàng còn lớn.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư cá nhân",
+      "nên chuẩn bị gì?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Đồng hành doanh nghiệp",
+        "text": "Ưu tiên chọn <b>cổ phiếu tăng trưởng bền vững</b> có nền tảng cơ bản.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Định hướng dài hạn",
+        "text": "Tập trung xây dựng <b>chiến lược tích sản trung hạn</b> thay vì lướt sóng.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Thận trọng biến số",
+        "text": "Chủ động <b>quản trị rủi ro thanh khoản</b> trước áp lực lãi suất ngoại tệ.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Một chu kỳ vốn 38 triệu tỷ đồng đang mở ra bước ngoặt mới cho thị trường.",
+    "cta": "Theo dõi KenvinZone để đón đầu xu hướng dòng tiền"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
