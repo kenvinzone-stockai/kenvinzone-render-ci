@@ -1,0 +1,255 @@
+{
+  "template": "vnindex-daily-hf",
+  "date": "25/11/2026",
+  "weekday": "Thứ Tư",
+  "handle": "@Kechuyen.Chungkhoan",
+  "score": 40,
+  "score_am": 50,
+  "status": "TRÁNH VÀO MỚI",
+  "status_pct": "62%",
+  "cover": {
+    "eyebrow": "Chứng khoán hôm nay",
+    "title_lines": [
+      "Thủng mốc 1694",
+      "rơi về 1687,45"
+    ],
+    "sub_html": "Giảm gần <b>9</b> điểm, cách EMA20 D1 tới <b>31,5</b> điểm",
+    "chips": [
+      {
+        "icon": "📉",
+        "label": "VNI",
+        "value": "1687"
+      },
+      {
+        "icon": "◎",
+        "label": "Score",
+        "value": "40"
+      },
+      {
+        "icon": "⚡",
+        "label": "EMA20",
+        "value": "−31,5",
+        "hot": true
+      }
+    ],
+    "cta": "Hụt thanh khoản hay chuẩn bị dò đáy mới?"
+  },
+  "compare": [
+    {
+      "label": "Score",
+      "am": "50",
+      "pm": "40",
+      "delta": "−10",
+      "tone": "down"
+    },
+    {
+      "label": "Giá VNI",
+      "am": "1698,68",
+      "pm": "1687,45",
+      "delta": "−11,23",
+      "tone": "down"
+    },
+    {
+      "label": "Vol ratio",
+      "am": "2,15",
+      "pm": "0,17",
+      "delta": "cạn kiệt",
+      "tone": "down"
+    }
+  ],
+  "range_pill": "BIÊN 1683,17 – 1719,00 · thủng 1683,17 → về 1665–1671",
+  "journey": {
+    "axis": [
+      1665,
+      1725
+    ],
+    "path": [
+      {
+        "label": "Tham chiếu",
+        "price": 1697.14
+      },
+      {
+        "label": "11:01",
+        "price": 1698.68
+      },
+      {
+        "label": "15:01",
+        "price": 1687.45
+      }
+    ],
+    "resistance": {
+      "price": 1719.0,
+      "label": "Cản · EMA20 D1 1719"
+    },
+    "zone": {
+      "lo": 1683.17,
+      "hi": 1694.23,
+      "label": "Vùng hỗ trợ 1683,17 – 1694,23"
+    },
+    "am_card": {
+      "time": "11:01 · SÁNG",
+      "meta": "Score 50 · Vol ×2,15",
+      "text": "Giá <b>1698,68</b> nhích nhẹ trên tham chiếu, vol sáng bùng nổ nhưng kẹt dưới hệ EMA"
+    },
+    "warn_card": "Báo cáo sáng: mất hỗ trợ <b>1694,23</b> kèm áp lực bán sẽ mở rộng nhịp giảm",
+    "pm_card": {
+      "time": "15:01 · CHIỀU",
+      "meta": "Score 40 · Vol ×0,17",
+      "text": "Chốt <b>1687,45</b> — thủng 1694, vol cạn kiệt, nảy nhẹ cuối phiên nhưng chưa đủ tin cậy"
+    },
+    "twist": "Lực cầu sáng không giữ được mốc 1694,23, chiều hụt vol khiến giá trôi về 1687,45"
+  },
+  "subscores": [
+    {
+      "label": "Kỹ thuật",
+      "am": 12,
+      "pm": 12,
+      "max": 30
+    },
+    {
+      "label": "Timing",
+      "am": 8,
+      "pm": 8,
+      "max": 20
+    },
+    {
+      "label": "Dòng tiền",
+      "am": 13,
+      "pm": 6,
+      "max": 20
+    },
+    {
+      "label": "Sector",
+      "am": 7,
+      "pm": 6,
+      "max": 15
+    },
+    {
+      "label": "Rủi ro",
+      "am": 10,
+      "pm": 8,
+      "max": 15
+    }
+  ],
+  "subscore_note": "Dòng tiền −7, Rủi ro −2, Sector −1 → tổng giảm 10 điểm",
+  "timeframes": [
+    {
+      "tf": "W1",
+      "name": "Tuần",
+      "trend": "bullish",
+      "badge": "Suy yếu",
+      "detail": "EMA Bullish · RSI và MACD suy yếu vào Bearish Zone"
+    },
+    {
+      "tf": "3D",
+      "name": "3 ngày",
+      "trend": "bearish",
+      "badge": "Bearish",
+      "detail": "EMA Mixed · RSI và MACD bias Bearish đồng thuận"
+    },
+    {
+      "tf": "D1",
+      "name": "Ngày",
+      "trend": "bearish",
+      "badge": "Bearish",
+      "detail": "RSI <b>40,62 → 37,84</b> · MACD hist âm sâu −3,97"
+    },
+    {
+      "tf": "M15",
+      "name": "15 phút",
+      "trend": "bearish",
+      "badge": "Squeeze",
+      "detail": "Bollinger Bands siết chặt · vol thấp chưa breakout"
+    }
+  ],
+  "timeframe_note": "Khung D1 Full Bearish chi phối hoàn toàn, tín hiệu M15 siết biên thiếu volume",
+  "levels": {
+    "axis": [
+      1660,
+      1755
+    ],
+    "price": 1687.45,
+    "price_label": "Giá chốt 1.687,45",
+    "items": [
+      {
+        "price": 1749.0,
+        "label": "EMA200 D1",
+        "kind": "res"
+      },
+      {
+        "price": 1739.0,
+        "label": "EMA50 D1",
+        "kind": "res"
+      },
+      {
+        "price": 1719.0,
+        "label": "EMA20 D1",
+        "kind": "res"
+      },
+      {
+        "price": 1698.19,
+        "label": "Đỉnh hôm trước",
+        "kind": "res"
+      },
+      {
+        "price": 1683.17,
+        "label": "Low 20 bar",
+        "kind": "sup",
+        "key": true
+      },
+      {
+        "price": 1671.0,
+        "label": "Đáy hôm trước",
+        "kind": "sup"
+      }
+    ],
+    "up": "Đóng D1 trên 1719,00 + vol ratio vượt 1.0",
+    "down": "Thủng 1683,17 → mở rộng đà giảm về 1665–1671"
+  },
+  "scenarios": [
+    {
+      "pct": 50,
+      "tone": "down",
+      "name": "Tiếp tục giảm dò đáy sâu",
+      "desc": "Thủng <b>1683,17</b> → lui về <b>1665–1671</b>"
+    },
+    {
+      "pct": 30,
+      "tone": "up",
+      "name": "Hồi kỹ thuật test EMA20",
+      "desc": "Vượt <b>1695–1698</b> kèm vol ratio trên 0,5 → hướng tới <b>1700–1719</b>"
+    },
+    {
+      "pct": 20,
+      "tone": "flat",
+      "name": "Đi ngang tích lũy (suy luận)",
+      "desc": "Dao động biên hẹp <b>1683–1698</b>, thanh khoản kiệt quệ"
+    }
+  ],
+  "actions": [
+    {
+      "tone": "urgent",
+      "title": "Không mở vị thế mới",
+      "desc": "Đứng ngoài quan sát, chờ D1 cải thiện cấu trúc và dòng tiền quay lại"
+    },
+    {
+      "tone": "neutral",
+      "title": "Đang nắm giữ",
+      "desc": "Canh mốc hỗ trợ <b>1683,17</b>, giảm tỷ trọng nếu thủng kèm volume lớn"
+    },
+    {
+      "tone": "urgent",
+      "title": "Quản trị margin",
+      "keyword": "HẠ TỶ LỆ MARGIN",
+      "desc": "Hạ margin ngay để phòng ngừa rủi ro call margin khi D1 Bearish"
+    }
+  ],
+  "outro": {
+    "up": "D1 đóng vững trên 1719 kèm vol ratio trên 1.0",
+    "down": "Thủng 1683,17 và đóng dưới 1671 — xác nhận tiếp diễn downtrend",
+    "promise": "Hẹn anh em bản tin ngày mai",
+    "follow_handle": "@kenvinzone"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
