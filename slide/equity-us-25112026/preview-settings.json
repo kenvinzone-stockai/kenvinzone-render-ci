@@ -1,0 +1,42 @@
+{
+  "subtitles": {
+    "enabled": true,
+    "color": "#7dd3fc",
+    "fontSize": 18,
+    "bottom": 60,
+    "maxLines": 1
+  },
+  "backgroundFx": "candlestick",
+  "bgm": {
+    "mode": "preset",
+    "preset": "ambient",
+    "volume": 0.18
+  },
+  "scriptLines": [
+    "Thị trường Mỹ đồng pha nghiêng giảm khi điểm Bias của S&P 500 đạt âm 11.9 và Nasdaq ghi nhận âm 11.3.",
+    "Tại S&P 500, đà giảm bị chi phối bởi đồng USD âm 6.57 và khẩu vị rủi ro âm 5.28, dù quyền chọn gỡ lại dương 2.31.",
+    "Gamma SPY giữ Net GEX dương 210 triệu với giá 718.78 trên Gamma Flip 715.14, biên độ kỳ vọng 8.2 điểm giữa Put Wall 734.0 và Call Wall 730.0.",
+    "Với Nasdaq, điểm Bias âm 11.3 chịu sức ép lớn nhất từ đồng USD âm 7.24 và khẩu vị rủi ro âm 4.67.",
+    "Gamma QQQ phát tín hiệu rủi ro với Net GEX âm 9 triệu khi giá 638.1 trượt dưới Gamma Flip 638.56, biên độ kỳ vọng 11.1 điểm giữa Put Wall 605.0 và Call Wall 725.0.",
+    "Hai chỉ số đồng pha giảm cả tuần lẫn ngày; phiên tới kỳ vọng năm mươi lăm phần trăm đi ngang, hai mươi lăm phần trăm giảm và hai mươi phần trăm hồi phục.",
+    "Nhà đầu tư hãy ưu tiên quản trị rủi ro và theo dõi KenvinZone cùng AURORA để nhận phân tích định lượng chuẩn xác mỗi ngày."
+  ],
+  "slides": {
+    "deletedIds": [],
+    "scriptLines": [
+      "Thị trường Mỹ đồng pha nghiêng giảm khi điểm Bias của S&P 500 đạt âm 11.9 và Nasdaq ghi nhận âm 11.3.",
+      "Tại S&P 500, đà giảm bị chi phối bởi đồng USD âm 6.57 và khẩu vị rủi ro âm 5.28, dù quyền chọn gỡ lại dương 2.31.",
+      "Gamma SPY giữ Net GEX dương 210 triệu với giá 718.78 trên Gamma Flip 715.14, biên độ kỳ vọng 8.2 điểm giữa Put Wall 734.0 và Call Wall 730.0.",
+      "Với Nasdaq, điểm Bias âm 11.3 chịu sức ép lớn nhất từ đồng USD âm 7.24 và khẩu vị rủi ro âm 4.67.",
+      "Gamma QQQ phát tín hiệu rủi ro với Net GEX âm 9 triệu khi giá 638.1 trượt dưới Gamma Flip 638.56, biên độ kỳ vọng 11.1 điểm giữa Put Wall 605.0 và Call Wall 725.0.",
+      "Hai chỉ số đồng pha giảm cả tuần lẫn ngày; phiên tới kỳ vọng năm mươi lăm phần trăm đi ngang, hai mươi lăm phần trăm giảm và hai mươi phần trăm hồi phục.",
+      "Nhà đầu tư hãy ưu tiên quản trị rủi ro và theo dõi KenvinZone cùng AURORA để nhận phân tích định lượng chuẩn xác mỗi ngày."
+    ]
+  },
+  "visuals": {
+    "colorMode": "dark",
+    "backgroundColor": "#060a13",
+    "gridEnabled": false,
+    "backgroundFx": "candlestick-diag"
+  }
+}

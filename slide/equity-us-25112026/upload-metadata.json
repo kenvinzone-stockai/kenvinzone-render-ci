@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "S&P 500 & Nasdaq Đồng Pha Giảm: Cảnh Báo Gamma Flip | KenvinZone",
+    "description": "📊 Bản tin Phân tích định lượng Chứng khoán Mỹ hàng ngày từ KenvinZone Analytics.\n\nTổng quan phiên giao dịch hôm nay:\n🔹 S&P 500 (SPX): Bias ngày -11.9 (GIẢM), Bias tuần -2.9. Sức ép chính đến từ đồng USD (-6.57) và khẩu vị rủi ro (-5.28). Gamma SPY duy trì Net GEX +210M, Spot 718.78 trên Gamma Flip 715.14.\n🔹 Nasdaq 100 (QQQ): Bias ngày -11.3 (GIẢM), Bias tuần -10.9. Chịu lực cản từ đồng USD (-7.24). Gamma QQQ cảnh báo rủi ro với Net GEX -9M, Spot 638.1 nằm dưới Gamma Flip 638.56.\n\n⚠️ Lưu ý: Nội dung chỉ mang tính chất tham khảo số liệu định lượng, KHÔNG phải lời khuyên đầu tư.\n\n#sp500 #nasdaq #chungkhoanmy #gamma #kenvinzone",
+    "tags": [
+      "sp500",
+      "nasdaq",
+      "chứng khoán mỹ",
+      "nhận định thị trường",
+      "kenvinzone",
+      "aurora",
+      "phân tích định lượng",
+      "gamma flip",
+      "net gex",
+      "put wall",
+      "call wall",
+      "đầu tư mỹ",
+      "tài chính mỹ"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "equity-bias",
+    "date": "25/11/2026"
+  }
+}
