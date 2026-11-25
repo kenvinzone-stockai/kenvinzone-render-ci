@@ -1,0 +1,40 @@
+{
+  "subtitles": {
+    "enabled": true,
+    "color": "#fde047",
+    "fontSize": 18,
+    "bottom": 60,
+    "maxLines": 1
+  },
+  "backgroundFx": "candlestick",
+  "bgm": {
+    "mode": "preset",
+    "preset": "ambient",
+    "volume": 0.18
+  },
+  "scriptLines": [
+    "Điểm Bias Vàng hôm nay ghi nhận âm 18.30 điểm, tiếp tục rơi sâu trong chế độ GIẢM MẠNH sau ba phiên liên tiếp chịu sức ép.",
+    "Lực cản lớn nhất đến từ áp lực USD âm 13.58 điểm, kết hợp cùng dòng tiền âm 4.10 điểm và lãi suất thực âm 3.10 điểm đè nặng lên giá.",
+    "Điểm tựa nâng đỡ duy nhất là khẩu vị rủi ro dương 3.12 điểm và thanh khoản M2 dương 2.40 điểm, cho thấy tín dụng vẫn ổn định chưa bị hoảng loạn.",
+    "Cấu trúc Net GEX dương 2.5 triệu USD với GLD ở mức 367.82 đang nằm trên Gamma Flip 365, giúp kìm nén biến động trong vùng Put Wall 360 đến Call Wall 375.",
+    "Phiên tới ghi nhận năm mươi lăm phần trăm kịch bản giằng co trong biên, ba mươi phần trăm áp lực giảm kiểm định lại mốc 360, và mười lăm phần trăm hồi phục kỹ thuật.",
+    "Nhà đầu tư nên giữ trung tính trong biên 360 đến 375, theo dõi sát Gamma Flip 365 và follow KenvinZone để cập nhật tín hiệu từ hệ thống AURORA."
+  ],
+  "slides": {
+    "deletedIds": [],
+    "scriptLines": [
+      "Điểm Bias Vàng hôm nay ghi nhận âm 18.30 điểm, tiếp tục rơi sâu trong chế độ GIẢM MẠNH sau ba phiên liên tiếp chịu sức ép.",
+      "Lực cản lớn nhất đến từ áp lực USD âm 13.58 điểm, kết hợp cùng dòng tiền âm 4.10 điểm và lãi suất thực âm 3.10 điểm đè nặng lên giá.",
+      "Điểm tựa nâng đỡ duy nhất là khẩu vị rủi ro dương 3.12 điểm và thanh khoản M2 dương 2.40 điểm, cho thấy tín dụng vẫn ổn định chưa bị hoảng loạn.",
+      "Cấu trúc Net GEX dương 2.5 triệu USD với GLD ở mức 367.82 đang nằm trên Gamma Flip 365, giúp kìm nén biến động trong vùng Put Wall 360 đến Call Wall 375.",
+      "Phiên tới ghi nhận năm mươi lăm phần trăm kịch bản giằng co trong biên, ba mươi phần trăm áp lực giảm kiểm định lại mốc 360, và mười lăm phần trăm hồi phục kỹ thuật.",
+      "Nhà đầu tư nên giữ trung tính trong biên 360 đến 375, theo dõi sát Gamma Flip 365 và follow KenvinZone để cập nhật tín hiệu từ hệ thống AURORA."
+    ]
+  },
+  "visuals": {
+    "colorMode": "dark",
+    "backgroundColor": "#060a13",
+    "gridEnabled": false,
+    "backgroundFx": "candlestick-diag"
+  }
+}
