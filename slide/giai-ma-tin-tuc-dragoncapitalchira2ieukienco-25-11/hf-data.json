@@ -1,0 +1,221 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "25/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "MoneyF",
+    "short": "MoneyF",
+    "author": "Duy Khánh",
+    "headline": "Dragon Capital chỉ ra 2 điều kiện có thể kích hoạt dòng tiền vào chứng khoán Việt Nam",
+    "date": "25/11/2026",
+    "url": "moneyf.vn/dragon-capital-chi-ra-2-dieu-kien-co-the-kich-hoat-q4ujl22a"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "theme_variant": "liquidity_pump",
+    "stamp": "ĐÓN VỐN NGOẠI QUAY VỀ",
+    "stamp_tone": "green",
+    "title_key": "40% VỐN NGOẠI",
+    "visual": {
+      "items": []
+    },
+    "title_lines": [
+      "Dragon Capital giải mã",
+      "Kéo 40% vốn ngoại quay về"
+    ],
+    "sub": "Hai điều kiện kích hoạt dòng tiền khổng lồ vào chứng khoán",
+    "chips": [
+      {
+        "icon": "↗",
+        "text": "Cần 40% vốn ngoại quay lại",
+        "tone": "up"
+      },
+      {
+        "icon": "↳",
+        "text": "Bán ròng lũy kế 17 tỷ USD",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "P/B ngân hàng về 1 lần",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Thị trường chứng khoán Việt Nam đứng trước cơ hội lớn nếu <mark>lãi suất tiếp tục giảm</mark> và Fed dừng chính sách thắt chặt tiền tệ."
+  },
+  "s2": {
+    "title_lines": [
+      "Khối ngoại rút ròng",
+      "áp lực lớn cỡ nào?"
+    ],
+    "stats": [
+      {
+        "value": 17,
+        "decimals": 0,
+        "unit": "tỷ USD",
+        "label": "Bán ròng lũy kế 5-7 năm",
+        "badge": "20% dự trữ ngoại hối",
+        "tone": "down",
+        "beat": 1
+      },
+      {
+        "value": 40,
+        "decimals": 0,
+        "unit": "%",
+        "label": "Vốn cũ quay về tạo đột phá",
+        "badge": "~6,8 tỷ USD",
+        "tone": "gold",
+        "beat": 2
+      }
+    ],
+    "note": "FDI giải ngân hàng năm trên 5% GDP giúp nền kinh tế thực trụ vững."
+  },
+  "s3": {
+    "title_lines": [
+      "Tỷ lệ ngoại nắm giữ",
+      "Việt Nam đứng ở đâu?"
+    ],
+    "mode": "bars",
+    "lead": "Tỷ lệ cổ phiếu tự do do khối ngoại nắm giữ",
+    "bars": [
+      {
+        "label": "Hàn Quốc",
+        "display": "35%",
+        "value": 35,
+        "beat": 1
+      },
+      {
+        "label": "Thái Lan",
+        "display": ">20%",
+        "value": 20,
+        "beat": 1
+      },
+      {
+        "label": "Malaysia",
+        "display": "18%",
+        "value": 18,
+        "beat": 1
+      },
+      {
+        "label": "Việt Nam",
+        "display": "8%",
+        "value": 8,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 8,
+      "suffix": "%",
+      "text": "Ngang bằng quy mô của Bangladesh và Pakistan",
+      "beat": 2
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Định giá cổ phiếu",
+      "đã đủ hấp dẫn chưa?"
+    ],
+    "cards": [
+      {
+        "big": "P/B ~ 1 lần",
+        "title": "Nhóm ngân hàng",
+        "text": "ROE bình quân 18% và P/E chỉ 7 lần, rẻ hơn đáy COVID-19."
+      },
+      {
+        "big": "> 20%",
+        "title": "Bán lẻ & Tiêu dùng",
+        "text": "Dự báo lợi nhuận tăng trưởng mạnh mẽ trong năm 2027."
+      },
+      {
+        "big": "7 ngày",
+        "title": "Luồng xanh VIFC",
+        "text": "Rút ngắn thủ tục đầu tư gián tiếp từ hơn một năm xuống một tuần."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Ba rào cản",
+      "cần được tháo gỡ?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "CHẤT XÚC TÁC",
+        "title": "Nâng hạng MSCI",
+        "text": "Mở cánh cửa đón các định chế quản lý nghìn tỷ USD toàn cầu."
+      },
+      {
+        "color": "yellow",
+        "tag": "GIỚI HẠN VỐN",
+        "title": "Tỷ lệ LDR ngân hàng",
+        "text": "Dư địa tín dụng thu hẹp, cần cải thiện điều kiện huy động."
+      },
+      {
+        "color": "red",
+        "tag": "TIẾP CẬN VỐN",
+        "title": "Room ngoại & vận hành",
+        "text": "Khả năng tiếp cận thị trường và cơ chế thanh khoản cần cải cách."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Tín hiệu nào",
+      "mở đường dòng tiền?"
+    ],
+    "chain": [
+      {
+        "title": "Vĩ mô thế giới",
+        "text": "Fed chính thức <b>dừng siết tiền tệ</b> hỗ trợ tỷ giá hạ nhiệt.",
+        "beat": 1
+      },
+      {
+        "title": "Lãi suất nội địa",
+        "text": "Chi phí vốn rẻ kích hoạt <b>dòng tiền phân bổ</b> lại tài sản.",
+        "beat": 2
+      },
+      {
+        "title": "Cơ chế giao dịch",
+        "text": "Đẩy nhanh tiến độ <b>nâng hạng thị trường</b> chuẩn quốc tế.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư cá nhân",
+      "hành động thế nào?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Quan sát định giá",
+        "text": "Tập trung cổ phiếu định giá rẻ và <b>duy trì vị thế</b> đầu tư.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Theo dõi vĩ mô",
+        "text": "Chờ đợi động thái từ Fed và <b>tín hiệu đảo chiều</b> dòng vốn.",
+        "beat": 2
+      },
+      {
+        "icon": "warn",
+        "title": "Quản trị rủi ro",
+        "text": "Tránh mua đuổi chỉ số và luôn <b>kiểm soát đòn bẩy</b> an toàn.",
+        "beat": 3
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Định giá rẻ là điều kiện cần, nhưng dòng vốn ngoại lớn chỉ kích hoạt khi rào cản chính sách được tháo gỡ.",
+    "cta": "Theo dõi KenvinZone để cùng đón sóng vĩ mô tiếp theo"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
