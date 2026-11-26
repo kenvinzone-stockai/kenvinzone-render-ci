@@ -1,0 +1,215 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "26/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "Tin nhanh chứng khoán",
+    "short": "ĐTCK",
+    "author": "N.T",
+    "headline": "Lực bán tăng mạnh, VN-Index giảm gần 60 điểm",
+    "date": "26/11/2026",
+    "url": "https://m.tinnhanhchungkhoan.vn/luc-ban-tang-manh-vn-index-giam-gan-60-diem-post402118.html"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "theme_variant": "shock_alert",
+    "stamp": "GIẢM GẦN 60 ĐIỂM",
+    "stamp_tone": "red",
+    "title_key": "-57,77 ĐIỂM",
+    "visual": {
+      "items": []
+    },
+    "title_lines": [
+      "VN-Index lao dốc",
+      "bốc hơi -57,77 ĐIỂM"
+    ],
+    "sub": "Áp lực bán tháo dữ dội phiên chiều",
+    "chips": [
+      {
+        "icon": "↘",
+        "text": "VN-Index -3,42%",
+        "tone": "down"
+      },
+      {
+        "icon": "↳",
+        "text": "18 mã giảm sàn",
+        "tone": "down"
+      },
+      {
+        "icon": "◆",
+        "text": "KLGD +40,66%",
+        "tone": "gold"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Thị trường chứng khoán bất ngờ hứng chịu đợt xả hàng quy mô lớn trong phiên chiều, khiến chỉ số chính chìm sâu trong sắc đỏ với <mark>mức giảm gần 60 điểm</mark>."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh chung",
+      "ảm đạm đến đâu?"
+    ],
+    "stats": [
+      {
+        "value": 1629.68,
+        "decimals": 2,
+        "unit": "điểm",
+        "label": "VN-Index",
+        "badge": "-57,77 điểm",
+        "tone": "down",
+        "beat": 1
+      },
+      {
+        "value": 16043,
+        "decimals": 0,
+        "unit": "tỷ",
+        "label": "Thanh khoản HoSE",
+        "badge": "+40,66% KL",
+        "tone": "gold",
+        "beat": 2
+      }
+    ],
+    "note": "291 mã giảm giá áp đảo hoàn toàn so với 47 mã tăng"
+  },
+  "s3": {
+    "mode": "bars",
+    "lead": "Trụ lớn đè nặng chỉ số",
+    "bars": [
+      {
+        "label": "VIC",
+        "display": "-6,3%",
+        "value": -6.3,
+        "beat": 1
+      },
+      {
+        "label": "TCB",
+        "display": "-5,07%",
+        "value": -5.07,
+        "beat": 2
+      },
+      {
+        "label": "VHM",
+        "display": "-3,4%",
+        "value": -3.4,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 24,
+      "suffix": "điểm",
+      "text": "Mức tác động giảm riêng từ VIC",
+      "beat": 1
+    },
+    "title_lines": [
+      "Nhóm vốn hóa lớn",
+      "tổn thương nặng nề"
+    ]
+  },
+  "s4": {
+    "title_lines": [
+      "Địa ốc và ngân hàng",
+      "bị bán tháo ra sao?"
+    ],
+    "cards": [
+      {
+        "big": "Lau sàn",
+        "title": "Bất động sản",
+        "text": "NLG, SZC, HDC, LDG đồng loạt giảm hết biên độ"
+      },
+      {
+        "big": "-5,07%",
+        "title": "Ngân hàng",
+        "text": "TCB rơi sâu về đáy ngày, chỉ MSB giữ sắc xanh"
+      },
+      {
+        "big": "56 triệu",
+        "title": "Chứng khoán",
+        "text": "VIX khớp lệnh kỷ lục nhưng vẫn giảm ba phẩy ba phần trăm"
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Tín hiệu nào",
+      "được phát ra?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "ĐIỂM SÁNG",
+        "title": "Thiết bị y tế & THD",
+        "text": "Ngành y tế tăng một phẩy ba phần trăm, THD kịch trần trên HNX"
+      },
+      {
+        "color": "yellow",
+        "tag": "THANH KHOẢN",
+        "title": "Khối lượng tăng vọt",
+        "text": "Khối lượng sang tay tăng hơn bốn mươi phần trăm cho thấy xả mạnh"
+      },
+      {
+        "color": "red",
+        "tag": "KỸ THUẬT XẤU",
+        "title": "Thủng các chỉ báo",
+        "text": "MACD và Stochastic suy yếu rõ rệt sau khi cắt xuống"
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Hệ thống đèn màu",
+      "cảnh báo điều gì?"
+    ],
+    "chain": [
+      {
+        "title": "Đèn xanh",
+        "text": "Một vài mã lẻ loi vẫn có <b>lực cầu cải thiện</b> nâng đỡ giá",
+        "beat": 1
+      },
+      {
+        "title": "Đèn vàng",
+        "text": "Thanh khoản bán tăng cho thấy <b>tâm lý bi quan</b> đang lan rộng",
+        "beat": 2
+      },
+      {
+        "title": "Đèn đỏ",
+        "text": "Đà bán tháo trụ lớn kích hoạt <b>nguy cơ giảm tiếp</b> phiên tới",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư F0",
+      "cần hành động gì?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Quản trị rủi ro",
+        "text": "Chủ động <b>hạ tỷ trọng</b> cổ phiếu khi có nhịp hồi kỹ thuật ngắn",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Tránh bắt dao rơi",
+        "text": "Tạm dừng giải ngân để <b>bảo toàn nguồn vốn</b> trong biến động mạnh",
+        "beat": 2
+      },
+      {
+        "icon": "check",
+        "title": "Kiểm soát tâm lý",
+        "text": "Bình tĩnh theo dõi thị trường thay vì <b>hoảng loạn bán tháo</b>",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Kể Chuyện Chứng Khoán",
+    "closing": "Bình tĩnh bảo vệ tài khoản trước sóng gió thị trường.",
+    "cta": "Bấm theo dõi KenvinZone để đón nhận góc nhìn đa chiều mỗi ngày."
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
