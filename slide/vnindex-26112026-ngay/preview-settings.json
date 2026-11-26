@@ -1,0 +1,53 @@
+{
+  "subtitles": {
+    "enabled": true,
+    "color": "#92f93e",
+    "fontSize": 18,
+    "bottom": 60,
+    "maxLines": 1
+  },
+  "backgroundFx": "candlestick",
+  "bgm": {
+    "mode": "custom",
+    "preset": "ambient",
+    "volume": 0.2,
+    "custom": {
+      "name": "Write_You.mp3",
+      "path": "preview-assets/bgm/20260624-151812_Write_You.mp3",
+      "url": "/slide/vnindex-26112026-ngay/preview-assets/bgm/20260624-151812_Write_You.mp3"
+    }
+  },
+  "scriptLines": [
+    "VNINDEX chốt phiên giảm mạnh gần năm mươi tám điểm, lùi sâu về mốc 1629,54 trong trạng thái bán tháo toàn khung.",
+    "Thứ Năm ngày 26/11, điểm KenvinZone hạ từ ba mươi bảy điểm phiên sáng xuống ba mươi tư điểm, giữ nguyên nhãn tránh vào mới.",
+    "Phiên sáng, chỉ số mở gap down về 1668, thanh khoản vol ratio đạt 0,89 và áp lực bán áp đảo hoàn toàn.",
+    "Báo cáo sáng cảnh báo nếu đánh mất mốc 1665,13 thì cấu trúc giảm sâu hơn sẽ chính thức kích hoạt.",
+    "Bước sang phiên chiều, mốc này bị xuyên thủng dứt khoát, giá rơi tự do cách rất xa đường EMA20 ở 1710,48.",
+    "Điểm số ghi nhận timing trừ một, dòng tiền trừ hai trong khi kỹ thuật giữ nguyên, kéo tổng điểm giảm ba.",
+    "Chỉ số RSI ngày rơi sâu về 27,45 vào vùng quá bán, MACD hist âm 7,54, dù tuần một còn cấu trúc tăng nhưng đã suy yếu.",
+    "Khung M15 cho thấy đà giảm đang chững lại tạm thời, mốc swing low quan trọng nhất cần canh là 1622.",
+    "Kịch bản tới có 45% tiếp tục thủng 1622 về 1600 đến 1610; 35% xuất hiện nhịp hồi kỹ thuật lên 1646 đến 1659; và 20% tích lũy đi ngang.",
+    "Khuyến nghị tuyệt đối chưa bắt đáy, khẩn trương hạ tỷ trọng margin và hẹn anh em ở bản tin ngày mai."
+  ],
+  "slides": {
+    "deletedIds": [],
+    "scriptLines": [
+      "VNINDEX chốt phiên giảm mạnh gần năm mươi tám điểm, lùi sâu về mốc 1629,54 trong trạng thái bán tháo toàn khung.",
+      "Thứ Năm ngày 26/11, điểm KenvinZone hạ từ ba mươi bảy điểm phiên sáng xuống ba mươi tư điểm, giữ nguyên nhãn tránh vào mới.",
+      "Phiên sáng, chỉ số mở gap down về 1668, thanh khoản vol ratio đạt 0,89 và áp lực bán áp đảo hoàn toàn.",
+      "Báo cáo sáng cảnh báo nếu đánh mất mốc 1665,13 thì cấu trúc giảm sâu hơn sẽ chính thức kích hoạt.",
+      "Bước sang phiên chiều, mốc này bị xuyên thủng dứt khoát, giá rơi tự do cách rất xa đường EMA20 ở 1710,48.",
+      "Điểm số ghi nhận timing trừ một, dòng tiền trừ hai trong khi kỹ thuật giữ nguyên, kéo tổng điểm giảm ba.",
+      "Chỉ số RSI ngày rơi sâu về 27,45 vào vùng quá bán, MACD hist âm 7,54, dù tuần một còn cấu trúc tăng nhưng đã suy yếu.",
+      "Khung M15 cho thấy đà giảm đang chững lại tạm thời, mốc swing low quan trọng nhất cần canh là 1622.",
+      "Kịch bản tới có 45% tiếp tục thủng 1622 về 1600 đến 1610; 35% xuất hiện nhịp hồi kỹ thuật lên 1646 đến 1659; và 20% tích lũy đi ngang.",
+      "Khuyến nghị tuyệt đối chưa bắt đáy, khẩn trương hạ tỷ trọng margin và hẹn anh em ở bản tin ngày mai."
+    ]
+  },
+  "visuals": {
+    "colorMode": "dark",
+    "backgroundColor": "#07030d",
+    "gridEnabled": false,
+    "backgroundFx": "candlestick-diag"
+  }
+}

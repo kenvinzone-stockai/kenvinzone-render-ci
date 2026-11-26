@@ -1,0 +1,159 @@
+ KenvinZone
+Phân tích chiến lược VNINDEX · HoSE
+● Tự động
+VNINDEX    26/11/2026 11:01
+⚡ Quan điểm nhanh
+VNINDEX giảm mạnh, xuyên thủng toàn bộ hệ EMA D1, RSI D1 33.58 cho thấy áp
+lực bán chi phối toàn khung. Đây là giai đoạn downtrend xác nhận trên
+D1/H4, không phải vùng mua đẹp dù M15 oversold.
+37
+/ 100 điểm
+Avoid New Entry
+65%
+Kỹ thuật
+10/30
+D1 Full Bearish, giá dưới toàn bộ EMA, cấu trúc giảm rõ ràng, W1/3D suy yếu
+momentum
+Timing
+6/20
+M15 oversold nhưng chưa xác nhận đảo chiều, thời điểm vào lệnh mới rủi ro
+cao do T+2
+Dòng tiền
+8/20
+Vol ratio dưới 1, thanh khoản yếu, chưa có dòng tiền bắt đáy rõ
+Sector
+5/15
+Chưa thấy nhóm ngành dẫn dắt nổi bật, độ rộng thị trường nghiêng tiêu cực
+Rủi ro
+8/15
+Rủi ro margin call tăng khi giá dưới EMA200 D1, cần thận trọng với vị thế
+đòn bẩy
+🇻🇳 Bối cảnh thị trường
+Chỉ số đóng cửa phiên trước 1687.45, mở cửa gap down về 1668, mất mốc swing
+low 1665-1667 vùng hỗ trợ gần nhất. Giá giao dịch dưới EMA20/50/200 D1
+(1714/1736/1749) - khoảng cách rất xa, phản ánh xu hướng giảm đã kéo dài
+nhiều phiên, chưa có dấu hiệu đảo chiều cấu trúc.
+🔑 Vĩ mô & Catalyst
+Áp lực bán lan rộng toàn khung thời gian
+W1 RSI vào Bearish Zone dù trend W1 vẫn Bullish - cảnh báo suy yếu momentum
+dài hạn, D1/H4 full bearish alignment đồng thuận
+Áp lực bán lan rộng toàn khung thời gian
+W1 RSI vào Bearish Zone dù trend W1 vẫn Bullish - cảnh báo suy yếu momentum
+dài hạn, D1/H4 full bearish alignment đồng thuận
+Thiếu thanh khoản xác nhận đảo chiều
+Vol ratio 0.89 - thanh khoản dưới trung bình, không có dòng tiền bắt đáy
+mạnh để đảo chiều xu hướng ngắn hạn
+📊 Phân tích đa khung thời gian
+📅 Weekly (W1)
+W1 trend vẫn Bullish về cấu trúc dài hạn, EMA align Full Bullish, nhưng RSI
+đã rơi vào Bearish Zone và MACD bias Bearish - đây là tín hiệu suy yếu động
+lượng dài hạn, cảnh báo sớm cho khả năng điều chỉnh sâu hơn dù xu hướng
+tăng chủ đạo chưa gãy.
+📐 3 ngày (3D)
+3D trend Bullish nhưng EMA align Mixed, RSI Bearish Zone, MACD Bearish -
+xác nhận thêm sự suy yếu ở khung trung hạn, đồng pha với tín hiệu tiêu cực
+của W1, tạo áp lực giảm tích lũy từ nhiều phiên.
+📈 Daily (D1)
+D1 là khung xác nhận downtrend rõ ràng nhất: trend Bearish, EMA Full
+Bearish, giá dưới toàn bộ EMA20/50/200, RSI 33.58 gần vùng quá bán nhưng
+chưa cực đoan, MACD hist âm sâu -5.09. Đây là cấu trúc giảm giá mạnh, chưa
+có dấu hiệu tạo đáy kỹ thuật.
+⚡ M15
+M15 trend Bearish, EMA Full Bearish Alignment, RSI vào Oversold nhưng
+momentum chỉ Neutral/Compressing - cho thấy đà giảm đang chững lại ngắn
+hạn, có thể xuất hiện nhịp hồi kỹ thuật về vùng EMA20 M5 (1673) hoặc swing
+high 1677.93, nhưng đây là bẫy hồi trong downtrend lớn, không phải đảo
+chiều.
+💰 Dòng tiền & Thanh khoản
+Vol ratio 0.89 cho thấy dòng tiền tham gia phiên sáng yếu hơn trung bình,
+không có lực cầu bắt đáy mạnh. Thanh khoản HoSE cần theo dõi thêm phiên
+chiều để đánh giá có dòng tiền bắt đáy thực sự hay chỉ là nhịp hồi kỹ thuật
+yếu ớt.
+🔄 Sector Rotation
+🟢 Dẫn dắt
+Chưa xác định nhóm dẫn dắt rõ trong bối cảnh toàn thị trường giảm
+🔵 Đang hút tiền
+Cần theo dõi nhóm phòng thủ như điện, nước nếu thị trường tiếp tục giảm
+🟡 Tăng nóng
+Nhóm đã tăng nóng trước đó dễ bị chốt lời mạnh khi thị trường điều chỉnh
+🔴 Nên tránh
+Nhóm beta cao, chứng khoán, bất động sản đầu cơ trong giai đoạn downtrend
+xác nhận
+👁 Góc nhìn
+🏦 Quỹ / Tổ chức
+Khối ngoại và dòng tiền lớn thường đứng ngoài quan sát khi D1 xác nhận
+downtrend với EMA full bearish, chờ tín hiệu tạo đáy rõ ràng hơn kèm thanh
+khoản đột biến trước khi giải ngân trở lại.
+👤 Trader cá nhân
+Nhà đầu tư cá nhân cần tránh bắt đáy sớm theo oversold M15, rủi ro bull
+trap cao khi khung lớn D1/3D/W1 đều nghiêng bearish momentum, đặc biệt với
+tài khoản đang dùng margin.
+📋 Ma trận kịch bản
+KB1 50%
+Tiếp tục giảm về vùng hỗ trợ sâu hơn
+Điều kiện kích hoạt
+Mất swing low 1665.13 với volume gia tăng
+Mục tiêu
+1650-1655
+KB1 50%
+Tiếp tục giảm về vùng hỗ trợ sâu hơn
+Điều kiện kích hoạt
+Mất swing low 1665.13 với volume gia tăng
+Mục tiêu
+1650-1655
+KB2 35%
+Hồi kỹ thuật ngắn trong downtrend
+Điều kiện kích hoạt
+Giữ được swing low 1665, bật lên test EMA20 M5 1673-1678
+Mục tiêu
+1677-1683
+⏱ Chiến lược theo chân trời
+📍 Hôm nay
+Theo dõi phiên chiều xem có lực cầu bắt đáy tại vùng 1665-1667 hay tiếp tục
+thủng, tránh mua đuổi theo oversold M15
+📆 Trong tuần
+Chờ D1 xác nhận tạo đáy với nến đảo chiều rõ và thanh khoản tăng trước khi
+cân nhắc giải ngân mới
+🎯 Trung hạn
+W1 vẫn giữ cấu trúc tăng dài hạn nhưng cần RSI thoát Bearish Zone để khôi
+phục niềm tin xu hướng
+✅ Checklist hành động nhanh
+1
+Theo dõi volume phiên chiều có tăng đột biến tại vùng hỗ trợ 1665 không
+2
+Theo dõi volume phiên chiều có tăng đột biến tại vùng hỗ trợ 1665 không
+3
+Quan sát D1 có xuất hiện nến đảo chiều (hammer, bullish engulfing) không
+4
+Kiểm tra RSI D1 có thoát khỏi Bearish Zone (vượt 40-45) không
+5
+Theo dõi phản ứng giá quanh EMA20 M5 1673 nếu có nhịp hồi
+🎯 Kế hoạch hành động
+🎯 Vị thế mới
+Không mở vị thế mua mới lúc này, chờ tín hiệu xác nhận đáy rõ ràng trên D1
+kèm thanh khoản
+📦 Đang nắm giữ
+Nhà đầu tư đang giữ cổ phiếu nên cân nhắc giảm tỷ trọng nếu thủng swing low
+1665, đặc biệt các mã đã gãy xu hướng tăng
+⚠️ Margin
+Giảm margin ngay, ưu tiên bảo toàn vốn do giá dưới EMA200 D1, rủi ro call
+margin cao nếu thị trường giảm thêm
+✅ Nhóm ưu tiên
+Ưu tiên quan sát nhóm phòng thủ, cổ tức ổn định trong giai đoạn thị trường
+chung yếu
+🚫 Tránh FOMO
+Tránh nhóm beta cao, đầu cơ đã tăng nóng trước đó, dễ bị xả hàng mạnh khi
+downtrend xác nhận
+⏳ Đang chờ
+Chờ xác nhận đáy kỹ thuật trên D1 với nến đảo chiều rõ ràng và dòng tiền
+quay lại thực sự
+🔼 Thesis mạnh lên khi
+Giá vượt lại EMA20 D1 1714 kèm RSI D1 thoát Bearish Zone và thanh khoản
+tăng mạnh
+🔽 Thesis vô hiệu khi
+Mất swing low 1665.13 với volume lớn, mở ra kịch bản giảm sâu hơn về 1650
+Báo cáo dựa trên dữ liệu kỹ thuật tự động. Không phải khuyến nghị đầu tư
+chính thức. Nhà đầu tư tự chịu trách nhiệm quyết định.
+📊 Xem Dashboard đầy đủ tại KenvinZone
+<https://kenvinzone-stockai.github.io/vnindex-report-daily/>
+kenvinzone.com · Báo cáo tự động mỗi phiên
