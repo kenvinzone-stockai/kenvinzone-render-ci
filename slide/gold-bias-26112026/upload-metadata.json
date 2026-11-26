@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "Bias Vàng 26/11: Áp lực USD đè nặng, Gamma ghim biên",
+    "description": "📊 BẢN TIN ĐỊNH LƯỢNG BIAS VÀNG (GOLD / XAUUSD) NGÀY 26/11/2026\n\n🎯 ĐIỂM TỔNG HỢP MARKET BIAS:\n• Điểm số: -16.70 / 100\n• Chế độ: GIẢM MẠNH (Thay đổi: -0.50)\n• Xu hướng 3 phiên: 24/11 (-16.20) → 25/11 (-18.30) → 26/11 (-16.70)\n\n⚖️ BẢN ĐỒ 6 LỰC KÉO ĐỊNH LƯỢNG:\n• Áp lực USD: -11.04 điểm (áp lực ghìm giá chính)\n• Dòng tiền & Xu hướng: -4.36 điểm (dòng vốn rút ra)\n• Lãi suất thực: -2.59 điểm\n• Yếu tố riêng của Vàng: -0.67 điểm\n• Khẩu vị rủi ro: +3.21 điểm (đỡ giá)\n• Thanh khoản M2: +2.39 điểm (hỗ trợ nền)\n\n🧲 CẤU TRÚC GAMMA (GLD & XAUUSD):\n• Net GEX: +2.5 triệu USD (Trạng thái Gamma Dương → kìm nén biên độ dao động)\n• Spot: GLD 367.82 (≈ 3.981.9 XAUUSD) — Nằm TRÊN Gamma Flip\n• Gamma Flip: GLD 365.0 (≈ 3.951.0 XAUUSD)\n• Put Wall (Hỗ trợ quyền chọn): GLD 360.0 (≈ 3.897.0 XAUUSD)\n• Call Wall (Kháng cự quyền chọn): GLD 375.0 (≈ 4.060.0 XAUUSD)\n\n🎲 3 KỊCH BẢN XÁC SUẤT:\n1. Giằng co trong biên (55%): Dao động kìm nén giữa 360 và 375 GLD (≈ 3.897 - 4.060 XAUUSD).\n2. Phá vỡ giảm (30%): USD mạnh ép gãy Gamma Flip 365 (≈ 3.951) lui về Put Wall 360 (≈ 3.897).\n3. Bứt phá hồi phục (15%): Thanh khoản kích hoạt lực cầu đẩy giá hướng lên Call Wall 375 (≈ 4.060).\n\n📌 KẾ HOẠCH HÀNH ĐỘNG:\n• Giữ trung tính: Tận dụng biên độ hẹp 3.897 – 4.060 XAUUSD.\n• Điều kiện mua tích luỹ: Giữ vững trên Gamma Flip 365 (≈ 3.951) và USD đảo chiều giảm.\n• Rủi ro cần tránh: Thủng mốc 365 hoặc Put Wall 360 kích hoạt thế Gamma Âm khuếch đại đà giảm.\n\n⚠️ Tuyên bố miễn trừ trách nhiệm: Bản tin định lượng phục vụ mục đích thông tin và tham khảo cấu trúc quyền chọn, KHÔNG phải lời khuyên đầu tư tài chính.\n\n#vang #gold #xauusd #giavang #phantichdinhluong #kenvinzone",
+    "tags": [
+      "vàng",
+      "gold",
+      "xauusd",
+      "giá vàng hôm nay",
+      "nhận định vàng",
+      "phân tích định lượng",
+      "market bias",
+      "gamma squeeze",
+      "put wall",
+      "call wall",
+      "kenvinzone",
+      "dầu tư vàng",
+      "ngoại hối"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "gold-daily-bias",
+    "date": "26/11/2026"
+  }
+}
