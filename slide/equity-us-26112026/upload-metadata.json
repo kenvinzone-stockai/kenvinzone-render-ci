@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "S&P 500 & Nasdaq Đồng Pha Giảm: Cảnh Báo Gamma Âm & Rủi Ro Ngắn Hạn",
+    "description": "📊 Bản tin định lượng thị trường chứng khoán Mỹ từ KenvinZone Analytics.\n\nCả S&P 500 và Nasdaq tiếp tục chịu áp lực điều chỉnh đồng pha khi các chỉ báo rủi ro vĩ mô và dòng tiền nghiêng hẳn về phía tiêu cực. Cấu trúc Gamma âm trên cả SPY và QQQ cảnh báo biên độ dao động có thể mở rộng nhanh chóng nếu các mốc Put Wall bị kiểm định.\n\n⚠️ Bản tin được xây dựng từ mô hình định lượng AURORA mang tính chất tham khảo số liệu, KHÔNG phải lời khuyên đầu tư tài chính.\n\n#sp500 #nasdaq #chungkhoanmy #gamma #kenvinzone",
+    "tags": [
+      "sp500",
+      "nasdaq",
+      "chứng khoán mỹ",
+      "nhận định thị trường",
+      "kenvinzone",
+      "aurora",
+      "quyền chọn",
+      "gamma flip",
+      "put wall",
+      "call wall",
+      "gex",
+      "spy",
+      "qqq"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "equity-bias",
+    "date": "26/11/2026"
+  }
+}
