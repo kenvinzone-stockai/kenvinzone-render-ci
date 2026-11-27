@@ -1,0 +1,209 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "27/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "MoneyF",
+    "short": "MoneyF",
+    "author": "Văn Mạnh",
+    "headline": "Thị trường chứng khoán Việt Nam sắp có hệ thống giám sát tổng thể và kho dữ liệu mới",
+    "date": "27/11/2026",
+    "url": "https://moneyf.vn/thi-truong-chung-khoan-viet-nam-sap-co-he-thong-gi-iois2e2d"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "theme_variant": "",
+    "stamp": "HỆ THỐNG GIÁM SÁT MỚI",
+    "stamp_tone": "gold",
+    "title_key": "HỆ THỐNG MỚI",
+    "visual": {
+      "items": []
+    },
+    "title_lines": [
+      "CHỨNG KHOÁN VIỆT NAM",
+      "SẮP CÓ HỆ THỐNG MỚI"
+    ],
+    "sub": "Ra mắt hệ thống giám sát tổng thể và chuẩn bị triển khai cơ chế CCP",
+    "chips": [
+      {
+        "icon": "⚙",
+        "text": "Kho dữ liệu & Giám sát",
+        "tone": "blue"
+      },
+      {
+        "icon": "↳",
+        "text": "Triển khai CCP 2027",
+        "tone": "gold"
+      },
+      {
+        "icon": "↗",
+        "text": "Rà soát nới room ngoại",
+        "tone": "up"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "UBCKNN dự kiến ra mắt <mark>hệ thống giám sát tổng thể và kho dữ liệu mới</mark>, đồng thời chuẩn bị vận hành cơ chế đối tác bù trừ trung tâm CCP vào đầu năm 2027."
+  },
+  "s2": {
+    "title_lines": [
+      "Hạ tầng thị trường",
+      "sắp có bước ngoặt gì?"
+    ],
+    "stats": [
+      {
+        "value": 30,
+        "decimals": 0,
+        "unit": "năm",
+        "label": "Kỷ niệm thành lập ngành",
+        "badge": "1996 - 2026",
+        "tone": "gold",
+        "beat": 1
+      },
+      {
+        "value": 2027,
+        "decimals": 0,
+        "unit": "năm",
+        "label": "Mục tiêu vận hành CCP",
+        "badge": "Đầu năm 2027",
+        "tone": "blue",
+        "beat": 2
+      }
+    ],
+    "note": "Bước đi quan trọng nhằm hiện đại hóa công nghệ và đáp ứng chuẩn mực quốc tế."
+  },
+  "s3": {
+    "title_lines": [
+      "Quy mô thị trường",
+      "sau 30 năm ra sao?"
+    ],
+    "mode": "bars",
+    "lead": "Sự phát triển vượt bậc về độ phủ",
+    "bars": [
+      {
+        "label": "Tài khoản NĐT",
+        "display": ">14 triệu",
+        "value": 14,
+        "beat": 1
+      },
+      {
+        "label": "Vốn hóa / GDP",
+        "display": "82%",
+        "value": 82,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 30,
+      "suffix": " năm",
+      "text": "Chặng đường trưởng thành của thị trường vốn",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Trụ cột cải cách",
+      "gồm những gì?"
+    ],
+    "cards": [
+      {
+        "big": "Hệ thống mới",
+        "title": "Giám sát & Dữ liệu",
+        "text": "Kho dữ liệu tập trung và công nghệ số phục vụ quản lý giao dịch."
+      },
+      {
+        "big": "Cơ chế CCP",
+        "title": "Đối tác bù trừ",
+        "text": "Dự kiến đầu 2027 nhằm giải quyết triệt để yêu cầu ký quỹ trước."
+      },
+      {
+        "big": "Room ngoại",
+        "title": "Mở rộng sở hữu",
+        "text": "Rà soát mở room ngoài các lĩnh vực quốc phòng, an ninh."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Cấu trúc thị trường",
+      "dịch chuyển thế nào?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "HÀNG HÓA MỚI",
+        "title": "Thu hút FDI niêm yết",
+        "text": "Đưa doanh nghiệp FDI và các đơn vị tài chính chất lượng lên sàn."
+      },
+      {
+        "color": "yellow",
+        "tag": "CẦU DÀI HẠN",
+        "title": "Tái cấu trúc ngành quỹ",
+        "text": "Phát triển nhà đầu tư tổ chức theo Quyết định 3168 của Bộ Tài chính."
+      },
+      {
+        "color": "red",
+        "tag": "KỶ LUẬT CAO",
+        "title": "Chuẩn mực khắt khe",
+        "text": "Siết chặt tính minh bạch và quản trị sau khi nâng hạng FTSE."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Tác động ra sao",
+      "tới thị trường chung?"
+    ],
+    "chain": [
+      {
+        "title": "Dòng vốn ngoại",
+        "text": "Thu hút <b>dòng vốn ngoại dài hạn</b> khi tháo gỡ rào cản",
+        "beat": 1
+      },
+      {
+        "title": "Hạ tầng dữ liệu",
+        "text": "Kiểm soát rủi ro nhờ <b>kho dữ liệu tập trung</b> mới",
+        "beat": 1
+      },
+      {
+        "title": "Vị thế thị trường",
+        "text": "Giúp <b>nâng cao uy tín</b> thị trường trên trường quốc tế",
+        "beat": 2
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư F0",
+      "nên hành động gì?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Chọn lọc cơ bản",
+        "text": "Ưu tiên <b>chọn lọc cổ phiếu</b> có tài chính và quản trị minh bạch.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Tích sản bền vững",
+        "text": "Xem xét <b>phân bổ vào các quỹ mở</b> để đón đầu chu kỳ nâng hạng.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Kỷ luật quản trị",
+        "text": "Hạn chế <b>lướt sóng theo tin đồn</b> khi hệ thống siết chặt kỷ luật.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Hạ tầng minh bạch là bệ phóng cho sự phát triển dài hạn.",
+    "cta": "Theo dõi KenvinZone để cập nhật chính sách thị trường"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
