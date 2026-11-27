@@ -1994,3 +1994,67 @@ Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-ren
   Đăng lên kênh: Kenvin Trading Zone (UCbUOkCbABZqsT1XmViIk1SA)
 {"ok": true, "platform": "youtube", "project": "equity-us-27112026", "video_id": "yL4W6MnGN3M", "url": "https://youtu.be/yL4W6MnGN3M", "studio_url": "https://studio.youtube.com/video/yL4W6MnGN3M/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing.", "channel_id": "UCbUOkCbABZqsT1XmViIk1SA", "channel_title": "Kenvin Trading Zone", "channel_group": "kenvinzone"}
   Xong: https://youtu.be/yL4W6MnGN3M
+=== DECK: gold-bias-27112026 | template=gold-daily-bias-hf | preset giọng=giai-ma-nganh ===
+  Đã tái tạo config/tts.json (giọng clone).
+  Kênh đích: @kenvinzone (nhóm dòng video: kenvinzone)
+  Đã tái tạo config/social-upload.json từ secret.
+=== [0/3] Cổng QA (zero-credit) ===
+  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
+QA gold-bias-27112026 [gold-daily-bias-hf]: 15 khung · 0 lỗi · 0 cảnh báo → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-27112026/output/qa
+  [phát âm] đã áp từ điển phiên âm cho giọng đọc (chữ hiển thị giữ nguyên).
+=== [1/3] Tạo giọng đọc (gemini) ===
+Full voiceover 47.15s · 26 quãng lặng · 6 dòng
+  ranh 1: ước   6.00s → lặng 4.74–5.30 (0.56s) cắt 5.02s
+  ranh 2: ước  14.22s → lặng 11.91–12.54 (0.63s) cắt 12.23s
+  ranh 3: ước  21.30s → lặng 18.59–19.25 (0.66s) cắt 18.92s
+  ranh 4: ước  31.20s → lặng 29.48–29.95 (0.48s) cắt 29.71s
+  ranh 5: ước  39.29s → lặng 39.55–40.26 (0.71s) cắt 39.91s
+  → snap được 5/5 ranh giới vào quãng lặng
+Slide 1:    0.00s →    5.02s  = 5.02s  -> line_0.mp3
+Slide 2:    5.02s →   12.23s  = 7.21s  -> line_1.mp3
+Slide 3:   12.23s →   18.92s  = 6.69s  -> line_2.mp3
+Slide 4:   18.92s →   29.71s  = 10.79s  -> line_3.mp3
+Slide 5:   29.71s →   39.91s  = 10.19s  -> line_4.mp3
+Slide 6:   39.91s →   47.15s  = 7.24s  -> line_5.mp3
+Concatenated voiceover: 47.15s -> /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-27112026/output/voiceover_concat.mp3
+Voice: Gemini gemini-2.5-flash-preview-tts / auto-clone
+Style: MC tài chính trẻ, nhiều năng lượng, kể chuyện cuốn hút như narrator phim tài liệ...
+Sending full script to Gemini TTS: 6 slides, 716 chars
+Full Gemini TTS saved: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-27112026/output/gemini_full_voiceover.mp3
+
+=== Splitting full Gemini TTS voiceover ===
+=== [2/3] Render HyperFrames (30fps đầy đủ) ===
+=== HyperFrames (gold-daily-bias-hf): dung project tai /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-27112026/output/hf ===
+  [captions] Khong co word timing tu whisper -> chia deu theo so tu.
+=== HyperFrames: dung composition tu hf-data.json ===
+  [anchor] 'rates' ('lãi suất') not heard -> default position
+TOTAL 51.75 scenes [('hook', 0.0, 6.02), ('forces', 6.02, 13.9), ('gamma', 19.92, 10.793), ('scen', 30.713, 10.193), ('cta', 40.906, 10.844), ('captions', 0, 51.75)]
+=== HyperFrames: render tung khung hinh (51.7s video) ===
+  Trinh duyet render: /home/runner/.cache/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux64/chrome-headless-shell
+  ◆  Rendering hf → /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-27112026/output/final_video.hf.mp4
+     30fps · high · auto workers (4 cores detected)
+     GPU: browser GPU (auto-detect)
+  [?25l│
+  ◒  Checking browser...
+  [1G[J◇  Browser: env
+  [?25h
+    Lint: 1 error(s), 0 warning(s) — run with --lint-verbose for full output.
+    Continuing render despite lint issues. Use --strict to block errors.
+  HyperFrames render 5%
+  HyperFrames render 20%
+  HyperFrames render 30%
+  HyperFrames render 40%
+  HyperFrames render 50%
+  HyperFrames render 60%
+  HyperFrames render 70%
+  HyperFrames render 80%
+  HyperFrames render 90%
+  ◇  /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-27112026/output/final_video.hf.mp4
+     14.2 MB · 51.8s video · rendered in 1m 50.7s
+     beginframe capture · software gpu · compile 1.3s · extract 0.0s · audio 2.7s · probe 0.3s · setup 1.7s · capture 1m 44.4s · encode (during capture) 1m 44.4s · assemble 0.5s
+Final video (HyperFrames): /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-27112026/output/final_video.mp4
+  Video: /home/runner/work/kenvinzone-render-ci/kenvinzone-render-ci/slide/gold-bias-27112026/output/final_video.mp4
+=== [3/3] Upload YouTube (privacy=private) ===
+  Đăng lên kênh: Kenvin Trading Zone (UCbUOkCbABZqsT1XmViIk1SA)
+{"ok": true, "platform": "youtube", "project": "gold-bias-27112026", "video_id": "e8OZzt8QXbM", "url": "https://youtu.be/e8OZzt8QXbM", "studio_url": "https://studio.youtube.com/video/e8OZzt8QXbM/edit", "privacyStatus": "private", "message": "Uploaded to YouTube. Review in YouTube Studio before publishing.", "channel_id": "UCbUOkCbABZqsT1XmViIk1SA", "channel_title": "Kenvin Trading Zone", "channel_group": "kenvinzone"}
+  Xong: https://youtu.be/e8OZzt8QXbM

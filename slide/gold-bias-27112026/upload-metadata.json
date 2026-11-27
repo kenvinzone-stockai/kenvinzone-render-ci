@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "Vàng 27/11: Bias GIẢM MẠNH -16.7 | Gamma ghim biên 360-375",
+    "description": "📊 PHÂN TÍCH ĐỊNH LƯỢNG VÀNG (XAUUSD / GLD) - 27/11/2026\n\n1. ĐIỂM BIAS & CHẾ ĐỘ:\n• Bias Score: -16.70 / 100 (Chế độ: GIẢM MẠNH)\n• Lịch sử 3 phiên: 25/11 (-18.30) → 26/11 (-16.70) → 27/11 (-16.70)\n\n2. BÓC TÁCH 6 LỰC KÉO:\n• Áp lực USD: -11.04 điểm (Lực cản lớn nhất)\n• Dòng tiền & Xu hướng: -4.36 điểm\n• Lãi suất thực: -2.59 điểm\n• Yếu tố riêng của Vàng: -0.67 điểm\n• Khẩu vị rủi ro: +3.21 điểm (Hỗ trợ tâm lý)\n• Thanh khoản M2: +2.39 điểm (Nâng đỡ thanh khoản)\n=> Tín dụng và khẩu vị rủi ro vẫn ổn định, chưa có áp lực bán tháo hoảng loạn.\n\n3. CẤU TRÚC GAMMA (GLD & XAUUSD):\n• Net GEX: +2.5M USD (Gamma dương → Kìm nén biến động)\n• Spot GLD: 367.82 (≈ 3.981 XAUUSD) — Nằm TRÊN Gamma Flip\n• Gamma Flip: 365.0 (≈ 3.951 XAUUSD)\n• Put Wall (Hỗ trợ quyền chọn): 360.0 (≈ 3.897 XAUUSD)\n• Call Wall (Kháng cự quyền chọn): 375.0 (≈ 4.060 XAUUSD)\n\n4. 3 KỊCH BẢN PHIÊN TỚI:\n• Kịch bản 1 (60%): Giằng co trong biên 360–375 GLD (≈ 3.897–4.060 XAUUSD).\n• Kịch bản 2 (25%): Phá vỡ giảm nếu USD mạnh thêm, thủng Put Wall 360.\n• Kịch bản 3 (15%): Hồi phục kỹ thuật kiểm định Call Wall 375.\n\n5. KẾ HOẠCH HÀNH ĐỘNG:\n• Giữ vị thế trung tính trong biên độ 360–375 GLD.\n• Điều kiện giải ngân: Đóng cửa vững trên Gamma Flip 365 và Bias hồi phục.\n• Quản trị rủi ro: Cảnh giác áp lực gia tăng nếu gãy mốc 360.\n\n⚠️ Bản tin được xây dựng từ mô hình định lượng AURORA, chỉ mang tính tham khảo, KHÔNG phải lời khuyên đầu tư.\n\n#vang #gold #xauusd #giavang #phantichdinhluong #kenvinzone",
+    "tags": [
+      "vàng",
+      "gold",
+      "xauusd",
+      "giá vàng hôm nay",
+      "phân tích vàng",
+      "gld",
+      "bias vàng",
+      "gamma vàng",
+      "định lượng",
+      "kenvinzone",
+      "aurora",
+      "nhận định vàng",
+      "chiến lược vàng"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "gold-daily-bias",
+    "date": "27/11/2026"
+  }
+}
