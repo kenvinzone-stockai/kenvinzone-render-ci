@@ -1,0 +1,7 @@
+Thị trường chứng khoán Mỹ ghi nhận trạng thái đồng pha giảm khi điểm Bias của S&P 500 đạt -14.7 và Nasdaq đạt -13.1 trên cả khung ngày lẫn tuần.
+S&P 500 chịu áp lực chính từ sự thoái lui của Khẩu vị rủi ro -5.81 điểm và sức ép của Đồng USD -5.34 điểm.
+Cấu trúc Gamma trên SPY có Net GEX âm 37 triệu, thị giá 716.7 nằm dưới Gamma Flip 717.08, kẹp giữa Put Wall 700.0 và Call Wall 775.0 với biên độ ±9.8 điểm.
+Nasdaq ghi nhận điểm Bias -13.1, bị chi phối chủ yếu bởi áp lực từ Đồng USD -5.88 điểm và Khẩu vị rủi ro -4.90 điểm.
+QQQ duy trì Net GEX âm 121 triệu với giá 633.93 dưới Gamma Flip 638.32, dao động giữa Put Wall 550.0 và Call Wall 700.0 cùng biên độ ±13.3 điểm.
+Sự đồng thuận tiêu cực này khiến phiên tới có năm mươi lăm phần trăm xác suất giằng co điều chỉnh, ba mươi phần trăm tiếp tục giảm sâu và mười lăm phần trăm hồi phục kỹ thuật.
+Hãy chủ động quản trị rủi ro tại các mốc đảo chiều và follow KenvinZone cùng AURORA để cập nhật dữ liệu định lượng mỗi ngày.
