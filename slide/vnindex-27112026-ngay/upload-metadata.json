@@ -1,0 +1,28 @@
+{
+  "youtube": {
+    "title": "Nhìn lại chỉ số kỹ thuật, dòng tiền và kịch bản hướng đi chỉ số chứng khoán VNINDEX ngày 27/11",
+    "description": "Bản tin phân tích kỹ thuật VNINDEX ngày 27/11/2026 từ KenvinZone Analytics.\n\n📍 HÀNH TRÌNH PHIÊN GIAO DỊCH:\n- Sáng (11:01): VNINDEX hồi phục kỹ thuật lên 1651,79 điểm sau cú rơi về 1622. Điểm số đạt 44/100, nhãn Avoid New Entry. Khối lượng đạt 0,88 lần trung bình, xuất hiện pin bar từ chối giá tại cản 1652–1655.\n- Chiều (15:01): Đóng cửa tại 1653,90 điểm, tăng nhẹ 2,11 điểm so với sáng. Điểm số hạ về 41/100, chuyển sang nhãn Watchlist (55%). Thanh khoản chiều ghi nhận mức thấp, nhịp hồi mang tính kỹ thuật thuần túy.\n\n📊 5 THÀNH PHẦN ĐIỂM SỐ (SÁNG → CHIỀU):\n- Kỹ thuật: 12 → 12/30 (EMA D1 Full Bearish)\n- Timing: 8 → 8/20 (M15 Squeeze chờ breakout)\n- Dòng tiền: 10 → 6/20 (suy giảm, vol thấp)\n- Sector: 6 → 7/15 (hồi phục nhẹ nhóm trụ)\n- Rủi ro: 8 → 8/15 (áp lực margin call còn dư âm)\n→ Tổng điểm: 44 → 41/100\n\n🔍 PHÂN TÍCH ĐA KHUNG THỜI GIAN:\n- W1: Cấu trúc dài hạn giữ trend tăng nhưng RSI và MACD đã lọt vào Bearish zone, đà tăng suy yếu.\n- 3D: EMA Mixed, RSI và MACD Bearish củng cố tín hiệu phân phối/điều chỉnh trung hạn.\n- D1: Bearish toàn diện, giá 1653,90 nằm dưới EMA20 (1705,1), EMA50 (1731,71), EMA200 (1747,77). RSI 35,46; MACD hist âm -7,73.\n- M15: Bollinger Bands đang bóp nghẹt (Squeeze), volume cạn kiệt chờ xung lực mới.\n\n🎯 VÙNG GIÁ CHỐT NGÀY:\n- Kháng cự: 1654–1660 | 1662,83 | 1687,45 | EMA20 D1 (1705,10)\n- Hỗ trợ: Swing low M15 (1646,41) | Đáy gần nhất (1622,00)\n\n📋 KỊCH BẢN PHIÊN TỚI:\n- KB1 (45%): Pullback thất bại, thủng 1646,41 quay về kiểm định lại 1622–1644.\n- KB2 (35%): Giữ vững 1646,41, breakout M15 hướng lên vùng 1660–1667.\n- KB3 (20% - suy luận): Đi ngang giằng co trong biên hẹp 1646–1660 chờ dòng tiền xác nhận.\n\n⚡ KẾ HOẠCH HÀNH ĐỘNG:\n- Chưa mở vị thế mua mới khi xu hướng D1 chưa đảo chiều.\n- Canh nhịp hồi kiểm định vùng 1654–1660 để cơ cấu giảm tỷ trọng.\n- Hạ tỷ lệ margin, đặt stop loss chặt chẽ dưới mốc 1622.\n\n⚠️ Tuyên bố miễn trừ trách nhiệm: Bản tin mang tính chất tham khảo góc nhìn kỹ thuật, không phải lời khuyên đầu tư tài chính. Nhà đầu tư tự chịu trách nhiệm với quyết định của mình.\n\nChúc anh em cuối tuần an lành và hẹn gặp lại ở bản tin tổng hợp thứ Hai tuần sau!\n\n#giaimachungkhoan #kechuyenchungkhoan #xuhuongchungkhoan #vnindex #chungkhoan #phantichkythuat",
+    "tags": [
+      "vnindex",
+      "chứng khoán",
+      "nhận định thị trường",
+      "phân tích vnindex",
+      "chứng khoán hôm nay",
+      "kenvinzone",
+      "bắt đáy chứng khoán",
+      "xu hướng vnindex",
+      "cắt lỗ",
+      "hạ margin",
+      "phân tích kỹ thuật",
+      "cổ phiếu",
+      "đầu tư chứng khoán"
+    ],
+    "privacyStatus": "private",
+    "categoryId": "25",
+    "madeForKids": false
+  },
+  "source": {
+    "kind": "vnindex-daily",
+    "date": "27/11/2026"
+  }
+}
