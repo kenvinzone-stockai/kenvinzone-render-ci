@@ -1,0 +1,221 @@
+{
+  "template": "giaima-tin-hf",
+  "date": "27/11/2026",
+  "handle": "@kechuyen.chungkhoan",
+  "source": {
+    "site": "MoneyF",
+    "short": "MoneyF",
+    "author": "Duy Khánh",
+    "headline": "Khối ngoại bất ngờ mua ròng hơn 600 tỷ đồng, FPT được gom mạnh nhất",
+    "date": "27/11/2026",
+    "url": "moneyf.vn/khoi-ngoai-bat-ngo-mua-rong-hon-600-ty-dong-fpt-du-0j60uym1"
+  },
+  "hook": {
+    "eyebrow": "Chuyện Chứng Khoán",
+    "theme_variant": "liquidity_pump",
+    "stamp": "MUA RÒNG 600 TỶ",
+    "stamp_tone": "green",
+    "title_key": "HƠN 600 TỶ",
+    "visual": {
+      "items": []
+    },
+    "title_lines": [
+      "Khối ngoại gom ròng",
+      "hơn 600 tỷ đồng"
+    ],
+    "sub": "FPT dẫn đầu sóng hồi phục toàn thị trường",
+    "chips": [
+      {
+        "icon": "↗",
+        "text": "VN-Index +24,22 điểm",
+        "tone": "up"
+      },
+      {
+        "icon": "↳",
+        "text": "FPT hút 182 tỷ",
+        "tone": "gold"
+      },
+      {
+        "icon": "◆",
+        "text": "HoSE đảo chiều",
+        "tone": "blue"
+      }
+    ]
+  },
+  "s1": {
+    "title": "Tin hôm nay ta giải mã",
+    "summary_html": "Sau phiên bán tháo giảm gần 58 điểm, khối ngoại bất ngờ đảo chiều <mark>mua ròng hơn 600 tỷ đồng</mark>, kích hoạt sắc xanh lan tỏa toàn thị trường."
+  },
+  "s2": {
+    "title_lines": [
+      "Bức tranh chung",
+      "đảo chiều ra sao?"
+    ],
+    "stats": [
+      {
+        "value": 600,
+        "decimals": 0,
+        "unit": "tỷ",
+        "label": "Mua ròng sàn HoSE",
+        "badge": "Đảo chiều",
+        "tone": "green",
+        "beat": 1
+      },
+      {
+        "value": 24.22,
+        "decimals": 2,
+        "unit": "điểm",
+        "label": "VN-Index hồi phục",
+        "badge": "1.653,9 điểm",
+        "tone": "green",
+        "beat": 2
+      }
+    ],
+    "note": "Độ rộng thị trường áp đảo với 231 mã tăng so với 98 mã giảm."
+  },
+  "s3": {
+    "title_lines": [
+      "Sự phân hóa",
+      "thể hiện ra sao?"
+    ],
+    "mode": "bars",
+    "lead": "Tâm điểm mua bán ròng khối ngoại",
+    "bars": [
+      {
+        "label": "FPT",
+        "display": "+181,9 tỷ",
+        "value": 181.9,
+        "beat": 1
+      },
+      {
+        "label": "MBB",
+        "display": "+79,6 tỷ",
+        "value": 79.6,
+        "beat": 1
+      },
+      {
+        "label": "BSR",
+        "display": "+55,5 tỷ",
+        "value": 55.5,
+        "beat": 1
+      },
+      {
+        "label": "GMD",
+        "display": "-149 tỷ",
+        "value": -149,
+        "beat": 2
+      }
+    ],
+    "callout": {
+      "value": 181.9,
+      "suffix": "tỷ",
+      "text": "FPT là tâm điểm gom mạnh nhất của khối ngoại",
+      "beat": 1
+    }
+  },
+  "s4": {
+    "title_lines": [
+      "Dịch chuyển",
+      "giữa các mảng?"
+    ],
+    "cards": [
+      {
+        "big": "+6,8%",
+        "title": "Dầu khí thăng hoa",
+        "text": "BSR, PVD, PVP đồng loạt chạm giá trần."
+      },
+      {
+        "big": "+6,1%",
+        "title": "Bất động sản hồi",
+        "text": "NVL, TCH, VRE, DXG thu hút dòng tiền."
+      },
+      {
+        "big": "+2,8%",
+        "title": "Ngân hàng giữ nhịp",
+        "text": "KLB tím trần, LPB, MBB, TCB sắc xanh trở lại."
+      }
+    ]
+  },
+  "s5": {
+    "title_lines": [
+      "Ai thắng",
+      "ai thua?"
+    ],
+    "lights": [
+      {
+        "color": "green",
+        "tag": "THẮNG THẾ",
+        "title": "Công nghệ & Bluechip",
+        "text": "FPT và MBB hút ròng lớn, giá cổ phiếu bật tăng dứt khoát."
+      },
+      {
+        "color": "yellow",
+        "tag": "LƯU Ý",
+        "title": "Dầu khí & Bất động sản",
+        "text": "Tăng mạnh diện rộng nhưng phần lớn mang tính hồi phục kỹ thuật."
+      },
+      {
+        "color": "red",
+        "tag": "CHỊU ÁP LỰC",
+        "title": "Cảng biển & Bán lẻ bị xả",
+        "text": "GMD bị bán ròng gần 150 tỷ, cùng NLG, GEX và HDB."
+      }
+    ]
+  },
+  "s6": {
+    "title_lines": [
+      "Vì sao",
+      "thị trường đảo chiều?"
+    ],
+    "chain": [
+      {
+        "title": "Tâm lý giải tỏa",
+        "text": "Mức thuế Mỹ có thể thấp hơn mốc <b>ba mươi lăm phần trăm</b>.",
+        "beat": 1
+      },
+      {
+        "title": "Lực cầu bắt đáy",
+        "text": "Dòng tiền vào cuộc sau phiên <b>rơi sâu năm mươi tám điểm</b>.",
+        "beat": 2
+      },
+      {
+        "title": "Ngoại lực tiếp sức",
+        "text": "Động thái mua ròng giúp chỉ số <b>giữ vững mốc tâm lý</b>.",
+        "beat": 3
+      }
+    ]
+  },
+  "s7": {
+    "title_lines": [
+      "Nhà đầu tư",
+      "nên làm gì?"
+    ],
+    "items": [
+      {
+        "icon": "check",
+        "title": "Kiểm tra danh mục",
+        "text": "Ưu tiên cổ phiếu cơ bản có dòng tiền <b>tự tin giải ngân</b>.",
+        "beat": 1
+      },
+      {
+        "icon": "check",
+        "title": "Giữ sự thận trọng",
+        "text": "Tránh tâm lý hưng phấn <b>mua đuổi giá trần</b>.",
+        "beat": 1
+      },
+      {
+        "icon": "warn",
+        "title": "Theo dõi xu hướng",
+        "text": "Chờ dòng vốn ngoại duy trì mạch mua trước khi <b>tăng tỷ trọng</b>.",
+        "beat": 2
+      }
+    ]
+  },
+  "outro": {
+    "tag": "Giải Mã Chứng Khoán",
+    "closing": "Một phiên mua ròng chưa khẳng định xu hướng dài hạn.",
+    "cta": "Theo dõi để giải mã dòng tiền tiếp theo"
+  },
+  "audio_offset": 1.0,
+  "outro_hold": 3.6
+}
